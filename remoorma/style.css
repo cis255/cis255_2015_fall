@@ -45,8 +45,7 @@ a {
  float: left;
  margin-top: 6%;
  width: 100%;
- border: 1px solid black;
- height: 500px;
+ height: 60%;
 
 }
 
@@ -62,7 +61,6 @@ a {
 
 #centerCol{
 
- margin-left: 35%;
  float: left;
  width: 30%;
  background-color: #e7d9aa;
@@ -73,9 +71,7 @@ a {
 
 #rightCol{
 
- margin-left: 65%;
  width: 30%;
- margin-right: 5%%;
  background-color: #f6f5fb;
  height: 100%;
  float: left;
