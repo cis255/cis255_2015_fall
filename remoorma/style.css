@@ -22,13 +22,7 @@ html, body {
 
 }
 
-#menu {
 
- width: 75%;
- height 100%;
- margin-left: 25%;
-
-}
 
 h2 {
 
@@ -36,17 +30,11 @@ h2 {
 
 }
 
-a {
+#content {
 
- position: fixed;
- right: 50%;
- bottom: 50%;
-
-}
-
-#body {
- 
- background-color: #e7d9aa;
+ max-width: 885px;
+ min-width: 275px;
+ margin: 0 auto;
 
 }
 
@@ -56,26 +44,26 @@ a {
  display: table-cell;
  float: left;
  height: 100%;
- max-width: 300px;
- min-width: 250px;
+ width: 275px;
+ padding: 10px;
 
 }
 
 #leftCol {
 
  background-color: #f6f5fb;
- margin-left: 3%;
+
 }
 
 #centerCol{
 
+ background-color: #e7d9aa;
 
 }
 
 #rightCol{
 
  background-color: #f6f5fb;
- margin-right: 3%;
 
 }
 
