@@ -1,6 +1,6 @@
 html, body {
 
- background-color: #d3d3d3;
+ background-color: #aaa;
  width: 100%;
  margin: 0;
  padding: 0;
@@ -31,7 +31,7 @@ html, body {
 .wide-header{
 
  width: 100%;
- background-color: #2c4870;
+ background-color: #eee;
  border-bottom: 1px solid black;
 
 }
@@ -58,19 +58,19 @@ h2 {
 
 #leftCol {
 
- background-color: #ffe0aa;
+ background-color: #ccc;
 
 }
 
 #centerCol{
 
- background-color: #D4ae6a;
+ background-color: #bbb;
 
 }
 
 #rightCol{
 
- background-color: #ffe0aa;
+ background-color: #ccc;
 
 }
 
