@@ -1,9 +1,16 @@
 html, body {
 
  background-color: #d3d3d3;
+ width: 100%;
  margin: 0;
  padding: 0;
  height: 100%;
+
+}
+
+.container-fluid {
+
+ padding: 0px;
 
 }
 
@@ -11,9 +18,13 @@ html, body {
 
  margin: 0 auto;
  height: 80px;
+ width: 100%; 
  text-align: center;
- width: 200px; 
- font-size: x-large;
+ color: black;
+ font-size: 450%;
+ font-t-text-fill-color: white; /* Will override color */
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: white;
 
 }
 
@@ -31,15 +42,6 @@ h2 {
 
 }
 
-.col-centered {
-
- display: inline-block;
- float: none;
- text-align: left; 
- margin-right: -4px;
-
-}
-
 #content {
 
  max-width: 885px;
@@ -50,9 +52,6 @@ h2 {
 
 #leftCol, #rightCol, #centerCol{
 
- float: left;
- height: 100%;
- width: 275px;
  padding: 10px;
 
 }
