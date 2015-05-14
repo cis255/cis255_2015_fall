@@ -1,5 +1,12 @@
 body {
     background-color: #d0e4fe;
+	display: table-cell;
+    vertical-align: middle;
+}
+
+html {
+    display: table;
+    margin: auto;
 }
 
 h1 {
