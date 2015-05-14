@@ -2,19 +2,41 @@
 <!--
 filename: mbroy.html
 author:Matthew Roy, mbroy@svsu.edu
-purpose: Personal website for CIS255
+purpose: The file demonstrates simple html tags
 details:
 -->
 
 <head>
 	<title>Mbroy's CIS255 Module A</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="mbroy/css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	  <style>
+#wrapper {
+    width: 1005px;
+    margin: 0 auto;
+}
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 700px;
+	width: 250px;
+}
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+  </style>
 </head>
 <body>
+<div id='wrapper'>
+<h1><strong>Mbroy CIS255 Module A</strong></h1>
+<div id='leftcolumn'>
  <ul>
-	<h1><strong>Mbroy CIS255 Module A</strong></h1>
 	<li><center>Module A - Syllabus and Course Standards</center></li>
     <li><font>Module B - Github and Personal Course Menu</font></li>
     <li><h1>Module C - Web Overview (Ch. 1) and Chrome DevTools</h1></li>
@@ -29,4 +51,11 @@ details:
     <li><strike>Module L - CMS (Ch. 18) and Miscellaneous</strike></li>
 	<li><a href="http://svsu.edu/">SVSU website</a></li>
  </ul>
+ </div> <!-- End leftcolumn -->
+	<div id='middlecolumn'>
+	<img align="center" src="http://upload.wikimedia.org/wikipedia/commons/7/71/St._Bernard_puppy.jpg" alt="Puppy playing in leaves" height="225" width="250">
+	</div> <!-- End middlecolumn -->
+	<div id='rightcolumn'>
+    </div> <!-- End rightcolumn -->
+ </div> <!--End wrapper -->
 </body>
