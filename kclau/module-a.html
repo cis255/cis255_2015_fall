@@ -1,7 +1,36 @@
 <!DOCTYPE html>
+<!--
+filename: module-a.html
+author: kclau
+purpose: the file demonstrates simple html tags
+-->
 <head>
+  <style>
+#wrapper {
+    width: 1005px;
+    margin: 0 auto;
+	float: center;
+}
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 700px;
+	width: 250px;
+}
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+  </style>
 </head>
 <body>
+<div id ='wrapper'>
+<h1><center> kclau - module A </center></h1>
+<div id ='leftcolumn'>
   <ul>
     <li><center>This is a test of the center tag</center></li>
     <li><font size="3" color="red">This is a test of font</font></li>
@@ -12,14 +41,15 @@
 	<hr>
 	<li><h5>This is h5<h5></li>
 	<li><h6>This is h6<h6></li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-    <li></li>
+    <li><small>this is small</small></li>
+    <li><strong>This is strong</strong></li>
+    <li><strike>This is strike</strike></li>
   </ul>
+  </div> <!-- end leftcolumn -->
+    <div id ='middlecolumn'>
+	<img src="http://www.vetprofessionals.com/catprofessional/images/home-cat.jpg" alt="cat" width="250" height="150">
+  </div> <!-- end middlecolumn -->
+    <div id ='rightcolumn'>
+  </div> <!-- end rightcolumn -->
+  </div> <!-- end wrapper -->
 </body>
