@@ -1,23 +1,80 @@
 <!DOCTYPE html>
+<!--Author: Dylan Bruderick
+Purpose: To test which variables take precedence
+Test 1: Specificity of elements
+Test 2: Specificity of classes
+Test 3: Specificity of id
+Test 4: Inheritance
+Test 5: Order
+Test 6: Inline
+Test 7: Importance
+-->
 <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<style>
+@font-face {
+    font-family: '1942_report1942_report';
+    src: url('fonts/sketchtext/1942-webfont.eot');
+    src: url('fonts/sketchtext/1942-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sketchtext/1942-webfont.woff') format('woff'),
+         url('fonts/sketchtext/1942-webfont.ttf') format('truetype'),
+         url('fonts/sketchtext/1942-webfont.svg#1942_report1942_report') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	background-image: url(images/backgrounds/metalbackground.jpg);
+	background-repeat;
+}
+h1 {
+	font-family: '1942_report1942_report';
+	color: red;
+}
+span span{
+	color: purple;
+}
+li span {					/*Test Order*/
+	color: orange;
+}
+p {
+	color: red !important;
+}
+p {
+	color: green;
+}
+li {
+	color: white;
+}
+</style>
 </head>
-<body background='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTmzHD1yQR-cxyJsQGVk7-TEZc60fkTq2DuI6o16yM1ZRZwkR1P'>
-<h1>This is Dylan Bruderick- Module C</h1>
-  <p><big>Hello people, let's look at the modules.</big></p>
-  <ul>
+<h1 id="head1">This is Dylan Bruderick- 
+	<BR/>Assignment C - CSS inheritance and specificity</h1>
+<ul id="id1" class="class1">
+	<!--Test Order-->
+	<li>This is <em>testing</em> inheritance</li>
+	<li>.     "testing" is an em without a color definition, so it inherits its style from its li parent</li>
+	<br/>
+	<li>This is <span>testing <span>order</span></span></li>
+	<li>.     "order" is a span in a span but the style is overwritten by a li span style written after</li>
+	<br/>
+	<li style=color:yellow> this is testing inline</li>
+	<li>.     The li takes the style of what is written inline rather than in the CSS style</li>
+	<br/>
+	<p>This is testing importance</p>
+	<li>.     Though p color green style is listed after the p red style, p red is noted as important </li>
 
-    <li><span style="background-color:#ffffff;">Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
- 
-  </ul>
-  <h1><span style="background-color:#ffffff;">how about some tunes?</h1>
-  <div style="position:relative;width:267px;height:25px;overflow:hidden;">
-  <div style="position:absolute;top:-276px;left:210px">
-    <iframe width="300" height="300" 
-      src='https://www.youtube.com/embed/1cQh1ccqu8M?r=0'>
-    </iframe>
-  </div>
-</div>
-  <p><span style="background-color:#ffffff;">Here is a waving cat. </p>
-  <img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTmzHD1yQR-cxyJsQGVk7-TEZc60fkTq2DuI6o16yM1ZRZwkR1P' alt="Cat Waving" style="width:574px;height:710px">
+</ul>
+<div class="container">
+	<div class="row">
+		<p class="col-sm-6">column 1 Lemons, yo</p>
+		<p class="col-sm-6">column 2 Lemons, yo</p>
+	</div class="row">
+		</div> <!--end container-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
-
