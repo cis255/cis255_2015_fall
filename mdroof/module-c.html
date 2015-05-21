@@ -1,10 +1,55 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-	<h1>mdroof - CIS255 - Module C</h1>
-</head>
-<body>
+<!-- 
+1. Test it in elements
+2. Test it in classes
+3. " in ids
+4. Inheritance
+5. Order/sequence
+6. Inline
+7. Importance
+8. 
+-->
+<style>
+h1 {
+	color: red;
+}
+ul{
+	color: green;
+}
 
+
+li>span {
+	color: orange;
+}
+span span{
+	color: purple;
+}
+/*Note: if li>span is left, purple will show up because its specificity is equal to span span.  
+However if it is changed to ul li span, purple will not show up because its specificity is lower now.*/
+
+
+span span span {
+	color: yellow;
+}
+</style>
+
+<head>
+	<h1>mdroof - CIS255 - Assignment C</h1>
+</head>
+
+<body>
+	<h3>Poets</h3>
+	<ul id="id1" class="fancy_list">
+		<li>Shake<span>speare's <span>Ea<span>r</span></span></span></li>
+		<li></li>
+	</ul>
+	
+	<h3>Another list</h3>
+	<ul class="fancy_list">
+		<li></li>
+		<li></li>
+	</ul>
 <body>
 
 </html>
