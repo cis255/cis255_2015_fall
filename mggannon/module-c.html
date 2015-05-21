@@ -1,22 +1,63 @@
+
 <!DOCTYPE html>
+<!-- 
+Test 1: Tests specificity of elements
+Test 2: Tests specificity of classes
+Test 3: Tests specificity of ids
+Test 4: Inheritance
+Test 5: Order/sequence
+Test 6: Inline
+Test 7: Importance
+Test 8: Test specificity of combination of class and element
+-->
 <head>
+<style>
+h1 {
+  color: red; 
+}
+ul {
+  color: green;
+}
+span {
+  color: orange;
+}
+span span {      /* Test 1: specificity */
+  color:purple;
+}
+span span span {
+  color: yellow;
+}  
+li.British {     /* Test 2: class specificity */
+  color: red;
+}
+#head1 {
+  color: orange; /* Test 3: ID specificity */
+}
+.class1 .class2 .class3 .class4 .class5 .class6 .class7 .class8 .class9 .class10 .class11 {
+  color: blue;
+  }
+#bestCanadian {
+  color: red;
+}
+</style>
 </head>
 <body>
-<h1> Module C</h1>
-  <ul>
-  
-   <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
-	
+<h1 id="head1">Michael Gannon - Assignment C - CSS inheritance and specificity</h1>
+<h1> Poets! </h1> <h1><class1
+<ul id="id1" class="class1">
+  <!-- Test 1: specificity -->
+  <li class="British">Shake<span>sp<span>e<span>a</span>r</span>e</span></li>
+  <li class="American">Frost</li>
+  <li class="American">Poe</li>
+  <li class="British">Yeats</li>
+  <li class="British">Byron</li>
+  <li class="British">Chaucer</li>
+  <li class="Canadian"><span class="class1">
+  <span class="class2"><span class="class3">
+  <span class="class4"><span class="class5">
+  <span class="class6"><span class="class7">
+  <span class="class8"><span class="class9">
+  <span class="class10"><span class="class11"> <id="bestCanadian">Atwood</span></span></span></span>
+  </span></span></span></span></span></span></span></li>
+</ul>
 </body>
