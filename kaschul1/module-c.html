@@ -1,21 +1,76 @@
 <!DOCTYPE html>
+<!-- Test 1: Tests specificity of elements
+	 Test 2: Tests specificity of classes
+	 Test 3: Tests specificity of ids
+	 Test 4: Inheritance
+	 Test 5: Order/Sequence
+	 Test 6: Inline
+	 Test 7: Importance -->
 <head>
+<style>
+body {
+	background-image: url(images/stars.jpg);
+	background-repeat: repeat;
+	margin: 60px;
+}
+h1 {
+	color: red;
+}
+h2 {
+	color: #00ff00;
+}
+ul {					/* Test 4: Inheritance */
+	background-image: url(images/background.png);
+	background-repeat: repeat;
+	border: 2px solid white;     
+	color: green;
+}
+li span {
+	color: orange;
+}
+span span{				/* Test 1: Specificity */ 
+	color: purple;
+}
+span span span {          /* Test 5: Order/Sequence */
+	color: yellow;
+}
+.British {				/* Test 2: Tests specificity of classes */
+	color: #666699;
+}
+.Canadian {				/* Test 2: Tests specificity of classes */
+	color: #000066;
+}
+#Michigan {				/* Test 3: Tests specificity of ids */
+	font-style: italic;
+	color: #00FFCC;
+}
+#important {
+	color: gray;
+}
+.moreImportant {
+	color: #FF3300 !important;
+}
+</style>
 </head>
 <body>
-<h1><strong>Kelly Schultz Module C</strong></h1>
-	<ul>
-		<li>Module A - Syllabus and Course Standards</li>
-		<li>Module B - Github and Personal Course Menu</li>
-		<li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-		<li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-		<li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-		<li>Module F - HTML Tables and Forms (Ch. 4)</li>
-		<li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-		<li>Module H - Basic JavaScript (Ch. 6)</li>
-		<li>Module I - jQuery (Ch. 15), AJAX</li>
-		<li>Module J - JavaScript Roadtrip (Code School)</li>
-		<li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-		<li>Module L - CMS (Ch. 18) and Miscellaneous</li>
+<h1 id="head1">Kelly Schultz - Assignment C - CSS Inheritance and Specificity</h1>
+<h2 id="head2">Poets</h2>
+	<ul id="id1" class="class1">
+		<!-- Test 1 & 2: Specificity -->
+		<li class="British">Shake<span>sp<span>e<span>a</span>r</span>e</span></li>
+		<!-- Test 4: Inheritance -->
+		<li class="American">Frost</li>
+		<li class="American">Poe</li>
+		<!-- Test 6: Inline -->
+		<li class="British" style="color: #CC3399">Yeats</li>
+		<li class="British">Byron</li>
+		<li class="British">Chauncer</li>
+		<!-- Test 2: Tests specificity of classes -->
+		<li class="Canadian">Atwood</li>
+		<!-- Test 3: Tests specificity of ids -->
+		<li id="Michigan">Theodore Roethke</li>
+		<li id="important" class="moreImportant">This will not be gray.</li>
 	</ul>
+	
 </body>
 
