@@ -2,3 +2,14 @@ h1{
 	color:red;
 	text-align:center;
 }
+h2{
+	color:gray;
+	text-align:center;
+}
+ul{
+	color:green;
+}
+li span{
+	color:orange;
+}
+
