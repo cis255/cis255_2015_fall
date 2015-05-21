@@ -1,0 +1,59 @@
+h1{
+	color:red;
+	text-align:center;
+	font-family: aldoregular;
+	font-weight: normal;
+}
+h2{
+	color:black;
+	text-align:center;
+}
+ul{
+	color:green;
+}
+li span{
+	color:orange;
+}
+span span{	/* Test 1: Specificity */
+	color:purple;
+}
+span span span{
+	color:yellow;
+}
+.class1{
+	color: red;
+}
+#list2{
+	color:gray;
+}
+.class1 span{
+	color:fuchsia;
+}
+#lastItem{
+	color: orange;
+}
+#lastItem{
+	color: purple;
+}
+#another{
+	color:yellow !important;
+}
+html{
+	background-image: url(../Images/background.jpg);
+	margin-left: 3em;
+	margin-right: 3em;
+}
+body{
+	background-image: url(../Images/images.jpg)
+}
+@font-face {
+    font-family: 'aldoregular';
+    src: url('../../aldo/Aldo_Open-webfont.eot');
+    src: url('../../aldo/Aldo_Open-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../aldo/Aldo_Open-webfont.woff') format('woff'),
+         url('../../aldo/Aldo_Open-webfont.ttf') format('truetype'),
+         url('../../aldo/Aldo_Open-webfont.svg#aldoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
