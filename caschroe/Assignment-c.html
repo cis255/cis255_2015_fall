@@ -1,6 +1,13 @@
 <!DOCTYPE html>
+<!-- Test 1: Test Specificity of elements -->
+<!-- Test 2: Test Specificity of classes-->
+<!-- Test 3: Test specificity of Ids-->
+<!-- Test 4: Inheritance -->
+<!-- Test 5: Order/Sequence -->
+<!-- Test 6: Inline -->
+<!-- Test 7: Importance -->
 <head>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="site.css/site.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="site.js/site.js"></script>
@@ -10,10 +17,18 @@
 <h2>CSS Inheritance and Specificity</h2>
 
 <body>
-	<ul class="list-group class1" id="id1">
-		<li>Shake<span>sp<span>ear</span></span></li>
-		<li>Frost</li>
-		<li>Poe</li>
-		<li>Yeats</li>
+	<!-- Test 2: Specificity of classes--> 
+	<ul class="class1" id="id1" title="Test 2">
+		<!-- Test 1: Specificity of elements-->
+		<!-- Test 4: Inheritance -->
+		<li title="Test 1 and 4">Shake<span>sp<span>e<span>a</span></span>r</span>e</li>
+		<!-- Test 3: Test specificity of Ids-->
+		<li id="list2" title="Test 3">Frost</li>
+		<!-- Test 6: Inline -->
+		<li style="color:green" title="Test 6">Poe</li>
+		<!-- Test 7: Importance -->
+		<li id="another" title="Test 7">Another Poet</li>
+		<!-- Test 5: Order/Sequence -->
+		<li id="lastItem" title="Test 5">Yeats</li>
 	</ul>
 </body>
