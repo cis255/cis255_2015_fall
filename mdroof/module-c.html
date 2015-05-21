@@ -10,28 +10,43 @@
 7. Importance
 8. 
 -->
-<style>
+<style>'
+body {
+  background-image: url (images/carbon_fiber.jpg);
+  background-repeat: repeat; 
+}
 h1 {
-	color: red;
+  color: red; 
 }
-ul{
-	color: green;
+ul {
+  color: limegreen;
+}
+span {
+  color: orange;
 }
 
-
-li>span {
-	color: orange;
-}
 span span{
 	color: purple;
 }
+
 /*Note: if li>span is left, purple will show up because its specificity is equal to span span.  
 However if it is changed to ul li span, purple will not show up because its specificity is lower now.*/
-
 
 span span span {
 	color: yellow;
 }
+
+span span .class3 {
+  color: blue;
+}
+span span span span span span span span span span span {
+  color: black;
+}
+.class11 {
+  color: aqua;
+} 
+
+
 </style>
 
 <head>
@@ -40,15 +55,17 @@ span span span {
 
 <body>
 	<h3>Poets</h3>
-	<ul id="id1" class="fancy_list">
-		<li>Shake<span>speare's <span>Ea<span>r</span></span></span></li>
-		<li></li>
-	</ul>
-	
-	<h3>Another list</h3>
-	<ul class="fancy_list">
-		<li></li>
-		<li></li>
+	<ul id="id1" class="class1">
+	  <li class="British">Shake<span>sp<span>e<span>a</span>r</span>e</span></li>
+	  <li class="American">Frost</li>
+	  <li class="American">Poe</li>
+	  <li class="Canadian"><span class="class1">xx
+	  <span class="class2"><span class="class3">ZZZX
+	  <span class="class4"><span class="class5">
+	  <span class="class6"><span class="class7">
+	  <span class="class8"><span class="class9">
+	  <span class="class10"><span class="class11">Atwood</span></span></span></span>
+	  </span></span></span></span></span></span></span></li>
 	</ul>
 <body>
 
