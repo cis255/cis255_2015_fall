@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Creating Fancy Checkmark Icons with Pure CSS3 | Webitect</title>
+
+<link rel="stylesheet" href="http://webitect.net/wp-content/themes/Webitect Pro/style.css" type="text/css" media="all" />
+<link rel="alternate" type="application/rss+xml" title="Webitect RSS Feed" href="http://feeds.feedburner.com/webitect/updates" />
+<link rel="pingback" href="http://webitect.net/xmlrpc.php" />
+<link rel="shortcut icon" href="http://svgolfleague.blogspot.com/favicon.ico">
+
+<link rel="alternate" type="application/rss+xml" title="Webitect &raquo; Creating Fancy Checkmark Icons with Pure CSS3 Comments Feed" href="http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/feed/" />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://webitect.net/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-polls-css'  href='http://webitect.net/wp-content/plugins/wp-polls/polls-css.css?ver=2.50' type='text/css' media='all' />
+<script type='text/javascript' src='http://webitect.net/wp-includes/js/jquery/jquery.js?ver=1.7.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://webitect.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://webitect.net/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Exclusive Freebie &#8211; &#8220;Groovy&#8221; Social Media Icon Set' href='http://webitect.net/design/free-social-icon-set-groovy/' />
+<link rel='next' title='What You Need to Know about Cross-Cultural Web Design' href='http://webitect.net/design/uitutorials/what-you-need-to-know-about-cross-cultural-web-design/' />
+<meta name="generator" content="WordPress 3.4.1" />
+<link rel='shortlink' href='http://webitect.net/?p=8429' />
+
+<!-- All in One SEO Pack 1.6.14.6 by Michael Torbert of Semper Fi Web Design[244,296] -->
+<meta name="description" content="I was recently working on a personal project where I wanted to implement some cool checkmark icons like you see at left to spice up my unordered lists. I" />
+<meta name="keywords" content="css,css3,tutorial,css/html,web design" />
+<link rel="canonical" href="http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/" />
+<!-- /all in one seo pack -->
+<style type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background: #458ec1;
+	border: 1px solid #9CF;
+}
+</style>
+
+<!-- Wordpress Popular Posts v2.2.1 -->
+<link rel="stylesheet" href="http://webitect.net/wp-content/plugins/wordpress-popular-posts/style/wpp.css" type="text/css" media="screen" />
+<!-- End Wordpress Popular Posts v2.2.1 -->
+<!-- Wordpress Popular Posts v2.2.1 -->
+<script type="text/javascript" charset="utf-8">
+    /* <![CDATA[ */				
+	jQuery.post('http://webitect.net/wp-admin/admin-ajax.php', {action: 'wpp_update', token: 'a332cf5449', id: 8429});
+    /* ]]> */
+</script>
+<!-- End Wordpress Popular Posts v2.2.1 -->
+            <meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://webitect.net/wp-content/themes/Webitect Pro/scripts/webitect.js"></script>
+
+</head>
+
+<body >
+<!-- BuySellAds.com Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- END BuySellAds.com Ad Code -->
+
+<div id="header">
+  <a name="top"></a>
+  <div id="navbar">
+   <div class="block-90">
+  	<form method="get" id="searchform" action="http://webitect.net/">
+<input type="text" value="search..." name="s" id="searchbox" />
+<input type="submit" id="searchbutton" value="Go" />
+</form>	<ul id="menu">
+		<li class="first"><a href="http://webitect.net/" title="Home">Home</a></li>
+		<li class="page_item page-item-8211"><a href="http://webitect.net/about/">About</a></li>
+<li class="page_item page-item-8227"><a href="http://webitect.net/contact/">Contact</a></li>
+	</ul>
+   </div>
+  </div>
+  <div id="welcome" class="block-90">
+	<h1><a href="http://webitect.net/" title="Go Home!"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/logo.png" alt="Webitect - A Resource Blog for Webmasters"/></a></h1>
+  </div>
+</div>
+
+<div id="content" class="block-90">
+	<ul id="category-nav">
+			<li class="cat-item cat-item-3"><a href="http://webitect.net/category/design/" title="View all posts filed under Design">Design</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://webitect.net/category/development/" title="View all posts filed under Development">Development</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://webitect.net/category/freelancing/" title="View all posts filed under Freelancing">Freelancing</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://webitect.net/category/blogging/" title="View all posts filed under Blogging">Blogging</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://webitect.net/category/general/" title="View all posts filed under News">News</a>
+</li>
+		<li id="subscriptions">
+					<a href="http://feeds.feedburner.com/webitect/updates" title="Subscribe to Webitect!"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/rss-bubble.png" alt="Subscribe to Webitect!"/>2601<br/><small>subscribers</small></a>
+			<!--a href="http://feedburner.google.com/fb/a/mailverify?uri=webitect/updates&amp;loc=en_US"<img src="http://webitect.net/wp-content/themes/Webitect Pro/images/email-bubble.png" alt="Get Updates in Your Inbox!"/></a-->
+			<a href="http://twitter.com/WebitectNet" title="Follow Webitect on Twitter!"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/twitter-bubble.png" alt="Follow Us on Twitter!"/>3687<br/><small>followers</small></a>
+			<br/><a href="http://feedburner.google.com/fb/a/mailverify?uri=webitect/updates&amp;loc=en_US" class="email"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/email.png" alt="Get Webitect's Awesome Content Delivered Straight to Your Inbox!"/>Get Updates by Email</a>
+		</li>
+	</ul>
+	<div class="clear"></div>   
+    
+
+<div id="main">
+		<div class="post">
+		<h2 class="post-title">Creating Fancy Checkmark Icons with Pure CSS3</h2>
+		<div class="the-content"><div class="post-img"><img class="alignnone size-full wp-image-8445" title="THUMB" src="http://webitect.net/wp-content/uploads/2010/06/THUMB.jpg" alt="" width="210" height="210" /></div>
+<p>I was recently working on a personal project where I wanted to implement some cool &#8220;checkmark&#8221; icons like you see at left to spice up my unordered lists. I could&#8217;ve done it quite easily with the list-style-image property, but I was trying to keep my images and http requests to a minimum, so I wanted to figure out another way to do it (plus, the challenge sounded kind of fun).</p>
+<p>I had just seen Nicolas Gallagher&#8217;s awesome <a href="http://nicolasgallagher.com/experimental-pure-css-social-media-icons/">pure css social media icons</a>, though, and I thought, &#8220;If he can do that, than I could certainly create a simple check icon with just css3&#8243;. I did figure it out with some experimenting and testing, and today I&#8217;m going to show you how to achieve the same effect.</p>
+<p><span id="more-8429"></span></p>
+<h3>The #1 Rule of CSS3 Coding</h3>
+<p><img class="alignnone size-full wp-image-8440" title="RULE" src="http://webitect.net/wp-content/uploads/2010/06/RULE.jpg" alt="" width="600" height="210" /></p>
+<p>Before we start on any project, we have to remember the number one rule of CSS3 coding. Well, actually it&#8217;s two rules:</p>
+<ul style="list-style: square none; color: #333; font-weight: bold; font-size: 105%;">
+<li>It must be cross-browser acceptable. I&#8217;m not talking identical, but a CSS3 technique is not very useful if it destroys the experience for users with older browsers. Use progressive enhancement.</li>
+<li>No worthless markup! I know CSS3 is fun, and it&#8217;s not bad to experiment, but if you have to add a whole bunch of non-semantic junk markup just to save yourself from needing to use an image, you&#8217;ve defeated the point.</li>
+</ul>
+<p>These are the two principles that I regard to be the unchangeable law for using CSS3. So anyways, enough of my rant &#8211; I just feel with all the buzz about CSS3 that it&#8217;s very important to use it in a mature and responsible way. Let&#8217;s move on with the tutorial.</p>
+<h3>The Concept</h3>
+<p><img class="alignnone size-full wp-image-8443" title="CONCEPT" src="http://webitect.net/wp-content/uploads/2010/06/CONCEPT.jpg" alt="" width="600" height="210" /></p>
+<p>Before we can start coding, we have to figure out what approach we&#8217;re going to take to create these icons. How is it going to be done?</p>
+<p>Taking some inspiration from Nicolas Gallagher&#8217;s work, I think the best way would be to use the :before and :after pseudoclasses to generate the round circle and the checkmark shape. By using the unicode no-break-space (\00a0) as the content attribute, and the setting the display to block and styling it, we can create a huge variety of empty shapes. A checkmark icon lays well inside the boundaries of possiblity!</p>
+<p>Also, in order to implement surefire progressive enhancement we&#8217;re going to use the :nth-of-type selector to make sure that only CSS3 capable browsers try to display the icons (older browsers will  fall back on simple, default bullet-points). The :nth-of-type is a lifesaver and hugely useful for this, because the support for it lines up exactly with support for the border-radius and transform properties that will be necessary to render the icons.</p>
+<h3>The Code</h3>
+<p><img class="alignnone size-full wp-image-8441" title="CODE" src="http://webitect.net/wp-content/uploads/2010/06/CODE.jpg" alt="" width="600" height="210" /></p>
+<p>OK, now that we&#8217;ve got the general concept figured out, we can start coding. We&#8217;ll start with the html for a basic, unordered list (copied from <a href="http://html-ipsum.com/">html-ipsum.com</a>).</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;ul&gt;
+&lt;li&gt;Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.&lt;/li&gt;
+&lt;li&gt;Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.&lt;/li&gt;
+&lt;li&gt;Pellentesque fermentum dolor.&lt;/li&gt;
+&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+&lt;li&gt;Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.&lt;/li&gt;
+&lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>We&#8217;ll start with a very basic CSS style that will be applied to all browsers:</p>
+<pre class="brush: css; title: ; notranslate" title="">
+ul{
+margin: 12px;
+padding: 0;
+}
+ul li{
+margin: 0 0 12px 0;
+font-size: .9em;
+line-height: 1em;
+}
+</pre>
+<p>Now, onto the fun part. First, we&#8217;ll style the list items (for CSS3 browsers only) to have additional padding on the left (to make room for the icons), to be positioned relatively so that we can absolutely position the icons, and to hide the default bullets:</p>
+<pre class="brush: css; title: ; notranslate" title="">
+body:nth-of-type(1) ul li{
+list-style-type:none;
+padding: 0 0 0 45px;
+position:relative;
+}
+</pre>
+<p>Now, using the :before pseudoclass we&#8217;ll add a small black circle to the left of each list-item &#8211; the first half of the icon. We use before so that it will nest behind the checkmark, which will be generated using :after. Here&#8217;s the code:</p>
+<pre class="brush: css; title: ; notranslate" title="">
+body:nth-of-type(1) ul li:before{
+/*fill it with a blank space*/
+content:&quot;\00a0&quot;;
+
+/*make it a block element*/
+display: block;
+
+/*adding an 8px round border to a 0x0 element creates an 8px circle*/
+border: solid 9px #000;
+border-radius: 9px;
+-moz-border-radius: 9px;
+-webkit-border-radius: 9px;
+height: 0;
+width: 0;
+
+/*Now position it on the left of the list item, and center it vertically
+(so that it will work with multiple line list-items)*/
+position: absolute;
+left: 7px;
+top: 40%;
+margin-top: -8px;
+}
+</pre>
+<p>All that&#8217;s left is to create the checkmark and put it on top of the circle. We can do that very easily by giving the :after element a white border on the bottom and left, and then rotating it 45 degrees:</p>
+<pre class="brush: css; title: ; notranslate" title="">
+body:nth-of-type(1) ul li:after{
+/*Add another block-level blank space*/
+content:&quot;\00a0&quot;;
+display:block;
+
+/*Make it a small rectangle so the border will create an L-shape*/
+width: 3px;
+height: 6px;
+
+/*Add a white border on the bottom and left, creating that 'L' */
+border: solid #fff;
+border-width: 0 2px 2px 0;
+
+/*Position it on top of the circle*/
+position:absolute;
+left: 14px;
+top: 40%;
+margin-top: -4px;
+
+/*Rotate the L 45 degrees to turn it into a checkmark*/
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+}
+</pre>
+<p>We&#8217;re finsished! Here&#8217;s what the final product looks like:</p>
+<p><img class="alignnone size-full wp-image-8436" title="finished" src="http://webitect.net/wp-content/uploads/2010/06/finished.png" alt="" /></p>
+<p>All that remains now is to integrate it into your design (changing the border colors of the before/after elements if need be)!</p>
+<h3>Some Thoughts</h3>
+<p><img class="alignnone size-full wp-image-8442" title="THOUGHTS" src="http://webitect.net/wp-content/uploads/2010/06/THOUGHTS.jpg" alt="" width="600" height="210" /></p>
+<p>So that&#8217;s it. In closing I have a few thoughts about this technique:</p>
+<p>On the downside, relying on the :nth-of-type selector is a bit risky, since a browser that recognized that selector but didn&#8217;t support CSS rounded corners and rotation would end up rendering a distorted version of the icon. Some older versions of Opera have this problem. I think that&#8217;s a pretty small issue, though, since I&#8217;m not aware of any browsers (and certainly not any with more than negligible market share) that fit that description. Also, it could be argued that it&#8217;s not worth it just to avoid using one small checkmark image. I don&#8217;t think that&#8217;s necessarily true, but it is something to consider (for reference, the css code that created the icons is .57kb when compressed).</p>
+<p>Overall, though, I think it&#8217;s a stylish, imageless touch that could fit well into a lot of design situations. It&#8217;s a creative use of CSS3, it doesn&#8217;t require extra markup, and it degrades with near perfect gracefulness, so overall I&#8217;m proud of the idea and think it&#8217;s pretty robust.</p>
+<p>What are your thoughts? Do you think it&#8217;s a good idea? I&#8217;m looking forward to your feedback!</p>
+</div>
+		<div class="after-post">
+			<div class="social-vote">
+				<h2>Share It!</h2>
+
+<div><div class="g-plusone" data-size="tall"></div></div>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<div><su:badge layout="5"></su:badge></div>
+				
+<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/Share" data-counter="top"></script>
+
+<!-- Place this snippet wherever appropriate -->
+<script type="text/javascript">
+  (function() {
+    var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;
+    li.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//platform.stumbleupon.com/1/widgets.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);
+  })();
+</script>
+
+<br/><br/>
+<a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+											
+				<!--
+				<div><script src='http://widgets.digg.com/buttons.js' type='text/javascript'></script><a class='DiggThisButton DiggMedium' href='http://digg.com/submit?url=http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/&amp;title='Creating Fancy Checkmark Icons with Pure CSS3'></a></div>
+				<div><iframe src='http://api.tweetmeme.com/button.js?url=http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/&amp;source=&amp;style=normal' height='61' width='50' frameborder='0' scrolling='no'></iframe></div>
+				<div><script src="http://www.stumbleupon.com/hostedbadge.php?s=5&amp;r=http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/"></script></div>
+				<div><script type="text/javascript">url_site='http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/'; </script> <script src="http://designbump.com/sites/all/modules/drigg_external/js/button.js" type="text/javascript"></script></div>
+				<div class="custom-button"><a href="http://www.designfloat.com/submit.php?url=http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/&title=Creating Fancy Checkmark Icons with Pure CSS3"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/design-float.gif" alt="Vote up on Design Float!"/></a></div>
+				<div class="custom-button"><a href="http://delicious.com/post?url=http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/&title=Creating Fancy Checkmark Icons with Pure CSS3&notes=<p>I was recently working on a personal project where I wanted to implement some cool &#8220;checkmark&#8221; icons like you see at left to spice up my unordered lists. I could&#8217;ve done it quite easily with the list-style-image property, but I was trying to keep my images and http requests to a minimum, so I wanted [...]</p>
+"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/delicious.gif" alt="Bookmark on Delicious!"/></a></div>
+				-->
+				
+			</div>
+			<div class="author-info">
+				<h2>Written By <a href="http://webitect.net/" title="Visit Nick Parsons&#8217;s website" rel="author external">Nick Parsons</a></h2>
+				<img alt='' src='http://1.gravatar.com/avatar/bab845354b419bb5303944e44274dd98?s=120&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D120&amp;r=G' class='avatar avatar-120 photo' height='120' width='120' />				<p>Nick is the editor of Webitect and a developer + designer from Houston TX.</p>
+				<p class="clear"></p>
+			</div>
+		</div>
+		<div class="related-posts">
+			<h2>Looking for More?</h2>
+			<ul><li><h4><a href="http://webitect.net/design/designtutorials/6-smashingly-practical-css3-effects-you-can-use-right-now/" rel="bookmark" title="February 25, 2010">6 Smashingly Practical CSS3 Effects You Can Use Right Now</a></h4><a href="http://webitect.net/design/designtutorials/6-smashingly-practical-css3-effects-you-can-use-right-now/" class="thumbnail"><img class="alignnone size-full wp-image-8000" title="css3" src="http://webitect.net/wp-content/uploads/2010/02/css32.jpg" alt="css3" width="200" height="200" /></a> CSS3 is developing fast, and the most exciting part is seeing all of the intriguing and attractive ...</li>
+
+<li><h4><a href="http://webitect.net/design/5-little-things-to-spice-up-any-design/" rel="bookmark" title="January 10, 2009">5 Little Things to Spice up Any Design</a></h4><a href="http://webitect.net/design/5-little-things-to-spice-up-any-design/" class="thumbnail"><img class="aligncenter size-large wp-image-535" title="wwdscreen" src="http://webitect.net/wp-content/uploads/2009/01/wwdscreen-1024x516.jpg" alt="wwdscreen" width="573" height="289" /></a>Attention to detail is the best policy for making great designs. It's fairly easy to get a basic CSS...</li>
+
+<li><h4><a href="http://webitect.net/design/grunge-web-design-tutorial/" rel="bookmark" title="April 16, 2009">Grunge Web Design Tutorial</a></h4><a href="http://webitect.net/design/grunge-web-design-tutorial/" class="thumbnail"><img class="alignnone size-full wp-image-1638" title="The Grid" src="http://webitect.net/wp-content/uploads/2009/04/17.jpg" alt="The Grid" width="450" height="453" /></a>Grudge style is meant to be quite the opposite of the Web 2.0 Style Design: dirty, and irregular. Of...</li>
+<li class="clear"></li></ul><!-- Similar Posts took 18.392 ms -->			<p class="clear"></p>
+		</div>
+		
+<!-- You can start editing here. -->
+
+	<h2 id="comments"><a name="comments">73 Comments</a></h2>
+
+	<ol class="commentlist">
+
+	
+		
+		<li id="comment-16387" class="">
+			<a href="http://www.simerabrandmedia.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/8c6836111a0c6b542b149b74ffc8158f?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.simerabrandmedia.com' rel='external nofollow' class='url'>Jay</a></h4>
+			<small class="comment-meta">June 15th, 2010 at 06:59 pm </small>
+			<p class="comment-text"><p>Awesome technique. As always so unselfish, thanks for sharing. J</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16388" class="">
+			<a href="http://billcreswell.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/b9ab8d6314cc941934c8bef2eb7d9611?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://billcreswell.com' rel='external nofollow' class='url'>Bill</a></h4>
+			<small class="comment-meta">June 15th, 2010 at 07:10 pm </small>
+			<p class="comment-text"><p>Fun Stuff. The code example is missing a comment block terminator on the &#8220;position it on top of the circle&#8221;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16389" class="admin">
+			<a href="http://templatehound.net/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/bab845354b419bb5303944e44274dd98?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://templatehound.net/' rel='external nofollow' class='url'>Nick Parsons</a></h4>
+			<small class="comment-meta">June 15th, 2010 at 07:29 pm </small>
+			<p class="comment-text"><p>@Jay &#8211; Thanks, man, glad you enjoyed!</p>
+<p>@Bill &#8211; Good catch, it&#8217;s fixed now.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16390" class="">
+			<a href="http://billcreswell.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/b9ab8d6314cc941934c8bef2eb7d9611?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://billcreswell.com' rel='external nofollow' class='url'>Bill</a></h4>
+			<small class="comment-meta">June 15th, 2010 at 07:40 pm </small>
+			<p class="comment-text"><p>It&#8217;s cool and twisted. If it were class based, it could be used with red x&#8217;s, or blank and checked, for applications&#8230;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16393" class="">
+			<a href="http://fecundvs.info" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/c4aa93d6da8cf0a84a4462e65c3470d2?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://fecundvs.info' rel='external nofollow' class='url'>Fecundvs</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 04:13 am </small>
+			<p class="comment-text"><p>I like this, although I think in practice I would just use an image for this type of list (one single image for all items).  I agree with Bill that it becomes more useful with classes to have different icons and it would be even better for a numbered list where images for each item becomes impractical (1, 2, 3 or 10, 20, 30 or A, B, C etc) especially if you want numbers out of order (3, 4, 1, 2 for example).</p>
+<p>Thanks.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16394" class="">
+			<a href="http://jacobdubail.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/c97dea97e5bb7ec6fbcf97c137f4d1ff?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://jacobdubail.com' rel='external nofollow' class='url'>Jacob</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 08:25 am </small>
+			<p class="comment-text"><p>That&#8217;s pretty slick.  Nice work.  I can definitely think of a few ways to mod this to meet my &#8216;needs&#8217;.  Thanks.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16395" class="">
+			<a href="http://azzcatdesign.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/b71e4a8817979bc3ca9893e052ad7f33?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://azzcatdesign.com' rel='external nofollow' class='url'>Catherine Azzarello</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 10:45 am </small>
+			<p class="comment-text"><p>Really cool puzzle solving! Isn&#8217;t CSS a fun game? <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16396" class="">
+			<a href="" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/b55d0c7e7558bad510fbfba819fa5330?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4>ErnieChiara</h4>
+			<small class="comment-meta">June 16th, 2010 at 11:23 am </small>
+			<p class="comment-text"><p>I agree with Fecundvs. While the realm of possibilities has continued to expand through CSS3 (which is exciting), IMHO using a simple image of only a few kb in this instance would not only suffice, but could be made as &#8216;fancy&#8217; as you like and be viewed in all browsers. Thus is really nice work, though, and could be very useful for numbered lists, etc. as Fecundvs points out. Thanks for sharing! Keep up the good work!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16398" class="">
+			<a href="http://cssfactory.net" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/31f42643f11fd51e7d8c0fe665bf30c8?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://cssfactory.net' rel='external nofollow' class='url'>Cosmin Negoita</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 12:19 pm </small>
+			<p class="comment-text"><p>I&#8217;m actually loving this tutorial. It&#8217;s simple but still effecting and good looking. Thank you!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16399" class="">
+			<a href="http://twitter.com/digideth" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/6ba358f9fe75e6845ea8d40f40a9914d?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://twitter.com/digideth' rel='external nofollow' class='url'>B. Moore</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 01:22 pm </small>
+			<p class="comment-text"><p>No live demo?<br />
+I see you have check marks on your site here but they are not the css3 version.<br />
+What better demo than using it on your own site&#8230;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16400" class="admin">
+			<a href="http://templatehound.net/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/bab845354b419bb5303944e44274dd98?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://templatehound.net/' rel='external nofollow' class='url'>Nick Parsons</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 01:32 pm </small>
+			<p class="comment-text"><p>@Bill &#8211; That&#8217;s a great idea. I might post a follow up with some more varieties included.</p>
+<p>@Fecundvs and @ErnieChiara &#8211;  You&#8217;re absolutely right. It&#8217;s an interesting possibility, but in a some cases would just not be worth the trouble. I&#8217;m glad you liked the idea, though!</p>
+<p>@Catherine Azzarello &#8211; Sure is! I love seeing all the cool things that can be done with it.</p>
+<p>@B. Moore &#8211; I actually created this for a ThemeForest template I&#8217;m working on, so you&#8217;ll be able to check it out live once I get that finished.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16402" class="">
+			<a href="http://knowledgecity.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/627edc5e5cbf175c7dfcc4ec1ad38677?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://knowledgecity.com' rel='external nofollow' class='url'>Jae Xavier</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 05:43 pm </small>
+			<p class="comment-text"><p>Cool tutorial. Can&#8217;t wait to try it out.</p>
+<p>Thanks <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16404" class="">
+			<a href="http://beben-koben.blogspot.com/" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/cf9cb254911bfdde830be11e164db78f?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://beben-koben.blogspot.com/' rel='external nofollow' class='url'>Beben</a></h4>
+			<small class="comment-meta">June 16th, 2010 at 11:07 pm </small>
+			<p class="comment-text"><p>i am agree with B.Moore, its not work in HTML Editor my friend (what&#8217;s wrong?)<br />
+may be..:D</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16406" class="">
+			<a href="http://webstandard.kulando.de" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/e4c1ca4600322a8eab58c74c3431f8ba?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://webstandard.kulando.de' rel='external nofollow' class='url'>Webstandard-Blog</a></h4>
+			<small class="comment-meta">June 17th, 2010 at 02:20 am </small>
+			<p class="comment-text"><p>The pure css social media icons of Nicolas Gallagher are awesome, that&#8217;s true. But 20KB (CSS-File) only for some icons? That&#8217;s a little bit to much, or not? Sprite-Grafic for the Icons and some CSS-lines, is definitely less than 20KB.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16410" class="">
+			<a href="http://wups.nl/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/1f623281c9979885b9abefb2151839d6?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://wups.nl/' rel='external nofollow' class='url'>Jaap</a></h4>
+			<small class="comment-meta">June 18th, 2010 at 09:25 am </small>
+			<p class="comment-text"><p>Why didn&#8217;t you use some UTF8 special characters? Most browsers should be OK with that now, that way, you can delete the whole :after thing at the end and just use this: (Hope it correctly displays this in the comment.)</p>
+<p><code>body:nth-of-type(1) ul li:before{<br />
+	/*fill it with a check mark*/<br />
+	content:"?";<br />
+    color: snow;<br />
+    background-color: black;<br />
+    padding: 4px;</p>
+<p>	/*make it a block element*/<br />
+	display: block;</p>
+<p>	border-radius: 25px;<br />
+	-moz-border-radius: 25px;<br />
+	-webkit-border-radius: 25px;</p>
+<p>	/*Now position it on the left of the list item, and center it vertically<br />
+	(so that it will work with multiple line list-items)*/<br />
+	position: absolute;<br />
+	left: 7px;<br />
+	top: 40%;<br />
+	margin-top: -8px;<br />
+}</code></p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16411" class="">
+			<a href="http://wups.nl/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/1f623281c9979885b9abefb2151839d6?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://wups.nl/' rel='external nofollow' class='url'>Jaap</a></h4>
+			<small class="comment-meta">June 18th, 2010 at 09:31 am </small>
+			<p class="comment-text"><p>One additional remark I forgot to make in my previous comment: you can then use either ? or ? as checkmark. And it also gives you the option to create an additional class which shows a (red) mark, for instance one of these: ?, ?, ?.</p>
+<p>(I was a bit shocked to see that you were doing so much work just to create a check mark, nonetheless, it is very creatively thought of and made!)</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16441" class="admin">
+			<a href="http://templatehound.net/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/bab845354b419bb5303944e44274dd98?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://templatehound.net/' rel='external nofollow' class='url'>Nick Parsons</a></h4>
+			<small class="comment-meta">July 2nd, 2010 at 12:03 pm </small>
+			<p class="comment-text"><p>@Webstandard-Blog &#8211; I wasn&#8217;t suggesting that Gallagher&#8217;s icons were good for practical use, merely stating that they were a creative experiment. You&#8217;re right, they&#8217;re rather overboard for real-life use when an image would be much smaller and would work cross-browser.</p>
+<p>@Jaap &#8211; That&#8217;s an excellent point, I&#8217;m not sure why I didn&#8217;t think of that. Guess I just had one of those &#8220;duh&#8221; moments. Thanks for mentioning it! That certainly makes the technique a lot more widely useful.  Good thinking <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16458" class="">
+			<a href="http://www.extension-developer.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/37cfa56d2cd9b4a8ab50043724cd3746?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.extension-developer.com' rel='external nofollow' class='url'>Joomla Web Developers</a></h4>
+			<small class="comment-meta">July 20th, 2010 at 11:27 pm </small>
+			<p class="comment-text"><p>good stuff of css but the code is bit long for the 20 KB thing..can any body make it little bit less lines of coding for me here&#8230;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16472" class="">
+			<a href="http://www.module-node.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/37cfa56d2cd9b4a8ab50043724cd3746?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.module-node.com' rel='external nofollow' class='url'>Drupal Web Developers</a></h4>
+			<small class="comment-meta">July 26th, 2010 at 07:13 am </small>
+			<p class="comment-text"><p>Thanks for the coding jaap,i was looking for some one to answer differently you made it here,i learnt how to implement some special characters into the coding part..</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16487" class="">
+			<a href="http://desperatelyseekingwp.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/16ed25a57ebf7b4e53a646f73cb2594f?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://desperatelyseekingwp.com' rel='external nofollow' class='url'>cathy tibbles</a></h4>
+			<small class="comment-meta">August 17th, 2010 at 10:56 am </small>
+			<p class="comment-text"><p>Very good tutorial and easy to follow.  Thankyou.  (Not sure its practical, but who cares?)  <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16489" class="">
+			<a href="http://justinledelson.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/206e0c1c2a913c9b1fc7ea4720be26cc?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://justinledelson.com' rel='external nofollow' class='url'>Justin</a></h4>
+			<small class="comment-meta">August 18th, 2010 at 01:30 pm </small>
+			<p class="comment-text"><p>AWESOME tut. Just discovered this site and I think I will take a look around. <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16519" class="">
+			<a href="http://www.simpsoncrazy.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/6285ff8f79ce11a5c9161011137258bc?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.simpsoncrazy.com' rel='external nofollow' class='url'>Scott</a></h4>
+			<small class="comment-meta">September 4th, 2010 at 07:25 am </small>
+			<p class="comment-text"><p>Ha, this first thing I thought when I started reading was &#8220;why not use UTF8?&#8221; As Jaap pointed out there are several &#8220;Wingdings&#8221; in Unicode. The first port of call any time you want to insert a symbol like that should be your Character Map <img src='http://webitect.net/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>In addition to ? and ? there are even &#8220;ready-boxed&#8221; checks: ? and ?</p>
+<p>Peace out y&#8217;all ?</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16521" class="">
+			<a href="http://blog.elemedu.gr" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/5766be237a14a328f7024908c06ff0a5?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://blog.elemedu.gr' rel='external nofollow' class='url'>harryplusk</a></h4>
+			<small class="comment-meta">September 4th, 2010 at 07:40 am </small>
+			<p class="comment-text"><p>*p.s. The HTML code of the reference part is &#8220;Unordered list: Short items&#8221; and look like this (i deleted the  signs):<br />
+ul<br />
+	li Bethel Park schools: Readin&#8217; and writin&#8217; and iPads [<a href="http://www.post-gazette.com/pg/10245/1084330-55.stm" rel="nofollow">post-gazette.com</a>] /li<br />
+	li Explore Space with NASA HD for iPad [<a href="http://mashable.com/2010/09/03/nasa-hd-ipad/" rel="nofollow">mashable</a>] /li<br />
+/ul</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16522" class="">
+			<a href="http://corydorning.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/7d8d53be7476d9e29a0aeeba33876f11?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://corydorning.com' rel='external nofollow' class='url'>Cory</a></h4>
+			<small class="comment-meta">September 4th, 2010 at 10:21 am </small>
+			<p class="comment-text"><p>Excellent article and inspiring. Based on some of the comments, I took my shot at extending it and it appears to work rather well.</p>
+<p><a href="http://corydorning.com/blog/creating-list-icons-pure-css3" rel="nofollow">http://corydorning.com/blog/creating-list-icons-pure-css3</a></p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16526" class="">
+			<a href="http://thomasrstegelmann.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/da85353c58c0d9e10a70a00795339069?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://thomasrstegelmann.com' rel='external nofollow' class='url'>Thomas</a></h4>
+			<small class="comment-meta">September 5th, 2010 at 06:53 am </small>
+			<p class="comment-text"><p>While I like digging into new techniques such this one, I would consider list-style-image as better choice to create this effect. Less risky, less code and after all much simpler to use.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16540" class="">
+			<a href="" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/a94f225cdd86ff7e65c255e2a4e624ad?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4>Jessicashen</h4>
+			<small class="comment-meta">September 17th, 2010 at 01:38 am </small>
+			<p class="comment-text"><p>AWESOME tut. Just discovered this site and I think I will take a look around. Fun Game,isn&#8217;t it ?</p>
+<p>there is a good website to buy your favoruite sports shoes amd branded clothes<br />
+<a href="http://www.ajfshoes.com" rel="nofollow">http://www.ajfshoes.com</a></p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16543" class="">
+			<a href="http://www.greengoatmedia.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/2c820f7a03353cb2bec0c3228ea154d6?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.greengoatmedia.com' rel='external nofollow' class='url'>Robert Tobys</a></h4>
+			<small class="comment-meta">September 20th, 2010 at 10:21 am </small>
+			<p class="comment-text"><p>Great tut. This was just what I needed. Thanks for sharing!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16681" class="">
+			<a href="" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/7962e015ae511e679f16912fd6df77c4?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4>thomas</h4>
+			<small class="comment-meta">January 25th, 2011 at 07:41 am </small>
+			<p class="comment-text"><p>No live demo? <img src='http://webitect.net/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16754" class="">
+			<a href="http://www.veztekusa.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/9c096745a2372a5ac30b4b64caa854d9?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.veztekusa.com' rel='external nofollow' class='url'>Faraz</a></h4>
+			<small class="comment-meta">March 20th, 2011 at 04:07 am </small>
+			<p class="comment-text"><p>I like the way of explaining in  this tutorial,very resourceful and useful post for css beginners and even experts.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16798" class="">
+			<a href="http://www.pxlefx.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/f902666142555acb3fed3fccfeefe8ba?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.pxlefx.com' rel='external nofollow' class='url'>Raju</a></h4>
+			<small class="comment-meta">May 2nd, 2011 at 07:36 am </small>
+			<p class="comment-text"><p>Really super posting&#8230;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16801" class="">
+			<a href="" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/6fe12fefacb3f28dc086c56c19b26ab2?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4>Lance</h4>
+			<small class="comment-meta">May 8th, 2011 at 01:06 pm </small>
+			<p class="comment-text"><p>The ? ? ? ? or ? Jaap suggests is more elegant.  Another step would be to attach a custom font containing just  the few bullet characters.  In that case you could even redefine x and y as ? and ?.  The extra file weight would be minimal especially in you used the technique for other icons.</p>
+<p>body:nth-of-type(1) ul li:before{<br />
+content:&#8221;x&#8221;;<br />
+font-family: &#8220;MyIcons&#8221;;<br />
+display: block;<br />
+border: solid 9px #000;<br />
+border-radius: 9px;<br />
+-moz-border-radius: 9px;<br />
+-webkit-border-radius: 9px;<br />
+height: 0;<br />
+width: 0;<br />
+position: absolute;<br />
+left: 7px;<br />
+top: 40%;<br />
+margin-top: -8px;<br />
+}</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16867" class="">
+			<a href="http://www.webdesign-ieftin.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/8767918c5e0ac3768da38ebdf80969c1?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.webdesign-ieftin.com' rel='external nofollow' class='url'>designarti</a></h4>
+			<small class="comment-meta">July 25th, 2011 at 12:22 am </small>
+			<p class="comment-text"><p>So many characters to use and get wonderful effects with the rotate option&#8230;<br />
+Excellent technique!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16887" class="">
+			<a href="http://www.loadingicon.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/80b45e06e63dc0e35d87b5a8f15cf7b0?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.loadingicon.com' rel='external nofollow' class='url'>Luke</a></h4>
+			<small class="comment-meta">August 15th, 2011 at 03:11 pm </small>
+			<p class="comment-text"><p>Amazing what can be done with css now ie has stopped holding back web development.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-16892" class="">
+			<a href="http://bsalva.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/5b080d177e4c6e4dfb75fec417a2b520?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://bsalva.com' rel='external nofollow' class='url'>Bryan Salva</a></h4>
+			<small class="comment-meta">August 19th, 2011 at 11:20 am </small>
+			<p class="comment-text"><p>Neither these icons or Gallagher&#8217;s social icons are practical yet (except possibly in some mobile applications) thanks to browser differences. That being said they look great, are coded well and make for an awesome concept. Good work!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17186" class="">
+			<a href="http://thebasementofthealamo.com/" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/4b4696779d8f5e8a4a4f4b09d4d67c28?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://thebasementofthealamo.com/' rel='external nofollow' class='url'>Mark</a></h4>
+			<small class="comment-meta">March 22nd, 2012 at 09:27 am </small>
+			<p class="comment-text"><p>Great demo. It&#8217;s amazing how a few simple images can clean up the page design.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17196" class="">
+			<a href="http://www.plaidpony.com/blog" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/a9520af63f2c52fbefd0c618050f44e1?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.plaidpony.com/blog' rel='external nofollow' class='url'>Derek</a></h4>
+			<small class="comment-meta">April 8th, 2012 at 06:23 pm </small>
+			<p class="comment-text"><p>One item to note&#8211;when I tried this in IE9, the checkmark wasn&#8217;t rotated.  After adding &#8220;-ms-transform: rotate(45deg);&#8221;, everything worked like a charm.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17206" class="">
+			<a href="http://www.sonna.com.br" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/9615be44cec222467f5890207e15462e?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.sonna.com.br' rel='external nofollow' class='url'>Agência de comunicação Sonna Creative</a></h4>
+			<small class="comment-meta">April 26th, 2012 at 04:31 pm </small>
+			<p class="comment-text"><p>Great! Very interesting!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17209" class="">
+			<a href="http://www.icongalore.com/software-icons/clock-icons.htm" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/232b968683f9b8b6ca81ff9a468121b3?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.icongalore.com/software-icons/clock-icons.htm' rel='external nofollow' class='url'>bellakristen</a></h4>
+			<small class="comment-meta">April 30th, 2012 at 03:37 am </small>
+			<p class="comment-text"><p>I Love the way you designed.Really impressive.Good!</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17226" class="">
+			<a href="http://www.csshtml.co" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/aee05164fef9d1102f378a4faa7ffd34?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.csshtml.co' rel='external nofollow' class='url'>Gautam Lakum</a></h4>
+			<small class="comment-meta">May 12th, 2012 at 05:29 am </small>
+			<p class="comment-text"><p>Really helpful. I was bored using default check icons. will try this <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17231" class="">
+			<a href="http://www.pollence.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/e1d8a6957853195ba95412b9927307ff?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.pollence.com' rel='external nofollow' class='url'>Adam Zoa</a></h4>
+			<small class="comment-meta">May 31st, 2012 at 05:48 am </small>
+			<p class="comment-text"><p>Well narrated information and it&#8217;s very good idea. Also it&#8217;ll will help in making awesome check icons. As soon as possible i&#8217;d like to implement this. Thanks Nick.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17343" class="">
+			<a href="" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/76a0cef13a2c2f2d2a73fc241248bd81?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4>reihhana</h4>
+			<small class="comment-meta">August 14th, 2012 at 09:19 pm </small>
+			<p class="comment-text"><p>I ve just started learning CSS3 &#8230; it s much funner than CSS &#8230; you can creat bunch of thing using coding only ! Thanks a lot</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17468" class="">
+			<a href="http://www.jeffwoodruff.net" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/1bc7f2b9496783e6aeef0a180b71cadc?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.jeffwoodruff.net' rel='external nofollow' class='url'>Jeff Woodruff</a></h4>
+			<small class="comment-meta">September 19th, 2012 at 08:19 pm </small>
+			<p class="comment-text"><p>This tutorial will definitely come in handy. I never realized you could do this will straight up css3. Thanks for sharing.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17895" class="">
+			<a href="http://Jupitercow.com/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/195b9ae17f2e286743d7af729f7ed4a7?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://Jupitercow.com/' rel='external nofollow' class='url'>Jake</a></h4>
+			<small class="comment-meta">October 28th, 2012 at 08:40 pm </small>
+			<p class="comment-text"><p>Thanks! This is fantastic. Really great idea.</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-17916" class="">
+			<a href="http://tekbrand.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/ff9e508efbe3df7a3df8729fd8ca9697?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://tekbrand.com' rel='external nofollow' class='url'>Vipul</a></h4>
+			<small class="comment-meta">November 16th, 2012 at 05:25 am </small>
+			<p class="comment-text"><p>Grete post. Thank you for sharing this information</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18044" class="">
+			<a href="http://travelkaohsiung.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/4781c1bc5899388d7bcdba57fc90239e?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://travelkaohsiung.com' rel='external nofollow' class='url'>David</a></h4>
+			<small class="comment-meta">December 24th, 2012 at 08:00 am </small>
+			<p class="comment-text"><p>Great tut, just what I was looking for. Thanks</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18080" class="">
+			<a href="http://www.gute-mathe-fragen.de/" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/2331416004a3c75ab51daabaa4a8a4e3?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.gute-mathe-fragen.de/' rel='external nofollow' class='url'>Gute-Mathe-Fragen</a></h4>
+			<small class="comment-meta">January 18th, 2013 at 05:41 am </small>
+			<p class="comment-text"><p>What a great idea to make a checkmark by rotating it, brilliant!</p>
+<p>For guys who need a demo, check <a href="http://jsfiddle.net/9Euyp/" rel="nofollow">http://jsfiddle.net/9Euyp/</a></p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18213" class="">
+			<a href="http://geekszine.com" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/eac9331f58a625d1e64cd263dd7c2cbc?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://geekszine.com' rel='external nofollow' class='url'>Moazam</a></h4>
+			<small class="comment-meta">April 16th, 2013 at 08:02 am </small>
+			<p class="comment-text"><p>Thanks Gute! I was looking for demo <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  This link should be inside the post <img src='http://webitect.net/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18322" class="">
+			<a href="http://www.henryfamilcomputers.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/15812d45fa83b6e8f2729300b904016e?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.henryfamilcomputers.com' rel='external nofollow' class='url'>Takagami</a></h4>
+			<small class="comment-meta">October 13th, 2013 at 03:17 pm </small>
+			<p class="comment-text"><p>The problem I am running into is using this code on a site, like wordpress. The theme I am using makes heavy use of  and  elements all throughout the page. When I use this code, even embeded on one page, it applies to all of the  and  elements. How would I go about using this on only 5  elements and not the other 35 on the page?</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18323" class="">
+			<a href="http://www.henryfamilcomputers.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/15812d45fa83b6e8f2729300b904016e?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.henryfamilcomputers.com' rel='external nofollow' class='url'>Takagami</a></h4>
+			<small class="comment-meta">October 13th, 2013 at 03:24 pm </small>
+			<p class="comment-text"><p>There should be some ul&#8217;s and li&#8217;s in there&#8230; you really should have a preview option for comments&#8230;</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18324" class="">
+			<a href="http://blog.mindplay.dk/" rel="external nofollow" class="gravatar"><img alt='' src='http://0.gravatar.com/avatar/8ae7bce2d58740d9e5173e9cbdea0c4f?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://blog.mindplay.dk/' rel='external nofollow' class='url'>Rasmus Schultz</a></h4>
+			<small class="comment-meta">October 15th, 2013 at 10:01 am </small>
+			<p class="comment-text"><p>Man, that&#8217;s really creative <img src='http://webitect.net/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>This works too though:</p>
+<p>ul { list-style-type: none; }<br />
+ul &gt; li:before { content: &#8220;2714&#8243;; }</p>
+<p>Add a background/color/border-radius to the li-rule, and you&#8217;re done <img src='http://webitect.net/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18395" class="">
+			<a href="http://custom-web-designing.com" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/940fe95ed7f512a84d5649231965b8c8?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://custom-web-designing.com' rel='external nofollow' class='url'>Anil</a></h4>
+			<small class="comment-meta">December 12th, 2013 at 10:09 pm </small>
+			<p class="comment-text"><p>Here is simplest one:</p>
+<p>ul {padding-bottom:15px; padding-top:15px; position:relative;}<br />
+ul li{padding-left:25px; margin-bottom:5px;}<br />
+ul li:before{content: &#8220;\2713020&#8243;; color:#000000; background-color:#cccccc; border-radius:50%; text-align:center; padding-left:4px; padding-right:4px; position:absolute; left:0px; display:inline-block;}</p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+		
+		<li id="comment-18790" class="">
+			<a href="http://www.bojacksonshoes.com/" rel="external nofollow" class="gravatar"><img alt='' src='http://1.gravatar.com/avatar/fafdbc01cdeb1d79d2cc0a61f0dbecb8?s=90&amp;d=http%3A%2F%2Fwebitect.net%2Fwp-content%2Fthemes%2Fwebitect2%2Fimages%2Favatar.jpg%3Fs%3D90&amp;r=G' class='avatar avatar-90 photo' height='90' width='90' /></a>	
+			<h4><a href='http://www.bojacksonshoes.com/' rel='external nofollow' class='url'>bo jackson shoes for sale</a></h4>
+			<small class="comment-meta">August 17th, 2014 at 10:58 am </small>
+			<p class="comment-text"><p>Hermes Birkin Black Hardware <a href="http://centresportsetloisirs.com/images/user/e6fecc45f3834acbbd458eb7d4291375.asp" rel="nofollow">http://centresportsetloisirs.com/images/user/e6fecc45f3834acbbd458eb7d4291375.asp</a></p>
+</p>
+						<p class="clear"></p>
+		</li>
+
+	
+	</ol>
+
+ 
+
+
+<h2 id="respond">What Do You Think?</h2>
+
+<form action="http://webitect.net/wp-comments-post.php" method="post" id="commentform">
+
+	
+	<p><label for="author">Name</label>
+	<input type="text" name="author" id="author" value="" size="36" tabindex="1" class="input" /></p>
+
+	<p><label for="email">Email</label>
+	<input type="text" name="email" id="email" value="" size="36" tabindex="2" class="input" /></p>
+
+	<p><label for="url">URL</label>
+	<input type="text" name="url" id="url" value="" size="36" tabindex="3" class="input" /></p>
+
+		
+	<p><textarea name="comment" id="comment" cols="60" rows="7" tabindex="4"></textarea></p>
+
+	<p><input name="submit" type="submit"  id="comment-submit" class="button" tabindex="5" value="Submit" />
+	<input type="hidden" name="comment_post_ID" value="8429" />
+	</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c7c30d4c2d" /></p>
+</form>
+
+
+	</div>
+	</div>
+
+<div id="sidebar" class="single">
+    <div id="sponsors">
+	<a href='http://www.thiswebhost.com/clients/aff.php?aff=123' class='banner'><img src='http://www.thiswebhost.com/advertise/this_300.gif' alt='Awesome Web Hosting'/></a>
+	<a href="http://junkiee.net/" class="affiliate-banner"><img src="http://webitect.net/wp-content/uploads/2010/02/banner.jpg" border="0" alt="A Blog Built for Your Convenience!" /></a>
+<!-- BuySellAds.com Zone Code -->
+<div id="bsap_1244515" class="bsarocks bsap_67e665b14d66a42f42c7a46ae2b9333a"></div>
+<!-- END BuySellAds.com Zone Code -->
+  </div>
+  
+  <div id="browse" class="widget">
+	<ul id="tabs">
+		<li class="popular"><span>Popular</span></li>
+		<li class="tags"><span>Tags</span></li>
+		<li class="archives"><span>Archives</span></li>
+	</ul>
+	<ul id="tabs-content">
+		<li class="popular"><!-- Wordpress Popular Posts Plugin v2.2.1 [SC] [monthly] [custom] -->
+<ul>
+<li><a href="http://webitect.net/design/40-breathtaking-graphic-design-examples/" title="40 Breathtaking Graphic Design Examples"><img src="http://webitect.net/wp-content/plugins/wordpress-popular-posts/no_thumb.jpg" alt="40 Breathtaking Graphic Design Examples" border="0" class="wpp-thumbnail" width="35" height="35" /></a><a href="http://webitect.net/design/40-breathtaking-graphic-design-examples/" title="40 Breathtaking Graphic Design Examples"><span class="wpp-post-title">40 Breathtaking Graphic Design Examples</span></a> </li>
+<li><a href="http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/" title="Creating Fancy Checkmark Icons with Pure CSS3"><img width="35" height="35" src="http://webitect.net/wp-content/uploads/2010/06/bullets-150x150.jpg" class="wpp-thumbnail wp-post-image" alt="Creating Fancy Checkmark Icons with Pure CSS3" title="Creating Fancy Checkmark Icons with Pure CSS3" /></a><a href="http://webitect.net/design/webdesign/creating-fancy-bullet-points-with-pure-css3/" title="Creating Fancy Checkmark Icons with Pure CSS3"><span class="wpp-post-title">Creating Fancy Checkmark Icons with Pure CSS3</span></a> </li>
+<li><a href="http://webitect.net/development/phpmysql/create-an-impressive-content-editing-system-with-jquery-and-php/" title="Create an Impressive Content Editing System with jQuery and PHP"><img width="35" height="35" src="http://webitect.net/wp-content/uploads/2010/03/JQUERYPHP-150x150.jpg" class="wpp-thumbnail wp-post-image" alt="Create an Impressive Content Editing System with jQuery and PHP" title="Create an Impressive Content Editing System with jQuery and PHP" /></a><a href="http://webitect.net/development/phpmysql/create-an-impressive-content-editing-system-with-jquery-and-php/" title="Create an Impressive Content Editing System with jQuery and PHP"><span class="wpp-post-title">Create an Impressive Content Editing System with jQuery and PHP</span></a> </li>
+<li><a href="http://webitect.net/blogging/101-killer-wordpress-plugins-to-meet-anyones-needs/" title="101 Killer WordPress Plugins to Meet Anyone&#8217;s Needs"><img width="35" height="35" src="http://webitect.net/wp-content/uploads/2009/07/postimg6-150x150.jpg" class="wpp-thumbnail wp-post-image" alt="101 Killer WordPress Plugins to Meet Anyone&#8217;s Needs" title="101 Killer WordPress Plugins to Meet Anyone&#8217;s Needs" /></a><a href="http://webitect.net/blogging/101-killer-wordpress-plugins-to-meet-anyones-needs/" title="101 Killer WordPress Plugins to Meet Anyone&#8217;s Needs"><span class="wpp-post-title">101 Killer WordPress Plugins to Meet Anyone&#8217;s Needs</span></a> </li>
+<li><a href="http://webitect.net/freelancing/5-habits-to-help-you-complete-your-project-in-record-time/" title="5 Habits to Help You Complete Your Project in Record Time"><img width="35" height="35" src="http://webitect.net/wp-content/uploads/2009/08/postimg9-150x150.jpg" class="wpp-thumbnail wp-post-image" alt="5 Habits to Help You Complete Your Project in Record Time" title="5 Habits to Help You Complete Your Project in Record Time" /></a><a href="http://webitect.net/freelancing/5-habits-to-help-you-complete-your-project-in-record-time/" title="5 Habits to Help You Complete Your Project in Record Time"><span class="wpp-post-title">5 Habits to Help You Complete Your Project in Record Time</span></a> </li>
+</ul>
+<!-- End Wordpress Popular Posts Plugin v2.2.1 -->
+</li>
+		<li class="tags"><a href='http://webitect.net/tag/amazing/' class='tag-link-23' title='4 topics' style='font-size: 12.2777777778pt;'>amazing</a>
+<a href='http://webitect.net/tag/art/' class='tag-link-69' title='3 topics' style='font-size: 10.3333333333pt;'>art</a>
+<a href='http://webitect.net/tag/business/' class='tag-link-25' title='3 topics' style='font-size: 10.3333333333pt;'>Business</a>
+<a href='http://webitect.net/tag/client-area/' class='tag-link-63' title='2 topics' style='font-size: 8pt;'>client area</a>
+<a href='http://webitect.net/tag/clients/' class='tag-link-60' title='3 topics' style='font-size: 10.3333333333pt;'>clients</a>
+<a href='http://webitect.net/tag/coding/' class='tag-link-52' title='4 topics' style='font-size: 12.2777777778pt;'>coding</a>
+<a href='http://webitect.net/tag/collaboration/' class='tag-link-75' title='4 topics' style='font-size: 12.2777777778pt;'>collaboration</a>
+<a href='http://webitect.net/tag/communication/' class='tag-link-61' title='5 topics' style='font-size: 13.8333333333pt;'>communication</a>
+<a href='http://webitect.net/tag/css/' class='tag-link-71' title='4 topics' style='font-size: 12.2777777778pt;'>css</a>
+<a href='http://webitect.net/tag/css3/' class='tag-link-155' title='2 topics' style='font-size: 8pt;'>css3</a>
+<a href='http://webitect.net/tag/design/' class='tag-link-3' title='12 topics' style='font-size: 20.25pt;'>Design</a>
+<a href='http://webitect.net/tag/designers/' class='tag-link-109' title='5 topics' style='font-size: 13.8333333333pt;'>designers</a>
+<a href='http://webitect.net/tag/designs/' class='tag-link-17' title='2 topics' style='font-size: 8pt;'>designs</a>
+<a href='http://webitect.net/tag/development/' class='tag-link-24' title='2 topics' style='font-size: 8pt;'>Development</a>
+<a href='http://webitect.net/tag/display/' class='tag-link-47' title='3 topics' style='font-size: 10.3333333333pt;'>display</a>
+<a href='http://webitect.net/tag/free/' class='tag-link-40' title='4 topics' style='font-size: 12.2777777778pt;'>free</a>
+<a href='http://webitect.net/tag/freelancing/' class='tag-link-12' title='7 topics' style='font-size: 16.1666666667pt;'>Freelancing</a>
+<a href='http://webitect.net/tag/graphic/' class='tag-link-21' title='5 topics' style='font-size: 13.8333333333pt;'>graphic</a>
+<a href='http://webitect.net/tag/inspiration/' class='tag-link-18' title='13 topics' style='font-size: 21.0277777778pt;'>inspiration</a>
+<a href='http://webitect.net/tag/javascript/' class='tag-link-51' title='4 topics' style='font-size: 12.2777777778pt;'>javascript</a>
+<a href='http://webitect.net/tag/jquery/' class='tag-link-10' title='2 topics' style='font-size: 8pt;'>jQuery</a>
+<a href='http://webitect.net/tag/marketing/' class='tag-link-112' title='2 topics' style='font-size: 8pt;'>marketing</a>
+<a href='http://webitect.net/tag/mysql/' class='tag-link-64' title='2 topics' style='font-size: 8pt;'>mysql</a>
+<a href='http://webitect.net/tag/photography/' class='tag-link-68' title='2 topics' style='font-size: 8pt;'>photography</a>
+<a href='http://webitect.net/tag/photoshop/' class='tag-link-14' title='4 topics' style='font-size: 12.2777777778pt;'>Photoshop</a>
+<a href='http://webitect.net/tag/php/' class='tag-link-62' title='4 topics' style='font-size: 12.2777777778pt;'>PHP</a>
+<a href='http://webitect.net/tag/portfolio/' class='tag-link-46' title='4 topics' style='font-size: 12.2777777778pt;'>portfolio</a>
+<a href='http://webitect.net/tag/resources/' class='tag-link-37' title='4 topics' style='font-size: 12.2777777778pt;'>resources</a>
+<a href='http://webitect.net/tag/showcase/' class='tag-link-84' title='5 topics' style='font-size: 13.8333333333pt;'>showcase</a>
+<a href='http://webitect.net/tag/techniques/' class='tag-link-73' title='5 topics' style='font-size: 13.8333333333pt;'>techniques</a>
+<a href='http://webitect.net/tag/themes/' class='tag-link-39' title='2 topics' style='font-size: 8pt;'>themes</a>
+<a href='http://webitect.net/tag/time-management/' class='tag-link-95' title='4 topics' style='font-size: 12.2777777778pt;'>time management</a>
+<a href='http://webitect.net/tag/tools/' class='tag-link-144' title='3 topics' style='font-size: 10.3333333333pt;'>tools</a>
+<a href='http://webitect.net/tag/tutorial/' class='tag-link-65' title='5 topics' style='font-size: 13.8333333333pt;'>tutorial</a>
+<a href='http://webitect.net/tag/tutorials/' class='tag-link-74' title='5 topics' style='font-size: 13.8333333333pt;'>tutorials</a>
+<a href='http://webitect.net/tag/typography/' class='tag-link-22' title='5 topics' style='font-size: 13.8333333333pt;'>typography</a>
+<a href='http://webitect.net/tag/usability/' class='tag-link-66' title='2 topics' style='font-size: 8pt;'>usability</a>
+<a href='http://webitect.net/tag/user-centric/' class='tag-link-50' title='2 topics' style='font-size: 8pt;'>user-centric</a>
+<a href='http://webitect.net/tag/vector/' class='tag-link-153' title='2 topics' style='font-size: 8pt;'>vector</a>
+<a href='http://webitect.net/tag/web/' class='tag-link-56' title='2 topics' style='font-size: 8pt;'>web</a>
+<a href='http://webitect.net/tag/web-design/' class='tag-link-44' title='15 topics' style='font-size: 22pt;'>web design</a>
+<a href='http://webitect.net/tag/web-designers/' class='tag-link-110' title='3 topics' style='font-size: 10.3333333333pt;'>web designers</a>
+<a href='http://webitect.net/tag/web-designs/' class='tag-link-117' title='2 topics' style='font-size: 8pt;'>web designs</a>
+<a href='http://webitect.net/tag/wordpress/' class='tag-link-38' title='2 topics' style='font-size: 8pt;'>wordpress</a>
+<a href='http://webitect.net/tag/work/' class='tag-link-48' title='5 topics' style='font-size: 13.8333333333pt;'>work</a></li>
+		<li class="archives"><ul>	<li><a href='http://webitect.net/2013/03/' title='March 2013'>March 2013</a></li>
+	<li><a href='http://webitect.net/2013/02/' title='February 2013'>February 2013</a></li>
+	<li><a href='http://webitect.net/2012/12/' title='December 2012'>December 2012</a></li>
+	<li><a href='http://webitect.net/2012/11/' title='November 2012'>November 2012</a></li>
+	<li><a href='http://webitect.net/2012/10/' title='October 2012'>October 2012</a></li>
+	<li><a href='http://webitect.net/2012/08/' title='August 2012'>August 2012</a></li>
+	<li><a href='http://webitect.net/2010/08/' title='August 2010'>August 2010</a></li>
+	<li><a href='http://webitect.net/2010/06/' title='June 2010'>June 2010</a></li>
+	<li><a href='http://webitect.net/2010/04/' title='April 2010'>April 2010</a></li>
+	<li><a href='http://webitect.net/2010/03/' title='March 2010'>March 2010</a></li>
+	<li><a href='http://webitect.net/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://webitect.net/2010/01/' title='January 2010'>January 2010</a></li>
+	<li><a href='http://webitect.net/2009/11/' title='November 2009'>November 2009</a></li>
+	<li><a href='http://webitect.net/2009/10/' title='October 2009'>October 2009</a></li>
+	<li><a href='http://webitect.net/2009/09/' title='September 2009'>September 2009</a></li>
+	<li><a href='http://webitect.net/2009/08/' title='August 2009'>August 2009</a></li>
+	<li><a href='http://webitect.net/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://webitect.net/2009/06/' title='June 2009'>June 2009</a></li>
+	<li><a href='http://webitect.net/2009/05/' title='May 2009'>May 2009</a></li>
+	<li><a href='http://webitect.net/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://webitect.net/2009/03/' title='March 2009'>March 2009</a></li>
+	<li><a href='http://webitect.net/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://webitect.net/2009/01/' title='January 2009'>January 2009</a></li>
+	<li><a href='http://webitect.net/2008/12/' title='December 2008'>December 2008</a></li>
+	<li><a href='http://webitect.net/2008/11/' title='November 2008'>November 2008</a></li>
+</ul><p class="clear"></p></li>
+		<li class="clear"></li>
+	</ul>
+  </div>
+  <p style="margin-bottom:1em;"><a href='http://themeforest.net?ref=Webitect' class='banner'><img src='http://webitect.net/wp-content/uploads/2010/04/themeforest.gif' alt="Awesome WordPress Themes and Templates!"/></a></p>
+  <div class="widget"><h6>Reader Poll</h6><div id="polls-1" class="wp-polls">
+	<form id="polls_form_1" class="wp-polls-form" action="/design/webdesign/creating-fancy-bullet-points-with-pure-css3/" method="post">
+		<p style="display: none;"><input type="hidden" name="poll_id" value="1" /></p>
+		<h4 class="poll-title">What Would You Like to See on Webitect?</h4>
+<div id="polls-1-ans" class="wp-polls-ans">
+<ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-1" name="poll_1" value="1" /> <label for="poll-answer-1">New types of content (video tuts, a comic strip)</label></li>
+		<li><input type="radio" id="poll-answer-2" name="poll_1" value="2" /> <label for="poll-answer-2">More freebies (wp themes, texture packs, icons)</label></li>
+		<li><input type="radio" id="poll-answer-3" name="poll_1" value="3" /> <label for="poll-answer-3">Real-life tutorials (like the one on creating a PHP/MySQL client area)</label></li>
+		<li><input type="radio" id="poll-answer-4" name="poll_1" value="4" /> <label for="poll-answer-4">Lots of design-related content (inspiration, font roundups)</label></li>
+		<li><input type="radio" id="poll-answer-5" name="poll_1" value="5" /> <label for="poll-answer-5">Stuff that's different from everybody else (art-directed posts, more personal articles)</label></li>
+		</ul><input type="button" name="vote" value="   Vote   " class="poll-button" onclick="poll_vote(1);" /><a href="#ViewPollResults" onclick="poll_result(1); return false;" class="poll-button" title="View Results Of This Poll">View Results</a></div>
+	</form>
+</div>
+<div id="polls-1-loading" class="wp-polls-loading"><img src="http://webitect.net/wp-content/plugins/wp-polls/images/loading.gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image" />&nbsp;Loading ...</div>
+</div>  </div><div class="clear"></div>
+</div>
+<div id="footer">
+  <div class="block-90">
+	<div class="double-widget left">
+		<h3>What is Webitect?</h3>
+		<p>Hi, and welcome! Webitect is a blog devoted, very simply, to producing fresh, high-quality content for web designers and developers. We do our very best to give you the tools, resources, inspiration and tutorials that you're looking for.</p>
+		<p class="links-block">
+			<a id="about" href="http://webitect.net/about/"><em>About</em><small>Learn more about Webitect and the team who runs it.</small></a>
+			<a id="contact" href="http://webitect.net/contact/"><em>Contact</em><small>Got feedback, a question or a request? Drop us a line!</small></a>
+			<a id="archives" href="http://webitect.net/archives/"><em>Archives</em><small>Browse 'em and discover all sorts of great stuff.</small></a>
+		</p>
+	</div>
+	<ul class="single-widget right">
+ 		<li id="linkcat-141" class="linkcat"><h3>Worthy Reads</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://buildinternet.com/">Build Internet</a></li>
+<li><a href="http://designinformer.com/">Design Informer</a></li>
+<li><a href="http://freelancefolder.com/">Freelance Folder</a></li>
+<li><a href="http://line25.com/">Line25</a></li>
+<li><a href="http://myinkblog.com/">My Ink Blog</a></li>
+<li><a href="http://problogdesign.com/">Pro Blog Design</a></li>
+<li><a href="http://sixrevisions.com/">Six Revisions</a></li>
+<li><a href="http://spyrestudios.com/" target="_blank">Spyre Studios</a></li>
+<li><a href="http://tutsplus.com/">Tuts+ Network</a></li>
+<li><a href="http://visualswirl.com/" title="Tasty Snacks for the Creative Mind">Visual Swirl</a></li>
+
+	</ul>
+</li>
+	</ul>
+	<div class="single-widget left"></div>
+	<div class="single-widget left"></div>
+  </div>
+  <p class="clear"></p>
+  <div class="credit"><div class="block-90"><span class="left"><a href="http://webitect.net/contribute/">Contribute</a> <!--/ <a href="http://webitect.net/advertise/">Advertise</a> / <a href="http://webitect.net/community-links/">Submit Links</a>--></span>&copy; <a href="http://webitect.net/about/">2015 Webitect Media</a> | <a href="http://wordpress.org/"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/wordpress-icon.png" height="12" alt="WordPress"/>  Powered by WordPress</a>  | <a href="#top"><img src="http://webitect.net/wp-content/themes/Webitect Pro/images/back-to-top-icon.png" height="12" alt="Back to Top"/>  Back to Top</a></div></div>
+</div>
+
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.83c'></script>
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.83c'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://webitect.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://webitect.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/contact-form-7/includes/js/jquery.form.js?ver=3.14'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/webitect.net\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"http:\/\/webitect.net\/wp-content\/plugins\/wp-polls\/wp-polls.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://webitect.net/wp-content/plugins/wp-polls/polls-js.js?ver=2.50'></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12376977-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
