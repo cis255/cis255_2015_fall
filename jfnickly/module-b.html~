@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+<html>
 <head>
+<title>cis255</title>
 </head>
 <body>
+  <h1>Title</h1>
   <ul>
     <li>Module A - Syllabus and Course Standards</li>
     <li>Module B - Github and Personal Course Menu</li>
@@ -15,6 +17,7 @@
     <li>Module J - JavaScript Roadtrip (Code School)</li>
     <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
     <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-    <li>=</li>
   </ul>
-</body>
+<body>
+
+</html>
