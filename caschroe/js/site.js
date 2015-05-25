@@ -1,16 +1,21 @@
 $(document).ready(function(){
-	$(".headerThree").hide();
+	$("#headerThree").hide();
 	$("#moduleList").hide();
-	$("#showList").hide();
 	
-    $(".author").click(function(){
+    $("#author").click(function(){
         $(this).hide();
-		$(".headerThree").fadeIn("slow")
-		$("#showList").show();
+		$("#headerThree").fadeIn("slow");
+		$("#moduleList").fadeIn("slow");
     });
 	
-	$("#showList").click(function(){
-		$("#moduleList").fadeIn("slow")
-		$("#showList").hide();
-	})
+	
+	var d = new Date();
+
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+
+	var output = "Date: " + ((''+month).length<2 ? '0' : '') + month +
+	'/' + ((''+day).length<2 ? '0' : '') + day + '/' +
+	d.getFullYear();
+	document.getElementById("date").innerHTML = output;
 });
