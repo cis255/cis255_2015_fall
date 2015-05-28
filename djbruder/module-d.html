@@ -1,32 +1,79 @@
 <!DOCTYPE html>
 <head>
-</head>
-<body background='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTmzHD1yQR-cxyJsQGVk7-TEZc60fkTq2DuI6o16yM1ZRZwkR1P'>
-<h1>This is Dylan Bruderick- Module D</h1>
-  <p><big>Hello people, let's look at the modules.</big></p>
-  <ul>
-    <li><span style="background-color:#ffffff;">Module A - Syllabus and Course Standards</li>
-    <li><span style="background-color:#ffffff;">Module B - Github and Personal Course Menu</li>
-    <li><span style="background-color:#ffffff;">Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li><span style="background-color:#ffffff;">Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li><span style="background-color:#ffffff;">Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li><span style="background-color:#ffffff;">Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li><span style="background-color:#ffffff;">Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li><span style="background-color:#ffffff;">Module H - Basic JavaScript (Ch. 6)</li>
-    <li><span style="background-color:#ffffff;">Module I - jQuery (Ch. 15), AJAX</li>
-    <li><span style="background-color:#ffffff;">Module J - JavaScript Roadtrip (Code School)</li>
-    <li><span style="background-color:#ffffff;">Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li><span style="background-color:#ffffff;">Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
-  <h1><span style="background-color:#ffffff;">how about some tunes?</h1>
-  <div style="position:relative;width:267px;height:25px;overflow:hidden;">
-  <div style="position:absolute;top:-276px;left:210px">
-    <iframe width="300" height="300" 
-      src='https://www.youtube.com/embed/1cQh1ccqu8M?r=0'>
-    </iframe>
-  </div>
-</div>
-  <p><span style="background-color:#ffffff;">Here is a waving cat. </p>
-  <img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTmzHD1yQR-cxyJsQGVk7-TEZc60fkTq2DuI6o16yM1ZRZwkR1P' alt="Cat Waving" style="width:574px;height:710px">
-</body>
+	<title>djbruder-D</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
+
+	<script>
+	function delDivSpanContent(){
+		var span1 = document.getElementsByTagName("span");
+		for (i in span1){
+			span1[i].parentNode.removeChild(span1[i]);
+			
+		}
+	}
+	function changeIdContent(){
+		if(document.getElementById("div1").innerHTML == "this is a div")
+			document.getElementById("div1").innerHTML = "this is already a div";
+		else
+			document.getElementById("div1").innerHTML = "this is a div";
+	}
+	function changeSpanContent(){
+		var list = document.getElementsByTagName("span");
+		console.log(list);
+		for(var i = 0; i < list.length; i++){
+			list[i].innerHTML = "FOO " + i;
+			if (list[i].style.color == "green") list[i].style.color = "red";
+			else list[i].style.color = "green";
+		}
+	}
+	function hideSpanContent(){
+		var list = document.getElementsByTagName("span");
+		for(var i = 0; i < list.length; i++){
+			if(list[i].hidden == true)
+				list[i].hidden = false;
+			else
+				list[i].hidden = true;
+		}
+	}
+	</script>
+	
+	<style>
+	.col-md-12{
+		text-align:center;
+	}
+	</style>
+	
+	</head>
+<body>
+  <h1>This is Dylan Bruderick- Module D</h1>
+  <ul>
+    <li>
+      Module D - Basic JavaScript</li>
+  </ul>
+  <div id="list1" class="row">
+  <div id="div1" class="col-md-12"><span>.col-md-1</span></div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12"><span>.col-md-1</span></div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12"><span>.col-md-1</span></div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12"><span>.col-md-1</span></div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12">.col-md-1</div>
+  <div class="col-md-12"><span>.col-md-1</span></div>
+  <div class="row">
+  <div class="col-md-12">
+  <button type="submit" onmouseup="changeIdContent()" class="btn btn-primary">Change Id div1</button>
+  <button type="submit" onmouseup="changeSpanContent()" class="btn btn-warning">Change tag span</button>
+  <button type="submit" onmouseup="hideSpanContent()" class="btn btn-success">HIde tag span</button>
+  <button type="submit" onmouseup="delDivSpanContent()" class="btn btn-success">Delete tag div span</button>
+	</div>
+	</div>
+  </div>
+</body>

@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <head>
+	<link rel="shortcut icon" href="http://devspy.weritsblog.com/images/sto.ico" type="icon"/>
+	<title>Assignment Menu</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  
+  <script>
+      $("document").ready(function(){
+	      $("tr:odd").addClass("specialBackground");
+		  $("tr").mouseover(function(){
+		      $(this).addClass("mouseoverBackground");
+		  });
+		  $("tr").mouseout(function(){
+		      $(this).removeClass("mouseoverBackground");
+		  });
+	  });
+  </script>
+  
+  <style>
+      tr {
+	      background-color: cyan;
+	  }
+      .specialBackground {
+	      background-color: pink;
+	  }
+	  .mouseoverBackground {
+	      background-color: yellow;
+	  }
+	  h4 {
+	      color: grey;
+	  }
+  </style>
 </head>
 <body>
-<h1> This is Lindyn</h1>
-  <div id="middlecolumn">
-  <h2 align=center>Modules</h2>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
-</div> <!-- end middlecolumn -->
+<h1> CIS255 Personal Menu </h1>
+<h2><i> Lindyn Krieg </i></h2>
+<table>
+	<tr><td>  
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-a.html' >Assignment A - Basic HTML</a></li>
+	</td></tr>
+	<tr><td>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-b.html' >Assignment B - Basic CSS</a></li>
+	</td></tr>
+	<tr><td>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-c.html' >Assignment C - CSS Inheritance and Specificity</a></li>
+	</td></tr>
+	<tr><td>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-d.html' >Assignment D - Basic JavaScript</a></li>
+	</td></tr>
+	<tr><td>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-e.html' >Assignment E </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-f.html' >Assignment F </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-g.html' >Assignment G </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-h.html' >Assignment H </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-i.html' >Assignment I</a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-j.html' >Assignment J </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-k.html' >Assignment K </a></li>
+		<li><a href='http://csis.svsu.edu/~lspeters/cis255/lspeters/module-l.html' >Assignment L </a></li>
+  </table>
 </body>
