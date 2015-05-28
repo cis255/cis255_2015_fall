@@ -53,6 +53,7 @@ h2 {
 #leftCol, #rightCol, #centerCol{
 
  padding: 10px;
+ border-bottom: 1px solid black;
 
 }
 
