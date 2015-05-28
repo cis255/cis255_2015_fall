@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Test 1: Test Specificity of elements -->
+<!-- Test 2: Test Specificity of classes-->
+<!-- Test 3: Test specificity of Ids-->
+<!-- Test 4: Inheritance -->
+<!-- Test 5: Order/Sequence -->
+<!-- Test 6: Inline -->
+<!-- Test 7: Importance -->
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/site.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
+
+</head>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+	  <a class="navbar-brand" href="http://csis.svsu.edu/~caschroe/cis255/caschroe.html">Home</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+<h1>CIS 255</h1>
+<h2>CSS Inheritance and Specificity</h2>
+
+<body>
+
+
+	<!-- Test 2: Specificity of classes--> 
+	<ul class="class1 list-group-danger" id="id1" title="Test 2">
+		<!-- Test 1: Specificity of elements-->
+		<!-- Test 4: Inheritance -->
+		<li class="list-group-item-success" title="Test 1 and 4">Shake<span>sp<span>e<span>a</span></span>r</span>e</li>
+		<!-- Test 3: Test specificity of Ids-->
+		<li class="list-group-item-danger" id="list2" title="Test 3">Frost</li>
+		<!-- Test 6: Inline -->
+		<li class="list-group-item-success" style="color:green" title="Test 6">Poe</li>
+		<!-- Test 7: Importance -->
+		<li class="list-group-item-danger" id="another" title="Test 7">Another Poet</li>
+		<!-- Test 5: Order/Sequence -->
+		<li class="list-group-item-success" id="lastItem" title="Test 5">Yeats</li>
+	</ul>
+	
+	<a class="btn btn-default btn-danger" href="#" role="button">Link</a>
+<button class="btn btn-default btn-success" type="submit">Button</button>
+<input class="btn btn-default btn-danger" type="button" value="Input">
+<input class="btn btn-default btn-success" type="submit" value="Submit">
+	
+</body>
+<script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script></script>

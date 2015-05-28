@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<script>
+  
+  function deleteDivsWithSpans(){
+     var list1 = document.getElementById("list1");
+	 var span1 = list1.getElementsByTagName("span");
+	 console.log(list1);
+	 //console.log(span1);
+	 for (var i=0; i<span1.length; i++){
+		span1[i].parentElement.removeChild(span1[i]);
+	  }
+   }
+   function changeIdContent(){
+     if (document.getElementById("div1").innerHTML == "zippydee")
+	    document.getElementById("div1").innerHTML = "ZIPPYDOO";
+     else
+	    document.getElementById("div1").innerHTML = "zippydee";
+   }
+   function changeSpanContent(){
+     var list = document.getElementsByTagName("span");
+	 console.log(list);
+	 for(var i=0; i<list.length; i++){
+     list[i].innerHTML = "FOO "+i;
+	 list[i].style.color = "red";
+	 }
+   }
+   function hideSpanContent(){
+     var list = document.getElementsByTagName("span");
+	 for(var i=0; i<list.length; i++){
+	 if (list[i].hidden == true)
+         list[i].hidden = false;
+	 else
+	     list[i].hidden = true;
+	 }
+   }
+</script>
+
+</head>
+<body>
+<h1>Kelly Schultz - Assignment D - Basic JavaScript</h1>
+<div>
+  Now is the winter of our discontent. It was the best of times; it was the worst of times. 
+</div>
+<div class="container">
+<div id="list1" class="row">
+  <div id="div1" class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4"><span>.col-md-4</span></div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6"><span>.col-md-6</span></div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+<button type="submit" onmouseup="changeIdContent()" class="btn btn-primary">Change id div1</button>
+<button type="submit" onmouseup="changeSpanContent()" class="btn btn-warning">Change tag span</button>
+<button type="submit" onmouseup="hideSpanContent()" class="btn btn-danger">Hide tag span</button>
+<button type="submit" onmouseup="deleteDivsWithSpans()" class="btn btn-inverse">Delete divs with spans under list1</button>
+</div> <!-- end container -->
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
