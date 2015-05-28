@@ -1,10 +1,79 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	
+	<script>function changeIdContent(){
+		document.getElementById("div1").innerHTML = "Changed text";
+		
+		}
+		function changeTagContent(){
+			var list = document.getElementsByTagName("span");
+			for (i = 0; i < list.length; i++) {
+				list[i].innerHTML = "SPAN - #" + i;
+				list[i].style.color = "red";
+			}
+		}
+		function toggleText(){
+			var text = document.getElementById("toggle").innerHTML;
+			if(text == "Toggled ON"){
+				document.getElementById("toggle").innerHTML = "Toggled OFF"
+			}else{
+				document.getElementById("toggle").innerHTML = "Toggled ON"
+			}
+		}
+		function hideSpanContent(){
+			var list = document.getElementsByTagName("span");
+			for (i = 0; i < list.length; i++) {
+				if(list[i].hidden == true){
+					list[i].hidden = false;
+				}else{
+					list[i].hidden = true;
+				}
+			}
+		}
+	</script>
+	
 	<h1>mdroof - CIS255 - Module D</h1>
 </head>
 <body>
-
+<div class="container">
+	<div class="row">
+	  <div id="div1" "class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1"><span>.col-md-1</span></div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div id="toggle" class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1"><span>.col-md-1</span></div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1">.col-md-1</div>
+	  <div class="col-md-1"><span>.col-md-1</span></div>
+	  <div class="col-md-1">.col-md-1</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-8">.col-md-8</div>
+	  <div class="col-md-4">.col-md-4</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-4">.col-md-4</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-6">.col-md-6</div>
+	  <div class="col-md-6">.col-md-6</div>
+	</div>
+	<button type="submit" onmouseup="changeIdContent()" class="btn btn-default">Change id div1</button>
+	<button type="submit" onmouseup="changeTagContent()" class="btn btn-default">Change all the spans</button>
+	<button type="submit" onmouseup="toggleText()" class="btn btn-default">Toggle Text</button>
+	<button type="submit" onmouseup="hideSpanContent()" class="btn btn-default">Toggle Hiding Span Content</button>
+</div> <!-- end of container-->
 <body>
 
 </html>
