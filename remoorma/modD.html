@@ -9,45 +9,74 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <link rel='stylesheet' type='text/css' href='style.css'>
+
+  <script>
+    function changeIdContent(){
+      document.getElementById("leftCol").innerHTML = "JavaScript is cool!";
+    }
+    function catBomb(){
+      list = document.getElementsByTagName("div");
+      for(var i = 0; i < list.length; i++){      
+        var e = document.createElement("div");
+        e.innerHTML = "<img src=\"http://lorempixel.com/400/200/cats\">";
+        list[i].appendChild(e.firstChild);
+      }
+    }
+    function GenSpans(){
+      var rCol = document.getElementById("rightCol");
+      var e = document.createElement("span");
+      
+      for(var i = 0; i < 20; i++){
+	e.innerHTML = "<span>This is Span " + i + "   </span>";
+	rCol.appendChild(e.firstChild);
+      }
+    }
+    function ChangeColor(){
+      var spans = document.getElementsByTagName("span");
+      for(var i = 0; i < spans.length; i++){
+        spans[i].style.color = "#" + Math.random().toString(16).slice(2, 8);
+      }
+    }
+    function HideSpans() {
+      var spans = document.getElementsByTagName("span");
+        for(var i = 0; i < spans.length; i++){
+          spans[i].hidden = true;
+        }
+    }
+    function ShowSpans() {
+      var spans = document.getElementsByTagName("span");
+        for(var i = 0; i < spans.length; i++){
+          spans[i].hidden = false;
+        }
+    }
+</script>
+
 </head>
 
 <body>
 <div class='container-fluid'>
   <div class='wide-header'> 
     <div id='title'>
-      Module D
+      Working With Javascript
     </div>
   </div>
 
 
   <div id='content' class='row'>
+
     <div class='col-sm-4' id='leftCol'>
-      left
+	    <button type='submit' class='btn btn-primary' onmouseup=changeIdContent()> What's cool? </button>
     </div>
 
     <div class='col-sm-4' id='centerCol'>
-
-      <h2>Course Details</h2>
-
-      <ul>
-        <li>Module A - Syllabus and Course Standards</li>
-        <li>Module B - Github and Personal Course Menu</li>
-        <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-        <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-        <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-        <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-        <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-        <li>Module H - Basic JavaScript (Ch. 6)</li>
-        <li>Module I - jQuery (Ch. 15), AJAX</li>
-        <li>Module J - JavaScript Roadtrip (Code School)</li>
-        <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-        <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-      </ul>
-
+	    <button onmouseup=catBomb()> BombWithCats! </button>
     </div>
 
     <div class='col-sm-4' id='rightCol'>
-      right
+	    <button onmouseup=GenSpans()> Generate Spans!!! </button>
+	    <button onmouseup=ChangeColor()> Change the Color! </button>
+	    <button onmouseup=HideSpans()> Hide The Spans! </button>
+	    <button onmouseup=ShowSpans()> Show The Spans! </button>
     </div>
 
   </div>
