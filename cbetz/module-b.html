@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+      $("document").ready(function(){
+	      $("tr:odd").addClass("specialBackground");
+		  $("tr").mouseover(function(){
+		      $(this).addClass("mouseoverBackground");
+		  });
+		  $("tr").mouseout(function(){
+		      $(this).removeClass("mouseoverBackground");
+		  });
+	  });
+  </script>
+  <style>
+  </style>
 </head>
-<body>
-<h1>Chad Betz - Module B </h1>
+<body background='http://cdn.photolabels.co/images/fc03.deviantart.net/fs70/f/2011/326/0/2/free_web_background_3_by_kgombocka-d4gz4lh.jpg'>
+<h1><font color='white'>Chad Betz - Module B - Basic CSS</font> </h1>
   <ul>
-        <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
+    <li><a href='solarsystem.html'>Solar System</a></li>
+	<li><a href='polaroidpictures.html'>Polaroid Pictures</a></li>
+	<li><a href='verticalaccordian.html'>Verical Accordian</a></li>
+	<li><a href='fancylist.html'>Fancy List</a></li>
+	<li><a href='speechbubbles.html'>Speech Bubbles</a></li>
+	<li><a href='spinner.html'>Spinner</a></li>
   </ul>
 </body>

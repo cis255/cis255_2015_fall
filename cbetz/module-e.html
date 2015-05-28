@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+      $("document").ready(function(){
+	      $("tr:odd").addClass("specialBackground");
+		  $("tr").mouseover(function(){
+		      $(this).addClass("mouseoverBackground");
+		  });
+		  $("tr").mouseout(function(){
+		      $(this).removeClass("mouseoverBackground");
+		  });
+	  });
+  </script>
+  <style>
+  </style>
 </head>
-<body>
-<h1>Chad Betz - Module E </h1>
+<body background='http://cdn.photolabels.co/images/fc03.deviantart.net/fs70/f/2011/326/0/2/free_web_background_3_by_kgombocka-d4gz4lh.jpg'>
+<h1><font color="white">Chad Betz - Assignment E</font></h1>
   <ul>
-        <li>Module A - Syllabus and Course Standards</li>
+    <li>Module A - Syllabus and Course Standards</li>
     <li>Module B - Github and Personal Course Menu</li>
     <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
     <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>

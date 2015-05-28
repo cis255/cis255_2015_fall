@@ -4,7 +4,22 @@ filename: module-a.html
 authoer:cbetz
 purpose: this file demonstates simple HTML tags 
 -->
+<title>Chad Betz Module A</title>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+      $("document").ready(function(){
+	      $("tr:odd").addClass("specialBackground");
+		  $("tr").mouseover(function(){
+		      $(this).addClass("mouseoverBackground");
+		  });
+		  $("tr").mouseout(function(){
+		      $(this).removeClass("mouseoverBackground");
+		  });
+	  });
+  </script>
   <style>
 #wrapper {
     width: 1005px;
@@ -17,19 +32,19 @@ purpose: this file demonstates simple HTML tags
 	width: 250px;
 }
 #leftcolumn {
-    background-color: rgb(225,225,225);
+    background-color: yellow;
 }
 #middlecolumn {
-    background-color: rgb(200,200,200);
+    background-color: orange;
 }
 #rightcolumn {
-    background-color: rgb(225,225,225);
+    background-color: green;
 }
   </style>
 </head>
-<body>
+<body background='http://cdn.photolabels.co/images/fc03.deviantart.net/fs70/f/2011/326/0/2/free_web_background_3_by_kgombocka-d4gz4lh.jpg'>
 <div id='wrapper'>
-<h1>Chad Betz - Module A </h1>
+<h1><font color='white'>Chad Betz - Module A - Basic HTML Formatting</font></h1>
 <div id='leftcolumn'>
   <ul>
     <li><center>This is a test for the center tag<center></li>
