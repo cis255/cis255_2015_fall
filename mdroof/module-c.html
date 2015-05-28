@@ -8,21 +8,52 @@
 5. Order/sequence
 6. Inline
 7. Importance
-8. 
 -->
-<style>'
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+
+
+
+<style>
+@font-face {
+    font-family: 'bankgothic_md_btmedium';
+    src: url('fonts/bank_gothic/bankgthd-webfont.eot');
+    src: url('fonts/bank_gothic/bankgthd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bank_gothic/bankgthd-webfont.woff2') format('woff2'),
+         url('fonts/bank_gothic/bankgthd-webfont.woff') format('woff'),
+         url('fonts/bank_gothic/bankgthd-webfont.ttf') format('truetype'),
+         url('fonts/bank_gothic/bankgthd-webfont.svg#bankgothic_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  background-image: url (images/carbon_fiber.jpg);
-  background-repeat: repeat; 
+	background-image: url(images/carbon.jpg);
+	background-repeat: repeat; 
 }
 h1 {
-  color: red; 
+	color: red; 
 }
 ul {
-  color: limegreen;
+	background-image: url(images/nexus.jpg);
+	background-repeat: repeat; 
+	color: limegreen;
+	
+	border: 10px solid;
+	border-color: red green blue orange;     
+}
+
+li{
+	font-family: bankgothic_md_btmedium;
+	font-size: 150%;
 }
 span {
-  color: orange;
+	color: orange;
 }
 
 span span{
@@ -37,24 +68,25 @@ span span span {
 }
 
 span span .class3 {
-  color: blue;
+	color: blue;
 }
 span span span span span span span span span span span {
-  color: black;
+	color: black;
 }
 .class11 {
-  color: aqua;
+	color: aqua;
 } 
 
 
 </style>
+
 
 <head>
 	<h1>mdroof - CIS255 - Assignment C</h1>
 </head>
 
 <body>
-	<h3>Poets</h3>
+	<h3 style="color: white">Poets</h3>
 	<ul id="id1" class="class1">
 	  <li class="British">Shake<span>sp<span>e<span>a</span>r</span>e</span></li>
 	  <li class="American">Frost</li>
@@ -67,6 +99,18 @@ span span span span span span span span span span span {
 	  <span class="class10"><span class="class11">Atwood</span></span></span></span>
 	  </span></span></span></span></span></span></span></li>
 	</ul>
-<body>
+	
+	<div class="container">
+		<div class="row">
+			<p class="col-sm-6" style="color: white">1jashfjksdhfjksdhf random text sdafjhsdjkfhsdf</p>
+			<p class="col-sm-6" style="color: white">2jashfjksdhfjksdhf random text sdafjhsdjkfhsdf</p>
+			<p class="col-sm-6" style="color: white">3jashfjksdhfjksdhf random text sdafjhsdjkfhsdf</p>
+			<p class="col-sm-6" style="color: white">4jashfjksdhfjksdhf random text sdafjhsdjkfhsdf</p>
+			<p class="col-sm-6" style="color: white">5jashfjksdhfjksdhf random text sdafjhsdjkfhsdf</p>
+		</div>
+	</div>
+</body>
 
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </html>

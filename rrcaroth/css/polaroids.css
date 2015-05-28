@@ -78,6 +78,10 @@ ul.polaroids li{
 	padding-left:0;
 }
 
+body {
+	background: aqua;
+}
+
 ul.polaroids img{
 	display:block;
 	width:190px;

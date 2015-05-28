@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+	<title>kclau - Assignment D - Basic JavaScript</title>
+	<link rel="shortcut icon" href="Picture/cardinal_logo.jpg"/> 
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<meta name="viewport" content = "initial-scale=1">
+<script>
+	function changeIdContent(){
+		if(document.getElementById("div1").innerHTML == "zippydee")
+			document.getElementById("div1").innerHTML = "ZIPPYDOO";
+		else
+			document.getElementById("div1").innerHTML = "zippydee";
+	}
+	function changeSpanContent(){
+		var list = document.getElementsByTagName("span");
+		console.log(list);
+		for(var i = 0; i < list.length; i++){
+			list[i].innerHTML = "FOO " + i;
+			list[i].style.color = "blue";
+		}
+	}
+	function hideSpanContent(){
+		var list = document.getElementsByTagName("span");
+		for(var i = 0; i < list.length; i++){
+			if(list[i].hidden == true)
+				list[i].hidden = false;
+			else
+				list[i].hidden = true;
+		}
+	}
+	function deletetextdivs(){
+		var target = document.getElementsByTagName('div'), i = target.length;
+		var span1 = list1.getElementsByTagName("span");
+		console.log(list1);
+		console.log(span1);
+		while(i){
+			i -= 1;
+			if(!target[i].getElementById("list1"))
+				target.parentNode.removeChild(target);
+		//}
+	}
+</script>
+</head>
+<body>
+	<h1><center><h1>Ka Chun Lau- Assignment D - Basic JavaScript</h1></center></h1>
+	<div>
+		now is the winter of our disco
+	</div>
+	<div class = "container">
+		<div id = "list1" class="row">
+			<div id = "div1" class="col-md-1">.col-md-1</div>
+			<div class="col-md-1"><span>.col-md-1</span></div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1"><span>.col-md-1</span></div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1"><span>.col-md-1</span></div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1"><span>.col-md-1</span></div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1"><span>.col-md-1</span></div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">.col-md-8</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4"><span>.col-md-4</span></div>
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6"><span>.col-md-6</span></div>
+			<div class="col-md-6">.col-md-6</div>
+		</div>
+		<button type= "submit" onmouseup="changeIdContent()" class= "btn btn-primary"> Change id div1</button>
+		<button type= "submit" onmouseup="changeSpanContent()" class= "btn btn-warning"> Change tag span</button>
+		<button type= "submit" onmouseup="hideSpanContent()" class= "btn btn-success"> Hide tag span</button>
+		<button type= "submit" onmouseup="deletetextdivs()" class= "btn btn-danger"> Delete Divs with Span</button>
+	</div>	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
+	</script>
+</body>
