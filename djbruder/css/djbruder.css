@@ -42,29 +42,42 @@
 *{
 		cursor:url(http://i452.photobucket.com/albums/qq250/EGGADY/cursor-atlantica-online.png),url(djbruder/images/cursors/skelhand.png),auto;
 	}
+
 body {
-		background-image: url('https://farm2.staticflickr.com/1379/4601821496_d9534d0c92_o_d.jpg');
-		background-size: 1920px 1020px;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-	}
+	
+	margin-right: auto;
+	margin-left: auto;
+	background-color: black;
+	background-size: cover;
+}
+
+section{
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#background {
+background: url(https://farm2.staticflickr.com/1379/4601821496_d9534d0c92_o_d.jpg);
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	position: absolute;
+	background-repeat: repeat-y;
+}
+
 a {
 	color: black;
 }
+
 a:hover {
    	color: red;
 	font-size: 101%;
 }
-#page-content-wrapper.col-sm-5 .header {
+#page-content-wrapper.col-sm-5.header {
 	font-size: 50 px;
 }
-.col-sm-5 {
-	background-color: ;
-}
-.row-sm-10 {
-	background-color: yellow;
-}
-		
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -78,13 +91,11 @@ a:hover {
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
+    position: relative;
+    width: 0px;
+	padding: 0px;
+	overflow-x: auto;
+    overflow-y: scroll;
     background: #000;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -96,23 +107,21 @@ a:hover {
     width: 250px;
 }
 
-section#page-content-wrapper {
-	font-family: '1942_report1942_report';
-	font-weight: bold;
-	color: black;
-    width: 100%;
-    position: absolute;
+#page-content-wrapper{
+		font-family: '1942_report1942_report';
+		font-weight: bold;
+		color: black;
 }
 
 #wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -240px;
+    position: relative;
 }
 
 
 /*Navbar Styles*/
 .navbar-default{
-	margin:0px;
+	position: relative;
+	margin: 0px;
 }
 .navbar-brand{
 	text-indent: 15px;
@@ -121,17 +130,18 @@ section#page-content-wrapper {
 
 /* Sidebar Styles */
 .sidebar-nav {
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: 0px;
     width: 240px;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 }
 
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+	line-width: 250px;
 }
 
 .sidebar-nav li a{
@@ -170,25 +180,53 @@ section#page-content-wrapper {
 }
 
 @media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
+    body {
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: black;
+	background-size: cover;
+	}
+	
+	section{
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	}
+	
+	#background {
+	 position: absolute;
+	 width: 1500px;
+	}
+	#wrapper {
+		
     }
 
     #wrapper.toggled {
-        padding-left: 0;
+        
     }
 
     #sidebar-wrapper {
         width: 250px;
+		height: 1000px;
     }
-
+	
+	#sidebar-wrapper > ul > section > li {
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 240px;
+	}
+	
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
 
     #page-content-wrapper {
-        padding: 0px;
-        position: relative;
+		width: 1250px;
+		margin-right: auto;
+		margin-left: auto;
+		position: relative;
+		color: black;
     }
 	#page-content-wrapper div.header h1{
 		font-weight: bold;
@@ -196,7 +234,6 @@ section#page-content-wrapper {
 	}
 
     #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
+        position: absolute;
     }
 }
