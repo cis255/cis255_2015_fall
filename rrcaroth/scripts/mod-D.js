@@ -19,6 +19,7 @@ function changeSpanContent() {
 		if(j > 3) j = 1
 	}
 }
+
 function deleteDivsWithSpans() {
 	var divList = document.getElementsByTagName("div");
 	for (x in divList){
