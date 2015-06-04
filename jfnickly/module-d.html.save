@@ -1,4 +1,4 @@
-<?xml ver	sion="1.0" encoding="UTF-8"?> 
+â<?xml ver	sion="1.0" encoding="UTF-8"?> 
 <!DOCTYPE html>
 
 <html>
@@ -10,8 +10,7 @@
 	<link rel="shortcut icon" href="img/us-flags/michigan.png">
 	<script>
 		/* 	for now place the stateData.json embedded 
-			the data: States, 
-				- when they entered the union, yyyy/mm/dd -> for sorting
+			the data: States,				- when they entered the union, yyyy/mm/dd -> for sorting
 				- captal cities, 
 				- population as of 2015 (est), 
 				- nick name, and 
@@ -299,7 +298,7 @@
 				liNodes.innerHTML = "State Flag:           ";
 				
 				var liImage = document.createElement("img");
-				liImage.setAttribute("src", "img/us-flags/" + stateData[i].flag);
+				liImage.setAttribute("src", "us-flags/" + stateData[i].flag);
 				liNodes.appendChild(liImage);
 				uDiv.appendChild(liNodes);
 					

@@ -54,10 +54,6 @@
 	} 
 	
 	span span span span span span span span span span span { color: fushia; }
-
-	.fclass class_1 class_2 class_3 class_4 class_5 class_6 class_7 class_8 class_9 class_10 {
-		color: orange;
-	}
 	
 
 /* Test 2: specificity of classes */
