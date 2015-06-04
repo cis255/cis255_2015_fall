@@ -1,0 +1,47 @@
+body {
+	background-color: #B5916C;
+}
+
+#top-banner{
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #996633;
+	text-align: center;
+	font-size: 60px;
+	text-shadow:
+					2px 2px 0 #A37547,
+					-1px -1px 0 #A37547,  
+					1px -1px 0 #A37547,
+					-1px 1px 0 #A37547,
+					3px 3px 0 #A37547;
+}
+
+#top-nav{
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #996633;
+	text-align: center;
+	
+	
+}
+
+.nav-btn {
+	background-color: #A37547;
+	font-size: 21px;
+	padding: 15px;
+	text-shadow:
+					2px 2px 0 #A37547,
+					-1px -1px 0 #A37547,  
+					1px -1px 0 #A37547,
+					-1px 1px 0 #A37547,
+					3px 3px 0 #A37547;
+}
+
+a{
+	color: #331A00;
+}
+
+a:hover {
+	color: #594630;
+	
+}
