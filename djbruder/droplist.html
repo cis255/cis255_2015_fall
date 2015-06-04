@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+	<title>djbruder-droplist</title>
+
+	<style>
+
+			
+			
+	.dropv, .dropv ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	.dropv a {
+		display: inline;
+		width: 800px;
+	}
+	.dropv li {
+		float: left;
+	}  /* all list items */
+	.dropv li ul {
+		position: absolute; background-color: lightgrey;
+		width: 800px;
+		left: -9999px;
+	} /* second-level lists */
+	.dropv li:hover ul {
+		left: auto;
+	} /* nest list under hovered list items */
+	.dropv li ul li a {
+		text-decoration: none; display: block;
+	}
+	.dropv li ul li a:hover {
+		color: black; background-color: white;
+	}
+	</style>
+</head>
+<body>
+<section>This "Assignments" drops a list on hover.</section>
+</br>
+	<div id='wrapper'>
+		
+		<section id='page-content-wrapper'>
+			<div class='row'>
+						<div class="dropv">
+							<li>
+								Assignments.
+								<ul>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-a.html'>Assignment A - Basic HTML Formatting</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-b.html'>Assignment B - Basic CSS Formatting</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-c.html'>Assignment C - Web Overview (Ch. 1) and Chrome DevTools</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-d.html'>Assignment D - Basic HTML (Ch.2) and HTML Generators</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-e.html'>Assignment E - Basic CSS (Ch. 3) and CSS Generators</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-f.html'>Assignment F - HTML Tables and Forms (Ch. 4)</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-g.html'>Assignment G - Advanced CSS (Ch. 5) Sass Compass Bootstrap</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-h.html'>Assignment H - Basic JavaScript (Ch. 6)</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-i.html'>Assignment I - jQuery (Ch. 15) AJAX</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-j.html'>Assignment J - JavaScript Roadtrip (Code School)</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-k.html'>Assignment K - Backbone.js (Ch. 15) Ember.js Angular.js and MVC</a>
+					</li>
+					<li>
+						<a href='http://csis.svsu.edu/~djbruder/cis255/djbruder/module-l.html'>Assignment L - CMS (Ch. 18) and Miscellaneous</a>
+					</li>
+								</ul>
+								</div>
+					
+					
+					</div>
+				</section>
+	</div>
+</body>

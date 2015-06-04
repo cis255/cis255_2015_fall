@@ -1,23 +1,142 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>cis255</title>
+<meta charset="utf-8" />
+<title></title>
 </head>
 <body>
-  <h1>Title</h1>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
-<body>
+	<script type="text/javascript">
+	
+		function changeText(destID, srcFile) {
+			var ajax_get_text;
 
+			if (window.XMLHttpRequest)	{ // using modern browser
+	    		ajax_get_text=new XMLHttpRequest();
+			}	else	{	// support for old browser
+	    		ajax_get_text=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+	  
+			ajax_get_text.onreadystatechange=function() {
+	    		if (ajax_get_text.readyState==4 && ajax_get_text.status==200) {
+		    		document.getElementById(destID).innerHTML = ajax_get_text.responseText;
+				} else {
+					document.getElementById(destID).innerHTML = "unable to process request.";		
+				}
+			}
+			ajax_get_text.open("GET", srcFile, true);
+			ajax_get_text.send();	
+		}
+	
+		function showHint(srcFile, strSearch) {
+			if (strSearch.length == 0) { 
+    			document.getElementById("txtHint").innerHTML="";
+    			return;
+		} else {
+    
+    		var hint_get_text=new XMLHttpRequest();
+    		
+    		hint_get_text.onreadystatechange=function() {
+        		if (hint_get_text.readyState==4 && hint_get_text.status==200) {
+            	document.getElementById("txtHint").innerHTML = hint_get_text.responseText;
+        		}
+    		}
+    		hint_get_text.open("GET",srcFile + "?q="+strSearch,true);
+    		hint_get_text.send();
+		}    
+	}
+	</script>	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			
+    			$("#btnJQuery").click(function(){
+        			$("#jqDiv").load("misc/module-e.txt"+"?q");
+    		});
+	});
+	</script>
+	<style type="text/css">
+		#bodyDiv {
+			margin: 64px auto;
+			border: solid 1px;
+			border-color: #7070B0;		
+			box-shadow: 7px 7px 3px #8080A0;
+			padding: 6px 8px 8px 8px;
+			max-width: 640px;
+			min-width: 300px;
+			width: 40%;
+		}
+		
+		
+		.tooltip:hover {
+				text-decoration:none;
+		} 
+
+		.tooltip span {
+    		z-index:1;
+    		display:none; 
+    		padding: 8px;
+    		margin:12px;
+    		width:300px; 
+    		line-height:16px;
+		}
+		
+		.tooltip:hover span{
+    		display:inline; 
+    		position:absolute; 
+    		border:1px solid; 
+    		background:Khaki;
+    	}
+		.tooltip span
+		{
+			font-weight: normal;
+			color: black;
+			line-height: 22px;
+			border-radius: 3px;
+    		box-shadow: 3px 3px 3px #A0A0A0;
+		}
+		a { 
+			border-radius: 2px; 
+			border-style: solid; 
+			border-width:1px; 
+			color:blue; 
+			font-weight: 800;
+			padding-left: 2px;
+			padding-right: 2px;
+			
+		}
+
+		.rDiv {
+			font-size:20px;
+			height:64px;
+			font-weight:800;
+		}
+		
+	</style>
+</body>
+
+<div id = "bodyDiv">
+	<div id="ajaxDiv" class="rDiv">AJAX - We don't need to reload the entire page</div>
+	<button type="button" onclick="changeText('ajaxDiv', 'misc/module-e.txt')">Using JavaScript</button>
+	<hr/>						      
+	<div id="jqDiv" class="rDiv">JQUERY - We don't need to reload the entire page</div>
+	<button type="button" id="btnJQuery">Using JQuery</button>
+
+	<hr />
+	<p><b>Start typing a name in the input field below:</b></p>
+	<form action=""> 
+	Search: <input type="text" id="txtSearch" onkeyup="showHint('misc/module-e.php', this.value)">
+	<a class="tooltip">?
+			<span>
+       		<strong>Suggestions:</strong>
+        		Enter the start of a string in the box above, and see the results below.
+    		</span>
+    	</a>
+	</form>
+	
+	<p>Suggestions: 
+		<span id="txtHint" ></span>
+ 	</p> 
+</div>
 </html>
