@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<script>
+  function changeIdContent(){
+  if (document.getElementById("div1").innerHTML == "zippydee")
+     document.getElementById("div1").innerHTML = "zippyDOO";
+  else
+   document.getElementById("div1").innerHTML = "zippydee";
+   
+  }
+  function changeSpanContent(){
+   var list = document.getElementsByTagName("span");
+   console.log(list.length);
+   for(var i=0; i<list.length; i++){
+   list[i].innerHTML = "FOO " + i;
+   list[i].style.color = "red";
+   }
+  }
+  function hideSpanContent(){
+   var list = document.getElementsByTagName("span");
+   for(var i=0; i<list.length; i++){
+   if (list[i].hidden == true)
+       list[i].hidden = false;
+   else
+       list[i].hidden = true;
+   }
+  }
+  
+</script>
+</head>
+<body>
+<h1>Chad Betz - Assignment D - Basic JavaScript</h1>
+<div class=">
+  <p>Now is the winter of our discontent</p>
+</div>
+<div>It was the best of times; it was the worst of times. </div>
+
+<div id="list1">
+  <div id="div1" class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4"><span>.col-md-1</span></div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4"><span>.col-md-1</span></div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-6"><span>.col-md-1</span></div>
+  <div class="col-md-6">.col-md-6</div>
+  <button type+"submit" onmouseup="changeIdContent()" class="btn btn-warning">Change id div1</button>
+  <button type+"submit" onmouseup="changeSpanContent()" class="btn btn-primary">Change tag span</button>
+  <button type+"submit" onmouseup="hideSpanContent()" class="btn btn-danger">Hide all span tags</button>
+
+</div>
+</body>
