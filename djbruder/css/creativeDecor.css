@@ -16,19 +16,34 @@ body {
 					3px 3px 0 #A37547;
 }
 
-#top-nav{
+#top-nav {
 	margin-right: auto;
 	margin-left: auto;
 	background-color: #996633;
 	text-align: center;
-	
-	
 }
+
+#top-nav-block {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#contents {
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #996633;
+}
+
+#contents-block {
+	background-color: #B5916C;
+}
+
 
 .nav-btn {
 	background-color: #A37547;
 	font-size: 21px;
 	padding: 15px;
+	color: #331A00
 	text-shadow:
 					2px 2px 0 #A37547,
 					-1px -1px 0 #A37547,  
@@ -37,11 +52,19 @@ body {
 					3px 3px 0 #A37547;
 }
 
-a{
+.nav-btn:hover {
+	color: #594630;
+	cursor: pointer;
+	
+}
+
+.offscreen {
+    position: absolute;
+    left: -999em;
+	background-color: blue;
+}
+
+{
 	color: #331A00;
 }
 
-a:hover {
-	color: #594630;
-	
-}
