@@ -1,11 +1,42 @@
 <!DOCTYPE hmtl>
 <head>
-
+<script>
+	var greet = function(name) {
+		document.getElementById("btnName").innerHTML = "hello, " + name;
+	}
+	
+	var person = {
+		greet: function() {
+			return document.getElementById("btnName2").innerHTML = "hello, " + this.name;
+			},
+		name: "Rafferty"
+	}
+	var greet3 = (function(n){
+		return "hello, " + n;
+	})("raffy");
+	
+	var add = (function() {
+		var counter = 0;
+		return function() { return counter += 1;}
+	})();
+</script>
 </head>
 
 <body>
 <h1>Module:G</h1>
 <h2><hr>R3C</hr></h2>
+
+<button id="btnName" onclick="greet('Raffi')">
+Call Greet(name)
+</button>
+<button id="btnName2" onclick="person.greet()">
+Call Person.greet
+</button>
+<button id="btnName3" onclick="this.innerHTML = greet3">
+Call Greet3
+</button>
+<button id="btnCounter" onclick="this.innerHTML= 'You have clicked: ' + add() + ' times' ">Click to Count</button>
+
 </body>
 
 <footer>

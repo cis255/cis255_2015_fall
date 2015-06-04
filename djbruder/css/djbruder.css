@@ -1,0 +1,239 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+		/*Fonts*/
+    @font-face {
+		font-family: '1942_report1942_report';
+		src: url('../fonts/sketchtext/1942-webfont.eot');
+		src: url('../fonts/sketchtext/1942-webfont.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/sketchtext/1942-webfont.woff') format('woff'),
+			url('../fonts/sketchtext/1942-webfont.ttf') format('truetype'),
+			url('../fonts/sketchtext/1942-webfont.svg#1942_report1942_report') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'jinky';
+		src: url('../fonts/JINKY/JINKY-webfont.eot');
+		src: url('../fonts/JINKY/JINKY-webfont.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/JINKY/JINKY-webfont.woff') format('woff'),
+			url('../fonts/JINKY/JINKY-webfont.ttf') format('truetype'),
+			url('../fonts/JINKY/JINKY-webfont.svg#jinkyregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'edo';
+		src: url('../fonts/edo/edo-webfont.eot');
+		src: url('../fonts/edo/edo-webfont.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/edo/edo-webfont.woff') format('woff'),
+			url('../fonts/edo/edo-webfont.ttf') format('truetype'),
+			url('../fonts/edo/edo-webfont.svg#edoregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	/*End Fonts*/
+	
+*{
+		cursor:url(http://i452.photobucket.com/albums/qq250/EGGADY/cursor-atlantica-online.png),url(djbruder/images/cursors/skelhand.png),auto;
+	}
+
+body {
+	
+	margin-right: auto;
+	margin-left: auto;
+	background-color: black;
+	background-size: cover;
+}
+
+section{
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#background {
+background: url(https://farm2.staticflickr.com/1379/4601821496_d9534d0c92_o_d.jpg);
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	position: absolute;
+	background-repeat: repeat-y;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+   	color: red;
+	font-size: 101%;
+}
+#page-content-wrapper.col-sm-5.header {
+	font-size: 50 px;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    position: relative;
+    width: 0px;
+	padding: 0px;
+	overflow-x: auto;
+    overflow-y: scroll;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper{
+		font-family: '1942_report1942_report';
+		font-weight: bold;
+		color: black;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+}
+
+
+/*Navbar Styles*/
+.navbar-default{
+	position: relative;
+	margin: 0px;
+}
+.navbar-brand{
+	text-indent: 15px;
+	width: 250px;
+}
+
+/* Sidebar Styles */
+.sidebar-nav {
+    position: absolute;
+    top: 0px;
+    width: 240px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+	line-width: 250px;
+}
+
+.sidebar-nav li a{
+	font-family:'edo';
+	font-size: 150%;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-nav li a:hover {
+		 text-shadow:
+					2px 2px 0 lightgrey,
+					-1px -1px 0 lightgrey,  
+					1px -1px 0 lightgrey,
+					-1px 1px 0 lightgrey,
+					1px 1px 0 lightgrey;
+    text-decoration: none;
+    color: black;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 32px;
+    line-height: 60px;
+	font-family: '1942_report1942_report';
+	font-weight: bold;
+	text-align: center;
+    color: #fff;
+}
+
+@media(min-width:768px) {
+    body {
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: black;
+	background-size: cover;
+	}
+	
+	section{
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	}
+	
+	#background {
+	 position: absolute;
+	 width: 1500px;
+	}
+	#wrapper {
+		
+    }
+
+    #wrapper.toggled {
+        
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+		height: 1000px;
+    }
+	
+	#sidebar-wrapper > ul > section > li {
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 240px;
+	}
+	
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+		width: 1250px;
+		margin-right: auto;
+		margin-left: auto;
+		position: relative;
+		color: black;
+    }
+	#page-content-wrapper div.header h1{
+		font-weight: bold;
+		color: black;
+	}
+
+    #wrapper.toggled #page-content-wrapper {
+        position: absolute;
+    }
+}
