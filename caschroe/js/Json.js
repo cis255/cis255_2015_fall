@@ -14,7 +14,7 @@ xmlhttp.send();
 function myFunction(response) {
     var arr = JSON.parse(response);
     var i;
-    var out = "<table>";
+    var out = "";
 
     for(i = 0; i < arr.courses.length; i++) {
         out += "<tr><td>" +
@@ -23,9 +23,11 @@ function myFunction(response) {
         arr.courses[i].courseNumber +
 		"</td><td>" +
 		arr.courses[i].term +
+        "</td><td>"
+		arr.courses[i].capacity +
         "</td></tr>";
     }
-    out += "</table>"
+    
     document.getElementById("id01").innerHTML = out;
 }
  });
