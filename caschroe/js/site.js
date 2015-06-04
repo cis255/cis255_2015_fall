@@ -18,4 +18,4 @@ $(document).ready(function(){
 	'/' + ((''+day).length<2 ? '0' : '') + day + '/' +
 	d.getFullYear();
 	document.getElementById("date").innerHTML = output;
-});
+ });
