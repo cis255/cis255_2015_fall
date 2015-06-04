@@ -687,7 +687,7 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
 
 #spinner {
 	position: absolute;
-	top: 150px;
+	top: 250px;
 	left: 50%;
 	margin: -100px 0 0 -100px;
 	height: 200px;
@@ -715,11 +715,12 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
 		.poloroid_frame {
 			position: relative;
   			width: 90%;
-			left: 5%;
-			right: 5%;
-			top: 100px;
+			left: 8%;
+			right: 3%;
+			top: 40px;
 			background-color: transparent;		
 			height: 210px;
+			
 		}
 		
 		.poloroid_item_wrapper {
@@ -728,23 +729,26 @@ ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duratio
 			background-color: transparent;
 			
 			width: 16%;
-			height: 100%;		
+			height: 100%;
+			min-width: 210px;
+			min-height: 210px;
 		}
 		
 		.poloroid_pic  {
-			
 			border-style: solid;
 			border-width: 1px;			
 			background-color: #FFFFFF;
 			
 			width: 80%;
-			height: 100%;
-			background-position: center 2%;
+			background-position: center 10%;
 			background-size: 	96% auto;
 			border-style: solid;
 			border-width: 1px;
 			border-color: #000;			
 			background-repeat: no-repeat;
+			height: auto;
+			min-height: 180px;
+			min-width:  180px;
 			
 			text-align: center;
 		}
