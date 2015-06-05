@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <head> 
+<script type="text/javascript" src="../_tablesorter/jquery-latest.js"></script> 
+<script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script> 
+<script>
+$(document).ready(function() { 
+var xmlhttp = new XMLHttpRequest();
+var url = "https://api.svsu.edu/courses?prefix=CIS";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    console.log(arr);
+    var i;
+    var out = "";
+
+    for(i = 0; i < arr.courses.length; i++) {
+        out += "<tr><td>" +
+        arr.courses[i].prefix +
+        "</td><td>" +
+        arr.courses[i].courseNumber +
+        "</td><td>" +
+        arr.courses[i].term +
+        "</td><td>"+
+        arr.courses[i].capacity +
+		"</td></tr>";
+    }
+    document.getElementById("id01").innerHTML = out;
+
+        $("#myTable").tablesorter( {sortList: [[0,0], [1,1]]} );
+    }
+});
+
+</script>
+<style>
+tr:nth-child(odd){
+	baackground-color: lightgray
+}
+th{
+    background-cololr:black;
+    color:white;
+}
+
+</style>
 </head>
 <body>
-  <h1> Mike Crockett - Module G </h1>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
+  <h1> Mike Crockett - Module G - Table Sorter, Calender, Chart </h1>
+<table id="myTable" class="tablesorter"> 
+<thead> 
+<tr> 
+    <th>PRE</th> 
+    <th>NUM</th> 
+    <th>TERM</th> 
+    <th>CAP</th> 
+</tr> 
+</thead> 
+<tbody id="id01"> 
+</tbody>
+</table> 
 </body>
+</html>
