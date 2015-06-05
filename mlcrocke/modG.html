@@ -1,68 +1,111 @@
 <!DOCTYPE html>
-<head> 
-<script type="text/javascript" src="../_tablesorter/jquery-latest.js"></script> 
-<script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script> 
-<script>
-$(document).ready(function() { 
-var xmlhttp = new XMLHttpRequest();
-var url = "https://api.svsu.edu/courses?prefix=CIS";
+<head>
 
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        myFunction(xmlhttp.responseText);
+<script src="../_chartjs/Chart.js"></script>
+    <script type="text/javascript" src="../_jqwidgets/scripts/jquery-1.11.1.min.js"></script>	
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/globalization/globalize.js"></script>
+	<link rel="stylesheet" href="../_jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="../_jqwidgets/jqwidgets/styles/jqx.darkblue.css" type="text/css" />
+	<script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script> 
+	<script>
+	$(document).ready(function() {
+	
+	//Chart
+	var buyerData = {
+		labels : ["January","February","March","April","May","June"],
+		datasets : [
+			{
+				fillColor : "rgba(172,194,132,0.4)",
+				strokeColor : "#ACC26D",
+				pointColor : "#fff",
+				pointStrokeColor : "#9DB86D",
+				data : [203,156,99,251,305,247]
+			}
+		]
+	}
+    var buyers = document.getElementById('buyers').getContext('2d');
+    new Chart(buyers).Line(buyerData);
+	//End Chart
+	
+	//Course Info
+	var xmlhttp = new XMLHttpRequest();
+	var url = "https://api.svsu.edu/courses?prefix=CIS";
+
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			myFunction(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+
+	function myFunction(response) {
+		var arr = JSON.parse(response);
+		console.log(arr);
+		var i;
+		var out = "";
+
+		for(i = 0; i < arr.courses.length; i++) {
+			out += "<tr><td>" +
+			arr.courses[i].prefix +
+			"</td><td>" +
+			arr.courses[i].courseNumber +
+			"</td><td>" +
+			arr.courses[i].term +
+			"</td><td>"+
+			arr.courses[i].capacity +
+			"</td></tr>";
+		}
+
+		document.getElementById("id01").innerHTML = out;
+	
+        $("#myTable").tablesorter( {sortList: [[0,0], [1,0]]} ); 
     }
-}
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+	//End Course Info
+	
+	//Widgets
+	$("#myButton").jqxButton({ width: '120px', height: '35px', theme: 'darkblue'});
+	$("#calendar").jqxCalendar({ width: 220, height: 220, theme: 'arctic' });
+	//End Widgets
+	}
+	); 
+	</script>
 
-function myFunction(response) {
-    var arr = JSON.parse(response);
-    console.log(arr);
-    var i;
-    var out = "";
-
-    for(i = 0; i < arr.courses.length; i++) {
-        out += "<tr><td>" +
-        arr.courses[i].prefix +
-        "</td><td>" +
-        arr.courses[i].courseNumber +
-        "</td><td>" +
-        arr.courses[i].term +
-        "</td><td>"+
-        arr.courses[i].capacity +
-		"</td></tr>";
-    }
-    document.getElementById("id01").innerHTML = out;
-
-        $("#myTable").tablesorter( {sortList: [[0,0], [1,1]]} );
-    }
-});
-
-</script>
 <style>
+th {
+	background-color: black;
+	color: white;	
+}
 tr:nth-child(odd){
-	baackground-color: lightgray
-}
-th{
-    background-cololr:black;
-    color:white;
-}
-
+	background-color: #CCC;
+}	
 </style>
 </head>
 <body>
-  <h1> Mike Crockett - Module G - Table Sorter, Calender, Chart </h1>
+	<h1><strong>Mike Crockett - Module G - Table Sorter, Calender, and Chart </strong></h1>
+	
 <table id="myTable" class="tablesorter"> 
 <thead> 
 <tr> 
-    <th>PRE</th> 
-    <th>NUM</th> 
-    <th>TERM</th> 
-    <th>CAP</th> 
+    <th>Prefix</th> 
+    <th>Course Number</th> 
+    <th>Term</th> 
+    <th>Capacity</th> 
 </tr> 
 </thead> 
-<tbody id="id01"> 
+<tbody id="id01">
 </tbody>
 </table> 
+<ul></ul>
+<input type="button" value="Button Widget" id='myButton'/>
+<ul></ul>
+<p id="calendar"><p>
+<ul></ul>
+<canvas id="buyers" width="600" height="400"></canvas>
+
 </body>
-</html>
+
