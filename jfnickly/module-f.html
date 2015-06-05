@@ -1,23 +1,124 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>cis255</title>
-</head>
-<body>
-  <h1>Title</h1>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
-<body>
+<meta charset="utf-8" />
+<title>Module-F</title>
 
+<SCRIPT src="misc/main.js">
+
+</SCRIPT>
+
+
+<script type="text/javascript" src="misc/wz_jsgraphics.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body onload="initialize();" onresize="sizeRulers();">
+
+	<div class="canvasFrame">
+		<h1>Estimated Cost to for Decking Lumber: (not complete)</h1>
+				
+		<div class="toolBar">
+				<ul>
+				<!-- save/update button -->
+				<li id="btn_a" class="tooltip">
+					<img src="img/save_2.png">
+					<span>
+      				update
+    				</span>
+    			</li>
+
+				<li class="spacer"></li>	
+		
+				<li id="btn_b" class=" tooltip" onMouseUp="selectMenuItem('btn_b');">
+					<img src="img/rectangle.png">
+						<span>
+      					Draws a rectangular region
+    					</span>
+				</li>		
+			
+				<li id="btn_c" class=" tooltip"  onMouseUp="selectMenuItem('btn_c');">
+					<img src="img/segment_a.png">
+						<span>
+      					For creating segments
+    					</span>
+				</li>
+			
+				<li id="btn_d" class=" tooltip"  onMouseUp="selectMenuItem('btn_d');">
+					<img src="img/move.png">
+						<span>
+      					Move a node
+    					</span>
+				</li>
+			
+				<li class="spacer"></li>
+						
+							
+				<li id="popupMenuX" class="drawingButtons tooltip" onclick="showElement('popupDiv', 'visible', 'popupMenuX');">
+					<legend for="popupMenuX" id="showCaption">
+				
+					</legend>					
+					<img src="img/line_weight.png">
+						<span>
+      					Choose board Size
+   	 				</span>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="hRuler" class="hRuler">
+				
+		</div>
+		
+		<div id="dCanvas" class="dCanvas">
+	  	 	<div id="myCanvas" class="xCanvas" onMouseDown="hitTest('true');" onMouseUp="hitTest('false');" onMouseMove="hoverTest();"  ></div>
+  	 	</canvas></div>
+
+          <div class="editForm">
+   	    <p style="font-size:12px;">* size of boards are 2" smaller to compensate for a gap, which is 2 pixes.</p>
+            <p style="font-size:12px;">* boards should line up on joists, but for this demo, they will not.</p>
+            <p style="font-size:12px;">* premiums apply to 12', 14' and 16' boards (1.25, 1.50, and 1.75). And for wider stock.</p>
+            <input class="brdSize" name="bdSz" type="radio" id="lengthA" value="boardSize2" onclick="selectBoard(8);"><label for="lengthA">8' boards</label>	
+	    <input class="brdSize" name="bdSz" type="radio" id="lengthB" value="boardSize2" onclick="selectBoard(12);"> <label for="lengthB">12' boards</label>
+            <input class="brdSize" name="bdSz" type="radio" id="lengthC" value="boardSize2" onclick="selectBoard(14);"> <label for="lengthC">14' boards</label>
+            <input class="brdSize" name="bdSz" type="radio" id="lengthD" value="boardSize2" onclick="selectBoard(16);"> <label for="lengthD">16' boards</label><hr/>
+	        Size: <input id="boardSize" name="boardSize" type="text" value="" style="width:50px">
+            &nbsp;&nbsp;Deck's Dimentions: <input id="deckW" name="deckW" type="text" value="" style="width:50px">
+            &nbsp;x&nbsp;<input id="deckH" name="deckH" type="text" value="" style="width:50px">
+            &nbsp;&nbsp;Unit Price:&nbsp;<input id="unitPrice" name="unitPrice" type="text" value="" style="width:120px">
+            <span id="spanMe">&nbsp;&nbsp;Needed&nbsp@&nbsp8'&nbspLengths:&nbsp;</span><input id="countNeeded" name="countNeeded" type="text" value="" style="width:200px">
+            <input id="total" name="total" type="text" value="" style="width:100px"><hr>
+	    <button><a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html" style="text-decoration:none;">Return To Class Page</a></button>	
+         </div>
+	</div>
+			<div id="popupDiv" class="popupSelector" onblur="showElement('popupDiv', 'hidden', null);" >
+				<p>Size Selector</p>
+					<input class="brdOption2" name="bdSz" type="radio" id="bdSz1" value="boardSize2"><label for="bdSz1" onmouseup="selectOption('bdSz1');" >6 inch</label><br>	
+					<input class="brdOption" name="bdSz" type="radio" id="bdSz2" value="boardSize2"><label for="bdSz2" onmouseup="selectOption('bdSz2');">8 inch</label><br>
+					<input class="brdOption" name="bdSz" type="radio" id="bdSz3" value="boardSize2"><label for="bdSz3" onmouseup="selectOption('bdSz3');">10 inch</label><br>	
+					<input class="brdOption" name="bdSz" type="radio" id="bdSz4" value="boardSize2"><label for="bdSz4" onmouseup="selectOption('bdSz4');">12 inch</label><br>				
+			</div>	
+			
+			
+		
+		
+		
+</body>
+
+	
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

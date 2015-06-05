@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" type="text/css" href="site.css/site.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="site.js/site.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/site.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../_tablesorter/jquery-latest.js"></script> 
+	<script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script> 
+	<!-- add the jQuery script -->
+    <script type="text/javascript" src="../_jqwidgets/scripts/jquery-1.11.0.min.js"></script>	
+    <!-- add the jQWidgets framework -->
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxcore.js"></script>
+    <!-- add one or more widgets -->
+    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+	    <script type="text/javascript" src="../_jqwidgets/jqwidgets/jqxcalender.js"></script>
+    <!-- add one of the jQWidgets styles -->
+	<link rel="stylesheet" href="../_jqwidgets/jqwidgets/styles/jqx.darkblue.css" type="text/css" />
+	<script type="text/javascript" src="../_chartjs/Chart.js"></script>
+	<script type="text/javascript" src="js/moduleG.js"></script>
+
 
 </head>
-<h1>CIS 255 MODULES</h1>
-<h3 class="headerThree">Chad Schroeder </h3>
 <body>
-<button class="author">Show Author</button>
-<button id="showList">Show Modules</button>
-	<ul id="moduleList">
-		<li>Module A - Syllabus and Course Standards</li>
-		<li>Module B - Github and Personal Course Menu</li>
-		<li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-		<li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-		<li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-		<li>Module F - HTML Tables and Forms (Ch. 4)</li>
-		<li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-		<li>Module H - Basic JavaScript (Ch. 6)</li>
-		<li>Module I - jQuery (Ch. 15), AJAX</li>
-		<li>Module J - JavaScript Roadtrip (Code School)</li>
-		<li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-		<li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-	</ul>
+<div id="graph"">
+<canvas id="myChart" width="400" height="400"></canvas>
+<div>
+<table id="myTable" class="tablesorter table table-bordered table-hover">
+<thead>
+<tr> 
+    <th>Pre</th> 
+    <th>Num</th> 
+    <th>Term</th> 
+    <th>Cap</th> 
+</tr> 
+</thead> 
+<tbody id="id01">
+
+</tbody>
+
+</table>
+
+<input type="button" value="Click Me" id='myButton'/>
+<div id="calender"></div>
 </body>
