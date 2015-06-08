@@ -1,0 +1,30 @@
+<html>
+<head> 
+<!-- Example of First Class Function. Anonymous function becomes named function. -->
+<script>
+	var greet = function(name){
+		document.getElementById("btn1").innerHTML = "Hello, " + name;
+	};
+	var person = {
+		greet: function() {
+			return document.getElementById("btn2").innerHTML="Hello, " + this.name;
+		},
+		name: "Mike"
+	};
+	var greet3 = (function(name){
+		return "Hello, " + name;
+		})("Mike");
+	var add = (function () {
+    	var counter = 0;
+    	return function () {return counter += 1;}
+	})();
+</script>
+</head>
+
+<body>
+<button id='btn1' onclick='greet("Mike")'> Button 1 </button>
+<button id='btn2' onclick='person.greet()'> Button 2 </button>
+<button id='btn3' onclick='this.innerHTML=greet3;'> Button 3 </button>
+<button id='btn4' onclick='this.innerHTML=add();'> Button 4 </button>
+
+</body>
