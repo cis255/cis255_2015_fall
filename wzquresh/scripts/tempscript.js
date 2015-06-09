@@ -23,7 +23,7 @@ $(document).ready(function() {
 	$("#kelvin").keyup(function(){
 		if((isNaN(this.value)==false) && this.value != ""){
 			$("#celsius").val((this.value-273.15).toFixed(2));
-			$("#fahrenheit").val((this.value*(9/5)+32).toFixed(2));
+			$("#fahrenheit").val(((this.value-273.15)*(9/5)+32).toFixed(2));
 		}
 	});
 
