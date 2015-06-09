@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<head> </head>
+<body>
+<h1>This is Adam Henderson - Module F </h1>
+    <ul>
+        <li>Module A - Syllabus and Course Standards</li>
+        <li>Module B - Github and Personal Course Menu</li>
+        <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
+        <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
+        <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
+        <li>Module F - HTML Tables and Forms (Ch. 4)</li>
+        <li>Module G - Advanced CSS (Ch. 5), Sass, Compass,
+Bootstrap</li>
+        <li>Module H - Basic JavaScript (Ch. 6)</li>
+        <li>Module I - jQuery (Ch. 15), AJAX</li>
+        <li>Module J - JavaScript Roadtrip (Code School)</li>
+        <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and
+MVC</li>
+        <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
+    </ul>
+</body>
+
