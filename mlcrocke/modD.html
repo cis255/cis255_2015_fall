@@ -1,20 +1,83 @@
 <!DOCTYPE html>
-<head> 
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<script>
+	function changeIdContent(){
+		if(document.getElementById("div1").innerHTML == "getSome")
+			document.getElementById("div1").innerHTML = "Nice";
+		else
+			document.getElementById("div1").innerHTML = "getSome";
+	}
+	function changeSpanContent(){
+		var list = document.getElementsByTagName("span");
+		for(var i = 0; i < list.length; i++){
+			list[i].innerHTML= "YUP! " + i;
+			list[i].style.color = "green";
+		}
+	}
+    function HideSpanContent(){
+        var list = document.getElementsByTagName("span");
+        for(var i = 0; i < list.length; i++){
+            if(list[i].hidden == true)
+				list[i].hidden = false;
+			else
+				list[i].hidden = true
+        }
+    }
+    function deleteDivWithSpan(){
+		var list1 = document.getElementById("list1");
+		var span1 = list1 = document.getElementById("span");
+		for(var i = 0; i < list1.length; i++){
+			if(!list1[i].getElementsByTagName("span"))
+				list1[i].parentElement.removeChild(list1[i]);
+			}
+    }
+
+</script>
 </head>
+
 <body>
-  <h1> Mike Crockett - Module D </h1>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
+<h1>Mike Crockett - Module D - Basic JavaScript</h1>
+
+<div>Now is the winter of our discontent</div>
+<div>It was the best of times; it was the worst of times. </div>
+<div class="container">
+<div id="list1" class="row">
+  <div id="div1" class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1"><span>.col-md-1</span></div>
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+<button type="submit" onmouseup=" changeIdContent()" class="btn btn-primary">Change id div1</button>
+<button type="submit" onmouseup=" changeSpanContent()" class="btn btn-warning">Change tag span</button>
+<button type="submit" onmouseup=" HideSpanContent()" class="btn btn-danger">Hide tag span</button>
+<button type="submit" onmouseup=" deleteDivWithSpan()" class="btn btn-inverse">Delete Div with span</button>
+</div> <!-- end container -->
 </body>
+

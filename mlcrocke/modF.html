@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<head> 
+<html>
+<head>
+  <title>JQUERY Example</title>
+  <meta charset="utf-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="tempConvert.js" type="text/javascript"></script>
 </head>
 <body>
- <h1> Mike Crockett - Module F </h1>
-  <ul>
-    <li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-  </ul>
+<h1>Mike Crockett - Module F - Temperature Converter</h1>
+<h3>Temperature Converter:</h3>
+<form id="tempUnits" method="get" action="#">
+
+<fieldset>
+
+  <label for="fahrenheit">Fahrenheit: 
+  <input type="text" id="fahrenheit" value="32">
+  </label>
+
+  <label for="celsius">Celsius: 
+  <input type="text" id="celsius" value="0">
+  </label>
+
+  <label for="kelvin">Kelvin: 
+  <input type="text" id="kelvin" value="273.15">
+  </label>
+
+</fieldset>
+
+</form>
 </body>
+</html>
