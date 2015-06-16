@@ -16,7 +16,7 @@ function TodoCtrl($scope) {
 	};
 	
 	$scope.addTodo = function() {
-		$scope.todos.push({text:$scope.formTodoText, done:false});
-		$scope.formTodoText = "" //clears input after it adds to list
+		$scope.todos.push({text:$scope.formTodoPrefix, done:false});
+		$scope.formTodoPrefix = "" //clears input after it adds to list
 	}
 }
