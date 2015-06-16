@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Media Queries Example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+<style>
+	img {
+	width:100px;
+	height:200px;
+	}	
+	media (min-witdth: @ screen-md-min){
+		#header {
+			background-color: green;
+			height:130px; /* kclau:2015-06-11 from video */
+			background-image:url(banner-wide.png); /* kclau:2015-06-11 from video */
+			background-repeat:no-repeat; /* kclau:2015-06-11 from video */
+			background-position:center; /* kclau:2015-06-11 from video */
+		}
+	}
+	#color {
+		color: red;
+	}
+</style>
+<body>
+<div id="header">
+<!-- instead of an image tag we will use a background image and change it in the css -->
+</div><!-- end header div -->
+<div id="wrapper">
+<div class="container" id="content">
+<a href="http://csis.svsu.edu/~kclau/cis255/kclau/MediaQueriesPractice/Media-Queries.html">CSSOnly (non-Bootstrap)Version</a>
+<br />
+<div class="col-lg-2 col-md-4 col-sm-6" id="color"><img src="http://upload.wikimedia.org/wikipedia/commons/2/22/Classic_alphabet_numbers_1_at_coloring-pages-for-kids-boys-dotcom.svg" alt="1"><br />PLorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam,  justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam  ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo  porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis  ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean  sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at,  odio. Donec et ipsum et sapien vehicula nonummy. Suspendisse potenti. Fusce  varius urna id quam. Sed neque mi, varius eget, tincidunt nec, suscipit id,  libero. In eget purus. Vestibulum ut nisl. Donec eu mi sed turpis feugiat  feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut,  sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh.  Donec nec libero.</div>
+<div class="col-lg-2 col-md-4 col-sm-6"><img src="https://musiccourt.files.wordpress.com/2011/12/2.jpg" alt="2"><br />PIngenium fere iriure, augue tamen pneum, velit aptent esse, epulae commoveo vero, vero. Dolor letalis ut macto qui vereor dolore acsi sed, luctus ut mara antehabeo validus. Iaceo sudo esse te macto dignissim rusticus modo feugiat. Iriure et pneum pagus sed vereor nutus multo. Imputo ut mara, exputo feugiat, nutus. </div>
+<div class="col-lg-2 col-md-4 col-sm-6"><img src="http://www.grlira.com/wp-content/uploads/2011/06/Stencil-Number3a.jpg" alt="1"><br />Plaga et, sed plaga, quadrum nonummy. Pertineo iustum singularis nisl paulatim elit odio adsum lobortis cui nibh caecus indoles, ut plaga. Enim foras consequat in iustum, venio. Nulla nulla esse aptent adsum minim lucidus ex quia wisi sit. At sudo te aliquip quis saepius at facilisi vero ex. Qui obruo verto luctus mara, iriure quod nostrud. Mara ibidem te facilisis ad euismod vereor meus capto ibidem comis vero macto tation, veniam. </div>
+<div class="col-lg-2 col-md-4 col-sm-6">
+<h2>H2 level heading </h2>
+<div><img src="http://www.clipartbest.com/cliparts/dir/a4G/dira4Gki9.png" alt="1"></br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam,  justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam  ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo  porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis  ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean  sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio.</div>
+</div>
+<div class="col-lg-4 col-md-4"><img src="http://upload.wikimedia.org/wikipedia/commons/1/11/I-5.svg" alt="1"></br>Butler, private art cocktail ambassador gifted genuine. Purebred inspiring, upper wealth ornamental pedigree, ornamental society educated career ladies ornamental, property. Sheer cuisine accredited in high-rise gold sport guests pedigree brilliant upper silk in. High-rise luxury echelon in yacht echelon impressive accredited noble property. Saphire first-class presidential lifestyle five-star with grande. Rare cruise upper travel accredited luxury gentlemen yacht. Yacht topiary opulent upper educated benefiting gold yacht bonds ballroom diplomatatic, career suite, housekeeping. </div>
+</div><!-- end content div -->
+</div><!-- end wrapper div -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>kclau - Program 2 - Deck Floorboard Cost Calculator</title>
+  <link rel="shortcut icon" href="Picture/cardinal_logo.jpg"/> 
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script type="text/javascript" src="../_jqwidgets/scripts/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script>
+  </head>
+  <meta name="viewport" content = "initial-scale=1">
+<script>
+	$(document).ready(function() {
+
+	var deckArea;
+	var boardArea;
+	var numBoards;
+	var total;
+	var dWidth;
+	var bLength;
+	var bWidth;
+	var bPrice;
+	var planBoard = "";
+	
+	$("#deckLength").keyup(update);
+	
+	$("#deckWidth").keyup(function(){
+		if((isNaN(this.value) === false) && this.value !== "") {
+		 dWidth = parseFloat(this.value);
+		}
+	});
+	
+	$("#boardLength").keyup(function(){
+		if((isNaN(this.value) === false) && this.value !== "") {
+			bLength = parseFloat(this.value);
+		}
+	});
+	
+	$("#boardWidth").keyup(function(){
+		if((isNaN(this.value) === false) && this.value !== "") {
+			bWidth = parseFloat(this.value);
+		}
+	});
+	
+	$("#boardPrice").keyup(function(){
+		if((isNaN(this.value) === false) && this.value !== "") {
+			bPrice = parseFloat(this.value);
+		}
+	});
+	
+	function update() {
+		numBoards = 0;
+		total = 0;
+		
+		var dLength = $(deckLength).val();
+		alert(dLength);
+		deckArea = dLength * dWidth;
+		boardArea = bLength * bWidth;
+		numBoards = deckArea/boardArea;
+		total = numBoards * bPrice;
+		
+
+		$("#cost").text("$"+total.toFixed(2));
+		$("#boardsNeeded").text(numBoards);
+		
+
+		for(var y = 0; y < (bLength); y++) {
+			planBoard += "-";
+		}
+
+		for (var i = 0; i < dLength; i++) {
+			for (var x = 0; x < dWidth; x++) {
+				document.getElementById("plan").innerHTML = planBoard;
+			}
+		}
+	};
+
+});
+</script>
+<style>
+	.form-group{
+	width:50%
+	}
+</style>
+<body>
+	<div class="container">
+		<h1>kclau - Program 2 - Deck Floorboard Cost Calculator</h1>
+		<div class="form-group">
+			<label for="DeckLength">DeckLength:</label>
+			<input type="text" class="form-control" id="deckLength">
+		</div>
+		<div class="form-group">
+			<label for="DeckWidth">DeckWidth:</label>
+			<input type="text" class="form-control" id="deckWidth">
+		</div>
+		<div class="form-group">
+			<label for="BoardLength">BoardLength:</label>
+			<input type="text" class="form-control" id="boardLength">
+		</div>
+		<div class="form-group">
+			<label for="DeckWidth">DeckWidth:</label>
+			<input type="text" class="form-control" id="deckWidth">
+		</div>
+		<div class="form-group">
+			<label for="BoardPrice">Price Per Board:</label>
+			<input type="text" class="form-control" id="boardPrice">
+		</div>
+	</div>
+	<div class="container">
+		<p># boards: <span id= "boardsNeeded"></span></p>
+		<p>$ total: <span id= "cost"></span></p>
+	</div>
+</body>
+</html>

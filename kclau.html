@@ -7,6 +7,15 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<meta name="viewport" content = "initial-scale=1">
+<script>
+	document.getElementById("mouseover").onmouseover = function(){mouseOver()};
+	document.getElementById("mouseover").onmousout = function(){mouseOut()};
+	function mouse(){
+		document.getElementById("mouseover").
+	}
+
+	}
+</script>
 <style>
 	.panel{
 		width: 100%;
@@ -19,6 +28,7 @@
 	.pagination{
 		width:100%;
 	}
+
 </style>
 </head>
 	<header class="navbar-inverse navbar-fixed-top" role = "Banner">
@@ -27,7 +37,7 @@
 		  		<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-			  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  			<button type="button" id = "mouseover"class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -77,19 +87,18 @@
 			</blockquote>
   		</div>
 	</div>
+	
 <body>
-	<div class="container">
+	<div class="container"">
 		<div class="panel panel-primary">
 		    <div class="panel-heading"><center>Assignment Menu</center></div>
-			<tr><td>
 		    <div class="panel-body"><a href="http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentA.html" target="_blank">Assignment A - Basic HTML</a></div>
-			</td></tr>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentB.html' target="_blank">Assignment B - Basic CS</a></div>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentC.html' target="_blank">Assignment C - CSS Inheritance and Specificity</a></div>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentD.html' target="_blank">Assignment D - Basic JavaScript</a></div>
-		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentE.html' target="_blank">Module E - Basic CSS (Ch. 3) and CSS Generators</a></div>
-		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentF.html' target="_blank">Module F - HTML Tables and Forms (Ch. 4)</a></div>
-		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentG.html' target="_blank">Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</a></div>
+		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentE.html' target="_blank">Assignment E - Basic AJAX</a></div>
+		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/Module_F/temp_convert.html' target="_blank">Module F - HTML Tables and Forms (Ch. 4)</a></div>
+		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/Module_G/ModuleG.html' target="_blank">Module G - Table Sorter</a></div>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentH.html' target="_blank">Module H - Basic JavaScript (Ch. 6)</a></div>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentI.html' target="_blank">Module I - jQuery (Ch. 15), AJAX</a></div>
 		    <div class="panel-body"><a href='http://csis.svsu.edu/~kclau/cis255/kclau/AssignmentJ.html' target="_blank">Module J - JavaScript Roadtrip (Code School)</a></div>

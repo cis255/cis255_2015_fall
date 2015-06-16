@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* styles for screens larger than 801px wide */
+@media screen and (min-width:801px) {
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 800px;
+	max-width: 1000px;
+	padding: 3em;
+	margin: 0 auto;
+	min-height: 100px;
+}
+
+#header {
+	background-color: green;
+	height:130px; /* kclau:2015-06-11 from video */
+	background-image:url(banner-wide.png); /* kclau:2015-06-11 from video */
+	background-repeat:no-repeat; /* kclau:2015-06-11 from video */
+	background-position:center; /* kclau:2015-06-11 from video */
+}
+
+#content {
+	-moz-column-count:5; /* Firefox */
+	-webkit-column-count:5; /* Safari and Chrome */
+	column-count:5;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+img {
+	width:100px;
+	height:200px;
+}
+
+#footer {
+	
+}
+
+#farleftcolumn, #farrightcolumn,
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 1000px;
+	width: 200px;
+	padding: 10px;
+	overflow: auto;
+}
+#farleftcolumn {
+    background-color: rgb(225,225,225);
+}
+
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+
+#farrightcolumn {
+    background-color: rgb(225,225,225);
+}
+
+} /* end @media */
+
+/* styles for screens less than 801px wide */
+@media screen and (max-width:801px) {
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 400px;
+	max-width: 750px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: cyan;
+	height:130px; /* kclau:2015-06-11 from video */
+	background-image:url(banner-medium.png); /* kclau:2015-06-11 from video */
+	background-repeat:no-repeat; /* kclau:2015-06-11 from video */
+	background-position:center; /* kclau:2015-06-11 from video */
+}
+
+#content {
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+	column-count:3;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+img {
+	width:50px;
+	height:100px;
+}
+
+#footer {
+	
+}
+
+} /* end @media */
+
+/* styles for screens less than 480px wide */
+@media screen and (max-width:480px) {
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 200px;
+	max-width: 400px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: yellow;
+	height:130px; /* kclau:2015-06-11 from video */
+	background-image:url(banner-small.png); /* kclau:2015-06-11 from video */
+	background-repeat:no-repeat; /* kclau:2015-06-11 from video */
+	background-position:center; /* kclau:2015-06-11 from video */
+}
+
+#content {
+	-moz-column-count:1; /* Firefox */
+	-webkit-column-count:1; /* Safari and Chrome */
+	column-count:1;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+
+} /* end @media */
