@@ -1,0 +1,40 @@
+<!DOCTYPE html> <html ng-app> <!-- filename: mbroy.html author:Matthew
+Roy, mbroy@svsu.edu purpose: TODO List in anguler details: This creates
+a todo list using angular which checks off things as you do them -->
+<head>
+<link rel="stylesheet" type="text/css" href="css/angular.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Angular JS -->
+    <script
+src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+    <!-- Jquery -->
+    <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Underscore JS -->
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.js"></script>
+	
+<body>
+
+    <div ng-controller="TodoCtrl" id="controller">
+        <h2>Total todos: {{getTotalTodos()}}<h2>
+        <ul class="unstyled">
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        <form class="form-horizontal">
+            <input type="text" ng-model="formTodoText" ng-model-instant>
+            <button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i>Add</button>
+        </form>
+		
+		<button class="btn-large trashBtn" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i>Clear Completed</button>
+    </div> </body>
+</html>

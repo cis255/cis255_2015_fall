@@ -1,12 +1,99 @@
+<!-- 
+Author: Chad Schroeder
+Summary: Lets a user enter in measurement for deck dimensions 
+		 as well as board measurements and board cost. Using 
+		 ajax the output of total cost and amount of boards needed
+		 for the deck will be shown.
+Design:  1- Style sheets included 
+		 2- within the body begin a form with the get method
+		 3- using rows and columns create input and output text boxes
+		 4- give all elements ids or classes to reference in the js file
+		 5- script files included -->
+
+
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="caschroe/css/site.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="caschroe/js/site.js"></script>
-
-
+<!-- Styles Included -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/deck.css">
+	<link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 <body>
+<!-- Form Container -->
+<form id="deckBuilder" method="get" action="#">
+<!-- Form Input Rows and Columns -->
+<div class="row">
+	<div class="col-md-12">
+	<!-- Deck length Input -->
+		<div class="row">
+			<label class="col-md-2 deck" id="label">Deck Length:</label>
+			<input class="col-md-1 deck" id="deckLengthInput" value="-"></input>
+		</div>
+		<!-- End div -->
+		
+		<!-- Deck Width Input -->
+		<div class="row">
+			<label class="col-md-2 deck" id="label">Deck Width:</label>
+			<input class="col-md-1 deck" id="deckWidthInput" value="-"></input>
+		</div>
+		<!-- End div -->
+		
+		<!-- Board length Input -->
+		<div class="row">
+			<label class="col-md-2 deck" id="label">Board Length:</label>
+			<input class="col-md-1 deck" id="boardLengthInput" value="-"></input>
+		</div>
+		<!-- End div -->
+		
+		<!-- Board Width Input -->
+		<div class="row">
+			<label class="col-md-2 deck" id="label">Board Width:</label>
+			<input class="col-md-1 deck" id="boardWidthInput" value="-"></input>
+		</div>
+		<!-- End div -->
+		
+		<!-- Cost per Board Input -->
+		<div class="row">
+			<label class="col-md-2 deck" id="label">$ per Board:</label>
+			<input class="col-md-1 deck" id="costPerInput" value="-"></input>
+		</div>
+		<!-- End div -->
+		
+		<hr />
+		<!-- Required number of boards output -->
+		<div class="row">
+		<label class="col-md-2 deck" id="label"># of Boards:</label>
+			<input class="col-md-1 deck" id="numberBoardsOutput"></input>
+		</div>
+		<!-- End div -->
+		
+		<!-- Total Cost output -->
+		<div class="row">
+		<label class="col-md-2 deck" id="label">Total Cost:</label>
+			<input class="col-md-1 deck" id="totalOutput"></input>
+		</div>
+		<!-- End div -->
+		<!-- Deck Container -->
+		<div class="row deckDiv">
+			<div class="col-md-12" id="insertRow">
+			<div class="row" id="deckContainer">
+			<p id="insertBoard"><p id="lineBreak"></p></p>
+		</div>
+	</div>
+	</div>
+	<!-- End Deck Container -->
+	</div>
+	<!-- End of Form Inputs -->
 
+
+</div>
+</form>
+<!-- End of Form -->
+
+<!-- Scripts included -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../_tablesorter/jquery-latest.js"></script> 
+	<script type="text/javascript" src="../_tablesorter/jquery.tablesorter.js"></script> 
+	<script type="text/javascript" src="js/deck.js"></script>
+<!-- 	<script type="text/javascript" src="js/moduleG.js"></script> --> 
 </body>

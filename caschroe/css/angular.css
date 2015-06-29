@@ -1,0 +1,17 @@
+.done-true{
+	text-decoration: line-through;
+	color:gray;
+}
+.done-false{
+	color:red;
+}
+.trashBtn{
+	margin-top: 2em;
+	margin-left: 2em;
+}
+#controller{
+	margin-left: 2em;
+}
+#practice{
+	margin-left: 2em;	
+}

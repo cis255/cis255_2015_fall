@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@media screen and (min-width: 801px){
+/* styles for screens larger than 801px wide */
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 700px;
+	max-width: 1000px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: green;
+	height:130px;
+	background-image: url(banner-wide.png);
+ 	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#content {
+	font-size:larger;
+	-moz-column-count:5; /* Firefox */
+	-webkit-column-count:5; /* Safari and Chrome */
+	column-count:5;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 700px;
+	width: 250px;
+	padding:5px;
+}
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+}
+/* end media wide */
+
+
+
+@media screen and (max-width: 750px){
+/* styles for screens larger than 801px wide */
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 400px;
+	max-width: 750px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: aqua;
+	height:130px;
+	background-image: url(banner-medium.png);
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+#content {
+	font-size:medium;
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+	column-count:3;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 700px;
+	width: 250px;
+	padding:5px;
+}
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+}
+/* end media medium */
+
+
+
+@media screen and (max-width: 480px){
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 200px;
+	max-width: 480px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: yellow;
+	height:130px;
+	background-image: url(banner-small.png);
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+#content {
+	font-size:small;
+	-moz-column-count:1; /* Firefox */
+	-webkit-column-count:1; /* Safari and Chrome */
+	column-count:1;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+#leftcolumn, #middlecolumn, #rightcolumn {
+    float: left;
+    min-height: 700px;
+	width: 250px;
+	padding:5px;
+}
+#leftcolumn {
+    background-color: rgb(225,225,225);
+}
+#middlecolumn {
+    background-color: rgb(200,200,200);
+}
+#rightcolumn {
+    background-color: rgb(225,225,225);
+}
+}
+/* end small media */

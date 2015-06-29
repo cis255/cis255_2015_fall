@@ -1,0 +1,49 @@
+
+@charset "UTF-8";
+@media screen and (min-width: 801px){
+/* styles for screens larger than 801px wide */
+
+#header {
+	background-color: green;
+	height:130px;
+	background-image: url(banner-wide.png);
+ 	background-repeat:no-repeat;
+	background-position:center;
+}
+
+}
+/* end media wide */
+
+
+
+@media screen and (max-width: 750px){
+/* styles for screens larger than 801px wide */
+
+#header {
+	background-color: aqua;
+	height:130px;
+	background-image: url(banner-medium.png);
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+}
+/* end media medium */
+
+
+
+@media screen and (max-width: 480px){
+
+#header {
+	background-color: yellow;
+	height:130px;
+	background-image: url(banner-small.png);
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+}
+/* end small media */
+
