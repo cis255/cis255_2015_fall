@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* styles for screens larger than 801px wide */
+
+@media screen and (min-width: 801px) {/* Video */
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 700px;
+	max-width: 1000px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: green;
+	height: 130px;  /* Video */
+	background-image: url(banner-wide.png); /* Video */
+	background-repeat: no-repeat; /* Video */
+	background-position: center; /* Video */
+}
+
+#content {
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+	column-count:3;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+
+} /* Video - End @media */
+
+/* ----------------------------------------------------------------- */
+
+/* styles for screens up to 800px wide */
+
+@media screen and (max-width: 801px) {/* Video */
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 400px;
+	max-width: 750px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: aqua;
+	height: 130px;  /* Video */
+	background-image: url(banner-medium.png); /* Video */
+	background-repeat: no-repeat; /* Video */
+	background-position: center; /* Video */
+}
+
+#content {
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+	column-count:2;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+}
+
+#footer {
+	
+}
+
+} /* Video - End @media */
+
+/* ----------------------------------------------------------------- */
+
+/* styles for screens up to 480px wide */
+
+@media screen and (max-width: 480px) {/* Video */
+
+body {
+}
+
+#wrapper {
+	width: 80%;
+	min-width: 200px;
+	max-width: px;
+	padding: 3em;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: yellow;
+	height: 130px;  /* Video */
+	background-image: url(banner-small.png); /* Video */
+	background-repeat: no-repeat; /* Video */
+	background-position: center; /* Video */
+}
+
+#content {
+	-moz-column-count:1; /* Firefox */
+	-webkit-column-count:1; /* Safari and Chrome */
+	column-count:1;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	/* column-gap:40px; */ 
+}
+
+#footer {
+	
+}
+
+} /* Video - End @media */

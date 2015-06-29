@@ -1,0 +1,29 @@
+html {
+
+  background-color: #d3d3d3;
+
+}
+
+.row  {
+
+  height: 300px;
+  text-align: center;
+
+}
+
+input {
+
+  margin: 3px;
+
+}
+
+.board {
+
+  background-color: #df3434;
+ height: 20px;
+ width: 40px;
+ border: 2px solid black;
+ margin: 0px;
+ display: inline-block;
+
+}

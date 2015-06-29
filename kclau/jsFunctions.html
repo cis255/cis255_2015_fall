@@ -1,0 +1,53 @@
+<html>
+<head>
+<!-- example of first class function. anonymous function becomes named function-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	var counter = 0;
+	console.log("greet");
+	var greet = function(name){
+		document.getElementById("btn1").innerHTML= "hello, " + name;
+	};
+	console.log("greet");
+	console.log("1");
+	var person = {
+		greet:function(){
+		return document.getElementById("btn2").innerHTML= "hello, " + this.name;
+		},
+		name: "Aaron"
+	};
+	console.log(person);
+	var greet3 = (function(name){
+		return document.getElementById("btn3").innerHTML= "hello, " + this.name;
+	})("zippydee");
+	
+	function add(){
+		counter += 1;
+	};
+	
+	var add=(function(){
+		var counter = 0;
+		return function (){return counter += 1;}
+	})();
+	
+	$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide("slow", function(){
+            alert("The paragraph is now hidden");
+        });
+    });
+});
+</script>
+</head>
+<body>
+	<button>Close all button</button>
+	<p>hdfhdfh</p>
+		<button id="btn1" onclick='greet("George")'>button1</button>
+	<button id="btn2" onclick='person.greet()'>button2</button>
+	<button id="btn3" onclick='this.innerHTML = greet3'>button3</button>
+	<br/>
+	<button id="btn5" onclick='alert(++counter)'>button5</button>
+	<button id="btn6" onclick='add();alert(counter);'>button6</button>
+	<button id="btn7" onclick='this.innerHTML = add();'>button6</button>
+</body>
+</html>

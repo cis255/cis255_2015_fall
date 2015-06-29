@@ -1,32 +1,51 @@
 <!DOCTYPE html>
+<html ng-app>
 <!--
 filename: mbroy.html
 author:Matthew Roy, mbroy@svsu.edu
-purpose: Personal website for CIS255
-details:
+purpose: TODO List in anguler
+details: This creates a todo list using angular which checks off things as you do them
 -->
 
 <head>
-	<title>Mbroy's CIS255 Module I</title>
+	<title>Mbroy's CIS255 Module H</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="mbroy/css/main.css" />
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- Angular JS -->
+	<script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- Underscore JS -->
+	<script src="http://underscorejs.org/underscore-min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script type="text/javascript" src="todo.js"></script>
+
+<style>
+	.done-true{
+		text-decoration: line-through;
+		color: gray;
+	}
+</style>	
+	
 </head>
 <body>
- <ul>
-	<h1><strong>CIS255 Menu</strong></h1>
-	<li>Module A - Syllabus and Course Standards</li>
-    <li>Module B - Github and Personal Course Menu</li>
-    <li>Module C - Web Overview (Ch. 1) and Chrome DevTools</li>
-    <li>Module D - Basic HTML (Ch.2) and HTML Generators</li>
-    <li>Module E - Basic CSS (Ch. 3) and CSS Generators</li>
-    <li>Module F - HTML Tables and Forms (Ch. 4)</li>
-    <li>Module G - Advanced CSS (Ch. 5), Sass, Compass, Bootstrap</li>
-    <li>Module H - Basic JavaScript (Ch. 6)</li>
-    <li>Module I - jQuery (Ch. 15), AJAX</li>
-    <li>Module J - JavaScript Roadtrip (Code School)</li>
-    <li>Module K - Backbone.js (Ch. 15), Ember.js, Angular.js and MVC</li>
-    <li>Module L - CMS (Ch. 18) and Miscellaneous</li>
-	<li><a href="http://svsu.edu/">SVSU website</a></li>
- </ul>
+	<div ng-controller="TodoCtrl">
+		<h2>Total todos: {{totalTodos}}<h2>
+		<ul class="unstyled">
+			<li ng-repeat="todo in todos">
+				<input type="checkbox" ng-model="todo.done">
+				<span class="done-{{todo.done}}">{{todo.text}}</span>
+			</li>
+		</ul>
+		<form class="form-horizontal">
+			<input type="text" ng-model="formTodoText" ng-model-instant>
+			<button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
+		</form>
+		
+		<button class="btn-large" ng-click="clearCompleted()"<i class="icon-trash"></i>Clear Completed</button>
+	</div>
 </body>
+</html>

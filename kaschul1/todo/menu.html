@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+Filename: 		menu.html
+Author: 		Kelly Schultz
+Date: 			June 16, 2015
+Course: 		CIS 255
+Description: 	This program creates a todo list in angular.js 
+				This program is the result of the following video at https://angularjs.org/.
+-->
+<html ng-app>
+<head>
+<!-- must use this version of angular! Current version won't work. -->
+<script src="https://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="todo.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+<script type="text/javascript">
+// automatically update heading (#greeting) with #name in input box
+$(function(){
+  var name = $('#name');
+  var greeting = $('#greeting');
+  name.keyup(function(){
+    greeting.text('Hello ' + name.val() + '!');
+  })
+})
+</script>
+<script type="text/javascript" src="todo.js"></script>
+</head>
+<body>
+<div ng-controller='TodoCtrl'>
+<h2> Total ToDos: {{getTotalTodos()}}</h2>
+<ul class="unstyled">
+	<!-- the todo in todo in todos, must match the todo in todo.text, in is an iteration-->
+	<li ng-repeat="todo in todos">
+		<input type="checkbox" ng-model="todo.done">
+		<span class="done-{{todo.done}}">{{todo.text}}</span>
+	</li>
+</ul>
+<form class="form-horizontal">
+	<input type="text" ng-model="formTodoText" ng-model-instant>
+	<button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i> Add</button>
+</form>
+
+<button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i> Clear Completed</button>
+</div>
+
+
+
+
+
+
+
+<input id="name" type="text" ng-model="name"/>
+<h2 id="greeting"></h2>
+<!-- angular version of jquery function -->
+<h2>Hello {{name}}</h2>
+</body>
+</html>
