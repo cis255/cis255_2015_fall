@@ -3,12 +3,57 @@
 filename	: bjcobb.html
 author  	: Brian Cobb (CIS-255, Fall 2015)
 desription	: This program demonstrates very basic HTML.
-design		: 1. prints, "Hello, George" 
+design		: 1. basic layout of html to show examples of tags
 -->
 <html>
 	<head>
+	<title>Hello - HTML Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){   
+        console.log("Hello"); 
+        $("#main").slideDown(1000);
+        $("#page").fadeIn(4000);
+        $("#page2").fadeIn(5000);
+        $("#page3").fadeIn(6000);
+        $("#page4").fadeIn(7000);  
+        });       
+   </script>
 	</head>
-	<body>
-		<p> Hello, George</p>
+	<body bgcolor="#c0c0c0">
+ <center>
+ <div id="main" style="display:none">
+ <table>
+ <th>Look! a table!</th>
+  <tr><td>
+		<h1>Large Text!</h1>
+		<div id="page" style="display:none">
+			<p>
+				<u>Hello,<b> George</b></u><br>
+				<i>How are you doing today?</i>			
+			</p>
+		</div>
+   <div id="page2" style="display:none">
+		<hr>
+   </div>
+   <div id="page3" style="display:none">
+		<small>I am shy text</small><br>
+		<big>I am big text</big>
+   </div>
+   <div id="page4" style="display:none">
+        <h2>Bullets!</h2>
+        <ul>
+            <li>Foo</li>
+            <li>Bar</li>
+        </ul>
+        
+   </div>
+   </td></tr>
+  </table>
+   </center>
+		<footer>
+            ©Brian Cobb 2015
+    </footer>
+</div>
 	</body>
 </html>
