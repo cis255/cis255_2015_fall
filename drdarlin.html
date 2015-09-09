@@ -6,13 +6,57 @@ description: This program demonstrates very basic HTML
 design     : 1. prints, "Hello, Derek Darling *dray11*"
 -->
 <html>
-<head>
-Hello, Derek Darling *dray11*</head>
-<body>
-<h1>Derek Darling's Menu</h1>
-<div>
-<link>https://www.linkedin.com/profile/view?id=ADEAABSvXJMBJh4WnHmCKi5nSfrBYhwOBYBaA_U&authType=NAME_SEARCH&authToken=iBLJ&locale=en_US&srchid=3470368191441203390031&srchindex=1&srchtotal=16&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3470368191441203390031%2CVSRPtargetId%3A347036819%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH</link>
-</div>
-<p>Welcome to CIS 255<a>CIS 255 </a></p>
-</body>
+  <title>Student information</title>
+  <head>Hello, Derek Darling *dray11*</head>
+  <body>
+    <p>Here is the info for Derek Darling for the fall 2015 semester</p>
+    <h1>Schedule:</h1>
+    <div>
+   <!-- I got this table code from http://www.html.am/html-codes/tables/  I slightly modified it-->
+      <table border="1">
+        <caption>Fall 2015</caption>
+      <tr>
+        <th>Course</th><th>Professor</th>
+      </tr>
+      <tr>
+       <td>CIS 255</td><td>Corser</td>
+      </tr>
+      <tr>
+        <td>CIS 333</td><td>James</td>
+      </tr>
+      <tr>
+        <td>CIS 386</td><td>Bidgoli</td>
+      </tr>
+      <tr>
+        <td>MGT 321</td><td>Sype</td>
+      </tr>
+     </table>  
+   </div>
+    
+    <div>
+      <br>
+      <br>
+      <h2>Here is a link to his linked in page:</h2>
+    <a>https://www.linkedin.com/profile/view?id=ADEAABSvXJMBJh4WnHmCKi5nSfrBYhwOBYBaA_U&authType=NAME_SEARCH&authToken=iBLJ&locale=en_US&srchid=3470368191441203390031&srchindex=1&srchtotal=16&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3470368191441203390031%2CVSRPtargetId%3A347036819%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH</a>
+    </div>
+    
+    <div>
+      <dl>
+        <dt>Major</dt>
+          <dd>CIS</dd>
+        <dt>Minor</dt>
+          <dd>GIS</dd>
+      </dl>
+  </div>
+
+  </body>
+  <!-- I got this table code from http://www.w3schools.com/tags/tag_footer.asp  I slightly modified it-->
+  <footer>
+   <p>Posted by: Hege Refsnes</p>
+    <p>Contact information: <a href="mailto:drdarlin@svsu.edu">
+    drdarlin@svsu.edu</a>.</p>
+  </footer>
+  <details>
+  <summary>Saginaw Valley State University</summary>
+  </details>
 </html>
