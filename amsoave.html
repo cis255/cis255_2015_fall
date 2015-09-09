@@ -3,35 +3,54 @@
 filename   : amsoave.html
 author     : Aaron Soave (CIS-255, Fall 2015)
 Description: This program demonstrates very basic HTML
-design     : 1. Prints, "Hello, Aaron"
+design     : 1. Head
+				A. Contains title and favicon
+			 2. Body
+				A. Displays unordered list of current classes
+				B. Has 2 text boxes that allow you to input text and then perform a function with the hyperlink to the right
+					i. First text box translates your text into spanish. The hyperlink will open a new tab in Google Translate
+					ii. The second box will search google for whatever you typed in. The hyperlink will open a new tab in Google.
+			 3. The SVSU Home hyperlink brings you to the home page of SVSU.edu		
+URL:		: http://csis.svsu.edu/~amsoave/cis255/amsoave.html			 
 -->
 <html>
 <head>
 <!-- favicon image and browser tab title -->
-    <link rel='icon' href='../cardinal_logo.png' type='image/png' / >
+    <link rel='icon' href='https://svsu.edu/media/universitycommunications/imgs/universitycommunicationsimgs/RTEmagicC_0f8dba02ab.jpg' type='image/png' / >
 	<title>Aaron's Menu</title>
 </head>
 <body>
-<!-- Has two hyperlinks that will take the text in the textbox and perform functions on website -->
+<header>
+<CENTER><iframe autoplay width="50%" height="315" src="https://www.youtube.com/embed/skVhHlAixyY" frameborder="0" allowfullscreen></iframe></header>
+
 <CENTER>
-<TABLE STYLE=background-color:grey width='640'>
+<TABLE STYLE=background-color:#B40404 width='50%'>
 <TR>
 <TD>
-<h1 STYLE = 'color:black;font-weight:bold'><CENTER>Aaron Soave's Menu</CENTER></h1>
-<p align="center">Aaron is a full time student. He is currently a student in
- <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a></p>
+<h1 STYLE = 'color:black;font-weight:bold'><CENTER><u>Aaron Soave's Menu</u></CENTER>
+</h1>
+<p align="center">Aaron is a full time student. He is currently a student in:<br>
+<ul>
+<li> <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a></li>
+<li>cis333</li>
+<li>cis386</li>
+</ul>
+</p>
 <CENTER><table STYLE='background-color:white' width='100%' border='1'>
 <col width='70%'>
 <col width='30%'>
 <tr><td>Perform a Google Translate: <INPUT   id="googleTranslate1" size="30"></td><td>
+<!-- Performs google translate to Spanish for the text entered after pressing hyperlink -->
 <a href="javascript: void(0)"
  onclick="window.open('http://translate.google.com/#en/es/'+document.getElementById('googleTranslate1').value)">Translate
 </a></td></tr>
 <tr><td>Perform a Google Search:&nbsp&nbsp&nbsp&nbsp <INPUT   id="googleSearch1" size="30"></td><td>
+<!-- Performs google search to  for the text entered after pressing hyperlink -->
 <a href="javascript: void(0)"
  onclick="window.open('https://www.google.com/#q='+document.getElementById('googleSearch1').value)">Search
 </a></td></tr>
 <tr>
+<!-- Redirects you to SVSU home page -->
 <td colspan="2"><a href="https://www.svsu.edu" target="_blank">SVSU Home</a></td>
 </tr>
 </table>
