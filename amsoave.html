@@ -7,18 +7,36 @@ design     : 1. Prints, "Hello, Aaron"
 -->
 <html>
 <head>
+<!-- favicon image and browser tab title -->
+    <link rel='icon' href='../cardinal_logo.png' type='image/png' / >
+	<title>Aaron's Menu</title>
 </head>
 <body>
-<h1>Aaron Soave's Menu</h1>
-<p>Aaron is a gentleman and a scholar. He is a student in
+<!-- Has two hyperlinks that will take the text in the textbox and perform functions on website -->
+<CENTER>
+<TABLE STYLE=background-color:grey width='640'>
+<TR>
+<TD>
+<h1 STYLE = 'color:black;font-weight:bold'><CENTER>Aaron Soave's Menu</CENTER></h1>
+<p align="center">Aaron is a full time student. He is currently a student in
  <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a></p>
-<table>
-<tr><td>Column1</td><td>Column2</td></tr>
-<tr><td>Content1</td><td>Content2</td></tr>
-<tr><td>Content1</td><td>Content2</td></tr>
-<tr><td>Content1</td><td>Content2</td></tr>
-
-
+<CENTER><table STYLE='background-color:white' width='100%' border='1'>
+<col width='70%'>
+<col width='30%'>
+<tr><td>Perform a Google Translate: <INPUT   id="googleTranslate1" size="30"></td><td>
+<a href="javascript: void(0)"
+ onclick="window.open('http://translate.google.com/#en/es/'+document.getElementById('googleTranslate1').value)">Translate
+</a></td></tr>
+<tr><td>Perform a Google Search:&nbsp&nbsp&nbsp&nbsp <INPUT   id="googleSearch1" size="30"></td><td>
+<a href="javascript: void(0)"
+ onclick="window.open('https://www.google.com/#q='+document.getElementById('googleSearch1').value)">Search
+</a></td></tr>
+<tr>
+<td colspan="2"><a href="https://www.svsu.edu" target="_blank">SVSU Home</a></td>
+</tr>
 </table>
 </body>
+</TD>
+</TR>
+</TABLE>
 </html>
