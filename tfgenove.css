@@ -1,0 +1,57 @@
+h1 {
+	background-color: blue;
+	color: white;
+	font-size: 36px;
+	font-family: sans-serif;
+	text-align: center;
+	border-style: groove;
+	border-color: black;
+	border-width: thick;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+tr.lightrow  td{
+	background-color: gray;
+	text-align: center;
+}
+
+tr.darkrow  td{
+	background-color: blue;
+	color: white;
+	text-align: center;
+}
+
+tr th{
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+body{
+	background-image: url("../images/background.jpg");
+}
+
+pre{
+	position: relative;
+    left: 30px;
+	text-transform: uppercase;
+}
+
+ul{
+	outline-color: purple;
+	outline-style: ridge;
+	outline-width: medium;
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+}
+
+ul li{
+	list-style: square;
+	list-style-position: inside;
+}
