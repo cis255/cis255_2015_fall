@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+filename: wkwestfa_prog01.html
+author: Wade Westfall, CIS-255, Fall 2015
+description: This HTML file demonstrates the concepts described at the website:
+			 http://www.sitepoint.com/10-typical-html-interview-exercises/
+design: 
+	<head>: none
+	<body>: 1. Markup validation
+			2. The main element
+-->
+
+<html>
+	<body>
+<!-- ------------------------------------------------------------------------------- -->
+		<h1 align = "center"> Markup Validation </h1>
+<!-- Changes the picture depending on the width of the browser window -->
+		<figure align = "center">
+			<picture>
+				<source media="(min-width: 40em)"
+				srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+				<img src="medium.jpg" alt="Cat">
+			</picture>
+			<figcaption align = "center">Above is the animal known as a feline</figcaption>
+		</figure>
+		
+		</br>
+		</br>
+<!-- ------------------------------------------------------------------------------- -->		
+		<h1> The Main Element </h1>
+<!-- Implements the main element into the code ------->		
+		<main>
+			<p> Did you know that I am the main element?</p>
+		</main>
+		
+		</br>
+		</br>
+<!-- -------------------------------------------------------------------------- -->
+		<h1> WAI-ARIA </h1>
+<!-- Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA)
+     specifies how to increase the accessibility of web pages.
+	 In this case, it creates a search bar and multiple tabs to choose from -->
+
+		<header role="header">
+		
+		  <h1>Main title</h1>
+			<form action="/" method="get" role="search">
+				<label for="search">Search:</label>
+				<input id="search" type="search">
+				<input type="Submit">
+			</form>
+		</header>
+		
+		<nav role="navigation">
+		  <ul>
+			 <li><a href="http://homes.com">Homes</a></li>
+			 <li><a href="https://reddit.com">Visit Reddit!</a></li>
+			 <li><a href="https://www.youtube.com/user/60SecondGames1">Check out my Youtube!</a></li>
+		  </ul>
+		</nav>
+		
+		<main role="main">
+		  <article role="article">
+			 <h1>Main title</h1>
+			 <p>This is the content of this section</p>
+		  </article>
+		</main>
+		
+		</br>
+		</br>
+<!-- -------------------------------------------------------------------------------- -->
+		<h1> The Small Element </h1>
+<!-- The small element makes our text very small!  Good for Copywrite info! -->
+		
+		<footer role="contentinfo">
+		  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+		</footer>	
+		
+		</br>
+		</br>		
+		
+<!-- -------------------------------------------------------------------------------- -->
+		<h1> Subheadings </h1>
+<!-- This shows us what a subheading does-->
+		<article>
+			<h2>Main title</h2>
+			<h3>This is a subtitle</h3>
+			<p>This is the content of this section</p>
+		</article>
+		
+		</br>
+		</br>
+<!-- --------------------------------------------------------------------------------- -->
+		<h1> Images and Accessibility </h1>
+<!-- The 'alt' attribute of an image is completely necessary, but can remain blank as shown below -->
+		
+		<img src="smiley.gif" alt="">
+		
+		</br>
+		</br>
+<!-- --------------------------------------------------------------------------------- -->
+		<h1> The Time Element </h1>
+<!-- The Time Element allows for projecting a specific time onto the project -->
+		
+		<h3> I should do this project between: </h3>
+		
+		<time datetime="2015-09-14">14</time>-
+		<time"datetime="2015-09-17">17 September 2015</time>
+		
+		</br>
+		</br>
+		</br>
+		
+<!-- ---------------------------------------------------------------------------------- -->		
+		<h1> Meter and Progress </h1>
+<!-- Meter is used to represent a measure within a known range.
+	 Progress is used to show the completion progress of a task. -->
+		<h3> This is a Meter Bar </h3>
+			<p>I like you this much <meter min="200" max="500" value="350">350 degrees</meter>.</p>
+	 
+		<h3> This is a Progress Bar </h3>
+			<p> This project is 70% completed </p><progress value="70" max="100">70 %</progress>
+		
+		</br>
+		</br>
+<!-- ----------------------------------------------------------------------------------- -->
+		<h1> The Longdesc Attribute </h1>
+<!-- The Longdesc attribute allows for a longer description than alt provides. -->
+			<img src="beef.png"
+			alt="This image respresents your mama" longdesc="This image is a representation of the woman who birthed you">
+
+		<section id="description">
+		  <h2>Italy</h2>
+			<p>The above map of Italy illustrates its division 
+			in regions... <small><small> If they were made of meat...<small><small></p>
+		</section>
+		
+		</br>
+		</br>
+<!-- ----------------------------------------------------------------------------------- -->
+		<h1> The Mark Element </h1>
+<!-- The Mark element allows you to highlight important text for the user to see -->
+
+		<mark> A yellow hew.  Just for you! </mark>
+	</body>
+</html>
