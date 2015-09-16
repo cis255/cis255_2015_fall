@@ -1,0 +1,162 @@
+<!doctype html>
+<!--
+Filename: 		amsoave_prog01.html
+Author: 		Aaron Soave, CIS-255, Fall 2015
+Description: 	This HTML program demonstrates the concepts described at the following website
+				http://www.sitepoint.com/10-typical-html-interview-exercises/
+Design: The program demonstrates 10 concepts from the web page.
+	<head>: none
+	<body>: 1. Markup validation
+			2. The main element
+			3. WAI-ARIA
+			4. The small element
+			5. Subheadings
+			6. Images and accessibility
+			7. The Time Element
+			8. Meter and Progress
+			9. The longdesc Attribute.
+			10. The mark element
+			 
+-->
+<html>
+<body>
+<!-- -------------------------------------------------------- -->
+<!-- In this section, depending on the width of the window, the image will change once the width
+gets to a certain value -->
+<h1>1. Markup Validation</h1>
+<p>If you resize the browser to a different size, the picture will eventually change!</p>
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="Logo">
+   </picture>
+   <figcaption>Sports Logos</figcaption>
+</figure>
+<!-- -------------------------------------------------------- -->
+<h1>2. The main element</h1>
+<!-- -------------------------------------------------------- -->
+<!-- In this section, the main tag is used. -->
+<main>
+<h3>An example title of Main</h3>
+<p>This is an example of how to use main. This section is a main section.</p>
+</main>
+<p>This section is not part of the main if you look at source code!</p>
+
+<!-- -------------------------------------------------------- -->
+<!-- In this section, the original code does not have any labels or nav tags or any roles of nav and main. The after WAI-ARIA section
+has roles for the main and nav, and also has a label for the textbox. WAI-ARIA makes the content on the page easier accessible, especially for people disabled. -->
+<h1>3. WAI-ARIA</h1>
+<h3>before WAI-ARIA</h3>
+<form action="/" method="get">
+      <input type="search" value="This doesn't actually work">
+      <input type="submit">
+</form>
+<ul>
+   <li><a href="amsoave.html"">Menu</a></li>
+    <li><a href="http://www.google.com">Google</a></li>
+    <li><a href="http://www.svsu.edu">SVSU Home</a></li>
+</ul>
+<main>
+   <article>
+      <h1>Main title</h1>
+      <p>This is the content of this section</p>
+   </article>
+</main>
+
+<h3>After WAI-ARIA</h3>
+<h1>Main title</h1>
+  <form action="" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search" value="This doesn't actually work">
+     <input type="submit">
+  </form>
+<nav role="navigation">
+  <ul>
+     <li><a href="amsoave.html"">Menu</a></li>
+     <li><a href="http://www.google.com">Google</a></li>
+     <li><a href="http://www.svsu.edu">SVSU Home</a></li>
+  </ul>
+</nav>
+<main role="main">
+  <article role="article">
+     <h1>Main title</h1>
+     <p>This is the content of this section</p>
+  </article>
+</main>
+<!-- -------------------------------------------------------- -->
+<!-- This section demonstrates the use of the small tag, which is used as a copyright exclaimer in this picture. -->
+<h1>The Small Element</h1>
+<img src="lol.jpg" alt="League of Legends Logo">
+<small>The copyright of this image is owned by Riot Games</small>
+<!-- -------------------------------------------------------- -->
+<h1>5. Subheadings</h1>
+<!-- This section demonstrates how to have a main title, h1, and a subheading. The paragraph is associated with with h1. The span also does not
+represent any visual change. -->
+<article>
+   <h1>
+       I am a title!
+       <span>I am a subtitle!</span>
+   </h1>
+   <p>Here lies a bunch of information about this topic.</p>
+</article>
+<!-- -------------------------------------------------------- -->
+<!-- In this section, accessibility is demonstrated using the alt tag of an image. If the alt tag is empty, screen readers will skip over it.
+If the image is for decorative purpose only, leave the alt value as: alt="". -->
+<h1>6. Images and Accessibility</h1>
+<img src="medium.jpg" alt="Red Wings">
+<figcaption>This picture has an alt value</figcaption>
+<img src="medium.jpg">
+<figcaption>This picture has an empty alt value</figcaption>
+<p>These picture are exactly the same, but the second picture will not be read using a screen reader, it will be skipped.</p>
+<!-- -------------------------------------------------------- -->
+<!-- This demonstrates the date range between November 6, 2014 to November 9, 2014 using 2 time elements -->
+<h1>7. The Time Element</h1>
+<h4>This demonstrates the date range between November 6, 2014 to November 9, 2014 using 2 time elements.</h4>
+<time datetime="2014-11-06">6</time>-
+<time datetime="2014-11-09">9 November 2014</time>
+<!-- -------------------------------------------------------- -->
+<!-- This section demonstrates the use of meter tags and progress tags. -->
+<h1>8. Meter and Progress </h1>
+<h4>Example of meter</h4>
+<!-- The meter bar shows a highlighted portion (the value), out of the entire bar (max) -->
+This semesters Meter progress (in weeks) : <meter value=2 max=16></meter> 2 weeks (out of 16 total)
+<h4>Example of Progress</h4>
+<p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+<!-- This script is getting the value of p from the progress tag, and then updating it multiple times until it reaches 100%, which moves the progress box to the right.
+Once p reaches 100, it then decreases back to 0 after multiple updates, which brings it back to the left. -->
+ <script>
+  var progressBar = document.getElementById('p');
+  function updateProgress(newValue) {
+    progressBar.value = newValue;
+    progressBar.getElementsByTagName('span')[0].textContent = newValue;
+  }
+ </script>
+<!-- -------------------------------------------------------- -->
+<!-- This is supposed to demonstrate the longdesc attribute, which gives an external link to the picture description, but it is not supported in HTML5 according to
+http://www.w3schools.com/tags/att_img_longdesc.asp -->
+<h1>9. The longdesc Attribute</h1>
+<img src="tigers.jpg"
+	 width = "250"
+	 height= "200"
+     alt="This image represents Detroit Tigers Logo" longdesc="tigers.html#description">
+<section id="description">
+  <h3>Tigers</h3>
+  <p>The longdesc attribute is not supported in HTML5.</p>
+</section>
+<!-- -------------------------------------------------------- -->
+<h1>10. The Mark Element</h1>
+<!-- This section demonstrates the use of the mark tag, which highlights the text between in yellow to point out to the reader so they can reference, or to signify importance. -->
+<p>
+The Detroit <mark>lions</mark> hopefully will be above .500 this season! Although we always hope for the best as a fan, the <mark>lions</mark>s always disappoint :(.
+</p>
+<!-- -------------------------------------------------------- -->
+
+
+
+
+
+
+
+</body>
+</html>
