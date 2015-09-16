@@ -1,0 +1,74 @@
+/*
+filename    : jmbenso2.css
+author      : Jon Benson (CIS-255, Fall 2015)
+description : Demonstration of basic CSS
+
+*/
+
+h1 , h2 , h3, h4 {
+	color: red; /* attribute 1: sets color */
+	opacity: 0.9; /* attribute 2: sets opacity */
+	text-align: center; /* attribute 3: sets text alignment */
+	letter-spacing: 2px; /* attribute 4: sets spacing between letters*/
+	word-spacing: 4px; /* attribute 5: sets spacing between words */
+	text-shadow: 0px 1px black; /* attribute 6: gives text an ugly shadow */
+	font: bold 42px arial, sans-serif; /* attribute 7: sets font */
+	text-transform: capitalize; /* attribute 8: used to change text case */
+
+}
+
+h4 {
+	font: bold 20px arial, sans-serif;
+}
+
+h1:hover {
+	color: blue;
+}
+
+p {
+	color: black;
+	text-align: center;
+	font: 16px tahoma;
+	word-wrap: normal; /* attribute 9: sets whether words can be broken and wrapped around */
+}
+
+body {
+	background-color: rgba(255,100,0,0.2); /* attribute 10: sets background color */
+	border-bottom: 5px double black; /* attribute 11: sets bottom border details */
+	border-left: 5px dashed blue; /* attribute 12: sets left border details */
+	border-right: 5px dotted blue; /* attribute 13: sets right border details */
+	border-top: 5px solid red; /* attribute 14: sets top border details */
+	border-radius: 40px; /* attribute 15: rounds border corners */
+}
+
+a:link {
+	color: rgba(0,100,200,1);
+}
+
+a:visited {
+	color: rgba(0,100,200,0.25);
+}
+
+table {
+	border: 3px solid purple;
+	border-collapse: collapse; /* attribute 16: combines adjacent borders */
+	text-align: center; 
+	margin-left:auto; /* attribute 17: sets element's distance from left edge */
+	margin-right:auto; /* attribute 18: sets element's distance from right edge */
+	box-shadow: 3px 3px black; /* attribute 19: gives a box an ugly shadow */
+}
+
+td {
+	color: rgba(155,0,155,1);
+	border: 3px solid purple; /* attribute 20: sets all border details in one go */
+}
+
+ol {
+	color: black;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+li {
+	text-align: left;
+}
