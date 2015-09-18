@@ -7,12 +7,16 @@ Description	: This HTML program demonstrates the concepts described in the follo
 Design		: This program demonstrates 10 concepts from the web page.
 			<head> none
 			<body> 1. Markup Validation
-				   2. The Main Element.
+				   2. The Main Element
 				   3. WAI-ARIA
+				   4. The Small Element
+				   5. Subheadings
+				   6. 
 				   
 -->
 <html>
 <body bgcolor="#E0FFFF">
+<title>Program01: Anna Fenske</title>
 
 <!-- ===================================================================== -->
 <h1>1. Markup Validation</h1> 
@@ -27,6 +31,8 @@ Design		: This program demonstrates 10 concepts from the web page.
    <figcaption>Cat</figcaption>
 </figure>
 
+
+
 <!-- ===================================================================== -->
 
 <h1>2. The Main Element</h1>
@@ -37,12 +43,14 @@ Design		: This program demonstrates 10 concepts from the web page.
   <p>Google Chrome, Internet Explorer, and Firefox are the most used browsers today.</p>
 
   <article>
-    <h3> <a href = "https://www.google.com/chrome/browser/desktop/index.html"> Google Chrome </a> </h3> <!-- link to download chrome -->
+    <h3> <a href = "https://www.google.com/chrome/browser/desktop/index.html"> Google Chrome </a> </h3> <!-- 
+	                                                                             link to download chrome -->
     <p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
   </article>
 
   <article>
-    <h3> <a href = "http://windows.microsoft.com/en-us/internet-explorer/download-ie"> Internet Explorer </a> </h3> <!-- link to download ie -->
+    <h3> <a href = "http://windows.microsoft.com/en-us/internet-explorer/download-ie"> Internet Explorer </a> </h3> <!-- 
+	                                                                                           link to download ie -->
     <p>Internet Explorer is a free web browser from Microsoft, released in 1995.</p>
   </article>
 
@@ -52,36 +60,114 @@ Design		: This program demonstrates 10 concepts from the web page.
   </article>
 </main> 
 
+
+
 <!-- ===================================================================== -->
 
 <h1>3. WAI-ARIA</h1>
-<!-- This section of code specifies the main content of the page -->
-<!-- This section of code is taken from http://www.w3schools.com/tags/tag_main.asp -->
+<!-- This section of code helps you to navigate to other related cites within csis.svsu.edu-->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
 
 <header role="header">
-  <h1>Main title</h1>
-  <form action="/" method="get" role="search">
-     <label for="search">Search:</label>
-     <input id="search" type="search">
-     <input type="submit">
-  </form>
+  <h1>CIS-255</h1>
 </header>
+<h2> Go to another student's program 1: </h2>
 <nav role="navigation">
   <ul>
-     <li><a href="/">Home</a></li>
-     <li><a href="/products">Products</a></li>
-     <li><a href="/about">About</a></li>
+     <li><a href="/~garanck/cis255/garanck/garanck_prog01.html">Garret Ranck</a></li> <!-- takes you to Garret's prog01 -->
+     <li><a href="/~jmwalter/cis255/jmwalter/jmwalter_prog01.html">Joshua Walter</a></li> <!-- takes you to Josh's 
+																										prog01 -->
+     <li><a href="/~bjcobb/cis255/bjcobb/bjcobb_prog01.html">Brian Cobb</a></li> <!-- takes you to Brian's prog01 -->
   </ul>
 </nav>
-<main role="main">
-  <article role="article">
-     <h1>Main title</h1>
-     <p>This is the content of this section</p>
-  </article>
-</main>
-<footer role="contentinfo">
-  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+<footer role="contentinfo"> <!-- giving further info to cite viewers -->
+  <small>Copyright &amp;copy; CIS-255 2015</small>
 </footer>
+
+
+
+<!-- ===================================================================== -->
+
+<h1>4. The Small Element</h1>
+<!-- This section of code shows how to add small text to describe a picture, 
+     generally used for copyright info but doesn't have to be-->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
+
+<img src="medium.jpg" alt="Cat">
+<small>Here is a kitty.</small>
+
+
+
+<!-- ===================================================================== -->
+
+<h1>5. Subheadings</h1>
+<!-- This section of code shows how to add subheadings-->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
+
+<article>
+   <h1>CIS-255</h1> <!-- main title -->
+   <h2>Programs</h2> <!-- subheading -->
+	<h3>Prog01</h3> <!-- subheading -->
+	<h3>Prog02</h3> <!-- subheading -->
+	<h3>Prog03</h3> <!-- subheading -->
+	<h3>Prog04</h3> <!-- subheading -->
+	<h3>Prog05</h3> <!-- subheading -->
+	<h3>Prog06</h3> <!-- subheading -->
+	
+   <p>This is the content of this section that describes program objectives</p>
+   
+   <h2>Exercises</h2> <!-- subheading -->
+	<h3>Exercise01</h3> <!-- subheading -->
+	<h3>Exercise02</h3> <!-- subheading -->
+	<h3>Exercise03</h3> <!-- subheading -->
+	<h3>Exercise04</h3> <!-- subheading -->
+	<h3>Exercise05</h3> <!-- subheading -->
+	<h3>Exercise06</h3> <!-- subheading -->
+	
+   <p>This is the content of this section that describes exercise objectives</p>
+</article>
+
+<!-- ===================================================================== -->
+
+<h1>6. Images and accessibility</h1>
+<!-- This section of code shows how to use "alt" so that their images won't be ignored -->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
+
+<img src="smile_dog.jpg" alt="Dog">
+<p>Here is a happy dog.</p>
+
+<!-- ===================================================================== -->
+
+<h1>7. The Time Element</h1>
+<!-- This section of code shows how to use a date/time element-->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
+
+<time datetime="2015-09-16">16 September 2015</time>-
+<time datetime="2015-11-10">10 November 2015</time>
+
+<!-- ===================================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
