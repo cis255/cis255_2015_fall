@@ -1,17 +1,22 @@
 <!doctype html>
 <!--
-Filename	:amfenske_prog01.html
+
+Filename	: amfenske_prog01.html
 Author		: Anna Fenske, CIS-255, Fall 2015
 Description	: This HTML program demonstrates the concepts described in the following website
-			www.sitepoint.com/10-typical-html-interview-exercises/
+		      www.sitepoint.com/10-typical-html-interview-exercises/
 Design		: This program demonstrates 10 concepts from the web page.
-			<head> none
-			<body> 1. Markup Validation
-				   2. The Main Element
-				   3. WAI-ARIA
-				   4. The Small Element
-				   5. Subheadings
-				   6. 
+		 	  head:  none
+			  body:  1. Markup Validation
+			 	     2. The Main Element
+				     3. WAI-ARIA
+				     4. The Small Element
+				     5. Subheadings
+				     6. Images and accessibility
+				     7. The Time element
+				     8. Meter and progress
+				     9. The longdesc attribute
+				     10. The Mark element 
 				   
 -->
 <html>
@@ -147,26 +152,55 @@ Design		: This program demonstrates 10 concepts from the web page.
 
 <!-- ===================================================================== -->
 
+<h1>8. Meter and Progress</h1>
+<!-- This section of code shows how to use the meter element(a scalar measurement within a known range
+     or a fractional value) and how to use the progress element(which is used to show completion 
+     of a task). -->
+<!-- This section of code is taken from http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_meter 
+     and http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_progress respectively -->
+
+<h2>Meter</h2>
+<p>Display a gauge:</p>
+<meter value="2" min="0" max="10">2 out of 10</meter><br>
+<meter value="0.6">60%</meter>
+
+<p><strong>Note:</strong> The meter tag is not supported in Internet Explorer or Safari 5 (and earlier versions).</p>
+
+<h2>Progress</h2>
+Downloading progress:
+<progress value="22" max="100">
+</progress>
+
+<p><strong>Note:</strong> The progress tag is not supported in Internet Explorer 9 and earlier versions.</p>
 
 
+<!-- ===================================================================== -->
+
+<h1>9. The Longdesc Attribute</h1>
+<!-- This section of code shows how to use the longdesc attribute, which is designed to give a more detailed
+     description of an image than is offered in the "alt" attribute -->
+<!-- This section of code is taken and modified from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
+
+<img src="burger_dog.jpg"
+     alt="This image represents the meaning of happiness" longdesc="dog.txt">
 
 
+<section id="description">
+  <h2>Dog</h2>
+  <p>The dog is happy</p>
+</section>
 
 
+<!-- ===================================================================== -->
+
+<h1>10. The Mark Element</h1>
+<!-- This section of code shows how to use the mark element to highlight text -->
+<!-- This section of code is taken from http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_mark -->
+
+<p>Do not forget to buy <mark>milk</mark> today.</p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- ===================================================================== -->
 
 
 </body>
