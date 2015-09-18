@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+filename	: ikhan12_prog01.html
+author		: Imran Khan (CIS 255, Fall 2015)
+description	: This program demonstrates the 10 concepts description from http://www.sitepoint.com/10-typical-html-interview-exercises/
+design		: 
+	<head>	: None
+	<body>	: 1. Markup Validation
+			  2. The main element
+			  3. WAI-ARIA
+			  4. The small element
+			  5. Subheadings
+			  6. Images and accessibility
+			  7. The time element
+			  8. meter and progress
+			  9. The longdesc attribute
+			  10. The mark element
+			  
+-->
+ 
+<html>
+	<title> 10 Important HTML tags for jobs </title>
+	<body>
+		<!-- This is different html tags that are useful for job interview -->
+		<h1> 1. Markup validation </h1>
+		<!-- This markup validation gives various sizes of legcats -->
+		<figure>
+		   <picture>
+			  <source media="(min-width: 40em)"
+			  srcset="large.jpg 1024w, medium.jpg 640w, small.png 320w">
+			  <img src="medium.jpg" alt="Leg Cat Pictures">
+		   </picture>
+		   <figcaption>The Funny LEG CAT!</figcaption>
+		</figure>
+		
+		<main>
+		<h1> 2. The main element </h1>
+		<!-- This is what a main element means. -->
+		<p> The W3C specification describes it as the main content of the page, that is, 
+		the content that describes the main topic of a page or is the central functionality of an application. 
+		The specification also states that a document must not include more than one main element.
+		<br></br>
+		Collected from: <i> http://www.sitepoint.com/10-typical-html-interview-exercises/ </i>
+		</p>
+		</main>
+		
+		<h1> 3. WAI-ARIA </h1>
+		<!-- WAI-ARIA, the Accessible Rich Internet Applications Suite, it helps to make 
+		Web content and Web applications more accessible to people with disabilities by 
+		adding nav, main, lebel for text box -->
+		<header>
+			<h3>Without WAI-ARIA</h3>
+			<form action="/" method="get">
+				  <input type="search" value="This doesn't work yet!">
+				  <input type="submit">
+			</form>
+		</header>
+			<ul>
+				 <li><a href="https://svsu.edu/">SVSU</a></li>
+				 <li><a href="https://svsu.instructure.com/">Canvas</a></li>
+				 <li><a href="https://vmail.svsu.edu/">Vmail</a></li>
+			</ul>
+			<main>
+			   <article>
+				  <h1>Main title</h1>
+				  <p>This is the content of this section before adding WAI-ARIA</p>
+			   </article>
+			</main>
+
+		<header role="header">
+			<h3>With WAI-ARIA Added</h3>
+				<form action="/" method="get" role="search">
+					 <label for="search">Search:</label>
+					 <input id="search" type="search" value="This doesn't work yet!">
+					 <input type="submit">
+				</form>
+		</header>
+		<nav role="navigation">
+		  <ul>
+			 <li><a href="https://svsu.edu/">SVSU</a></li>
+			 <li><a href="https://svsu.instructure.com/">Canvas</a></li>
+			 <li><a href="https://vmail.svsu.edu/">Vmail</a></li>
+		  </ul>
+		</nav>
+		<main role="main">
+		  <article role="article">
+			 <h2>Main title</h2>
+			 <p>This is the content of this section after WAI-ARIA</p>
+		  </article>
+		</main>
+				
+		<h1> 4. The small element </h1>
+			<img src="BSA-Logo(C).jpg" type="image/jpeg" alt="BSA-Logo" height="200" width="200"	>
+			<br/>
+			<small>The copyright of this image belongs to the Bangladeshi Student Association at SVSU </small>
+
+		<h1> 5. Subheadings </h1>
+		<!-- This is used to remove confusions with various h-tags-->
+		<article>
+			<h3>
+				This guy is the title
+				<span>& this's subtitle!
+				</span>
+			</h3>
+				<p>Things about the subheading tags</p>
+		</article>
+		
+		<h1> 6. Images and accessibility </h1>
+		<!-- The alt tag sometimes has empty value to avoid getting attention for things like background image or decorative
+		texture image.-->
+		<h3>This example displays the accessibility of images</h3>
+			<img src="small.png" alt="">
+				<p>
+					This picture has an empty alt value, that means there is no text alternative for the image
+				</p>
+
+		<h1> 7. The time element </h1>
+		<!-- This shows how a time range can be made using 2 time elements. -->
+			<time datetime="2015-11-06">6</time>-
+			<time datetime="2015-11-09">9 November 2015</time>
+			
+		<h1> 8. Meter and progress </h1>
+		<!-- This example demonstrates the use of the meter and progress elements.
+			 In doing so, the difference between the two elements is also demonstrated. -->
+		<h2>The meter element example</h2>
+		<!-- The meter element shows a measurement in a known range -->
+			<p>Bats sold: <meter min="0" max="100" value="65"></meter></p>
+			<!-- The progress element displays the completion of a task so far: the range is unknown -->
+			<section>
+				<h2>The progress element example</h2>
+				<p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+				<script>
+				<!-- This script is getting the value of p from the progress tag, and then updating it multiple times until it reaches 100%, 
+				which moves the progress box to the right.
+				Once p reaches 100, it then decreases back to 0 after multiple updates, which brings it back to the left. -->
+				
+					var progressBar = document.getElementById('p');
+					function updateProgress(newValue) {
+						progressBar.value = newValue;
+						progressBar.getElementsByTagName('span')[0].textContent = newValue;
+						}
+				</script>
+			</section>
+
+		
+		<h1> 9. The longdesc attribute </h1>
+		<!-- The longdesc attribute of img element is used to give more detailed information about the picture like alt does except it will take to an external	new hyperlink.
+		-->
+		<img src="cricket"
+			 alt="This image represents the winning Bangladesh Cricket Team." longdesc="http://www.espncricinfo.com/bangladesh-v-zimbabwe-2010/content/series/486517.html#description">
+
+		<section id="description">
+		  <h2>Bangladesh Cricket Team (Winner)
+		  </h2>
+		  <p>The picture shows the winner of the match between Bangladesh and England.</p>
+		</section>
+		
+		<h1> 10. The mark element </h1>
+		<!-- This element is used to highlight text. It is demonstrated below. -->
+		<h3>This is an example of an article with marked text</h3>
+			<p>Referring back to the picture from'9. The Longdesc attribute'<mark>Bangladesh Cricket Team</mark> is ranked number 8 in the <mark>ICC World Ranking.</mark>
+				Bangladesh is working their way up to beat big teams and ultimately they will win the Cricket World Cup on day. This the dream of all Bangladeshi <mark>Cricket</mark> fans!
+			</p>
+			
+	</body>
+</html>

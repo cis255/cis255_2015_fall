@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+filenmae: jtolson.html
+author  : Joe Olson (CIS-255, Fall 2015)
+descrip : This program demonstrates the basics of basic HTML
+design  : 1. prints, "Hello world"
+		: 2. Displays menu and table
+		: 3. Demonstrates internal CSS and external files
+-->
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="jtolson_exercise02.css"/>
+ <!-- This is a copy of the css file for this exercise
+ <style>
+  #message{
+   color: orange
+   }
+   p {
+    color: orange
+   }
+   h1, h2 {
+    color: red
+   }
+  </style>
+  -->
+</head>
+<body>
+<title>CIS 255 - Joe Olson, Ex. 2</title>
+
+<!-- Due to the css file, the following should be true:
+	 -Heading 1 and 2 tags have red text
+	 -p tags have orange text
+	 -tables are orange
+	 -body background is cyan
+	 -any tag with the id "message" have orange text
+-->
+<h1><u>Joe Olson's Menu</u></h1>
+<h2><u>Exercise 2</u></h2>
+<p id="message">Hello world. Welcome to my menu.</p>
+<p style="color: orange">A simple student of the <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">CIS255 class.</a></p>
+<p>This is Exercise 2 of CIS 255</p>
+
+<table border=2>
+<tr><th>Column 1</th><th>Column 2</th></tr>
+<tr><td>Content</td><td>Content</td></tr>
+<tr><td>Content</td><td>Content</td></tr>
+<tr><td>Content</td><td>Content</td></tr>
+<tr><td>Content</td><td>Content</td></tr>
+<tr><td>Content</td><td>Content</td></tr>
+<tr><td>Content</td><td>Content</td></tr>
+</table>
+</body>
+</html>
