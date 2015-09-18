@@ -22,7 +22,7 @@ Design:     Shows how each of the 10 concepts from the page above are used.
 </head>
 
 <!-----------------------------------------------------------------------------------------------------------------------------------------
-		1. Markup validation: Uses pictures and allows them to be formatted based on size when the size of the page changes.
+		1. Markup validation: Uses pictures and allows them to be changed when the size of the page changes.
 		-------->
 <body>
 <h1> 1: Mark up Validation</h1>
@@ -36,14 +36,17 @@ Design:     Shows how each of the 10 concepts from the page above are used.
 </figure>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------
-		2. The Main Element :
+		2. The Main Element :this is the main focal point of the website or the main co
+		
 	    -------->		
-<h2> The Main Element</h2>
+<h2> 2.The Main Element</h2>
 
 <!------------------------------------------------------------------------------------------------
-		3.WAI-ARIA: This concept makes uses HTML tags and improves the accessibility using tags such as things like articel, nav, and contact info.
+		3.WAI-ARIA: This concept makes uses HTML tags and improves the accessibility using tags such as 
+		things like articel, nav, and contact info. This creates a search bar that can be used to search for content 
+		on nthe page.
 		-------->
-<h3> WAI-ARIA</h3>
+<h3> 3.WAI-ARIA</h3>
 <header role="header">
   <h1>Main title</h1>
   <form action="/" method="get" role="search">
@@ -72,14 +75,14 @@ Design:     Shows how each of the 10 concepts from the page above are used.
 <!----------------------------------------------------------------------------------------------------------------------------------------
 	4: The small Element: this element shows when it is appropriate to use smaller text. This is usually used when adding thigs such as coppyright titles or other things.
 		--------->
-<h4>The Small Element</h4>
+		
+<h4>4.The Small Element</h4>
 <img src="large.jpg" alt="CAT">
-<small> The photo belongs to dogshome.com
-
+<small> The photo belongs to dogshome.com</small>
 <!------------------------------------------------------------------------------------------------------------------
 	5: Subheadings: Are one of the most important elements of the webpage. They usually occurer after the main element of the webpage 
 		-------->
-<h5>Subheadings</h5>
+<h5>5.Subheadings</h5>
 <article>
    <h1>Main title</h1>
    <h2>This is a subtitle</h2>
@@ -90,20 +93,42 @@ Design:     Shows how each of the 10 concepts from the page above are used.
 	6: Images and Accessibility: this is found witht he alt="" command and is manditory for img elements.
 		the alt=" " is left blank when the image is used for decoration only.
 	    ---------->	
-<h6>Images and Accessibility</h6>
-<img src="large.jpg" alt="CAT">
-
+<header role="headder">
+<h6>6.Images and Accessibility</h6>
+<img src="large.jpg" alt="">
+</header>
 <!-------------------------------------------------------------------------------------------------------------------------
 	7: The Time Element: This is used to show a date range but can only be displayed using two time elements.
 		-------->
-<h7>The time element</h7>
+<p><h7>7.The time element</h7>
 <time datetime="2014-11-06">6</time>-
 <time datetime="2014-11-09">9 November 2014</time>
+</p>
+
 
 <!----------------------------------------------------------------
 	8: Meter and progress:
 	----->
+<h8>8. Meter and Prgress</h8>
+	<p>the meter and progresss are two seperate elements that do different things but are important. The meter element is used to mesure things like 
+	fractional values while the progress emelment is used to show completion of task in things such as a bar that fills as the task is complete.
+	</p>
+	
+<!-----------------------------------------------------------------
+	9: logic attribute: this attribute is used to provide even more detailed information on img files.
+	This can replace the alt="" however un like alt=""" this is a lik to a hyperlint to a description. 
+	---------->
+	
+	<img src="italy.jpg"
+     alt="This image represents the map of Italy" longdesc="italy.html#description">
 
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>Italy</h2>
+  <p>The shown map of Italy illustrates its division 
+  in regions...</p>
+</section>
 
 </body>
 </html>
