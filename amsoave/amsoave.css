@@ -1,10 +1,22 @@
-body {
-
-        background-color: black;
-     }
-h1  {
-        color:black;
-        font-weight:bold;
-        text-decoration: underline;
-    }
-
+#message {
+			color:red; /* the message id is always in a paragraph */
+			font-size: 200%;
+		}
+.odd{
+	background-color:yellow;
+}
+p {
+	color:orange;
+}
+span {
+	color:purple
+	}
+p span {
+	color:brown
+}
+div p {
+	color:purple;
+}
+h2{
+	color:blue;
+}
