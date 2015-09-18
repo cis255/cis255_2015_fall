@@ -1,7 +1,7 @@
 /*here is an external example*/
 
 #message {color:blue;}
-h1, h2{color: orange;}
+h1, h2, small {color: orange;}
 h1 span{color:red;font-size:200%;}
 span{color:green;}
 p {color:purple;}
