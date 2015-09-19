@@ -69,7 +69,9 @@ design: The program demonstrates 10 concepts from the webpage
 
 <h1>4. The Small Element</h1>
 
-<img src="http://i.ytimg.com/vi/snb5jhNFcw8/maxresdefault.jpg"><br>
+<img src="http://i.ytimg.com/vi/snb5jhNFcw8/maxresdefault.jpg"
+	 width="200"
+     height="200"><br>
 <small>Calvin Johnson</small>
 <!-- The small element is used here to make the caption text small -->
 
@@ -93,7 +95,11 @@ design: The program demonstrates 10 concepts from the webpage
 
 <h1>6. Images and Accessability</h1>
 
-<img src="https://thelovelylifestyle.files.wordpress.com/2011/12/pug-as-christmas-tree.jpg" alt="Christmas Pug" border ="5">
+<img src="http://dynastyfootballwarehouse.com/wp-content/uploads/2015/07/Julio-Jones.jpg" 
+     alt="Julio Jones"
+   	 border ="5"
+	 width="200"
+     height="200">
 <!-- 'alt' is mandatory in image tags but can be left blank. Left empty, screen readers will ignore the image -->
 <br>
 <br>
@@ -101,8 +107,8 @@ design: The program demonstrates 10 concepts from the webpage
 
 <h1>7. The Time Element</h1>
 
-<time datetime="2015-06-20">20</time>-
-<time datetime="2015-06-29">29 June 2015</time>
+<time datetime="2015-09-19">19</time>-
+<time datetime="2015-09-29">29 September 2015</time>
 <!-- Expressing a date range using two time elements -->
 
 <br>
@@ -112,11 +118,10 @@ design: The program demonstrates 10 concepts from the webpage
 <h1>8. Meter and Progress</h1>
 
 <h3>Meter</h3>
-<meter value="2" min="0" max="22">2 out of 22</meter><br>
-<meter value="0.2">20%</meter>
+<meter value="6" min="0" max="22">6 out of 10</meter><br>
+<meter value="0.6">60%</meter>
 <!-- Using meter to define a measurement with a known range or fractional value -->
 
-<br>
 <br>
 
 <h3>Progress</h3>
@@ -129,10 +134,19 @@ design: The program demonstrates 10 concepts from the webpage
 
 <h1>9. The Longdesc Attribute</h1>
 
-<img src="https://40.media.tumblr.com/8b77c456a2ad450367b08226b613193f/tumblr_ns7zcwQcKA1qbjxldo2_1280.jpg"
-     alt="This image represents a dog licking a screen" longdesc="dog.html#description" border= "5">
+<img src="https://usatthebiglead.files.wordpress.com/2012/12/adrian-peterson-nine-yards-short.jpg"
+     alt="Adrian Peterson" 
+	 longdesc="peterson.html#description" 
+	 border= "5"
+	 width="200"
+     height="200">
 
-<!-- The picture has a brief description and a link to more description -->
+<!-- The picture has a brief description -->
+
+<section id="description">
+  <h2>Adrian Peterson</h2>
+  <p>This image shows Minnesota RB Adrian Peterson...</p>
+</section>
 
 <br>
 <br>
