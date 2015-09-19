@@ -1,0 +1,128 @@
+<!doctype html>
+<!--
+filename:    ssstewar_prog01.html
+author:      Steve Stewart, CIS-255, Fall 2015
+description: This HTML program demonstrates the concepts described at 
+			 http://www.sitepoint.com/10-typical-html-interview-exercises/
+design: The program demonstrates 10 concepts from the web page
+	<head>: none
+	<body>: 1. Markup validation
+			2. the main element
+			3. WAI-ARIA
+			4. The small element
+			5. Subheadings
+			6. Image and accessibility
+			7. The time element
+			8. meter and progress
+			9. The longdesc attribute
+			10. The mark element
+-->
+<html>
+<body>
+<!-- -------------------------------------------------- -->
+<h1>1. Markup validation</h1>
+<!-- Resizes picture based on width of web browser -->
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="NBA 2k16">
+   </picture>
+   <figcaption>NBA 2k16</figcaption>
+</figure>
+<!-- -------------------------------------------------- -->
+<h1>2. The main element</h1>
+<!-- The definition of Main, it's goals, and the two specifications -->
+<main>
+The main element has two different definitions depending on the specification used.
+The W3C specification describes it as the main content of the page, that is, the content that describes the main topic of a page or is the central functionality of an application. The specification also states that a document must not include more than one main element.
+The WHATWG specification doesn’t assign any semantic value to the main element and describes it as a container for the dominant contents of another element. Also, according to WHATWG, you don’t have a limit in the number of times you can use the main element in a single document. If you have multiple article elements on a page, you may want to markup the main content of each article with a separate main element.
+</main>
+<!-- -------------------------------------------------- -->
+<h1>3. WAI-ARIA</h1>
+<!-- Improving the accessibility of of WAI-ARIA using its roles-->
+<header role="header">
+  <h1>Main title</h1>
+  <form action="/" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<nav role="navigation">
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/products">Products</a></li>
+     <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+<main role="main">
+  <article role="article">
+     <h1>Main title</h1>
+     <p>This is the content of this section</p>
+  </article>
+</main>
+<footer role="contentinfo">
+  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+</footer>
+<!-- -------------------------------------------------- -->
+<h1>4. The small element</h1>
+<!-- Displaying a small image-->
+<img src="small.jpg" alt="NBA 2K16">
+<small>The copyright of this image is owned by Business Wire</small>
+<!-- -------------------------------------------------- -->
+<h1>5. Subheadings</h1>
+<!-- Creating a subheading-->
+<article>
+   <h1>
+       Main title
+       <span>This is a subtitle</span>
+   </h1>
+   <p>This is the content of this section</p>
+</article>
+<!-- -------------------------------------------------- -->
+<h1>6. Image and accessibility</h1>
+<!-- using alt with images -->
+<p>The alt attribute is mandatory on img elements but its value can be empty (i.e. alt=""). An empty value is recommended 
+	when the image shown is used for decorative purposes only and therefore isn’t part of the content of the page. With 
+	regards to accessibility, if the alt attribute is empty, screen readers will ignore the image. This is highly recommended 
+	because using a value of something like “Content separator” will only disturb the user when this text is spoken.</p>
+<!-- -------------------------------------------------- -->
+<h1>7. The Time Element</h1>
+<!-- Using two not one time element to express a data range-->
+<time datetime="2014-11-06">6</time>-
+<time datetime="2014-11-09">17 September 2015</time>
+<!-- -------------------------------------------------- -->
+<h1>8. meter and progress</h1>
+<!-- Explaining the difference between meter and progress -->
+<p> The meter element represents a scalar measurement within a known range, or a fractional value. This element isn’t 
+	a good fit to measure something like external temperature because it doesn’t have a fixed range. However, meter 
+	can be used to describe the occupied memory of a hard disk.
+	The progress element is used to show the completion progress of a task. Unlike the meter element, the progress 
+	described by progress can be indeterminate. For example you could describe that a given task is progressing but 
+	that it is unknown when the task will be completed.</p>
+<!-- -------------------------------------------------- -->
+<h1>9. The longdesc attribute</h1>
+<!-- The longdesc attribute and its purpose. -->
+<p>The longdesc attribute of the img element has been around since HTML 4 and is also valid in HTML5. This attribute is 
+	designed to provide a more detailed description of an image, compared to the information offered in the alt attribute. 
+	The interesting thing is that instead of providing a description by itself (like the alt attribute does), longdesc points 
+	to a hyperlink containing the description.</p>
+	<img src="italy.jpg"
+     alt="This image represents the map of Italy" longdesc="italy.html#description">
+
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>Italy</h2>
+  <p>The shown map of Italy illustrates its division 
+  in regions...</p>
+</section>
+<!-- -------------------------------------------------- -->
+<h1>10. The mark element</h1>
+<!-- Defining the mark element and an example-->
+<p>The mark element represents highlighted text. A typical use is to highlight every instance of the keyword or keywords 
+	searched by a user.</p>
+<!-- -------------------------------------------------- -->	
+</body>
+</html>

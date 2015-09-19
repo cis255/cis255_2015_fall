@@ -1,0 +1,22 @@
+#message {
+	color: red;
+	font-size:200%;
+}
+p, h2{
+	color:orange;
+}
+span {
+	color: purple;
+}
+p span {
+	color: blue;
+}
+div p{
+	color: purple;
+}
+h2{
+	color: yellow;
+}
+.odd{
+	background-color: yellow;
+}

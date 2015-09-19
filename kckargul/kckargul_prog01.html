@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+filename: 	kckargul_prog01.html
+author:		Kevin Kargula, CIS-255, Fall 2015
+Description:This HTML program demonstrates the concepts describing...
+Design:		The program demonstrates 10 concepts from the web page
+	<head>: none
+	<body>: 1. Markup Validation
+			2. main element
+			3. WAI-ARIA
+			4. Small Elements
+			5. Subheadings
+			6. 
+-->
+<html>
+<body>
+<!-- ------------------------------------------------------- -->
+<h1>1. Markup Validation</h1>
+<!-- ------------------------------------------------------- -->
+<!--Formats the size of image depending on browser-->
+<figure>
+	<picture>
+		<source media="(min-width: 40em)"
+			srcset="large.jpg 1024w, medium.jpg 50w, small.jpg 320w">
+			<img src="large.jpg" alt="cat">
+		</picture>
+	<figcaption>cat</figcaption>
+</figure>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>2. The Main Element</h1>
+<!-- ------------------------------------------------------- -->
+<main>This is a main tag</main>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>3. WAI-ARIA</h1>
+<!-- ------------------------------------------------------- -->
+<header role="header">
+  <h1>Main title</h1>
+<!--Assigning Roles-->
+  <form action="/" method="get" role="search">
+<!--Assigning things to sesarch-->
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<nav role="navigation">
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/products">Products</a></li>
+     <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+<main role="main">
+  <article role="article">
+     <h1>Main title</h1>
+     <p>This is the content of this section</p>
+  </article>
+</main>
+<footer role="contentinfo">
+  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+</footer>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1> 4. The small element</h1>
+<!-- ------------------------------------------------------- -->
+<img src="medium.jpg" alt = "sphynx cat">
+<small>This is a sphynx cat</small>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>5. Subheadings</h1>
+<!-- ------------------------------------------------------- -->
+<article>
+	<h1>
+		Main title
+		<span>This is a subtitle</span>
+	</h1>
+	<p>This is the content of this section</p>
+</article>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>7. The Time element</h1>
+<!-- ------------------------------------------------------- -->
+<time datetime="2014-11-06">6</time>
+<time datetime="2014-11-09">9 November 2014</time>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>8/ meter and progress</h1>
+<!-- ------------------------------------------------------- -->
+<h2>Meter</h2>
+<!--Basically Progress but less cool-->
+<meter value="2" min="0" max="10">2 out of 10</meter><br>
+<meter value="0.6">60%</meter>
+<h2>Progress</h2>
+<!--Showing how far the file is in its processes-->
+<progress value="22" max="100"></progress>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>9. The longdesc attribute</h1>
+<!-- ------------------------------------------------------- -->
+<img src="italy.jpg"
+     alt="This image represents the map of Italy" longdesc="italy.html#description">
+
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>Italy</h2>
+  <p>The shown map of Italy illustrates its division 
+  in regions...</p>
+</section>
+<br/>
+<!-- ------------------------------------------------------- -->
+<h1>10. The Mark Element</h1>
+<!-- ------------------------------------------------------- -->
+<mark>This is marked</mark>
+
+<small>Some of this code was taken from <a href="http://www.sitepoint.com/10-typical-html-interview-exercises/">here</a>.</small>
+
+</body>
+</html>

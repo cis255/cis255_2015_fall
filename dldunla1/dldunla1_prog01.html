@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- 
+filename:    dldunla1_prog01.html
+Author:      Demetrius Dunlap,CIS-255 Fall 2015
+Description: This HTML program takes the 10 concepts from   
+			http://www.sitepoint.com/10-typical-html-interview-exercises/
+Design:     Shows how each of the 10 concepts from the page above are used.
+	<head>  none
+	<body>: 1. Markup validation
+			2. The Main Element
+			3. WAI-ARIA
+			4. The small element
+			5.Subheadings
+			6.Images and accessibility
+			7.The time element
+			8.meter and progress
+			9.The longdesc attribute
+		   10.The mark element
+-->
+<html>
+<head>
+</head>
+
+<!-----------------------------------------------------------------------------------------------------------------------------------------
+		1. Markup validation: Uses pictures and allows them to be changed when the size of the page changes.
+		-------->
+<body>
+<h1> 1: Mark up Validation</h1>
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="CAT">
+   </picture>
+   <figcaption>CAT</figcaption>
+</figure>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------
+		2. The Main Element :this is the main focal point of the website or the main co
+		
+	    -------->		
+<h2> 2.The Main Element</h2>
+
+<!------------------------------------------------------------------------------------------------
+		3.WAI-ARIA: This concept makes uses HTML tags and improves the accessibility using tags such as 
+		things like articel, nav, and contact info. This creates a search bar that can be used to search for content 
+		on nthe page.
+		-------->
+<h3> 3.WAI-ARIA</h3>
+<header role="header">
+  <h1>Main title</h1>
+  <form action="/" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<nav role="navigation">
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/products">Products</a></li>
+     <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+<main role="main">
+  <article role="article">
+     <h1>Main title</h1>
+     <p>This is the content of this section</p>
+  </article>
+</main>
+<footer role="contentinfo">
+  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+</footer>
+
+<!----------------------------------------------------------------------------------------------------------------------------------------
+	4: The small Element: this element shows when it is appropriate to use smaller text. This is usually used when adding thigs such as coppyright titles or other things.
+		--------->
+		
+<h4>4.The Small Element</h4>
+<img src="large.jpg" alt="CAT">
+<small> The photo belongs to dogshome.com</small>
+<!------------------------------------------------------------------------------------------------------------------
+	5: Subheadings: Are one of the most important elements of the webpage. They usually occurer after the main element of the webpage 
+		-------->
+<h5>5.Subheadings</h5>
+<article>
+   <h1>Main title</h1>
+   <h2>This is a subtitle</h2>
+   <p>This is the content of this section</p>
+</article>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------
+	6: Images and Accessibility: this is found witht he alt="" command and is manditory for img elements.
+		the alt=" " is left blank when the image is used for decoration only.
+	    ---------->	
+<header role="headder">
+<h6>6.Images and Accessibility</h6>
+<img src="large.jpg" alt="">
+</header>
+<!-------------------------------------------------------------------------------------------------------------------------
+	7: The Time Element: This is used to show a date range but can only be displayed using two time elements.
+		-------->
+<p><h7>7.The time element</h7>
+<time datetime="2014-11-06">6</time>-
+<time datetime="2014-11-09">9 November 2014</time>
+</p>
+
+
+<!----------------------------------------------------------------
+	8: Meter and progress:
+	----->
+<h8>8. Meter and Prgress</h8>
+	<p>the meter and progresss are two seperate elements that do different things but are important. The meter element is used to mesure things like 
+	fractional values while the progress emelment is used to show completion of task in things such as a bar that fills as the task is complete.
+	</p>
+	
+<!-----------------------------------------------------------------
+	9: logic attribute: this attribute is used to provide even more detailed information on img files.
+	This can replace the alt="" however un like alt=""" this is a lik to a hyperlint to a description. 
+	---------->
+	
+	<img src="italy.jpg"
+     alt="This image represents the map of Italy" longdesc="italy.html#description">
+
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>Italy</h2>
+  <p>The shown map of Italy illustrates its division 
+  in regions...</p>
+</section>
+
+<!-------------------------------------------------------------------
+	10: the maek element: THis element allows the user to higlight a line of text. This is best demonstrated when
+	the user searches for a word, the mark element hilights the searched word everywhere it can be used on the page.
+	---------->
+<h10> 10. The Mark element</h10>
+<p><mark>SVSU is the place that i call home.</mark></p>
+
+</body>
+</html>
