@@ -11,6 +11,15 @@ Design: The program demonstrates 10 concepts from the web page
     head: none
 	body: 1. Markup validation
 			2. The main element
+				3.WAI-ARIA 
+					4.The small element
+						5.	Subheadings
+							6. Images and accessability
+								7. The time element
+									8. Meters and Progress
+										9. The longdesc element
+											10.	The mark element
+								
 
 -->
 
@@ -18,51 +27,235 @@ Design: The program demonstrates 10 concepts from the web page
 <html>
 <body>
 
-<!-- ------------------------------------------------------------------------------- -->
-<!--Markup Validation-->
+<style>
+	body{
+		background-color: #3CB371;   
+	}
+</style>
 
-<h1>1) Markup Validation</h1>
-<figure>
-   <picture>
-      <source media="(min-width: 40em)"										<!-- Code taken from http://www.sitepoint.com/10-typical-html-interview-exercises/ -->
-      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
-      <img src="medium.jpg" alt="Cats">
-   </picture>
-   <figcaption>Cat picture</figcaption>										<!-- Displays an image of a cat and gives the figure a caption -->
-</figure>
+<h1>Adam Rulapaugh</h1>
+<h2>Program 1</h2>
 
-<!-- ------------------------------------------------------------------------------- -->
+<ul>
+	<li>
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!--Markup Validation-->
 
-<!-- ------------------------------------------------------------------------------- -->
-<!-- The main Element -->
+		<h1>1) Markup Validation</h1><!-- Checks the validity of web documents written in a markup language (such as html)-->
+		<figure>
+		   <picture>
+			  <source media="(min-width: 40em)"
+			  srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+			  <img src="large.jpg" alt="Cats">
+		   </picture>
+		   <figcaption>Cat picture</figcaption>										<!-- Displays an image of a cat and gives the figure a caption -->
+		</figure>
 
-<h1> 2) The main element </h1>
-<main>
-	<h2> This is where the main conent of a webpage is coded</h2>
-</main>
+		<!-- ------------------------------------------------------------------------------- -->
+	</li>
+	
+	<li>
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- The main Element -->
+		<h1> 2) The main element </h1> <!-- Emphasizes the main content of a webpage -->
+		<main>
+			<h2> This is where the main conent of a webpage is coded. There are two specifications for the main element,<br>
+				 one by WHATWG and the other by W3C. These two specifications do not necessarily see eye to eye as one<br>
+				 says that the main element should only be used once to specify the main focus of the webpage and the other<br>
+				 states that it is acceptable to use any number of times necessary to emphasize key elements.</h2>
+		</main>
+		<!-- ------------------------------------------------------------------------------- -->
 
-<!-- ------------------------------------------------------------------------------- -->
+	</li>
+		
+	<li>	
 
-<!-- ------------------------------------------------------------------------------- -->
-<!--WAI-ARIA -->
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!--WAI-ARIA -->
+		<h1> 3) WAI-ARIA </h1>	<!-- Used to navigate webpages with only the keyboard -->
+			<p>This technique is used to increase accessability of a web page. It allows navigation to 
+			   be possible both via mouse and keyboard. </p>
 
-<h1> 3) WAI-ARIA </h1>
-	<p>This technique is used to increase accessability of a web page. It allows navigation to 
-	   be possible both via mouse and keyboard. </p>
+			<h2> Example <h2> <!-- Not sure if this works -->
+			<header>
+			
+			<!-- TEST -->
+				  <h1>Main title</h1>
+				   <form action="/" method="get">
+					  <input type="search">
+					  <input type="submit">
+				   </form>
+				</header>
+				<ul>
+				   <li><a href="/">Home</a></li>
+				   <li><a href="/products">Products</a></li>
+				   <li><a href="/about">About</a></li>
+				</ul>
+				<!--
+				<main>
+				   <article>
+					  <h1>Main title</h1>
+					  <p>This is the content of this section.</p>
+				   </article>
+				</main>
+				<footer>
+				   <small>Copyright &amp;copy; Aurelio De Rosa 2014.</small>
+				</footer>
+				-->
+			<!-- END OF TEST --><!-- Code Taken from http://www.sitepoint.com/10-typical-html-interview-exercises -->
+			
+			<br>
+			<h2>VS</h2>
+			<br>
+			
+			<!-- More Test-->
+				<header role="header">
+				  <h1>Main title</h1>
+				  <form action="/" method="get" role="search">
+					 <label for="search">Search:</label>
+					 <input id="search" type="search">
+					 <input type="submit">
+				  </form>
+				</header>
+				<nav role="navigation">
+				  <ul>
+					 <li><a href="/">Home</a></li>
+					 <li><a href="/products">Products</a></li>
+					 <li><a href="/about">About</a></li>
+				  </ul>
+				</nav>
+				<!--
+				<main role="main">
+				  <article role="article">
+					 <h1>Main title</h1>
+					 <p>This is the content of this section.</p>
+				  </article>
+				</main>
+				<footer role="contentinfo">
+				  <small>Copyright &amp;copy; Aurelio De Rosa 2014.</small>
+				</footer>
+				-->
+			<!-- End of Test--><!-- Code Taken from http://www.sitepoint.com/10-typical-html-interview-exercises -->
 
-	<h2> Example <h2>
+		<!-- ------------------------------------------------------------------------------- -->
+	</li>	
+	
+	<li>
+	
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!--The small Element -->
+		<h1> 4) The small element </h1>	<!-- Used for small print (typically at the end of a document and for legal/copyright awknowledgements)-->
+		  <p>This element is used to print text in a small format, usually used to legal and copyright information.</p>
+		  
+		  <img src="image.jpg" alt="Persistence of Memory">								<!-- Code Taken from http://www.sitepoint.com/10-typical-html-interview-exercises -->
+		  <small>The copyright of this image is owned by Salvidor Doli.</small>    <!-- Displays an image and uses the small tag to display copyright information -->
+		
+		
+		<!-- ------------------------------------------------------------------------------- -->
+	</li>
+		
+	<li>	
+	
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- Subheadings -->
+		<h1> 5) Subheadings </h1>
+		<article>
+		   <h1>
+			   Main title <br>
+			   <span>This is a subtitle</span>		<!-- Span can be used to create subheadings so that the p tag still belongs to h1 -->
+		   </h1>
+		   <p>This is the content of this section.</p>
+		</article>
 
-<!-- ------------------------------------------------------------------------------- -->
+		<!-- ------------------------------------------------------------------------------- -->
 
-<!-- ------------------------------------------------------------------------------- -->
-<!--The small Element -->
+		
+	</li>
+	
+	<li>
+		<!-- ------------------------------------------------------------------------------- -->
+	
+		<!-- Images and accessability-->
+		<h1> 6) Images and accessability </h1>
+		<p>Usually, the alt attribute is used for img elements, but can be left empty when the image is for decorative purposes.</p>
+		<img src = "svsu_baner.jpg"		alt = ""
 
-<h1> 4) The small element </h1>
-  <p>This element is used to print text in a small format, usually used to legal and copyright information</p>
-  
-  <img src="image.jpg" alt="London by night">								<!-- Code Taken from http://www.sitepoint.com/10-typical-html-interview-exercises -->
-  <small>The copyright of this image is owned by Aurelio De Rosa</small>    <!-- Displays an image and uses the small tag to display copyright information -->
-<!-- ------------------------------------------------------------------------------- -->
+		<!-- ------------------------------------------------------------------------------- -->
+
+
+	</li>
+	
+	<li>
+	
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- The Time Element -->
+		<h1> 7) The Time Element </h1>
+			<time datetime="2015-09-14">13</time>-
+			<time datetime="2015-09-18">18 September 2015</time>
+
+		<!-- ------------------------------------------------------------------------------- -->
+
+	</li>
+		
+	<li>	
+		
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- Meter and Progress -->
+		<h1> 8) Meters and Progress</h1>
+			<span><u>Meter example</u></span><br>
+			<span>1)</span>	<meter value="2" min="0" max="10">2 out of 10</meter><br>
+			<span>2)</span>	<meter value="0.6">60%</meter><br>
+			<span><u>Progress example</u><br> 1)</span> <progress value="22" max="100"></progress>
+
+		<!-- ------------------------------------------------------------------------------- -->
+
+	</li>
+	
+	<li>
+	
+	
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- The longdesc attribute -->
+
+		<h1> 9) The longdesc attribute</h1>
+		<p>The longdesc attribute is used to either supply a hyperlink with a description to an image or to supply an entirely<br>
+			new file with a description such as a .txt file</p>
+		
+			<img src="html.jpg"
+			 alt="This is an image of HTML(Hyper Text Markup Language)" longdesc="http://www.w3schools.com/html/">
+
+
+			<section id="description">
+			  <h2>HTML</h2>
+			  <p>This link describes some techniques for web programming in html.
+			</section>
+
+
+		<!-- ------------------------------------------------------------------------------- -->
+
+
+
+	</li>
+	
+	<li>
+		<!-- ------------------------------------------------------------------------------- -->
+		
+		<!-- The mark element -->
+		<h1> 10) The mark element</h1>
+		<p>The mark element is used to <mark>highlight</mark> keywords searched by the user.</p>
+
+		<!-- ------------------------------------------------------------------------------- -->
+	</li>
+</ul>
+
 
 
 </body>
