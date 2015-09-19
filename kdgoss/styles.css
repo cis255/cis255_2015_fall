@@ -1,0 +1,11 @@
+<style>
+#message{
+	color: red;
+}
+p, h2{
+	color: orange;
+}
+p span{
+	color: purple;
+}
+</style>
