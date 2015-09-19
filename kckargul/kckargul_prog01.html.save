@@ -26,12 +26,11 @@ Design:		The program demonstrates 10 concepts from the web page
 		</picture>
 	<figcaption>cat</figcaption>
 </figure>
-<br/>
 <!-- ------------------------------------------------------- -->
 <h1>2. The Main Element</h1>
 <!-- ------------------------------------------------------- -->
 <main>This is a main tag</main>
-<br/>
+
 <!-- ------------------------------------------------------- -->
 <h1>3. WAI-ARIA</h1>
 <!-- ------------------------------------------------------- -->
@@ -82,13 +81,13 @@ Design:		The program demonstrates 10 concepts from the web page
 <footer role="contentinfo">
   <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
 </footer>
-<br/>
+
 <!-- ------------------------------------------------------- -->
 <h1> 4. The small element</h1>
 <!-- ------------------------------------------------------- -->
 <img src="large.jpg" alt = "sphynx cat">
 <small>This is a sphynx cat</small>
-<br/>
+
 <!-- ------------------------------------------------------- -->
 <h1>5. Subheadings</h1>
 <!-- ------------------------------------------------------- -->
@@ -99,42 +98,23 @@ Design:		The program demonstrates 10 concepts from the web page
 	</h1>
 	<p>This is the content of this section</p>
 </article>
-<br/>
+
 <!-- ------------------------------------------------------- -->
 <h1>7. The Time element</h1>
 <!-- ------------------------------------------------------- -->
 <time datetime="2014-11-06">6</time>
 <time datetime="2014-11-09">9 November 2014</time>
-<br/>
+
 <!-- ------------------------------------------------------- -->
 <h1>8/ meter and progress</h1>
 <!-- ------------------------------------------------------- -->
+<h2>Progress</h2>
+<progress value="22" max="100"></progress>
 <h2>Meter</h2>
-<!--Basically Progress but less cool-->
 <meter value="2" min="0" max="10">2 out of 10</meter><br>
 <meter value="0.6">60%</meter>
-<h2>Progress</h2>
-<!--Showing how far the file is in its processes-->
-<progress value="22" max="100"></progress>
-<br/>
-<!-- ------------------------------------------------------- -->
-<h1>9. The longdesc attribute</h1>
-<!-- ------------------------------------------------------- -->
-<img src="italy.jpg"
-     alt="This image represents the map of Italy" longdesc="italy.html#description">
 
-<!-- other content here ... -->
 
-<section id="description">
-  <h2>Italy</h2>
-  <p>The shown map of Italy illustrates its division 
-  in regions...</p>
-</section>
-<br/>
-<!-- ------------------------------------------------------- -->
-<h1>10. The Mark Element</h1>
-<!-- ------------------------------------------------------- -->
-<mark>This is marked</mark>
 
 </body>
 </html>
