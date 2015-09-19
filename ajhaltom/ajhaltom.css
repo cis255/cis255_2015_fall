@@ -1,0 +1,19 @@
+#message {
+		color:red;
+		}
+	h1 {
+		color:orange;
+		}
+	p span {
+		color:purple;
+		}
+	span {
+		color:yellow;
+		}	
+	h2 {
+		color: blue;
+		}
+	.odd {
+		background-color: yellow
+		}
+	
