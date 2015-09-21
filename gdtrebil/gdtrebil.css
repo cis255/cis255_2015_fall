@@ -1,0 +1,12 @@
+#message {
+	 color : red;
+     font-size : 150%	 
+	}
+	p, h2 {
+	color: blue;
+	}
+	
+.odd{
+background-color: yellow
+}
+	/* this is a comment */
