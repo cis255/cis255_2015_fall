@@ -1,0 +1,145 @@
+<html>
+<head>
+	<title> Program 01</title>
+	<style>
+		.main{
+		margin-left:10%;
+		margin-right:10%;
+		background-color:rgba(0,0,255,0.5);
+		border-radius:10px;
+		padding:5px;
+		overflow:hidden;
+		
+		}
+		.desc{
+		border-radius:7px;
+		backround-color:green;
+		width:66%;
+		float:right;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		padding:0px;
+		overflow:hidden;
+		text-overflow: ellipsis;
+		
+		}
+		.sbar{
+		border-radius:7px;
+		background-color:red;
+		width:23%;
+		padding:3px;
+		float:left;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		padding:0px;
+		overflow:hidden;
+		text-overflow: ellipsis;
+		position: fixed;
+	   
+		}
+		li{
+		font-size:150%}
+		
+		@media (max-width: 900px) {
+		  .sbar {
+			display: none;
+		  }
+		  
+		.desc{
+				border-radius:7px;
+				backround-color:green;
+				width:100%;
+				float:right;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				padding:0px;
+				overflow:hidden;
+				text-overflow: ellipsis;
+				text-align:center;
+				}
+		.clear{
+		clear:both;}
+	</style>
+</head>
+<main>
+<body>
+<div class="main">
+	<span class="sbar">
+	<h1> Items </h1>
+	<ul>
+		<li><a href="#2">Markup Validation</a></li>
+		<li><a href="#1">Main element</a></li>
+		<li><a href="#3">WAI-ARIA</a></li>
+		<li><a href="#4">Small Element</a></li>
+		<li><a href="#5">Sub Headings</a></li>
+		<li><a href="#6">Images and accessibility</a></li>
+		<li><a href="#7">The time element</a></li>
+		<li><a href="#8">Meter and Progress</a></li>
+		<li><a href="#9">The longdesc attribute</a></li>
+		<li><a href="#10">The mark element</a></li>
+	</ul>
+	</span>
+	
+	<div class="desc">
+		<h1><a name="2">1. Main Element</a></h1>
+			<h3>This whole body is on Main Element</h3>
+			
+		<h1><a name="1">2. Markup Validation</a></h1>
+			<picture>
+			   <source media="(min-width: 64em)" src="http://cdn3-www.dogtime.com/assets/uploads/2012/05/file_10283_what-are-good-dog-names-based-on-movies-music-sports-history-theme.jpg">
+			   <source media="(min-width: 37.5em)" src="http://cf.ltkcdn.net/dogs/images/std/66211-200x200-Cute_Shiba_Inu.jpg">
+			   <source src="low-res.jpg">
+			   <img src="https://v.cdn.vine.co/r/avatars/1CAB6ACBD41136917284599066624_3def2131438.0.0.jpg?versionId=bvqWCWDTrmOYFny9WhkY_8ItZa.3DnnN alt="This picture loads on non-supporting browsers.">
+			   <p>Accessible text.</p>
+			</picture>
+		<h1><a name="3">3. WAI-ARIA</a></h1>
+			<header role="header">
+			  <h1>Main title</h1>
+			  <form  role="search">
+				 <label for="search">Search:</label>
+				 <input id="search" type="search">
+				 <input type="submit">
+			  </form>
+			</header>
+			
+		<h1><a name="4">4. Small Element</a></h1>
+			<small>This text is smaller then others</small>
+		<h1><a name="5">5. Subheadings</a></h1>
+			<article>
+			   <h1>
+				   Main title
+				   <span>This is a subtitle</span>
+			   </h1>
+			   <p>This is the content of this section</p>
+			</article>		
+		<h1><a name="6">6. Images and accessibility</a></h1>
+			<img src="http://www.clipartbest.com/cliparts/niB/X4n/niBX4ngqT.png" height=200px width = 200px alt="google logo">
+		<h1><a name="7">7. The time element</a></h1>
+			The Date is <time datetime="2015-9-19">9 November 2014</time>
+		<h1><a name="8">8. meter and progress</a></h1>
+			This assignment is <meter value="8" min="0" max="10">8/10</meter><br> completed.
+			In other words <progress value="80" max="100"></progress> Completed.			
+		<h1><a name="9">9. The longdesc attribute</a></h1>
+			<img src="https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg" height=200px width = 200px alt = "cat">
+				 
+
+			<!-- other content here ... -->
+
+			<section id="description">
+			  <h2>Cat</h2>
+			  <p>This is a cat. Meow. I sit on computers and throw coffee mugs from table. Meow.</p>
+			</section>			
+			
+		<h1><a name="10">10. The mark element</a></h1>
+			This assignment is <mark><strong>COMPLETED</strong></MARK>
+			<br class="clear">
+		
+	</div>
+
+
+	
+
+</div>
+
+</main>
+

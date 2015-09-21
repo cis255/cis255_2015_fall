@@ -18,13 +18,6 @@ img {
 
 }
 
-#navbar {
-	position: fixed;
-	margin-top: -10px;
-	left:50%;
-	margin-left:-254px;
-}
-
 #header {
 	position: relative;
 	top: -10px;
