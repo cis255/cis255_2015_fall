@@ -1,0 +1,23 @@
+	#message {
+			color: red; /* the message id isalways in a paragraph */
+			font-size: 200%;
+	}
+	p {
+			color: orange; /**/
+	}
+	span {
+			color: purple; /**/
+	}
+	
+	div p{
+			color: purple; /**/
+	}
+	h2{
+			color: yellow; /**/
+	}
+	p span{
+			color: brown; /**/
+	} 
+	.odd {
+			background-color: yellow; /**/
+	} 

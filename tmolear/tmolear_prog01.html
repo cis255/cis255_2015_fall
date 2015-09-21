@@ -1,0 +1,101 @@
+<!doctype html>
+<!--
+filename: tmolear_prog01.html
+author: Tyler OLear, CIS-255, Fall 2015
+description: This HTML program demonstrates the concepts described as the following website
+            http://www.sitepoint.com/10-typical-html-interview-exercises/
+design: The program demonstrates 10 concepts from the web page
+     <head>: none
+	 <body>: 1. Markup Validation
+			 2. The main element
+--->
+<html>
+<body>
+<!------------------------------------------------------------------ --->
+<h1>1. Markup Validation</h1>
+<!--- Changes the picture being displayed based on the width of the source being used to display the webpage. --->
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, smaller.jpg 320w">
+      <img src="medium.jpg" alt="London by night">
+   </picture>
+   <figcaption>Dog</figcaption>
+</figure>
+<!------------------------------------------------------------------- --->
+<h1>2. The Main Element</h1>
+<!-- Definition of main Element -->
+<p>What is the definition of the main element, its goal, and are the two specifications in agreement with its definition?</p>
+<p><font color="red">The W3C describes it as the main content of the page, the content that describes the main topic of a page. Also, it says that you can only have one main element per page.</font> <font color="green">The WHATWG describes it as a container for the dominant contents of another element. Also, they say you dont have a limit to the amount of times you can use the main element in a single page.</font> <font color="purple">So the goal is to just keep the main peices of your page organized and emphasized. The two specifications are not in agreement with the definition.</font>
+<!--------------------------------------------------------------------- --->
+<h1>3.WAI-ARIA</h1>
+<!-- Creates a page with some navigation, and allows for new features while continuing support for older technology. -->
+<header role="header">
+  <h1>Puppy Palace</h1>
+  <form action="/" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<nav role="navigation">
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/products">Products</a></li>
+     <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+<main role="main">
+  <article role="article">
+     <h1>Puppy Palace Stuff</h1>
+     <p>Buy your puppy stuff here for cheaper!</p>
+  </article>
+</main>
+<footer role="contentinfo">
+  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+</footer>
+<!--------------------------------------------------------------------- --->
+<h1>4.The small element</h1>
+<!--- Description of when to use small element, and puts a small element of copyright below the picture. --->
+<p><font size="5">Answer: </font>In HTML 4.01 the small element was a presentational element to mark up smaller text. In HTML5 it should be used semantically to represent legal disclaimers, caveats, and so on. The text may well be small, but this isnt required.</p>
+<img src="copyright.jpeg" alt="London by night">
+<small>The copyright of this image is owned by Saginaw Valley State University</small>
+<!--- ----------------------------------------------------------------- --->
+<h1>5.Subheadings</h1>
+<!-- Shows how to associate a subtitle with a title such as <h1> -->
+<article>
+   <h2>
+       Doggies are AWESOME
+       <span>Big Dogs</span> <!-- I dont think this is working correctly! -->
+   </h2>
+   <p>Big dogs eat more food!</p>
+</article>
+<!--- ----------------------------------------------------------------- --->
+<h1>6.Images and accessibility</h1>
+<p><font size="5" color="red">Question: Is the alt attribute mandatory on img elements? If not, can you describe a scenario where it can be set to and empty value? Does and empty value affect accessibility in any way?</font>
+<font size="5">Answer:</font>The alt attribute is mandatory on img elements but its value can be empty (i.e. alt=""). An empty value is recommended when the image shown is used for decorative purposes only and therefore isnt part of the content of the page. With regards to accessibility, if the alt attribute is empty, screen readers will ignore the image. This is highly recommended because using a value of something like Content separator will only disturb the user when this text is spoken.
+<!--- ----------------------------------------------------------------- --->
+<h1>7.The time element</h1>
+<!-- Exresses a date range using a two time element. -->
+<time datetime="2015-09-10">10</time> -
+<time datetime="2015-09-19">19 September 2015</time>
+<!--- ----------------------------------------------------------------- --->
+<h1>8.Meter and Progress</h1>
+<p><font size="5" color="red">Question: Whats the difference between the meter element and the progress element?</font> <font size="5">Answer: </font> The meter element represents a scalar measurement within a known range, or a fractional value. This element isnt a good fit to measure something like external temperature because it doesnt have a fixed range. However, meter can be used to describe the occupied memory of a hard disk.
+The progress element is used to show the completion progress of a task. Unlike the meter element, the progress described by progress can be indeterminate. For example you could describe that a given task is progressing but that it is unknown when the task will be completed.</p>
+<!--- ----------------------------------------------------------------- --->
+<h1>9.The longdesc attribute</h1>
+<!-- Provides a more detailed description of an image using a hyperlink. -->
+<img src="copyright.jpeg"
+     alt="This image shows a SVSU logo" longdesc="tmolear_prog01.html#description">
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>SVSU</h2>
+  <p>This is a black and red SVSU logo, just one of the many SVSU logo examples.</p>
+</section>
+<!--- ----------------------------------------------------------------- --->
+<h1>10.The mark element</h1>
+<p><font size="5" color="red">Question: What is the mark element? Can you describe an example of use for this element?</font> <font size="5">Answer: </font> The mark element represents highlighted text. A typical use is to highlight every instance of the keyword or keywords searched by a user.</p>
+</body>
+</html>
