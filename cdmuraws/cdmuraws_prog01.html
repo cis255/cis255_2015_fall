@@ -1,0 +1,161 @@
+<!doctype html>
+<!--
+filename: cdmuraws_prog01.html
+author: Cory Murawske, CIS 255, Fall 2015
+description: This HTML program demonstrates concepts on http://www.sitepoint.com/10-typical-html-interview-exercises/
+design: The program demonstrates 10 concepts from the webpage
+	<head>: none </head>
+	<body>: 1. Markup Validation
+			2. The Main Element
+			3. WAI-ARIA
+			4. The small element
+			5. Subheadings
+			6. Images and accessibility
+			7. The time element
+			8. meter and progress
+			9. The longdesc attribute
+		   10. The mark element
+-->
+<html>
+<center>
+<h1>1. Markup Validation</h1>
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w"> <!-- Picture files -->
+      <img src="medium.jpg" alt="Cat" border= "5">
+   </picture>
+   <figcaption>Cat</figcaption> <!-- This is the figure caption -->
+</figure>
+
+<br>
+<br>
+<br>
+
+<h1>2. The Main Element</h1>
+<main>
+	<article>
+	<p>This is the main element of the page. This is the description of the main content of the page.</p>
+	</article>
+</main>
+<!-- The main element is surrounded by the main tag -->
+
+<br>
+<br>
+<br>
+
+<h1>3. WAI-ARIA</h1>
+
+<header role="header">
+  <form action="/" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<nav role="navigation">
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/products">Products</a></li>
+     <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+<!-- The point of WAI-ARIA is to make things more accessible -->
+
+<br>
+<br>
+<br>
+
+<h1>4. The Small Element</h1>
+
+<img src="http://i.ytimg.com/vi/snb5jhNFcw8/maxresdefault.jpg"
+	 width="200"
+     height="200"><br>
+<small>Calvin Johnson</small>
+<!-- The small element is used here to make the caption text small -->
+
+<br>
+<br>
+<br>
+
+<h1>5. Subheadings</h1>
+
+<article>
+   <h1>
+       This is a Title<br>
+       <span><small>This is a Subtitle</small></span>
+   </h1>
+   <p>This is the article.</p>
+</article>
+
+<br>
+<br>
+<br>
+
+<h1>6. Images and Accessability</h1>
+
+<img src="http://dynastyfootballwarehouse.com/wp-content/uploads/2015/07/Julio-Jones.jpg" 
+     alt="Julio Jones"
+   	 border ="5"
+	 width="200"
+     height="200">
+<!-- 'alt' is mandatory in image tags but can be left blank. Left empty, screen readers will ignore the image -->
+<br>
+<br>
+<br>
+
+<h1>7. The Time Element</h1>
+
+<time datetime="2015-09-19">19</time>-
+<time datetime="2015-09-29">29 September 2015</time>
+<!-- Expressing a date range using two time elements -->
+
+<br>
+<br>
+<br>
+
+<h1>8. Meter and Progress</h1>
+
+<h3>Meter</h3>
+<meter value="6" min="0" max="22">6 out of 10</meter><br>
+<meter value="0.6">60%</meter>
+<!-- Using meter to define a measurement with a known range or fractional value -->
+
+<br>
+
+<h3>Progress</h3>
+<progress value="22" max="100"></progress>
+<!-- Using the progress tag to describe progress -->
+
+<br>
+<br>
+<br>
+
+<h1>9. The Longdesc Attribute</h1>
+
+<img src="https://usatthebiglead.files.wordpress.com/2012/12/adrian-peterson-nine-yards-short.jpg"
+     alt="Adrian Peterson" 
+	 longdesc="peterson.html#description" 
+	 border= "5"
+	 width="200"
+     height="200">
+
+<!-- The picture has a brief description -->
+
+<section id="description">
+  <h2>Adrian Peterson</h2>
+  <p>This image shows Minnesota RB Adrian Peterson...</p>
+</section>
+
+<br>
+<br>
+<br>
+
+<h1>10. The Mark Element</h1>
+<br>
+This is a demonstration of the <mark>mark</mark> element.
+
+
+</body>
+<html>

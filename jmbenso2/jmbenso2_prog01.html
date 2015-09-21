@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- 
+filename: 		jmbenso2_prog1.html
+author:   		Jon Benson, CIS-255, Fall 2015
+description: 	This HTML program demonstrates the concepts at the following website:
+				http://www.sitepoint.com/10-typical-html-interview-exercises/
+
+design:			The program demonstrates 10 concepts from the web page above
+	<head>: 1. title
+	<body>: 1. Markup element
+			2. The main element
+			3. WAI-ARIA
+			4. The small element
+			5. Subheadings
+			6. Images and accessibility
+			7. The time element
+			8. meter and progress
+			9. The longdesc attribute
+			10. The mark element
+
+-->
+
+<html>
+	<head>
+		<title>Prog01</title>
+	</head>
+	<body>
+		<h1> CIS-255 Prog01: Jon Benson </h1>
+		<h3> 1. Markup element </h3>
+		<!-- Using the srcset attribute, an image can be chosen
+			 from a pool of possible options, in this case based on width -->
+		<figure>
+		   <picture>
+			  <source media="(min-width: 40em)"
+			  srcset="large.jpg 1080w, medium.jpg 632w, small.png 128w" >
+			  <img src="medium.jpg" alt="Cat">
+		   </picture>
+		   <figcaption>Cat</figcaption>
+		</figure>
+		
+		<h3> 2. Main element</h3>
+		<article> <!-- An article is a independent, self-sufficient block of content -->
+			<h4> This is an article block. </h4>
+			<main>
+				<p> This text represents the dominant contents of this article, so it is tagged as main. </p>
+			</main>
+		</article>
+		
+		<h3> 3. WAI-ARIA </h3>
+		<!-- Roles basically allow browsers, etc. alternative ways to make sense of your markup -->
+		<article>
+			<header role="header">
+				<h4> This section has roles added.  </h4>
+			</header>
+			<nav role="navigation">
+				<li><a href="jmbenso2.html">Menu</a></li>
+				<li><a href="jmbenso2_exercise1.html">Exercise 1</a></li>
+			</nav>
+			<main role="main">
+				<p> Arglebargle blargle warfgle. </p>
+			</main>
+		</article>
+		
+		<h3> 4. The small element </h3>
+		<!-- Use small for things like legal notices and disclaimers -->
+		<small> Disclaimer: by reading this, you owe me like a hundo </small>
+		
+		<h3> 5. Subheadings </h3>
+		<!-- here's one way to achieve a subtitle while keeping a good hierarchy -->
+		<article>
+			<h2> 
+				The Unachivable Dream <br/>
+				<span style="font: bold 16px arial">Pasta, Microwaves, and the Man Who Tried to Pull it All Together</span>
+			</h2>
+			<p> Now there's a novel I'd read any day. </p>
+		</article>
+		
+		<h3> 6. Images and accessibility </h3>
+		<img src="doesNotExist.png" alt ="This string must exist, but can be empty!">
+		
+		<h3> 7. The time element </h3>
+		<time datetime="2015-9-19">Today's date, readable by machine via the datetime attribute.</time>
+	
+		<h3> 8. meter and progress </h3>
+		<meter value="7.8" min="0" max="10">7.8 out of 10</meter><br>
+		<progress value="2003" max="9001"></progress>
+		
+		<h3> 9. The longdesc attribute </h3>
+		<!-- longdesc would in theory link to an extended description of the image
+			 but W3C discourages its use, as it isn't well supported. -->
+		<img src="doesNotExist.jpg" alt="longdesc is not well supported." longdesc="jmbenso2.html">
+		
+		<h3> 10. The mark element </h3>
+		<p> <!-- for highlighting -->
+			I love to eat <mark>pizza</mark> but it's bad for my <mark>figure</mark>!
+		</p>
+	</body>
+</html>

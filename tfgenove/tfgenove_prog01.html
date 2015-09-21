@@ -3,9 +3,13 @@
 filename:    tfgenove_prog01.html
 author:      Tessa Genovese, CIS-255, Fall 2015
 description: This HTML program demonstrates the concepts described at the following website:
-             http://www.sitepoint.com/10-typical-html-interview-exercises/
+             http://www.sitepoint.com/10-typical-html-interview-exercises/ .  The code, unless
+			 otherwise noted, is the same as the examples on the web page.
 design: The program demonstrates 10 concepts from the web page
-	<head>: none
+	<head>: 1. Title- Program 1
+			2. h1 - Program 1
+			3. Style for h1, h2, h3
+
 	<body>: 1. Markup Validation
 			2. The main element
 			3. WAI-ARIA
@@ -16,21 +20,50 @@ design: The program demonstrates 10 concepts from the web page
 			8. meter and progress
 			9. The longdesc attribute
 			10. The mark element
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
 -->
 <html>
+<!-- This section contains the title, which will appear as the window title, and the header of the web page,
+     which appears at the top of the web page -->
+<head>
+	<title>Program 1</title>
+	<h1>Program 1</h1>
+	<!-- This formats the headers throughout the file.  All h1 headers will be blue, all h2 headers
+         will be purple, and all h3 headers will be brown -->
+	<style>
+		h1{
+			color: blue;
+		}
+		h2{
+			color: purple;
+		}
+		h3{
+			color: brown;
+		}
+	</style>
+</head>
 <body>
-<!-- -------------------------------------------------------------- -->
-<h1>1. Markup Validation</h1>
+
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>1. Markup Validation</h2>
 <!-- This example shows a different picture based on the size of the window-->
 <figure>
    <picture>
+	  <!-- Defines the width of the picture and displays a different picture based
+           on the resolution of the screen -->
       <source media="(min-width: 40em)"
       srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+	  <!-- this gives the source image, which will be displayed, and the alternate text that
+		   will be displayed if the image cannot be displayed -->
       <img src="medium.jpg" alt="Cat">
    </picture>
+   <!-- Sets the caption displayed underneath the picture -->
    <figcaption>Cat</figcaption>
 </figure>
+<<<<<<< HEAD
 <!-- -------------------------------------------------------------- -->
 <h1>2. The main element</h1>
 <!-- This example demonstrates how to use the main element and displays the contents of the element-->
@@ -44,12 +77,34 @@ design: The program demonstrates 10 concepts from the web page
      more accessible for people with disabilities.  The web page created by the code should now be more accessible -->
 <header role="header">
   <h1>Main title</h1>
+=======
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>2. The main element</h2>
+<!-- This example demonstrates how to use the main element and displays the contents of the element-->
+<!-- The code for this example was written by the author -->
+<h3>These are the contents of the main element</h3>
+<!-- Sets the content of the main element and displays that content -->
+<p>The main element describes the main content of the page or another element. The content is as follows:</p>
+<main>This page demonstrates the 10 examples on the website http://www.sitepoint.com/10-typical-html-interview-exercises/</main>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>3. WAI-ARIA</h2>
+<!-- This example shows the improved accessibility of the code for WAI-ARIA roles, which tries to make web content
+     more accessible for people with disabilities.  The web page created by the code should now be more accessible -->
+<header role="header">
+  <h3>Main title</h3>
+  <!-- Creates a form on the web page where the action is sent to the root.  The get method is used because it is a small
+       form and the role defines the form as a search form-->
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
   <form action="/" method="get" role="search">
      <label for="search">Search:</label>
      <input id="search" type="search">
      <input type="submit">
   </form>
 </header>
+<<<<<<< HEAD
+=======
+<!-- a list of navigation links is defined -->
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
 <nav role="navigation">
   <ul>
      <li><a href="/">Home</a></li>
@@ -57,6 +112,7 @@ design: The program demonstrates 10 concepts from the web page
      <li><a href="/about">About</a></li>
   </ul>
 </nav>
+<<<<<<< HEAD
 <main role="main">
   <article role="article">
      <h1>Main title</h1>
@@ -68,10 +124,26 @@ design: The program demonstrates 10 concepts from the web page
 </footer>
 <!-- -------------------------------------------------------------- -->
 <h1>4. The small element</h1>
+=======
+<!-- Setting the content of the main element to contain the basic information about the web page -->
+<main role="main">
+  <article role="article">
+     <h3>Main title</h3>
+     <p>This is the content of this section</p>
+  </article>
+</main>
+<!-- Sets the copyright information in the footer of the page -->
+<footer role="contentinfo">
+  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+</footer>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>4. The small element</h2>
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
 <!-- This example shows the use of the small element to make text smaller.  It is used for text like copyrights,
      as shown in the example. -->
 <img src="small.jpg" alt="Cat">
 <small>The copyright of this image is owned by Aurelio De Rosa</small>
+<<<<<<< HEAD
 <!-- -------------------------------------------------------------- -->
 <h1>5. Subheadings</h1>
 <!-- This example demonstrates how to relate the content of the section to the main title, rather than the subtitle-->
@@ -106,12 +178,57 @@ design: The program demonstrates 10 concepts from the web page
 <section>
  <h2>The progress element example</h2>
  <p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+=======
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>5. Subheadings</h2>
+<!-- This example demonstrates how to relate the content of the section to the main title, rather than the subtitle-->
+<article>
+   <h3>
+       Main title
+       <span>This is a subtitle</span>
+   </h3>
+   <!-- The paragraph will be related to the title, rather than the subtitle-->
+   <p>This is the content of this section</p>
+</article>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>6. Images and accessibility</h2>
+<!-- This example demonstrates the use of an empty value for the alt attribute of
+     an image, which should be done when the picture is purely decorative, as this one is -->
+<!-- The code for this example was written by the author -->
+<h3>This example displays the accessibility of images</h3>
+<img src="medium.jpg" alt="">
+<p>This picture has an empty alt value, which means there is no text alternative for the image</p>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>7. The time element</h2>
+<!-- This example demonstrates how to use two time elements to express a range of dates, 
+     as that can't be done with one time element -->
+<!-- This time element contains the first date of the range -->
+<time datetime="2014-11-06">6</time>-
+<!-- This time element contains the last date of the range -->
+<time datetime="2014-11-09">9 November 2014</time>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>8. meter and progress</h2>
+<!-- This example demonstrates the use of the meter and progress elements.
+     In doing so, the difference between the two elements is also demonstrated. -->
+<!-- The code for this example was pulled from http://www.w3.org/TR/html5/forms.html#the-meter-element -->
+<h3>The meter element example</h3>
+<!-- The meter element displays a measurement in a known range -->
+<p>Tickets sold: <meter min="0" max="100" value="75"></meter></p>
+
+<!-- The code for this example was pulled from http://www.w3.org/TR/html5/forms.html#the-progress-element -->
+<!-- The progress element displays the completion of a task so far: the range is not known -->
+<section>
+ <h3>The progress element example</h3>
+ <p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+ <!-- This is the example task, the progress of which will be shown in the progress bar -->
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
  <script>
   var progressBar = document.getElementById('p');
   function updateProgress(newValue) {
     progressBar.value = newValue;
     progressBar.getElementsByTagName('span')[0].textContent = newValue;
   }
+<<<<<<< HEAD
  </script>
 </section>
 <!-- -------------------------------------------------------------- -->
@@ -133,5 +250,37 @@ design: The program demonstrates 10 concepts from the web page
    This <mark>text</mark> is highlighted by using the mark element.  All of the <mark>text</mark> is
    here to be marked by the mark element.</p>
 <!-- -------------------------------------------------------------- -->
+=======
+  updateProgress(50);
+ </script>
+</section>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>9. The longdesc attribute</h2>
+<!-- This example demonstrates the use of the longdesc attribute to provide
+     a long description of a picture -->
+<!-- Using the longdesc attribute, a hyperlink to the long description is provided -->
+<img src="medium.jpg"
+     alt="This image is of a cat" longdesc="cat.html#description">
+<!-- This is the long description of the picture -->:
+<section id="description">
+  <h3>Cat</h3>
+  <h3>Long Description</h3>
+  <p>The picture of a cat shown is a medium sized picture with
+     a white background.</p>
+</section>
+<!-- -------------------------------------------------------------------------------------------------- -->
+<h2>10. The mark element</h2>
+<!-- This example demonstrates the use of the mark element to highlight text-->
+<!-- The code for this example was written by the author -->
+<h3>This is an example of an article with marked text</h3>
+<!-- All of the times the word "text" appears in the paragraph, "text" is highlighted on the web page.
+     This is done by using the mark element to specify each instance of "text" in the paragraph -->
+<p>This is the <mark>text</mark> of the article.  All of the important <mark>text</mark> is highlighted.
+   This <mark>text</mark> is highlighted by using the mark element.  All of the <mark>text</mark> is
+   here to be marked by the mark element.</p>
+<!-- -------------------------------------------------------------------------------------------------- -->
+
+<a href="wireframe program 1.pdf">Go To Wireframe Diagram</a>
+>>>>>>> 07e268b571313c408bc5d166f532b526c819b0c6
 </body>
 </html>

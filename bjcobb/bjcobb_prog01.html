@@ -1,0 +1,106 @@
+<!--
+filename	: bjcobb_prog01.html
+author  	: Brian Cobb (CIS-255, Fall 2015)
+desription	: Program 01 which shows the use of 10 basic html tags according to the site 
+			  http://www.sitepoint.com/10-typical-html-interview-exercises/
+design		: 
+			<head>: none
+			<body>: 1. Markup validation.
+				    2. Main
+					3. WAI-ARIA
+					4. Small element
+					5. Subheadings
+					6. Images and accessibility
+					7. Time element
+					8. Progress
+					9. longdesc attribute
+					10. mark element
+-->
+<html>
+	<body>		
+		<!-- 2. Our main code between the main tags according to the W3C standard-->
+		<main>
+			<h1>Example of markup validation for the source tag.</h1>
+			<!-- 1. Change which picutre is displayed based upon the width of the browser
+			<figure>      : designates that an image, photo, code, ect is to follow
+			<picutre>     : designates that a picture will follow
+			<source>      : lets the browser choose which source to use based upon its capabilities.
+					    media: how the source should be used.
+					    srcset: list of pictures and what should trigger there use.
+			<figcaption>  : a caption that should appear below the picture.
+		-->
+			<figure>
+				<picture>
+					<source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w"/>
+					<img src="medium.jpg" alt="Rocks"/>
+				</picture>
+				<figcaption>Pictures of Rocks</figcaption>
+			</figure>
+		</main>
+		<!--
+			3. WAI-ARIA rolls. Helps format the page on browsers that support it.
+		-->
+		<h1>Example of WAI-ARIA rolls and small text</h1>
+		<header role="header">
+			<h1>Main title</h1>
+			<form action="/" method="get" role="search">
+				<label for="search">Search:</label>
+				<input id="search" type="search">
+					<input type="submit">
+					</form>
+				</header>
+				<nav role="navigation">
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/products">Products</a>
+						</li>
+						<li>
+							<a href="/about">About</a>
+						</li>
+					</ul>
+				</nav>
+				<main role="main">
+					<article role="article">
+						<h1>Main title</h1>
+						<p>This is the content of this section</p>
+					</article>
+				</main>
+				<footer role="contentinfo">
+				<!--4. example of small text. Used for copyrights and disclamers -->
+					<small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+				</footer>
+				<!--Subheadings-->
+				<h1>Example of a subtitle
+				<span>This is a subtitle</span></h1>
+				Mr. Foo & Miss Bar<br>
+				<!--Alt tags will be read out by a browser for those who are visiably impared-->
+				<h1>Alt tags for img are required. Useful for accessability</h1>
+				<img src="http://cdn2.business2community.com/wp-content/uploads/2014/08/hello-kitty-dog4.jpg" alt="Not a cat"/>
+				<h1>Example of time tag</h1>
+				<!--Time tag is used to notify browsers they may want to offer to put a date on a calander-->
+				<time datetime="2016-02-04"> My birthday is in Feb.</time><br>
+				<h1>Example of meter vs progress bars</h1>
+				<!--Difference between meter and progress bar.
+					Meter is used when the upper value is known. Say for a fraction
+					Progress is used to show the percent complete in some set of steps.
+					-->
+					Meter: <meter value="5" min="0" max="10"> 5 out of 10 is 50%</meter><br>
+					Progress: <progress value="50" max="100"></progress><br>
+					<!-- longdesc points to a url where the description of an image is -->
+				<h1>Example of longdec</h1>
+				<img src="http://cdn2.business2community.com/wp-content/uploads/2014/08/hello-kitty-dog4.jpg"
+						alt="Not a cat" longdesc="#notACatDescription">
+
+				<section id="notACatDescription">
+				  <h2>Not a Cat</h2>
+				  <p>That picture is not a cat</p>
+				</section>
+				<!--mark highlights text-->
+				<h1>Mark element</h1>
+				The following text is <mark>marked and highlighted</mark>
+			</body>
+		</html>

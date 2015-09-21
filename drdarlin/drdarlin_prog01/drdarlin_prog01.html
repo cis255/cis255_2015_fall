@@ -1,0 +1,126 @@
+
+<!doctype html>
+<!--
+Filename: drdarlin_prog01.html
+Author: Derek Darling, CIS 255, Fall 2015
+Description: This HTML program demonstates the contents described in the following link:
+			http://www.sitepoint.com/10-typical-html-interview-exercises/
+Design:
+
+The following attributes can be found in this webpage. They are commented in the correct order, but some are embedded within others. 
+Please refer to the list to below to get the correct order. 
+	<head>: None
+	<body>: 1. Main
+	        2. Markup validation
+			3. Time
+			4. WAI-ARIA
+			5. Sub Headings
+			6. Meter
+			7. The alt tag
+			8. The small element 
+			9. Mark
+		   10. Longdesc
+		   11. iframe
+		   
+			
+-->
+<html>
+<!-- --------------------------------1-------------------------------- -->
+<!-- The <main> tag specifies the main content of a document.
+     The content inside the <main> element should be unique to the document.
+     It should not contain any content that is repeated across documents such as sidebars, 
+     navigation links, copyright information, site logos, and search forms.-->
+<center><h1> London Knights 2015 </h1></center>
+<main>
+<link rel = "stylesheet" href = "drdarlin_prog01.css"/>
+<!-- --------------------------------1-------------------------------- -->
+
+<body class = "background">
+<!-- --------------------------------2-------------------------------- -->
+<!-- This section of HTML changes the picture based upon the size of the browser window-->
+<center><h2> 2015 Season </h2></center>
+<!-- --------------------------------3-------------------------------- -->
+<!-- This is a way to express the date on the website-->
+<time datetime="2015-11-06">6 November 2015</time>-
+<time datetime="2016-05-28">28 May 2016</time>
+<!-- --------------------------------3-------------------------------- -->
+<figure>
+  <center> <picture>
+      <source media="(min-width: 40em)" srcset = "LondonLarge.jpg 1024w, LondonMedium.jpg 640w, LondonSmall.jpg 320w">
+      <img src="LondonMedium.jpg"  alt="London Hockey">
+   </picture>
+   <figcaption>London Knights</figcaption>
+   </center>
+</figure>
+<!-- --------------------------------2-------------------------------- -->
+
+<!-- --------------------------------4-------------------------------- -->
+<!--WAI-ARIA - This is put in fo rnavigation part of the webpage. Three buttons have links to other websites that allow
+               users to navigate away from the page or to another place on the same site. -->
+<!-- --------------------------------5-------------------------------- -->
+<!-- This is a sub-heading. it is displayed as a bolder text above a section of navigation functionality -->
+<header role="header">
+  <h1>Team Info</h1>
+<!-- --------------------------------5-------------------------------- -->
+  <form action="/" method="get" role="search">
+     <label for="search">Search:</label>
+     <input id="search" type="search">
+     <input type="submit">
+  </form>
+</header>
+<ul>
+   <li><a href="http://www.londonknights.com">Knights Website</a></li>
+   <li><a href="http://www.londonknights.com/roster/index/team/14/season/last">Roster</a></li>
+   <li><a href="http://www.londonknights.com/schedule/379/72">Schedule</a></li>
+   <!-- --------------------------------6-------------------------------- -->
+<!-- Here is a progress bar. For this website it will show their seaon progression. (How far through the season they are) -->
+<meter value="1" min="0" max="10">2 out of 10</meter><br>
+
+<!-- --------------------------------6-------------------------------- -->
+</ul>
+<main>
+   <article>
+      <p>Champions</p>
+   </article>
+</main>
+
+<!-- --------------------------------4-------------------------------- -->
+
+
+
+<!-- --------------------------------7-------------------------------- -->
+<!--The term "ALT tag" is a common shorthand term used to refer to the ALT attribute within in the IMG tag.
+ Any time you use an image, be sure to include an ALT tag or ALT text within the IMG tag.
+ Doing so will provide a clear text alternative of the image for screen reader users -->
+<center><img src="London_Winning.jpg" alt="Not supported"><center>
+<!-- --------------------------------7-------------------------------- -->
+<footer>
+   <small>Copyright &amp; copy ; London Knights 2015</small>
+</footer>
+<!-- --------------------------------8-------------------------------- -->
+<!--This is here to add small text next to an image that includes info like copyright info and other info about the picture -->
+</br>
+<small>The copyright of this image is owned by the London Knights</small>
+
+<!-- --------------------------------8-------------------------------- -->
+
+<!-- --------------------------------9-------------------------------- -->
+<!-- This highlights the section of code within the <mark> tag -->
+  <h2><mark>Budweiser Gardens</mark></h2>
+<!-- --------------------------------9-------------------------------- -->
+  
+  <!-- --------------------------------10-------------------------------- -->
+<!-- This takes the user to a description of the file -->
+     <img src=""alt="Budweiser Gardens" longdesc="drdarlin.html">
+  <!-- --------------------------------10-------------------------------- -->
+  <!-- --------------------------------11-------------------------------- -->
+<!--This adds a video in the center of the website  -->
+  <center> <iframe width="560" height="315" src="https://www.youtube.com/embed/sAvkCcCdu-8" frameborder="0" allowfullscreen></iframe>
+<p style="color:silver;"> Go Knights Go!</p>
+</center>
+    <!-- --------------------------------11-------------------------------- -->
+<section id="description">
+</section>
+</body>
+</main>
+</html>

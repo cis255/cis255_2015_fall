@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+..... comment .....
+filename: jmwalter_prog01.html
+author: Joshua Walters(cis 255/fall 2015)
+discription: this program demonstrates 10 useful html elements common in interviews
+				from the site "http://www.sitepoint.com/10-typical-html-interview-exercises/"
+design: 	I. the program demonstrates the use of 10 elements from the page above
+					1.Markup Validation
+					2.The main element 
+					3.WAI-ARIA
+					4.The small element
+					5.Subheadings 
+					6.Images and accessibility
+					7.The time element
+					8.Meter and Progress
+					9.The longdesc attribute
+					10.The Mark Element
+-->
+	
+	<head>
+		<style>
+		#notes {color: red;}
+		</style>
+	</head>
+<body>
+	<h1>1. Markup validation</h1>
+		<figure>
+		   <picture>
+			  <source media="(min-width: 40em)"
+			  srcset="images/EarthLarge.jpg 1024w, images/earthMedium.jpg 640w, images/earthSmall.jpg 320w">
+			  <img src="images/earth.jpg" alt="Earth">
+		   </picture>
+		   <figcaption>An image of earth </figcaption>
+		</figure>
+
+
+
+	<h1>2. The main element</h1>
+		<p id="notes"> notes the focus, of the main idea,concept, part of the page/article </p>
+		<main> <!-- is a container for the main content of the page, or article --> </main>
+
+
+
+	<h1>3. WAI-ARIA</h1> <!-- search menu // dosent work // but takes you to the root --> 
+		<header>
+		   <h1>Sub Title</h1>
+		   <form action="/" method="get">
+			  <input type="search"> <!-- opens a typeable form  -->
+			  <input type="submit">
+		   </form>
+		</header>
+		<ul>
+		   <li><a href="/">Home</a></li> <!--directs you to the root directory -->
+		   <li><a href="/products">Products</a></li><!-- directs you to the root then up to products if it existed-->
+		   <li><a href="/about">About</a></li><!-- directs you to the root then up to about if it exists-->
+		</ul>
+		<main>
+		   <article>
+			  <h1>Content title</h1>
+			  <p>article/text content</p>
+		   </article>
+		</main>
+		<footer>  <!--indicates a footer in the page  -->
+		   <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+		</footer>
+
+	<h1>4. The small element</h1>
+
+		<img src="images/earthSmall.jpg" alt="London by night">
+		<small>The copyright of this image is owned by Aurelio De Rosa</small>
+		<p id="notes"> acts as a visible comment on the page to note captions or important info, by making text small </p>
+
+	<h1>5. Subheadings</h1>
+	
+		<article>
+	   <h1>
+		   Main title
+		   <span>This is a subtitle</span>
+	   </h1>
+	   <p>This is the content of this section</p>
+		</article>
+		<!-- this is a better way of organinzing information on a site by having the h1 as the title, 
+			and using the paragraph tag to note the actual text, the article tag is more useful th the 
+			web developer/designer then the actual customers viewing the page-->
+
+
+	<h1>6. Images and accessibility</h1>
+
+		<p id="notes"> the alt is mandatory on images but it is recommended to keep it an empty value as to not draw unnecessary <br/>
+						attention to an element that was meant for aesthetics anyway.  </p>
+						<!--the web site we are using for this assignment said that it was manditory so, i did too. but i tested section
+							one where we used alt and images, by deleting it and nothing happend good or bad, so i dont know who to believe.-->
+	<h1>7. The time element</h1>
+		<time datetime="2014-11-06">6</time>-
+		<time datetime="2014-11-09">9 November 2014</time>
+		<!-- this is a good way to show a time range, though in the browser it only says "6-9 November 2014", and the 6-9 seems a bit lazy to me 
+			 i would prefer to write "November 6 2014 - November 9 2014", just seems more profesional -->
+		
+		
+	<h1>8. Meter and progress</h1>
+		<p id="notes"> meter elements are good for percentages of a whole, meaning the maximum amount must be known ahead of time, while
+					<br/> the progress element can be used to indicate that "progress" is being made, but no one knows the maximum amount</p>
+	
+	
+	<h1>9. The longdesc attribute</h1>
+		<img src="italy.jpg"
+     alt="This image represents the map of Italy" longdesc="italy.html#description">
+
+		<!-- the longdesc atribute is for extra explination and discription of an image, including a url link, instead of just a short caption -->
+
+		<section id="description">
+		  <h2>Italy</h2>
+		  <p>The shown map of Italy illustrates its division 
+		  in regions...</p>
+		</section>
+
+	<h1>10. The mark element</h1>
+		<p id="notes"> see comments</p>
+				<!-- the mark element is for highlighting specific text in a page, like SVSU or CSIS in every instance it is used.--> 
+
+
+</body>
+</html>
+
+
