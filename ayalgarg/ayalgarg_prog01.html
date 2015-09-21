@@ -1,0 +1,188 @@
+<!doctype html>
+<!--
+
+Filename	: ayalgarg_prog01.html
+Author		: Abdullah Algargosh, CIS-255, Fall 2015
+Description	: This HTML program demonstrates the concepts described in the following website
+		      www.sitepoint.com/10-typical-html-interview-exercises/
+Design		: This program demonstrates 10 concepts from the web page.
+		 	  head:  none
+			  body:  1. Markup Validation
+			 	     2. The Main Element
+				     3. WAI-ARIA
+				     4. The Small Element
+				     5. Subheadings
+				     6. Images and accessibility
+				     7. The Time element
+				     8. Meter and progress
+				     9. The longdesc attribute
+				     10. The Mark element 
+				   
+-->
+<html>
+<body bgcolor="#FBFBEF">
+<title>Program01: Abdullah Algargosh</title>
+
+<!-- ===================================================================== -->
+<h1>1. Markup Validation</h1> 
+<!-- changing the image based on the size of the browser window -->
+
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="Cat">
+   </picture>
+   <figcaption>Cat</figcaption>
+</figure>
+
+
+
+<!-- ===================================================================== -->
+
+<h1>2. The Main Element</h1>
+<!-- specifiesing the main content of the page -->
+ <main>
+  <h2>Web Search Engine</h2>
+  <p>Google, Baidu, and Yahoo are the most used web search engine today.</p>
+
+  <article>
+    <h3> <a href = "https://www.google.com"> Google </a> </h3> <!-- link to search in google -->
+  </article>
+
+  <article>
+    <h3> <a href = "http://www.baidu.com"> Baidu </a> </h3> <!-- link to search in baidu -->
+  </article>
+
+  <article>
+    <h3> <a href = "https://www.yahoo.com"> Yahoo! </a> </h3> <!-- link to search in yahoo -->
+  </article>
+</main> 
+
+
+
+<!-- ===================================================================== -->
+
+<h1>3. WAI-ARIA</h1>
+<!-- here you can going to other related cites within csis.svsu.edu-->
+
+<header role="header">
+  <h1>CIS-255</h1>
+</header>
+<h2> Go to another student's program 1: </h2>
+<nav role="navigation">
+  <ul>
+     <li><a href="/~garanck/cis255/garanck/garanck_prog01.html">Garret Ranck</a></li> <!-- takes you to Garret's prog01 -->
+     <li><a href="/~jmwalter/cis255/jmwalter/jmwalter_prog01.html">Joshua Walter</a></li> <!-- takes you to Josh's 
+																										prog01 -->
+     <li><a href="/~bjcobb/cis255/bjcobb/bjcobb_prog01.html">Brian Cobb</a></li> <!-- takes you to Brian's prog01 -->
+  </ul>
+</nav>
+<footer role="contentinfo"> <!-- giving further info to cite viewers -->
+  <small>Copyright &amp;copy; CIS-255 2015</small>
+</footer>
+
+
+
+<!-- ===================================================================== -->
+
+<h1>4. The Small Element</h1>
+<!-- showing description for photo in small text -->
+
+<img src="medium.jpg" alt="Cat">
+<small>nice cat.</small>
+
+
+
+<!-- ===================================================================== -->
+
+<h1>5. Subheadings</h1>
+<!-- showing how to add subheadings-->
+
+<article>
+   <h1>CIS-255</h1> <!-- main title -->
+   <h2>Programs</h2> <!-- subheading -->
+	<h3>Prog01</h3> <!-- subheading -->
+	<h3>Prog02</h3> <!-- subheading -->
+	<h3>Prog03</h3> <!-- subheading -->
+	<h3>Prog04</h3> <!-- subheading -->
+	<h3>Prog05</h3> <!-- subheading -->
+	<h3>Prog06</h3> <!-- subheading -->
+	
+   <p>This is the content of this section that describes program objectives</p>
+   
+   <h2>Exercises</h2> <!-- subheading -->
+	<h3>Exercise01</h3> <!-- subheading -->
+	<h3>Exercise02</h3> <!-- subheading -->
+	<h3>Exercise03</h3> <!-- subheading -->
+	<h3>Exercise04</h3> <!-- subheading -->
+	<h3>Exercise05</h3> <!-- subheading -->
+	<h3>Exercise06</h3> <!-- subheading -->
+	
+   <p>This is the content of this section that describes exercise objectives</p>
+</article>
+
+<!-- ===================================================================== -->
+
+<h1>6. Images and accessibility</h1>
+<!-- showing how to use "alt" to not ignore image -->
+
+<img src="smile_dog.jpg" alt="Dog">
+<p>Here is a happy dog.</p>
+
+<!-- ===================================================================== -->
+
+<h1>7. The Time Element</h1>
+<!-- showing how to use a date/time element-->
+
+<time datetime="2015-09-16">16 September 2015</time>-
+<time datetime="2015-11-10">10 November 2015</time>
+
+<!-- ===================================================================== -->
+
+<h1>8. Meter and Progress</h1>
+<!-- showing how to use the meter element and how to use the progress element. -->
+
+<h2>Meter</h2>
+<p>Display a gauge:</p>
+<meter value="2" min="0" max="10">2 out of 10</meter><br>
+<meter value="0.6">60%</meter>
+
+<p><strong>Note:</strong> The meter tag is not supported in Internet Explorer or Safari 5 (and earlier versions).</p>
+
+<h2>Progress</h2>
+Downloading progress:
+<progress value="22" max="100">
+</progress>
+
+<p><strong>Note:</strong> The progress tag is not supported in Internet Explorer 9 and earlier versions.</p>
+
+
+<!-- ===================================================================== -->
+
+<h1>9. The Longdesc Attribute</h1>
+<!-- showing how you using the longdesc attribute -->
+
+<img src="burger_dog.jpg"
+     alt="This image represents the meaning of happiness" longdesc="dog.txt">
+
+
+<section id="description">
+  <h2>Dog</h2>
+  <p>The dog is happy</p>
+</section>
+
+
+<!-- ===================================================================== -->
+
+<h1>10. The Mark Element</h1>
+<!-- showing how you using the mark element to highlight text -->
+
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+
+
+<!-- ===================================================================== -->
+
+
+</body>
+</html>
