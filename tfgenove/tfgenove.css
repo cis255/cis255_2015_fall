@@ -1,9 +1,11 @@
-	#message {
-		color: red; /* The message id is always in a paragraph*/
-		font-size: 200%;
-	}
+	
 	.odd{
 		background-color: yellow;
+	}
+	message {
+		color: red; /* The message id is always in a paragraph*/
+		font-size: 200%;
+		background-color: green;
 	}
 	p{
 		color: orange;
@@ -21,4 +23,10 @@
 	}
 	h2{
 		color: yellow;
+	}
+	[title]{
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 2px dotted blue;
+	text-decoration: none;
 	}

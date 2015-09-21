@@ -22,84 +22,109 @@ design: 	 The program demonstrates 10 concepts from the web page.
 <!------------------------------------------------------------------------------------- -->
 <h1>1. Markup Validation</h1>
 <!-- Change displayed picture based on current browser display width -->
-<figure>
-   <picture>
-      <source media="(min-width: 40em)"
-      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
-      <img src="medium.jpg" alt="Animals">
-   </picture>
-   <figcaption>Wild beasts</figcaption>
-</figure>
+	<figure>
+	<picture>
+		<source media="(min-width: 40em)"
+		srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+		<img src="medium.jpg" alt="Animals">
+	</picture>
+	<figcaption>Wild beasts</figcaption>
+	</figure>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>2. The Main Element</h1>
-<!--  -->
-<main>
-	<p>This is not actually the main text of this page, but it is in main!</p>
-</main>
+<!-- The main elements of a page are important pieces of information that get to the heart
+     of whatever they are at the head of. Depending on where you look, it's considered a 
+	 singular title to the page, or more of a header. -->
+	<main>
+		<p>This is not actually the main text of this page, but it is in main!</p>
+	</main>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>3. WAI-ARIA</h1>
-<!-- -->
-<header role="header">
-  <h1>Main title</h1>
-  <form action="/" method="get" role="search">
-     <label for="search">Search:</label>
-     <input id="search" type="search">
-     <input type="submit">
-  </form>
-</header>
-<nav role="navigation">
-  <ul>
-     <li><a href="/">Home</a></li>
-     <li><a href="/products">Products</a></li>
-     <li><a href="/about">About</a></li>
-  </ul>
-</nav>
-<main role="main">
-  <article role="article">
-     <h1>Main title</h1>
-     <p>This is the content of this section</p>
-  </article>
-</main>
-<footer role="contentinfo">
-  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
-</footer>
-
+<!-- WAI-ARIA is a technical specification that's in place to help accessibility of web pages-->
+	<header role="header">
+	<h1>Main title</h1>
+	<form action="/" method="get" role="search">
+		<label for="search">Search:</label>
+		<input id="search" type="search">
+		<input type="submit">
+	</form>
+	</header>
+	<nav role="navigation">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/products">Products</a></li>
+		<li><a href="/about">About</a></li>
+	</ul>
+	</nav>
+	<main role="main">
+	<article role="article">
+		<h1>Main title</h1>
+		<p>This is the content of this section</p>
+	</article>
+	</main>
+	<footer role="contentinfo">
+	<small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+	</footer>
+	
 <!------------------------------------------------------------------------------------- -->
 <h1>4. The small element</h1>
-<!-- -->
-<small><p>This text is small, because of the small tag.</p></small>
+<!-- The small element is used to make things small. Often used for legal disclaimers. -->
+	<small><p>This text is small, because of the small tag.</p></small>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>5. Subheadings</h1>
-<!-- -->
-<article>
-   <h1>
-       Main title
-       <span>This is a subtitle</span>
-   </h1>
-   <p>This is the content of this section</p>
-</article>
-
+<!-- A subheading uses the base of the heading to give a bit more information. -->
+	<article>
+	<h1>
+		Main title
+		<span>This is a subtitle</span>
+	</h1>
+	<p>This is the content of this section</p>
+	</article>
+	
 <!------------------------------------------------------------------------------------- -->
 <h1>6. Images and accessibility</h1>
-<!-- -->
+<!-- If the alt is empty, screen readers will ignore the image, and alt is required, even if only ""-->
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="This is the alt">
+   </picture>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>7. The time element</h1>
-<!-- -->
+<!-- Two of the time element are required in order to express a date -->
+	<time datetime="2014-11-06">6</time>-
+	<time datetime="2014-11-09">9 November 2014</time>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>8. Meter and progress</h1>
-<!-- -->
+<!-- Meters represent measurement with known range. Progress represents measurement with no known range-->
+	<meter value="2" min="0" max="10">2 out of 10</meter><br>
+	<meter value="0.6">60%</meter>
 
+	<progress value="22" max="100"></progress>
+	
 <!------------------------------------------------------------------------------------- -->
 <h1>9. The longdesc attribute</h1>
-<!-- -->
+<!-- Longdesc points to a hyperlink with more information on an image-->
+	<img src="italy.jpg"
+		alt="This image represents the map of Italy" longdesc="italy.html#description">
+
+	<!-- other content here ... -->
+
+	<section id="description">
+	<h2>Italy</h2>
+	<p>The shown map of Italy illustrates its division 
+	in regions...</p>
+	</section>
 
 <!------------------------------------------------------------------------------------- -->
 <h1>10. The mark element</h1>
-<!-- -->
+<!--Mark highlights whatever is within the tag. -->
+	<p>I am writing this to illustrate <mark>mark</mark>.</p>
+
 </body>
 </html>
