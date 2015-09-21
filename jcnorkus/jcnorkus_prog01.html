@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+filename:	  jcnorkus_prog.html
+author: 	  Jacob Norkus, CIS-255, Fall 2015
+description:  This HTML program demonstrates the concepts described here
+			  http://www.sitepoint.com/10-typical-html-interview-exercises/
+
+design: The program demonstrates 10 concepts from the web page
+	<head>: none
+	Body>:	1. Markup Validation
+			2. The Main Element
+			3.WAI-ARIA
+			4.The Small Element
+			5.Subheadings
+			6.Images and accessibility
+			7.The Time Element
+			8.Meter and Progress Element
+			9.The Longdesc Attribute
+			10.The mark element
+-->
+<html>
+<body>
+<h1> 1. Markup Validation</h1>
+<figure>
+   <picture>
+      <source media="(min-width: 40em)"
+      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+      <img src="medium.jpg" alt="Cat">
+   </picture>
+   <figcaption>Cat</figcaption>
+</figure>
+
+<h1> 2. The Main Element</h1> <!-- I don't really understand the importance of this element -->
+<main>
+ <p>The main element defines the main content of the page.</p>
+ <p>The main idea of this page is the 10 typical interview exercises of HTML.</p>
+</main>
+
+<h1> 3. WAI-ARIA</h1>
+<!-- This is still confuses me, I don;t understand the code or what it is meant to do.-->
+<!-- -->
+<h1> 4. The Small Element</h1>
+<img src="Valve.jpg" alt="Valve Corporation">  <!-- Right here is where i realized the importance of not capitalizing files -->
+<small>The copyright of this image is owned by Valve Corporation</small>
+
+<h1> 5. Subheadings</h1>
+	<h2> This is the subheading </h2>
+	<p> content of subheading </h2>
+	
+<h1> 6. Images and accessibility</h1>
+<img src="ipad.jpg" alt="">
+<p> alt is set to blank</p>
+
+<h1> 7. The time element</h1>
+<time datetime="2012-12-20">20</time> -
+<time datetime="2012-12-21">21 December 2012</time>
+
+<h1> 8. Meter and Progress Element</h1>
+<meter min="0" max="100" value="75"></meter>
+<p> Meter Element</p>
+<progress max="100" value="25"></progress>
+<p> Progress Element </p>
+
+<h1> 9. The Longdesc Attribute</h1>
+<img src="Italy.jpg" <!-- Capitalization issue here as well -->
+     alt="This image represents the Colosseum in Rome" longdesc="italy.html#description">
+
+
+<section id="description">
+  <h2>Colosseum in Rome, Italy</h2>
+  <p>The picture shows the current state of the famous Colosseum in Rome.</p>
+</section>
+
+<h1> 10. The mark element</h1>
+<p> I <mark>love</mark> notepad++</p>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+filename   : arklines_exercise02.html
+author     : Allison Klinesmith (CIS-255, Fall 2015)
+description: This program demonstrates very basic HTML
+design     : 1. This program contains 20 html tags to demonstrate a basic html understanding  
+-->
+<html>
+ <body>
+ <a href= "Japan.gif">Japan</a> <!--this is a link-->
+<link rel="stylesheet" type="text/css" href="arklines.css">
+  <menu type ="context" id="arklinesmenu">
+    <menu item label="Refresh Page" onclick="window.location.reload();">
+    </menu item>
+   <menu item label="Send page as an email" onclick="window.location='mail to:?body='+window.location.hrefp;">
+   </menu item>
+  </menu>
+  <h1>Allison Klinesmith's Menu</h1>
+  <!--
+  <style>
+		#message {
+			color: red;
+			}
+			dt { color: blue;
+			}
+			 body {
+    background-color: #b0c4de;
+} 
+	</style>
+	-->
+  <p>Allison Klinesmith is hesitant to vary from George's outline, but is still following requirements for the class <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a></p>
+  <p><i>This is some extra text.</i></p>
+  <!--Cross out text example. ID selecter overrides class -->
+  <p id = "message" class = "odd">This is <del>silly</del> fun.</p>
+  <p style="color: green;"><u>Doot doo doo... this text is underlined</u></p>
+ <table>
+  <tr><th>Column1</th><th>Column2</th><tr>
+  <tr><td>Content1</td><td>Content2</td></tr>
+  <tr><td>Content1</td><td>Content2</td></tr>
+  <tr><td>Content1</td><td>Content2</td></tr>
+  <tr><td>Content1</td><td>Content2</td></tr>
+  <tr><td>Content1</td><td>Content2</td></tr>
+ </table>    
+ <dl>
+   <dt>CIS255</dt>
+   <dd>A class for learning client side web development</dd>
+   <dt>George Corser</dt>
+   <dd>A professor in the CSIS department</dd>
+ </dl>
+ </body>
+ <header>
+  <p class = "odd" >Created by: Allison Klinesmith</p>
+  <p class = "odd" id = "message">Contact info: <a href="mailto:arklines@svsu.edu">arklines@svsu.edu</a>.</p>
+ </footer>
+
+</html>
+
