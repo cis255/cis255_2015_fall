@@ -22,3 +22,13 @@
 	h2{
 		color: yellow;
 	}
+	[title]{
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 2px dotted blue;
+	text-decoration: none;
+	}
+	/*This is a pseudo-selector- makes link turn red when hovered over*/
+	a:hover{
+		background-color: red;
+	}

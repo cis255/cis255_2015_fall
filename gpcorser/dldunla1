@@ -5,7 +5,7 @@
     <link rel='icon' href='../cardinal_logo.png' type='image/png' />
 	<link rel="stylesheet" href="gpcorser.css" />
 	<title>CIS-255: George Corser</title>
-	<!-- internal css 
+	<!-- 
 	<style>
 		#message {
 			color: red;
@@ -20,7 +20,6 @@
 	-->
 </head>
 <body>
-<a href="italy.jpg">Italy!</a> <!-- this is a link -->
 <h1 class="odd">George Corser</h1>
 <h2>Exercise<span>0</span>2</h2>
 <p class="odd" id="message">This web page is a template for students in CIS-255.</p>
@@ -30,8 +29,6 @@
 <p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 2</p>
 <p>this <span>paragraph</span> is <span>paragraph</span> 3</p>
 <p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 4</p>
-
-<img src="italy.jpg" title="Zippy dee">
 
 </body>
 </html>

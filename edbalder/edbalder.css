@@ -1,0 +1,19 @@
+
+	#message {
+		color: blue;
+	}
+
+	p{
+		color: red;
+	}
+	
+	[title] {
+ cursor: help;
+ padding-bottom: 3px;
+ border-bottom: 2px dotted blue;
+ text-decoration: none;
+ }
+ 
+ li:hover{
+	color: red;
+}
