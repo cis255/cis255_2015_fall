@@ -48,6 +48,16 @@ h6:hover{
 #message{
   color: red;
   font-size: 200%;
+  background-color:green;
+}
+[title] {
+cursor: help;
+padding-bottom: 3px;   
+border-bottom: 2px dotted blue;           
+text-decoration: none;
+}
+a.hover{
+background-color: red;
 }
 .odd{
   background-color: yellow;
