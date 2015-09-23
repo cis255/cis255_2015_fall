@@ -4,6 +4,11 @@
 h1, h2, small {color: orange;}
 h1 span{color:red;font-size:200%;}
 span{color:green;}
-p {color:purple;}
-div p {color: navy}
-.odd { background-color:aqua;}
+p {color: inherit;}
+div {color: green}
+
+.odd { background-color:aqua;
+}
+a:hover{
+background-color:red;
+}
