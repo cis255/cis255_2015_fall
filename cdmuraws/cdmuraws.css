@@ -1,32 +1,29 @@
-body {
-	background: black;
-    color: #80c0c0 }
-
-h1 {color: red;
-	text-align: center;
-	text-decoration: underline}
-
-h2 {color: orange;
-	text-align: center;
-	text-transform: uppercase}
-
-p {font-family: "Times New Roman", Times, serif}
-
-p.italic {font-style: italic}
-
-a:link {color: #FF0000}
-
-a:visited {color: #00FF00}
-
-a:hover {color: #FF00FF;
-		 text-decoration: underline}
-
-a:active {color: #0000FF;
-		  text-decoration: underline}
-
-table, th, td {border: 1px solid white}
-
-td {padding: 15px}
-
-th {background-color: green;
-    color: white}
+.odd {
+    background-color: yellow;
+}
+#message {
+	color: red; /* the message id is always in a paragraph */
+	font-size: 200%;
+	background-color: green;
+}
+p {
+	color: orange;
+}
+span {
+	color: purple;
+}
+p span {
+	color: brown;
+}
+div p {
+	color: purple;
+}
+h2 {
+	color: yellow;
+}
+[title]{
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 2px dotted blue;
+	text-decoration: none;
+}

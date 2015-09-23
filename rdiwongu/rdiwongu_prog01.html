@@ -1,25 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--
-filename: gpcorser_prog01.html
+filename: rdiwongu_prog01.html
 author: Regine Diwongui Ngom, CIS - 255, Fall 2015
 description: This HTML program demonstrates concepts described on
            http://www.sitepoint.com/10-typical-html-interview-exercises/ 
 design: The program demonstrates 10 concepts from the web page
     <head>: none
-	<body>: 1. Markup Validation
-	        2. The main element
+	<body>: 1. Images and accessibility
+			2. The main element
+				3. Subheadings
+			4. Inputing subheading
+			5. Markup Validation
+				6.Longdesc
+			7. Meter
+			8. Time
+			9. The mark element
+			10. The small element
+			
+			
 -->									
 
 <html>
+<!-- Images and accessibility-->
+<header>
+<img src="http://images6.fanpop.com/image/photos/33000000/Cute-Dog-dogs-33093080-1280-800.jpg" 
+     alt="" style="height=97 width=101">
+</header>
+
 <body>
-<!-- -->
+<!-- The main element-->
+<main>
+<h2>Dogs!</h2>
+	<article>
+		<span>How to see all the available pictures.</span> <!-- Inputing subheading-->
+		<p>Gradually decrease the size of your browser window to see how the image below changes. 
+		</p>
+	</article>
+</main>
+
+<!-- Markup validation-->
 <figure>
    <picture>
       <source media="(min-width: 40em)"
-      srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320y">
-      <img src="medium.jpg" alt="Dogs">
+      srcset="large.jpg 300w, medium.jpg 259w, small.jpg 204w">
+      <img src="medium.jpg" alt="Dogs" longdesc="medium.html#description"> <!-- Longdesc -->
    </picture>
-   <figcaption> Dogs! </figcaption>
+   <figcaption> Cuties! </figcaption>
 </figure>
+
+<!-- Meter-->
+<p>Cuteness level:</p>
+<meter value="0.7">70%</meter>
+
+<p><strong>Note:</strong> Pictures of low cuteness level were used in this exercise for the safety of the viewer.</p>
+
+<!-- Time-->
+<p>This assignment can be turned in between </p>
+<time datetime="2015-09-14">14</time>-
+<time datetime="2014-09-19">19 September 2015</time>
+
+<!-- content for lgdec ... -->
+<section id="description">
+  <h3>The Images</h3>
+  <p>If you have followed the instructions properlly, you should have been able to see:
+	<li> a dog wearing a pink outfit </li>
+	<li> three golden retievers sticking their toungs out and </li>
+	<li> a dog that looks like the one in the heading </li>
+  </p>
+</section>
+
+<!-- Progress -->
+Exercise reading progress:
+<progress value="100" max="100">
+</progress>
+
+<!-- The mark element-->
+<p> You have reached the <mark> END </mark> of this exercise.</p>
+
+<!-- The small element -->
+<small>Templates for the code of this page were obtained from sitepoint.com</small>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-
+\
 html{
  background-color: #FAFAFF;
  color: #0A0A0F;
@@ -25,3 +25,36 @@ img{
 .right{
   float: right;
 }
+/* colors differne headers when hovered over*/
+h1:hover{
+  color: blue;
+}
+h2:hover{
+  color: blue;
+}
+h3:hover{
+  color: blue;
+}
+h4:hover{
+  color: blue;
+}
+h5:hover{
+  color: blue;
+}
+h6:hover{
+  color: blue;
+}
+/*<<<<<<Style for Exercise02*/
+#message{
+  color: red;
+  font-size: 200%;
+}
+.odd{
+  background-color: yellow;
+}
+p		{color:orange;}
+div p	{color: purple;}
+span	{color: purple;}
+p span	{color: brown;}
+h2		{color:yellow;}
+/*Style for Exercise02>>>>>>*/
