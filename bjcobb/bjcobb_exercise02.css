@@ -1,0 +1,12 @@
+	#containerDiv {background-color: lime;}
+
+body {background-color:lightgrey}
+h1   {color:blue}
+p    {color:green}
+div {border-style:solid; border-color: black;}
+h2 {color: red;}
+h3 {color: brown;}
+a:hover {background-color: yellow; color: purple;}
+
+table {border-style:solid; border-color: pink;}
+/*  comment  */
