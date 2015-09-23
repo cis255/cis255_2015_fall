@@ -1,57 +1,90 @@
 <!DOCTYPE html>
+
+<!-- Straight up, I stole everything from Nick Bemiss to see how this all works.  -->
+
 <!--
-filename: 		edbalder_exercise02.html
-author:   		Estevan Balderrama
-description: 	This program demonstrates very basic HTML
-design:			1. prints, "Hello, George"
+	Filename: edbalder_exercise02.html
 -->
+
 <html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="edbalder.css" />
+
+			<title>CIS-255: Esetvan Balderrama</title>
+			<!-- internal css 
+	<style>
+		#message {
+			color: red;
+		}
+		p, h2 {
+			color: orange;
+		}
+		p span {
+			color: purple;
+		}
+	</style> 
+	-->
 
 
-<head>
-    <!-- favicon image and browser tab title -->
-    <link rel='icon' href='../cardinal_logo.png' type='image/png' / >
-	<link rel="stylesheet" href="edbalder.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
+		</head>
+		<body>
 
-<title>Estevan's Page</title>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<h1 class="odd">Estevan Balderrama</h1>
+					<h2>Exercise<span>0</span>2</h2>
+				</div>
+			</div>
 
-<header>
-This is my assignment
-</header>
-<img src="https://c1.staticflickr.com/9/8077/8370844810_d94316e6ae.jpg alt="Dog" height="200" width="200" title="Nerd Dog"></img>
-<p>They always told me<q>It can't be done.</q> Now they'll all see</p>
+			<div class="container">
+				<h2>Table</h2>
+				<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Firstname</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Anna</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Debbie</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>John</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>			
 
-<body>
-<h1 style="color: blue">Estevan's Menu</h1>
-<p id="message">I'm really hungry, excellent!
-I want food.
-I am a student in <a href="http://csis.svsu.edu/~gpcorser/cis255/gpcorser.html">cis255</a> </p>
-<table>
-<tr><th>Cool</th><th>Cool</th></tr>
-<tr><td>stuff</td><td>stuff</td></tr>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<p class="odd" id="message">This web page is a not even a template at all.</p>
+					<p style="color: green;">Now is the winter of our happy times.</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<p class="odd" >Dude! <span>zippee dee</span> sdfskdjfhskjdfh </p>
 
 
-
-<ol>
-	<li>Dog</li>
-	<li>Bigger Dog</li></ol>
-<p>... </p>
-<ol start="56">
-	<li>Super Duper Ginormous Dog</li>
-	<li>God Dog</li></ol>
-
-<select>
-	<option value="">Pick A Dog</option>
-	<option value="god dog">Nerd Dog</option>
-	<option value="god dog">God Dog</option>
-</select>
-
-<p><form action="https://c1.staticflickr.com/9/8077/8370844810_d94316e6ae.jpg">
-	<input type="submit" value="You're leaving now press this">
-</form></p>
+					<p>this <span>paragraph</span> is <span>paragraph</span> 1</p>
+					<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 2</p>
+					<p>this <span>paragraph</span> is <span>paragraph</span> 3</p>
+					<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 4</p>
 
 
-</body>
-</html>
+				</div>
+			</div>
+
+		</body>
+	</html>
+						
