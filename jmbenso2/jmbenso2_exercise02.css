@@ -1,0 +1,10 @@
+a:hover {
+		background-color: red;
+		}
+		
+[title] {
+		cursor: help;
+		padding-bottom: 3px;
+		border-bottom: 2px dotted blue;
+		text-decoration: none;
+		}
