@@ -1,11 +1,9 @@
-	
-	.odd{
-		background-color: yellow;
-	}
-	message {
+	#message {
 		color: red; /* The message id is always in a paragraph*/
 		font-size: 200%;
-		background-color: green;
+	}
+	.odd{
+		background-color: yellow;
 	}
 	p{
 		color: orange;
@@ -29,4 +27,8 @@
 	padding-bottom: 3px;
 	border-bottom: 2px dotted blue;
 	text-decoration: none;
+	}
+	/*This is a pseudo-selector- makes link turn red when hovered over*/
+	a:hover{
+		background-color: red;
 	}
