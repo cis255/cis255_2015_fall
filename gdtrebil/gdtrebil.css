@@ -1,0 +1,21 @@
+#message {
+	 color : red;
+     font-size : 150%	 
+	}
+	p, h2 {
+	color: blue;
+	}
+	
+.odd{
+background-color: yellow
+}
+[title] {
+cursor: help;
+padding-bottom: 3px;
+border-bottom: 2px dotted blue;
+text-decoration: none;
+}
+a:hover{
+background-color: red
+}
+	/* this is a comment */

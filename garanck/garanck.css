@@ -1,0 +1,43 @@
+body {
+	background-color: #66FF33 
+
+}
+
+#message {
+		color:blue; /* message id is always in a paragraph */
+		font-size: 200%;
+		/*font-family: myFirstFont;*/
+}
+
+.odd {
+	background-color: yellow;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}	
+p{
+		color:purple;
+}
+	
+h2 {
+	
+}
+span {
+	color: yellow;
+	background-color: orange;
+}
+div p{
+		
+		font-style: italic;!
+}
+
+table {
+	color: green;
+}
+[title] {
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 2px dotted blue;
+	text-decoration: none;
+}
