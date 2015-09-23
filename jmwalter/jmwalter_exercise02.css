@@ -6,6 +6,16 @@ p    {color:green}
 div {border-style:solid; border-color: black;}
 h2 {color: red;}
 h3 {color: brown;}
+
+[title] {
+ cursor: help;
+ padding-bottom: 3px;
+ border-bottom: 2px dotted blue;
+ text-decoration: none;
+ }
+
+
+
 a:hover {background-color: yellow; color: purple;}
 
 table {border-style:solid; border-color: pink;}
