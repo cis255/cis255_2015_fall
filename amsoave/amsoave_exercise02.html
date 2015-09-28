@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-filename   : amsoave.html
+filename   : amsoave_exercise02.html
 author     : Aaron Soave (CIS-255, Fall 2015)
 Description: This program demonstrates very basic HTML
 design     : 1. Head
@@ -14,13 +14,14 @@ design     : 1. Head
 URL:		: http://csis.svsu.edu/~amsoave/cis255/amsoave.html			 
 -->
 <html>
-<head>
-<!-- favicon image and browser tab title -->
-    <link rel='icon' href='https://svsu.edu/media/universitycommunications/imgs/universitycommunicationsimgs/RTEmagicC_0f8dba02ab.jpg' type='image/png' / >
-	<link rel="stylesheet" href="amsoave.css" />
-	<title>Aaron's Menu</title>
-	<!-- Internal css -->
-	<!--<style>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='https://svsu.edu/media/universitycommunications/imgs/universitycommunicationsimgs/RTEmagicC_0f8dba02ab.jpg' type='image/png' />
+		<link rel="stylesheet" href="amsoave.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<title>Aaron's Menu</title>
+		<!-- Internal css -->
+		<!--<style>
 		#message {
 			color:red;
 		}
@@ -32,24 +33,87 @@ URL:		: http://csis.svsu.edu/~amsoave/cis255/amsoave.html
 		}
 	</style> 
 	-->
-</head>
-<body bgcolor="white">
-<header>
-<!-- Video from youtube.com -->
+	</head>
+	<body bgcolor="white">
+		<h1 STYLE = 'color:black;font-weight:bold'>
+			<u>Aaron Soave's Menu</u>
+		</h1>
+		<h2>Exercise <span>0</span>2
+		</h2>
+		<div class="container">
+			<h2>Basic Table</h2>
+			<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>Doe</td>
+						<td>john@example.com</td>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Moe</td>
+						<td>mary@example.com</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>Dooley</td>
+						<td>july@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<p>Text!</p>
+					<p>Text!</p>
+					<p>Text!</p>
+					<!-- This is a link -->
+				</div>
 
-<CENTER>
+				<div class="col-md-4 col-sm-6">
+					<p>Text!</p>
+					<p>Text!</p>
+					<p>Text!</p>
+					<!-- This is a link -->
+				</div>
 
-<h1 STYLE = 'color:black;font-weight:bold'><CENTER><u>Aaron Soave's Menu</u></CENTER>
-</h1>
-<h2>Exercise <span>0</span>2</h2>
-<p class="odd" align="center" id="message">This website is a template<br></p>
-<p> Example of in-line</p>
-<p class="odd">Hello <span>Gibberish</span> more gibberish</p>
-<p>This <span>paragraph</span> is <span>paragraph</span> 1</p>
-<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 2</p>
-<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 3</p>
-<p>This <span>paragraph</span> is <span>paragraph</span> 4</p>
-<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 5</p>
-
-</body>
+				<div class="col-md-4 col-sm-6">
+					<p>Text!</p>
+					<p>Text!</p>
+					<a href="tigers.jpg"> Tigers!</a>
+					<!-- This is a link -->
+				</div>
+			</div>
+		</div>
+		<!-- end container -->
+		<header>
+			<div class="container">
+				<div class="row">
+					<p class="odd" align="center" id="message">This website is a template<br />
+					</p>
+					<p> Example of in-line</p>
+					<p class="odd">Hello <span>Gibberish</span> more gibberish</p>
+				</div>
+				<div class="row">
+					<p>This <span>paragraph</span> is <span>paragraph</span> 1</p>
+					<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 2</p>
+					<p>This <span>paragraph</span> is <span>paragraph</span> 3</p>
+					<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 4</p>
+					<p>This <span>paragraph</span> is <span>paragraph</span> 5</p>
+				</div>
+				<div class="row">
+					<img src="svsu.jpg" title="SVSU!" />
+				</div>
+			</div>
+		</header>
+	</body>
 </html>
