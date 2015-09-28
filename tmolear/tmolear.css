@@ -1,9 +1,14 @@
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink !important;
+ }
+  
+.odd {
+    background-color: yellow;
+}
+
 #message {
 	color: red; /* the message id is always in a paragraph */
 	font-size: 200%;
-}
-.odd {
-    background-color: yellow;
 }
 
 p {
