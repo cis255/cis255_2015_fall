@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <!--
-filename	: bmmitche.html
+filename	: bmmitche_exercise02.html
 author		: Bobby Mitchell (CIS 255, Fall 2015)
-description : This website shows some more info about me 
-design		: 
-	Header 	: 1. Name and photo 
-	Body	: 1. Likes and dislikes
-	
--->	
-<html>
-<head>
-    <!-- favicon image and browser tab title -->
-	<title>Bobby Mitchell</title>
-	<link rel="stylesheet" href="bmmitche.css" />
-	<!--
-	<style>
-		#message {
-			color: red;
-		}
-		p, h2{
-		color:orange;
-		}
-		p span {
-		color: purple;
-		}
-	</style>
-	-->
-<!-- header for website with photo -->
-</head>
-<a href="italy.jpg"> Italy! </a>
-<h1>Bobby Mitchell</h1>
-<h2>Exercise <span>0</span>2 </h2>
-<p class= "odd" id="message">I built my own <span>gaming pc</span> with: </p>
-<p> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
-<p class= "odd"> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
-<p> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
-<p class= "odd"> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
 
-<img src="italy.jpg" title="Zippy dee">
-</body>
-</html>
+-->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<title>Bobby Mitchell</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="bmmitche.css" />
+		<!-- header for website with photo -->
+	</head>
+	<body>
+		<h1>Bobby Mitchell</h1>
+		<h2>Exercise <span>0</span>2 </h2>
+		<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+		<div class="row">
+			<div class="col-md-4 col-sm-6"
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+			</div>
+			<div class="col-md-4 col-sm-6"
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+			</div>
+			<div class="col-md-4 col-sm-6"
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+				<p> Bro!</p> <!--some text -->
+			</div>
+		</div>
+		<div class="row">
+			<p class= "odd" id="message">I built my own <span>gaming pc</span> with: </p>
+			<p> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
+			<p class= "odd"> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
+			<p> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
+			<p class= "odd"> this is <span> paragraph </span> in <span> <span> paragraph </span> </span> 1 </p>
+		</div>
+		<div class="row">
+			<img src="italy.jpg" title="Zippy dee">
+			</div>
+		</body>
+	</html>
+	
