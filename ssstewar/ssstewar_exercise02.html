@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <!--
-filename   : ssstewar.html
+filename   : ssstewar_exercise02.html
 author     : Steve Stewart (CIS-255, Fall 2015)
 description: This program demonstrates very basic HTML
 design     : 1. prints, "Hello, Steve"
 -->
 <html>
 <body>
-<link rel="stylesheet" href="ssstewar.css" />
-<h1>Steve Stewart's Menu</h1>
-<h2>Exercise 02</h2>
-<style>
 
-<style>
+<link rel="stylesheet" href="ssstewar.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<h1>CIS-255: Steve Stewart</h1>
+<h2>Exercise<span>0</span>2</h2>
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 <!--
 	#message {
 		color: red;
@@ -24,14 +56,32 @@ design     : 1. prints, "Hello, Steve"
 		color: purple;
 	}
 	-->
-</style>
-<a href="italy.jpg">Italy!</a>
+<div class="row">
+	<div class="col-md-4 col-sm-6">		<!-- call md4 means 3 columns, 12/4=4 -->
+	<p>"Whoa Dude"</p>
+	<p>"Whoa Dude"</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-sm-6">		<!-- call md4 means 3 columns, 12/4=4 -->
+	<p>"Whoa Dude"</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-sm-6">		<!-- call md4 means 3 columns, 12/4=4 -->
+	<a href="italy.jpg">Italy!</a>
+	</div>
+</div>
+<div class="row">
 <p class="odd" id="message">This web page is a template for our students</p>
 <p style= "color:green;">Now this is green</p>
 <p>Dude! <span>zippe dee</span> dafdasfa</p>
+</div>
 <p> this <span>paragraph</span> is <span>paragraph</span> 1</p>
 <p class="odd"> this <span>paragraph</span> is <span>paragraph</span> 2</p>
 <p> this <span>paragraph</span> is <span>paragraph</span> 3</p>
+<div class="row">
 <img src ="italy.jpg" title="Zippy Dee">
+</div>
 </body>
 </html>

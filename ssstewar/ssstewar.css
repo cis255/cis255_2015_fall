@@ -27,3 +27,7 @@
 	a:hover{
 	background-color: red;
 	}
+	
+	.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink !important;
+}
