@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!-- favicon image and browser tab title -->
-<link rel='icon' href='../small.jpg' type='image/jpg' />
-<link rel="stylesheet" href="amfenske.css" /> <!-- external css -->
-<title>CIS-255: Anna Fenske</title>
- <!-- <style>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../small.jpg' type='image/jpg' />
+		<link rel="stylesheet" href="amfenske.css" /> <!-- external css -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" /> 
+
+		<title>CIS-255: Anna Fenske</title>
+		<!-- <style>
 	#message {
 			color: red;
 	}
@@ -16,18 +18,91 @@
 			color: purple;
 	} 
   </style>	-->
-</head>
-<h1  class = "odd" >Anna Fenske</h1>
-<h2>Exercise<span>0</span>2</h2>
-<p class = "odd" id="message">This web page is a template for students in CIS-255.</p>
-<p style="color: green;">Now is the winter of our dicsontent.</p> <!-- in-line css -->
-<p class = "odd" >Dude! <span> zippee dee </span> asdlfkasdfopsdif </p>
-<p>This <span>paragraph</span> is <span>paragraph</span> 1</p>
-<p  class = "odd" >This <span>paragraph</span> is <span>paragraph</span> 2</p>
-<p>This <span>paragraph</span> is <span>paragraph</span> 3</p>
-<p  class = "odd" >This <span>paragraph</span> is <span>paragraph</span> 4</p>
+	</head>
+	<body>
 
-<img src="burger_dog.jpg" title="Dog" />
+		<h1  class = "odd" >Anna Fenske</h1>
+		<h2>Exercise<span>0</span>2</h2>	
 
-</body>
+
+		<div class="container">
+			<h2>Striped Rows</h2>
+			<p>The .table-striped class adds zebra-stripes to a table:</p>            
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Anna</td>
+						<td>Fenske</td>
+						<td>amfenske@svsu.edu </td>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Moe</td>
+						<td>mary@example.com</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>Dooley</td>
+						<td>july@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div> <!-- end container -->
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p class = "odd" id="message">This web page is a template for students in CIS-255.</p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p style="color: green;">Now is the winter of our dicsontent.</p> <!-- in-line css -->
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p class = "odd" >Dude! <span> zippee dee </span> asdlfkasdfopsdif </p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p>This <span>paragraph</span> is <span>paragraph</span> 1</p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p  class = "odd" >This <span>paragraph</span> is <span>paragraph</span> 2</p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p>This <span>paragraph</span> is <span>paragraph</span> 3</p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<p  class = "odd" >This <span>paragraph</span> is <span>paragraph</span> 4</p>
+			</div>
+		</div>
+
+		<div class ="row">
+			<div class ="col-md-3 col-sm-2">
+				<img src="burger_dog.jpg" title="Dog" />
+			</div>
+		</div>
+
+	</body>
 </html>

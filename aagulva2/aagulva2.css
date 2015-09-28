@@ -1,18 +1,18 @@
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: pink !important;
 }
-.odd {
-    background-color: yellow;
-}
 #message {
 	color: red; /* the message id is always in a paragraph */
 	font-size: 200%;
-	background-color: green;
 }
+.odd {
+    background-color: yellow;
+}
+
 p {
 	color: orange;
 }
-span {
+div p {
 	color: purple;
 }
 p span {
@@ -24,24 +24,31 @@ div p {
 h2 {
 	color: yellow;
 }
-[title]{
-	cursor: help;
-	padding-bottom: 3px;
-	border-bottom: 2px dotted blue;
-	text-decoration: none;
+	
+ [title] {
+
+
+        
+ cursor: help;
+
+
+            
+ padding-bottom: 3px;
+
+
+            
+ border-bottom: 2px dotted blue;
+
+
+            
+ text-decoration: none;
+ }
+ 
+ a:hover {
+	 background-color: red;
+ }
+
+
+            
+ }
 }
-a:hover {
-    background-color: red;
-}
-
-
-
-
-
-
-
-
-
-
-
-
