@@ -1,9 +1,13 @@
-	#message {
-		color: red; /* The message id is always in a paragraph*/
-		font-size: 200%;
+	.table-striped > tbody > tr:nth-of-type(odd) {	/*only will override bootstrap if css file link is after bootstrap link in html */
+		background-color: pink !important; /* now overrides everything b/c of !important */
 	}
 	.odd{
 		background-color: yellow;
+	}
+	#message {
+		color: red; /* The message id is always in a paragraph*/
+		font-size: 200%;
+		background-color: green;
 	}
 	p{
 		color: orange;
@@ -32,3 +36,4 @@
 	a:hover{
 		background-color: red;
 	}
+	

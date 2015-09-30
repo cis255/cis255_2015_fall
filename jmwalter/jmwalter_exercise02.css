@@ -3,7 +3,6 @@
 body {background-color:lightgrey}
 h1   {color:blue}
 p    {color:green}
-div {border-style:solid; border-color: black;}
 h2 {color: red;}
 h3 {color: brown;}
 
@@ -14,7 +13,9 @@ h3 {color: brown;}
  text-decoration: none;
  }
 
-
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #FF00FF !important;
+}
 
 a:hover {background-color: yellow; color: purple;}
 
