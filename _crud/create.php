@@ -1,6 +1,7 @@
 <?php 
 	
 	require 'database.php';
+	//require (__DIR__.'/../_crud01/database.php');
 
 	if ( !empty($_POST)) {
 		// keep track validation errors

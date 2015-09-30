@@ -5,8 +5,8 @@ class Database
     /*
 	private static $dbName = 'gpcorser' ; 
 	private static $dbHost = 'localhost' ;
-	private static $dbUsername = 'gpcorser';
-	private static $dbUserPassword = 'remember';
+	private static $dbUsername = 'student';
+	private static $dbUserPassword = 'learn';
 	*/
 	# added code below ...
 	private static $dbName = 'gpcorser' ; 
