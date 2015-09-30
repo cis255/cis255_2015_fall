@@ -5,54 +5,199 @@ author     : Allison Klinesmith (CIS-255, Fall 2015)
 description: This program demonstrates very basic HTML
 design     : 1. This program contains 20 html tags to demonstrate a basic html understanding  
 -->
+
+
 <html>
- <body>
- <a href= "Japan.gif">Japan</a> <!--this is a link-->
- <!--You can include as many stylesheets as you want, but conflicts can occur-->
-<link rel="stylesheet" type="text/css" href="arklines.css">
-  <menu type ="context" id="arklinesmenu">
-    <menu item label="Refresh Page" onclick="window.location.reload();">
-    </menu item>
-   <menu item label="Send page as an email" onclick="window.location='mail to:?body='+window.location.hrefp;">
-   </menu item>
-  </menu>
-  <h1>Allison Klinesmith's Menu</h1>
-  <!--
-  <style>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<title>CIS-255: Allison Klinesmith </title>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="arklines.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+		<!-- internal css 
+	<style>
 		#message {
 			color: red;
-			}
-			dt { color: blue;
-			}
-			 body {
-    background-color: #b0c4de;
-} 
+		}
+		p, h2 {
+			color: orange;
+		}
+		p span {
+			color: purple;
+		}
 	</style>
 	-->
-  <p>Allison Klinesmith is hesitant to vary from George's outline, but is still following requirements for the class <a href="http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a></p>
-  <p><i>This is some extra text.</i></p>
-  <!--Cross out text example. ID selecter overrides class -->
-  <p id = "message" class = "odd">This is <del>silly</del> fun.</p>
-  <p style="color: green;"><u>Doot doo doo... this text is underlined</u></p>
- <table>
-  <tr><th>Column1</th><th>Column2</th><tr>
-  <tr><td>Content1</td><td>Content2</td></tr>
-  <tr><td>Content1</td><td>Content2</td></tr>
-  <tr><td>Content1</td><td>Content2</td></tr>
-  <tr><td>Content1</td><td>Content2</td></tr>
-  <tr><td>Content1</td><td>Content2</td></tr>
- </table>    
- <dl>
-   <dt>CIS255</dt>
-   <dd>A class for learning client side web development</dd>
-   <dt>George Corser</dt>
-   <dd>A professor in the CSIS department</dd>
- </dl>
- </body>
- <header>
-  <p class = "odd" >Created by: Allison Klinesmith</p>
-  <p class = "odd" id = "message">Contact info: <a href="mailto:arklines@svsu.edu">arklines@svsu.edu</a>.</p>
- </footer>
+	</head>
+	<body>
+	
+	
+	<h1>A basic form example (from slides pg 21)</h1>
+	<!-- action is the process that will do something on the server-->
+	<form method = "get" action = "arklines_process.php">
+		<fieldset>
+			<legend>This is a form</legend>
+				<p>
+					<label>Title of painting</label>
+					<!--input does not have closing tag. Name "title" will be sent to server-->
+					<input type="text" name="title">
+					<label> country</label>
+					<select name="where">
+						<option>Canada</option>
+						<option>Denmark</option>
+						<option>Germany</option>
+						<option>Japan</option>
+						<option selected> France</option>
+					</select>
+					<textarea name="PaintingDescription" placeholder="Enter text here">
+					</textarea>
+					<input type ="submit" />
+				</p>			
+		</fieldset>
+	</form>
+	
+	<!--in bootstrap, everything must be in a container -->
+		<div class="container">
+		<h1>A basic table example (from slides)</h1>
+				<table border = "1" background="jpg_tree.jpg" style="background-position : right-bottom" style= "background-repeat: no-repeat">
+					<tr>
+						<th> painting</th>
+						<th>artist</th>
+						<th> year</th>
+						<th colspan="2"> size</th>
+						<!--<th>height</th>-->
+					</tr>
+					<tr>
+						<td> painting 	</td>
+						<td rowspan = "2"> artist 1 </td>
+						<td>1793</td>
+						<td> 162cm</td>
+						<td>78cm</td>
+					</tr>
+					<tr>
+						<td> painting 	</td>
+						<!--<td rowspan = "2"> artist 1 </td>-->
+						<td>1793</td>
+						<td> 162cm</td>
+						<td>78cm</td>
+					</tr>
+				</table>
+						
+		
+		
+		
+			<h1 class="odd">Allison Klinesmith</h1>
+			<h2>Exercise<span>0</span>2: CSS and Bootstrap</h2>
+			<p>The purpose of this page is to play around with CSS. </p>
 
-</html>
+			<h2>Basic Table</h2>
+
+			<p>Formatted by bootstrap: The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>Doe</td>
+						<td>john@example.com</td>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Moe</td>
+						<td>mary@example.com</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>Dooley</td>
+						<td>july@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<!-- col-md-4 means 3 columns (12/4=3)-->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+					<p>Dude!</p>
+					<!-- this is some text -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<a href="italy.jpg">Italy!</a>
+					<!-- this is a link -->
+				</div>
+			</div>
+
+			<div class="row">
+				<p class="odd" id="message">This web page is a template for students in CIS-255.</p>
+				<p style="color: green;">Now is the winter of our discontent.</p>
+				<p class="odd" >Dude! <span>zippee dee</span> sdfskdjfhskjdfh </p>
+			</div>
+			<div class="row">
+				<p>this <span>paragraph</span> is <span>paragraph</span> 1</p>
+				<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 2</p>
+				<p>this <span>paragraph</span> is <span>paragraph</span> 3</p>
+				<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 4</p>
+			</div>
+			<div class="row">
+				<img src="italy.jpg" title="Zippy dee">
+				</div>
+				
+			</div>
+			<!-- end container -->
+		</body>
+	</html>
+	
 
