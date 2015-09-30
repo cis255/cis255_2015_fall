@@ -1,0 +1,30 @@
+#message {
+/*ID selecter overrides class selecter*/
+ background-color: purple;
+			color: red;
+			}
+			dt { color: blue;
+			}
+			 body {
+    background-color: white;
+	 background-image: url("jpg_tree.jpg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    margin-right: 200px;
+	}
+	/*every class selector with "odd" set will have a yellow background, except for those with a "message"
+	ID selector, which overrides class */
+	.odd {
+    background-color: yellow;
+}
+/*attribute selector is class. All class attributes in html will be formatted*/
+[class] {
+cursor: help;
+padding-bottom: 3px;
+border-bottom: 2px dotted blue;
+text-decoration: none;
+}
+/*hover is a pseudo selector. Background-color is a property. Red is a value.*/
+a:hover{
+background-color: red;
+}

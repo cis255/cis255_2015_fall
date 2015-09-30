@@ -1,0 +1,8 @@
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: yellow !important;
+}
+
+a:hover {
+		background-color: red !important;
+		}
+		

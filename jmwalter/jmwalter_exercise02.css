@@ -1,0 +1,23 @@
+	#containerDiv {background-color: lime;}
+
+body {background-color:lightgrey}
+h1   {color:blue}
+p    {color:green}
+h2 {color: red;}
+h3 {color: brown;}
+
+[title] {
+ cursor: help;
+ padding-bottom: 3px;
+ border-bottom: 2px dotted blue;
+ text-decoration: none;
+ }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #FF00FF !important;
+}
+
+a:hover {background-color: yellow; color: purple;}
+
+table {border-style:solid; border-color: pink;}
+/*  comment  */

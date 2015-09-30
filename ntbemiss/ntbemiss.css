@@ -1,0 +1,19 @@
+#message {
+	color:red;
+	}
+p {
+color:green;
+}
+
+.odd{
+	bakground-color: yellow;
+	}
+	
+	[class]{
+		cursor: help;
+				
+	}
+	
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink;
+}

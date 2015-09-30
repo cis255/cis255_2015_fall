@@ -1,0 +1,39 @@
+	.table-striped > tbody > tr:nth-of-type(odd) {	/*only will override bootstrap if css file link is after bootstrap link in html */
+		background-color: pink !important; /* now overrides everything b/c of !important */
+	}
+	.odd{
+		background-color: yellow;
+	}
+	#message {
+		color: red; /* The message id is always in a paragraph*/
+		font-size: 200%;
+		background-color: green;
+	}
+	p{
+		color: orange;
+	}
+	span{
+		color: purple;
+	}
+	/* This only applies to spans within paragraphs, so 
+	   it will not work for the 0*/
+	p span{
+		color: brown;
+	}
+	div p{
+		color: purple;
+	}
+	h2{
+		color: yellow;
+	}
+	[title]{
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 2px dotted blue;
+	text-decoration: none;
+	}
+	/*This is a pseudo-selector- makes link turn red when hovered over*/
+	a:hover{
+		background-color: red;
+	}
+	

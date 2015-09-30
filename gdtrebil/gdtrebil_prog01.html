@@ -1,0 +1,124 @@
+<!doctype html>
+<!--
+	Filename: gdtrebil_prog01.html
+	Author: Grant Trebilcock, CIS-255, Fall 2015
+	Description: This HTML program shows the concepts described on the following site
+				 http://www.sitepoint.com/10-typical-html-interview-exercises/
+	Design: Shows ten concepts from the web page
+	  <head>: None
+	  <Body>: 1. Markup Validation
+              2. The main element
+              3. WAI-ARIA			  
+-->
+<html>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h1> 1. Markup Validation </h1>
+	<figure>
+	   <picture>
+		  <source media="(min-width: 40em)"
+		  srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w">
+		  <img src="medium.jpg" alt="Also Cats">
+	   </picture>
+	   <figcaption>Cats</figcaption>
+	</figure>
+<!-- ------------------------------------------------------------ -->
+<h1> 2. The Main Element </h1>
+	<p> The main element has two different definitions. It can either be the main
+	    focus of the page or the container for the dominant content.
+	</p>
+<!--------------------------------------------------------------- -->
+<h1> 3. WAI-ARIA Roles </h1>
+ <header role="header">
+ <!-- Role helps with accessibility, so setting header to the role header helps older systems -->
+	  <h1>Main title</h1>
+	  <!-- Creates a search bar -->
+	  <form action="/" method="get" role="search">
+		 <label for="search">Search:</label>
+		 <input id="search" type="search">
+		 <input type="submit">
+	  </form>
+</header>
+	<nav role="navigation">
+	  <ul>
+	  <!-- Unordered list with anchors to several pages -->
+		 <li><a href="/">Home</a></li>
+		 <li><a href="/products">Products</a></li>
+		 <li><a href="/about">About</a></li>
+	  </ul>
+	</nav>
+	<main role="main">
+	  <article role="article">
+		 <h1>Main title</h1>
+		 <p>This is the content of this section</p>
+	  </article>
+	</main>
+	<footer role="contentinfo">
+	  <small>Copyright &amp;copy; Aurelio De Rosa 2014</small>
+	</footer>
+<!-- ------------------------------------------------------- -->
+<h1> 4. The Small Element </h1>
+ <!-- Small text should be used for copyrights and disclaimers. -->
+  <img src="medium.jpg" alt="A cat picture">
+  <small>I don't know the copyright for this picture. </small>
+<!-- ------------------------------------------------------- -->
+<h1> 5. Subheadings </h2>
+<article>
+   <h1>Main title</h1>
+   <h2>This is a subtitle</h2>
+   <p>This is the content of this section</p>
+</article>
+ <!-- <h1 then using h2 is not an accurate way to do this when you want the following paragraph to be associated with h2 -->
+ <article>
+   <h1>
+       Main title
+       <span>This is a subtitle</span>
+   </h1>
+   <p>This is the content of this section</p>
+</article>
+<!-- ---------------------------------------------------------- -->
+<h1> 6. Images and accessibility </h1>
+	<!-- The alt attribute is necessary, but it can be empty. -->
+	    <p></p>
+		<img src="small.jpg" alt="">
+<!-- ---------------------------------------------------------- -->
+<h1> 7. The time element </h1>
+	<!-- It is not possible to use a single time element to show a span. -->
+	<time datetime="2015-19-09">6</time>-
+	<time datetime="2015-20-09">9 November 2014</time>
+<!-- ---------------------------------------------------------- -->
+<h1> 8. Meter and progress </h1>
+	Storage space usage: <meter value=6 max=8>6 blocks used (out of 8 total)</meter>
+		<!-- Meter is used for scalar mesurement -->
+	<section>
+		 <h2>Task Progress</h2>
+			 <p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+			 <script>
+			  var progressBar = document.getElementById('p');
+			  function updateProgress(newValue) {
+				progressBar.value = newValue;
+				progressBar.getElementsByTagName('span')[0].textContent = newValue;
+			  }
+		 </script>
+	</section>
+		<!-- Progress is used to show completion of a task -->
+<!-- --------------------------------------------------------------- -->
+<h1> 9. The longdesc attribute. </h1>
+<img src="medium.jpg"
+     alt="A cat" longdesc="cat.html#description">
+
+<!-- other content here ... -->
+
+<section id="description">
+  <h2>Cat</h2>
+  <p>The shown cat is hovering...</p>
+</section>
+<!-- Contains a more detailed description in a hyperlink.
+-------------------------------------------------------------------- -->
+<h1> 10. The mark element.</h1>
+	<!-- highlights an element that is to be emphasized. -->
+	<p>  Maybe I should adopt a <mark>kitten</mark>.</p>
+	
+
+</body>
+</html>
