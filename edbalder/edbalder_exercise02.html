@@ -38,6 +38,55 @@
 					<h2>Exercise<span>0</span>2</h2>
 				</div>
 			</div>
+			
+			<!-- ------------------------------------------------------------------------------------->
+			<h1>A Basic Table Example From The Slides</h1>
+				<table border="1">
+					<tr>
+						<th>Painting</th>
+						<th>Artist</th>
+						<th>Year</th>
+						<th colspan="2">Size</th>
+						<!--<th>Width</th> -->
+					</tr>
+					<tr>
+						<td>Painting 1</td>
+						<td rowspan="2">Artist 1</td>
+						<td>1793</td>
+						<td>162 cm</td>
+						<td>128 cm</td>
+						<td> <img src="small.jpg" height="150" width="150"></td>
+					</tr>
+					<tr>
+						<td>Painting 1</td>
+						<!--<td>Artist 1</td>-->
+						<td>1793</td>
+						<td>162 cm</td>
+						<td>128 cm</td>
+					</tr>
+				</table>
+			<!-- ------------------------------------------------------------------------------------->
+			
+			<!-- ------------------------------------------------------------------------------------->
+				<h1>A Basic Form Example From Slides</h1>
+					<form method="get" action="edbalder_process.php">
+						<fieldset>
+							<legend>This is a form</legend>
+							<label>Title of Painting</label>
+							<input type="text" name="title"><br />
+							<label>Country</label>
+							<select name="where">
+								<option>Canadia</option>
+								<option>Denmark</option>
+								<option selected>Estonia</option>
+								<option>France</option>
+							</select> 
+							<input type="submit" /><br />
+							<textarea placeholder="enter text here">
+							</textarea>
+						</fieldset>
+					</form>
+			<!-- ------------------------------------------------------------------------------------->
 
 			<div class="container">
 				<h2>Table</h2>
