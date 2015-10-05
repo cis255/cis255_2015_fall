@@ -9,6 +9,9 @@ body {
 		/*font-family: myFirstFont;*/
 }
 
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink !important;
+}
 .odd {
 	background-color: yellow;
 }
@@ -41,3 +44,4 @@ table {
 	border-bottom: 2px dotted blue;
 	text-decoration: none;
 }
+

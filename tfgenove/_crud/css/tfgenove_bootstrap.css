@@ -1,0 +1,26 @@
+.banner{
+	background-image: url("../../red_white_logo.png");
+	background-repeat: no-repeat;
+	background-position: left-top;
+	height: 150px;
+	text-align: center;
+	line-height: 30%;
+}
+#emails{
+	margin-top: 150px;
+}
+.icon-blue{
+	background-image: url("../img/glyphicons-halflings-lightblue.png") !important;
+}
+.icon-red {
+	background-image: url("../img/glyphicons-halflings-red.png") !important;
+}
+.icon-yellow {
+	background-image: url("../img/glyphicons-halflings-yellow.png") !important;
+}
+body{
+	background-image: url("../../paper.jpg");
+}
+.form-actions{
+	background-image: url("../../paper.jpg");
+}

@@ -1,6 +1,7 @@
 #message {
 	color: red;
 	font-size:200%;
+	background-color: green;
 }
 p, h2{
 	color:orange;
@@ -15,8 +16,20 @@ div p{
 	color: purple;
 }
 h2{
-	color: yellow;
+	color: blue;
 }
 .odd{
 	background-color: yellow;
+}
+[title]{
+	cursor: help;
+	padding-bottom: 3px;
+	border-bottom: 4px dotted blue;
+	text-decoration:none;
+}
+a:hover{
+	background-color: red;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink;
 }
