@@ -8,10 +8,10 @@ design     : 1. in-line CSS
 			 3. external CSS
 -->
 <html>
-<body>
-<link rel="stylesheet" href="ajhaltom.css" />
-<!-- internal CSS -->
-<!-- <style>
+	<link rel="stylesheet" href="ajhaltom.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<!-- internal CSS -->
+	<!-- <style>
 	<!-- #message {
 		color:red;
 		}
@@ -22,16 +22,142 @@ design     : 1. in-line CSS
 		color:purple;
 		}	 
 </style> -->
-<h1>Alex Haltom</h1>
-<h2>Exercise<span>0</span>2</h2>
-<!-- -->
-<p class="odd" id="message">This is a test <span>sentence that will </span>be two different colors!</p>
-<!-- in-line CSS -->
-<p style="color:green;"> This text should be green!</p>
-<p class="odd">THIS IS PARAGRAPH</p>
-<p>THIS IS PARAGRAPH</p>
-<p class="odd">THIS IS PARAGRAPH</p>
-<p>THIS IS PARAGRAPH</p>
-<p class="odd">THIS IS PARAGRAPH</p>
-</body>
+	<h1>Alex Haltom</h1>
+	<h2>Exercise<span>0</span>2: CSS and Bootstrap</h2>
+	<table border="1" background="medium.jpg" style="background-repeat: no-repeat;">
+		<tr>
+			<th>Painting</th>
+			<th>Artist</th>
+			<th>Year</th>
+			<th colspan="2">Size</th>
+			<!--
+			<th>Height</th>
+			-->
+		</tr>
+		<tr>
+			<td>Painting 1</td>
+			<td rowspan="2">Painter 1</td>
+			<td>1793</td>
+			<td>162 cm</td>
+			<td>128 cm</td>
+		</tr>
+		<tr>
+			<td>Painting 1</td>
+			<!-- <td>Painter 1</td>-->
+			<td>1793</td>
+			<td>162 cm</td>
+			<td>128 cm</td>
+		</tr>
+	</table>
+	<!-- Start Container -->
+	<div class="container">
+	<table class="table">
+	<h1>A basic Table example (from the slides)</h1>
+	<h2>Basic Table</h2>
+		<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>John</td>
+					<td>Doe</td>
+					<td>john@example.com</td>
+				</tr>
+				<tr>
+					<td>Mary</td>
+					<td>Moe</td>
+					<td>mary@example.com</td>
+				</tr>
+				<tr>
+					<td>July</td>
+					<td>Dooley</td>
+					<td>july@example.com</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- End Container -->
+	<body>
+	<!-- Form from page 21 on slides-->
+	<form method="get" action="ajhaltom_process.php">
+		<fieldset>
+			<legend>This is a form</legend>
+			<label>Title of Painting</label>
+			<input type="text" name="title" /><br />
+			<label>Country</label>
+			<select name="where">
+				<option>Canadia</option>
+				<option>Denmark</option>
+				<option selected>Estonia</option>
+				<option>France</option>
+			</select><br />
+			<textarea name="paintingdescription" placeholder="Enter text here">
+			Enter text here
+			</textarea>
+			<input type="submit" />
+			</fieldset>
+	
+	
+	
+	</form>
+	<!-- Form from page 21 on slides-->
+		<div class="row">
+			<!-- col-md-4 means 3 equal columns 12/4-->
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p> Hello World!</p> 
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+				<p> Hello World!</p>
+			</div>
+		</div>
+		<!-- -->
+		<div class="row">
+			<p class="odd" id="message">This is a test <span>sentence that will </span>be two different colors!</p>
+		</div>
+		<!-- in-line CSS -->
+		<div class="row">
+			<p style="color:green;"> This text should be green!</p>
+			<p class="odd">THIS IS PARAGRAPH</p>
+			<p>THIS IS PARAGRAPH</p>
+			<p class="odd">THIS IS PARAGRAPH</p>
+			<p>THIS IS PARAGRAPH</p>
+			<p class="odd">THIS IS PARAGRAPH</p>
+		</div>
+	</body>
 </html>
