@@ -52,6 +52,7 @@
 <head>
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
+	<link 	href="css/tfgenove_bootstrap.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -59,7 +60,7 @@
     <div class="container">
     
     			<div class="span10 offset1">
-    				<div class="row">
+    				<div class="row banner">
 		    			<h3>Create a Customer</h3>
 		    		</div>
     		
@@ -92,9 +93,9 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Create</button>
-						  <a class="btn" href="index.php">Back</a>
-						</div>
+						  <button type="submit" class="btn btn-info">Create <i class="icon-certificate icon-yellow"></i></button>
+						  <a class="btn" href="index.php">Back <i class="icon-arrow-left icon-blue"></i></a>
+					</div>
 					</form>
 				</div>
 				
