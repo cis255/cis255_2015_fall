@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nick's Bootstrap!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Download</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Nick Bemiss</h1>
+                        <p class="intro-text">Give this guy an A+<br>Please.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Nick Bemiss</h2>
+                <p>Nick Bemiss is a student in your class who wants to pass this class, <a href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAilBMVEX///8zMzMwMDAoKCgjIyMfHx8sLCz8/PwbGxsmJibLy8shISH09PQZGRkYGBg9PT2jo6Orq6vu7u7b29vk5ORxcXHAwMDi4uJDQ0NPT083NzfV1dW0tLRqamqOjo5sbGyXl5eCgoJ+fn5bW1tCQkLQ0NBKSkqLi4u5ublZWVmcnJwNDQ1/f39iYmLhskQnAAAP00lEQVR4nO1dh3Kjuhpeq1FNBwOuseOa+P1f7xo73tioINH33vvNnDk72Q3oR9Lfy58//0cr0Owgms3CvZkkibkPZ7MosLWhF9UOgtD0V/EuS3OCp7qOC+j6FJM8zXbxyjfDYOgl1keUXNYuMTCChAAAJu+4/YQQiLBB3PUliYZerCrsubeGzm31ZbpYALev4MC1N7eHXrYktNBbAh0RCdpeQZAOll44+supJdsUIamtY20mQuk2GTGRWhIjqyZ1v1RaKB4nkdp+C7Hq0WSDYLjdj43IwMv0dsj7IVLPvDGJkfmaoGaHkwZAZD0fmrAHtCRz2ty+XxAnG8GN1BYHve3t+wXQD4uBafRTqzv67jRaqT8gfSe3Y/oeNLqLgegzuzyfbzTqqTkAfbPY6Ye+O41OPOuZPu0I1fkn+IXy7xJ47JXlJMRQIaywkgpDI8/dAnlemBOFVaVCqkGS3ugL4qnkygBEOkp38dFPboZ9YN/tes22g5u5n/jHeJfe/h7KPkyPe1JzFgBKLcjA0+zDMyOR2WdHpveRTbEhRSUEfXBVO8bVqwHQwtnGlDVpbXOTYUtiLwGOOzeTzeoNBAY6fEtT94Rtfh9Q9VZC0LHg2FSJCGDo2Sas+fRwk+lVRAJn0yZBJQRXS/x6ooNNI0eEFm5AlRlmXTtjOHMifDcwjGUbDD1ZGuKNJKQjs8oXntCb+rhpyycYbcQKL3A60caPWPRO/Om3yeVs/1PIsvGxxZf9YIlE9OWtm3HaIhfRiJYtvy848IUEQB2ZNwtX4BuBh1b5zczl8xgIvK50Ys0TSF/itmhuhBMugeCrU2UxiL+420hAXblLIeQeltsB7do2NflHFaCWpIbJfQWBl3ZeIcSFa4oC1Mr3NbniFy/7MbxnS56gAkYLJHKPKJj25wTjKhstHNSQt4OwTVZWvQyXw1QBashuZhMOgXjbbzzzZpZySASNvnTAkYMA9++m9TkqDnGbiKsDm0CYtyaJFBDm7JNKDvWfuWQ/Ei2HiSVoHN0Y1tZRj+wH4m2by1bCln0ZUU1Lw2c/zunAcJHG0WF/9FpsYc5+mN6HGsOHp7M/ew2xGDD90cAaKg70xIJp/QOgzlCvLDYK9P486zwkTKlBrqrP2bC8agAPEeUqw2SSaG0Un8K8hNbwO1ggYfo0HaWvbzMvoT70HXxiwWI3AKjokTFL1DvDctFXeKwjBmP5ByxYkrALB15tMF2bWPqMMQUFGk6TYWHL0LfkRQbrjNbX/ToCS2eWPafJlPF58uGTk96h5YyDNpVi9horfxIPYS6JETKuIiAyG3FkJCEMYPBWg2UZGBLscMY63+PiMk9sWUut9mnEtD4K3HHmmNsufZ9IJbNhqWvTvvORZDFj8MRK5e1Af5ZRXsIHGFcRpOJfOdEaHxmbJHzFmr5TFZoNfbKBxN0dDhGdhANc0S/4tF2CxqNvs3ChtTdLcKu0VPGLjACMU5fyxf6C3sKvMVj1IphfCpuo0YxUxeYaCLSdwN/EhGKkdVxYfYNh63H9ZRn1T5HX62LrwaOYDcjY/5J2AQN3bDYTCxrNbDgOYlp6yrsFBgXtdGFrKQFFIMj7XmtN0MYwYaXY0cf5H9lClq7JYiAaxWfA579wCwvQmgrI6LXvqe8g0n5GBlrb1GlNZVu+hmO1e1mgbWFCuSU0SjMwNgMstS42lHMJlo9pQnFc41/qAhBQFOKyXkO5Z+oYvnYQDHWyl9T6Sxq1RokK1VjozF+fbyztsItPQ+iyJi0w3o8pFZIDQOkFpwNE5FGWRixyHaBEmUreKgU7KU6qxGf2pVpL8rXs/RJfyjfxnZvSIlNXcOMzCmkI6jtcHJaP6buVGJavIUsn4ECLmSF/1bh6U9A62VvWIqWTKhzSK6dMQZd/RCugRKLx6kOjeK181uaRWwrlnDqgg4+QuogvCShUYgKQTvdjBsR/HgL7DcmVvUyA/ArnefmWwm/Jp7KCI78fcV1noXYU1bNpPsqKp/4rtKhraMn6EDeCWiHVFBctSDZn4ji67mD36s9U6TTL98X4NRIp/wWWVL5sdh7dE+AsT958lTrYeF4XQJDjfu+VKLTLF+blDJW3l+erokDr6+/4klTgZscDpiIQAOKzUkHcufwE+PybqOxkk5YVjHDqG5CUET1f8yrWASIb+cNKqTXOU7OidkI2QU/jZfI/QXYS9J1F7W0Akq9QNyk6nooVRftU8mywYv7v66v01gUfVc2lgH6WVOTtckj4r8wvMxrpazgXctLiSaDijCUTifYTBEq63suK219WU5Zp8EOSQupY0IsT2xgbyf4v+Cp1qsoS8RkapFzB0tGKKlZalfwRi4XN63NcGXOMkuvkwcsphY7hiWNjX1Gef/uKInEhrJ0ur1WmzIoy9I2H3kidNSRrvlLfhiJQxGkYWRGiR5Fq2RqV9/BHKPiln4NUVszSoY7ysgQavM1KvROAVPM/u2zI/8jjVfl+SgixH1BaRAlwxf9d2ndUAbSpXM+uzDMf7y8rJtWJU39BR3PeMRVolid2xQofEgFpDim70o+hfLrzjE4TeFsTFPyuvdOVuihNQHXWBPs4Ug4OOWXyAco58AZLLHaS+DDRdWwhA4phGAjr5LCt3EOKpdzdTdT1pPzhAoQieQE+q1iWFoT75ORfNqvjAx8MHFcbb2GGMgy+LBYeTDMo8zSsYpaxMsqfmPYeYd2XKcyLbY8oZ7CKe0XjlJkWz+k/75YS0LDY+RllGiul6kW8troS8qt1ULulF7SU01BVs4T27JYHMB0gQBOUDdZpcR7L7nCQK0bIok9aeQN4OUScjdKT7u62cgBfmcLCr18Wqb00zGCshKKw4JoUh62RCDVfTn97LxBkfQwUP6bSo+6qd9nIq5dRGl4OXzpGFp46V3+4+DhFYSHb26HwhmCeLG6SedAMjs9OKRwDmHvYxj0cC9j3sDkvHQ/YvLSxPBwR2PKwqU4zJrB1moZ66ajA1kub2RbjAtu2aGYfjgtlB+7DPmxk448MbBu/kZ+mVwi7St/B9tM08bX1Crvay8lx/Tbwl/aKrNrtwyGlgc+7T3xLJAVwfN714xZ9wnPqxy3qx556RPIl0b+JF3uqHz/sD+EUSOT48OKH9WPAvWGWA7q8gAYvBlw/jt8XopxMphIHixfHr5+L0ROiCZFL6eXmYtTOp+kHxQ5KlSjx82lq50T1guCTSPbH4edE1c9r6wGPFqpSzI+f11Y/N7F7RI8esVjGO8bPTayfX9o59o9e6VKNHbRytPYlv7R+jnDHOD0aUct1qaKu4UuOcP08726x+kmEkCvXFeV5N8jV7xDaM+1NsrxFlKvfpN6iMwS7J2uUE17CeotGNTMdIcyfX12yDxclK95qZprUPXWD3z7zb4eNj4q6p2a1a+3jtQO7LldcVFG71rD+sG2YL73JoWThTUX9YeMa0jZhb1/qGaVr5qtqSJvXAbeG5K25vC6Zp19ZB1y3lrt1fjRbvyW367Luhspa7tr1+JtWgxzaynhbqSFbMi9Rj1+3p4KWtjeKRfPh+0LJWfaMSPRUqN0XIyA4bkVP16hBZEB6coVMX4z6vU3mDsRZ46FrtncoNyIHjvTpkOptUr8/zUkHABnLRYPgeHQ0qIE9Cg3g6TZsTJ2sfo+hey0wsZyzVytdKPB3Dl0ipjLoSK7HUJM+UYuvn0Xp+XWVKJW3RqeYlPP+FHeQ1VmQXW/VoNeX/8zZBwRi8nne+qbEsE7bvGRM8qTy8n9xkuz11ahf2+KVTQBAENa/UHr9uPiJGUaBrT1Q/NPi//Y88be5wx0DTICCmJXv19ao596JsdjbhhoIY91xpjD/TA+H7Hze7bLUBY5uIV729KSYbagS/ZLvudesb+KvxcoEAPJzxy25asMfqPRNbNb70t5VVZTKAehqgSGV3pdN+5ceJStChYC5mlGj1L+0cQ/aU64wVJ4NfamoOJRzZis0laZ9hO3vqqnWYkDlLniKfYRb6AU9/xTMf60AUR/Ip9wLmjXBRbWt2QXUO6oAn9VtTfV+3n/om6jckz1YSUyBp+ibZjUa9tToyd5OX/1gYwjnalOrIk5Wxy00YxTaOpUPYs5GUHfHnM5Q9kISC6xr+UIY6ppM15/W5ltE3s6yBKrZz4qQda1rWW4ZF16mc1OLM0qixRY4FuSoaUWXHRjXL7BhtaiSmVHS9pyZKNnsJhBhy4CkALj9ByGyEHTXfpPQQf05MwwFvHGZiR2aJ2+1jZfX6+4ab48b31RuA1UC6xJKu7GZ855q9e3qEOsG8544M7vGEfh+4rvRzC7O3DVBB4jesWo2d403O288KYuNZ+f9D8w/HPcMS5OpEqo1+Bv1HNJ9K3NIebNkR1BPwx60qj5L9n9gHjB3pvOwHNVje7vqzHQe51zuVZtzucc4W/273dnq7FmfxQOXwyRMaWv2J28yI5XTfAbmQ2RMhS77g5Mqz4wIjyRrGmCAiYELppR41onWxowXRsHbfk+qtuW0IASg4XkKef4kKNPIsDXMXI4TFjTPhJ3zSAR6fyfV58V8AGphDIPJde/idT9lfNGa1yRTJZ1BAJPr+CS9tBK6sBtR3XewJUuAe1Bvr/js2tow+aGeVo7oAyHgRrDBV9xlG40g/uL6lBtz0VfMOHKxAAReV4JD8wC/2zRpV+0IDvxXAeR2Y1ItXEHoo/1+cEtBHgLA+antfdROOUeJuQN1MKVY2NcY6Gnj9MRX2H4qTHvAnZhwvjBGDyx309a5CTauMP4InI6UjTmfpd7faxjLNmSHuTTEMWQCOpsnFVwrGngTfXKRSNnjQwsvE72iw7R17VI+MUY7lTdSzy512Xh4yfSqFADgbNokiIYpkFB/iTQOH6bqTmrmx6HidBaAoHOXrR2LmPiTSIit88WU5a62eTlb9JASxnNx3Ef97qJ6Gx9biafZh2cKOwPZkel9ZFNuouk7oPw0j2YI4qlkmgWASEfpLl755vyRSPunSKG1gyicm/4q3qW3v5fYu8fD9E5V4HckRCHvCQByj+OTSZ677qfr5vmEGBZGUKljuUF6jShoR67RJiJVNoeWBoHHvl2Ys7hZGqISgLMewn9pphJctRX6cDpUyGshVh9bos/qyDiTg592TCOwPgdukKdVmDkN6bsZZcN3xNWSTDR0qwGKnMzh6btjviT1c585AIgsBxi6y0XkZVVGjxKInnlj6xqnmVtYNUJNljwMt8q2SS/QkhhV58yKAYiF4rHcPha0ZJsioyaVgBgo3Y6ZvAe08HIluqF6YImhk2szF0ifsOfeGjpYbjNvW4cduPbmY2lOJY0ouazd2+rvVhJlTtzHsN+sKoO460syNr6pgCC8W7pZmkN9quu4gH77E8zT7G4Zh/9uf/Q3FGb9LJzvzSRJzP08nBUG/9CL+m/BfwB5QO7+FKnKzQAAAABJRU5ErkJggg=="> without a doubt.</a></p>
+                <p>That was a link to a winkey face.</p>
+                <p>I hope you liked it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download Grayscale, be like me!</h2>
+                    <p>You can download Grayscale, which is what I used, me, Nick Bemiss, for free on the preview page at Start Bootstrap.</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Start Bootstrap, Not Me, Nick Bemiss</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>
