@@ -1,6 +1,35 @@
 <html>
-<head>
-<style>
+	<head>
+		<style>
+	figure {
+		border: 1pt solid #A8A8A8;
+		background-color: #EDEDD;
+		margin: 10px;
+		padding: 10px;
+		width: 200px;
+		float: left;
+		}
+		
+	figure1 {
+		border: 1pt solid #A8A8A8;
+		background-color: #EDEDD;
+		margin: 10px;
+		padding: 10px;
+		width: 200px;
+		float: right;
+		}	
+		
+	.cat {
+		position: relative;
+		margin-left: -100px;
+		left: 500px;
+		top: 0px;
+		border: dashed;}
+		
+	#cat4 { 
+		position: relative;
+		z-index: 2;}
+	
 	#cat1 {
 		position: fixed;
 		left: 100px;
@@ -9,7 +38,7 @@
 		
 	#cat2 {
 		position: relative;
-		left: 200px;
+		left: 0px;
 		top: 0px;
 		border: solid; }
 		
@@ -26,40 +55,62 @@
 	div {
 		position: relative;
 		left: 50px; }
-</style>
-</head>
-<body>
+		</style>
+	</head>
+		<body>
+		
+			<p>
+				<figure>
+				<img id="cat2" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<figcaption>This is a cat.</figcaption>
+				</figure>
+				<figure1>
+				<img id="cat2" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<figcaption>This is a cat.</figcaption>
+				</figure1>
+				Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat 
+				Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat
+				Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat 
+				Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat 
+				Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat 
+			</p>
 
-	<div>
-		<img id="cat3" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		<p>
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		</p>
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-		Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-	</div>
+			<div>
+				<img id="cat3" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" id="cat4" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				<img class="cat" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+				
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				<p>
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				</p>
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+				Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+			</div>
 
-	<p>Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-	Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-	Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-	Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
-	Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy
-	</p>
+			<p>Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+			Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+			Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+			Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy 
+			Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy
+			</p>
 
-	<p>
-	<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
-	<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
-	<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
-	</p>
+			<p>
+			<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
+			<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
+			<span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span><span>Zappy</span>
+			</p>
 
-	<img id="cat2" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
-	<img id="cat1" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
-	<img src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
-	<img src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+			<img id="cat2" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+			<img id="cat1" src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
+			<img src="http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg" height="200" width="200">
 
-</body>
+		</body>
 </html>
