@@ -63,6 +63,8 @@ Design: The program stores the user-input data in the database for a new user.
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link   href="../Body.css"" rel="stylesheet"> <!-- #3 Using .. When references an external css -->
+
     <script src="js/bootstrap.min.js"></script>
 </head>
 

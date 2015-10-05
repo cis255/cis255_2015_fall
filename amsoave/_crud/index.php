@@ -19,7 +19,7 @@ Design: The program is a menu that allows a user to create, read, update, or del
     <meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+    <link   href="../Body.css"" rel="stylesheet"> <!-- #3 Using .. When references an external css -->
 	
 
 </head>
