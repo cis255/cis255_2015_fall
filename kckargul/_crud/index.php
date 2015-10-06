@@ -5,13 +5,19 @@
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
-
+<style>
+  .jumbotron{
+	background-color:#777777;
+	padding: 10px;
+	padding-left: 100px;
+}
+</style>
 <body>
+    <div class="jumbotron">
+    	<h3>CIS 255 Email List</h3>
+    	<p>The purpose of this list is to provide a back end to test front end techniques.</p>
+  	</div>
     <div class="container">
-    		<div class="row">
-    			<h3>CIS 255 Email List</h3>
-                <p>The purpose of this list is to provide a back end to test front end techniques.</p>
-    		</div>
 			<div class="row">
 				<p>
 					<a href="create.php" class="btn btn-success">Create</a>
@@ -35,7 +41,7 @@
 							   	echo '<td>'. $row['name'] . '</td>';
 							   	echo '<td>'. $row['email'] . '</td>';
 							   	echo '<td>'. $row['mobile'] . '</td>';
-							   	echo '<td width=250>';
+							   	echo '<td width=280 >';
 							   	echo '<a class="btn" 
 									href="read.php? id='.$row['id'].'">Read</a>';
 							   	echo '&nbsp;';
