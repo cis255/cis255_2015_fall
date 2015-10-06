@@ -14,9 +14,8 @@
     		</div>
 			<div class="row">
 				<p>
-					<a href="create.html" class="btn btn-success">Create</a>
+					<a href="create.php" class="btn btn-success">Create</a>
 				</p>
-				
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
