@@ -1,91 +1,197 @@
 <!DOCTYPE html>
 <html>
-<!-- 
-..... comment .....
-filename: bjcobb_exercise02.html
-author: Brian Cobb(cis 255/fall 2015)
-discription: this program demonstrates very basic css and html
-design: 	1. demonstrates inline,internal css and smoe html.. testing and learning purposes
+	<head>
 
--->
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="./bjcobb.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+		<title>CIS-255: Brian Cobb</title>
+		<!-- internal css 
+	<style>
+		#message {
+			color: red;
+		}
+		p, h2 {
+			color: orange;
+		}
+		p span {
+			color: purple;
+		}
+	</style>
+	-->
+	</head>
+	<body>	
+		<!-- from page 21 of the slides -->
+		<h1>A basic form</h1>
+		<form method="get" action="http://csis.svsu.edu/~gpcorser/cis255/gpcorser/gpcorser_process.php">
+			<fieldset>
+			<legend>This is a form</legend
+			<label>this is a form</label>
+			<input type="text" name="title"/>
+			<br/>
+			<label>Country</label>
+			<select name="where">
+				<option>Choose a country</option>
+				<option>Canadia</option>
+				<option>Denmark</option>
+				<option selected>Estonia</option>
+				<option>France</option>
+			</select>
+			<br/>
+			<textarea name="paintingDescription" placeholder="Enter text here"></textarea>
+			<br/>
+			<input type="submit"/>
+			</fieldset>
+		</form>
+	
+	
+	
+		<h1>Basic table from the slides</h1>
+		<table border=1 background="http://i61.tinypic.com/23ue6id.jpg" style="background-repeat:no-repeat;">	
+			<tr>
+				<th>Painting</th>
+				<th>Artist</th>
+				<th>Year</th>
+				<th colspan="2">Size <small>(Width X Height)</small></th>
+				<!--
+				<th>Height</th>
+				-->
+			</tr>		
+			<tr>
+				<td>The death of mart</td>
+				<td rowspan="2">Jacques - Louis david</td>
+				<td>1793</td>
+				<td>162cm</td>
+				<td>128cm</td>
+			</tr>
+			<tr>
+				<td>Burial at Ornas</td>
+				<!--
+				<td>Gustave Courbert</td>
+				-->
+				<td>1849</td>
+				<td>314cm</td>
+				<td>663cm</td>
+			</tr>
+		</table>
 
-<head>
-<!--
-<style>
-
-/*  
-	#containerDiv {background-color: lime;}
-
-body {background-color:lightgrey}
-h1   {color:blue}
-p    {color:green}
-div {border-style:solid; border-color: black;}
-h2 {color: red;}
-h3 {color: brown;}
-a:hover {background-color: yellow; color: purple;}
-
-table {border-style:solid; border-color: pink;}
-comment  */
-
-</style>
--->
-<link rel="stylesheet" href= "jmwalter_exercise02.css"/>
-
-
-</head>
-<body>
-	<div id="containerDiv">
-		<p> hello,Brian </p>
-		<h1>h1</h1>
-		<h2>h2 </h2>
-		<h3>h3 </h3>
-		<h4>h4 </h4>
-		<h5>h5 </h5>
-		<h6 style="color: green;">h6 </h6>
-		<p>steps to push my code<br/>
-		first "git add 'name of file or --all"<br/>
-		second"git commit -m "message for upload""<br/>
-		third "git pull *sometimes*"<br/>
-		last  "git push  *username *password*"</p>
-
-		<p>reguar text 
-		<b> bold text</b>
-		<ol>
-		  <li><a href="cis255.html">main page</a></li>
-		  <li>testa</li>
-		  <li>testb</li>
-		  <li>testc</li>
-		</ol>
-
-		<ul>
-		  <li>testd</li>
-		  <li>teste</li>
-		  <li>testf</li>
-		</ul>
-		<!-- many of these came from w3 schools -->
-
-
-		</p>
-		<a href="http://www.w3schools.com/tags/tag_a.asp" > </a>
-		<div style="background-color: orange;">
-		<img> </img> 
+		<div class="container">
+		<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<div class="row">
+				<h1 class="odd">Brian Cobb</h1>
+				<h2>Exercise<span>0</span>2: CSS and Bootstrap</h2>
+			</div>
+			
+			<h2>Basic Table</h2>
+			<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>Doe</td>
+						<td>john@example.com</td>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Moe</td>
+						<td>mary@example.com</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>Dooley</td>
+						<td>july@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+				<p>Dude!</p>
+				<!-- this is some text -->
+			</div>
 		</div>
 
 
-		 <table>
-		  <tr>
-			<th>test1</th>
-			<th>test2</th>
-		  </tr>
-		  <tr>
-			<td>test3</td>
-			<td>test4</td>
-		  </tr>
-		</table> 
-
-
-	</div>
-</body>
-</html>
-
-
+		<div class="row">
+			<p class="odd" id="message">This web page is a template for students in CIS-255.</p>
+			<p style="color: green;">Now is the winter of our discontent.</p>
+			<p class="odd" >Dude! <span>zippee dee</span> sdfskdjfhskjdfh </p>
+			<p>this <span>paragraph</span> is <span>paragraph</span> 1</p>
+			<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 2</p>
+		</div>
+		<div class="row">
+			<p>this <span>paragraph</span> is <span>paragraph</span> 3</p>
+			<p class="odd" >this <span>paragraph</span> is <span>paragraph</span> 4</p>
+		</div>
+		<div class="row">
+			<img src="italy.jpg" title="Zippy dee">
+			</div>
+		</body>
+	</html>
+	
