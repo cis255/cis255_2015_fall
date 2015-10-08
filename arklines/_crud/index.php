@@ -38,9 +38,8 @@
 	<!-- #3; ".." notation relative referencing-->
     <link href="../_crud/css/simple-sidebar.css" rel="stylesheet">
 	<!-- #7 element selector. #6 !important attribute to override bootstrap. #4 internal -->
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/bootstrap.jquery"></script>
+	
+	
 	<style>
 		h3{font-weight: bold !important;}
 	</style>	
@@ -149,7 +148,8 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <iframe
+src="http://csis.svsu.edu/~arklines/cis255/arklines/_crud/create.php" width="500" height="500"> </iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -165,7 +165,11 @@
     <!-- /#content wrapper -->
 </div> <!-- wrapper>
    
+<!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
