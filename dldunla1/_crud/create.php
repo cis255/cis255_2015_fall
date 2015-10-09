@@ -50,7 +50,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
+	<link rel="stylesheet" href="dldunla1/cis255/prog02.css" />
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
