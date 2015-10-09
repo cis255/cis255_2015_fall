@@ -1,3 +1,26 @@
+<!-- 
+filename: 		create.php
+author:   		Jon Benson, CIS-255, Fall 2015
+description: 	Page allowing users to add entries to table.
+
+design:			
+	<head>: 1. Character set
+			2. Link to my custom stylesheet
+			3. Link to bootstrap stylesheet
+			4. Bootstrap JS script
+	<body>: 
+			1. Header text
+			2. Creation form box
+			3. Image box
+				i. Image of creative person
+				
+Requested comments included in this document:
+3. Absolute referencing
+5. 7 Bootstrap classes commented
+
+-->
+
+
 <?php 
 	
 	require 'database.php';
@@ -51,21 +74,34 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+	<link href ="http://csis.svsu.edu/~jmbenso2/cis255/jmbenso2/_crud/css/jmbenso2_prog02.css" rel="stylesheet"> <!-- 3. Absolute referencing -->
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
+	<!-- Header -->
+	<div class = "page-header">
+		<div class ="text-center">
+			<h1>CIS 255: Where Dreams Come True</h1>
+		</div>
+	</div>
+
+	<!-- Create customer form -->
     <div class="container">
     
-    			<div class="span10 offset1">
+    			<div class="span10 offset1"> 
     				<div class="row">
 		    			<h3>Create a Customer</h3>
 		    		</div>
     		
-	    			<form class="form-horizontal" action="create.php" method="post">
+					<!-- Bootstrap class form-horizontal: each input control is on its own line, with its label -->
+	    			<form class="form-horizontal" action="create.php" method="post"> 
+						<!-- Bootstrap class control-group: control/label elements grouped together, for optimum spacing -->
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
+						<!-- Bootstrap class control-label: formats labels for controls -->
 					    <label class="control-label">Name</label>
+						<!-- Bootstrap class controls: formats controls -->
 					    <div class="controls">
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
@@ -91,7 +127,10 @@
 					      	<?php endif;?>
 					    </div>
 					  </div>
+					  <!-- Bootstrap class form-actions: groups together possible choices -->
 					  <div class="form-actions">
+						  <!-- Bootstrap class btn: formats buttons -->
+						  <!-- Bootstrap class btn-success: colors a button green and happy-like -->
 						  <button type="submit" class="btn btn-success"><span class="icon icon-ok"></span>  Create</button>
 						  <a class="btn" href="index.php"><span class="icon icon-remove"></span>  Back</a>
 						</div>
@@ -99,5 +138,12 @@
 				</div>
 				
     </div> <!-- /container -->
+	
+	<!-- Image of a creative person -->
+	<div class="container">
+		<div class="text-center">
+			<img class="img-circle img-responsive" id="center-image" src="http://blogs-images.forbes.com/allbusiness/files/2014/12/Fotolia_74087814_Subscription_Monthly_M.jpg" />
+		</div>
+	</div>
   </body>
 </html>

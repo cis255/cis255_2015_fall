@@ -1,3 +1,24 @@
+<!-- 
+filename: 		update.php
+author:   		Jon Benson, CIS-255, Fall 2015
+description: 	Page allowing users to update entries in table.
+
+design:			
+	<head>: 1. Character set
+			2. Link to my custom stylesheet
+			3. Link to bootstrap stylesheet
+			4. Bootstrap JS script
+	<body>: 
+			1. Header text
+			2. Update form box
+			3. Image box
+				i. Image of updating persons
+				
+Requested comments included in this document:
+3. Relative referencing
+
+-->
+
 <?php 
 	
 	require 'database.php';
@@ -71,11 +92,20 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+	<link href ="css/jmbenso2_prog02.css" rel="stylesheet"> <!--3. Relative referencing -->
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
+	<!-- Header -->
+	<div class = "page-header"> 
+		<div class ="text-center"> 
+			<h1>CIS 255: Where Dreams Come True</h1>
+		</div>
+	</div>
+	
+	<!-- Form -->
     <div class="container">
     
     			<div class="span10 offset1">
@@ -119,5 +149,13 @@
 				</div>
 				
     </div> <!-- /container -->
+	
+	<!-- Image of an updating person -->
+	<div class="container">
+		<div class="text-center" style="padding: 25px;">
+			<img class="img-circle img-responsive" id="center-image" src="http://hashtagstudios.com/wp-content/uploads/2015/07/snl-weekend-update.jpg" />
+		</div>
+	</div>
+	
   </body>
 </html>
