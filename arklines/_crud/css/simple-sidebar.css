@@ -47,9 +47,15 @@
     position: absolute;
     margin-right: -250px;
 }
-
+/* #6 override CSS bootstrap.min style sheet; #7 ID selector */
+#Purpose{
+ font-size : 20px !important;
+ color: grey !important;
+}
 /* Sidebar Styles */
 
+
+/* #7 class selector*/
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -68,6 +74,7 @@
     display: block;
     text-decoration: none;
     color: #999999;
+	
 }
 
 .sidebar-nav li a:hover {
