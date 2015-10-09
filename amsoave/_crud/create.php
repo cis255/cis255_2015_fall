@@ -107,7 +107,7 @@ Design: The program stores the user-input data in the database for a new user.
 					  </div>
 					  <!-- The well is a sort of container that holds other elements in it. The small attribute makes it a smaller version -->
 					  <div class="well well-sm">
-						  <button type="submit" class="btn btn-success">Create</button>
+						  <button type="submit" class="btn btn-success glyphicon glyphicon-plus">Create</button>
 						  <a class="btn glyphicon glyphicon-arrow-left btn" href="index.php"> Back</a>
 						</div>
 					</form>
