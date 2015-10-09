@@ -16,7 +16,7 @@
 				<p>
 					<a href="create.php" class="btn btn-success">Create</a>
 				</p>
-				
+
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
@@ -27,7 +27,7 @@
 		                </tr>
 		              </thead>
 		              <tbody>
-		              <?php 
+		              <?php
 					   include 'database.php';
 					   $pdo = Database::connect();
 					   $sql = 'SELECT * FROM customers ORDER BY id DESC';
@@ -37,14 +37,14 @@
 							   	echo '<td>'. $row['email'] . '</td>';
 							   	echo '<td>'. $row['mobile'] . '</td>';
 							   	echo '<td width=250>';
-							   	echo '<a class="btn" href="read.php?id='.
-								   $row['id'].'">Read</a>';
+							   	echo '<a class="btn"
+									href="read.php? id='.$row['id'].'">Read</a>';
 							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'">Update</a>';
+							   	echo '<a class="btn btn-success"
+								  	href="update.php?id='.$row['id'].'">Update</a>';
 							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" 
-								   href="delete.php?id='.$row['id'].'">Delete</a>';
+							   	echo '<a class="btn btn-danger"
+								   	href="delete.php?id='.$row['id'].'">Delete</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }

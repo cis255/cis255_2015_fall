@@ -15,5 +15,5 @@ color:green;
 	}
 	
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: pink;
+  background-color: pink !important;
 }

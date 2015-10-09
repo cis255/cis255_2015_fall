@@ -5,18 +5,23 @@
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
-
+<style>
+  .jumbotron{
+	background-color:#777777;
+	padding: 10px;
+	padding-left: 100px;
+}
+</style>
 <body>
+    <div class="jumbotron">
+    	<h3>CIS 255 Email List</h3>
+    	<p>The purpose of this list is to provide a back end to test front end techniques.</p>
+  	</div>
     <div class="container">
-    		<div class="row">
-    			<h3>CIS 255 Email List</h3>
-                <p>The purpose of this list is to provide a back end to test front end techniques.</p>
-    		</div>
 			<div class="row">
 				<p>
-					<a href="create.html" class="btn btn-success">Create</a>
+					<a href="create.php" class="btn btn-success">Create</a>
 				</p>
-				
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
@@ -36,15 +41,15 @@
 							   	echo '<td>'. $row['name'] . '</td>';
 							   	echo '<td>'. $row['email'] . '</td>';
 							   	echo '<td>'. $row['mobile'] . '</td>';
-							   	echo '<td width=250>';
-							   	echo '<a class="btn" href="read.php?id='.
-								   $row['id'].'">Read</a>';
+							   	echo '<td width=280 >';
+							   	echo '<a class="btn" 
+									href="read.php? id='.$row['id'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'">Update</a>';
+								   	href="update.php? id='.$row['id'].'">Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" 
-								   href="delete.php?id='.$row['id'].'">Delete</a>';
+								   	href="delete.php? id='.$row['id'].'">Delete</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }

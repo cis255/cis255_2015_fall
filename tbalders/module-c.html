@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<style>
+h1 {
+  color: red; 
+}
+ul {
+  color: green;
+}
+span span {      /* Test 1: specificity */
+  color:purple;
+}
+li span {
+  color: orange;
+}
+
+span span span {
+  color: yellow;
+}
+</style>
+</head>
+<body>
+<h1 id="head1">George Corser - Assignment C - CSS inheritance and specificity</h1>
+<ul id="id1" class="class1">
+  <!-- Test 1: specificity -->
+  <li>Shake<span>sp<span>e<span>a</span>r</span>e</span></li>
+  <li>Frost</li>
+  <li>Poe</li>
+  <li>Yeats</li>
+</ul>
+</body>
+
+
+
+
+
+
+
+
+
