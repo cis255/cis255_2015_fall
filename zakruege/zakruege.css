@@ -4,7 +4,7 @@
 	background-color: gray;
 }
 .odd{
-	background-color: black;
+	background-color: yellow;
 }
 p {
 	color: orange;
@@ -13,6 +13,5 @@ span {
 	color: green;
 }
 div p {
-	color: yellow;
-	background-color: red;
+	color: black;
 }
