@@ -7,17 +7,26 @@
 </head>
 
 <body>
-    <div class="container">
+	<div class = "page-header">
+		<h1>CIS 255: Where Dreams Come True</h1>
+		<div class ="row">
+			<div class="col-sm-12">
+				<img class="img-circle img-responsive" src="http://thumbs.dreamstime.com/x/hands-businessman-keyboard-laptop-10351604.jpg" />
+			</div>
+		</div>
+	</div>
+    <div class="container">		
+		<div class ="">
     		<div class="row">
     			<h3>CIS 255 Email List</h3>
                 <p>The purpose of this list is to provide a back end to test front end techniques.</p>
     		</div>
 			<div class="row">
 				<p>
-					<a href="create.html" class="btn btn-success">Create</a>
+					<a href="create.php" class="btn btn-success"><span class="icon icon-pencil"></span>  Create</a>
 				</p>
 				
-				<table class="table table-striped table-bordered">
+				<table class="table table-striped table-bordered table-responsive">
 		              <thead>
 		                <tr>
 		                  <th>Name</th>
@@ -36,15 +45,15 @@
 							   	echo '<td>'. $row['name'] . '</td>';
 							   	echo '<td>'. $row['email'] . '</td>';
 							   	echo '<td>'. $row['mobile'] . '</td>';
-							   	echo '<td width=250>';
+							   	echo '<td width=300>';
 							   	echo '<a class="btn" href="read.php?id='.
-								   $row['id'].'">Read</a>';
+								   $row['id'].'"><span class="icon icon-search"></span>  Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'">Update</a>';
+								   href="update.php?id='.$row['id'].'"><span class="icon icon-wrench"></span>  Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" 
-								   href="delete.php?id='.$row['id'].'">Delete</a>';
+								   href="delete.php?id='.$row['id'].'"><span class="icon icon-remove"></span>  Delete</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }
@@ -52,8 +61,12 @@
 					  ?>
 				      </tbody>
 	            </table>
-				<a href="http://www.startutorial.com/articles/view/php-crud-tutorial-part-1" class="btn btn-success">Tutorial</a>
-    	</div>
+				<a href="http://www.startutorial.com/articles/view/php-crud-tutorial-part-1" class="btn btn-success">
+					<span class="icon icon-question-sign"></span>
+					  Tutorial
+				</a>
+			</div>
+		</div> <!-- /jumbotron -->
     </div> <!-- /container -->
   </body>
 </html>

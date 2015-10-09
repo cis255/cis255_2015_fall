@@ -112,8 +112,8 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Update</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <button type="submit" class="btn btn-success"><span class="icon icon-ok"></span>  Update</button>
+						  <a class="btn" href="index.php"><span class="icon icon-remove"></span>  Back</a>
 						</div>
 					</form>
 				</div>
