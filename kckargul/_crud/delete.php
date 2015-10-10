@@ -38,7 +38,8 @@
 
 <body>
     <div class="container">
-    
+		<!--adds a shaded rounded area around-->
+    	<div class="well"
     			<div class="span10 offset1">
     				<div class="row">
 		    			<h3>Delete a Customer</h3>
@@ -60,7 +61,7 @@
 						</div>
 					</form>
 				</div>
-				
+		</div>				
     </div> <!-- /container -->
   </body>
 </html>

@@ -55,7 +55,7 @@
 	margin-right:	5px;
 }
   .glyphicon{
-	padding-right:	5px;
+	margin-right:	5px !importanr;
 }
   img{
 	height:100px;
