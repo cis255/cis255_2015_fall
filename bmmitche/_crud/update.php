@@ -76,7 +76,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
     
     			<div class="span10 offset1">
     				<div class="row">

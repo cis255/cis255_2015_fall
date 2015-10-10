@@ -7,14 +7,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
     		<div class="row">
     			<h3>CIS 255 Email List</h3>
                 <p>The purpose of this list is to provide a back end to test front end techniques.</p>
     		</div>
 			<div class="row">
 				<p>
-					<a href="create.html" class="btn btn-success">Create</a>
+					<a href="create.php" class="btn btn-success">Create</a>
 				</p>
 				
 				<table class="table table-striped table-bordered">

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--	
+filename	: bmmitche_prog02.html
+author		: Bobby Mitchell
+description	: This program demonstrates the use of CSS/Bootstrap in email list and it's different pages
+			  in read, create, update, delete etc modes. Also how _crud files works.
+design		: 
+	<head>	: Background color using a .css file
+				Set viewpoint for mobile devices 
+	<body>	: 	Page Intro
+				Links for all the pages
+				Page Heading and sample 
+-->
+
+	<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+				<link   href="Prog2.css" rel="stylesheet">
+					<!-- #3 Used .. When references an internal css -->
+				</head>
+
+				<body id="page-top">
+					<section id="headers">
+						<div class="header-content">
+							<style>
+			h2 {color: green; text-align:center;}
+			p {text-align:center;}
+							</style>
+							<h2>Program 02: CSS/Bootstrap</h1>
+							<p>The index page and all other internal pages are shown below. URLs to each page are also given; <br>
+									<a href="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/index.php" target="_blank"> INDEX page</a><br>
+									<a href="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/create.php" target="_blank"> CREATE page</a><br>
+									<a href="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/read.php" target="_blank"> READ page</a><br>
+									<a href="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/update.php" target="_blank"> UPATE page</a><br>
+									<a href="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/delete.php" target="_blank"> DELETE page</a>
+							</p>
+						</div>
+					</section>
+						<div class="container-fluid">
+								<div class="col-lg-4 col-lg-offset-1 text-center">
+									<h1>Index</h1>
+										<iframe src="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/index.php" height=700 width=1000 frameborder=1 align="middle">
+											</iframe> <br><br>
+									<h1>Create</h1>
+										<iframe src="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/create.php" height=500 width=1000 frameborder=1 align="middle">
+										</iframe> <br><br>
+									<h1>Read</h1>
+									<!-- I put a sample read page here instead of the read main code that leads back to index page. -->
+										<iframe src="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/read.php?id=16" height=700 width=1000 frameborder=.5 align="middle">
+										</iframe> <br><br>
+									<h1>Update</h1>
+									<!-- I put a sample update page here instead of the update main code that leads back to index page. -->
+										<iframe src="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/update.php?id=20" height=500 width=1000 frameborder=.5 align="middle">
+										</iframe> <br><br>
+									<h1>Delete</h1>
+										<iframe src="http://csis.svsu.edu/~bmmitche/cis255/bmmitche/_crud/delete.php" height=500 width=1000 frameborder=.5 align="middle">
+										</iframe>
+								</div>
+						</div>
+					</section>
+				</body>
+	</html>			  
