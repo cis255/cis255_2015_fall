@@ -123,7 +123,8 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-					  
+					  <button type="submit" class="btn btn-success">Create</button>
+						 <!-- <a class="btn" href="index.php">Back</a> -->
 					  
 						
 						  
