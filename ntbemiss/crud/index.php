@@ -45,16 +45,16 @@
 		}
 		
 		h1 {
-			color: maroon;
+			color: blue;
 		} 
-</style>
+	</style>
 </head>
 
 <body>
     <div class="container">
     		<div class="row">
     			<h1 style="margin-left:30px;">CIS 255 Email List</h1>
-                <p>The purpose of this list is to provide a back end to test front end techniques.</p>
+                <p>The purpose of this list is to provide a back end to test front end stuff.</p>
     		</div>
 			<div class="row">
 				<p>
