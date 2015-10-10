@@ -1,0 +1,5 @@
+/*bootstap and stuff*/
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: red !important;
+}

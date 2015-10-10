@@ -21,6 +21,58 @@
 	-->
 	</head>
 	<body>
+	<!-- From page 21 of slides -->
+		<h1>A Basic FORM Example (from the slides)</h1>
+		<form method= "get" action="../gpcorser/gpcorser_process.php">
+		<fieldset>
+		<legend>This is a form</legend>
+		<label>Title of painting</label>
+		<input type = "text" name = "title">
+		<br />
+		<label>Country<label/>
+		<select name="where">
+		    <option>Canada</option>
+			<option>Denmark</option>
+			<option selected>Estonia</option>
+			<option>France</option>
+			
+			</select>
+			<br />
+			<textarea name="PaintingDescription" placeholder="Enter text here">
+			</textarea>
+			<input type="submit" />
+			</fieldset>
+			</form>
+		
+		<h1>A basic table example (from the slides)</h1>
+		<table border="1" background="medium.jpg" style="background-repeat: no-repeat;">
+		<tr>
+		    <th>Painting</th>
+			<th>Artist</th>
+			<th>1973</th>
+			<th colspan="2">Size</th>
+			<!--
+			<th>Width</th>
+			-->
+		</tr>
+		<tr>
+		    <td>Painting 1</td>
+			<td rowspan="2">Artist 1</td>
+			<td>1973</td>
+			<td>162 cm</td>
+			<td>128 cm</td>
+		</tr>
+		<tr>
+		    <td>Painting 1</td>
+			<td>Artist 1</td>
+			<td>1973</td>
+			<td>162 cm</td>
+			<td>128 cm</td>
+		</tr>
+		</table>
+		
+		
+		
 		<div class="row">
 			<div class="col-md-4 col-sm-2"><!--col-md-4 is 3 columns across page (12/4 =3)-->
 			<p>Dude!</p><!-- this is text -->
