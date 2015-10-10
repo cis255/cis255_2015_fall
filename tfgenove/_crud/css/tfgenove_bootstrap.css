@@ -41,6 +41,11 @@
 .nav>li>a:hover{
 	color: red !important;
 }
+/* 7. Class Selector */
+/* Overriding bootstrap class container */
+.container{
+	padding-bottom: 100px;
+}
 /* 7. Element Selector */
 body{
 	background-image: url("../../paper.jpg");
