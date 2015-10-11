@@ -92,7 +92,7 @@
 </head>
 
 <body>
-	<dialog id = "window"
+	
     <div class="container">
     
     			<div class="span10 offset1">
@@ -140,6 +140,6 @@
 				</div>
 				
     </div> <!-- /container -->
-	</dialog>
+	
   </body>
 </html>

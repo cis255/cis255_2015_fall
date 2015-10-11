@@ -15,6 +15,8 @@
 //9. Add an image to each of the 5 files.
 //10. Change all buttons to include appropriate glyph-icons.
 
+//#3, #5 within comments below
+
 	
 	require 'database.php';
 
@@ -74,18 +76,24 @@
 	
 	<!-- Meta tag makes website mobile-first-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	
 </head>
 
 <body>
 
-    <!-- class container creates a fixed width container. Another option is fluid-container, which will dynamically fill the view -->
-    <div class="container"> 
-    
+
+	<div class = "contents">
+    <!-- #5 (7) class container creates a fixed width container. Another option is fluid-container, which will dynamically fill the view -->
+   <div class="container"> 
+				<!-- #5 (8) sets span and offset of form below -->
     			<div class="span10 offset1">
+					<!-- #5 (9) formats the header using "row" format -->
     				<div class="row">
 		    			<h3>Create a Customer</h3>
 		    		</div>
-    		
+					<!-- #5 (10) Sets padding, margin, and height of form-->
 	    			<form class="form-horizontal" action="create.php" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Name</label>
@@ -115,13 +123,17 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Create</button>
-						  <a class="btn" href="index.php">Back</a>
+					  <button type="submit" class="btn btn-success">Create</button>
+						 <!-- <a class="btn" href="index.php">Back</a> -->
+					  
+						
+						  
 						</div>
 					</form>
 				</div>
-				
-    </div> <!-- /container -->
+   </div> <!-- /container -->
 	
+	
+	</div>
   </body>
 </html>

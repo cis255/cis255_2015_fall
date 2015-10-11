@@ -5,6 +5,7 @@
  */
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/*! Design element #7 is located below */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -136,6 +137,8 @@ button[disabled],
 html input[disabled] {
   cursor: default;
 }
+
+/* #7 CSS Psuedo Selector*/
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;

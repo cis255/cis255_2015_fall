@@ -1,0 +1,17 @@
+#message {
+	color: blue;
+	font-size: 150%;
+	background-color: gray;
+}
+.odd{
+	background-color: yellow;
+}
+p {
+	color: orange;
+}
+span {
+	color: green;
+}
+div p {
+	color: black;
+}

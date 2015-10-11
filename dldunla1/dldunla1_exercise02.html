@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
-filename: gpcorser_exercise02.html
+filename: dldunla1_exercise02.html
 -->
 <html>
 	<head>
 		<!-- favicon image and browser tab title -->
-		<title>CIS-255: George Corser</title>
+		<title>CIS-255: Demetrius Dunlap</title>
 		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
-		<link rel="stylesheet" href="gpcorser_exercise02.css" />
+		<link rel="stylesheet" href="dldunla1.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 
 		<!-- internal css 
@@ -26,21 +26,42 @@ filename: gpcorser_exercise02.html
 	</head>
 	<body>
 	
-	<h1 a Basic Table Example (from slides)</h2>
+	 <h1> a basic form example (from Slides)</h1>
+	 <form method="get" action="dldunla_process.php">
+		<fieldset>
+			<legend>Details</legend>
+			<p>
+			<label>Title: </label>
+			<input type="text" name="title" />
+			</p>
+			<p>
+			<label>Country: </label>
+			<select name="where"
+		<option>Choose a country</option>
+		<option>Canada</option>
+		<option>France</option>
+		<option>United States</option>
+		</select>
+		</p>
+		<input type="submit" />
+		</fieldset>
+	 </form>
+	
+	<h1 a Basic Table Example (from slides)</h1>
 	<table>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<th>Painting</th>
+			<th>Artist</th>
+			<th>Year </th>
+			<th>Height</th>
+			<th>Width</th>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>Painting1</td>
+			<td>artist1</td>
+			<td>1793</th>
+			<td>119cm</td>
+			<td>119cm</td>
 		</tr>
 	</table>
 	
@@ -51,7 +72,7 @@ filename: gpcorser_exercise02.html
 	
 	
 		<div class="container">
-			<h1 class="odd">George Corser</h1>
+			<h1 class="odd">Demetrius Dunlap</h1>
 			<h2>Exercise<span>0</span>2: CSS and Bootstrap</h2>
 			<p>The purpose of this page is to play around with CSS. </p>
 
@@ -69,19 +90,19 @@ filename: gpcorser_exercise02.html
 				</thead>
 				<tbody>
 					<tr>
-						<td>John</td>
-						<td>Doe</td>
-						<td>john@example.com</td>
+						<th>John</th>
+						<th>Doe</th>
+						<th>john@example.com</th>
 					</tr>
 					<tr>
-						<td>Mary</td>
-						<td>Moe</td>
-						<td>mary@example.com</td>
+						<th>Mary</th>
+						<th>Moe</th>
+						<th>mary@example.com</th>
 					</tr>
 					<tr>
-						<td>July</td>
-						<td>Dooley</td>
-						<td>july@example.com</td>
+						<th>July</th>
+						<th>Dooley</th>
+						<th>july@example.com</th>
 					</tr>
 				</tbody>
 			</table>
@@ -140,7 +161,7 @@ filename: gpcorser_exercise02.html
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6">
-					<a href="italy.jpg">Italy!</a>
+					
 					<!-- this is a link -->
 				</div>
 			</div>

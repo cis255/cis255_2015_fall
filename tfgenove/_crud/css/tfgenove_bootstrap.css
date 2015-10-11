@@ -1,3 +1,8 @@
+/* 4. External CSS */
+
+/* 7. Class Selector */
+/* 8. Specificity: the class selector .banner is more specific than the element selector body, so the background image
+	  for items of class banner will be red_white_logo.png rather than paper.jpg */
 .banner{
 	background-image: url("../../red_white_logo.png");
 	background-repeat: no-repeat;
@@ -6,21 +11,46 @@
 	text-align: center;
 	line-height: 30%;
 }
-#emails{
-	margin-top: 150px;
-}
+/* 7. Class Selector */
+/* Images for the colors of glyphicons found at http://www.devlifeline.com/2013/09/twitter-bootstrap-glyphicons-extended.html */
 .icon-blue{
-	background-image: url("../img/glyphicons-halflings-lightblue.png") !important;
+	background-image: url("../img/glyphicons-halflings-lightblue.png");
 }
+/* 7. Class Selector */
 .icon-red {
-	background-image: url("../img/glyphicons-halflings-red.png") !important;
+	background-image: url("../img/glyphicons-halflings-red.png");
 }
+/* 7. Class Selector */
 .icon-yellow {
-	background-image: url("../img/glyphicons-halflings-yellow.png") !important;
+	background-image: url("../img/glyphicons-halflings-yellow.png");
 }
+/* 7. Class Selector */
+/* Overrides bootstrap class form-actions to change the background-image */
+.form-actions{
+	background-image: url("../../paper.jpg");
+}
+/* 7. Class Selector */
+/* 6. !important overrides Bootstrap class to set color to black */
+/* 8. Inheritance: The child of nav, li and its child, a inherit the text color of black */
+.nav>li>a{
+	color: black !important;
+}
+/* 7. Class Selector */
+/* 7. Pseudo Selector and 6. !important overrides Bootstrap class to set color to red when the user is hovering over the nav item */
+/* 8. Inheritance: The child of nav, li and its child, a inherit the text color of red when the item is hovered over */
+.nav>li>a:hover{
+	color: red !important;
+}
+/* 7. Class Selector */
+/* Overriding bootstrap class container */
+.container{
+	padding-bottom: 100px;
+}
+/* 7. Element Selector */
 body{
 	background-image: url("../../paper.jpg");
 }
-.form-actions{
-	background-image: url("../../paper.jpg");
+/* 7. Attribute Selector */
+input[placeholder]{
+	background-color: #E0E0E0;
 }

@@ -1,5 +1,5 @@
 <?php 
-	require 'database.php';
+	require 'database.php'; 
 	$id = null;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
@@ -20,53 +20,57 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8">
+			<link   href="css/bootstrap.min.css" rel="stylesheet">
+				<link rel="stylesheet" href="../crud/css/prog2.css">	
+					<script src="js/bootstrap.min.js"/>
+				</head>
 
-<body>
-    <div class="container">
-    
-    			<div class="span10 offset1">
-    				<div class="row">
-		    			<h3>Read a Customer</h3>
-		    		</div>
-		    		
-	    			<div class="form-horizontal" >
-					  <div class="control-group">
-					    <label class="control-label">Name</label>
-					    <div class="controls">
-						    <label class="checkbox">
-						     	<?php echo $data['name'];?>
-						    </label>
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label">Email Address</label>
-					    <div class="controls">
-					      	<label class="checkbox">
-						     	<?php echo $data['email'];?>
-						    </label>
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label">Mobile Number</label>
-					    <div class="controls">
-					      	<label class="checkbox">
-						     	<?php echo $data['mobile'];?>
-						    </label>
-					    </div>
-					  </div>
-					    <div class="form-actions">
-						  <a class="btn" href="index.php">Back</a>
-					   </div>
-					
-					 
+				<body>
+					<div class="container">
+
+						<div class="span10 offset1">
+							<div class="row">
+								<h3>Read an Alien</h3>
+							</div>
+
+							<div class="form-horizontal" >
+								<div class="control-group">
+									<label class="control-label">Name</label>
+									<div class="controls">
+										<label class="checkbox">
+											<?php echo $data['name'];?>
+										</label>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Email Address</label>
+									<div class="controls">
+										<label class="checkbox">
+											<?php echo $data['email'];?>
+										</label>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Mobile Number</label>
+									<div class="controls">
+										<label class="checkbox">
+											<?php echo $data['mobile'];?>
+										</label>
+									</div>
+								</div>
+								<div class="form-actions">
+									<a class="btn" href="index.php">Back</a>
+								</div>
+
+
+							</div>
+						</div>
+
 					</div>
-				</div>
-				
-    </div> <!-- /container -->
-  </body>
-</html>
+					<!-- /container -->
+					<img src="https://pbs.twimg.com/profile_images/1835472348/html5-logo-1_normal.jpg"/>
+					<!--9.4 image -->
+				</body>
+			</html>

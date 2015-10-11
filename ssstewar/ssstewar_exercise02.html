@@ -13,36 +13,86 @@ design     : 1. prints, "Hello, Steve"
 
 <h1>CIS-255: Steve Stewart</h1>
 <h2>Exercise<span>0</span>2</h2>
-<div class="container">
-  <h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p>            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+<h1>A Basic FORM Example (from the slides)</h1> <!-- page 21 of slides ch. 4 -->
+<form method="get" action="ssstewar_process.php>"
+<fieldset>
+<legend>This is a form</legend>
+<label>Title of Painting</label>
+<input type="text" name="title">
+<br />
+<label>Country</label>
+<select name="where">
+	<option>Canadia</option>
+	<option>Amsterdam</option>
+	<option selected>Estonia</option>
+	<option>France</option>
+</select>
+<br />
+<textarea name="paintingDescription" placeholder="Enter text here">
+</textarea>
+<input type="submit"/>
+</fieldset>
+</form>	
+	
+<h1>A Basic Table Example (from the slides)</h1>
+<table border = "1" background="small.jpg">
+	<tr>
+		<th>Painting</th>
+		<th>Artist</th>
+		<th>Year</th>
+		<th colspan="2">Size (width x height)</th>
+		<!--
+		<th>Height</th>
+		-->
+	</tr>
+	<tr>
+		<td>Painting 1</td>
+		<td>Artist 1</td>
+		<td>1738</td>
+		<td>162 cm</td>
+		<td>128 cm</td>
+	</tr>
+	<tr>
+		<td>Painting 2</td>
+		<td>Artist 2</td>
+		<td>1799</td>
+		<td>162 cm</td>
+		<td>128 cm</td>
+	</tr>
+</table>
+
+
+	<div class="container">
+		<h2>Striped Rows</h2>
+		<p>The .table-striped class adds zebra-stripes to a table:</p>            
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+		<tbody>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>john@example.com</td>
+			</tr>
+			<tr>
+				<td>Mary</td>
+				<td>Moe</td>
+				<td>mary@example.com</td>
+			</tr>
+			<tr>
+				<td>July</td>
+				<td>Dooley</td>
+				<td>july@example.com</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
 
 
 <!--
