@@ -97,6 +97,15 @@
     
     			<div class="span10 offset1">
     				<div class="row">
+					<table class = "table table-boredered">
+						<thead>
+						<tr>
+						<th>
+						<img  src= "img/light-blue-background-3.jpg" style="width:100%; height:150px; position:top left:0px" />
+						</th>
+						</tr>
+						</thead>
+						</table>
 		    			<h3>Update a Customer</h3>
 		    		</div>
     		
@@ -129,7 +138,7 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Update</button>
+						  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-submit"></span>Update</button>
 						  <a class="btn" href="index.php">Back</a>
 						  
 						  

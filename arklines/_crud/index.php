@@ -42,6 +42,14 @@
 	
 	<style>
 		h3{font-weight: bold !important;}
+		
+		span {
+    color: blue;
+    border: 1px solid black;
+}
+<!-- inhertitence on this object means that span is set to blue, except for those with .class = extra; this inherits from parent-->
+.extra span {
+    color: inherit;
 	</style>	
 </head>
 
@@ -84,6 +92,16 @@
 	<div id="page-content-wrapper">
 		<!-- #5 (2) content of the page is fluid so that it adapts to the collapsible sidebar-->
 		<div class="container-fluid">
+			<!-- these tags are to format the header image banner to match the width of the table below -->
+			<table class = "table table-boredered">
+			<thead>
+			<tr>
+			<th>
+			<img  src= "img/light-blue-background-3.jpg" style="width:100%; height:150px; position:top left:0px" />
+			</th>
+			</tr>
+			</thead>
+			</table>
 			<!-- #5 (3) added class to format header-->
     		<h3 class="header page-header">CIS 255 Email List</h3>
 			<!-- ID Puprose will be changed via an id selector in bootstrap.CSS -->
@@ -91,7 +109,7 @@
 			<!-- #5 (4) formats row column and margin sizes-->
 			<div class="row">
 				<p>
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Create</button>
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus-sign"></span>Create</button>
 				</p>
 				
 				<table class="table table-striped table-bordered">
@@ -115,13 +133,13 @@
 							   	echo '<td>'. $row['mobile'] . '</td>';
 							   	echo '<td width=250>';
 							   	echo '<a class="btn" href="read.php?id='.
-								   $row['id'].'">Read</a>';
+								   $row['id'].'"> <span class="glyphicon glyphicon-search"></span>Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'">Update</a>';
+								   href="update.php?id='.$row['id'].'"> <span class="glyphicon glyphicon-success"></span>Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" 
-								   href="delete.php?id='.$row['id'].'">Delete</a>';
+								   href="delete.php?id='.$row['id'].'"> <span class="glyphicon glyphicon-danger"></span>Delete</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }
@@ -131,20 +149,21 @@
 	            </table>
 				<!-- changed tutorial button from class success to class info, which is normally used for links.-->
 				<a href="http://www.startutorial.com/articles/view/php-crud-tutorial-part-1" class="btn btn-info" role="button">Tutorial</a>
-				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> <span class="glyphicon glyphicon-toggle"></span>Toggle Menu</a>
 			</div> <!--row -->
 			
 			
 		
 
   <!-- Modal -->
+  <!-- specificity; style is specifically for this class, id and role combination. Will overwrite just a class and id combination-->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal"> <span class="glyphicon glyphicon-close"></span>&times;</button>
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
@@ -152,7 +171,7 @@
 src="http://csis.svsu.edu/~arklines/cis255/arklines/_crud/create.php" width="500" height="500"> </iframe>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"> <span class="glyphicon glyphicon-close"></span>Close</button>
         </div>
       </div>
       

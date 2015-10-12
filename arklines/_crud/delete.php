@@ -44,21 +44,33 @@
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
+	
+	
 </head>
 
 <body>
     <div class="container">
-    
+				
     			<div class="span10 offset1">
     				<div class="row">
+					<table class = "table table-boredered">
+						<thead>
+						<tr>
+						<th>
+						<img  src= "img/light-blue-background-3.jpg" style="width:100%; height:150px; position:top left:0px" />
+						</th>
+						</tr>
+						</thead>
+						</table>
 		    			<h3>Delete a Customer</h3>
+						
 		    		</div>
 		    		
 	    			<form class="form-horizontal" action="delete.php" method="post">
 	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 					  <p class="alert alert-error">Are you sure to delete ?</p>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-danger">Yes</button>
+						  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-danger"></span>Yes</button>
 						  <a class="btn" href="index.php">No</a>
 						</div>
 					</form>
