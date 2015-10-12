@@ -1,0 +1,43 @@
+/* Numbers on this page
+		4.3 External CSS
+		7
+*/
+
+#main_table /* 7.1 ID selector */
+{
+	border: 3px solid !important; /* 6. !important attribute */
+
+}
+
+.btn-primary  /* 7.2 Class selector */
+{
+	background: #0099cc;
+	color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+	background: #007299;
+	box-shadow: none;
+}
+
+th /* 7.3 Element selector */
+{
+	font-weight: 900;
+}
+
+th:hover
+{
+	border-style: none !important!;
+	border-bottom: medium solid blue !important;
+}
+
+[class="row jumbotron"]
+{
+	box-shadow: 0 0 50px #888888;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #e8e8e8;
+}

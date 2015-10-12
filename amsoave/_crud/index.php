@@ -12,6 +12,12 @@ Design: The program is a menu that allows a user to create, read, update, or del
 			4. The information for each user is printed row by row, and is retrieved from the database
 			5. An update, read, and delete button is printed in each row.
 			6. The tutorial button redirects you to a guide on _crud
+assignment: this program demonstrates the following:
+			1. relative address of external file
+			2. absolute address of external file
+			3. bootstrap class
+			4. inline css
+			5. external css
 			 
 -->
 <html lang="en">

@@ -1,0 +1,7 @@
+	.well {
+		font-family: "Courier New" !important;
+	}
+	
+	.well:hover{
+		background-image: url("Background.jpg") !important;    
+	}
