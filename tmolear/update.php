@@ -2,6 +2,15 @@
 	
 	require 'database.php';
 
+	$id = null;
+	if ( !empty($_GET['id'])) {
+		$id = $_REQUEST['id'];
+	}
+	
+	if ( null==$id ) {
+		header("Location: index.php");
+	}
+	
 	if ( !empty($_POST)) {
 		// keep track validation errors
 		$nameError = null;
@@ -33,16 +42,27 @@
 			$valid = false;
 		}
 		
-		// insert data
+		// update data
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO customers (name,email,mobile) values(?, ?, ?)";
+			$sql = "UPDATE customers  set name = ?, email = ?, mobile =? WHERE id = ?";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$email,$mobile));
+			$q->execute(array($name,$email,$mobile,$id));
 			Database::disconnect();
 			header("Location: index.php");
 		}
+	} else {
+		$pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "SELECT * FROM customers where id = ?";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($id));
+		$data = $q->fetch(PDO::FETCH_ASSOC);
+		$name = $data['name'];
+		$email = $data['email'];
+		$mobile = $data['mobile'];
+		Database::disconnect();
 	}
 ?>
 
@@ -50,7 +70,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Create Customer</title>
+	<title>Update Customer</title>
 	
     <meta charset="utf-8">
 	<link rel="stylesheet" href="..\my.css">
@@ -69,9 +89,9 @@
 		<div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php">Home</a></li>
-				<li class="active"><a href="create.php">Create</a></li>
+				<li><a href="create.php">Create</a></li>
 				<li><a href="delete.php">Delete</a></li>
-				<li><a href="update.php">Update</a></li>
+				<li class="active"><a href="update.php">Update</a></li>
 				<li><a href="read.php">Read</a></li>
 			</ul>
 		</div>
@@ -80,20 +100,20 @@
 	</div>
 	
     <div class="container">
-	
-			<div style="text-align: center" class="well">
-						<h3>Use the Input Boxes to create a new user!</h3>
-			</div>
-			
-			<div class="alert alert-info">
+    
+    				<div style="text-align: center" class="well">
+						<h3>Use the Input Boxes to update the user's information!</h3>
+					</div>
+					
+				<div class="alert alert-info">
 					<strong>Info!</strong> Make sure you don't leave any of the boxes blank!
-			</div>
-    				
-		    		  		
-	    			<form class="form-horizontal" role="form-horizontal" action="create.php" method="post">
+				</div>
+			
+					
+	    			<form class="form-horizontal" role="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
 					  <div class="form-group <?php echo !empty($nameError)?'error':'';?>">
 					    <div class="controls">
-							<label class="control-label col-sm-4">Name:</label>
+						    <label class="control-label col-sm-4">Name:</label>
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
 					      		<span class="help-inline"><?php echo $nameError;?></span>
@@ -119,11 +139,10 @@
 					    </div>
 					  </div>
 					  <div class="form-actions col-sm-offset-4">
-						  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Create</button>
+						  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> Update</button>
 						  <a href="index.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
 						</div>
 					</form>
-				
 				
     </div> <!-- /container -->
   </body>
