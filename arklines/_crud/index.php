@@ -181,6 +181,7 @@ src="http://csis.svsu.edu/~arklines/cis255/arklines/_crud/create.php" width="500
 			
 		</div> <!-- container fluid -->
 	</div>
+	<a href="https://moqups.com/#!/edit/arklines/oFboMYth" >Moqup</a>
     <!-- /#content wrapper -->
 </div> <!-- wrapper>
    
