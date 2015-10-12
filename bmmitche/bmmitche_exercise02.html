@@ -13,8 +13,59 @@ author		: Bobby Mitchell (CIS 255, Fall 2015)
 		<!-- header for website with photo -->
 	</head>
 	<body>
+	
+	<h1>A basic form example from page 21</h1>
+	<form method="get" action="bmmitche_process.php">
+		<fieldset>
+			<legend> This is a form</legend>
+				<label>Title of Painting: </label>
+				<input type="text" name="title" /><br />
+				<label>Country</label>
+				<select name="where">
+					<option>Choose a country</option>
+					<option>Canada</option>
+					<option>Finland</option>
+					<option>United States</option>
+				</select>
+				<br />
+				<textarea name="paintingDescription" placeholder="Enter some text">
+				</textarea>
+				<input type="submit" />
+		</fieldset>
+	</form>
+	
 		<h1>Bobby Mitchell</h1>
 		<h2>Exercise <span>0</span>2 </h2>
+	
+	<h1> A basic table example (from the slides)</h1>
+	<table border="1" background="medium.jpg" style background-repeat: no repeat>
+		<tr>
+			<th><h1>Painting</h1></th>
+			<th>Artist</th>
+			<th>Year</th>
+			<th colspan="2">Size</th>
+			<!--
+			<th>Width</th>
+			-->
+		</tr>	
+		<tr>
+			<td>The Death of Marat</td>
+			<td rowspan="2">Jaques-Louis David</td>
+			<td>1793</td>
+			<td>162cm</td>
+			<td><img src="small.jpg"></td>
+		</tr>
+		<tr>
+			<td>Burial at Ornans</td>
+			<!--
+			<td>Gustave Courbet</td>
+			-->
+			<td>1849</td>
+			<td>314cm</td>
+			<td>663cm</td>
+		</tr>
+	</table>
+	
 		<div class="container">
   <h2>Basic Table</h2>
   <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            

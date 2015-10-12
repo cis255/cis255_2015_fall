@@ -1,10 +1,8 @@
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: yellow !important;
+}
+
 a:hover {
-		background-color: red;
+		background-color: red !important;
 		}
 		
-[title] {
-		cursor: help;
-		padding-bottom: 3px;
-		border-bottom: 2px dotted blue;
-		text-decoration: none;
-		}

@@ -1,3 +1,7 @@
+/* External CSS*/
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: pink !important;
+}
 #message {
 		color:red;
 		}
@@ -14,6 +18,9 @@
 		color: blue;
 		}
 	.odd {
-		background-color: yellow
+		background-color: yellow;
+		}
+	a:hover {
+		background-color: red;
 		}
 	
