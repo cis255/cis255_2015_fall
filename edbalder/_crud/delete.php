@@ -1,3 +1,7 @@
+<!-- Numbers on this Page
+		5.17
+-->
+
 <?php 
 	require 'database.php';
 	$id = 0;
@@ -35,15 +39,15 @@
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Delete a Customer</h3>
+		    			<h3 class="text-danger">Delete a Customer</h3> <!-- 5.17 "text-danger" makes the text red -->
 		    		</div>
 		    		
 	    			<form class="form-horizontal" action="delete.php" method="post">
 	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 					  <p class="alert alert-error">Are you sure to delete ?</p>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-danger">Yes</button>
-						  <a class="btn" href="index.php">No</a>
+						  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-ok"> Yes</span></button>
+						  <a class="btn" href="index.php"><span class="glyphicon glyphicon-remove"> No</span></a>
 						</div>
 					</form>
 				</div>

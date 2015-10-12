@@ -1,3 +1,7 @@
+<!-- Numbers on this page
+			5.16
+-->
+
 <?php 
 	
 	require 'database.php';
@@ -60,7 +64,7 @@
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Create a Customer</h3>
+						<h3 class="text-success">Create a Customer</h3> <!-- 5.16 "text-success" makes the text green -->
 		    		</div>
     		
 	    			<form class="form-horizontal" action="create.php" method="post">
@@ -92,8 +96,8 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Create</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <button type="submit" class="btn btn-success glyphicon glyphicon-pencil">Create</button>
+						  <a class="btn glyphicon glyphicon-hand-left" href="index.php"> Back</a>
 						</div>
 					</form>
 				</div>
