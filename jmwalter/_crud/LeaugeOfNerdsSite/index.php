@@ -2,36 +2,42 @@
 <html lang="en">
 
 <head>
-<!--  Note: this page has working links to other pages, but those pages are not commented and the content is the stock content from bootstrap
-	Assignment Requirements:
-		1._crud folder manipulation was performed in class
-		2.css/php files were edited to personalize my webPage
-		3. in my clean-blog_min.css folder when i link to my font squirl fonts i use .. to get to the font files
-			i used absolute referencing in the about me link to go to my cis255 folder on the server
-		4. 	external css is used all over the place in this page 
-			internal css is used --
-			inline is used --
-		5. i actually had to go into the css of a few different classes in the css files and modify the margins to fit right	
-			infact the buttons gave me the most trouble because they were to big and stagered.. so i searched for btn in the css file
-			and just adjusted the padding so they were on one line instead of wrapping down. 
-			-- use/change 20 bootstrap tags-- ... check!
-		6. -- use important tag-- check
-		
-		7. there are several class and element selectors in the css files that i personally edited such as .btn .tbody and body
+
+<!--  Note: this page has working links to other pages, but those pages are not commented and the content is the stock content from bootstrap 
+					pages include (contact.html, post.html, about.html)
+	author: Joshua Walters, cis 255, fall 2015
+	purpose: to create a web page (or site in this case) to demonstrate we know how to use css and bootstrap in a site. 
+				we do this by editing existing php files, 
+	description:
+		Assignment Requirements:
+			1._crud folder manipulation was performed in class
+			2.css/php files were edited to personalize my webPage
+			3. in my clean-blog_min.css folder when i link to my font squirl fonts i use ..(relative referencing) to get to the font files
+				i used absolute referencing in the about me link to go to my cis255 folder on the server
+			4. 	external css is used all over the place in this page 
+				internal css is used -- in the head section
+				in line is used -- search for ""inline css""
+			5. i actually had to go into the css of a few different classes in the css files and modify the margins to fit right	
+				infact the buttons gave me the most trouble because they were to big and stagered.. so i searched for btn in the css file
+				and just adjusted the padding so they were on one line instead of wrapping down. 
+				-- use/change 20 bootstrap tags-- ... check!
+			6. -- use important tag-- check
 			
-		8. location is the trickies part of my css links for example when i tried to edit the button size i was doing it in the wrong
-			file at first and then had to go to the clean.blah.blah css file to change it, as well as the fonts.
-			specificity was also a pain in this site because there were already so many EXTREAMLY specific settings in the bootstrap
-			it was hard to understand how to change a certian element, since i didnt write the css i had to atleast skim it to figure out things
-			inhearitance was not as difficult in this site the biggest was when i was changing the font using fontsquirl and had to change most 
-			itterations of font-family to get the font to change everywere i decided to change all locations of font family to be safe!
-		
-		9. -- add images-- not sure what you ment by the 5 files but i used paint.net and gimp to create my own custmo banner the same
-							dimmentions as the stock one, plus i did that for a all the pages about ect. and added the icons so i hope thats what you meant 
-		10.	
-		extra: btn class was changed to fit in the same line in the table, this gave me a lot of trouble 
-			content was changed, to represent my podcast starting in a few weeks.
-			font was customly changed using font squirl
+			7. there are several class and element selectors in the css files that i personally edited such as .btn .tbody and body
+				
+			8. location is the trickies part of my css links for example when i tried to edit the button size i was doing it in the wrong
+				file at first and then had to go to the clean.blah.blah css file to change it, as well as the fonts.
+				specificity was also a pain in this site because there were already so many EXTREAMLY specific settings in the bootstrap
+				it was hard to understand how to change a certian element, since i didnt write the css i had to atleast skim it to figure out things
+				inhearitance was not as difficult in this site the biggest was when i was changing the font using fontsquirl and had to change most 
+				itterations of font-family to get the font to change everywere i decided to change all locations of font family to be safe!
+			
+			9. -- add images-- not sure what you ment by the 5 files but i used paint.net and gimp to create my own custmo banner the same
+								dimmentions as the stock one, plus i did that for a all the pages about ect. and added the icons so i hope thats what you meant 
+			10.	
+			extra: btn class was changed to fit in the same line in the table, this gave me a lot of trouble 
+				content was changed, to represent my podcast starting in a few weeks.
+				font was customly changed using font squirl
 	-->
 	
     <meta charset="utf-8">
@@ -111,13 +117,13 @@
 		<!-- Main Content -->
 		<div class="container"><!--8. because we closed the last container div we must open an new one -->
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><!--9. more formating class col stuff -->
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><!--9. more formatting class col stuff -->
 					<div class="post-preview"><!--10. what this post-preview class and the a tag under it are doing is making the intire title/subtitle/and date/ in a div and a link to that particular post -->
 						<a href="post.html">
 							<h2 class="post-title"><!--11. larger text, ment to get your attention and inform the reader what the title of the blog post is  -->
 								Fall tv reviews, upcoming movies, wrestling this week, and countdown to Star Wars!
 							</h2>
-							<h3 class="post-subtitle"> <!--12. subtitle is for the caption or brief explination for the title, it is set to be smaller text then the heading -->
+							<h3 class="post-subtitle"> <!--12. subtitle is for the caption or brief explanation for the title, it is set to be smaller text then the heading -->
 								First post, introductions and resumes?
 							</h3>
 						</a>

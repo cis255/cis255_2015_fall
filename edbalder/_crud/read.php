@@ -1,3 +1,8 @@
+<!-- Numbers on this Page
+		5.18-5.20
+-->
+
+
 <?php 
 	require 'database.php';
 	$id = null;
@@ -27,14 +32,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"> <!-- 5.18 Contains the page in a grid system-->
     
     			<div class="span10 offset1">
-    				<div class="row">
+    				<div class="row"> <!-- 5.19 a row in the .container grid system -->
 		    			<h3>Read a Customer</h3>
 		    		</div>
 		    		
-	    			<div class="form-horizontal" >
+	    			<div class="form-horizontal" > <!-- 5.20 creates a horizontal input form -->
 					  <div class="control-group">
 					    <label class="control-label">Name</label>
 					    <div class="controls">
@@ -60,7 +65,7 @@
 					    </div>
 					  </div>
 					    <div class="form-actions">
-						  <a class="btn" href="index.php">Back</a>
+						  <a class="btn" href="index.php"><span class="glyphicon glyphicon-hand-left"> Back</span></a>
 					   </div>
 					
 					 
