@@ -56,6 +56,7 @@
 </head>
 
 <body>
+	
     <div class="container">
     
     			<div class="span10 offset1">
@@ -97,7 +98,6 @@
 						</div>
 					</form>
 				</div>
-				
     </div> <!-- /container -->
   </body>
 </html>

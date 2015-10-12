@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
+	<a href="italy.jpg">Italy!</a>
     <script src="js/bootstrap.min.js"></script>
 </head>
 
