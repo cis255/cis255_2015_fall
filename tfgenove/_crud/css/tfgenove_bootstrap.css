@@ -1,3 +1,14 @@
+/* 
+filename: tfgenove_bootstrap.css
+author: Tessa Genovese, CIS 255, Fall 2015
+description: The file contains the formatting for the web pages for program 2.
+design: 
+		1. Class Selectors
+		2. Pseudo Selector
+		3. Element Selector
+		4. Attribute Selector
+*/
+
 /* 4. External CSS */
 
 /* 7. Class Selector */
@@ -44,7 +55,7 @@
 /* 7. Class Selector */
 /* Overriding bootstrap class container */
 .container{
-	padding-bottom: 100px;
+	padding-bottom: 400px;
 }
 /* 7. Element Selector */
 body{

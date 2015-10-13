@@ -33,6 +33,8 @@ design: The file creates a navigation bar, table, a link to a diagram, and a foo
 			#emails{
 			margin-top: 150px;}
 		</style>
+		
+		<title>Program 2</title>
 	</head>
 	
 	<body>

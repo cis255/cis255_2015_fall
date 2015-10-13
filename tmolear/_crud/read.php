@@ -21,46 +21,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Read Customer</title>
+	
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
+	<div class="navbar">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar navbar">
+			<div class="navbar-nav navbar-left">
+				<a class="navbar-brand" href="index.php"><img src="Gaming Central Heading.jpg" class="img-rounded"></a>
+			</div>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="create.php">Create</a></li>
+				<li><a href="delete.php">Delete</a></li>
+				<li><a href="update.php">Update</a></li>
+				<li class="active"><a href="read.php">Read</a></li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+	</div>
+	
     <div class="container">
+			<div style="text-align: center" class="well">
+						<h3>Here is the customer's information!</h3>
+			</div>
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Read a Customer</h3>
 		    		</div>
 		    		
 	    			<div class="form-horizontal" >
-					  <div class="control-group">
-					    <label class="control-label">Name</label>
+					  <div class="form-group">
+						<label class="control-label col-sm-5"><span class="text-info">Name:</span></label>
 					    <div class="controls">
 						    <label class="checkbox">
 						     	<?php echo $data['name'];?>
 						    </label>
 					    </div>
 					  </div>
-					  <div class="control-group">
-					    <label class="control-label">Email Address</label>
+					  <div class="form-group">
+					    <label class="control-label col-sm-5"><span class="text-info">Email Address:</span></label>
 					    <div class="controls">
 					      	<label class="checkbox">
 						     	<?php echo $data['email'];?>
 						    </label>
 					    </div>
 					  </div>
-					  <div class="control-group">
-					    <label class="control-label">Mobile Number</label>
+					  <div class="form-group">
+					    <label class="control-label col-sm-5"><span class="text-info">Mobile Number:</span></label>
 					    <div class="controls">
 					      	<label class="checkbox">
 						     	<?php echo $data['mobile'];?>
 						    </label>
 					    </div>
 					  </div>
-					    <div class="form-actions">
-						  <a class="btn" href="index.php">Back</a>
+					    <div class="form-actions col-sm-offset-5">
+						  <a href="index.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
 					   </div>
 					
 					 
