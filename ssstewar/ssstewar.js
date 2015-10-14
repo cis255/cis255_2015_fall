@@ -1,0 +1,1 @@
+alert('3. you should click ok');
