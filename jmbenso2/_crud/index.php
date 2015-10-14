@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-filename: 		jmbenso2_prog02.php
+filename: 		index.php
 author:   		Jon Benson, CIS-255, Fall 2015
 description: 	This file is the index of a simple front-end showcasing various techniques of bootstrap and CSS.
 
