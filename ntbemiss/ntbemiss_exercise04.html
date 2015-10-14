@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- 
+Author:		Nick Bemiss
+Filename:	ntbemiss_exercise04.html
+Purpose:	demonstrate javascript: inline, internal, external
+Design:		<head>
+				nothing
+			<body>
+				1.inline javascript
+				2.internal javascript
+				3.external javascript
+-->
+
+<html>
+	<head>
+		<!--3.external javascript-->
+		<script type="text/javascript" scr="ntbemiss.js"></script>
+		<!--2.internal javascript-->
+		<script>
+			alert('You loaded the page, NIMWIT!');
+		</script>
+	</head>
+	<body>
+	<!-- 1.Inline Javascripte-->
+	<input type="button" onclick="alert('uhhh you did it');" value="Do it"/>
+		<script>
+			alert('You loaded the page, NIMWIT!');
+		</script>
+	</body>
+</html>
