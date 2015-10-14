@@ -1,0 +1,6 @@
+/* Use of important will cause it to overwrite the bootstrap background even though our file appears first*/
+body {
+    background: #ffffff !important;
+}
+
+
