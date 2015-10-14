@@ -1,3 +1,12 @@
+<!--Name: 	Kevin Kargula
+	Class:	CSI 255
+	Desgin:	"Create a Customer"
+			visually appealing picture
+			Name - textbox("name")
+			email address = textbox("email address")
+			mobile number - textbox("mobile number")
+			create success button - back default button
+-->
 <?php 
 	
 	require 'database.php';
@@ -49,33 +58,39 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+
+</style>
 <head>
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container">
-    
     			<div class="span10 offset1">
     				<div class="row">
 		    			<h3>Create a Customer</h3>
 		    		</div>
-    		
+					<!--puts a visually appealing picture there-->
+    				<img src="http://minifigs.me/wp-content/uploads/2012/11/Parts1.jpg?65d229"/>
 	    			<form class="form-horizontal" action="create.php" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Name</label>
 					    <div class="controls">
+							<!--makes it so that the name is put into the database and returns a message if it's empty-->
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
 					      		<span class="help-inline"><?php echo $nameError;?></span>
 					      	<?php endif; ?>
 					    </div>
 					  </div>
+					  <!--gives you error message if empty-->
 					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
 					    <label class="control-label">Email Address</label>
 					    <div class="controls">
+							<!--Makes it possible to put name into database and gives message if it's empty-->
 					      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
 					      	<?php if (!empty($emailError)): ?>
 					      		<span class="help-inline"><?php echo $emailError;?></span>
@@ -85,6 +100,7 @@
 					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
 					    <label class="control-label">Mobile Number</label>
 					    <div class="controls">
+							<!--same thing as email and name, except with "mobile number"-->
 					      	<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
 					      	<?php if (!empty($mobileError)): ?>
 					      		<span class="help-inline"><?php echo $mobileError;?></span>
@@ -97,7 +113,6 @@
 						</div>
 					</form>
 				</div>
-				
     </div> <!-- /container -->
   </body>
 </html>

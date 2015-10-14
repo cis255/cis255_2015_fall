@@ -1,8 +1,9 @@
 <!--Name: 	Kevin Kargula
 	Class:	CIS 255
-	Desgin:	trash image
-			"Do you want to delete"
-			yes button danger check mark _ no button default X mark
+	Desgin:	Well
+				trash image
+				"Do you want to delete"
+				yes button danger check mark _ no button default X mark
 -->
 <?php 
 	require 'database.php';

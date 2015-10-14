@@ -1,3 +1,12 @@
+<!--Name: 	Kevin Kargula
+	Class: 	CIS 255
+	Design:	Appealing picture
+			"Read Customer"
+			"Name" - name
+			"email address" - email address
+			"mobile number" - mobile number
+			back default button
+-->
 <?php 
 	require 'database.php';
 	$id = null;
