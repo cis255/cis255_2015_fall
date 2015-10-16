@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+filename : zakruege_exercise04.html
+author   : Zack Krueger
+ppurpose : demonstrate javascript, inline, internal and external.
+design   : <head> 
+				nothing
+		   <body>
+				1. inline javascript
+				2. internal javascript
+				3. external javascript
+-->
+<html>
+	<head>
+		<!-- 3. external javascript -->
+		<script> type="text/javascript" src="zakruege.js" </script>
+	
+		<!-- 2. internal javascript -->
+		<script>
+			alert('2. You should click ok')
+		</script>
+	</head>
+	<body>
+		<!-- 1. Inline Javascript -->
+		<input type="button" onclick="alert('You Clicked OK');" value="OK"/>
+			<script> alert('1. You should click ok') </script>
+	</body>
+</html>
+
+
+
+
