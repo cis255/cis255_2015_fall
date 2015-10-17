@@ -40,25 +40,25 @@
 
 						<style>
 							<!--7.1 This is element selector-->
-		h1 {
-			color: red;
-		} 
-		p  {
-			color: white;
-			font-family: "Arial";
-			font-weight: bold;
-		}
-		th {
-			color: white; !important
-		}
+							h1 {
+								color: red;
+							} 
+							p  {
+								color: green;
+								font-family: "Arial";
+								font-weight: bold;
+							}
+							th {
+								color: #00CC00; !important
+								}
 							<!--8.c location causes this color to only apply to this page, as opposed to the color set in the css file -->
-		body {
-			background-color: #00CC00;
-		}
+							body {
+								background-color: #00CC00 !important;
+							}
 							<!--7.4 psuedo selector-->
-		a:hover {
-			color: #FF0000;
-		}
+							a:hover {
+								color: #FF0000;
+							}
 
 						</style>
 					</head>
@@ -81,7 +81,7 @@
 								<!--8.a Jumboton also inherits the color of the text -->
 								<!--7.2 This is class selector-->
 
-								<p style="color: white !important"  id="message">The purpose of this list is to prove to you that aliens exist.</p>
+								<p style="color: grey !important"  id="message">The purpose of this list is to prove to you that aliens exist.</p>
 								<!--4.1 inline css -->
 								<!--6.1 used important -->
 								<!--8.b Specificity makes the white take priority  -->
