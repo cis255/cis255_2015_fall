@@ -24,7 +24,7 @@
 		<meta charset="utf-8">
 			<link   href="css/bootstrap.min.css" rel="stylesheet">
 				<link rel="stylesheet" href="../crud/css/prog2.css">	
-					<script src="js/bootstrap.min.js"/>
+					<script src="js/bootstrap.min.js"></script>
 				</head>
 
 				<body>
