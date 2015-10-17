@@ -1,0 +1,34 @@
+/*override bootstrap colors here for our theme*/
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #d8d8d8;
+}
+.container {
+	background-color: #66CCFF;
+	border-radius: 25px;	
+    margin-top: 50px;
+    box-shadow: 0 0 30px black;
+    padding:0px 20px 20px 20px;
+}
+/*
+	due to specificity this css will apply to anything with the id of header and overwrite what has already been declared for that element.
+*/
+#header:before{
+	content:url('http://csis.svsu.edu/~bjcobb/cis255/bjcobb/_crud/img/CRUD-logo.png');
+	text-align: center;
+    width: 100%;  
+}
+/* this will still inherit all the attributes of btn however it will change the color to yellow for the text */
+a.btn[href="index.php"] {
+	color: yellow;
+}
+
+a span {
+	padding-right: 3px;
+}
+button span {
+	padding-right: 3px;
+}

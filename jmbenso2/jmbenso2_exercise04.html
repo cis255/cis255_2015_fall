@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+filename: 	jmbenso2_exercise04.html
+purpose:  	demonstrate basics of JavaScript (inline, internal, and external)
+-->
+<html>
+	<head>
+		<!-- Bootstrap -->
+		<meta charset="utf-8" />
+		<link href="_crud/css/jmbenso2_prog02.css" rel ="stylesheet" />
+		<link   href="_crud/css/bootstrap.min.css" rel="stylesheet" />	
+		<script src="_crud/js/bootstrap.min.js"></script>
+
+		<!-- I moved the external JS to the bottom of this page -->
+
+		<!-- Internal JS -->
+		<script>
+			alert('HEY BRO, INTERNAL JAVASCRIPT');
+		</script>
+
+
+	</head>
+	<body>
+		<!-- Header -->
+		<div class = "page-header">
+			<div class ="text-center">  
+				<h1>Exercise 04: JavaScript Introduction</h1>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<!-- Inline JS: Never do it again -->
+				<!-- This button, when clicked, executes a little bit of JS: alert('Thanks buddy'); -->
+				<input type ="button" onclick="alert('Thanks buddy');" value="CLICK ME" /> <!--Value: button label-->
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<p id="target"><b>Hello</b> <b><i> Govnuh </i></b></p>
+			</div>
+			<div class="row">
+				<ol id="months">
+				</ol>
+			</div>
+		</div>
+	</body>
+	
+	<!-- External JS -->
+	<script type="text/JavaScript" src="jmbenso2_exercise04.js"></script>
+</html>
