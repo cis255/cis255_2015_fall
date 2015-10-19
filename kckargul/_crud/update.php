@@ -2,10 +2,10 @@
 	Class:	CIS 255
 	Design:	"Update a Customer"
 			picture
-			Name 	_ text box with previous name
-			email	_ text box with previous email
-			mobile	_ text box with prvious mobile phone number
-			Update success btn _ back dafault btn
+			Label Name 	_ text box with previous name
+			Label email	_ text box with previous email
+			Label mobile	_ text box with prvious mobile phone number
+			Label Update success btn _ back dafault btn
 -->
 
 <?php 
@@ -101,7 +101,8 @@
 					    <label class="control-label">Mobile Number</label>
 					  </div>
 					<div class="col-sm-3">
-	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+	    			<!--Creates a horizontal area -->
+					<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <div class="controls">
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">

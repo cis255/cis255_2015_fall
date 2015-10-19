@@ -2,18 +2,17 @@
 filename:    create.php
 author:      Cory Murawske, CIS-255, Fall 2015
 design:
-	<head>: 1. Charset
-			2. Links to stylesheets
-			3. Script
+	<head>: 1. Relative Referencing
 
-	<body>: 1. Container
-			2. Banner
-			3. Form
-			4. Name Control
-			5. Email Control
-			6. Mobile Number Control
-			7. Form Action Buttons
-			8. Figure
+	<body>: 2. Container
+			3. Banner
+			4. Form
+			5. Name Control
+			6. Email Control
+			7. Mobile Number Control
+			8. Form Action Buttons
+			9. Image added
+		   10. Inline CSS
 -->
 <?php 
 	
@@ -68,7 +67,7 @@ design:
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!-- 3. relative referencing -->
+		<!-- 1. relative referencing -->
 		<link   href="css/bootstrap.min.css" rel="stylesheet">
 		<script src="js/bootstrap.min.js"></script>
 	</head>
@@ -93,7 +92,7 @@ design:
 						<label class="control-label">Name</label>
 						<!-- The bootstrap class controls is used to wrap all the associated controls in the form
 							so that they are properly aligned (the labels are on the same line as the control and the
-						labels are right aligned) -->
+							labels are right aligned) -->
 						<div class="controls">
 							<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 							<?php if (!empty($nameError)): ?>
@@ -107,7 +106,7 @@ design:
 						<label class="control-label">Email Address</label>
 						<!-- The bootstrap class controls is used to wrap all the associated controls in the form
 							so that they are properly aligned (the labels are on the same line as the control and the
-						labels are right aligned) -->
+							labels are right aligned) -->
 						<div class="controls">
 							<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
 							<?php if (!empty($emailError)): ?>
@@ -121,7 +120,7 @@ design:
 						<label class="control-label">Mobile Number</label>
 						<!-- The bootstrap class controls is used to wrap all the associated controls in the form
 							so that they are properly aligned (the labels are on the same line as the control and the
-						labels are right aligned) -->
+							labels are right aligned) -->
 						<div class="controls">
 							<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
 							<?php if (!empty($mobileError)): ?>
@@ -130,9 +129,7 @@ design:
 						</div>
 					</div>
 					<!-- The bootstrap class form-actions formats the buttons for the form so that they line up with
-					the form controls -->
-					<!-- The glyphicons on the buttons and the change to btn-info for the Create button were added by
-					the author -->
+						the form controls -->
 					<div class="form-actions">
 						<!-- The bootstrap class btn formats the button as a basic bootstrap button.
 							The bootstrap class btn-primary formats the button to be a primary button, meaning that the button is blue. 
@@ -148,10 +145,15 @@ design:
 		
 		<!-- 9. Image added-->
 		<div>
-			<!-- Inline CSS -->
+			<!-- 10. Inline CSS -->
 				<figure style="position:relative;bottom:0px;width:200px;height:100px;margin-left:500px;">
 					<img src="../thumbsup.jpg" />
 					<figcaption>This website was created by Cory Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
+				</figure>
+			</div>
+		</div>
+	</body>
+</html>		y Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
 				</figure>
 			</div>
 		</div>

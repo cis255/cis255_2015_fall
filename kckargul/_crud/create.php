@@ -2,9 +2,9 @@
 	Class:	CSI 255
 	Desgin:	"Create a Customer"
 			visually appealing picture
-			Name - textbox("name")
-			email address = textbox("email address")
-			mobile number - textbox("mobile number")
+			Label Name - textbox("name")
+			Label email address = textbox("email address")
+			Label mobile number - textbox("mobile number")
 			create success button - back default button
 -->
 <?php 
@@ -75,7 +75,9 @@
 		    		</div>
 					<!--puts a visually appealing picture there-->
     				<img src="http://minifigs.me/wp-content/uploads/2012/11/Parts1.jpg?65d229"/>
+					<!--Makes the form more horizontal and in line-->
 	    			<form class="form-horizontal" action="create.php" method="post">
+					  <!--All labels and controls have to be within this class-->
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Name</label>
 					    <div class="controls">
@@ -86,7 +88,7 @@
 					      	<?php endif; ?>
 					    </div>
 					  </div>
-					  <!--gives you error message if empty-->
+					  <!--All labels and controls have to be within this class-->
 					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
 					    <label class="control-label">Email Address</label>
 					    <div class="controls">

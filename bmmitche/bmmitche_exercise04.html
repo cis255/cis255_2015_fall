@@ -1,7 +1,8 @@
 <!doctype html>
 <!--
 filename : 	bmmitche_exercise04.html
-purpose  : 	demonstrate javascript, inline, internal and external
+purpose  : 	Part A: demonstrate javascript, inline, internal and external
+			Part B: 
 design	 : 	<head> nothing
 			<body>
 				1. 	inline javascript
@@ -11,14 +12,16 @@ design	 : 	<head> nothing
 
 <html>
 	<head>
-	<script type="text/javascript" src="bmmitche.js"></script>
-		<!--2. internal javascript -->
-		<script>
-			alert('2. You clicked ok');
-		</script>
+
 	</head>
 	<body>
 		<!--1. inline javascript -->
 		<input type="button" onclick="alert('1. You clicked Zippy');" value="Zippy" />
-	</body>
+		<!--3. External Javascript -->
+		<script type="text/javascript" src="bmmitche.js"></script>
+		<!--2. internal javascript -->
+		<script>
+			alert('2. You clicked ok');
+		</script>
+		</body>
 </html>

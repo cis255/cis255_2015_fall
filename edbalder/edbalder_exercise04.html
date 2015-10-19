@@ -1,0 +1,26 @@
+<!doctype html>
+
+<!-- 
+filename	:  edbalder_exercise04.html
+purpose		:  javascript, inline, internal, and external
+design		:  <head> 
+				3. external javascript
+			    2. internal javascript
+			   <body>
+				1. inline javascript 
+-->
+
+<html>
+	<head>
+		<!-- 3. external javascript -->
+		<script type="text/javascript" src="edbalder.js"></script>
+		<!-- 2. internal javascript -->
+		<script>
+			alert('This is the internal javascript');
+		</script>
+	</head>
+	<body>
+	<!-- 1. inline javascript -->
+	<input type="button" onclick="alert('This is the inline javascript');" value="Click Me!"/>
+	</body>
+</html>
