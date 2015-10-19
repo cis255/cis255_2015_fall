@@ -41,7 +41,7 @@
 								   $row['id'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'">Update</a>';
+								   href="update.php? id='.$row['id'].'">Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" 
 								   href="delete.php?id='.$row['id'].'">Delete</a>';
