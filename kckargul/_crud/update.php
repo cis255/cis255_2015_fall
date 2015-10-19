@@ -128,15 +128,17 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
+					  	<div class="btn-group">
 						  <button type="submit" class="btn btn-success">
 							<!--Puts a pencil icon in the button-->
 							<span class = "glyphicon glyphicon-pencil"/>
 							Update</button>
-						  <a class="btn btn-default" href="index.php">
 							<!--Puts a left arrow in the button-->
-							<span class = "glyphicon glyphicon-circle-arrow-left"/>
-							Back</a>
+							<button class="btn btn-default" href="index.php">
+                            <span class="glyphicon glyphicon-circle-arrow-left"/>
+                            Back </button>
 						</div>
+					  </div>
 					</form>
 					</div>
 					</row>
