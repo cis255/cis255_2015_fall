@@ -71,7 +71,7 @@
     <meta charset="utf-8">
 	<!-- #3 absolute referencing -->
    <link   href="http://csis.svsu.edu/~arklines/cis255/arklines/_crud/css/bootstrap.min.css" rel="stylesheet">
-	
+	<link   href="http://csis.svsu.edu/~arklines/cis255/arklines/_crud/css/bootstrap.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 	
 	<!-- Meta tag makes website mobile-first-->
@@ -91,6 +91,15 @@
     			<div class="span10 offset1">
 					<!-- #5 (9) formats the header using "row" format -->
     				<div class="row">
+					<table class = "table table-boredered">
+						<thead>
+						<tr>
+						<th>
+						<img  src= "img/light-blue-background-3.jpg" style="width:100%; height:150px; position:top left:0px" />
+						</th>
+						</tr>
+						</thead>
+						</table>
 		    			<h3>Create a Customer</h3>
 		    		</div>
 					<!-- #5 (10) Sets padding, margin, and height of form-->
@@ -123,7 +132,7 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-					  <button type="submit" class="btn btn-success">Create</button>
+					  <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-submit"></span>Create</button>
 						 <!-- <a class="btn" href="index.php">Back</a> -->
 					  
 						

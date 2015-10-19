@@ -1,0 +1,16 @@
+#message {
+	color: red;
+	font-size: 150%;
+}
+.odd{
+
+}
+p {
+	text-indent:25px;
+}
+span {
+	color: green;
+}
+div p {
+	color: black;
+}

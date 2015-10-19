@@ -50,17 +50,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<style>
+		#logo{
+		position:relative;
+		left:0px;
+		top:0px;
+		}
+	</style>
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Create a Customer</h3>
+		    			<img id="logo"src="https://upload.wikimedia.org/wikipedia/en/7/75/Svsu_cardinal.png">
+						<h3>Create a Customer</h3>
+						
 		    		</div>
     		
 	    			<form class="form-horizontal" action="create.php" method="post">

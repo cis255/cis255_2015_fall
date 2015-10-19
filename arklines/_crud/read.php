@@ -47,6 +47,15 @@
     
     			<div class="span10 offset1">
     				<div class="row">
+					<table class = "table table-boredered">
+						<thead>
+						<tr>
+						<th>
+						<img  src= "img/light-blue-background-3.jpg" style="width:100%; height:150px; position:top left:0px" />
+						</th>
+						</tr>
+						</thead>
+						</table>
 		    			<h3>Read a Customer</h3>
 		    		</div>
 		    		

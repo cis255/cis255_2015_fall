@@ -1,0 +1,65 @@
+/*
+filename: 		jmbenso2_prog02.php
+author:   		Jon Benson, CIS-255, Fall 2015
+description: 	This file is the index of a simple front-end showcasing various techniques of bootstrap and CSS.
+
+design:			
+	1. Element selectors
+	2. Class selectors
+	3. ID selectors
+	
+Requested comments included in this document:
+4. External CSS
+6. !important used
+7. Element, class and ID selectors
+8. Specificity
+
+*/
+
+
+/*4. External CSS */
+
+/* Element Selectors */
+body {
+	background-image: url("http://maxcdn.thedesigninspiration.com/wp-content/uploads/2013/11/Blue-Repeating-Pattern-l.jpg");
+	background-repeat: repeat;
+}
+
+h1 { 
+	padding-top: 30px;
+	padding-bottom: 15px;
+	color: white !important; /*6. By bootstrap default this text is dark gray, but we -- nay, I -- it white. */
+	font-family: verdana !important; /* I also want verdana. */
+}
+
+/* Class Selectors */
+.page-header { /* 7. Class Selector */
+	border: 3px solid rgb(13, 20, 26);
+	background-image: url("http://www.richaven.com/wp-content/uploads/2012/10/tesslbkg-dark2-300x291.jpg");
+	background-repeat: repeat;
+}
+
+.container {
+	background-color: white;
+	padding-top: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	border: 3px solid rgb(128, 204, 255);
+	border-radius: 15px;
+}
+
+/* ID selectors */
+#center-image { /* 7. ID Selector */
+	width: 50%;
+	padding: 25px;
+}
+
+#image_gallery {
+	padding-left: 37px; /*8. This container in particular needs less padding on the left. */
+						/* This will take precedence over the above container class CSS */
+						/* because id is more specific. */
+	padding-right: 38px;
+}

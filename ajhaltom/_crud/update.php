@@ -1,3 +1,14 @@
+<!--
+filename   : delete.php
+author     : Alex Haltom (CIS-255, Fall 2015)
+description: This program is a part of _crud. Specifically is used for deleting entries.
+design     : 1. Title
+			 2. Delete confirmation
+			 3. Yes button
+			 4. No button
+			 5. Background image from internal css
+comments   : Comments include description of Bootstrap classes, inline and internal CSS
+-->
 <?php 
 	
 	require 'database.php';
@@ -71,20 +82,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link   href="css/bootstrap.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
 </head>
-
+<style>
+body {background-image: url("http://images.alphacoders.com/538/53823.jpg");}
+</style>
 <body>
     <div class="container">
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Update a Customer</h3>
+		    			<h3 style="color: blue;">Update a Customer</h3>
 		    		</div>
     		
 	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
-					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
+					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>"> <!-- Control for name  -->
 					    <label class="control-label">Name</label>
 					    <div class="controls">
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
@@ -93,7 +107,7 @@
 					      	<?php endif; ?>
 					    </div>
 					  </div>
-					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
+					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>"> <!-- Control for email  -->
 					    <label class="control-label">Email Address</label>
 					    <div class="controls">
 					      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
@@ -102,7 +116,7 @@
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
+					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>"> <!-- Control for mobile  -->
 					    <label class="control-label">Mobile Number</label>
 					    <div class="controls">
 					      	<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
@@ -112,7 +126,7 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Update</button>
+						  <button type="submit" class="btn btn-success">Update</button> <!-- Update button -->
 						  <a class="btn" href="index.php">Back</a>
 						</div>
 					</form>

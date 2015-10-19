@@ -1,3 +1,13 @@
+<!--name:	Kevin Kargula
+	Class:	CIS 255
+	Design:	"Update a Customer"
+			picture
+			Label Name 	_ text box with previous name
+			Label email	_ text box with previous email
+			Label mobile	_ text box with prvious mobile phone number
+			Label Update success btn _ back dafault btn
+-->
+
 <?php 
 	
 	require 'database.php';
@@ -71,21 +81,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-    
-    			<div class="span10 offset1">
+    			<div class="span10 offset1"><!--Sets the basis for the entire program on the website-->
     				<div class="row">
 		    			<h3>Update a Customer</h3>
 		    		</div>
-    		
-	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+					<row>
+					  <div class="col-sm-3">
+    					<img class="col-sm-9" src="https://bebekdekil.files.wordpress.com/2010/01/change.jpg"/>
+					  </div>
+					  <div class="col-sm-2">
+					    <label class="control-label">Name</label><br/>
+					    <label class="control-label">Email Address</label><br/>
+					    <label class="control-label">Mobile Number</label>
+					  </div>
+					<div class="col-sm-3">
+	    			<!--Creates a horizontal area -->
+					<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-					    <label class="control-label">Name</label>
 					    <div class="controls">
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
@@ -94,7 +112,6 @@
 					    </div>
 					  </div>
 					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
-					    <label class="control-label">Email Address</label>
 					    <div class="controls">
 					      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
 					      	<?php if (!empty($emailError)): ?>
@@ -103,7 +120,6 @@
 					    </div>
 					  </div>
 					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
-					    <label class="control-label">Mobile Number</label>
 					    <div class="controls">
 					      	<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
 					      	<?php if (!empty($mobileError)): ?>
@@ -112,10 +128,18 @@
 					    </div>
 					  </div>
 					  <div class="form-actions">
-						  <button type="submit" class="btn btn-success">Update</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <button type="submit" class="btn btn-success">
+							<!--Puts a pencil icon in the button-->
+							<span class = "glyphicon glyphicon-pencil"/>
+							Update</button>
+						  <a class="btn btn-default" href="index.php">
+							<!--Puts a left arrow in the button-->
+							<span class = "glyphicon glyphicon-circle-arrow-left"/>
+							Back</a>
 						</div>
 					</form>
+					</div>
+					</row>
 				</div>
 				
     </div> <!-- /container -->

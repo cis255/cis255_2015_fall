@@ -33,6 +33,8 @@ design: The file creates a navigation bar, table, a link to a diagram, and a foo
 			#emails{
 			margin-top: 150px;}
 		</style>
+		
+		<title>Program 2</title>
 	</head>
 	
 	<body>
@@ -105,7 +107,7 @@ design: The file creates a navigation bar, table, a link to a diagram, and a foo
 			<!-- 9. Image added by the author -->
 			<div>
 			<!-- Inline CSS -->
-				<figure style="position:relative;bottom:0px;width:100%;margin-left:0px;">
+				<figure style="position:relative;bottom:0px;width:100%;margin-left:0px;height:50px;">
 					<img src="../red_white_footer.png" />
 					<figcaption>Website Design by Tessa Genovese, CIS 255, Fall 2015</figcaption>
 				</figure>

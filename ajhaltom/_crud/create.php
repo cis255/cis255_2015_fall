@@ -1,3 +1,15 @@
+<!--
+filename   : create.php
+author     : Alex Haltom (CIS-255, Fall 2015)
+description: This program is a part of _crud. Specifically is used for creating new entries.
+design     : 1. Title
+			 2. Name entry
+			 3. Email entry
+			 4. Mobile entry
+			 5. Create button
+			 6. Back button
+			 7. Background image from internal css
+-->
 <?php 
 	
 	require 'database.php';
@@ -51,16 +63,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link   href="css/bootstrap.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
 </head>
-
+<style>
+body {background-image: url("http://images.alphacoders.com/538/53823.jpg");}
+</style>
 <body>
     <div class="container">
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Create a Customer</h3>
+		    			<h3 style="color: blue;">Create a Customer</h3>
 		    		</div>
     		
 	    			<form class="form-horizontal" action="create.php" method="post">

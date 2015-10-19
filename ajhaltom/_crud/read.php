@@ -1,3 +1,15 @@
+<!--
+filename   : read.php
+author     : Alex Haltom (CIS-255, Fall 2015)
+description: This program is a part of _crud. Specifically is for viewing one entry at a time.
+design     : 1. Title
+			 2. Displays name
+			 3. Displays email
+			 4. Displays mobile
+			 5. Back button
+			 6. Background image from internal css
+comments   : Comments include description of Bootstrap classes, inline and internal CSS
+-->
 <?php 
 	require 'database.php';
 	$id = null;
@@ -22,16 +34,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- <link   href="css/bootstrap.min.css" rel="stylesheet"> -->
     <script src="js/bootstrap.min.js"></script>
 </head>
-
+<style>
+body {background-image: url("http://images.alphacoders.com/538/53823.jpg");}
+</style>
 <body>
     <div class="container">
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Read a Customer</h3>
+		    			<h3 style="color: blue;">Read a Customer</h3>
 		    		</div>
 		    		
 	    			<div class="form-horizontal" >
