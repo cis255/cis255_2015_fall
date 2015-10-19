@@ -26,7 +26,8 @@ design:
 	<body>
 		<!-- 0. header ===========================================================================================-->
 		<h1> Nicholas Bemiss, CIS-255: Program 3 </h1>
-
+		
+		<p id="id01">This is a template for Program 03></p>
 		<!--1. variable names ====================================================================================-->
 		<h2>1. Variable Names</h2>
 		<script>
@@ -122,7 +123,7 @@ design:
 		
 		<script>
 			
-			document.write("Calling a function to return 2 * 5: " + theFunction(2,5));
+			document.write("Calling a function to return 2 * 5: " + theFunction(2,5)+"</br>");
 		
 			function theFunction(x,y) {
 				return x * y;              // The function returns the product of p1 and p2
@@ -131,6 +132,10 @@ design:
 
 		<!--8. Write to DOM ======================================================================================-->
 		<h2>8. Write to DOM</h2>		
+	
+		<script>
+			document.write(document.getElementById("id01"));
+		</script>
 	
 		<!-- External javascript link ============================================================================-->
 		<script type="text/javascript" scr="ntbemiss.js"></script>
