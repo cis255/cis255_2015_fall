@@ -5,12 +5,17 @@ purpose: demonstrate javascript, inline, internal and external
 -->
 <html>
 	<head>
-		<script>
-			alert('you click ok');
-		</script>
+
 	</head>
 	<body>
-	<!-- inline javascript -->
-	<input type= "button" onclick="alert('you clicked ok');" value="ok"/>
+	<!-- 1. inline javascript -->
+	<input type="button" onclick="alert('You clicked Zippy');" value="Zippy"/>
+	
+		<!-- 3. external javascript -->
+	<script type="text/javascript" src="arklines.js"></script>
+	    <!-- 2. internal javascript -->
+	    <script>
+		    alert('2. You should click Ok');
+		</script>
 	</body>
 </html>

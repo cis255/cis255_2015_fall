@@ -4,7 +4,7 @@
 	} 
 	
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #006633 !important;
+  background-color: #00CC00 !important;
 }
 
 h2 {
@@ -12,7 +12,7 @@ h2 {
 }
 
 body {
-	background-color: #00CC00;
+	background-color: #006633 !important;
 }
 
 h3 {

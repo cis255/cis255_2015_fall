@@ -81,7 +81,7 @@
 								<!--8.a Jumboton also inherits the color of the text -->
 								<!--7.2 This is class selector-->
 
-								<p style="color: grey !important"  id="message">The purpose of this list is to prove to you that aliens exist.</p>
+								<p style="color: white !important"  id="message">The purpose of this list is to prove to you that aliens exist.</p>
 								<!--4.1 inline css -->
 								<!--6.1 used important -->
 								<!--8.b Specificity makes the white take priority  -->
