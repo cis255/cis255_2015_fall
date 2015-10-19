@@ -23,6 +23,7 @@ design:
 		<title>CIS-255: Allison Klinesmith </title>
     </head>
 	<body>
+	 
 		<!-- 0. header					-->
 		<h1>Allison Klinesmith, CIS-255, Program 3</h1>
 		<h2>Variable Name </h2>
@@ -61,30 +62,55 @@ design:
 				//Comparison operators
 				var var1 = true, var2 = null;
 				document.write("var1 = " +var1+ " and var2 = " +var2 +"<br/>");
-				document.write("Does var1 equal var2? Answer = " + var1==var2);
+				document.write("Does var1 equal var2? Answer = " + var1==var2+"<br/>");
 				//Bitwise shift
 				var d = k<<x;
 				document.write("k <<x = (" + k  +"left shift " +x+ ") =" +d +"<br/>");
 			//Expressions
 				document.write("'This' expression evaluates to " + this.propertyname+"<br/>"); //propertyname
-				var text = "this", test = "String";
-				var thisString = "zippee"
-				document.write(""Let's test 'validate'!" + validate(this, test, text )+"<br/>");
-			
-			
+				
 		</script>
 		
-		<h2>Conditionals</h2>
+		<h2>Conditionals, truthy, falsy </h2>
 		<!--4. conditionals             -->
 		<script>
-			
+		var n = "this"
+		var n = "Okay"
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
 		</script>
+		<p id="timeGreeting">Good Evening!</p>
+
+			<script>
+			if (new Date().getHours() < 18) {
+			document.getElementById("timeGreeting").innerHTML = "Good day!"; //if
+}
+			</script>
+			<p>Click the button to display a time-based greeting:</p>
+
+			<button onclick="myFunction()">Try it</button>
+
+			<p id="day"></p>
+
+			<script>
+				function myFunction() {
+				var day = new Date().getDay; 
+				var greeting;
+				if (Day = "Monday"||"Wednesday") {
+				greeting = "Hello! You have CIS255 today";              // if else
+				} else {
+				greeting = "You do not have CIS255 today-- you can sleep in!";
+				}
+				document.getElementById("day").innerHTML = greeting;
+				}
+			</script>
 		
-		<h2>Control Structures, truthy, falsy </h2>
-		<!--5. Control Structures, truthy, falsy      -->
-		<script>
+		<h2>Control Structures</h2>
+		<!--5. Control Structures     -->
+			<!-- Do-->
+			<!-- While-->
+			<!-- For -->
 			
-		</script>
 		
 		<h2>Objects</h2>
 		<!--6. Objects, arrays          -->
@@ -103,6 +129,6 @@ design:
 		
 		
 		<!-- external javascript; appears at the end of the body tag -->
-		<!-- <script type="text/javascript" src="arklines.js"></script> -->
+		 <!--<script type="text/javascript" src="arklines.js"></script> -->
 	</body>
 </html>
