@@ -3,26 +3,38 @@ filename: ssstewar.js
 purpose:  demonstrate javascript
 */
 
-alert('3. you should click ok');
+alert('3. You should click Ok');
 console.log("finished alert #3")
 var car = function (color,sound) {
-	this.color = color;
+    this.color = color;
 	this.sound = sound;
-    };
-car.prototype.horn = function() {
-	document.write('<p>this car goes ' + this.sound + '</p>');
+	};
+car.prototype.horn = function () {
+    document.write('<p>this car goes ' + this.sound + '</p>');
 	};
 toyota = new car("red","beep");
-buick = new car("blue", "honk");
+buick = new car("green","honk");
 
-toyata.horn();
+toyota.horn();
 buick.horn();
 
 try {
 	nonexistentfunction("not here");
 }
 catch (e){
-	alert("exception caught!!!!")
+	alert("exception caught!!")
 }
 
-getElementById("container")
+
+
+months = ["jan","feb","mar","apr","may"]
+
+monthsHTML = "";
+monthsHTML = monthsHTML+"<ol>";
+for(i=0;i<months.length;i++){
+	monthsHTML = monthsHTML+"<li>";
+	monthsHTML = monthsHTML+months[i];
+	monthsHTML = monthsHTML+"</li>";
+}
+monthsHTML = monthsHTML+"</ol>";
+document.getElementById("container").innerHTML = monthsHTML;
