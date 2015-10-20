@@ -2,8 +2,9 @@
 filename: gpcorser.js
 purpose : demonstrate basic javascript
 */
-alert('3. You should click Ok');
-console.log("finished alert #3")
+//    window.onload=function() {
+        // do stuff
+
 var car = function (color,sound) {
     this.color = color;
 	this.sound = sound;
@@ -21,10 +22,8 @@ try {
 	nonexistentfunction("not here");
 }
 catch (e){
-	alert("exception caught!!")
+	document.write("exception caught: nonexistent function <br/>")
 }
-
-
 
 months = ["jan","feb","mar","apr","may"]
 
@@ -39,7 +38,7 @@ monthsHTML = monthsHTML+"</ol>";
 document.getElementById("container").innerHTML = monthsHTML;
 
 
-
+ //   };
 
 
 
