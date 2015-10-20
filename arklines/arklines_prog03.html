@@ -1,0 +1,134 @@
+<!doctype html >
+<!-- ---------------------------------------
+filename: arklines_prog03.html
+author  : arklines, cis2015, fall2015
+purpose : this program demonstrates javascript and jquery
+design:
+	<head> title
+	<body> 
+		0. header
+		1. variables
+		2. data types
+		3. operators, expression
+		4. conditionals
+		5. Control Structures
+		6. Objects, arrays
+		7. functions, prototypes
+		8. Write to DOM
+			
+----------------------------------------------- -->
+
+<html>
+	<head>
+		<title>CIS-255: Allison Klinesmith </title>
+    </head>
+	<body>
+	 
+		<!-- 0. header					-->
+		<h1>Allison Klinesmith, CIS-255, Program 3</h1>
+		<h2>Variable Name </h2>
+		<!--1. variables; variables can start with a dollar sign, underbar, or a letter-->
+		<script>
+			var _price1 = 5;
+			var $price2 = 6;
+			var a = 1;
+			var d = a + _price1 + $price2;
+			document.write("a + _price1 + $price2 = " + d)
+		</script>
+		
+		<h2>Primitive Data Types</h2>
+		<!--2. data types               -->
+		<!-- no float, no int. There are number, undefined, string, boolean, and null  -->
+		<script>
+			var x = 5;  // number
+			document.write("x is type " + typeof(x)+"<br/>");
+			var y = "zippee"; //string
+			document.write("y is type " + typeof(y)+"<br/>");
+			var z = null; //null
+			document.write("z is type " + typeof(z)+"<br/>");
+			var a = true; //boolean
+			document.write("a is type " + typeof(a)+"<br/>");
+			var b;
+			document.write("b is type " + typeof(b)+"<br/>");
+		</script>
+		
+		<h2>Operators and Expressions</h2>
+		<!--3. operators, expressions    -->
+		<script>
+			//operators
+				//Assignment operators
+				var k = x&=y;
+				document.write("x &= y is "+ k +"<br/>"); //bitwise 
+				//Comparison operators
+				var var1 = true, var2 = null;
+				document.write("var1 = " +var1+ " and var2 = " +var2 +"<br/>");
+				document.write("Does var1 equal var2? Answer = " + var1==var2+"<br/>");
+				//Bitwise shift
+				var d = k<<x;
+				document.write("k <<x = (" + k  +"left shift " +x+ ") =" +d +"<br/>");
+			//Expressions
+				document.write("'This' expression evaluates to " + this.propertyname+"<br/>"); //propertyname
+				
+		</script>
+		
+		<h2>Conditionals, truthy, falsy </h2>
+		<!--4. conditionals             -->
+		<script>
+		var n = "this"
+		var n = "Okay"
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+		</script>
+		<p id="timeGreeting">Good Evening!</p>
+
+			<script>
+			if (new Date().getHours() < 18) {
+			document.getElementById("timeGreeting").innerHTML = "Good day!"; //if
+}
+			</script>
+			<p>Click the button to display a time-based greeting:</p>
+
+			<button onclick="myFunction()">Try it</button>
+
+			<p id="day"></p>
+
+			<script>
+				function myFunction() {
+				var day = new Date().getDay; 
+				var greeting;
+				if (Day = "Monday"||"Wednesday") {
+				greeting = "Hello! You have CIS255 today";              // if else
+				} else {
+				greeting = "You do not have CIS255 today-- you can sleep in!";
+				}
+				document.getElementById("day").innerHTML = greeting;
+				}
+			</script>
+		
+		<h2>Control Structures</h2>
+		<!--5. Control Structures     -->
+			<!-- Do-->
+			<!-- While-->
+			<!-- For -->
+			
+		
+		<h2>Objects</h2>
+		<!--6. Objects, arrays          -->
+		<script>
+		</script>
+		
+		<h2>Functions and Prototypes</h2>
+		<!--7. functions, prototypes    -->
+		<script>
+		</script>
+		
+		<h2>Write to DOM</h2>
+		<!--8. Write to DOM          	-->
+		<script>
+		</script>
+		
+		
+		<!-- external javascript; appears at the end of the body tag -->
+		 <!--<script type="text/javascript" src="arklines.js"></script> -->
+	</body>
+</html>

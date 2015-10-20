@@ -2,18 +2,17 @@
 filename:    read.php
 author:      Cory Murawske, CIS-255, Fall 2015
 design:
-	<head>: 1. Charset
-			2. Links to stylesheets
-			3. Script
+	<head>: 1. Relative Referencing
 
-	<body>: 1. Container
-			2. Banner
-			3. Form
-			4. Name Control
-			5. Email Control
-			6. Mobile Number Control
-			7. Form Action Buttons
-			8. Figure
+	<body>: 2. Container
+			3. Banner
+			4. Form
+			5. Name Control
+			6. Email Control
+			7. Mobile Number Control
+			8. Form Action Buttons
+			9. Image added
+		   10. Inline CSS
 -->
 <?php 
 	require 'database.php';
@@ -112,12 +111,11 @@ design:
 	
 		<!-- 9. Image added-->
 		<div>
-			<!-- Inline CSS -->
-				<figure style="position:relative;bottom:0px;width:200px;height:100px;margin-left:500px;">
-					<img src="../thumbsup.jpg" />
-					<figcaption>This website was created by Cory Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
-				</figure>
+			<!-- 10. Inline CSS -->
+			<figure style="position:relative;bottom:0px;width:200px;height:100px;margin-left:500px;">
+				<img src="../thumbsup.jpg" />
+				<figcaption>This website was created by Cory Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
+			</figure>
 		</div>
-		
   </body>
 </html>
