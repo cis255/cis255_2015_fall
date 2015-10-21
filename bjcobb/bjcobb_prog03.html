@@ -1,0 +1,159 @@
+<!--
+filename	: bjcobb_prog01.html
+author  	: Brian Cobb (CIS-255, Fall 2015)
+desription	: Program 03 Using javascript and JQuery
+			  http://www.sitepoint.com/10-typical-html-interview-exercises/
+design		: 
+			0. Header
+			1. Vars
+			2. data types
+			3. Expressions
+			4. conditinos
+			5. control structs
+			6. object,array
+			7. functin protytpes
+			8. write dom
+-->
+<html>
+<head>
+
+</head>
+<body>
+Here is the output of the javascript
+<div id="console">
+</div>
+</body>
+
+<script>
+//==============================
+// 1. Vars
+// 2. Data types
+// 6. Object, Array
+//==============================
+//Example of different variable types in javascript. The Bellow are all really type var and javascript
+//Will change type as needed. In reality they are all type var.
+var str1 = "Hello world!"; 			//Exampe of a string in javascript
+var num1 = 3; 						//Example of an number in javascript
+var arr1 = [1,2,3,4]; 				//Example of an array in javascript
+var obj1 = {foo:"bar"}; 	//Example of a object in javascript
+var empty=null; //clear the value of empty
+
+//==============================
+// 6. Object
+//==============================
+function Stud(firstName,lastName,classId)
+{
+	this.firstName=firstName;
+	this.lastName=lastName;
+	this.classId=classId;
+}
+
+var stud1 = new Stud("Brian","Cobb","CIS255");
+var stud2 = new Stud("Bob","Centry","CIS255");
+var arrStuds = [stud1,stud2];
+
+//==============================
+// 7. Prototype
+//==============================
+//Adds the function name to all vars of type Stud
+Stud.prototype.name = function name() { return this.lastName +", "+this.firstName};
+
+var _underscoreIsValid = "Testing";
+//You can use $ at the start as well but not recommended if you use jquery :)
+
+
+//var numPrompt = prompt("Please enter number", "1");
+numPrompt = 3;
+
+
+//==============================
+// 3. Expressions
+//==============================
+printHeaderBreak("Example of operators");
+//Modulus, often used to determin if a number is odd/even/. Returns the remainder of a division 3%2=1
+var num2 = numPrompt%2; 
+print(numPrompt+"%2="+num2);
+print(num2+"+"+num1+"="+(num2+num1));
+print(num2+"*"+num1+"="+(num2*num1));
+print(num2+"/"+num1+"="+(num2/num1));
+print(num2+"-"+num1+"="+(num2-num1));
+
+//==============================
+// 4. Truthy and Falsy
+//==============================
+printHeaderBreak("Example of truthy");
+if (num2) { //Example od Truthy, 1 evaluates to true
+	print(numPrompt + " appears to be odd");
+} else {
+	print(numPrompt + "num2 appears to be even");
+}
+
+//Example of == vs === showing example of a weak typed language
+var str2 = "3"
+if (num1 == str2) {
+	print("This is true because with == it only tests value and will typecast as needed");
+}
+
+if (num1===str2) {
+	print("This will not print because === also checks type.");
+}
+
+if (typeof notdefined==='undefined') {
+	print("This prints because notdefined === undefined");
+}
+
+//==============================
+// 5. Control structs
+//==============================
+printHeaderBreak("Print out studs");
+for (var i=0;i<arrStuds.length;i++) {
+	var curStud = arrStuds[i];
+	print("Stud Name: "+curStud.name());
+	print("    Class: "+curStud.classId);
+}
+
+printHeaderBreak("Print out studs with while");
+var i=0;
+while (i<arrStuds.length)
+{	
+	curStud = arrStuds[i];
+	i+=1;
+	print("Stud Name: "+curStud.name());
+	print("    Class: "+curStud.classId);
+	
+}
+printHeaderBreak("switch");
+switch(numPrompt) {
+	case 0:
+		print("numPrompt is 0");
+		break;
+	case 1:
+		print("numPrompt is 1");
+		break;
+	case 2:
+		print("numPrompt is 2");
+		break;
+	default:
+	print("numPrompt was not in switch");
+}
+
+//==============================
+// 7. Functions
+// 8. Write to dom
+//==============================
+
+//===============================================
+//				Helper functions
+//===============================================
+function printHeaderBreak(msg) {
+print("======================");
+print(msg);
+print("======================");
+}
+function print(msg) {
+	document.getElementById('console').innerHTML += msg+'<br>';
+}
+
+</script>
+
+</html>

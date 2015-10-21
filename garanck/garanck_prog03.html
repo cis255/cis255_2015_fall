@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+filename: gpcorser_prog02.html
+Author  : Garret Ranck, cis255, fall2015
+Purpose : Demonstrates javascript and jquery
+Design  : 
+	<head> favicon and title
+	<body>
+		0.Header
+		1. Variable Names
+		2. Data Types
+		3. Operators, Expressions
+		4. Conditionals
+		5. Control Structure
+		6. Objects
+		7. Functions, prototpyes
+		8. Write to DOM
+		
+-->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<title>CIS-255: George Corser</title>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<title>CIS-255: George Corser</title>
+		<!-- internal css -->
+		<style>
+			#message {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 0. Header -->
+		<h1>Garret Ranck</h1>
+		<h2>Program 3 - CIS255</h3>
+		<p id="id01"> This is a template for Program 3 <p>
+		
+		<!-- 1. Variable Names - Case sensitive, can start with _ or $ -->
+		<h3> 1. Variable Names </h3>
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2. Data Types -->
+		<h3> 2. Data Types </h3>
+		<script>
+		var length = 16;                               <!-- Number -->
+		document.write("var length is a type: "+typeof(length)+"<br/>");
+		var lastName = "Johnson";                      <!-- String -->
+		document.write("var lastName is a type: "+typeof(lastName)+"<br/>");
+		var cars = ["Saab", "Volvo", "BMW"];           <!-- Array -->
+		document.write("var cars is a type: "+typeof(cars)+"<br/>");
+		var x = {firstName:"John", lastName:"Doe"};    <!-- Object -->
+		document.write("var x is a type: "+typeof(x)+"<br/>");
+		<!-- Undefined -->
+		var y;
+		document.write("var y is a type: "+typeof(y)+"<br/>");
+		var a = null;
+		document.write("var a is a type: "+typeof(a)+"<br/>");
+		</script>
+		
+		<!-- 3. Operators and Expressions -->
+		<h3> 3. Operators and Expressions </h3>
+		<script>
+		var a = 2;
+		var b = 10;
+		var add = a+b;
+		var sub = a-b;
+		var div = a/b;
+		var mult = a*b;
+		var mod = a%b;
+		
+		document.write("Var a = "+a+"<br>");
+		document.write("Var b = "+b+"<br>");
+		document.write("Addition: a+b="+add+"<br>");
+		document.write("Subtraction: a-b="+sub+"<br>");
+		document.write("Divison: a/b="+div+"<br>");
+		document.write("Multiplication: a*b="+mult+"<br>");
+		document.write("Modulus: a%b="+mod+"<br>");
+		
+		</script>
+		
+		<!-- 4. Conditional -->
+		<h3> 4. Conditional </h3>
+		<script>
+		var money = 10000;
+		if (money > 5000) {
+			document.write("The money is good" +"<br>")}
+		else
+		{
+			document.write("The money is not good." +"<br>")}
+		var time = 10;	
+		if (time < 10) {
+			document.write("Good morning");
+		} else if (time < 20) {
+			document.write("Good day<br>");
+		} else {
+			document.write("Good evening<br>");
+		}
+		
+		(a==y)?document.write("a=y<br>"):document.write("n!=u<br>");
+		(a===y)?document.write("a===y<br>"):document.write("n!===u<br>");
+		</script>
+
+		<!-- 5. Control Structures -->
+		<h3> 5. Control Structures </h3>
+		<script>
+		document.write("For loop:<br>")
+		for ( var i = 0; i < cars.length; i++) { 
+			document.write(cars[i] + "<br>");
+		}
+		
+		document.write("Switch: <br>")
+		var z = "test";
+		switch(z.length){
+			case 0:
+				document.write("The string is empty<br>");
+				break;
+			case 1:
+				document.write("The string length is 1<br>");
+				break;
+			case 2:
+				document.write("The string length is 2<br>");
+				break;
+			case 3:
+				document.write("The string length is 3<br>");
+				break;
+			case 4:
+				document.write("The string length is 4<br>");
+				break;
+			}
+			document.write("Do...While<br>");
+			var i = 0;
+			do {
+				i += 1;
+			document.write(i+"<br>");
+			} while (i < 5);
+
+			
+		</script>
+		
+		<!-- 6. Objects and arrays -->
+		<h3> 6. Objects and Arrays </h3>
+		<script>
+		var person = {
+			firstName:"John",
+			lastName:"Doe",
+			age:50,
+			eyeColor:"blue"
+		};
+		document.write("Objects:<br>" );
+		document.write("John has " + person.eyeColor +" eyes.<br>" );
+		document.write("John is " + person.age +" years old.<br>" );
+		document.write("Array:<br>" );
+		document.write("The best cars are " + cars[2]+"<br>");
+		</script>
+		
+		<!-- 7. Functions and Prototypes -->
+		<h3> 7. Functions and Prototypes </h3>
+		<script>
+		var x = myFunction(4, 3); 
+		
+		function myFunction(a, b) {
+			return a * b;               
+		}
+		document.write("Function: " + x +"<br>");
+		function person(first, last, age, eyecolor) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eyecolor;
+		}
+		var myFather = new person("John", "Doe", 50, "blue");
+		myFather.nationality = "English";
+		document.write("Prototype: A father's last name is: " +myFather.lastName +"<br>");
+		</script>
+		
+		<!-- 8. Write to DOM -->
+		<h3> 8. Write to DOM </h3>
+		<script>
+		document.write(document.getElementById("id01").innerHTML);
+		document.getElementById("id01").innerHTML=a;
+		</script>
+		<!-- External javascript -->
+		
+		</body>
+	</html>
+	

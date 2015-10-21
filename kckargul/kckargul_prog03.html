@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<!----------------------------------------------------------- 
+filename: kckargul_prog02.html
+author	: Kevin Kargula, cis255, fall2015
+Purpose	: this program demonstrates javascript and jquery
+Design	: 
+	<head> favicon and title 
+	<body>
+		0. header
+		1. varable name
+		2. primitive data types
+		3. operators and expressions
+		4. Conditionals, truthy and falsy
+		5. Control Structures
+		6. Object Array
+		7. Function Prototypes
+		8. Write to DOM
+Borrowed from  GPCorser
+--------------------------------------------------------------> 
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<title>CIS-255: Kevin Kargula</title>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<title>CIS-255: Kevin Kargula</title>
+		<!-- internal css -->
+		<style>
+			#message {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+	
+			<!--0.header-->
+			<h1>Kevin Kargula, CIS-255, Program 3</h1>
+			<p id="id01">This is a template of program 03</p>
+			<!--1. variable name-->
+			<h2>Variable name</h2>
+			<!--variable names are case sensitive and cam start with $, _, or letters-->
+			<script>
+				var a =1;
+				var _b = 2;
+				var $c = 3;
+				var d = a+_b+$c
+				document.write("combination of 'a+_b+$c=' & d is: "+"a+_b+$c="+d+"<br/>")
+				document.write("combination of a & b"+a + _b+"<br/>")
+				
+			</script>
+
+			<!--2. primitive data type
+					a. string 
+					b. boolean
+					c. number
+					d. unidentified
+					e. null
+			--> 
+			<h2> Primitive data type</h2>
+			<script>
+				var x = 5; //number
+				var y = "zippy"; //string
+				var n = null;
+				var u;
+				document.write("var x is type: "+typeof(x)+"<br/>");
+				document.write("var y is type: "+typeof(y)+"<br/>");
+				document.write("var n is type: "+typeof(n)+"<br/>");
+				document.write("var u is type: "+typeof(u)+"<br/>");
+			</script>
+
+			<!--3. Operators and expressions-->
+			<h2> Operators and expresssions</h2>
+
+			<!--4. Conditionals
+				a. truthy
+				b. falsy
+				-->
+			<h2> Conditionals</h2>
+			<script>
+				var n;
+				var u = null;
+				document.write("Also known as a ternary operators")
+				(n==u)?document.write("n==u <br/>"):document.write("n!=u <br/>");
+				(n===u)?document.write("n===u <br/>"):document.write("n!==u <br/>");
+			</script>
+			<h2>Control structures</h2>
+			<!--5. control structures
+				a. for
+				b. do
+				c. while
+				d. switch case
+				-->
+			<script>
+				document.write("This is a for loop <br/>");
+				for(int i=0; i<5; i++){
+					document.write(i+" ");
+				}
+				document.write("this is a do conditional <br/>");
+				
+				document.write("this is a while loop <br/>");
+				while(i>0){
+					i--;
+					document.write(i+" ");
+				}
+				document.write("this is a case statement");
+				var n = 5;
+				switch(n){
+					case 1: 
+						document.write("This won't be written");
+						break;
+					case 5:
+						document.write("This is what will be written");
+						break;
+				}
+			</script>
+			
+			<!--6. object, arrays-->
+			<h2>Object, Arrays</h2>
+			<script>
+				var car = {type:"Fiat", model:500, color:"white"};
+				document.write("I made a car object and it's type is "+car.type);
+			</script>
+			<!--7. functions, prototypes(pseudoclass)-->
+			<h2>Functions, prototypes(Psuedoclass)</h2>
+			<style>
+				function something(n){
+					return n+5;
+				}
+				something(n);
+				
+			</style>
+			<!--8. write to DOM-->
+			<h2>write to DOM</h2>
+			<script>
+				document.write(document.getElementById("id01").innerHTML);
+				document.getElementById("id01").innerHTML=y;
+			</script>
+
+		</body>
+	</html>

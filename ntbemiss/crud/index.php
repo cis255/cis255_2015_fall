@@ -36,29 +36,29 @@
 					<link   href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/_crud/css/bootstrap.min.css" rel="stylesheet">
 						<!--3.2 Absolute referencing-->
 
-						<script src="js/bootstrap.min.js"/>
+						<script src="js/bootstrap.min.js"></script>
 
 						<style>
 							<!--7.1 This is element selector-->
-		h1 {
-			color: red;
-		} 
-		p  {
-			color: white;
-			font-family: "Arial";
-			font-weight: bold;
-		}
-		th {
-			color: white; !important
-		}
+							h1 {
+								color: red;
+							} 
+							p  {
+								color: green;
+								font-family: "Arial";
+								font-weight: bold;
+							}
+							th {
+								color: #00CC00; !important
+								}
 							<!--8.c location causes this color to only apply to this page, as opposed to the color set in the css file -->
-		body {
-			background-color: #00CC00;
-		}
+							body {
+								background-color: #00CC00 !important;
+							}
 							<!--7.4 psuedo selector-->
-		a:hover {
-			color: #FF0000;
-		}
+							a:hover {
+								color: #FF0000;
+							}
 
 						</style>
 					</head>
@@ -111,7 +111,7 @@
 											</tr>
 										</thead>
 										<tbody>
-		              <?php 
+											<?php 
 					   include 'database.php';
 					   $pdo = Database::connect();
 					   $sql = 'SELECT * FROM customers ORDER BY id DESC';
@@ -120,15 +120,22 @@
 							   	echo '<td>'. $row['name'] . '</td>';
 							   	echo '<td>'. $row['email'] . '</td>';
 							   	echo '<td>'. $row['mobile'] . '</td>';
-							   	echo '<td width=450>';
-							   	echo '<a class="btn btn-primary gradient" href="read.php?id='. 
-								   $row['id'].'"><span class="glyphicon glyphicon-folder-open"> Read</span></a>';
+							   	echo '<td width=250>';
+							   	echo '<a class="btn" href="read.php?id='.
+								   $row['id'].'">
+<span class="glyphicon glyphicon-search">Read</span>
+</a>';
+
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" 
-								   href="update.php?id='.$row['id'].'"><span class="glyphicon glyphicon-log-in"> Update</span></a>';
+								   href="update.php?id='.$row['id'].'">
+<span class="glyphicon glyphicon-arrow-up">Update</span>
+</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" 
-								   href="delete.php?id='.$row['id'].'"><span class="glyphicon glyphicon-fire"> Delete</span></a>';
+								   href="delete.php?id='.$row['id'].'">
+<span class="glyphicon glyphicon-trash">Delete</span>
+</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }

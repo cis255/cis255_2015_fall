@@ -2,16 +2,15 @@
 filename:    delete.php
 author:      Cory Murawske, CIS-255, Fall 2015
 design:
-	<head>: 1. Charset
-			2. Links to stylesheets
-			3. Script
+	<head>: 1. Relative Referencing
 
-	<body>: 1. Container
-			2. Banner
-			3. Form
-			4. Alert Message
+	<body>: 2. Container
+			3. Banner
+			4. Form
+			5. Alert Message
 			6. Form Action Buttons
-			7. Figure
+			7. Image added
+			8. Inline CSS
 -->
 <?php 
 	require 'database.php';
@@ -50,19 +49,19 @@ design:
 		<!-- The bootstrap class container formats the page as a fixed width page layout -->
 		<div class="container">
 			<!-- The bootstrap class span10 denotes that this div will span 10 out of 12 columns.
-			The bootstrap class offset1 denotes that this div will be moved to the right by the value of 1 column -->
+				The bootstrap class offset1 denotes that this div will be moved to the right by the value of 1 column -->
 			<div class="span10 offset1">
 				<!-- The bootstrap class row creates a row on the page in which the table will reside. -->
 				<div class="row banner">
 					<h3>Delete a Customer</h3>
 				</div>
 				<!-- The bootstrap class form-horizontal formats the form as a horizontal form 
-				(the labels are on the same line as the controls) -->
+					(the labels are on the same line as the controls) -->
 				<form class="form-horizontal" action="delete.php" method="post">
 					<input type="hidden" name="id" value="<?php echo $id;?>"/>
 					<!-- The bootstrap class alert formats the text as a basic alert message.
 						The bootstrap class alert-error changes the alert message formatting to be a red
-					background and text color to warn the user of an error -->
+						background and text color to warn the user of an error -->
 					<p class="alert alert-error">Are you sure you want to delete this record?</p>
 					<!-- The bootstrap class form-actions formats the buttons for the form so that they line up with
 					the form controls -->
@@ -80,14 +79,13 @@ design:
 			
 		</div> <!-- /container -->
 		
-		<!-- 9. Image added-->
+		<!-- 7. Image added-->
 		<div>
-			<!-- Inline CSS -->
-				<figure style="position:relative;bottom:0px;width:200px;height:100px;margin-left:500px;">
-					<img src="../thumbsup.jpg" />
-					<figcaption>This website was created by Cory Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
-				</figure>
-			</div>
-		
+			<!-- 8. Inline CSS -->
+			<figure style="position:relative;bottom:0px;width:200px;height:100px;margin-left:500px;">
+				<img src="../thumbsup.jpg" />
+				<figcaption>This website was created by Cory Murawske to showcase Bootstrap, CIS 255, Fall 2015</figcaption>
+			</figure>
+		</div>
 	</body>
 </html>	

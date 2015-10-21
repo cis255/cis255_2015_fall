@@ -40,13 +40,13 @@ deleted, and read.  -->
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 	<style>
-	body {background-color:black !important;) <!-- will always be white background, highest specificity -->
+	body {background-color:black !important;) <!-- 2., 6. will always be white background, highest specificity -->
 	</style>
 </head>
 
 <body style="background-color:black">
     <div class="container">
-		<div class="text-center"> <!-- centers text in the div-->
+		<div class="text-center"> <!-- 5. centers text in the div-->
     			<div class="col-sm-2"> <!-- adds 12/2 sm columns -->
     				<div class="row">
 		    			<h3 style="color:white; border:solid; border-color:white"">Delete a Customer</h3>
@@ -63,7 +63,7 @@ deleted, and read.  -->
 						</div>
 					</form>
 				</div>
-			<div class="col-sm-2"> <!-- adds 12/2 sm columns -->
+			<div class="col-sm-2"> <!-- 3. adds 12/2 sm columns -->
 				<img id="svsu" height="500" width="500"src="svsu.jpg" class="img-rounded" style="position: fixed;border:dotted;border-color:white">
 			</div>
 		</div>	
