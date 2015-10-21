@@ -70,79 +70,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Update Customer</title>
-	
     <meta charset="utf-8">
-	<link rel="stylesheet" href="..\my.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	<div class="navbar">
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="navbar navbar">
-			<div class="navbar-nav navbar-left">
-				<a class="navbar-brand" href="index.php"><img src="Gaming Central Heading.jpg" class="img-rounded"></a>
-			</div>
-		<div>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.php">Home</a></li>
-				<li><a href="create.php">Create</a></li>
-				<li><a href="delete.php">Delete</a></li>
-				<li class="active"><a href="update.php">Update</a></li>
-				<li><a href="read.php">Read</a></li>
-			</ul>
-		</div>
-		</div>
-	</nav>
-	</div>
-	
     <div class="container">
     
-    				<div style="text-align: center" class="well">
-						<h3>Use the Input Boxes to update the user's information!</h3>
-					</div>
-					
-				<div class="alert alert-info">
-					<strong>Info!</strong> Make sure you don't leave any of the boxes blank!
-				</div>
-			
-					
-	    			<form class="form-horizontal" role="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
-					  <div class="form-group <?php echo !empty($nameError)?'error':'';?>">
+    			<div class="span10 offset1">
+    				<div class="row">
+		    			<h3>Update a Customer</h3>
+		    		</div>
+    		
+	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
+					    <label class="control-label">Name</label>
 					    <div class="controls">
-						    <label class="control-label col-sm-4">Name:</label>
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
 					      		<span class="help-inline"><?php echo $nameError;?></span>
 					      	<?php endif; ?>
 					    </div>
 					  </div>
-					  <div class="form-group <?php echo !empty($emailError)?'error':'';?>">
+					  <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
+					    <label class="control-label">Email Address</label>
 					    <div class="controls">
-							<label class="control-label col-sm-4">Email Address:</label>
 					      	<input name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
 					      	<?php if (!empty($emailError)): ?>
 					      		<span class="help-inline"><?php echo $emailError;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <div class="form-group <?php echo !empty($mobileError)?'error':'';?>">
+					  <div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
+					    <label class="control-label">Mobile Number</label>
 					    <div class="controls">
-							<label class="control-label col-sm-4">Mobile Number:</label>
 					      	<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
 					      	<?php if (!empty($mobileError)): ?>
 					      		<span class="help-inline"><?php echo $mobileError;?></span>
 					      	<?php endif;?>
 					    </div>
 					  </div>
-					  <div class="form-actions col-sm-offset-4">
-						  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-upload"></span> Update</button>
-						  <a href="index.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
+					  <div class="form-actions">
+						  <button type="submit" class="btn btn-success">Update</button>
+						  <a class="btn" href="index.php">Back</a>
 						</div>
 					</form>
+				</div>
 				
     </div> <!-- /container -->
   </body>
