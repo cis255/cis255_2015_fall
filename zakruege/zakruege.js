@@ -1,1 +1,4 @@
-alert('3. You should click ok');
+/*
+filename: zakruege.js
+purpose:  demonstrate basic javascript
+*/

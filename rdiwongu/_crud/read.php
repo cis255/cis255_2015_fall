@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php 
 	require 'database.php';
 	$id = null;
@@ -17,13 +19,11 @@
 		Database::disconnect();
 	}
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
+	<link   href="../rdiwongu_exercise02.css"" rel="stylesheet">
 </head>
 
 <body>
