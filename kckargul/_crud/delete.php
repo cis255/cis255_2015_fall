@@ -51,6 +51,7 @@
 	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 					  <p class="alert alert-error">Are you sure to delete ?</p>
 					  <div class="form-actions">
+						<div class="btn-group">
 						  <button type="submit" class="btn btn-danger">
 						    <span class="glyphicon glyphicon-trash"/>
 							Yes
@@ -60,6 +61,7 @@
 							No
 						  </button>
 						</div>
+					  </div>
 					</form>
 				</div>
 		</div>				
