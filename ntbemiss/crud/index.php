@@ -36,29 +36,29 @@
 					<link   href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/_crud/css/bootstrap.min.css" rel="stylesheet">
 						<!--3.2 Absolute referencing-->
 
-						<script src="js/bootstrap.min.js"/>
+						<script src="js/bootstrap.min.js"></script>
 
 						<style>
 							<!--7.1 This is element selector-->
-		h1 {
-			color: red;
-		} 
-		p  {
-			color: white;
-			font-family: "Arial";
-			font-weight: bold;
-		}
-		th {
-			color: white; !important
-		}
+							h1 {
+								color: red;
+							} 
+							p  {
+								color: green;
+								font-family: "Arial";
+								font-weight: bold;
+							}
+							th {
+								color: #00CC00; !important
+								}
 							<!--8.c location causes this color to only apply to this page, as opposed to the color set in the css file -->
-		body {
-			background-color: #00CC00;
-		}
+							body {
+								background-color: #00CC00 !important;
+							}
 							<!--7.4 psuedo selector-->
-		a:hover {
-			color: #FF0000;
-		}
+							a:hover {
+								color: #FF0000;
+							}
 
 						</style>
 					</head>

@@ -1,0 +1,77 @@
+<!-- 
+
+-->
+
+
+<title>Web Media Examples in JavaScript</title>
+
+<!-- code taken from https://msdn.microsoft.com/en-us/liBRary/hh924823(v=vs.85).aspx -->
+
+<script type="text/javascript">
+
+    function vidplay() {
+       var video = document.getElementById("Video1");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }
+    }
+
+    function restart() {
+        var video = document.getElementById("Video1");
+        video.currentTime = 0;
+    }
+
+    function skip(value) {
+        var video = document.getElementById("Video1");
+        video.currentTime += value;
+    }      
+</script>
+
+</head>
+
+<body bgcolor = #191970>      
+<center>
+<font color = "white">
+
+<h1>Web Media Examples in JavaScript</h1>
+
+<br>
+<br>
+<br>
+
+<h1>Video with Controls</h1>
+<video id="Video1" autoplay>
+     <source src="movie.mp4" type="video/mp4" />
+     HTML5 Video is required for this example. 
+     <a href="demo.mp4">Download the video</a> file. 
+</video>
+
+<div id="buttonbar">
+    <button id="restart" onclick="restart();">[]</button> 
+    <button id="rew" onclick="skip(-10)">&lt;&lt;</button>
+    <button id="play" onclick="vidplay()">&gt;</button>
+    <button id="fastFwd" onclick="skip(10)">&gt;&gt;</button>
+</div>
+
+<br>
+<br>
+<br>
+<h1>Audio with Controls</h1>
+
+<!--
+
+
+<div id="buttonbar">
+	<button id="restart" onclick="restart();">[]</button>
+	<button id="rew" onclick="skip(-10)">&lt;lt;</button>
+	<button id="play" onclick="vidplay() 
+
+
+-->
+
+</center>

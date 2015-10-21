@@ -1,8 +1,9 @@
 <!--Name: 	Kevin Kargula
 	Class:	CIS 255
-	Desgin:	trash image
-			"Do you want to delete"
-			yes button danger check mark _ no button default X mark
+	Desgin:	Well
+				trash image
+				"Do you want to delete"
+				yes button danger check mark _ no button default X mark
 -->
 <?php 
 	require 'database.php';
@@ -50,6 +51,7 @@
 	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 					  <p class="alert alert-error">Are you sure to delete ?</p>
 					  <div class="form-actions">
+						<div class="btn-group">
 						  <button type="submit" class="btn btn-danger">
 						    <span class="glyphicon glyphicon-trash"/>
 							Yes
@@ -59,6 +61,7 @@
 							No
 						  </button>
 						</div>
+					  </div>
 					</form>
 				</div>
 		</div>				

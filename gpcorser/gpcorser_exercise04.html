@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+filename : gpcorser_exercise04.html
+purpose  : 
+            Part A: demonstrate javascript: inline, internal and external
+			Part B: demonstrate basic aspects of javascript
+design   : <head> 
+               nothing
+           <body> 
+		       1. inline javascript
+			   2. internal javascript
+			   3. external javascript
+testing  : use https://jsfiddle.net/xeb1ej6v/
+-->
+<html>
+
+	<head>
+
+	</head>
+	
+	<body>
+		<p id="container"></p>
+		
+		<!-- Code below from w3schools 
+		http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_appendchild -->
+		<ul id="myList">
+			<li>Coffee</li>
+			<li>Tea</li>
+		</ul>
+
+		<p>Click the button to append an item to the end of the list.</p>
+
+		<!-- 1. inline javascript -->
+		<button onclick="myFunction()">Try it</button>
+
+		<script>
+		function myFunction() {
+			var node = document.createElement("LI");
+			var textnode = document.createTextNode("Water");
+			node.appendChild(textnode);
+			document.getElementById("myList").appendChild(node);
+		}
+		</script>
+
+		<p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
+		<!-- Code above from w3schools -->
+		
+		<!-- 3. external javascript -->
+		<script type="text/javascript" src="gpcorser.js"></script>
+		
+		<!-- 2. internal javascript -->
+		<script>
+			document.write('<br/>end of document <br/>');
+		</script>
+	</body>
+</html>

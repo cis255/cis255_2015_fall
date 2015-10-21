@@ -1,3 +1,12 @@
+<!--Name: 	Kevin Kargula
+	Class: 	CIS 255
+	Design:	Appealing picture
+			"Read Customer"
+			label "Name" - name
+			label "email address" - email address
+			label "mobile number" - mobile number
+			back default button
+-->
 <?php 
 	require 'database.php';
 	$id = null;
@@ -37,6 +46,7 @@
     			<div class="span10 offset1">
 					<img src="https://40.media.tumblr.com/43e313527c1e172c8adee673a6fbe01b/tumblr_mv3j6bk8vu1sr7w3co1_500.jpg"/>
 		    			<h3>Read a Customer</h3>
+					<!--Makes the page horizontal-->
 	    			<div class="form-horizontal" >
 					  <div class="control-group">
 					    <label class="control-label">Name</label>
@@ -46,25 +56,26 @@
 						    </label>
 					    </div>
 					  </div>
-					<!--Gives the email address of the specific person-->
 					  <div class="control-group">
 					    <label class="control-label">Email Address</label>
 					    <div class="controls">
 					      	<label class="checkbox">
+					<!--Gives the email address of the specific person-->
 						     	<?php echo $data['email'];?>
 						    </label>
 					    </div>
 					  </div>
-					<!--gives the mobile number of the specific person-->
 					  <div class="control-group">
 					    <label class="control-label">Mobile Number</label>
 					    <div class="controls">
 					      	<label class="checkbox">
+					<!--gives the mobile number of the specific person-->
 						     	<?php echo $data['mobile'];?>
 						    </label>
 					    </div>
 					  </div>
 					    <div class="form-actions">
+						  <!-Creates white button for going back-->
 						  <a class="btn btn-default" href="index.php">
 							<span class="glyphicon glyphicon-circle-arrow-left"/>
 							Back

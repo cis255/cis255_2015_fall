@@ -19,10 +19,12 @@ assignment: this program demonstrates the following...
 		  2. absolute address of external file
 		  3. bootstrap class
 		  4. inline css
+		  5. external css
 ------------------------------------------------------------------------------------------------ -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
+	<!-- below: 5. external css -->
     <link   href="css/bootstrap.min.css" rel="stylesheet"> <!-- 1. relative address of external file -->
     <script src="js/bootstrap.min.js"></script>
 </head>

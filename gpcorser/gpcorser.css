@@ -1,3 +1,7 @@
+/* 
+filename: gpcorser.css
+*/
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: pink !important;
 }
