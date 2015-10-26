@@ -2,8 +2,7 @@
 filename: gpcorser.js
 purpose : demonstrate basic javascript
 */
-//    window.onload=function() {
-        // do stuff
+
 
 var car = function (color,sound) {
     this.color = color;
@@ -27,7 +26,7 @@ catch (e){
 
 months = ["jan","feb","mar","apr","may"]
 
-monthsHTML = "";
+monthsHTML = "<p>The section of code below was created from gpcorser.js</p>";
 monthsHTML = monthsHTML+"<ol>";
 for(i=0;i<months.length;i++){
 	monthsHTML = monthsHTML+"<li>";
@@ -35,10 +34,9 @@ for(i=0;i<months.length;i++){
 	monthsHTML = monthsHTML+"</li>";
 }
 monthsHTML = monthsHTML+"</ol>";
-document.getElementById("container").innerHTML = monthsHTML;
+document.getElementById("months").innerHTML = monthsHTML;
 
 
- //   };
 
 
 
