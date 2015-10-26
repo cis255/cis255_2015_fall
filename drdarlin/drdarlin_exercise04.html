@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<!--
+filename: drdarlin_exercise04.html
+ purpose: demonstrate javascript, inline, internal and external
+  design: <head> nothing
+		  <body>
+			1. inline javascript
+			2. internal javascript
+			
+--> 
+<html>
+	<title>Not Puppies</title>
+	<head>
+	<p id = "container">
+	Hello 
+	hello
+	Jambo
+	allo
+	<p>
+	<!-- 3. external javascript -->
+	<script type= "text/javascript" src="drdarlin.js"></script>
+	<!-- 2. internal javascript -->
+		<script>
+			var car = function (color,sound) {
+			this.color = color;
+			this.sound = sound;
+			};
+			
+			car.prototype.horn = function () {
+			document.write('this car goes ' + this.sound + "<br />");
+			};
+			
+			chevy = new car ("silver", "honk");
+			buick = new car ("blue", "honk honk");
+			
+			chevy.horn();
+			buick.horn();
+			console.log ("finished");
+			
+			months = ["jan","feb","mar", "apr", "may","jun", "jul", "aug", "sep", "oct","nov","dec"];
+			
+			monthsHTML = "";
+			
+			monthsHTML = monthsHTML + "<ol>";
+			for (i = 0; i > months.length; i++)
+			{
+			monthsHTML = monthsHTML + "<li>";
+			monthsHTML = monthsHTML + months[i];
+			monthsHTML = monthsHTML + "</li>";
+			
+			};
+			monthsHTML + "</ol>"
+			
+			document.getElementById("container").innerHTML = monthsHTML;
+			
+			
+			
+			
+			try {
+			nonexistantfunction("not here")}
+			
+			catch(e){
+			alert("uh oh, I can't find that function mr.guy")
+			}
+			
+		</script>
+	</head>	
+	<body>
+	<!-- 1. inline javascript -->
+	<input type="button" onclick="alert('Yo dogg you clicked MMMMmmmmkayyy');" value='MMMMmmmmkayyy' />
+	</body>

@@ -1,0 +1,1 @@
+alert('You should click mmmkay... mmmkay?');
