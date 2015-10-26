@@ -116,23 +116,23 @@ design:
 		</tr>
 		<tr>
 			
-			<td id="CustomerName" colspan="5">
-			<input size="45" type ="text" size = "40" name="Customer_Name" placeholder="Name"></td>
+			<td id="ItemNoInput" colspan="5">
+			<input size="45" type ="text" onkeydown="appendRow()" size = "40" name="ItemNo_Input" ></td>
 			
 		
 			
-			<td id="CustomerAddress" colspan="5">
-			<input size="40"type ="text" name="Customer_Address" placeholder="Address"></td>
+			<td id="DescriptionInput" colspan="5">
+			<input size="40"type ="text" onkeydown="appendRow()" name="Description_Input" ></td>
 			
 		
-			<td id="CustomerCity" colspan="5">
-			<input type ="text" id= "CustomerCity_input" name="Customer_City" placeholder="City"></td>
+			<td id="QuantityInput" colspan="5">
+			<input type ="text" onkeydown="appendRow()" id= "Quantity_Input" name="Customer_City" ></td>
 			
-			<td id="CustomerState"  colspan="5">
-			<input size="40" type ="text" name="Customer_State" placeholder="State"></td>
+			<td id="PriceInput"  colspan="5">
+			<input size="40" type ="text" onkeydown="appendRow()" name="Price_input" ></td>
 			
-			<td id="CustomerZip" colspan="5">
-			<input size="40" type ="text"  name="Customer_Zip"  placeholder="Zip"></td>
+			<td id="AmountInput" colspan="5">
+			<input size="40" type ="text" onkeydown="appendRow()"  name="Amount_Input"  placeholder="Zip"></td>
 		</tr>
 		
 	</table>
@@ -156,8 +156,31 @@ design:
 			$("tr:odd").css("background-color","#c0c0c0"); //every other table line is grey
 			$("tr:odd input").css("background-color","#c0c0c0");
 			
+			
+			
 		}); //these commands are only for after document is already loaded
 		
+		
+		// append row to the HTML table
+function appendRow() {
+    var tbl = document.getElementById('OrderFormTable'), // table reference
+        row = tbl.insertRow(tbl.rows.length),      // append table row
+        i;
+    // insert table cells to the new row
+    for (i = 0; i < tbl.rows[0].cells.length; i++) {
+        createCell(row.insertCell(i), i, 'row');
+    }
+};
+ 
+// create DIV element and append to the table cell
+function createCell(cell, text, style) {
+    var div = document.createElement('div'), // create DIV element
+        txt = document.createTextNode(text); // create text node
+    div.appendChild(txt);                    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+};
 	</script>
 	
 </body>
