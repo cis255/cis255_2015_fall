@@ -15,6 +15,7 @@ design:
 		6. Objects, arrays
 		7. functions, prototypes
 		8. Write to DOM
+		9. Jquery Customer Order form
 			
 ----------------------------------------------- -->
 
@@ -57,6 +58,7 @@ design:
 		<script>
 			//operators
 				//Assignment operators
+				
 				var k = x&=y;
 				document.write("x &= y is "+ k +"<br/>"); //bitwise 
 				//Comparison operators
@@ -64,10 +66,10 @@ design:
 				document.write("var1 = " +var1+ " and var2 = " +var2 +"<br/>");
 				document.write("Does var1 equal var2? Answer = " + var1==var2+"<br/>");
 				//Bitwise shift
-				var d = k<<x;
+				var d = y<<x;
 				document.write("k <<x = (" + k  +"left shift " +x+ ") =" +d +"<br/>");
 			//Expressions
-				document.write("'This' expression evaluates to " + this.propertyname+"<br/>"); //propertyname
+				//document.write("'This' expression evaluates to " + this.propertyname+"<br/>"); //propertyname
 				
 		</script>
 		
@@ -82,18 +84,20 @@ design:
 		<p id="timeGreeting">Good Evening!</p>
 
 			<script>
+			function myTimeFunction(){
 			if (new Date().getHours() < 18) {
 			document.getElementById("timeGreeting").innerHTML = "Good day!"; //if
-}
+				}
+			}
 			</script>
 			<p>Click the button to display a time-based greeting:</p>
 
-			<button onclick="myFunction()">Try it</button>
+			<button onclick="myTimeFunction()">Try it</button>
 
-			<p id="day"></p>
-
+			<p id="day">Hello!</p>
+			
 			<script>
-				function myFunction() {
+				function myDayFunction() {
 				var day = new Date().getDay; 
 				var greeting;
 				if (Day = "Monday"||"Wednesday") {
@@ -104,11 +108,30 @@ design:
 				document.getElementById("day").innerHTML = greeting;
 				}
 			</script>
+			<button onclick="myDayFunction()">Do I have Webdesign today?</button>
 		
 		<h2>Control Structures</h2>
 		<!--5. Control Structures     -->
 			<!-- Do-->
 			<!-- While-->
+			<p>Click the button to loop through a block of code as long as i is less than 5.</p>
+
+			<button onclick="myDoWhileFunction()">Try it</button>
+
+			<p id="demo"></p>
+
+			<script>
+			function myDoWhileFunction() {
+				var text = ""
+				var i = 0;
+				do {
+					text += "<br>The number is " + i;
+					i++;
+				}
+				while (i < 5);
+				document.getElementById("demo").innerHTML = text;
+			}
+			</script>
 			<!-- For -->
 			
 		
@@ -126,6 +149,10 @@ design:
 		<!--8. Write to DOM          	-->
 		<script>
 		</script>
+		
+		<!-- Link to customer order form -->
+		<h2> 9. Link to jquery Customer Order Form</h2>
+		<a href ="arklines_prog03_order.html">Program 3 Order Form</a>
 		
 		
 		<!-- external javascript; appears at the end of the body tag -->
