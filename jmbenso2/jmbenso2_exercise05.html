@@ -1,0 +1,105 @@
+<!doctype html>
+<!--
+filename : jmbenso2_exercise05.html
+purpose  : demonstrate jquery compared to javascript
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. script for printing numbers, 1-10
+			   3. temperature converter in JavaScript
+			   4. temperature converter in jQuery
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+	    <!-- 1. header and paragraph -->
+		<h1>Jon Benson</h1>
+		<h2>Exercise 05: JavaScript v. jQuery</h2>
+		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
+
+		<!-- 2. script for printing numbers, 1-10 -->
+		<h3>A Simple For Loop in JavaScript</h3>
+		<script>
+			document.write("<p>");
+			var i;
+			for(i = 1; i <= 10; i++){
+				document.write(i + "<br />");
+			}
+			document.write("</p>");
+			
+		</script>
+		
+	    <!-- 3. temperature converter in JavaScript -->	
+		<h3>JavaScript Temperature Converter</h3>		
+		<form>
+			<p> 
+				Fahrenheit:	<input onkeyup="convert('F')" id="f_field" type="text" placeholder="Fahrenheit" />
+			</p>
+			<p>
+				Celsius: <input onkeyup="convert('C')" id="c_field" type="text" placeholder="Celsius" />
+			</p>
+			<p>
+				Kelvin: <input onkeyup="convert('K')" id="k_field" type="text" placeholder="Kelvin" />
+			</p>
+		</form>
+		<script>
+			var c_field = document.getElementById("c_field");
+			var f_field = document.getElementById("f_field");
+			var k_field = document.getElementById("k_field");
+				
+			function convert(degrees) {
+				if (degrees=='C') {
+					f_field.value = (c_field.value * (9/5) + 32).toFixed(2);
+					k_field.value = (parseFloat(c_field.value) + (273.15)).toFixed(2);
+					
+				}
+				else if (degrees=='K') {
+					c_field.value = (parseFloat(k_field.value)-(273.15)).toFixed(2);
+					f_field.value = (c_field.value * (9/5) + 32).toFixed(2);
+							
+				}
+				else {
+					c_field.value = ((f_field.value-32) * (5/9)).toFixed(2);
+					k_field.value = (parseFloat(c_field.value) + (273.15)).toFixed(2);
+				}
+			};
+
+		</script>
+		
+		<!-- 4. temperature converter in jQuery -->
+		<h3>jQuery Temperature Converter</h3>
+		<form>
+			<p> 
+				Fahrenheit:	<input  id="f_field_2" type="text" placeholder="Fahrenheit" />
+			</p>
+			<p>
+				Celsius: <input  id="c_field_2" type="text" placeholder="Celsius" />
+			</p>
+			<p>
+				Kelvin: <input  id="k_field_2" type="text" placeholder="Kelvin" />
+			</p>
+		</form>
+		<script>
+			$("#c_field_2").keyup(function(){
+				$("#f_field_2").val((this.value* (9/5) + 32).toFixed(2));
+				$("#k_field_2").val((parseFloat(this.value) + 273.15).toFixed(2));
+			
+			});
+			$("#f_field_2").keyup(function(){
+				$("#c_field_2").val(((this.value-32) * (5/9)).toFixed(2));
+				$("#k_field_2").val(((parseFloat(this.value)-32) * (5/9) + 273.15).toFixed(2));
+			
+			});
+			$("#k_field_2").keyup(function(){
+				$("#c_field_2").val((this.value - 273.15).toFixed(2));
+				$("#f_field_2").val(((this.value - 273.15)*(9/5) + 32).toFixed(2));
+			
+			});
+			
+		</script>
+	</body>
+</html>
