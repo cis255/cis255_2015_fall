@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+----- This file was copied from the gpcorser directory -------
+--------------------------------------------------------------
+Filename: jtolson_prog03.html
+Author  : Joe Olson, cis255, fall2015
+Purpose : this program demonstrates javascript and jquery
+Design  :
+    <head> Title
+	<body>
+	    0. header
+		1. variable names
+		2. primitive data types
+		3. operators and expressions
+		4. conditionals, truthy, falsy
+		...
+		9. link to jQuery Customer Order Form
+		
+-------------------------------------------------------------- -->
+<html>
+	<head>
+		<title>CIS 255 - Joe Olson, Program 03</title>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Joe Olson, CIS 255, Program 3</h1>
+		<h3>This web page is a template for students in CIS-255. Please follow this format when doing your program.</h3>
+		<p id="id01">This is a template for Program 03</p>
+		
+		<!-- 1. variable names -->
+		<h2>1. variable names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<script>
+		    var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2. primitive data types -->
+		<h2>2. primitive data types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy";
+			var n = null;
+			var u;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var n is type: "+typeof(n)+"<br/>");
+			document.write("var u is type: "+typeof(u)+"<br/>");
+		</script>
+		
+		<!-- 4. conditionals, truthy, falsy -->
+		<h2>4. conditionals, truthy, falsy</h2>
+		<script>
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML=y;
+			
+		</script>
+		
+		<!-- 9. link to jQuery Customer Order Form -->
+		<h2>9. link to jQuery Customer Order Form</h2>
+		<a href="gpcorser_prog03_order.html">Program 3 Order Form</a>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
