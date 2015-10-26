@@ -1,12 +1,37 @@
 <!DOCTYPE html>
+<!-- ------------------------------------------------------------------------------------------------
+filename: index.php
+author  : Tyler O'Lear, CIS255, Fall2015
+descr   : this php file displays a list of customers from a mysql database
+purpose : the purpose of this file is to demonstrate front end css/bootstrap styling on back end app
+notes   : to prettify in Notepad++, use Plugins | XML Tools | Pretty Print
+          or don't because its breaking PHP haha!
+
+design  : <head> identifies external css/bootstrap and js files also tab title
+          <style> internal css
+          <body> 
+        1. displays navbar
+		    2. displays heading as Jumbotron with picture and paragraph
+			  3. displays create button
+			  4. displays table (list of customers, plus buttons for read, update, and delete)
+			  5. displays link to startutorial
+        6. ALL BUTTONS HAVE GLYPHICONS
+assignment: this program demonstrates the following...
+
+      1. relative address of external file
+		  2. absolute address of external file
+		  3. bootstrap class
+		  4. inline css
+		  5. external css
+------------------------------------------------------------------------------------------------ -->
 <html lang="en">
 <head>
 	<title>Gaming Central</title>
 														<!-- the location or order of these is important. Lowest will overwrite others with same element mod -->
     <meta charset="utf-8">								<!-- !import is inlcuded in my External CSS -->
-	<link rel="stylesheet" href="..\my.css">           <!-- External CSS, sheet only effects pages where a well is used. -->
+	<link rel="stylesheet" href="..\my.css">           <!-- External CSS, sheet only effects pages where a well is used. This is relative address -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  <!-- this is an absolute address -->
     <script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -27,7 +52,7 @@
 		<div>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="index.php">Home</a></li>
-				<li><a href="create.php">Create</a></li>
+				<li><a href="http://csis.svsu.edu/~tmolear/cis255/tmolear/_crud/create.php">Create</a></li> <!-- Absolute address -->
 				<li><a href="delete.php">Delete</a></li>
 				<li><a href="update.php">Update</a></li>
 				<li><a href="read.php">Read</a></li>
@@ -88,7 +113,7 @@
 					  ?>
 				      </tbody>
 	            </table>
-				<a href="http://www.startutorial.com/articles/view/php-crud-tutorial-part-1" class="btn btn-success">Tutorial</a>
+				<a href="http://www.startutorial.com/articles/view/php-crud-tutorial-part-1" class="btn btn-success"><span class="glyphicon glyphicon-play-circle"</span> Tutorial</a>
     	</div>
     </div> <!-- /container -->
   </body>
