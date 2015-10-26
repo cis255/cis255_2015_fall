@@ -23,12 +23,14 @@ Borrowed from  GPCorser
 		<title>CIS-255: Kevin Kargula</title>
 		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<title>CIS-255: Kevin Kargula</title>
 		<!-- internal css -->
 		<style>
 			#message {
 				color: red;
 			}
 		</style>
+		<script src=https://code.jquery.com//jquery-2.1.4.js"/>
 	</head>
 	<body>
 	
@@ -42,14 +44,15 @@ Borrowed from  GPCorser
 				var a =1;
 				var _b = 2;
 				var $c = 3;
-				var d =5;
-				var N;
-				var n = null;
-				document.write("combination of a & d "+ a+d +"<br/>");
-				document.write("combination of _b & d "+ _b+d +"<br/>");
-				document.write("combination of $c & _b "+ $c+_b +"<br/>");
-				document.write("combination of n & d "+ n+d +"<br/>");
-				document.write("combination of n & N "+ n+N +"<br/>");
+				var d = a+_b+$c
+				var Som=64;
+				var som=4;
+				var null;
+				document.write("combination of 'a+_b+$c=' & d is: "+"a+_b+$c="+d+"<br/>");
+				document.write("combination of a & b"+a + _b+"<br/>");
+				document.write("combination of Som and _b"+Som+_b+"<br/>");
+				document.write("combination of Som and some"+Som+som+"<br/>");
+				document.write("combination of Som and null"+Som+null+"<br/>");
 			</script>
 
 			<!--2. primitive data type
@@ -63,6 +66,7 @@ Borrowed from  GPCorser
 			<script>
 				var x = 5; //number
 				var y = "zippy"; //string
+				var n = null;
 				var t = true;
 				var u; //This is undefined
 				document.write("var x is type: "+typeof(x)+"<br/>");
@@ -74,22 +78,7 @@ Borrowed from  GPCorser
 
 			<!--3. Operators and expressions-->
 			<h2> Operators and expresssions</h2>
-			<script>
-				var dog  = "dog";
-				var tot1 = +t;
-				var tot2 = !t;
-				var tot3 = t||!t;
-				var tot4 = t&&!t;
-				var tot5 = $c||_b;
-				var tot6 = $c&&_b;
-				document.write("With operator '+', +t returns "+ tot1 +"<br/>");
-				document.write("With operator '!', !t returns "+ tot2 +"<br/>");
-				document.write("With operator '||', t||!t returns "+ tot3 +"<br/>");
-				document.write("With operator '&&', t&&!t returns "+ tot4 +"<br/>");
-				document.write("With operator '||', $c||_b returns "+ tot5 +"<br/>");
-				document.write("With operator '&&', $c&&_b returns "+ tot6 +"<br/>");
-			</script>
-			
+
 			<!--4. Conditionals
 				a. truthy
 				b. falsy
@@ -102,7 +91,7 @@ Borrowed from  GPCorser
 				var F = "5";
 				document.write("Also known as a ternary operators");
 				(n==u)?document.write("n==u <br/>"):document.write("n!=u <br/>");
-				(n===u)?document.write("n===u <br/>"):document.write("n!==u <br/>");	
+				(n===u)?document.write("n===u <br/>"):document.write("n!==u <br/>");
 				(f===F)?document.write("f===F <br/>"):document.write("n!==u <br/>");
 				(f==F)?document.write("f==F <br/>":document.write("f!=F<br/>");
 
@@ -120,19 +109,16 @@ Borrowed from  GPCorser
 				for(int i=0; i<5; i++){
 					document.write(i+" ");
 				}
-				
 				document.write("this is a do conditional <br/>");
 				do{
 					i++;
 					document.write(i+" ");
 				}while(i<10);
-				
 				document.write("<br/>This is a while loop: ");
 				while(i>0){
 					i--;
 					document.write(i+" ");
 				}
-				
 				document.write("<br/>This is a case statement: ");
 				var n = 5;
 				switch(n){
@@ -140,7 +126,7 @@ Borrowed from  GPCorser
 						document.write("This won't be written");
 						break;
 					case 5:
-						document.write("This is what will be written");
+						document.write("This will be written");
 						break;
 				}
 			</script>
@@ -174,7 +160,7 @@ Borrowed from  GPCorser
 				document.getElementById("id01").innerHTML=y;
 			</script>
 			<!--9. Link to jQery Customer Order Form-->
-			<h4>Link to jQuery Customer Order Form</h4>
+			<h2>Link to jQuery Customer Order Form</h2>
 				
 			<a href ="kckargul_prog03_order.html">
 		</body>
