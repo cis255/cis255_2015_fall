@@ -26,7 +26,7 @@
 			<link ref="http://csis.svsu.edu/~drdarlin/cis255/drdarlin/drdarlin_prog02/crud/css/bstrap.css" rel="stylesheet">
 			<!-- 3. Here is an example of the ../ thing which means go to the folder above-->
 				<link   href="../crud/css/drdarlin_prog02.css" rel="stylesheet"> 
-					<script src="js/bootstrap.min.js"/>
+					<script src="js/bootstrap.min.js"></script>
 				</head>
 
 				<body>
@@ -42,8 +42,6 @@
   <!-- the next three are for the headers for each subject matter when reading about a customer-->
  <!-- I wanted the color to be white and wanted the location to be static (left ish on the page)-->
  #content1 {color: #FFFFF;
-
-
 		position:absolute;
 		left:250px;
 		top:105px;
@@ -86,7 +84,7 @@ figure {position:absolute;
 					</style>
 					<!-- Main header for the page styling is from drdarlin_prog02.css-->
 					<div class="row">
-						<h3> >Read a Customer</h3>
+						<h3> Read a Customer</h3>
 					</div>
 
 					<div id ="form-header" >
@@ -102,20 +100,20 @@ figure {position:absolute;
 					</div>
 					<!-- this container needs styling info from drdarlin_prog02.css and also an identifer that has styling from this document-->
 					<div class="container">
-						<div id="content1">
-							<label >
+						<div >
+							<label id="content1" >
 								<?php echo $data['name'];?>
 							</label>
 						</div>
 						<!-- this container needs styling info from drdarlin_prog02.css and also an identifer that has styling from this document-->
-						<div id="content2">
-							<label >
+						<div >
+							<label id="content2">
 								<?php echo $data['email'];?>
 							</label>
 						</div>
 						<!-- this container needs styling info from drdarlin_prog02.css and also an identifer that has styling from this document-->
-						<div id="content3">
-							<label >
+						<div >
+							<label id="content3">
 								<?php echo $data['mobile'];?>
 							</label>
 						</div>

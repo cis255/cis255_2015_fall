@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+filename: ajhaltom_prog3.html
+author  : alex haltom, cis255, fall2015
+purpose : this program demonstrates javascript and jquery
+design  : 
+	<head> favicon and title
+	<body>
+		0. header
+		1. variable names
+-->
+<html>
+	<head>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS-255: Alex Haltom</title>
+	</head>
+	<body>
+		<!-- 0. header -->
+		<h1>Alex Haltom, CIS-255, Program 3</h1>
+		
+		<!-- 1. variable names -->
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<h2>1. Variable Names</h2>
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d)
+		</script>
+		<!-- 2. primitive data types -->
+		<h2>2. Primitive Data Types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy"; // string
+			var z = true; // boolean
+			var n = null; // null
+			document.write("var x is type:"+typeof(x)+"<br />");
+			document.write("var y is type:"+typeof(y)+"<br />");
+			document.write("var z is type:"+typeof(z)+"<br />");
+			document.write("var u is type:"+typeof(u)+"<br />"); // undefined
+			document.write("var n is type:"+typeof(n)+"<br />");
+		</script>
+	</body>
+</html>
