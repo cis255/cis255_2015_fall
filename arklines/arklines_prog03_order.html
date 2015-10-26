@@ -1,4 +1,4 @@
-<! Doctype html>
+<!doctype HTML>
 <!-- ---------------------------------------
 filename: arklines_prog03.html
 author  : arklines, cis2015, fall2015
@@ -17,36 +17,65 @@ design:
 	<h3>Customer Order Form</h3>
 	<!-- JQuery cdn -->
 	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
 	
 </head>
 <body>
-<div class = "Container">
+
 	<!-- 1. Customer info table -->
-	<table id ="MailOrdersTo" border ="1">
+	<table id ="CustomerMail" border ="1">
 		<tr>
-			<th colspan="3">
+			<th id="MailOrdersTo" colspan="3">
 				Mail Orders To:
 			</th>
 		</tr>
 		<tr>
 			
-			<td id="CustomerName"colspan="3">Name:
-			<input type ="text" name="Customer_Name"></td>
+			<td id="CustomerName" colspan="3">
+			<input size="45" type ="text" size = "35" name="Customer_Name" placeholder="Name"></td>
 			
 		</tr>
 		<tr>
 			
-			<td id="CustomerAddress" colspan="3">Address:
-			<input type ="text" name="Customer_Address"></td>
+			<td id="CustomerAddress" colspan="3">
+			<input size="45"type ="text" name="Customer_Address" placeholder="Address"></td>
 			
 		</tr>
 		<tr>
-			<td id="CustomerCity" colspan="3">City:
-			<input type ="text" name="Customer_City"></td>
+			<td id="CustomerCity" colspan="3">
+			<input type ="text" id= "CustomerCity_input" name="Customer_City" placeholder="City"></td>
+			
+			<td id="CustomerState"  colspan="3">
+			<input size="5" type ="text" name="Customer_State" placeholder="State"></td>
+			
+			<td id="CustomerZip" colspan="3">
+			<input size="10" type ="text"  name="Customer_Zip"  placeholder="Zip"></td>
 		</tr>
 		
 	</table>
-	</div> <!-- container -->
+	
+	<!--script is at the end so that you have access to all elements already -->
+	
+	<script>
+	
+		$("document").ready(function init(){
+			$("#CustomerCity").css("background-color","red"); //Use the id of td
+			$("#CustomerCity_Input").css("background-color","green"); //input is green
+			
+			$("#CustomerCity_input").focus(function(){
+				$(this).css("background-color", "yellow"); //when in focus, input is yellow
+			});
+			
+			$("#CustomerCity_input").focusout(function(){
+				$(this).css("background-color", "blue"); //out of focus, color is yellow
+			});
+			
+			$("tr:odd").css("background-color","#c0c0c0"); //every other table line is grey
+			$("tr:odd input").css("background-color","#c0c0c0");
+			
+		}); //these commands are only for after document is already loaded
+		
+	</script>
+	
 </body>
 </html>
