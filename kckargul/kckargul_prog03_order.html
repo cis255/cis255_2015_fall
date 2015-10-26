@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<!--
+design:
+	head: favicon and title and jquery cdn
+	body:
+		header-
+		customer info table
+-->
+<html>
+	<head>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS-255 Colf Center</title>
+		<script src="https://code.jquery.com//jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<!--0. header-->
+		<h1>CIS-255 Colf Center</h1>
+		<h3>customer Order Form</h3>
+		<table border="1">
+			<tr><th>Mail Order Form</th></tr>
+			<tr>
+				<td id="customer_name" colspan="3">
+					<input="text" size="46" name="customer_name" placeholder="customer name"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_address" colspan="3">
+					<input="text" size="46" name="customer_address" placeholder="customer_address"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_city" colspan="3">
+					<input="text" id="customer_city_input" name="customer_city" placeholder="customer_city"/>
+				</td>
+				<td id = "customer_state" colspan="3">
+					<input="text" size="5" name="customer_state" placeholder="customer_state"/>
+				</td>
+				<td id = "customer_zip" colspan="3">
+					<input="text" size="10" name="customer_zip" placeholder="customer_zip"/>
+				</td>
+			</tr>	
+		</table>
+		<script>
+			$("document").ready(function init(){
+				//set table division background to red
+				$("#customer_city").css("background-color","red");
+				//set input box background to green
+				$("#customer_city_input").css("background-color","green");
+				//if input box is in focus, set background to yellow
+				$("#customer_city_input").focus(function(){
+					$(this).css("background-color","green");
+				});
+				//if input box is in focus, set background to yellow
+				$("#customer_city_input").focusout(function(){
+					$(this).css("background-color","blue");
+				});
+				$("tr:odd").css("background-color","#c0c0c0")
+				$("tr:odd input").css("background-color","#c0c0c0")
+				
+				var tablerows = $("tr")
+			});
+		</script>
+	</body>
+</html>

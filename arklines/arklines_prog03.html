@@ -15,6 +15,7 @@ design:
 		6. Objects, arrays
 		7. functions, prototypes
 		8. Write to DOM
+		9. Jquery Customer Order form
 			
 ----------------------------------------------- -->
 
@@ -23,7 +24,7 @@ design:
 		<title>CIS-255: Allison Klinesmith </title>
     </head>
 	<body>
-	 
+		
 		<!-- 0. header					-->
 		<h1>Allison Klinesmith, CIS-255, Program 3</h1>
 		<h2>Variable Name </h2>
@@ -117,7 +118,7 @@ design:
 
 			<button onclick="myDoWhileFunction()">Try it</button>
 
-			<p id="demo"></p>
+			<p id="doWhile"></p>
 
 			<script>
 			function myDoWhileFunction() {
@@ -128,16 +129,41 @@ design:
 					i++;
 				}
 				while (i < 5);
-				document.getElementById("demo").innerHTML = text;
+				document.getElementById("doWhile").innerHTML = text;
 			}
 			</script>
 			<!-- For -->
+			<p id="ForLoop"></p>
+
+			<script>
+				var Schedule = ["CIS255 8:30am-10:20am", "CIS333 10:30am-12:20pm", "CIS386 2:30pm-4:20pm"];
+				var i, len, text;
+				for (i = 0, len = Schedule.length, text = ""; i < len; i++) {
+					text += Schedule[i] + "<br>";
+				}
+				
+				document.getElementById("ForLoop").innerHTML = text;
+			</script>
 			
 		
 		<h2>Objects</h2>
 		<!--6. Objects, arrays          -->
+		<button onclick="StudentFunction()">Click for Person Info</button>
+		<p id="ObjPersonType"></p>
+		<p id="ObjPersonMajor"></p>
+		<p id="ObjPersonName"></p>
+		<p id="ObjPersonYear"></p>
+
 		<script>
+		function StudentFunction(){
+		var Person = {type:"Student", Major:"CIS", Name:"Allison Klinesmith", Year:"Junior"};
+		document.getElementById("ObjPersonType").innerHTML = Person.type;
+		document.getElementById("ObjPersonMajor").innerHTML = Person.Major;
+		document.getElementById("ObjPersonName").innerHTML = Person.Name;
+		document.getElementById("ObjPersonYear").innerHTML = Person.Year;
+		}
 		</script>
+		
 		
 		<h2>Functions and Prototypes</h2>
 		<!--7. functions, prototypes    -->
@@ -147,7 +173,12 @@ design:
 		<h2>Write to DOM</h2>
 		<!--8. Write to DOM          	-->
 		<script>
+			document.write("<h4>Hello CIS255 students!</h4>", "<p>This is an example of writing to the document with javascript</p>")
 		</script>
+		
+		<!-- Link to customer order form -->
+		<h2> 9. Link to jquery Customer Order Form</h2>
+		<a href ="arklines_prog03_order.html">Program 3 Order Form</a>
 		
 		
 		<!-- external javascript; appears at the end of the body tag -->

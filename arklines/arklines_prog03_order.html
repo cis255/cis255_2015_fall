@@ -1,0 +1,187 @@
+<!doctype HTML>
+<!-- ---------------------------------------
+filename: arklines_prog03.html
+author  : arklines, cis2015, fall2015
+purpose : this program demonstrates javascript and jquery
+design:
+	<head> title and JQuery CDN
+	<body> 
+		0. header
+		1. Customer info table
+		
+			
+----------------------------------------------- -->
+<html>
+<head>
+	<h1 align="Center">CIS-255 Golf Center</h1>
+	<h3 align="Center">Customer Order Form</h3>
+	<!-- JQuery cdn -->
+	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	
+	
+</head>
+<body>
+
+	<!-- 1. Customer info table -->
+	<table id ="CustomerMail" border ="1" align="top,left">
+		<tr>
+			<th id="MailOrdersTo" colspan="3">
+				Mail Orders To:
+			</th>
+		</tr>
+		<tr>
+			
+			<td id="CustomerName" colspan="3">
+			<input size="45" type ="text" size = "35" name="Customer_Name" placeholder="Name"></td>
+			
+		</tr>
+		<tr>
+			
+			<td id="CustomerAddress" colspan="3">
+			<input size="45"type ="text" name="Customer_Address" placeholder="Address"></td>
+			
+		</tr>
+		<tr>
+			<td id="CustomerCity" colspan="3">
+			<input type ="text" id= "CustomerCity_input" name="Customer_City" placeholder="City"></td>
+			
+			<td id="CustomerState"  colspan="3">
+			<input size="5" type ="text" name="Customer_State" placeholder="State"></td>
+			
+			<td id="CustomerZip" colspan="3">
+			<input size="10" type ="text"  name="Customer_Zip"  placeholder="Zip"></td>
+		</tr>
+		
+	</table>
+	
+	<!--order date, info, and customer name -->
+	<table id ="OrderInfo" border ="1" align="right,top">
+		<tr>
+			<th id="Orderinfo" colspan="2">
+				
+			</th>
+		</tr>
+		<tr>
+			
+			<td id="OrderNumberLabel" colspan="2">
+			
+			Order Number:
+			</td>
+			<td id="OrderNumber" colspan="2">
+			<input size="45" type ="text" size = "35" name="OrderNumber_Input" placeholder="#####"></td>
+		</tr>
+		
+		<tr>
+			<td id="OrderDateLabel" colspan="2">
+			Order Date: </td>
+			
+			<td id="OrderDate"  colspan="2">
+			<input size="45" type ="text" name="OrderDate_Input" placeholder="mmm/dd/yyyy"></td>
+			
+			
+		</tr>
+		
+	<tr>
+			<td id="CustomerLabel" colspan="2">
+			Customer Name:</td>
+			
+			<td id="CustomerName"  colspan="2">
+			<input size="45" type ="text" name="CustomerName_Input" placeholder="Last Name, First Name"></td>
+			
+			
+		</tr>
+		
+	</table>
+	
+	
+	
+	<!-- data table -->
+	<table id ="OrderFormTable" border ="1" align="bottom,center">
+		<tr>
+			<th id="ItemNo." colspan="5" size="40">
+				Item No.
+			</th>
+			<th id="Description" colspan="5"size="40">
+				Description
+			</th>
+				<th id="Quantity" colspan="5"size="40">
+				Quantity
+			</th>
+				<th id="Price" colspan="5"size="40">
+				Price
+			</th>
+				<th id="Amount" colspan="5"size="40">
+				Amount
+			</th>
+		</tr>
+		<tr>
+			
+			<td id="ItemNoInput" colspan="5">
+			<input size="45" type ="text" onkeydown="appendRow()" size = "40" name="ItemNo_Input" ></td>
+			
+		
+			
+			<td id="DescriptionInput" colspan="5">
+			<input size="40"type ="text" onkeydown="appendRow()" name="Description_Input" ></td>
+			
+		
+			<td id="QuantityInput" colspan="5">
+			<input type ="text" onkeydown="appendRow()" id= "Quantity_Input" name="Customer_City" ></td>
+			
+			<td id="PriceInput"  colspan="5">
+			<input size="40" type ="text" onkeydown="appendRow()" name="Price_input" ></td>
+			
+			<td id="AmountInput" colspan="5">
+			<input size="40" type ="text" onkeydown="appendRow()"  name="Amount_Input"  placeholder="Zip"></td>
+		</tr>
+		
+	</table>
+	
+	<!--script is at the end so that you have access to all elements already -->
+	
+	<script>
+	
+		$("document").ready(function init(){
+			$("#CustomerCity").css("background-color","red"); //Use the id of td
+			$("#CustomerCity_Input").css("background-color","green"); //input is green
+			
+			$("#CustomerCity_input").focus(function(){
+				$(this).css("background-color", "yellow"); //when in focus, input is yellow
+			});
+			
+			$("#CustomerCity_input").focusout(function(){
+				$(this).css("background-color", "blue"); //out of focus, color is yellow
+			});
+			
+			$("tr:odd").css("background-color","#c0c0c0"); //every other table line is grey
+			$("tr:odd input").css("background-color","#c0c0c0");
+			
+			
+			
+		}); //these commands are only for after document is already loaded
+		
+		
+		// append row to the HTML table
+function appendRow() {
+    var tbl = document.getElementById('OrderFormTable'), // table reference
+        row = tbl.insertRow(tbl.rows.length),      // append table row
+        i;
+    // insert table cells to the new row
+    for (i = 0; i < tbl.rows[0].cells.length; i++) {
+        createCell(row.insertCell(i), i, 'row');
+    }
+};
+ 
+// create DIV element and append to the table cell
+function createCell(cell, text, style) {
+    var div = document.createElement('div'), // create DIV element
+        txt = document.createTextNode(text); // create text node
+    div.appendChild(txt);                    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+};
+	</script>
+	
+</body>
+</html>

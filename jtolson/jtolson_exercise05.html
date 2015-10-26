@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- -------------------------------------------------
+-- This file was copied from the gpcorser directory --
+------------------------------------------------------
+
+filename : jtolson_exercise05.html
+purpose  : demonstrate jquery compared to javascript
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. Script for printing numbers
+			   3. Celsius to Fahrenheit converter
+-->
+<html>
+	<head>
+		<title>CIS 255 - Joe Olson, Exercise 05</title>
+	</head>
+	<body>
+	    <!-- 1. header and paragraph -->
+		<h1 class="odd">Joe Olson</h1>
+		<h2>Exercise 05: JavaScript v. jQuery</h2>
+		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
+
+	    <!-- 2. Script for printing numbers -->
+			<script>
+				var i;
+				for (i=1; i<=10; i++){
+					document.write(i+"<br/>");
+				};
+			</script>
+		
+		<!-- 3. Celsius to Fahrenheit converter -->
+		<p>Type a number in one of the boxes below</p>
+		<input>Degrees (in Celsius)<br/>
+		equals<br/>
+		<input>Degrees (in Fahrenheit)<br/>
+		
+		<script>
+			function convert(degrees){
+				document.write("Hello weather");
+			};
+		</script>
+	</body>
+</html>

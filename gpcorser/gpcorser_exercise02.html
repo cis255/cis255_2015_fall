@@ -25,58 +25,6 @@ filename: gpcorser_exercise02.html
 	-->
 	</head>
 	<body>
-	<!-- page 21 of slides -->
-	<h1>A Basic FORM Example (from the slides)</h1>
-	<form method="get" action="gpcorser_process.php">
-	<fieldset>
-	<legend>This is a form</legend>
-	<label>Title of Painting</label>
-	<input type="text" name="title">
-	<br />
-	<label>Country</label>
-	<select name="where">
-	    <option>Canada</option>
-	    <option>Denmark</option>
-	    <option selected>Estonia</option>
-	    <option>France</option>
-	</select>
-	<br />
-	<textarea name="paintingDescription" placeholder="Enter text here">
-	</textarea>
-	<input type="submit" />
-	</fieldset>
-	</form>
-<br>
-<br>
-	<h1>A Basic Table Example (from the slides)</h1>
-	<table border="1" background="medium.jpg" style="background-repeat: no-repeat;">
-	    <tr>
-		    <th>Painting</th>
-			<th>Artist</th>
-		    <th>Year</th>
-			<th colspan="2">Size</th>
-			<!--
-			<th>Width</th>
-			-->
-		</tr>
-	    <tr>
-		    <td>Painting 1</td>
-			<td rowspan="2">Artist 1</td>
-		    <td>1793</td>
-			<td>162 cm</td>
-			<td>128 cm</td>
-		</tr>
-	    <tr>
-		    <td>Painting 1</td>
-			<!--
-			<td>Artist 1</td>
-			-->
-		    <td>1793</td>
-			<td>162 cm</td>
-			<td><img src="small.jpg"></td>
-		</tr>
-	</table>
-	
 		<div class="container">
 			<h1 class="odd">George Corser</h1>
 			<h2>Exercise<span>0</span>2: CSS and Bootstrap</h2>
@@ -190,6 +138,60 @@ filename: gpcorser_exercise02.html
 				</div>
 			</div>
 			<!-- end container -->
+<br/><br/>
+The code below is outside the Bootstrap container
+				<!-- from page 21 of slides -->
+	<h1>A Basic FORM Example (from the slides)</h1>
+	<form method="get" action="gpcorser_process.php">
+	<fieldset>
+	<legend>This is a form</legend>
+	<label>Title of Painting</label>
+	<input type="text" name="title">
+	<br />
+	<label>Country</label>
+	<select name="where">
+	    <option>Canada</option>
+	    <option>Denmark</option>
+	    <option selected>Estonia</option>
+	    <option>France</option>
+	</select>
+	<br />
+	<textarea name="paintingDescription" placeholder="Enter text here">
+	</textarea>
+	<input type="submit" />
+	</fieldset>
+	</form>
+<br>
+<br>
+
+	<h1>A Basic Table Example (from the slides)</h1>
+	<table border="1" background="medium.jpg" style="background-repeat: no-repeat;">
+	    <tr>
+		    <th>Painting</th>
+			<th>Artist</th>
+		    <th>Year</th>
+			<th colspan="2">Size</th>
+			<!--
+			<th>Width</th>
+			-->
+		</tr>
+	    <tr>
+		    <td>Painting 1</td>
+			<td rowspan="2">Artist 1</td>
+		    <td>1793</td>
+			<td>162 cm</td>
+			<td>128 cm</td>
+		</tr>
+	    <tr>
+		    <td>Painting 1</td>
+			<!--
+			<td>Artist 1</td>
+			-->
+		    <td>1793</td>
+			<td>162 cm</td>
+			<td><img src="small.jpg"></td>
+		</tr>
+	</table>
 		</body>
 	</html>
 	
