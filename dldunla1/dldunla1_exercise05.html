@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+filename : dldunla1_exercise05.html
+purpose  : demonstrate jquery compared to javascript
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. script for printing number 1-10
+-->
+<html>
+	<head>
+	</head>
+	<body>
+	    <!-- 1. header and paragraph -->
+		<h1 class="odd">Demetrius Dunlap</h1>
+		<h2>Exercise 05: JavaScript v. jQuery</h2>
+		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
+
+	    <!-- 2. script printing number 1-10 -->	
+
+			<script>
+				var i; 
+				for(i=1;i<=10;i++){
+					document.write(i+"<br/>"); 
+				}
+			</script>
+			
+			
+			
+	    <!-- 2.Celsius to Fahrenheit converter -->	
+		<p> Type a number in one of the boxes below</P>
+		<input id="Celsius"onkeyup="Convert('c')">degrees Celsius</br>
+		equals</br >
+		
+		<input id="Fahrenheit"onkeyup="Convert('f')">degrees Fahrenheit</br>
+		equals</br >
+		
+		<input id="Kelvin"onkeyup="Convert('k')">degrees Fahrenheit</br>
+		equals</br >
+		
+
+			<script>
+			function Convert(degrees){
+			if (degrees=='c'){
+				var c =document.getElementById('Celsius').value;
+				var f = 1.8 * c + 32;
+				var k = c + 273.15;
+				document.getElementById('Fahrenheit').value = f;
+					document.getElementById('Fahrenheit').value = k;
+				}
+			
+			
+			if (degrees=='f'){
+				var f =document.getElementById('Fahrenheit').value;
+				var c = ()f - 32) / 1.8;
+				document.getElementById('Celsius').value = c;
+				}
+			};
+			</script>
+	</body>
+</html>		
