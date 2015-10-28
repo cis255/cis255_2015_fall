@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- ----------------------------------------------------------------------------------
+filename: amfenske_prog03.html
+author	: Anna Fenske, CIS255, Fall 2015
+purpose	: this program demonstrates javascript and jquery 
+design	:	head: favicon and title
+			body: 
+				0. Header
+				1. Variable Names
+				2. Primitive data types
+				3. Object
+				4. Operators
+				5. Conditionals, Truthy, Falsy
+				6. Objects and Arrays
+				7. Function, prototype
+				8. Write to Dom
+				9. Link to jQuery Customer Order Form
+				
+			
+----------------------------------------------------------------------------------- -->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../../burger_dog.jpg' type='image/jpg' />
+		<title>CIS-255: Anna Fenske</title>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Anna Fenske, CIS-255, Program 3</h1>
+		<p id="id01">This is a template for Program 03</p>		
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<script>
+		    var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2. primitive data types -->
+		<h2>2. Primitive Data Types</h2>
+		<!-- includes number, string, boolean, null, and undefined -->		
+		<script>
+			var x = 5; //number
+			var y = "zippy"; //string
+			var b = Boolean(100); //boolean
+			var a = null; //null
+			var c;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var b is type: "+typeof(b)+"<br/>");
+			document.write("var a is type: "+typeof(a)+"<br/>");	
+			document.write("var c is type: "+typeof(c)+"<br/>");			
+		</script>
+		
+
+		
+		<!-- 3. Operators -->
+		<h2>3. Operators</h2>
+		<script>
+			var m = 20;
+			var n = 2;
+			var n_m = n%m;
+			var add_nm = n+m;
+			var sub_nm = n-m;
+			var mul_nm = n*m;
+			var divi_nm = n/m;
+			var str = "hello";
+			document.write("2%20 = " + n_m +"<br/>");
+			document.write("2+20 = " + add_nm +"<br/>");
+			document.write("2-20 = " + sub_nm +"<br/>");	
+			document.write("2*20 = " + mul_nm +"<br/>");
+			document.write("2/20 = " + divi_nm +"<br/>");	
+			document.write("string + number = " + str + n +"<br/>");				
+		</script>
+		
+		<!--4. conditionals, truthy, falsy -->
+		<h2>4. Conditionals, Truthy, Falsy</h2>
+		<script>
+			(a==c)?document.write("a==c<br/>"):document.write("a!=c<br/>");
+			(a===c)?document.write("a===c<br/>"):document.write("a!==c<br/>");
+			var w = 0;
+			var z = 1;
+			document.write(Boolean(w) +"<br/>");
+			document.write(Boolean(z>w) +"<br/>");		
+		</script>
+		
+		<!--5. Control Structures -->
+		<h2>5. Control Structures</h2>
+
+
+		<script>
+			<!-- for loop -->
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var text = "";
+			var i;
+			for (i = 0; i < cars.length; i++) {
+				text += cars[i] + "<br>";}
+			document.write(text);
+	
+			<!-- while loop -->
+			var text2 = "";
+			var i2 = 0;
+			while (i2 < 10) {
+				text2 += "<br>The number is " + i2;
+				i2++;}
+			document.write(text2 +"<br>");
+
+			<!-- do/while looop -->
+			var text3 = ""
+			var i3 = 0;
+			do {
+				text3 += "<br>The number is " + i3;
+				i3++;}
+			while (i3 < 10)
+			document.write(text3 +"<br>");
+		</script>
+		
+		<!-- 6. Objects and arrays -->
+		<h2>6. Objects and arrays</h2>
+		
+		<!-- object -->
+		<script> var person = {
+					firstName : "John",
+					lastName  : "Doe",
+					age       : 50,
+					eyeColor  : "blue" };
+		document.write(person.firstName + " is " + person.age + " years old and has " + person.eyeColor + " eyes." + "<br/>");
+		</script>		
+		
+		<!-- array -->
+		<script>
+			var color = ["green", "yellow", "red", "blue"];
+			document.write("<br>" + color[1] +"<br>");
+		</script>
+		
+		<!--7. function, prototype -->
+		<h2>7. Functions and prototypes</h2>
+
+		<script>
+			<!-- function -->		
+			function myFunction(aa, bb) {
+				return aa * bb;}
+			document.write(myFunction(4,3) + "<br>");
+			
+			<!-- prototype -->
+			function person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;}
+
+			var myFather = new person("John", "Doe", 50, "blue");
+			var myMother = new person("Sally", "Rally", 48, "green");
+
+			document.write("My father is " + myFather.age + ". My mother is " + myMother.age + "<br>");						
+		</script>
+		
+		<!--8. write to dom -->
+		<h2>8. Write to Dom</h2>
+		<script>
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML=y;
+		</script>
+		
+		<!--9. Link to jQuery -->		
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="amfenske_prog03_order.html">Program 3 Order Form</a>
+		
+
+
+
+
+		
+
+		
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+----- This file was copied from the gpcorser directory -------
+--------------------------------------------------------------
+Filename: jtolson_prog03.html
+Author  : Joe Olson, cis255, fall2015
+Purpose : this program demonstrates javascript and jquery
+Design  :
+    <head> Title
+	<body>
+	    0. header
+		1. variable names
+		2. primitive data types
+		3. operators and expressions
+		4. conditionals, truthy, falsy
+		...
+		9. link to jQuery Customer Order Form
+		
+-------------------------------------------------------------- -->
+<html>
+	<head>
+		<title>CIS 255 - Joe Olson, Program 03</title>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Joe Olson, CIS 255, Program 3</h1>
+		<p id="id01"></p>
+		
+		<!-- 1. variable names -->
+		<h2>1. variable names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<script>
+		    var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			var D = d * $c; //This is poor programming practice, but this variable is demonstrating case sensitive variable names
+			document.write("a+_b+$c=" + d +"<br/>");
+			document.write(D + "<br/>");
+		</script>
+		
+		<!-- 2. primitive data types -->
+		<h2>2. primitive data types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy"; //string
+			var n = null; //null
+			var u; //undefined
+			var z = [5, 10, 20]; //Array (of numbers)
+			document.write("var x is type: "+typeof(x)+"<br/>"); //number
+			document.write("var y is type: "+typeof(y)+"<br/>"); //string
+			document.write("var n is type: "+typeof(n)+"<br/>"); //null, but a bug makes it display "object"
+			document.write("var u is type: "+typeof(u)+"<br/>"); //undefined
+			document.write("Var z is type: " + typeof(z) + "<br/>"); //array, displays as "object"
+		</script>
+		
+		<!-- 4. conditionals, truthy, falsy -->
+		<h2>4. conditionals, truthy, falsy</h2>
+		<script>
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML=y;
+			
+		</script>
+		
+		<!-- 9. link to jQuery Customer Order Form -->
+		<h2>9. link to jQuery Customer Order Form</h2>
+		<a href="gpcorser_prog03_order.html">Program 3 Order Form</a>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

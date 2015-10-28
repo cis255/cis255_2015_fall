@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- ----------------------------------------------------------
+filename : ssstewar_prog03.html
+author   : steve stewart, cis255, fall2015
+purpose  : this program demonstrated javascript and jquery
+design   : 
+	<head> favicon and title
+	<body> 
+		0. header
+		1. variable names
+		2. Primitive data types
+		3. Operators, expressions
+		4. Conditionals; truthy & falsy
+		5. Control structures; for, do, while, switch case
+		6. Objects, arrays
+		7. Functions, prototypes
+		8. Write to DOM
+		9. jQuery Customer Order Form
+------------------------------------------------------------ -->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS-255: Steve Stewart</title>
+
+	</head>
+	<body>
+		<!-- 0. header -->
+		<h1>Steve Stewart, CIS-255, Program 3</h1>
+		<p id="id01">template for Program 03</p>
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<!-- variable names are case sensitive and can start with $, _, or letter -->
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2. Primitive data types -->
+		<h2>2. Primitive data types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy";
+			var n = null;
+			var b = false;
+			var u;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var n is type: "+typeof(n)+"<br/>");
+			document.write("var b is type: "+typeof(b)+"<br/>");
+			document.write("var u is type: "+typeof(u)+"<br/>");
+		</script>
+		
+		<!-- 3. operators, expressions -->
+		<h2>2. Operators/Expressioins</h2>
+		<script>
+			var s = 5;
+			var t = 6;
+			document.write("Numbers I am working with: "+(s)+" & "+(t)+"<br/>");
+			var r = s + t;
+			document.write("result of adding = "+(r)+"<br/>");
+			var r2 = s * t;
+			document.write("result of multiplying = "+(r2)+"<br/>");
+			var r3 = t / s;
+			document.write("result of dividing = "+(r3)+"<br/>");
+			var r4 = 6 % 5;
+			document.write("result of modulus = "+(r4)+"<br/>");
+		
+		</script>
+		
+		<!-- 4. Conditonals; truthy and falsy -->
+		<h2>4. Conditionals; truthy & falsy</h2>
+		<script>
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			
+			document.write(document.getElementById("id01").innerHTML);
+		</script>
+		
+		<!-- 5. Control structures; for, do, while, switch case -->
+		<h2>5. Control structures; for, do, while, switch case</h2>
+		<script>
+			var day;
+			switch (new Date().getDay()) {		//switch statement
+			case 0:
+				day = "Sunday";
+				break;
+			case 1:
+				day = "Monday";
+				break;
+			case 2:
+				day = "Tuesday";
+				break;
+			case 3:
+				day = "Wednesday";
+				break;
+			case 4:
+				day = "Thursday";
+				break;
+			case 5:
+				day = "Friday";
+				break;
+			case  6:
+				day = "Saturday";
+				break;
+			}
+			document.write("Switch Statement example --> ");
+			document.write("Today is " + (day)+"<br/>");
+			
+			document.write("</br>"+"For loop example --> ");
+			    var text = "";
+				var i;
+				for (i = 0; i < 5; i++) {
+				text += "The number is " + i + "<br>";
+				}
+				document.write(text)
+				
+			document.write("</br>"+"Do while example --> ");
+				var texttwo = "";
+				var iTwo = 10;
+				do {
+				texttwo += "<br>The number is " + iTwo;
+				iTwo++;
+				}
+				while (iTwo < 15);
+				document.write(texttwo)
+		</script>
+		
+		<!-- 6. Objects, arrays -->
+		<h2>6. Objects, arrays</h2>
+		<script>
+		
+		</script>
+		
+		<!-- 9. jQuery Customer Order Form -->
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="ssstewar_prog03_order.html">Prog03 Order Form</a>
+	</body>
+</html>

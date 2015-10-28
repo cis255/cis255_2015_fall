@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- 
+filename : jmbenso2_prog03.html
+author	 : Jon Benson, CIS255, Fall2015
+purpose	 : Demonstrate Javascript and JQuery basics
+design   :
+	<head> :
+		Title
+	<body> :
+		0. Header
+		1. Variable names
+		2. Data types
+		3. Operators, expressions
+		4. Conditionals
+		5. Control structures
+		6. Objects and arrays
+		7. Functions, prototypes
+		8. Write to DOM
+		9. Link to order form
+
+-->
+
+<html>
+	<head>
+		<title>Prog03: JavaScript and jQuery</title>
+	</head>
+	<body>
+		<!-- 0. Header -->
+		<div class = "page-header">
+			<div class ="text-center">
+				<h1>Prog03: JavaScript and jQuery </h1>
+			</div>
+		</div>
+		
+		<!-- 1. Variable Names -->
+		<!-- are case sensitive and start with $, _ or a letter -->
+		<div class="container">
+			<h2> 1. Variable Names </h2>
+			<p>
+				<script>
+					var a = 1;
+					var A = 242;
+					var _b = 2;
+					var _B = 5;
+					var $c = 3;
+					var $C = 19;
+					var total = a+_b+$c;
+					document.write("a+_b+$c=" + total);
+				</script>
+			<p>
+		</div>
+	
+		<!-- 2. Data Types (primitive) -->
+		<!-- Primitive types include number, string,
+			 boolean, null, undefined, and symbol (recent one)
+		-->
+		<div class="container">
+			<h2>2. Data Types (primitive) </h2>
+			<p>
+				
+				<script>
+					// Number
+					var x = 5;
+					x = x + 3;
+					document.write("Var x = " +x+"<br/>");
+					document.write("Var x is type: "+typeof(x)+"<br/><br/>");
+				
+					// String
+					var quote = "I'm gonna be king of the pirates!";
+					document.write("Var quote = " + quote + "<br/>");
+					document.write("Var quote is type: "+typeof(quote)+"<br/><br/>");
+
+					// Boolean
+					var isCool = false;
+					document.write("Var isCool = " + isCool + "<br/>");
+					document.write("Var isCool is type: "+typeof(isCool)+"<br/><br/>");
+					
+					// Null
+					var n = null;
+					document.write("Var n = " + n + "<br/>");
+					document.write("Var n is type: "+typeof(n)+"<br/><br/>");
+
+					// Undefined
+					var u;
+					document.write("Var u = " + u + "<br/>");
+					document.write("Var u is type: "+typeof(u)+"<br/><br/>");
+				</script>
+			</p>
+		</div>
+		
+		<!-- 3. Operators, expressions -->
+		<div class="container">
+			<h2>3. Operators, expressions </h2>
+			<p>
+				<script>
+					<!-- Assignment -->
+					var x = 3;
+					x = 12;
+					document.write("x = " + x + "<br/>");
+
+					<!-- Add -->
+					var sum = 3+3;
+					document.write("Sum = " + sum + "<br/>");
+					
+					<!-- Concatenate -->
+					var concated = ("I'm starving for "+x);
+					document.write("Concated = " + concated + "<br/>");
+					
+					<!-- Subtract -->
+					var diff = 12-3;
+					document.write("Difference = " + diff + "<br/>");
+				
+					<!-- Multiply -->
+					var product = 4*7;
+					document.write("Product = " + product + "<br/>");
+					
+					<!-- Divide -->
+					var quotient = 20/10;
+					document.write("Quotient = " + quotient + "<br/>");
+					
+					<!-- Equal to -->
+					var isGreat = true;
+					if (isGreat == true) {
+						document.write("Equal to: true<br/>");
+					}
+					else {
+						document.write("Equal to: false<br/>");
+					}
+				
+				</script>
+			</p>
+		</div>
+		
+		<!-- 4. Conditionals -->
+		<div class="container">
+			<h2>4. Conditionals </h2>
+			<p>
+				<script>
+				    // if/else if/else
+					var x = 10;
+					if (x > 10) {
+						document.write("x is greater than 10 <br/>");
+					}
+					else if (x < 10) {
+						document.write("x is less than 10 <br/>");
+					}
+					else {
+						document.write("x equals 10 <br/>");
+					}
+					
+					// truthiness
+					var z = 10;
+					var a = "10";
+					document.write("a == z ... " + (a == z) +"<br/>");
+					document.write("a === z ... " + (a === z) +"<br/>");
+
+				</script>
+			</p>
+		</div>
+		
+		<!-- 5. Control structures -->
+		<div class="container">
+			<h2>5. Control structures </h2>
+			<p>
+				<script>
+					// switch
+					var y = true;
+					switch(y) {
+						case true:
+							document.write("y equals true <br/>");
+							break;
+						case false:
+							document.write("y equals false <br/>");
+							break;
+					}
+					
+					// for loop
+					var digits = "";
+					for (var i = 0; i<5; i++) {
+						digits = digits + i;
+					}
+					document.write("For loop result: " + digits + "<br/>");
+				
+					// do loop
+					var ii = 0;
+					var digits2 = "";
+					do {
+						digits2 = digits2 + ii;
+						ii++;
+					} while (ii < 5);
+					document.write("Do-while loop result: " + digits2 + "<br/>");
+					
+					// while loop
+					var iii = 0;
+					var digits3 = "";
+					while (iii<5) {
+						digits3 = digits3 + iii;
+						iii++;
+					}
+					document.write("While loop result: " + digits3 + "<br/>");
+				
+				</script>
+			</p>
+		</div>
+		
+		<!-- 6. Objects and arrays -->
+		<div class="container">
+			<h2>6. Objects and arrays </h2>
+			<p>
+				<script>
+					// Array
+					var pocket = ["Wallet","Keys","Sunglasses"];
+					document.write("First item in pocket: " + pocket[0]+ "<br/>");
+					document.write("Second item in pocket: " + pocket[1]+ "<br/>");
+					document.write("Third item in pocket: " + pocket[2]+ "<br/>");
+				
+					// Object
+					var van = {type:"Ford Aerostar", year:"1991", color:"blue"};
+					document.write("Van type: " + van.type + "<br/>");
+					document.write("Van year: " + van.year + "<br/>");
+					document.write("Van color: " + van.color + "<br/>");
+				</script>
+			</p>
+		</div>
+		
+		<!-- 7. Functions and prototypes -->
+		<div class="container">
+			<h2>7. Functions and prototypes </h2>
+			<p>
+				<script>
+					// function returning square of argument
+					function square(n) {
+						return n*n;
+					}
+					
+					document.write("square(3) =  " + square(3) + "<br/>");
+					
+					
+					// prototypes (from the w3 schools tutorial)
+					function trainer(first, last, age, starter) {
+						this.first = first;
+						this.last = last;
+						this.age = age;
+						this.starter = starter;
+						
+						// method
+						this.oldEnough = function() {
+							return (this.age>=10);
+						}
+					}
+					
+					var ash = new trainer("Ash","Ketchum",11, "Pikachu");
+					document.write("First Name: " + ash.first + "<br/>");
+					document.write("Last Name: " + ash.last + "<br/>");
+					document.write("Age: " + ash.age + "<br/>");
+					document.write("Starter: " + ash.starter + "<br/>");
+					document.write("Old enough: " + ash.oldEnough() + "<br/>");
+				</script>
+			</p>
+		</div>
+		
+		<!-- 8. Write to DOM -->
+		<div class="container">
+			<h2>8. Write to DOM </h2>
+			<p id="target">
+				I am the content of the first line.
+			</p>
+			<p>
+				<script>
+					// Change contents of target
+					var target = document.getElementById("target");
+					var stolen = target.innerHTML;
+					document.write(stolen);
+					target.innerHTML = "This is the target element.";
+
+					// Change style of target
+					target.style.color = "blue";
+					
+				</script>
+			</p>
+		</div>
+		
+		<!-- 9. Link to order form -->
+		<div class="container">
+			<h2><a href="jmbenso2_prog03_order.html">9. jQuery Order Form</a></h2>
+		</div>
+		
+	</body>
+</html>

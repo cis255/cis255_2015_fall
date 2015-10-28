@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- -------------------------------------------------
+-- This file was copied from the gpcorser directory --
+------------------------------------------------------
+
+filename : jtolson_exercise05.html
+purpose  : demonstrate jquery compared to javascript
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. Script for printing numbers
+			   3. Celsius to Fahrenheit converter in Javascript
+			   4. Celsius to Fahrenheit converter in JQuery
+-->
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<title>CIS 255 - Joe Olson, Exercise 05</title>
+	</head>
+	<body>
+	    <!-- 1. header and paragraph -->
+		<h1 class="odd">Joe Olson</h1>
+		<h2>Exercise 05: JavaScript v. jQuery</h2>
+		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
+
+	    <!-- 2. Script for printing numbers -->
+			<script>
+				var i;
+				for (i=1; i<=10; i++){
+					document.write(i+"<br/>");
+				};
+			</script>
+		
+		<!-- 3. Celsius to Fahrenheit converter in Javascript -->
+		<p>Type a number in one of the boxes below</p>
+		<input id="celsius" onkeyup="convert('C');">Degrees (in Celsius)<br/>
+		equals<br/>
+		<input id="fahrenheit" onkeyup="convert('F');">Degrees (in Fahrenheit)<br/>
+		equals<br/>
+		<input id="kelvin" onkeyup="convert('K');">Degrees (in Kelvin)<br/>
+		
+		<script>
+			function convert(degrees){
+				if (degrees =='C'){
+					var C = document.getElementById('celsius').value;
+					C = parseFloat(C);
+					var F = 1.8 * C + 32;
+					var K = C + 273.15;
+					document.getElementById('fahrenheit').value = F;
+					document.getElementById('kelvin').value = K;
+				}
+				if (degrees =='F'){
+					var F = document.getElementById('fahrenheit').value;
+					C = parseFloat(C);
+					var C = (F - 32) / (5/9);
+					var K = C + 273.15;
+					document.getElementById('celsius').value = C;
+					document.getElementById('kelvin').value = K;
+				}
+				if (degrees =='K'){
+					var K = document.getElementById('kelvin').value;
+					K = parseFloat(K);
+					var C = K - 273.15;
+					var F = 1.8 * C + 32;
+					document.getElementById('celsius').value = C;
+					document.getElementById('fahrenheit').value = F;
+				}
+			};
+		</script>
+		
+		<!-- 4. Celsius to Fahrenheit converter in jQuery -->
+		<p>Type a number in one of the boxes below</p>
+		<input id="celsius2">Degrees (in Celsius)<br/>
+		equals<br/>
+		<input id="fahrenheit2">Degrees (in Fahrenheit)<br/>
+		equals<br/>
+		<input id="kelvin2">Degrees (in Kelvin)<br/>
+		
+		<script>
+			$("#celsius2").keyup(function() {
+				$("#fahrenheit2").val(this.value * 1.8 + 32);
+				$("#kelvin2").val(parseFloat(this.value) + 273.15);
+			});
+		</script>
+	</body>
+</html>

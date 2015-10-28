@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- ----------------------------------------------------------------------
+file: jmbenso2_midterm.html
+author: Jon Benson, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the second paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+----------------------------------------------------------------------- -->
+<html>
+	<head>
+		<!-- jQuery from CDN -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		
+		<!-- Internal CSS -->
+		<style>
+			#jmbenso2 {
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<!-- Paragraph 1, with id jmbenso2, to be colored red by internal CSS -->
+		<p id="jmbenso2">
+			This element's id is my svsuid.
+		</p>
+		
+		<!-- Paragraph 2 -->
+		<p id="second_paragraph">
+			This element's innerHTML will be changed to my svsuid.
+		</p>
+		
+		
+		<!-- Inernal Javascript and jQuery -->
+		<script>
+			// Javascript to change second paragraph's contents
+			document.getElementById("second_paragraph").innerHTML = "jmbenso2";
+			
+			// jQuery to add third paragraph with my name in there
+			$("body").append("<p>Jon</p>");
+		</script>
+		
+	</body>
+</html>

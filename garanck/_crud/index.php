@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- 1. Add image 2. Add 20 bootstrap classes 3. Added to bootstrap CSS file-->
+
+<!-- File: index.php -->
+<!-- Author: Garret Ranck -->
+<!-- Description: Basic CRUD applcation where a table of users can be added, updated
+deleted, and read.  -->
+<!-- Design:
+<!-- 1. Relative addressing 2. Internal CSS 3. Inline CSS 4. Added image -->
 <!-- Glyphicons would not print for me. I tried everything I could think (mocing .png files out and changing css,
 changing permissions to 777 on those png files) but the only
 thing that worked was directly importing the css from the site, but that 
@@ -8,12 +14,13 @@ messed up the rest of my code due to inheritance from the other external css.-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <link   href="css/bootstrap.min.css" rel="stylesheet"> <!-- 1. Relative addressing -->
     <script src="js/bootstrap.min.js"></script>
 	<link rel='icon' href='../svsu.jpg' type='image/jpg'/>
 	
 			<title>Garret Ranck Crud Index</title>
 	<style>
+	<!--2. Internal CSS -->
 		#svsu {border:solid;border-color:white;}
 		body{background-color: black}
 		div h3{color: orange} <!--header to orange-->
@@ -32,10 +39,11 @@ messed up the rest of my code due to inheritance from the other external css.-->
 <body>
 
     <div class="container">	<!--main bootstrap element -->
+	<!-- 4. Added Image -->
 	<img id="svsu" height="200" width="200"src="svsu.jpg" class="img-rounded" class="img-responsive" align="right"> <!-- image with cat1 id  and rounded and responsive class for different screens -->
 		
 		<div class="jumbotron"> <!--creates a line under element on top of page -->
-			<h1 style="color:orange" align="center">CIS 255 Email List</h1>
+			<h1 style="color:orange" align="center">CIS 255 Email List</h1> <!-- 3. Inline CSS -->
 			</div>
     		<div class="row">
     			<div class="text-center"> <!-- centers text in the div-->

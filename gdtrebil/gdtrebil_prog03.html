@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+filename: gdtrebil_prog03.html
+authors: gpcourser, Gdtrebil
+purpose: this program demonstrates javascript and jquery
+design : 
+	<head> favicon and title
+	<body> 0. Header
+		   1. variable names 
+		   2. data types
+		   3. operators, expressions
+		   4. conditionals
+		   5. control structures
+		   6. objects, arrays
+		   7. functions, prototypes
+		   8. write to DOM
+-->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<title>CIS-255: Grant Trebilcock</title>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		
+	</head>
+	
+	<body>
+	<h1> Grant Trebilcock, CIS-255, Program 3 </h1>
+	<p id="id01"> This is a template for program 3</p>
+	<!-- 1. variable names -->
+	<!-- variable names are case sensative -->
+	<script>
+	   var a = 1;
+	   var _b = 2;
+	   var $c = 3;
+	   var d = a+_b+$c;
+	   document.write("a+_b+$c=" +d )
+	</script>
+	<!-- 2. data types -->
+	<h2> Primitive Data types </h2>
+	<!-- string, boolean, number, undefined and null -->
+	<script>
+	var a = "stuff"; //String
+	document.write("a is type: "+typeof(a)+"<br/>");
+	
+	var x = true; //boolean
+	document.write("x is type: "+typeof(x)+"<br/>");
+	
+	var y = 44; //Number
+	document.write("y is type: "+typeof(y)+"<br/>");
+	
+	var q; //Undefined
+	document.write("q is type: "+typeof(q)+"<br/>");
+	
+	var p = null; //Null
+	document.write("p is type: "+typeof(p)+"<br/>");
+	
+	</script>
+	<!-- 3. Operators and Expressions -->
+	<!-- 5 examples -->
+	<h2> Operators and Expressions </h2>
+	<script>
+	var num1 = 4;
+	var num2 = 6;
+	var num3 = num1 + num2; //Addition Operator
+	document.write("num1 + num2 = " + num3);
+	document.write("<br/>")
+	
+	var num4 = num1 - num2; //Subtraction Operator
+	document.write("num1 - num2 = " + num4);
+	document.write("<br/>")
+	
+	var num5 = num1 * num2; //Multiplication Operator
+	document.write("num1 * num2 = " + num5);
+	document.write("<br/>")
+	
+	var string1 = "I'm trying "; // += Operator
+	string1 += "really hard";
+	document.write(string1);
+	document.write("<br/>")
+	
+	var string2;
+	string2 = 'string' + 2; //Addition expression with a string and a number
+	document.write(string2)
+	document.write("<br/>")
+	
+	</script>
+	
+	
+	<!-- 4. Conditionals -->
+	<h2> Conditionals </h2>
+	<script>
+	(q==p)?document.write("q==p<br/>"):document.write("q!=p <br/>");
+	(q===p)?document.write("q===p<br/>"):document.write("q!==p <br/>");
+	</script>
+	
+	<!--5. Control Stuctures -->
+	<!-- For, do, while, switch case -->
+	<h2> Control Structures </h2>
+	<script>
+	for (i = 0; i < 2; i++){ 
+      document.write("This is iteration: " + i + "<br/>");	//For loop
+	}
+	  
+	
+	
+	
+	</script>
+	
+	<!-- 8. Write to DOM -->
+	<h2> Write to DOM </h2>
+	<script>
+	document.write(document.getElementById("id01").innerHTML);
+    document.getElementById("id01").innerHTML=string2;
+	
+	</script>
+	<!-- external javascript -->
+	<script type="text/javascript" src="gdtrebil.js"></script>
+	<!-- 9. Link to jquery customer order form -->
+	<h2> 9. Link to jQuery Customer Order Form </h2>
+	<a href="gdtrebil_prog03_order.html"> Program 3 Order Form</a>
+	
+	</body>
+	
+	</html>
+	

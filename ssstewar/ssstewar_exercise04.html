@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- 
+Filename: ssstewar_exercise04.html
+purpose : demonstrate javascript, inline, internal and external
+			Part A: demonstrate javascript 
+design  : <head> nothing
+		  <body>
+			1. inline javascript
+			2. internal javascrpipt
+			3. external javascript
+-->
+<html>
+	<head>
+	<!-- 3. external javascript -->
+	<script type="text/javascript" src="ssstewar.js"></script>
+		<!-- 2. internal javascript -->
+		<script>
+			alert('You should click ok')
+		</script>
+	</head>
+	<body>
+	<!-- 1. inline javascript -->
+	<input type="button" onclick="alert('You clicked Zippy');" value="Zippy"/>
+		<script>
+			alert('You should click ok')
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+	file: jtolson_midterm.html
+	author: Joe Olson, cis255, fall2015
+	purpose: demonstrate html, css, jquery
+	instructions: create a single html file as follows.
+		1. create two paragraphs, one of which has an id that is your svsuid
+		2. add internal css to change the text color to red of the paragraph with an id
+		3. add internal javascript to change the content of either paragraph to be your svsuid
+		4. add internal jquery to add a third paragraph containing your first name
+		5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<title>Joe Olson - CIS 255, Midterm Program</title>
+		<style>
+			#jtolson { color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- Using two IDs to make the javascript and jquery sections easier -->
+		<p id="jtolson">This is an example of one paragraph with my student user ID as the ID for the paragraph tag</p>
+		<!-- If everything is working as intended, you should not see the text of this paragraph below -->
+		<p id="texted">This is an example of another paragraph that should be changed</p>
+		<script>
+			//internal javascript
+			document.getElementById('texted').innerHTML = "jtolson" +"<br/>";
+			
+			//internal jquery
+			//Adds a third paragraph with my first name
+			//Specifically, this block of code creates a text variable and then adds it after the paragraph with the id "texted"
+			var txt = "Joe <br/>";
+			$("#texted").after(txt);
+		</script>
+	</body>
+</html>

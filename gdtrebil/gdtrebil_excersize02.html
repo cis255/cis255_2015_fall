@@ -7,11 +7,12 @@ Description: This program demonstrates very basic HTML.
 Design     : 1. Prints , "Hello, Grant"
 -->
 <html>
-<head>
-<link rel="stylesheet" href="gdtrebil.css" />
-<!--
+	<head>
+		<link rel="stylesheet" href="gdtrebil.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<!--
 <style>
-	#message {
+	#message {+
 	 color : red;  
 	}
 	p {
@@ -19,50 +20,144 @@ Design     : 1. Prints , "Hello, Grant"
 	}
 </style>
 -->
-<title> This is the title </title>
-</head>
-<body>
-<a href="medium.jpg">Cat!</a>
-<h1> Grant Trebilcock's Menu </h1>
-<p> A student in <a href = "http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a>.</p> 
-<p id="message"> <b> Practicing HTML </b> </p>
-<p style = "color: green;"> a line<br> break </p>
-<p> <s> I drive a 1995 Buick </s> </p>
-<p> I have a <del> Red car </del> </p>
+		<title> This is the title </title>
+	</head>
+	<body>
+		<h1> Basic Table Example </h1>
+		<table border = "1" background="medium.jpg">
+			<tr>
+				<th>Painting</th>
+				<th>Artist</th>
+				<th>year</th>
+				<th>length</th>
+				<th>width</th>
+			</tr>
+			<tr>
+				<td>Painting1</td>
+				<td>Artist1</td>
+				<td>1793</td>
+				<td>162cm</td>
+				<td>128m</td>
+			</tr>
+			<tr>
+				<td>Painting2</td>
+				<td>Thatguy</td>
+				<td>9999</td>
+				<td>4654cm</td>
+				<td>83m</td>
+			</tr>
+		</table>
+		<h1> A basic form example </h1>
+		<form method="get" action="process.php">
+			<fieldset>
+				<legend> This is a form </legend>
+				<label>Title of painting</label>
+				<input type="text" name="title">
+					<label>country</label>
+					<select name="where">
+						<option>Canada</option>
+						<option>Denmark</option>
+						<option>Estonia</option>
+						<option>France</option>
+					</select>
+					<textarea placeholder= "enter some text">
+					
+					</textarea>
+					<input type = "submit" />
+				</fieldset>
+			</form>
+			<div class="row">
+				<div class="col-md-3 col-sm-2">
+					<a href="medium.jpg">Cat!</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-2">
+					<h1> Grant Trebilcock's Menu </h1>
+					<p> A student in <a href = "http://csis.svsu.edu/~gpcorser/cis255/cis255.html">cis255</a>.</p> 
+					<p id="message"> <b> Practicing HTML </b> </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-2">
+					<p style = "color: green;"> a line<br> break </p>
+						<p> <s> I drive a 1995 Buick </s> </p>
+						<p> I have a <del> Red car </del> </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-2">
+						<p class = "odd" > this paragraph is paragraph 1 </p>
+						<p> this paragraph is paragraph 2 </p>
+						<p class = "odd"> this paragraph is paragraph 3 </p>
+						<p> this paragraph is paragraph 4 </p>
+						<p class = "odd">  this paragraph is paragraph 5 </p>
+						<p> this paragraph is paragraph 6 </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-2">
+						<table>
+							<tr><th>Column1</th><th>Column2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+							<tr><th>Content1</th><th>Content2</th></tr>
+						</table>
+						<em> This text is important, I am emphasizing it. </em>
+						<strong> This is another way to emphasize text. </strong>
+						<ul>
+							<li>Stuff</li>
+							<li>and</li>
+							<li>things</li>
+						</ul>
+						<ol>
+							<li>More</li>
+							<li>Things</li>
+						</ol>
+						<p> Now some <sub> tiny subscript </sub> </p>
+						<p> <small> Another way for tiny text </small> </p>
+						<img src="medium.jpg" title="Literally just a cat" >
+						</div>
+					</div>
 
-<p class = "odd" > this paragraph is paragraph 1 </p>
-<p> this paragraph is paragraph 2 </p>
-<p class = "odd"> this paragraph is paragraph 3 </p>
-<p> this paragraph is paragraph 4 </p>
-<p class = "odd">  this paragraph is paragraph 5 </p>
-<p> this paragraph is paragraph 6 </p>
-<table>
-<tr><th>Column1</th><th>Column2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<tr><th>Content1</th><th>Content2</th></tr>
-<em> This text is important, I am emphasizing it. </em>
-<strong> This is another way to emphasize text. </strong>
-<ul>
-<li>Stuff</li>
-<li>and</li>
-<li>things</li>
-</ul>
-<ol>
-<li>More</li>
-<li>Things</li>
-</ol>
-<p> Now some <sub> tiny subscript </sub> </p>
-<p> <small> Another way for tiny text </small> </p>
-<img src="medium.jpg" title="Literally just a cat" >
+					<div class="container">
+						<h2>Basic Table</h2>
+						<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Firstname</th>
+									<th>Lastname</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>John</td>
+									<td>Doe</td>
+									<td>john@example.com</td>
+								</tr>
+								<tr>
+									<td>Mary</td>
+									<td>Moe</td>
+									<td>mary@example.com</td>
+								</tr>
+								<tr>
+									<td>July</td>
+									<td>Dooley</td>
+									<td>july@example.com</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</body>
+			</html>
 
-</body>
-</html>
-
+			

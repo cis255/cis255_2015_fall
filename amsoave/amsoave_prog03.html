@@ -1,0 +1,206 @@
+<!doctype html>
+<!-- 
+Filename : amsoave_prog03.html
+purpose	 : this program demonstrates javascript and jquery.
+design	 :	<head> 
+				title
+			<body> 
+				0. header
+				1. variable names
+				2. data types
+				3. operators, expressions
+				4. conditionals
+					a. truthy
+					b. falsy
+				5. control structures
+					a. for
+					b. do
+					c. while
+					d. switch case
+				6. objects, arrays
+				7. functions, prototypes (psuedo class)
+				8. write to DOM
+				9. jQuery Customers Order Form
+-->
+<html>
+	<head>
+		<title>CIS-255: Aaron Soave</title>
+	</head>
+
+	<body>
+		<!-- 0. Header -->
+		<h1>Aaron Soave, CIS255, Program 3</h1>
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable names</h2>
+		<!-- variable names are case sensitive and can start with $, _, or letter -->
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d  = a+_b+$c;
+			document.write("a+_b+$c="+d)
+		</script>
+		
+		<!-- 2. Data Types -->
+		<h2>2.Data Types </h2>
+		<script>
+			var num = 5;
+			var str = "I am a string";
+			var bool = true;
+			var undef;
+			var nullVal = null;
+			document.write("num is type: "+typeof(num) );
+			document.write("<br> str is type: "+typeof(str));
+			document.write("<br> bool is type: "+typeof(bool)) ;
+			document.write("<br> undef is type: "+undef );
+			document.write("<br> nullVal (null)= "+nullVal );			
+		</script>
+		
+		<!-- 3. Operators, expressions -->
+		<h2>3. Operators, expressions</h2>
+		
+		<script>
+			var a = 5;
+			var b = 10;
+			var x = "Aaron ";
+			var y = "Soave";
+			document.write("x+y= "+(x+y));
+			document.write("<br> b-a= "+(b-a));
+			document.write("<br> b*a= "+(b*a));
+			document.write("<br> b/a= "+(b/a));
+			document.write("<br> b%a= "+(b%a));
+		</script>
+		
+		<!-- 4. Conditionals -->
+		<h2>4. Conditionals</h2>
+		
+		<script>
+			var x = 5;
+			var a = 5;
+			var y = 20;
+			var z = "20";
+			document.write("x equals a: "+(x==a));
+			document.write("<br> x===a: "+(x===a));
+			document.write("<br> x===z : "+(x===z));
+			document.write("<br> x != a: "+(x!=a));
+			document.write("<br> x >= a: "+(x>=a));
+			
+			if(x>y)
+			{
+				document.write("<br> x(5) is greater than y(20)");
+			}
+			else
+			{
+				document.write("<br> x(5) is less than y(20)");
+			}
+		</script>
+		
+		<!-- 5. Content Structures -->
+		<h2>5. Control Structures</h2>
+		
+		<script>
+			document.write("This for loop will run 10 times, and double the iteration counter by 2 each loop <br>")
+			for(var i=0;i<10;i++)
+			{
+				document.write(i*2+"<br>");
+			};
+			
+			i = 10;
+			document.write("This do while loop will start at 10, double the iteration, and then decreases counter by 1 each loop <br>");
+			while(i>0)
+			{
+				document.write(i*2+"<br>");
+				i--;
+			};
+			
+			i = 0;
+			document.write("This loop will count from 0-10 <br>")
+			do {
+				document.write(i+"<br>");
+				i++
+			}
+			while(i<=10);
+		</script>
+		<h3>Switch case</h3>
+		<p id=demo></p>
+		<script>
+		
+			var day;
+			switch (new Date().getDay()) {
+				case 0:
+					day = "Sunday";
+					break;
+				case 1:
+					day = "Monday";
+					break;
+				case 2:
+					day = "Tuesday";
+					break;
+				case 3:
+					day = "Wednesday";
+					break;
+				case 4:
+					day = "Thursday";
+					break;
+				case 5:
+					day = "Friday";
+					break;
+				case  6:
+					day = "Saturday";
+					break;
+			}
+			document.getElementById("demo").innerHTML = "Today is " + day;
+		</script>
+		
+		<!-- 6. objects, arrays -->
+		<h2>6. objects, arrays</h2>
+		
+		<p id="demo2"></p>
+
+		<script>
+		var driver = {type:"Taylormade", model:"R11", color:"white", degree:9};
+		document.write("Brand of Driver: "+driver.type+"<br>");
+		document.write("Model of Driver: "+driver.model+"<br>");
+		document.write("Degree of Driver: "+driver.degree+"<br>");
+		
+		var golfBrands = ["Callaway", "Taylormade", "Nike"];
+		document.write("<br>Array index 1: "+golfBrands[0]);
+		document.write("<br>Array index 2: "+golfBrands[1]);
+		document.write("<br>Array index 3: "+golfBrands[2]);
+		</script>
+		
+		<!-- 7. functions, prototypes (psuedo class) -->
+		<h2>7. functions, prototypes (psuedo class)</h2>
+		<script>
+			function getDate(){ // This is function
+				return Date();
+			}
+			var currdate = getDate();
+			document.write(currdate);
+			
+			function student(first, last, id, gpa) { //This is prototype & function
+				this.firstName = first;
+				this.lastName = last;
+				this.age = id;
+				this.eyeColor = gpa;
+			}
+			var stud1 = new student("Aaron", "Soave", 111, 3.8);
+			document.write("<br><br> stud1's first and last name is: "+stud1.first+" "+stud1.last);
+		</script>
+		
+		
+		<!-- 8. write to DOM -->
+		<h2>8. write to DOM</h2>
+		<p id="id01"></p>
+		<script>
+		var n = "This is example of DOM!"
+			document.getElementById("id01").innerHTML=n;
+		</script>
+		
+		<!-- 9. Link to jQuery Customer Order Form -->
+		<h2>8. write to DOM</h2>
+		<a href="amsoave_prog03_order.html"> Program 3 Order Form </a>
+	</body>
+	
+</html>

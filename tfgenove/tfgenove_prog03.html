@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- ------------------------------------------------------------------------
+filename: tfgenove_prog03.html
+author: Tessa Genovese, CIS 255, Fall 2015
+purpose: this program demonstrates javascript and jquery
+design:
+		<head> title
+		<body> 
+			  0. header
+			  1. variable names
+			  2. primitive data types
+			  3. operators, expressions
+			  4. conditionals (truthy, falsy)
+			  5. control structures (for, do, while, switch case)
+			  6. objects, arrays
+			  7. functions, prototypes
+			  8. write to DOM
+			  9. link to jQuery Customer Order Form
+---------------------------------------------------------------------------- -->
+<html>
+	<head>
+		<title>CIS 255: Tessa Genovese</title>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Tessa Genovese, CIS 255, Program 3</h1>
+		<p id="id01">Hi</p>
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or -->
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d)
+		</script>
+	
+		<!-- 2. primitive data types -->
+		<h2>2. Primitive data types</h2>
+		<!-- The five primitive data types are string, number, boolean, undefined, and null -->
+		<script>
+			var x = 5;  //number
+			var y = "String Variable";
+			var z = true;
+			var u = undefined;
+			var n = null;
+			
+			document.write("var x is type: "+typeof(x)+"<br />");
+			document.write("var y is type: "+typeof(y)+"<br />");
+			document.write("var z is type: "+typeof(z)+"<br />");
+			document.write("var u is type: "+typeof(u)+"<br />");
+			document.write("var n is type: "+typeof(n)+"<br />");
+		</script>
+		
+		<!-- 3. operators, expressions -->
+		<h2>3. Operators, Expressions</h2>
+		<script>
+			var a = 5;
+			var b = 15;
+			var c = a+b;
+			var d = ++a;
+			var e = --b;
+			var f = a%b;
+			var g = a-b;
+			
+			document.write("a+b="+c+"<br />");
+			document.write("++a="+d+"<br />");
+			document.write("--b="+e+"<br />");
+			document.write("a%b="+f+"<br />");
+			document.write("a-b="+g+"<br />");
+		</script>
+		
+		<!-- 4. conditionals (truthy, falsy) -->
+		<h2>4. Conditionals, Truthy, Falsy</h2>
+		<script>
+			var a = 10;
+			var b = 20;
+			var c = "10";
+			var d = a==c;
+			var e = a===c;
+			var f = a!=c;
+			var g = a!==c;
+			var h = a>=b;
+			
+			if (a<b) document.write("demonstrating if statement"+"<br />");
+			
+			document.write("a==c: "+d+"<br />");
+			document.write("a===c: "+e+"<br />");
+			document.write("a!=c: "+f+"<br />");
+			document.write("a!==c: "+g+"<br />");
+			document.write("a>=b: "+h+"<br />");
+		</script>
+		
+		<!-- 5. control structures -->
+		<h2>5. Control Structures</h2>
+		<script>
+			var x = 5;
+			var y = 2;
+			var stringvar = "Hi";
+			
+			for (i=0;i<x;i++){
+				document.write("Demonstrating For Loop - Counter: "+i+"<br />");
+			}
+			
+			document.write("<br />");
+			
+			do {
+				document.write("Demonstrating Do Loop - Counter: "+x+"<br />");
+				--x;
+			} 
+			while (x>=5);
+			
+			document.write("<br />");
+			
+			while (y<5) {
+				document.write("Demonstrating While Loop - Counter: "+y+"<br />");
+				++y;
+			}
+			
+			document.write("<br />");
+			
+			switch (stringvar){
+				case "Hi":
+					document.write("Demonstrating switch - contents of stringvar: "+stringvar+"<br />");
+					break;
+				default:
+					document.write("Default case of switch")
+			}
+		</script>
+		
+		<!-- 6. objects, arrays -->
+		<h2>6. Objects, Arrays</h2>
+		<script>
+			var person = {firstName:"John", lastName:"Doe"};
+			document.write("First Name: "+person.firstName+"<br />");
+			document.write("Last Name: "+person.lastName+"<br />");
+			
+			document.write("<br />")
+			
+			var months = ["Jan", "Feb", "Mar", "Apr", "May"];
+			for (i=0;i<months.length;i++){
+				document.write(months[i]+"<br />");
+			}
+		</script>
+		
+		<!-- 7. functions, prototypes-->
+		<h2>7. Functions, Prototypes</h2>
+		<script>
+			var animal = function(color,sound) {
+				this.color = color;
+				this.sound = sound;
+			};
+			animal.prototype.noise = function () {
+				document.write('this animal says ' + this.sound + "<br />");
+			};
+			cat = new animal("orange", "meow");
+			dog = new animal("brown", "woof");
+
+			cat.noise();
+			dog.noise();
+		</script>
+		
+		<!-- 8. write to DOM -->
+		<h2>8. Write to DOM</h2>
+
+		<script>
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML="This is Program 03";
+		</script>
+		
+		<!-- 9. link to jQuery Customer Order Form -->
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="tfgenove_prog03_order.html">Program 3 Order Form</a>
+</body>
+</html>

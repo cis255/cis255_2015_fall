@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- ===============================================================================================================
+Author: Nicholas Bemiss
+Class: CIS 255
+Filename: ntbemiss_prog03.html
+design: 
+	<head> favicon and title
+	<body>
+		0. header
+		1. variable names
+		2. data types (primitive and objects) 
+		3. operators, expressions (+,-,*,/)
+		4. conditionals (truthy, falsy)
+		5.control structures (for, do, while)
+		6. objects, arrays
+		7. functions, prototypes, (psuedo class)
+		8. write to DOM
+		
+		temp: document.write(+"<br/>" )
+==================================================================================================================--> 
+<html>
+	<head>
+		<title>CIS-255: Nick Bemiss - Program 03</title>
+		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<!-- 0. header ===========================================================================================-->
+		<h1> Nick Bemiss - CIS-255: Program 03</h1>
+		<p>Program # </p>
+		<p id="id01">This is a template for Program 0</p>
+		<!--1. variable names ====================================================================================-->
+		<h2>1. Variable Names</h2>
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a + _b + $c = "+d);
+		</script>
+		
+		<!--2. Data Types (string, num, bool, undefined, null) ===================================================-->
+		<h2>2. Data Types </h2>
+		<script>
+			var number = 33; //number
+			var string = "String";     //string
+			var bool = true;
+			var undefined;
+			var n = null;
+			
+			document.write(typeof(number)+": "+ number +"<br/>" )
+			document.write(typeof(string)+": "+ string +"<br/>")
+			document.write(typeof(bool)+": "+ bool +"<br/>")
+			document.write(typeof(undefined)+": "+ undefined +"<br/>")
+			document.write(typeof(n)+": "+ n +"<br/>")
+		</script>
+		
+		<!--3. Operators, expressions ============================================================================-->
+		<h2>3. Operators, expressions</h2>
+		<script>
+			var A = 5;
+			var B = 10;
+			var mult = 20;
+			var shift = 20;
+			var remainder = 20;
+			var exponent = 20;
+			var add = A+B;
+			var subtract = A-B; 
+			var mult = A*B;
+			var divide = A/B;
+
+			document.write("A = " +A+ "<br/>" )
+			document.write("B = " +B+ "<br/>" )
+			document.write("A+B= " +add+ "<br/>" )
+			document.write("A-B= " +subtract+ "<br/>" )
+			document.write("A*B= " +mult+ "<br/>" )
+			document.write("A/B= " +divide+ "<br/>" )
+		</script>
+
+		<!--4. conditionals (truthy, falsy) ======================================================================-->
+		<h2>4. Conditionals (truthy, falsy)</h2>
+		
+		<script>
+			(A==B)?document.write("A==B <br/>"):document.write("A!=B <br/>");
+			(A===B)?document.write("A===B <br/>" ):document.write("A!===B <br/>") ;
+			
+		</script>
+		
+		<!--5. Control structures (for, do, while) ===============================================================-->
+		<h2>5. Control structures (for, do, while)</h2>
+		
+		<script>
+			var text = "";
+			var i = 0;
+			document.write(text += "Do While Loop: " + "</br>");
+			
+			do {
+				document.write(text += "The number is " + i + "</br>");
+				i++;
+			}
+			while (i < 3);
+			
+			document.write("<br>");
+
+			for (i = 0; i < 3; i++) { 
+				document.write("For loop, iteration #: "+i + "<br>");
+			}			
+		</script>		
+
+		<!--6. objects, arrays ===================================================================================-->
+		<h2>6. Objects, arrays</h2>
+		
+		<script>
+			var spooky = ["Bats", "Cats", "Rats"];
+			document.write("Created array spooky[] with length = 2. </br>");
+			document.write("Writing out array in for loop: </br>");
+			for (i = 0; i < 3; i++) { 
+				document.write(spooky[i] + "<br>");
+			}	
+		</script>		
+
+		<!--7. functions, prototypes, (psuedo class) =============================================================-->
+		<h2>7. Functions, prototypes, (psuedo class)</h2>
+		
+		<script>
+			
+			document.write("Calling a function to return 2 * 5: " + theFunction(2,5)+"</br>");
+		
+			function theFunction(x,y) {
+				return x * y;              // The function returns the product of p1 and p2
+			}		
+		</script>		
+
+		<!--8. Write to DOM ======================================================================================-->
+		<h2>8. Write to DOM</h2>		
+	
+		<script>
+			document.write(document.getElementById("id01").innerHTML);
+			document.write(document.getElementById("id01").innerHTML=$c);
+		</script>
+		
+		<!-- 9. Link to jQuery Customer Order Form-->
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="ntbemiss_prog03_order.html">Program 3 Order Form</a>
+	
+		<!-- External javascript link ============================================================================-->
+		<script type="text/javascript" scr="ntbemiss.js"></script>
+	</body>
+</html>
+
