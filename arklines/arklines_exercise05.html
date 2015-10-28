@@ -1,24 +1,97 @@
+
 <!doctype html>
 <!--
 filename : gpcorser_exercise05.html
 purpose  : demonstrate jquery compared to javascript
 design   : <head> 
+               script: jquery cdn
                javascript: script for temperature conversion
 			   jquery: script for temperature conversion
            <body> 
 		       1. header and paragraph
-			   2. input fields
-			   3. 
+			   2. script for printing numbers, 1-10
+			   3. celsius to farenheit converter
 -->
 <html>
 	<head>
+	   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	</head>
 	<body>
 	    <!-- 1. header and paragraph -->
-		<h1 class="odd">George Corser</h1>
+		<h1>Allison Klinesmith</h1>
 		<h2>Exercise 05: JavaScript v. jQuery</h2>
 		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
 
-	    <!-- 2. input fields -->		
+	    <!-- 2. script for printing numbers, 1-10 -->	
+        <script>
+		    var i;
+			for (i=1;i<=10;i++){
+			    document.write(i+"<br/>");
+			}
+        </script>		
+		
+		<!-- 3. celsius to farenheit converter in JavaScript-->	
+		<p>Type a number in one of the boxes below.</p>
+		<input id="celsius" onkeyup="convert('C');">degrees Celsius<br />
+		equals<br />
+		<input id="farenheit" onkeyup="convert('F');">degrees Farenheit<br />
+		equals<br/>
+		<input id="kelvin" onkeyup="convert('K');">degrees Kelvin<br />
+
+
+        <script>
+        function convert(degrees){
+		    if (degrees=='C') {
+			    var C = document.getElementById('celsius').value;
+				C = parseFloat(C);
+				var F = 1.8 * C + 32;
+				var K = (C + 273.15).toFixed(2);
+		        document.getElementById('farenheit').value = F;
+				document.getElementById('kelvin').value = K;
+			}
+		    if (degrees=='F') {
+			    var F = document.getElementById('farenheit').value;
+				var C = (F - 32 ) / 1.8;
+		        document.getElementById('celsius').value = C;
+			}
+		};
+        </script>	
+		
+		<!-- 4. celsius to farenheit converter in jQuery-->	
+		<p>Type a number in one of the boxes below.</p>
+		<input id="celsius2">degrees Celsius<br />
+		equals<br />
+		<input id="farenheit2">degrees Farenheit<br />
+		equals<br/>
+		<input id="kelvin2">degrees Kelvin<br />
+
+		<script>
+		    $("#celsius2").keyup(function() {
+			    $("#farenheit2").val(this.value * 1.8 + 32);
+				$("#kelvin2").val((parseFloat(this.value) + 273.15).toFixed(2));
+			});
+		</script>
+		
+				<br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br />
+
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
