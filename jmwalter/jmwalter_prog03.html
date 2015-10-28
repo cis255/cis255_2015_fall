@@ -1,0 +1,172 @@
+<html>
+	<head>
+	<!-- 
+	program 3: 
+	purpose: to demonstrate js and jqury
+	design: 
+	
+		1. variable name
+		2.data types 
+		3. operaters, expressions
+		4. conditionals 
+		5. control structures
+		6. objects and arrays 
+		7. functions, 
+		8. write to DOM
+		
+
+	--> 
+
+		
+	<style> 
+	#master {border: 1px;}
+	
+	</style>
+
+	</head>
+	
+	<body>
+	<!-- 0. header -->
+		<h1 id="master">Joshua Walters, CIS-255, Program 3</h1>
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<!--  -->
+		<script>
+		    var numVar = 9;
+			var strVar = "9";
+			var loopCount = 8;
+			var _underScore = "underscore";
+			document.write("The variable numVar is " + numVar);
+			document.write("<br/>The variable strVar is " + strVar);
+			document.write("<br/>The variable loopCount is " + loopCount);
+			document.write("<br/>The variable _underScore is " + _underScore);	
+		</script>
+	<!-- 2. Data Types 
+		string 
+		boolean
+		number 
+		undefined 
+		null
+	--> 
+	<h2>2. Data Types</h2>
+	<script>
+		strVar += "There are no strings on me!";
+		var bType = true;
+		numVar = 99;
+		var unDef = undefined;
+		var ptrToPar = null;
+		
+		document.write("<br/>The variable strVar is a String");
+		document.write("<br/>The variable bType is a Boolean");
+		document.write("<br/>The variable numVar is a Number");
+		document.write("<br/>The variable unDef is Undefined");
+		document.write("<br/>The variable ptrToPar is a NULL");
+	</script>
+	
+	<!-- 3. operators and expressions -->
+	<h2>3. operators and expressions</h2>
+	<script>
+		var num1 = 4;
+		var num2 = 7;
+		var num3 = 9;
+		var num4 = 16;
+		document.write("<br/>The variable num1 is " + num1);
+		document.write("<br/>The variable num2 is " + num2);
+		document.write("<br/>The variable num3 is " + num3);
+		document.write("<br/>The variable num4 is " + num4 + "<br/>");
+		
+		document.write("<br/>num1 + num2 = " + (num1 + num2) );
+		document.write("<br/>num4 - num2 = " + (num4 - num2) );
+		document.write("<br/>num3 * num1 = " + (num3 * num1) );
+		document.write("<br/>num4 / num1 = " + (num4 / num1) );
+		</script>
+		
+		
+	<!-- 4. conditionals, truthy and falsy -->
+	<h2>4. conditionals, truthy and falsy</h2>
+	<script>
+		strVar = "20";
+		numVar = 20;
+		document.write('<br/>strVar is "20" and numVar is 20 <br/>');
+		
+		if (numVar == strVar)
+			document.write('<br/>The variables numVar and strVar have the same value.<br/>');
+	
+		else 
+			document.write("<br/>The Variables numVar and strVar do not have the same value.<br/>");
+
+		if (numVar === strVar)
+			document.write('<br/>The variables numVar and strVar have the same value and data type.<br/>');
+	
+		else 
+			document.write("<br/>The Variables numVar and strVar do not have the same value and data type.<br/>");
+
+			
+	</script>	
+	
+	
+	<!--5. control Structures 
+		for
+		do
+		while 
+		switch case
+		
+	-->
+	<h2>5. control Structures </h2>
+	<script>
+		document.write("<br/>This is a test for 'for' looping in js.");
+		for (var i = 0; i < loopCount; i++)
+			{
+			document.write("<br/>The loop Counter is " + i + " at this point.");
+			}
+			
+		document.write("<br/><br/>This is a test for 'while' looping in js.");
+			var count = 0;
+			while (count < loopCount)
+			{
+				document.write("<br/>The loop Counter is " + count + " at this point.");
+				count++;
+			}
+
+	</script>
+	
+	<!-- 6. objects, arrays -->
+	<h2>6. objects, arrays</h2>
+	<script>
+		var player = {type:"warrior", attack:500, defense:200};
+		
+		document.write("<br/>player is an object with type, attack, and defense");
+		document.write("<br/>player type is " + player.type);
+		document.write("<br/>player attack is " + player.attack);
+		document.write("<br/>player defense is " + player.defense);		
+		
+		var games = ["Halo", "Fallout 4", "The Crew"];
+		document.write("<br/><br/>games is an array with three games");	
+		document.write("<br/>games[0] is " + games[0]);
+		document.write("<br/>games[1] is " + games[1]);
+		document.write("<br/>games[2] is " + games[2]);
+	</script>
+	
+	<!-- 7. functions, prototypes  -->
+	<h2>7. functions, prototypes</h2>
+	<script>
+		function message(test1, test2) 	
+		{
+			return "test1 is " + test1 + " and test2 is " + test2;              
+		}
+		
+		document.write(message("hello", "world"));
+		
+	</script> 
+	
+	<!--8.  writing to the dom  -->
+	<h2>8.  writing to the dom</h2>
+	<script>
+		document.write(document.getElementById("master").innerHTML)
+	</script> 
+	
+	
+	</body>
+	
+</html>
