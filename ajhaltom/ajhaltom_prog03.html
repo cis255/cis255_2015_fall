@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- 
+filename: ajhaltom_prog3.html
+author  : alex haltom, cis255, fall2015
+purpose : this program demonstrates javascript and jquery
+design  : 
+	<head> favicon and title
+	<body>
+		0. header
+		1. variable names
+		2. data types
+		3. operators
+		4. conditionals, truthy, falsy
+		5. control stuctures
+		6. objects, arrays
+		7. functions, prototypes
+		8. write to DOM
+		9. link to jQuery Customer Order Form
+-->
+<html>
+	<head>
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS-255: Alex Haltom</title>
+	</head>
+	<body>
+		<!-- 0. header -->
+		<h1>Alex Haltom, CIS-255, Program 3</h1>
+		<p id="id101">This is an example of writing to DOM</p>
+		<!--
+		==============================
+		1. variable names 
+		==============================
+		-->
+		
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<h2>1. Variable Names</h2>
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d)
+		</script>
+		<!-- 
+		==============================
+		2. primitive data types 
+		==============================
+		-->
+		<h2>2. Primitive Data Types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy"; // string
+			var z = true; // boolean
+			var u; // undefined
+			var n = null; // null
+			
+			document.write("var x is type:"+typeof(x)+"<br />");
+			document.write("var y is type:"+typeof(y)+"<br />");
+			document.write("var z is type:"+typeof(z)+"<br />");
+			document.write("var u is type:"+typeof(u)+"<br />"); 
+			document.write("var n is type:"+typeof(n)+"<br />");
+		</script>
+		<!-- 
+		==============================
+		3. operators, expressions
+		==============================
+		-->
+		<h2>3. Operators, Expressions</h2>
+		<script>
+			var sum = a+_b;
+			var diff = a-_b;
+			var pro = a*$c;
+			var div = $c/a;
+			var mod = a%_b;
+			document.write("a + _b ="+sum+"<br />");
+			document.write("a - _b ="+diff+"<br />");
+			document.write("a * $c ="+pro+"<br />");
+			document.write("a / _b="+div+"<br />");
+			document.write("a % _b="+mod+"<br />");
+		</script>
+		<!-- 
+		==============================
+		4. conditionals, truthy, falsy
+		==============================
+		-->
+		<h2>4. Conditionals, Truthy, Falsy</h2>
+		<script>
+			(n==u)?document.write("n==u<br />"):document.write("n!==u<br />");
+			(n===u)?document.write("n==u<br />"):document.write("n!==u<br />");
+		</script>
+		<!-- 
+		==============================
+		5. control stuctures
+		==============================
+		-->
+		<h2>5. Control Stuctures</h2>
+		<script>
+			for (i=0;i<5;i++) {
+				document.write(i);
+			}
+			document.write("<br />");
+			var j = 0;
+			while (j<5) {
+				document.write(j);
+				j++;
+			}
+			do {
+				var ii = 0;
+				document.write(ii+"<br />");			
+				ii++;
+			}
+			while (ii < 5);
+		</script>
+		<!-- 
+		==============================
+		6. objects, arrays 
+		==============================
+		-->
+		<h2>6. Objects, Arrays</h2>
+		<script>
+		
+		</script>
+		<!-- 
+		==============================
+		7. functions, prototypes
+		==============================
+		-->
+		<h2>7. Functions, Prototypes</h2>
+		<script>
+		
+		</script>
+		<!-- 
+		==============================
+		8. write to DOM 
+		==============================
+		-->
+		<h2>8. Write to DOM</h2>
+		<script>
+			document.write(document.getElementById("id101").innerHTML);
+			
+		</script>
+		<!-- 
+		==============================
+		9. link to jQuery Customer Order Form
+		==============================
+		-->
+		<h2>9. link to jQuery Customer Order Form</h2>
+			<a href="ajhaltom_prog03_order.html">Program 3 Order From</a>
+	</body>
+</html>

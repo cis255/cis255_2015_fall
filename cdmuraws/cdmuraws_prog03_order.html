@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+filename: cdmuraws_prog03_order.html
+author  : Cory Murawske, CIS 255, Fall 2015
+purpose : This program demonstrates JavaScript and jQuery
+		  This is a customer order form
+design  :
+    <head> favicon, title and jquery cdn
+	<body>
+	    0. header
+		1. customer info table
+		
+-------------------------------------------------------------- -->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png'/>
+		<title>CIS-255: Golf Form</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Cory Murawske, CIS-255 Golf Center</h1>
+		<h3>Customer Order Form</h3>
+		
+		<!-- 1. customer info table -->
+		<table border ="1">
+			<tr>
+				<th colspan="3">Mail Orders to:</th>
+			</tr>
+			<tr>
+				<td id="customer_name" colspan="3">
+					<input type="text" size="46" name="customer_name" placeholder="Customer Name">
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_address" colspan="3">
+					<input type="text" size="46" name="customer_address" placeholder="Address">
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_city">
+					<input id="customer_city_input" type="text" name="customer_city" placeholder="City">
+				</td>
+				<td id="customer_state">
+					<input type="text" size="5" name="customer_state" placeholder="State">
+				</td>
+				<td id="customer_zip">
+					<input type="text" size="10" name="customer_zip" placeholder="Zip Code">
+				</td>
+			</tr>
+		</table>
+		
+		<script>
+			$("document").ready(function init() {
+			
+				// set table division background to red
+				$("#customer_city").css("background-color","red");
+				
+				// set input box background to green
+				$("#customer_city_input").css("background-color","green");
+				
+				// if input box is in focus, set background to yellow
+				$("#customer_city_input").focus(function() {
+					$(this).css("background-color","yellow")
+				});
+				
+				// if input box loses focus, set background to blue
+				$("#customer_city_input").focusout(function() {
+					$(this).css("background-color","blue")
+				});
+				
+				// set every other line in table to gray
+				$("tr:odd").css("background-color","#c0c0c0")
+				$("tr:odd input").css("background-color","#c0c0c0")
+				
+				var tableRows = $("tr");
+			});
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
