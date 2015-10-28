@@ -17,5 +17,5 @@ function getRandomInt(min, max) {
 
 function getOrderNumber()
 {
-    return getRandomInt(1000,2000);
+    return "#BGC-"+getRandomInt(1000,2000);
 }
