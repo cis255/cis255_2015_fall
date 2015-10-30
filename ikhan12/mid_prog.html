@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: mid_prog.html
+author: Imran Khan, cis255, fall2015
+purpose: demonstrate html, css, jquery
+
+---------------------------------------------------------------------- -->
+<html>
+<head>
+<h1>Midterm Program!!!</h1>
+</head>
+<head>
+<!-- Internal CSS to change <p> color to red-->
+<style>
+p#p01 {
+    color: red;
+}
+</style>
+<!-- Jquery to add third paragraph containing my First Name -->
+<!-- link copied from w3school-->
+<script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#B1").click(function(){
+        $("p").append(" <b>IMRAN</b>.");
+    });
+});
+</script>
+<body>
+<!-- <p> color to red-->
+<p id="p01">The paragraph is RED.</p>
+<br />
+<!-- internal javascript to change paragraph content "SVSUID" to "My SVSU ID: ikhan12!"-->
+<p id="ikhan12"> SVSUID </p>
+<script>
+document.getElementById("ikhan12").innerHTML = "My SVSU ID: ikhan12!";
+</script>
+<p>The paragraph above was changed by a script.</p>
+<body>
+<p>APPEND TO GET FIRST NAME</p>
+<button id="B1">Append text</button>
+</body>
+</body>
+</html>
