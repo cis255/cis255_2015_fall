@@ -28,9 +28,9 @@
 			8. location is the trickies part of my css links for example when i tried to edit the button size i was doing it in the wrong
 				file at first and then had to go to the clean.blah.blah css file to change it, as well as the fonts.
 				specificity was also a pain in this site because there were already so many EXTREAMLY specific settings in the bootstrap
-				it was hard to understand how to change a certian element, since i didnt write the css i had to atleast skim it to figure out things
-				inhearitance was not as difficult in this site the biggest was when i was changing the font using fontsquirl and had to change most 
-				itterations of font-family to get the font to change everywere i decided to change all locations of font family to be safe!
+				it was hard to understand how to change a certain element, since i didnt write the css i had to atleast skim it to figure out things
+				inheritance was not as difficult in this site the biggest was when i was changing the font using fontsquirl and had to change most 
+				iterations of font-family to get the font to change everywhere i decided to change all locations of font family to be safe!
 			
 			9. -- add images-- not sure what you ment by the 5 files but i used paint.net and gimp to create my own custmo banner the same
 								dimmentions as the stock one, plus i did that for a all the pages about ect. and added the icons so i hope thats what you meant 
@@ -72,7 +72,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">Start Bootstrap</a>
+					<a class="navbar-brand" href="index.php">League of Extraordinary Nerds</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+filename: gpcorser_prog03.html
+author  : george corser, cis255, fall2015
+purpose : this program demonstrates javascript and jquery
+design  :
+    <head> favicon and title
+	<body>
+	    0. header
+		1. variable names
+		2. primitive data types
+		3. operators and expressions
+		4. conditionals, truthy, falsy
+		
+<html>
+	<head>
+		<!-- favicon image and browser tab title 
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS-255: George Corser</title>
+	</head>
+	
+	<body>
+		<!-- 0. header 
+		<h1>George Corser, CIS-255, Program 3</h1>
+		<h3>This web page is a template for students in CIS-255. Please follow this format when doing your program.</h3>
+		<p id="id01">This is a template for Program 03</p>
+		
+		<!-- 1. variable names 
+		<h2>1. variable names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or letter
+		<script>
+		    var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2. primitive data types 
+		<h2>2. primitive data types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy";
+			var n = null;
+			var u;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var n is type: "+typeof(n)+"<br/>");
+			document.write("var u is type: "+typeof(u)+"<br/>");
+		</script>
+		
+		<!-- 4. conditionals, truthy, falsy
+		<h2>4. conditionals, truthy, falsy</h2>
+		<script>
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML=y;
+			
+		</script>
+	</body>
+</html>
+---------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+		
+	
+	<head>
+	<link   href="bootstrap.css" rel="stylesheet">
+	<link   href="dldunla1.css" rel="stylesheet">
+	</head>
+	<body> 
+<!-----------------0.Headder------------------------------>
+			<h1> Demetrius Dunlap</h1>
+			<p id="id01"> This is program 3</p>
+<!--------------- 1. variable names ---------------------->
+			<h2> 1. Variable names</h2>
+				    <script>
+				    	var a = null;
+						var a = 1;
+						var _b = 2;
+						var $c = 3;
+						
+						var string = "The answer to: ";
+						var d = a +_b+$c;
+						
+						document.write(string + "a +_b+$c is: " + d + "<br />");
+						document.write("These variable names start with dollar signs and underscores"+ "<br />");
+				    </script>
+				    
+<!--------- 2. primitive data types------------------>
+			<h2>2. primitive data types</h2>
+				<script>
+					var a = 5;
+					var b = "Good-bye";
+					var c = null;
+					var d = false;
+					var e;
+					document.write("var a is type: "+typeof(a)+"<br/>");
+					document.write("var b is type: "+typeof(b)+"<br/>");
+					document.write("var c is type: "+typeof(c)+"<br/>");
+					document.write("var d is type: "+typeof(d)+"<br/>");
+					document.write("var e is type: "+typeof(e)+"<br/>");
+				</script
+				
+<!------- 3. operations, expressions------------------------->
+			<h1> 3. Operators </h1>
+				    <script>
+				    	var a = null;
+						var a = 1;
+						var _b = 2;
+						var $c = 3;
+						
+						var string = "The answer to: ";
+						var d = a +_b+$c;
+						var e = $c - _b;
+						var f = a * $c;
+						var g = _b / a;
+						var h = a % $c;
+						
+						document.write("These variable names start with dollar signs and underscores"+ "<br />");
+						document.write(string + "Addition: a +_b+$c = " + d + "<br />");
+						document.write(string + "Substraction: $c - _b = " + e + "<br />");
+						document.write(string + "Multiplication: $c * a = " + f + "<br />");
+						document.write(string + "division: _b / a = " + g + "<br />");
+						document.write(string + "Mod: a % $c = " + h + "<br />");
+				    </script>	
+				    
+<!---------- 4. conditionals, truthy, falsy ------------------------->
+			<h2>4. conditionals, truthy, falsy</h2>
+				<script>
+					var a = 5;
+					var b = "Good-Bye";
+					var c = null;
+					var d;
+					var e = true;
+					(c==d)?document.write("c==d<br/>"):document.write("c!=d<br/>");
+					(c===d)?document.write("c===d<br/>"):document.write("c!==d<br/>");
+					document.write(document.getElementById("id01").innerHTML);
+				</script>
+				
+<!---- 5. control stucture switch, for, do, while -------------->
+			<h2>5. Control Structures</h2>
+	
+			<script>
+			document.write("For loop structures counting from 1 to 10.<br/>")
+				var i; 
+				for(i=1;i<=10;i++){
+					document.write(i+"<br/>"); 
+				}
+			</script>
+<!--------6. Objective Arrays--------------->
+	<h2>6. Objective Arrays</h2>
+		<script>
+		<!---- Declare object ---->
+		var soldier = {type:"Blitz", attack:300, defense:600};
+		
+		document.write("<br/>soldier is an object with type, attack, and defense");
+		document.write("<br/>soldier type is " + soldier.type);
+		document.write("<br/>soldier attack is " + soldier.attack);
+		document.write("<br/>soldier defense is " + soldier.defense);
+		
+		<!------ declare array --->
+		var sport = ["Baseball", "Basketball", "Football"];
+		document.write("<br/><br/>sport is an array with three sports");	
+		document.write("<br/>sport[0] is " + sport[0]);
+		document.write("<br/>sport[1] is " + sport[1]);
+		document.write("<br/>sport[2] is " + sport[2]);
+	</script>
+<!---------7. Function Prototypes--------->
+		<h2>7. Function Prototypes</h2>
+			<script>
+		function message(word1, word2) 	
+		{
+			return "word1 is " + word1 + " and word2 is " + word2;              
+		}
+		
+		document.write(message("You are", "amazing"));
+		
+	</script> 
+			
+<!---------8. Write to DOM------------------>
+		<h2>8.Write to Dom</h2>
+	<script>
+		document.write(document.getElementById("id01").innerHTML)
+	</script> 
+	
+			<!-- 9. link to jQuery Customer Order Form -->
+		<h2>9. link to jQuery Customer Order Form</h2>
+		<a href="dldunla1_prog03_order.html">Program 3 Order Form</a>
+	</body>
+		
+
+</html>
+
+
+
+
+
+
+
+

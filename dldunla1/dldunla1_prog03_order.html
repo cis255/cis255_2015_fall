@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+filename: dldunla1_prog03_order.html
+author  : demetrius dunlap, cis255, fall2015
+purpose : this program demonstrates javascript and jquery
+          this is a customer order form
+design  :
+    <head> favicon and title and jquery cdn
+	<body>
+	    0. header
+		1. customer info table
+		
+-------------------------------------------------------------- -->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<link   href="bootstrap.css" rel="stylesheet">
+		<link   href="dldunla1.css" rel="stylesheet">
+		<title>CIS-255 Baseball Rental Equpiment </title>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<!-- css for order form
+		-->
+	<style>
+			h1 {color:red;}
+	</style>
+	</head>
+
+	<body>
+		<!-- 0. header -->
+		<h1><center>Baseball Rental Equpiment</center></h1>
+		<h3><center>Customer Order Form</center></h3>
+
+		<!-- 1. customer info table -->
+		<table border="1">
+			<tr>
+				<th colspan="3">Mail Orders to:</th>
+			</tr>
+			<tr>
+				<td id="customer_name" colspan="3">
+					<input id="customer_name_input" size="46" type="text" name="customer_name" placeholder="Customer Name"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_address" colspan="3">
+					<input id="customer_address_input" size="46" type="text" name="customer_address" placeholder="Address"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_city">
+					<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
+				</td>
+				<td id="customer_state">
+					<input id="customer_state_input" type="text" size="5" name="customer_state" placeholder="State"/>
+				</td>
+				<td id="customer_zip">
+					<input id="customer_zip_input" type="text" size="10" name="customer_zip" placeholder="Zip"/>
+				</td>
+			</tr>
+		</table>
+		<!--- ORDER TABLE
+		-->
+		
+		<table align="center" border="1">
+			<tr>
+				<th colspan="46">Order Invoice</th>
+				
+			
+			<tr>
+				<th> Item number:</th>
+				<th> Item Description </th>
+				<th> Quantity</th>
+				<th>Price</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<td id="item_number" >
+					<input size="15" type="text" name="item_number" placeholder="Item Number :"/>	
+				</td>
+			
+				<td id="item_description" >
+					<input size="15" type="text" name="item_description" placeholder="Description">	
+				</td>
+			
+				<td id="item_quaantity" >
+					<input size="7" type="text" name="item_quantity" placeholder="Quantity">	
+				</td>
+			
+				<td id="item_price" >
+					<input size="8" type="text" name="item_price" placeholder="Price">				
+				</td>
+				<td id="item_amount" >
+					<input size="8" type="text" name="item_amount" placeholder="Amount">			
+				</td>
+			</tr>
+		</table>
+		
+		<script>
+		$("document").ready(function init() {
+		
+		   
+			
+			// if input box is in focus, set background to yellow
+			$("#customer_city_input").focus(function () {
+			    $(this).css("background-color","yellow");
+			});
+			$("#customer_city_input").focusout(function () {
+			    $(this).css("background-color","blue");
+			});
+			$("#customer_name_input").focus(function () {
+			    $(this).css("background-color","yellow");
+			});
+			$("#customer_name_input").focusout(function () {
+			    $(this).css("background-color","blue");
+			});
+			$("#customer_address_input").focus(function () {
+			    $(this).css("background-color","yellow");
+			});
+			$("#customer_address_input").focusout(function () {
+			    $(this).css("background-color","blue");
+			});
+			
+			$("#customer_state_input").focus(function () {
+			    $(this).css("background-color","yellow");
+			});
+			$("#customer_state_input").focusout(function () {
+			    $(this).css("background-color","blue");
+			});
+			
+			$("#customer_zip_input").focus(function () {
+			    $(this).css("background-color","yellow");
+			});
+			$("#customer_zip_input").focusout(function () {
+			    $(this).css("background-color","blue");
+			});
+			// set every other line in table to gray
+			$("tr:odd").css("background-color","#c0c0c0");
+			$("tr:odd input").css("background-color","#c0c0c0");
+
+			var tableRows = $("tr");
+		});
+		</script>
+		
+	</body>
+
+</html>
