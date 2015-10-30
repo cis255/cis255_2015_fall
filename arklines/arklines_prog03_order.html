@@ -23,13 +23,16 @@ design:
 	<!-- JQuery cdn -->
 	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	
 	
 </head>
 <body>
 
 	<!-- 1. Customer info table -->
 	<!--2. Make customer information (under "Mail Orders to:) user-enterable -->
-	<table id ="CustomerMail" border ="1" align="top,left">
+	<table id ="CustomerMail" border ="1" align="left"style="margin:20px">
 		<tr>
 			<th id="MailOrdersTo" colspan="3">
 				Mail Orders To:
@@ -38,31 +41,31 @@ design:
 		<tr>
 			
 			<td id="CustomerName" colspan="3">
-			<input size="45" type ="text" size = "35" name="Customer_Name" placeholder="Name"></td>
+			<input size="45" type ="text"  name="Customer_Name" placeholder="Name"/></td>
 			
 		</tr>
 		<tr>
 			
 			<td id="CustomerAddress" colspan="3">
-			<input size="45"type ="text" name="Customer_Address" placeholder="Address"></td>
+			<input size="45"type ="text" name="Customer_Address" placeholder="Address"/></td>
 			
 		</tr>
 		<tr>
-			<td id="CustomerCity" colspan="3">
-			<input type ="text" id= "CustomerCity_input"  name="Customer_City" placeholder="City"></td>
+			<td id="CustomerCity" colspan="1">
+			<input type ="text" id= "CustomerCity_input"  name="Customer_City" placeholder="City"/></td>
 			
-			<td id="CustomerState"  colspan="3">
-			<input size="5" type ="text" name="Customer_State" onkeyup="GetConvert();" id = "Customer_State_Input" placeholder="State"></td>
+			<td id="CustomerState"  colspan="1">
+			<input size="5" type ="text" name="Customer_State" onkeyup="GetConvert();" id = "Customer_State_Input" placeholder="State"/></td>
 			
-			<td id="CustomerZip" colspan="3">
-			<input size="10" type ="text"  name="Customer_Zip"  placeholder="Zip"></td>
+			<td id="CustomerZip" colspan="1">
+			<input size="10" type ="text"  name="Customer_Zip"  placeholder="Zip"/></td>
 		</tr>
 		
 		
 	</table>
 	
 	<!--2. order date, info, and customer name -->
-	<table id ="OrderInfo" border ="1" align="right,top">
+	<table id ="OrderInfo" border ="1" align="right" style="margin:20px" width="750">
 		<tr>
 			<th id="Orderinfo" colspan="2">
 				
@@ -75,7 +78,7 @@ design:
 			Order Number:
 			</td>
 			<td id="OrderNumber" colspan="2">
-			<input size="45" type ="text" size = "35" name="OrderNumber_Input" placeholder="#####"></td>
+			<input size="45" type ="text" size = "35" name="OrderNumber_Input" placeholder="#####"/></td>
 		</tr>
 		
 		<tr>
@@ -83,7 +86,7 @@ design:
 			Order Date: </td>
 			
 			<td id="OrderDate"  colspan="2">
-			<input size="45" type ="text" name="OrderDate_Input" placeholder="mmm/dd/yyyy"></td>
+			<input size="45" type ="text" name="OrderDate_Input" placeholder="mmm/dd/yyyy"/></td>
 			
 			
 		</tr>
@@ -93,7 +96,7 @@ design:
 			Customer Name:</td>
 			
 			<td id="CustomerName"  colspan="2">
-			<input size="45" type ="text" name="CustomerName_Input" placeholder="Last Name, First Name"></td>
+			<input size="45" type ="text" name="CustomerName_Input" placeholder="Last Name, First Name"/></td>
 			
 			
 		</tr>
@@ -103,7 +106,7 @@ design:
 	
 	
 	<!-- 3. data table -->
-	<table id ="OrderFormTable" border ="1" align="bottom,center">
+	<table id ="OrderFormTable" border ="1" width="90%" align="center">
 		<tr>
 			<th id="ItemNo." colspan="5" size="40">
 				Item No.
@@ -124,23 +127,22 @@ design:
 		<tr id="Ordertr1">
 			
 			<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
-			<!--<input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" >-->
 			</td>
 			
 		
 			
 			<td id="DescriptionInput1" colspan="5" >
-			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput1" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput1"  colspan="5">
-			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" /></td>
 			
 			<td id="AmountInput1" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"/></td>
 		</tr>
 		<tr id="Ordertr2">
 		<td id="ItemNoInput2" colspan="5" class="ItemNoInput">
@@ -150,17 +152,17 @@ design:
 		
 			
 			<td id="DescriptionInput2" colspan="5">
-			<input size="40"type ="text" id="Description_Input2" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input2" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput2" colspan="5"class="Quantity">
-			<input type ="text"  id= "Quantity_Input2" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input2" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput2"  colspan="5">
-			<input size="40" type ="text" id="Price_input2" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input2" name="Price_input1" /></td>
 			
 			<td id="AmountInput2" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"/></td>
 		</tr>
 		<tr id="Ordertr3">
 		<td id="ItemNoInput3" colspan="5" class="ItemNoInput">
@@ -170,17 +172,17 @@ design:
 		
 			
 			<td id="DescriptionInput3" colspan="5">
-			<input size="40"type ="text" id="Description_Input3" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input3" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput3" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input3" name="Quantity_Input3" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input3" name="Quantity_Input3" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput3"  colspan="5">
-			<input size="40" type ="text" id="Price_input3" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input3" name="Price_input1" /></td>
 			
 			<td id="AmountInput3" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input3"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input3"/></td>
 		</tr>
 		<tr id="Ordertr4">
 		<td id="ItemNoInput4" colspan="5" class="ItemNoInput">
@@ -190,17 +192,17 @@ design:
 		
 			
 			<td id="DescriptionInput4" colspan="5">
-			<input size="40"type ="text" id="Description_Input4" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input4" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput4" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input4" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input4" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput4"  colspan="5">
-			<input size="40" type ="text" id="Price_input4" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input4" name="Price_input1" /></td>
 			
 			<td id="AmountInput4" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input4"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input4"/></td>
 		</tr>
 		<tr id="Ordertr5">
 		<td id="ItemNoInput5" colspan="5" class="ItemNoInput">
@@ -210,17 +212,17 @@ design:
 		
 			
 			<td id="DescriptionInput5" colspan="5">
-			<input size="40"type ="text" id="Description_Input5" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input5" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput5" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input5" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input5" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput5"  colspan="5">
-			<input size="40" type ="text" id="Price_input5" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input5" name="Price_input1" /></td>
 			
 			<td id="AmountInput5" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input5"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input5"/></td>
 		</tr>
 		<tr id="Ordertr6">
 		<td id="ItemNoInput6" colspan="5" class="ItemNoInput">
@@ -230,17 +232,17 @@ design:
 		
 			
 			<td id="DescriptionInput6" colspan="5">
-			<input size="40"type ="text" id="Description_Input6" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input6" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput6" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input6" name="Quantity_Input6" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input6" name="Quantity_Input6" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput6"  colspan="5">
-			<input size="40" type ="text" id="Price_input6" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input6" name="Price_input1" /></td>
 			
 			<td id="AmountInput6" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input6"  id="Amount_Input6"></td>
+			<input size="40" type ="text"   name="Amount_Input6"  id="Amount_Input6"/></td>
 		</tr>
 		<tr id="Ordertr7">
 		<td id="ItemNoInput7" colspan="5" class="ItemNoInput">
@@ -250,17 +252,17 @@ design:
 		
 			
 			<td id="DescriptionInput7" colspan="5">
-			<input size="40"type ="text" id="Description_Input7" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input7" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput7" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input7" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input7" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput7"  colspan="5">
-			<input size="40" type ="text" id="Price_input7" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input7" name="Price_input1" /></td>
 			
 			<td id="AmountInput7" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input7"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input7"/></td>
 		</tr>
 		<tr id="Ordertr8">
 		<td id="ItemNoInput8" colspan="5" class="ItemNoInput">
@@ -270,17 +272,17 @@ design:
 		
 			
 			<td id="DescriptionInput8" colspan="5">
-			<input size="40"type ="text" id="Description_Input8" name="Description_Input1" ></td>
+			<input size="40"type ="text" id="Description_Input8" name="Description_Input1" /></td>
 			
 		
 			<td id="QuantityInput8" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input8" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input8" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput8"  colspan="5">
-			<input size="40" type ="text" id="Price_input8" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input8" name="Price_input1" /></td>
 			
 			<td id="AmountInput8" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input8"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input8"/></td>
 		</tr>
 		<tr id="Ordertr9">
 		<td id="ItemNoInput9" colspan="5" class="ItemNoInput">
@@ -290,54 +292,54 @@ design:
 		
 			
 			<td id="DescriptionInput9" colspan="5">
-			<input size="40"type ="text" id="Description_Input9" name="Description_Input1" >
+			<input size="40"type ="text" id="Description_Input9" name="Description_Input1"/ >
 			</td>
 			
 		
 			<td id="QuantityInput9" colspan="5" class="Quantity">
-			<input type ="text"  id= "Quantity_Input9" name="Quantity_Input1" onkeyup="AddAmnt();"></td>
+			<input type ="text"  id= "Quantity_Input9" name="Quantity_Input1" onkeyup="AddAmnt();"/></td>
 			
 			<td id="PriceInput9"  colspan="5">
-			<input size="40" type ="text" id="Price_input9" name="Price_input1" ></td>
+			<input size="40" type ="text" id="Price_input9" name="Price_input1" /></td>
 			
 			<td id="AmountInput9" colspan="5">
-			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input9"></td>
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input9"/></td>
 		</tr>
 		
 		<tr >
 			
-			<td id="SubtotalLabel" colspan="2" >
+			<td id="SubtotalLabel" colspan="4" style="text-align: right;">
 			
 			Sub-total
 			</td>
-			<td id="Subtotal" colspan="2">
-			<input size="45" type ="text" size = "35" id= "Subtotal" name="Subtotal"></td>
+			<td id="Subtotal" >
+			<input size="40" type ="text" id= "Subtotal" name="Subtotal" readonly /></td>
 		</tr>
 		
 		<tr>
-			<td id="FreightAmtLabel" colspan="2">
+			<td id="FreightAmtLabel" colspan="4" style="text-align: right;" >
 			Freight Amount </td>
 			
-			<td id="FreightAmt"  colspan="2">
-			<input size="45" type ="text" name="FreightAmt" id="Freight_Amt" ></td>
+			<td id="FreightAmt"  >
+			<input size="40" type ="text" name="FreightAmt" id="Freight_Amt" readonly /></td>
 			
 			
 		</tr>
 		
 	<tr>
-			<td id="TaxLabel" colspan="2">
+			<td id="TaxLabel" colspan="4" style="text-align: right;">
 			Tax</td>
 			
-			<td id="Tax"  colspan="2">
-			<input size="45" type ="text" name="Tax_Input" id = "Tax_Input" ></td>
+			<td id="Tax"  >
+			<input size="40" type ="text" name="Tax_Input" id = "Tax_Input" readonly /></td>
 			
 		</tr>
 		<tr>
-			<td id="TotalAmtLabel" colspan="2">
+			<td id="TotalAmtLabel" colspan="4" style="text-align: right;">
 			Total Amount</td>
 			
-			<td id="TotalAmt"  colspan="2">
-			<input size="45" type ="text" name="TotalAmt" ></td>
+			<td id="TotalAmt"  >
+			<input size="40" type ="text" name="TotalAmt" /></td>
 			
 		</tr>
 		
