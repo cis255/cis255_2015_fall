@@ -1,5 +1,8 @@
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: pink !important;
+
+body {
+  color: #fff;
+  background-color: #1c1c1c;
+
 }
 .odd {
     background-color: yellow;
@@ -21,8 +24,7 @@ p span {
 div p {
 	color: purple;
 }
-h2 {
-	color: yellow;
+
 }
 [title]{
 	cursor: help;
@@ -31,9 +33,8 @@ h2 {
 	text-decoration: none;
 }
 a:hover {
-    background-color: red;
+    background-color: yellow;
 }
-
 
 
 
