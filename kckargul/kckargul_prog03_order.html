@@ -1,65 +1,291 @@
 
 <!DOCTYPE html>
 <!--
+name:	Kevin Kargula
+class:	CIS-255
 design:
 	head: favicon and title and jquery cdn
 	body:
 		header-
-		customer info table
+			customer info table
+				company name - ordername
+				street - order date
+				city, state, zip - customer name
+			order header
+				itemNo. - description - quantity - price - amount
+				6 different rows for input
+					subtotal
+					freight_amount
+					tax
+					total amount
+	script:
+		when te document is ready to load
+			all the odd rows are now gray
+		whenever a input item is selected
+			list of all the state taxes
+			object decleration
+			prototype of the object
+			array of object decleration
+			for loop for each row
+				gathering data put into table
+				exception handleing
+				calculating each amount
+					printing each amount
+				gathering the total of all amounts and quantities
+			take end calculations and putting it onto the table
+			input box focused on yellow 
+			making previous input box white
+			every odd row is now odd
 -->
 <html>
 	<head>
 		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
 		<title>CIS-255 Colf Center</title>
 		<script src="https://code.jquery.com//jquery-2.1.4.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 	</head>
 	<body>
 		<!--0. header-->
-		<h1>CIS-255 Colf Center</h1>
-		<h3>customer Order Form</h3>
-		<table border="1">
-			<tr><th>Mail Order Form</th></tr>
+		<div class="container well">
+		
+		<h1 align="middle">CIS-255 Colf Center</h1>
+		<h3 align="middle">Customer Order Form</h3>
+		
+		<table border="1" class="table table-bordered" style="background-color:white;">
+			<tr colspan="12">Mail Order Form</tr>
+			<!--header-->
 			<tr>
-				<td id="customer_name" colspan="3">
-					<input="text" size="46" name="customer_name" placeholder="customer name"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_address" colspan="3">
-					<input="text" size="46" name="customer_address" placeholder="customer_address"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_city" colspan="3">
-					<input="text" id="customer_city_input" name="customer_city" placeholder="customer_city"/>
-				</td>
-				<td id = "customer_state" colspan="3">
-					<input="text" size="5" name="customer_state" placeholder="customer_state"/>
-				</td>
-				<td id = "customer_zip" colspan="3">
-					<input="text" size="10" name="customer_zip" placeholder="customer_zip"/>
-				</td>
+				<td colspan="3"><input type="text" placeholder="Company Name" id="company_name" class="form-control"/></td>
+				<td>Order Number</td>
+				<td id="order_number" colspan="3"><input type="text" class="form-control"/></td>
 			</tr>	
-		</table>
-		<script>
-			$("document").ready(function init(){
-				//set table division background to red
-				$("#customer_city").css("background-color","red");
-				//set input box background to green
-				$("#customer_city_input").css("background-color","green");
-				//if input box is in focus, set background to yellow
-				$("#customer_city_input").focus(function(){
-					$(this).css("background-color","green");
-				});
-				//if input box is in focus, set background to yellow
-				$("#customer_city_input").focusout(function(){
-					$(this).css("background-color","blue");
-				});
-				$("tr:odd").css("background-color","#c0c0c0")
-				$("tr:odd input").css("background-color","#c0c0c0")
+			</tr>
+			<tr>
+				<td colspan="3"><input type="text" placeholder="Street Address" id="street_address" class="form-control"/></td>
+				<td>Order Date</td>
+				<td id="order_date"><input type="text" class="form-control"/></td>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="City" id="city"		class="form-control">	</td>
+				<td><input type="text" placeholder="State" id="state"	class="form-control">	</td>
+				<td><input type="text" placeholder="Zip" id="zip"		class="form-control">		</td>
 				
-				var tablerows = $("tr")
+				<td>Customer Name</td>
+				<td><input id="customer_name" type="text" class="form-control"/></td>
+			</tr><!--Close Header-->
+		</table>
+		<table class="order table table-bordered">
+			<tr>
+				<td>Item No.</td>
+				<td>Description	</td>
+				<td>Quantity</td>
+				<td>Price</td>
+				<td>Amount</td>
+			</tr>	
+			<tr>    
+				<td><input type="text" class="form-control" id="Item1"</td>
+				<td><input type="text" class="form-control" id="Desccription1"</td>
+				<td><input type="text" class="form-control" id="Quantity1"</td>
+				<td><input type="text" class="form-control" id="Price1"</td>
+				<td><input type="text" class="form-control" id="Amount1"</td>
+			</tr>                    
+			<tr>                     
+				<td><input type="text" class="form-control" id="Item2"</td>
+				<td><input type="text" class="form-control" id="Description2"</td>
+				<td><input type="text" class="form-control" id="Quantity2"</td>
+				<td><input type="text" class="form-control" id="Price2"</td>
+				<td><input type="text" class="form-control" id="Amount2"</td>
+			</tr>                  
+			<tr>                   
+				<td><input type="text" class="form-control" id="Item3"</td>
+				<td><input type="text" class="form-control" id="Description3"</td>
+				<td><input type="text" class="form-control" id="Quantity3"</td>
+				<td><input type="text" class="form-control" id="Price3"</td>
+				<td><input type="text" class="form-control" id="Amount3"</td>
+			</tr>                      
+			<tr>                       
+				<td><input type="text" class="form-control" id="Item4"</td>
+				<td><input type="text" class="form-control" id="Description4"</td>
+				<td><input type="text" class="form-control" id="Quantity4"</td>
+				<td><input type="text" class="form-control" id="Price4"</td>
+				<td><input type="text" class="form-control" id="Amount4"</td>
+			</tr>                      
+			<tr>                       
+				<td><input type="text" class="form-control" id="Item5"</td>
+				<td><input type="text" class="form-control" id="Description5"</td>
+				<td><input type="text" class="form-control" id="Quantity5"</td>
+				<td><input type="text" class="form-control" id="Price5"</td>
+				<td><input type="text" class="form-control" id="Amount5"</td>
+			</tr>                      
+			<tr>                       
+				<td><input type="text" class="form-control" id="Item6"</td>
+				<td><input type="text" class="form-control" id="Description6"</td>
+				<td><input type="text" class="form-control" id="Quantity6"</td>
+				<td><input type="text" class="form-control" id="Price6"</td>
+				<td><input type="text" class="form-control" id="Amount6"</td>
+			</tr>                     
+			<!--The final Calculation-->
+			<tr>     
+				<td colspan="4" align="right" style="padding-right:10px;">Sub-Total</td>
+				<td><input type="text" class="form-control" id="sub_total"></td>
+			</tr>    
+			<tr>     
+				<td colspan="4" align="right" style="padding-right:10px;">Freight Amount</td>
+				<td><input type="text" class="form-control" id="freight_amount"></td>
+			</tr>    
+			<tr>     
+				<td colspan="4" align="right" style="padding-right:10px;">Tax</td>
+				<td><input type="text" class="form-control" id="tax"></td>
+			</tr>    
+			<tr>     
+				<td colspan="4" align="right" style="padding-right:10px;">Total Amount</td>
+				<td><input type="text" class="form-control" id="total_amount"></td>
+			</tr>
+		</table>
+
+		<script>
+		/*=================================================
+		makes all the odd rows gray when document is ready
+		=================================================*/
+		$(document).ready(function(){
+			$(".order tr:odd").css("background-color","#c0c0c0");
+			$(".order tr:odd input").css("background-color","#c0c0c0");
+
+			var tableRows = $("tr");
+		});
+		/*=========================================================
+		Whenever an input box is selected this function is payed
+		=========================================================*/
+		$("input").focus(function focusFunc() {
+			var taxRates = {
+				AL:0.0400,
+				AK:0.0000,
+				AZ:0.0560,
+				AR:0.0650,
+				CA:0.0750,
+				CO:0.0290,
+				CT:0.0635,
+				DE:0.0000,
+				DC:0.0600,
+				FL:0.0400,
+				GA:0.0400,
+				HI:0.0600,
+				ID:0.0625,
+				IL:0.0700,
+				IN:0.0600,
+				IA:0.0615,
+				KS:0.0600,
+				KY:0.0400,
+				LA:0.0550,
+				ME:0.0600,
+				MD:0.0625,
+				MA:0.0600,
+				MI:0.0688,
+				MN:0.0700,
+				MS:0.0423,
+				MO:0.0000,
+				MT:0.0550,
+				NE:0.0685,
+				NV:0.0000,
+				NH:0.0700,
+				NJ:0.0513,
+				NM:0.0400,
+				NY:0.0475,
+				NC:0.0500,
+				ND:0.0575,
+				OH:0.0450,
+				OK:0.0000,
+				OR:0.0600,
+				PA:0.0700,
+				RI:0.0600,
+				SC:0.0400,
+				SD:0.0700,
+				TN:0.0625,
+				TX:0.0595,
+				UT:0.0600,
+				VT:0.0530,
+				VA:0.0650,
+				WA:0.0600,
+				WV:0.0500,
+				WI:0.0400,
+				WY:0.0575
+				};
+			/*==============================================
+				creates the order object for each row
+			==============================================*/
+			var order = function(){
+				this.quantity;
+				this.price;
+				this.amount;
+			};
+			
+			//makes an array of objects
+			var orders= new Array();
+			
+			// Assigns all the variables to an array of objects
+			var ST=0;
+			var FA=0;
+			
+			//data gathering and calculations for each row
+			//Disclaimer: Got the idea from Josh, though I coded this from scratch
+			for(var i=1; i<7;i++)
+			{
+				//Declerations
+				var Q = "Quantity"+i;
+				var P = "Price"+i;
+				var A = "Amount"+i;
+				var state = document.getElementById("state").value;
+				orders[i]=new Object;
+				
+				//takes in the quantity and price of each row
+				orders[i].quantity=parseFloat(document.getElementById(Q).value);
+				orders[i].price=parseFloat(document.getElementById(P).value);
+				
+				//Exceptioni if there's nothing inside the row
+				if(!isNaN(orders[i].price) && !isNaN(orders[i].quantity)){
+					orders[i].amount=parseFloat((orders[i].price*orders[i].quantity).toFixed(2));
+				}
+				else{
+					orders[i].amount=0;
+					orders[i].quantity=0;}
+					
+				document.getElementById(A).value="$"+(orders[i].amount).toFixed(2);
+				
+				//Adds each of the rows into one variable
+				ST+=parseFloat(orders[i].amount);
+				FA+=parseFloat(orders[i].quantity);
+			}
+			//Takes the finished addition of all the rows fro one output
+			var T=parseFloat((ST+FA)*parseFloat(taxRates[state]).toFixed(2));
+		
+			//outputs all the finished calculations
+			document.getElementById("sub_total").value="$"+(ST).toFixed(2);
+			document.getElementById("freight_amount").value="$"+FA;
+			document.getElementById("tax").value="$"+T.toFixed(2);
+			document.getElementById("total_amount").value="$"+(T+FA+ST).toFixed(2);
+			
+			/*====================================================
+			if input box is in focus, set background to yellow
+			====================================================*/
+			$("input").focus(function () {
+			    $(this).css("background-color","yellow");
 			});
+			
+			/*====================================================
+			unfocus input becomes normal color
+			====================================================*/
+			$("input").focusout(function () {
+			    $(this).css("background-color","white");
+			});
+
+			// set every other line in table to gray
+			$(".order tr:odd").css("background-color","#c0c0c0");
+			$(".order tr:odd input").css("background-color","#c0c0c0");
+
+			var tableRows = $("tr");
+
+		});
+
 		</script>
 	</body>
 </html>

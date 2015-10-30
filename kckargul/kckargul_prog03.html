@@ -96,16 +96,17 @@ Borrowed from  GPCorser
 				-->
 			<h2> Conditionals</h2>
 			<script>
-				var n;
+				var n;<!--Undefined-->
 				var u = null;
 				var f = 5;
 				var F = "5";
-				document.write("Also known as a ternary operators");
+				document.write("Also known as a ternary operators<br/>");
 				(n==u)?document.write("n==u <br/>"):document.write("n!=u <br/>");
 				(n===u)?document.write("n===u <br/>"):document.write("n!==u <br/>");	
 				(f===F)?document.write("f===F <br/>"):document.write("n!==u <br/>");
-				(f==F)?document.write("f==F <br/>":document.write("f!=F<br/>");
-
+				(f==F)?document.write("f==F <br/>"):document.write("f!=F<br/>");
+				(t==1)?document.write("t==1 <br/>"):document.write("t!=1<br/>");
+				(t===1)?document.write("t===1 <br/>"):document.write("t!==1 <br/>");
 				
 			</script>
 			<h2>Control structures</h2>
@@ -117,11 +118,11 @@ Borrowed from  GPCorser
 				-->
 			<script>
 				document.write("This is a for loop: ");
-				for(int i=0; i<5; i++){
+				for(var i=0; i<5; i++){
 					document.write(i+" ");
 				}
 				
-				document.write("this is a do conditional <br/>");
+				document.write("<br/>this is a do conditional: ");
 				do{
 					i++;
 					document.write(i+" ");
@@ -155,18 +156,36 @@ Borrowed from  GPCorser
 				<!--This is an array-->
 				var array = [1, 2, 4];
 				document.write("I made an array and it's first element is "+array[0]+"<br/>");
-				document.write("I made an array and it's second element is "+array[1]+<br/>");
-				document.write("I made am array and it's thirs element is "+array[2])+<br/>");
+				document.write("I made an array and it's second element is "+array[1]+"<br/>");
+				document.write("I made an array and it's thirs element is "+array[2]+"<br/>");
 			</script>
 			<!--7. functions, prototypes(pseudoclass)-->
 			<h2>Functions, prototypes(Psuedoclass)</h2>
-			<style>
+			<p id="demo"></p>
+			<script>
 				var n = 5;
+				var output;
 				function something(n){
 					return n+5;
 				}
 				document.write(something(n));
-			</style>
+			</script>
+			<script>
+			function person(first, last, age) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+			}
+			person.prototype.AKA = "Harry Potter";
+			var me = new person("Kevin", "Kargula", 20);
+			document.getElementById("demo").innerHTML =
+			"I'm also known as " + me.AKA; 
+			person.prototype.name = function(){
+				return this.firstname + " " + this.lastname;
+			};
+			document.getElementById("demo").innerHTML =
+			"My name is " + me.name(); 			
+			</script>
 			<!--8. write to DOM-->
 			<h2>write to DOM</h2>
 			<script>
@@ -176,6 +195,13 @@ Borrowed from  GPCorser
 			<!--9. Link to jQery Customer Order Form-->
 			<h4>Link to jQuery Customer Order Form</h4>
 				
-			<a href ="kckargul_prog03_order.html">
+			<a href ="kckargul_prog03_order.html">Click to Order form</a>
 		</body>
+		<script>
+		$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+	</script>
 	</html>
