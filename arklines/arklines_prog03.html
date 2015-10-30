@@ -168,6 +168,34 @@ design:
 		<h2>Functions and Prototypes</h2>
 		<!--7. functions, prototypes    -->
 		<script>
+		// function returning square of argument
+					function square(n) {
+						return n*n;
+					}
+					
+					document.write("square(3) =  " + square(3) + "<br/>");
+					
+					
+					// prototypes (from the w3 schools tutorial)
+					function Student(fName, lName, GPA, Major) {
+						this.fName = fName;
+						this.lName = lName;
+						this.GPA = GPA;
+						this.Major = Major;
+						
+						// method
+						this.name = function() {
+							return (this.fName+this.lName);
+						}
+					}
+					
+					var stu = new Student("Stuart","McDonald",3.30, "CIS");
+					document.write(" This is: " + stu.fName);
+					document.write(" " + stu.lName + "<br/>");
+					document.write("His GPA is: " + stu.GPA + "<br/>");
+					document.write("His Major is: " + stu.Major + "<br/>");
+					document.write("Thank you for taking the time to learn about " + stu.name() + "<br/>");
+
 		</script>
 		
 		<h2>Write to DOM</h2>
