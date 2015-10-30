@@ -104,9 +104,10 @@ design:
 				function myDayFunction() {
 				var day = new Date().getDay; 
 				var greeting;
-				if (Day = "Monday"||"Wednesday") {
+				if (day == "Monday"||day =="Wednesday") {
 				greeting = "Hello! You have CIS255 today";              // if else
-				} else {
+				}
+				else {
 				greeting = "You do not have CIS255 today-- you can sleep in!";
 				}
 				document.getElementById("day").innerHTML = greeting;
