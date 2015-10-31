@@ -53,37 +53,51 @@ Design  :
 		
 		<table align="center" border="1" width = "800">
 		<tr>
-			<th> Item No. </th>
-			<th> Description </th>
-			<th> Quantity </th>
-			<th> Price </th>
-			<th> Amount </th>
+			<th colspan="1"> Item No. </th>
+			<th colspan="1"> Description </th>
+			<th colspan="1"> Quantity </th>
+			<th colspan="1"> Price </th>
+			<th colspan="1"> Amount </th>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="Item_Num1"name="Item_No1" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Description1"name="Desc1" size="20" maxlength="20"> </td>
+			<td><input type="text" id="Quantity1"name="Quant1" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Price1"name="Pri1" size="10" maxlength="10"> </td>
+			<td><input type="text" class="Amount"name="Amo1" size="10" maxlength="10"> </td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="Item_Num2"name="Item_No2" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Description2"name="Desc2" size="20" maxlength="20"> </td>
+			<td><input type="text" id="Quantity2"name="Quant2" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Price2"name="Pri2" size="10" maxlength="10"> </td>
+			<td><input type="text" class="Amount"name="Amo2" size="10" maxlength="10"> </td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="Item_Num3"name="Item_No3" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Description3"name="Desc3" size="20" maxlength="20"> </td>
+			<td><input type="text" id="Quantity3"name="Quant3" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Price3"name="Pri3" size="10" maxlength="10"> </td>
+			<td><input type="text" class="Amount"name="Amo3" size="10" maxlength="10"> </td>
+		</tr>
+		<tr>
+			<td><input type="text" id="Item_Num4"name="Item_No4" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Description4"name="Desc4" size="20" maxlength="20"> </td>
+			<td><input type="text" id="Quantity4"name="Quant4" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Price4"name="Pri4" size="10" maxlength="10"> </td>
+			<td><input type="text" class="Amount"name="Amo4" size="10" maxlength="10"> </td>
+		</tr>
+		<tr>
+			<td><input type="text" id="Item_Num5"name="Item_No5" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Description5"name="Desc5" size="20" maxlength="20"> </td>
+			<td><input type="text" id="Quantity5"name="Quant5" size="10" maxlength="10"> </td>
+			<td><input type="text" id="Price5"name="Pri5" size="10" maxlength="10"> </td>
+			<td><input type="text" class="Amount"name="Amo5" size="10" maxlength="10"> </td>
 		</tr>
 		<!-- Total Amount -->
 		<tr>
 			<td colspan="4" align="right"> Subtotal </td>
-			<td></td>
+			<td><input id="sub" size="10"></td>
 		</tr>
 		<tr>
 			<td colspan="4" align="right"> Freight Amount </td>
@@ -113,6 +127,29 @@ Design  :
 				$("tr:odd").css("background-color","#c0c0c0");
 				$("tr:odd input").css("background-color","#c0c0c0");
 			});
+			
+			var tax;
+			$("customer_state").keyup(function State_Tax(){
+				if (State=='MI') {
+					tax = 0.06;
+					}
+				if (State=='IN'){
+					tax = 0.07
+					}
+				});
+			var A1;
+			var A2;
+			var A3;
+			var A4;
+			var A5;
+			$("#Amount1").keyup(function CalcAmount1(){
+				$("#Amount1").val$("Quantity1" + "#Price1");
+			});	
+			var subtotal = 0;
+			$('.Amount').each(function() {
+				subtotal += parseFloat($(this).text());
+			});
+			$('#sub').html(subtotal)
 		</script>
 		
 	</body>

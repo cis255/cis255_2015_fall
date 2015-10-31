@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: tfgenove_midterm.html
+author: Tessa Genovese, cis255, Fall 2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<!-- 2. add internal css to change the text color to red of the paragraph with an id -->
+	<style>
+		#tfgenove{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- 1. create two paragraphs, one of which has an id that is your svsuid -->
+	<p id="tfgenove">Tessa Genovese, CIS 255</p>
+	<p id="paragraph2">Midterm Program</p>
+	
+	<!-- 3. add internal javascript to change the content of the paragraph to be your svsuid -->
+	<script>
+		document.getElementById("paragraph2").innerHTML = "tfgenove";
+	</script>
+	
+	<!-- 4. add internal jquery to add a third paragraph containing your first name -->
+	<script>
+		var jQueryParagraph = $("<p></p>").text("Tessa");
+		$("#paragraph2").after(jQueryParagraph);
+	</script>
+</body>
+</html>

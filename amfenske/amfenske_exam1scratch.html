@@ -1,0 +1,48 @@
+
+<!DOCTYPE html> 
+<html> 
+<body> 
+		<!-- 3. celsius to farenheit converter JavaScript-->	
+		<p>Type a number in one of the boxes below.</p>
+		<input id="celsius" onkeyup="convert('C');">degrees Celsius<br />
+		equals<br />
+		<input id="farenheit" onkeyup="convert('F');">degrees Farenheit<br />
+		equals<br/>
+		<input id="kelvin" onkeyup="convert('K');">degrees Kelvin<br/>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br />
+
+        <script>
+        function convert(degrees){
+		    if (degrees=='C') {
+			    var C = document.getElementById('celsius').value;
+				C = parseFloat(C);
+				var F = 1.8 * C + 32;
+				var K = C + 273.15;
+		        document.getElementById('farenheit').value = F;
+		        document.getElementById('kelvin').value = K;				
+			}
+		    if (degrees=='F') {
+			    var F = document.getElementById('farenheit').value;
+				F = parseFloat(F);
+				var C = (F - 32 ) / 1.8;
+				var K = (F + 459.67) / 1.8;
+		        document.getElementById('celsius').value = C;
+			}
+			if (degrees=='K') {
+				var K = document.getElementById('kelvin').value;
+				K = parseFloat(K);
+				var C = K - 273.15;
+				var F = (K - 459.67)* 1.8;
+		        document.getElementById('Kelvin').value = K;				
+			}
+		};
+
+		$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+        </script>	
+</body> 
+</html>

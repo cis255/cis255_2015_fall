@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--
+filename	: index.html
+author  	: Brian Cobb (CIS-255, Fall 2015)
+desription	: A simple order form
+design		:   1. Use Bootstrap for overall formatting
+                2. Make customer information (under "Mail Orders to:) user-enterable
+                3. Create object of states and taxes
+                4. Compute "Tax" based on State entered in customer information
+                5. Create object of freight amounts and weights
+                    Note: in main.js
+                6. Compute "Freight Amount" based on sum of Qty entered in order detail
+                7. Use jQuery to make order detail lines appear in different color every other line
+                8. Highlight in yellow any field a user clicks
+-->
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--1. Use Bootstrap for overall formatting-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ziplookup.googlecode.com/git/zip-lookup/zip-lookup.min.js" type="text/javascript" ></script>
+    <style>
+        body {
+            background: url(http://www.techagesite.com/augusta/augusta-national-golf-course-wallpaper-shaddows.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            margin-top: 50px;
+            box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+            padding:0 15px 0 15px;
+        }
+    </style>
+    <script src="main.js"></script>
+    <script src="datalayer.js"></script>
+    <script>
+        //15 line template engine as discussed here
+        //http://krasimirtsonev.com/blog/article/Javascript-template-engine-in-just-20-line
+        var TemplateEngine = function(html, options) {
+            var re = /<%([^%>]+)?%>/g, reExp = /(^( )?(if|for|else|switch|case|break|{|}))(.*)?/g, code = 'var r=[];\n', cursor = 0, match;
+            var add = function(line, js) {
+                js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
+                        (code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
+                return add;
+            }
+            while(match = re.exec(html)) {
+                add(html.slice(cursor, match.index))(match[1], true);
+                cursor = match.index + match[0].length;
+            }
+            add(html.substr(cursor, html.length - cursor));
+            code += 'return r.join("");';
+            return new Function(code.replace(/[\r\t\n]/g, '')).apply(options);
+        }
+    </script>
+</head>
+<body>
+<!--1. Use Bootstrap for overall formatting-->
+<div class="container" style="background-color:#FFFFFF">
+    <!--Header-->
+    <div class="row">
+        <div class="text-center" style="float:none">
+            <h1>Bock Golf Center</h1>
+            <h2>Customer Order Form</h2>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Address block -->
+        <div class="col-md-4">
+            <!--2. Make customer information (under "Mail Orders to:) user-enterable-->
+            <b>Mail Orders to:</b><br>
+            <table>
+                <tr>
+                    <td colspan="3"><input id="shipName" type="text" placeholder="Company Name" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input id="shipAddress" type="text" placeholder="Street Address" class="form-control"/></td>
+                </tr>
+                <tr>
+                    <td><input id="shipCity" type="text" placeholder="City" class='zip-lookup-field-city form-control' /></td>
+                    <td><input id="shipState" size="2" type="text" placeholder="State" class='zip-lookup-field-state-short form-control'/></td>
+                    <td><input id="shipZip" size="10" type="text" placeholder="Zip" class='zip-lookup-field-zipcode form-control'/></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Order details -->
+        <div class="col-md-8">
+            <table broder="1">
+                <tr>
+                    <td>Order Number</td><td><div id="orderNumber"></div></td>
+                </tr>
+                <tr>
+                    <td>Order Date</td><td><div id="orderDate"></div></td>
+                </tr>
+                <tr>
+                    <td>Customer Name</td><td><input type="text" id="custName" class="form-control"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+  <div class="row" style="margin-top:20px;">
+        <!--Start table for item no, description quanit... -->
+      <div class="col-md-12">
+        <table border="1" id="itemTable" class="table">
+            <thead id="firstRow">
+            <tr>
+                <th class="col-xs-1">Item No.</th>
+                <th class="col-xs-8">Description</th>
+                <th class="col-xs-1">Quantity</th>
+                <th class="col-xs-1">Price</th>
+                <th class="col-xs-1">Amount</th>
+            </tr>
+            <thead>
+
+            <tr>
+                <td colspan="4" align="right">Sub-total</td>
+                <td id="subtotal">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Freight Amount</td>
+                <td id="shipping">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Tax</td>
+                <td id="tax">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Total Amount</td>
+                <td id="total">&nbsp;</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+    <!-- end item no table -->
+</div>
+<script>
+    //Get our order number and the date
+    $('#orderNumber').text(getOrderNumber());
+    $('#orderDate').text(GetDate());
+    //Turn debuging on/off
+    var debugOn = false;
+    //Create our items array. This will hold all the data about the items we sell
+    var items=new Array();
+    //This fills the area from the datalayer.js file.
+    fillItemData(items);
+    //Run all the stuff after the page loads.
+    var selectBoxHTML='';
+    $( document ).ready(function() {
+        //Make our first row
+        var firstTableRow = $('#firstRow');
+        addRow(0,firstTableRow);
+        //8. Highlight in yellow any field a user clicks
+        $("#shipState").change(function() {
+            updateCosts($("#row0")[0]);
+        });
+        $("#shipZip").change(function() {
+            setTimeout(function () { updateCosts($("#row0")[0]); },500);
+        });
+        //Setup our table coloring
+		colorRows();
+    });
+    /*
+     This function will take a jquery selector and fill the select box with options from our items array
+     */
+    function fillSelect(selectBox) {
+        //Lets only select it once. Saves time.
+        var sb = $(selectBox);
+        //Below creates the html for the option box
+        var option='';
+        for (var i=0;i<items.length;i++) {
+            option += '<option value="'+items[i].itemNum+'">'+
+                    items[i].name+' - '+items[i].description+'</option>';
+        }
+        //append it to the selectbox
+        sb.append(option);
+    }
+	/*
+	    This function loops though all ids of rowXXX and figures out what one is next
+	 */
+    function getNextRow() {
+        var i=0;
+        while($("#row"+i).length !== 0)
+            i++;
+        //i should now contain what the next element id would be
+        return i;
+    }
+	/*
+	    This returns the number of the last row in the table
+	 */
+    function getLastRow() {
+        return getNextRow()-1;
+    }
+	/*
+	    This function adds a new row to our table.
+	 */
+    function addRow(rowNum,afterElement) {
+        var addAfter = defaultValue(afterElement,$("#row"+(rowNum-1)));
+        //This defines our template. This is fed into our template engine
+        //anything with <% %> will be evaluated as java
+        //if it is a var passed in you need to use this.varName
+        //You can use if then else, for loops, ect...
+        var template =
+                '<tr id="row<%this.rowNum%>">'+
+                '<td><input type="text" id="itemId<%this.rowNum%>" class="form-control"></td>'+
+                '<td>'+
+                '<select id="itemDesc<%this.rowNum%>"  class="form-control">'+
+                '<option value="None">None</option>'+
+                '</select>'+
+                '</td>'+
+                '<td><input type="text" id="itemQty<%this.rowNum%>" class="form-control"></td>'+
+                '<td><div id="itemPrice<%this.rowNum%>"></div></td>;'+
+                '<td><div id="itemAmount<%this.rowNum%>"></div></td>'+
+                '</tr>';
+        //pass in our template and the rowNum to get the html back we need to add to our table
+        var html = TemplateEngine(template,{rowNum:rowNum});
+        //Add the code to our table. addAfter contains our last row in the table
+        addAfter.after(html);
+        //Take our new selectbox and generate all the <option> tags fo rit
+        fillSelect('#itemDesc'+rowNum);
+        //Bind our function so that when something is selected the other fields in the
+        //row fill in
+        $('#itemDesc'+rowNum).change(function() { populateField(this); });
+        //When quantity changes we only need to update our row totals and table totals
+        //this attaches the event to handle that.
+        $('#itemQty'+rowNum).change(function() {updateCosts(this);});
+        //8. Highlight in yellow any field a user clicks
+        //This is the code for highlight yellow for our table row boxes.
+		$('input:text').focus(function (){
+			colorRows();
+			$(this).css({'background-color':'#ffff99'});
+		});
+        //When we leave change our colors all back to the default
+		$('input:text').blur(function (){
+			colorRows();
+		});
+		colorRows();
+    };
+	
+	function removeRow(rowNum) {
+        //We are never allowed to delete the last row
+        if (rowNum === getLastRow())
+            return;
+		//copy all rows below to the one above
+		var numRows = getLastRow();
+		for (var i=rowNum+1;i<=numRows;i++) {
+			fixId("#row"+i,i-1);
+		}
+        //Delete our row
+        $("#row"+rowNum).remove();
+	}
+	/*
+	    This function changes the id of selector. It removes any numbers at the end (row5 becomes row) then adds
+	    newId to it. (row then becomes row4)
+	    This is done for ALL child elements of selector as well.
+	 */
+	function fixId(selector,newId) {
+        //Loop though all children of selector that have an id attr
+		$(selector).find("[id]").each(function() {
+            //This updates the id using javascript (this is a html object)
+			this.id = this.id.replace(/\d+$/, "") + newId;
+		});
+        //This replaces the id of our row using jquery
+        //We have to use attr because jquery returns a jquery object not an html object
+        var newRowId = $(selector).attr('id').replace(/\d+$/, "") + newId;
+        $(selector).attr("id",newRowId);
+	}
+    /*
+        Takes a id (row5) and returns the number (5)
+     */
+    function idToRowNum (id) {
+        return parseInt(id.match(/\d+$/));
+    }
+
+	//7. Use jQuery to make order detail lines appear in different color every other line
+	function colorRows()
+	{
+        //this defines the colors we want to use.
+        //Do this so it is easy to change later
+	 	var css1={'background-color' : '#f0f0f0'};
+		var css2={'background-color' : '#ffffff'};
+		
+		//Set all input boxes back to default color this will
+        //clear yellow highlights
+		$("input").css(css2);
+        //Color all even rows css2. This replaces
+        //any current color
+		$("#itemTable tr:even select").css(css2);
+		$("#itemTable tr:even").css(css2);
+
+        //Change all odd to the highlight color
+		$("#itemTable tr:odd input").css(css1);
+		$("#itemTable tr:odd select").css(css1);
+		$("#itemTable tr:odd").css(css1);
+		
+	}
+	//Given an itemNum this will return the item
+    function getItemByNumber (num) {
+        for (var i =0;i<items.length;i++)
+        {
+            if (items[i].itemNum === parseInt(num))
+                return items[i];
+        }
+    };
+    /*
+        This function is for filling in all the values from our items array
+        into the proper boxes of our table row
+     */
+    function populateField(row) {
+        //Take a row and get the row number from it.
+        //this is so we can pass in this when we bind the function
+        //but still get the row number which we use to name our controls.
+        var rowNum = idToRowNum(row.id);
+        var rowid="#row" + rowNum;
+        //Find all our elements we will be updating.
+        //use option:selected to target the one that is picked from the select box
+        var rowVal     = $(rowid+" option:selected").val();
+        var itemId     = $("#itemId"+rowNum);
+        var itemDesc   = $("#itemDesc"+rowNum);
+        var itemQty    = $("#itemQty"+rowNum);
+        var itemPrice  = $("#itemPrice"+rowNum);
+        var itemAmount = $("#itemAmount"+rowNum);
+
+        //If we have selected anything but none
+        if (rowVal!=="None") {
+            //Check if we need to add a new row
+            //We do this when we change the last row which should
+            //always be ready for a new item
+            if (rowNum === getLastRow())
+                addRow(getNextRow());
+
+            //Set our item num field to the value of what we selected
+            itemId.val(rowVal);
+            //Make sure qty has a value. Only set it if it doesn't already have one
+            var qty = itemQty.val();
+            if (qty === "")
+                qty = 1;
+            itemQty.val(qty);
+        }
+        //Update our costs since we have changed our row totals
+        updateCosts(row);
+    };
+    /*
+        This is used to calculate our totals at the bottom
+        It is also used to check if we need to delete a row
+        in our table. A row needs to be deleted when None is selected and it is not the last row
+        in our table.
+     */
+    function updateCosts(row)
+    {
+        //Take a row and get the row number from it.
+        //this is so we can pass in this when we bind the function
+        //but still get the row number which we use to name our controls.
+        var rowNum = idToRowNum(row.id);
+        //Find all our elements we will be updating.
+        //use option:selected to target the one that is picked from the select box
+        var rowVal     = $("#itemDesc"+rowNum+" option:selected").val();
+        var itemQty    = $("#itemQty"+rowNum);
+        var itemPrice  = $("#itemPrice"+rowNum);
+        var itemAmount = $("#itemAmount"+rowNum);
+        var qty = itemQty.val();
+        //We set a row to None, see if we need to remove it
+        if (rowVal==="None") { //Remove row
+			removeRow(rowNum);
+        } else {
+            //Update our price and cost of the row we passed in
+            //This is done because if the quanty changed
+            //we need to update the values.
+            var item = getItemByNumber(rowVal);
+            var price = (item.price).toFixed(2);
+            itemPrice.text("$" + price);
+            var cost = (item.price * qty).toFixed(2);
+            itemAmount.text("$" + cost);
+        }
+
+        //Do totals
+        var subtotal=0;
+        var shipping=0;
+        //Loop though all our items and calculate the totals
+        for (var i=0;i<getLastRow();i++){
+            itemAmount = $("#itemAmount"+i);
+            rowVal     = $("#itemDesc"+i+" option:selected").val();
+            item = getItemByNumber(rowVal);
+            qty    = $("#itemQty"+rowNum).val();
+            //Add what is in the item Amount box (minus the $ at the start
+            subtotal += parseFloat(itemAmount.text().substring(1,itemAmount.text().length));
+            //6. Compute "Freight Amount" based on sum of Qty entered in order detail
+            shipping += item.weight*shipCostPerPound*qty;
+
+        }
+        //4. Compute "Tax" based on State entered in customer information
+        var tax = subtotal*getTaxRate();
+        var totalCost = subtotal+tax+shipping;
+        //Update our totals at the bottom.
+        $("#subtotal").text("$"+subtotal.toFixed(2));
+        $("#shipping").text("$"+shipping.toFixed(2));
+        $("#tax").text("$"+tax.toFixed(2));
+        $("#total").text("$"+totalCost.toFixed(2));
+    }
+    /*
+        Returns the current tax rate based upon the two letter code in
+        the state field or return 0 if it is not found/valid
+     */
+    function getTaxRate() {
+        //3. Create object of states and taxes
+        var taxRates = {
+            AL:4.00,
+            AK:0.00,
+            AZ:5.60,
+            AR:6.50,
+            CA:7.50,
+            CO:2.90,
+            CT:6.35,
+            DE:0.00,
+            DC:6.00,
+            FL:4.00,
+            GA:4.00,
+            HI:6.00,
+            ID:6.25,
+            IL:7.00,
+            IN:6.00,
+            IA:6.15,
+            KS:6.00,
+            KY:4.00,
+            LA:5.50,
+            ME:6.00,
+            MD:6.25,
+            MA:6.00,
+            MI:6.88,
+            MN:7.00,
+            MS:4.23,
+            MO:0.00,
+            MT:5.50,
+            NE:6.85,
+            NV:0.00,
+            NH:7.00,
+            NJ:5.13,
+            NM:4.00,
+            NY:4.75,
+            NC:5.00,
+            ND:5.75,
+            OH:4.50,
+            OK:0.00,
+            OR:6.00,
+            PA:7.00,
+            RI:6.00,
+            SC:4.00,
+            SD:7.00,
+            TN:6.25,
+            TX:5.95,
+            UT:6.00,
+            VT:5.30,
+            VA:6.50,
+            WA:6.00,
+            WV:5.00,
+            WI:4.00,
+            WY:5.75
+        };
+        var state = $("#shipState").val();
+        if (typeof taxRates[state] !== "undefined")
+            return taxRates[state]/100;
+        return 0;
+    }
+    /*
+        Helper function. Allows us to hide debug messages \
+        in production code or turn on/off messages by the function.
+     */
+    function debugPrint(msg) {
+        if(debugOn)
+            alert(msg);
+
+    }
+
+</script>
+</body>
+</html>
