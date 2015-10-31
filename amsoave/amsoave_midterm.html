@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: amsoave_midterm.html
+author: george corser, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the second paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+	
+	<style>
+		#amsoave {
+			color:red;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+</head>
+<body>
+
+	<p id="amsoave"> This text should be red </p>
+	
+	<p></p>
+	
+	
+	
+	<script>
+		document.getElementById('amsoave').innerHTML = "amsoave";
+		
+		
+		
+		$("body").append("<p>Aaron</p>");
+	</script>
+
+</body>
+</html>

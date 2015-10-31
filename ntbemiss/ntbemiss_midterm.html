@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: ntbemiss_midterm.html
+author: Nick Bemiss, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+	<style>
+		#ntbemiss {
+			color: red;
+	}</style>
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	
+</head>
+<body>
+
+	<p id="ntbemiss">
+		This is red.
+	</p>
+	
+	<p id="makeid">
+		This is not my id.
+	</p>
+	
+	<script>
+		var element = document.getElementById("makeid");
+		element.innerHTML = "ntbemiss";
+	</script>
+	
+	
+	<div id="destination">
+		<p id="fname"></p>
+	</div> 
+	
+	<script>
+		$('#destination').append('<p id="fname">Nicholas</p>');
+	</script>
+	
+</body>
+</html>
