@@ -25,8 +25,7 @@ Design  :
 	<body>
 		<!-- 0. header -->
 		<h1>Joe Olson, CIS 255, Program 3</h1>
-		<h3>This web page is a template for students in CIS-255. Please follow this format when doing your program.</h3>
-		<p id="id01">This is a template for Program 03</p>
+		<p id="id01"></p>
 		
 		<!-- 1. variable names -->
 		<h2>1. variable names</h2>
@@ -36,20 +35,24 @@ Design  :
 			var _b = 2; 
 			var $c = 3;
 			var d = a+_b+$c;
-			document.write("a+_b+$c="+d);
+			var D = d * $c; //This is poor programming practice, but this variable is demonstrating case sensitive variable names
+			document.write("a+_b+$c=" + d +"<br/>");
+			document.write(D + "<br/>");
 		</script>
 		
 		<!-- 2. primitive data types -->
 		<h2>2. primitive data types</h2>
 		<script>
 			var x = 5; // number
-			var y = "zippy";
-			var n = null;
-			var u;
-			document.write("var x is type: "+typeof(x)+"<br/>");
-			document.write("var y is type: "+typeof(y)+"<br/>");
-			document.write("var n is type: "+typeof(n)+"<br/>");
-			document.write("var u is type: "+typeof(u)+"<br/>");
+			var y = "zippy"; //string
+			var n = null; //null
+			var u; //undefined
+			var z = [5, 10, 20]; //Array (of numbers)
+			document.write("var x is type: "+typeof(x)+"<br/>"); //number
+			document.write("var y is type: "+typeof(y)+"<br/>"); //string
+			document.write("var n is type: "+typeof(n)+"<br/>"); //null, but a bug makes it display "object"
+			document.write("var u is type: "+typeof(u)+"<br/>"); //undefined
+			document.write("Var z is type: " + typeof(z) + "<br/>"); //array, displays as "object"
 		</script>
 		
 		<!-- 4. conditionals, truthy, falsy -->
