@@ -80,9 +80,9 @@
                 </tr>
                 <tr>
                     <td><input id="City" type="text" placeholder="CITY" class='zip-lookup-field-city form-control' /></td>
-                    <td id="State">
+                    <td id="cust_state">
 						<!-- Drop down menu code taken from: http://www.freeformatter.com/usa-state-list-html-select.html -->
-						<select>
+						<select id="State">
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
 								<option value="AZ">Arizona</option>
@@ -135,7 +135,7 @@
 								<option value="WI">Wisconsin</option>
 								<option value="WY">Wyoming</option>
 						</select></td>
-                    <td colspan="1"><input id="ZipCode" type="text" placeholder="ZIP CODE" class='zip-lookup-field-zipcode form-control'/></td>
+                    <td colspan="1"><input id="ZipCode" type="text" placeholder="ZIP CODE" class="form-control"/></td>
 					<td colspan="3">Customer Name</td><td><input type="text" id="custName" class="form-control"></td>
                 </tr>
             </table>
@@ -144,7 +144,7 @@
 	<div class="row">
 	<div class="col-md-12">
         <!--Form table -->
-        <table border="1" id="orderTable" class="table table-striped">
+        <table border="1" id="orderTable" class="table">
         <thead id="firstRow">
             <tr>
                 <th class="col-xs-1">Item No.</th>
@@ -152,7 +152,24 @@
 				<th class="col-xs-1">Quantity</th>
                 <th class="col-xs-1">Price</th>
                 <th class="col-xs-1">Amount</th>
-            </tr>  dataTable
+            </tr> 
+						<tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt0" class="form-control"/>
+                                </td>
+                        </tr>			
 						<tr>
                                 <td colspan="1" style="text-align:center">
                                         <input type="text" id="itemNo1" class="form-control"/>
@@ -167,7 +184,7 @@
                                         <input type="text" id="price1" class="form-control"/>
                                 </td>
                                 <td colspan="1" style="text-align:center">
-										<input type="text" id="amt1"/>
+										<input type="text" id="amt1" class="form-control"/>
                                 </td>
                         </tr>
 						
@@ -185,7 +202,7 @@
                                         <input type="text" id="price2" class="form-control"/>
                                 </td>
                                 <td colspan="1" style="text-align:center">
-										<input type="text" id="amt2"/>								
+										<input type="text" id="amt2" class="form-control"/>								
                                 </td>
                         </tr>
 
@@ -203,7 +220,7 @@
                                         <input type="text" id="price3" class="form-control"/>
                                 </td>
                                 <td colspan="1" style="text-align:center">
-										<input type="text" id="amt3"/>								
+										<input type="text" id="amt3" class="form-control"/>								
                                 </td>
                         </tr>
 
@@ -221,69 +238,62 @@
                                         <input type="text" id="price4" class="form-control"/>
                                 </td>
                                 <td colspan="1" style="text-align:center">
-										<input type="text" id="amt4"/>								
+										<input type="text" id="amt4" class="form-control"/>								
                                 </td>
-                        </tr>
-
-                        <tr>
-                                <td colspan="1" style="text-align:center">
-                                        <input type="text" id="itemNo5" class="form-control"/>
-                                </td>
-                                <td colspan="1" style="text-align:center">
-                                        <input type="text" id="descrp5" class="form-control"/>
-                                </td>
-                                <td colspan="1" style="text-align:center">
-                                        <input type="text" id="qty5" class="form-control"/>
-                                </td>
-                                <td colspan="1" style="text-align:center">
-                                        <input type="text" id="price5" class="form-control"/>
-                                </td>
-                                <td colspan="1" style="text-align:center">
-										<input type="text" id="amt5"/>								
-                                </td>
-                        </tr>						
+                        </tr>					
 
             <thead>
+			
+		<!-- totals -->
 
 		<tr>
-			<td colspan="4" align="right"><i>Sub-Total</i></td>
+			<td colspan="4" align="right"><i>Sub-Total: &nbsp </i></td>
 			<td id="subTot"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"><i>Freight Amount</i></td>
-			<td id="freightTotal"></td>
+			<td colspan="4" align="right"><i>Freight Amount: &nbsp </i></td>
+			<td id="totFreight"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"><i>Tax</i></td>
-			<td id="taxRate"></td>
+			<td colspan="4" align="right"><i>Tax: &nbsp </i></td>
+			<td id="totTax"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"><b>Total Amount</b></td>
-			<td id="totalAmount"></td>
+			<td colspan="4" align="right"><b>Total Amount: &nbsp </b></td>
+			<td id="totAmount"></td>
 		</tr>
 
         </table>
     </div>
 </div>
-</div>
 
 <script>
-	// object for eatch item ordered/table row
-	var CurrentOrder = function()
+
+	// creates an object for each item in the table
+	var currentOrder = function()
 	{
 		this.itemNo;
 		this.descrp;
 		this.qty;
 		this.price;
 		this.amt;
-	};
-	
-	var allOrders = [];
-	for (var a =1; a< 5; a++)
-	{
-		allOrders.push(new CurrentOrder);		
 	}
-	for (var a =1; a< 5; a++)
+	
+	//calculates row totals
+	currentOrder.prototype.subAmt = function subAmtCalc()
+	{
+		return(this.price * this.qty);
+	}
+	
+	
+	//creates an array of objects
+	var allOrders = [];
+	
+	for (var a =0; a< 5; a++)
+	{
+		allOrders.push(new currentOrder);		
+	}
+	for (var a =0; a< 5; a++)
 	{
 		var	num = "itemNo" + a;
 		var	desc = "descrp" + a;
@@ -297,122 +307,183 @@
 			allOrders[a].descrp = document.getElementById(desc).value;
 			allOrders[a].qty = document.getElementById(quant).value;
 			allOrders[a].price = document.getElementById(pr).value; 
-			allOrders[a].amt = (document.getElementById(quant).value)*(document.getElementById(pr).value);	
+			allOrders[a].amt = document.getElementById(amnt).value;	
 	}
 	
-		var taxRate = subTot*taxRateLookUp();
-		$("#State").change(function changeState(){
-			taxState = $("#State option:selected").val();
-			
+		//4. Compute "Tax" based on State entered in customer information
 		//tax rates taken from http://taxfoundation.org/article/state-and-local-sales-tax-rates-2015
-           
-		function taxRateLookUp() 
-		{
-			var taxRates = 
-			{
-				AL:0.0891,
-				AK:0.0176,
-				AZ:0.0817,
-				AR:0.0926,
-				CA:0.0844,
-				CO:0.0744,
-				CT:0.0635,
-				DE:0.0000,
-				DC:0.0757,
-				FL:0.0665,
-				GA:0.0696,
-				HI:0.0435,
-				ID:0.0601,
-				IL:0.0819,
-				IN:0.0700,
-				IA:0.0678,
-				KS:0.0820,
-				KY:0.0600,
-				LA:0.0891,
-				ME:0.0550,
-				MD:0.0600,
-				MA:0.0625,
-				MI:0.0600,
-				MN:0.0720,
-				MS:0.0707,
-				MO:0.0781,
-				MT:0.0000,
-				NE:0.0680,
-				NV:0.0794,
-				NH:0.0000,
-				NJ:0.0697,
-				NM:0.0735,
-				NY:0.0848,
-				NC:0.0690,
-				ND:0.0656,
-				OH:0.0710,
-				OK:0.0877,
-				OR:0.0000,
-				PA:0.0634,
-				RI:0.0700,
-				SC:0.0713,
-				SD:0.0583,
-				TN:0.0945,
-				TX:0.0805,
-				UT:0.0668,
-				VT:0.0614,
-				VA:0.0563,
-				WA:0.0889,
-				WV:0.0607,
-				WI:0.0543,
-				WY:0.0547
-			}
-        };
+		var taxRates = 0.01;	
+		var taxState;
+		//below switch statement borrowed and modified from jmwalter
+			$("#State").change(function changeState(){
+				taxState = $("#State option:selected").val();
+				
+				switch (taxState) 
+				{
+
+					case "AL": taxRates = 0.0891
+					break;
+					case "AK": taxRates = 0.0176
+					break;
+					case "AZ": taxRates = 0.0817
+					break;
+					case "AR": taxRates = 0.0926
+					break;
+					case "CA": taxRates = 0.0844
+					break;
+					case "CO": taxRates = 0.0744
+					break;
+					case "CT": taxRates = 0.0635
+					break;
+					case "DE": taxRates = 0.0000
+					break;
+					case "DC": taxRates = 0.0757
+					break;
+					case "FL": taxRates = 0.0665
+					break;
+					case "GA": taxRates = 0.0696
+					break;
+					case "HI": taxRates = 0.0435
+					break;
+					case "ID": taxRates = 0.0601
+					break;
+					case "IL": taxRates = 0.0819
+					break;
+					case "IN": taxRates = 0.0700
+					break;
+					case "IA": taxRates = 0.0678
+					break;
+					case "KS": taxRates = 0.0820
+					break;
+					case "KY": taxRates = 0.0600
+					break;
+					case "LA": taxRates = 0.0891
+					break;
+					case "ME": taxRates = 0.0550
+					break;
+					case "MD": taxRates = 0.0600
+					break;
+					case "MA": taxRates = 0.0625
+					break;
+					case "MI": taxRates = 0.0600
+					break;
+					case "MN": taxRates = 0.0720
+					break;
+					case "MS": taxRates = 0.0707
+					break;
+					case "MO": taxRates = 0.0781
+					break;
+					case "MT": taxRates = 0.0000
+					break;
+					case "NE": taxRates = 0.0680
+					break;
+					case "NV": taxRates = 0.0794
+					break;
+					case "NH": taxRates = 0.0000
+					break;
+					case "NJ": taxRates = 0.0697
+					break;
+					case "NM": taxRates = 0.0735
+					break;
+					case "NY": taxRates = 0.0848
+					break;
+					case "/NC": taxRates = 0.0690
+					break;
+					case "ND": taxRates = 0.0656
+					break;
+					case "OH": taxRates = 0.0710
+					break;
+					case "OK": taxRates = 0.0877
+					break;
+					case "OR": taxRates = 0.0000
+					break;
+					case "PA": taxRates = 0.0634
+					break;
+					case "RI": taxRates = 0.0700
+					break;
+					case "SC": taxRates = 0.0713
+					break;
+					case "SD": taxRates = 0.0583
+					break;
+					case "TN": taxRates = 0.0945
+					break;
+					case "TX": taxRates = 0.0805
+					break;
+					case "UT": taxRates = 0.0668
+					break;
+					case "VT": taxRates = 0.0614
+					break;
+					case "VA": taxRates = 0.0563
+					break;
+					case "WA": taxRates = 0.0889
+					break;
+					case "WV": taxRates = 0.0607
+					break;
+					case "WI": taxRates = 0.0543
+					break;
+					case "WY": taxRates = 0.0547
+					break;
+					default: taxRates = 0.0600;
+				}
+						check();
+		
+        		});
+
+			//runs check function to update order form as user enters data
+			$("input").change(function() { 
+				check(); 
+			});
 			
+			$("document").ready(function init(){
+				$("tr:odd").css("background-color","#c0c0c0");
+				$("tr:odd input").css("background-color","#c0c0c0");
+			});
+			
+			//8. Highlight in yellow any field a user clicks
 			$("input").focus(function UserfocusYellow(){
 				$(this).css("background-color", "yellow");    
 			});
-			
+			//7. Use jQuery to make order detail lines appear in different color every other line
 			$("input").focusout(function PostClickingRevert(){
 					$("tr:even input").css("background-color","white")
 					$("tr:odd input").css("background-color","#c0c0c0")});
 
 			
-			function upDate()
+			function check()
 			{
-				var tempTotal= 0;
-				var tempFreight = 0; // counters for quantity and totals
-				 Number(tempFreight);
-				for (var a = 1; a< 5; a++) // loops through all rows on the page 
+				var tempTot = 0;
+				var freight = 0;
+				Number(freight); //	5. Create object of freight amounts and weights
+				for (var a = 0; a< 5; a++)
 				{
-					var	num = "itemNo" + a;
-					var	desc = "descrp" + a;
-					var	quant = "qty" + a;
-					var	pr = "price" + a;
-					var	amnt = "amt" + a;
-						
-					
-						allOrders[i].itemNo = document.getElementById(num).value;
-						allOrders[i].descrp = document.getElementById(desc).value;
-						allOrders[i].qty = document.getElementById(quant).value;
-						allOrders[i].price = document.getElementById(pr).value;
-						allOrders[i].amt = allOrders[a].price * allOrders[a].qty;
+						var	num = "itemNo" + a;
+						var	desc = "descrp" + a;
+						var	quant = "qty" + a;
+						var	pr = "price" + a;
+						var	amnt = "amt" + a;
+
+						allOrders[a].ItemNo = document.getElementById(num).value;
+						allOrders[a].descrp = document.getElementById(desc).value;
+						allOrders[a].qty = document.getElementById(quant).value;
+						allOrders[a].price = document.getElementById(pr).value;
+						allOrders[a].amt = allOrders[a].price * allOrders[a].qty;
 						if (($("#"+quant).length !== 0 ) && ($("#"+pr).length !==0)) 
 						{
-							
-							document.getElementById(amnt).value="$" + AllOrders[a].amt.toFixed(2);
+							document.getElementById(amnt).value="$" + allOrders[a].amt.toFixed(2);
 						};
-						tempTot+=AllOrders[a].amt;
-						tempFreight+= Number(AllOrders[a].qty);
+						tempTot+=allOrders[a].amt; //running sub-total
+						freight+= Number(allOrders[a].qty); //6. Compute "Freight Amount" based on sum of Qty entered in order detail 
 				}
-				document.getElementById("freightTotal").innerHTML = tempFreight;
-				document.getElementById("subTot").innerHTML ="$" + tempTo.toFixed(2); 
-				// these statemetns are setting the final totals at the bottom of the table
+	
+			document.getElementById("totFreight").innerHTML = freight; //returns freight amount
+			document.getElementById("subTot").innerHTML ="$" + tempTot.toFixed(2); //returns total before taxes
+			document.getElementById("totTax").innerHTML = "$" + parseFloat(taxRates * tempTot).toFixed(2); //returns total tax amount
+			document.getElementById("totAmount").innerHTML ="$" + (tempTot + (taxRates * tempTot)).toFixed(2); //returns total amount due
 			
-				document.getElementById("taxRate").innerHTML = "$" + parseFloat(taxRate * tempTot).toFixed(2);
-				document.getElementById("totalAmount").innerHTML ="$" + (tempTot + (taxRate * tempTot)).toFixed(2);
-			};
-			
-			
-	</script>
-</div>
-</div>
-</body>
+			}
+		
+</script>
+</body>	
 </html>
 
 
