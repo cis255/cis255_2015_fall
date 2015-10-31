@@ -11,24 +11,35 @@ instructions: create a single html file as follows.
 5. submit your html file to canvas by 10:10am 2015-10-28
 ---------------------------------------------------------------------- -->
 <html>
+
+<title> Midterm_AnnaFenske </title>
+
 <head>
-	<!--2. internal css -->
+
+<!--2. internal css using id-->
 	<style>
 	 #demo {
 		color: red;}
 	</style>
-
+	
+	<!-- jquery link -->
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>	
+	
 </head>
+
 <body>
 
-	<!-- 1. create 2 paragraphs -->
-	<p> Anna Fenske </p>
-	</br>
-	<p id="demo" onclick="myFunction()"><span>SVSU ID: 0504353</span></p>
-	<!-- 3, internal javascript -->
+<!-- 1. create 2 paragraphs -->
+	<p id="d1"> Anna Fenske </p> <!-- paragraph 1 -->
+	<p id="demo" onclick="myFunction()"><span>SVSU ID: 0504353</span></p> <!-- paragraph 2 -->
+	
+<!-- 3, internal javascript to change content of paragraph 2 -->
 	<script>
 		function myFunction() {
-		document.getElementById("demo").innerHTML = "0504353";
+		document.getElementById("demo").innerHTML = "0504353"; 
+		
+<!-- 4. internal jquery to add a third paragraph --> 
+		$("#demo").append('<p>Anna</p>'); <!-- appends a third paragraph after paragraph 2. Content of paragraph is my first name -->
 	}
 	</script>
 
