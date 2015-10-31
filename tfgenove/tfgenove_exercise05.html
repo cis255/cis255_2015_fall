@@ -81,5 +81,48 @@ design   : <head>
 			});
 			
 		</script>
+		
+		<script>
+			var C = 20;
+			var F = (20 + 32) * 1.8;
+			var K = C + "273.15" * "1";
+			document.write(K)
+		</script>
+		
+		<p id="demo">zippy
+		</p> 
+		<p id="demo2">
+		</p> 
+		<script> 
+		document.getElementById("demo2").innerHTML 
+		= document.getElementById("demo").innerHTML + 2; 
+		var x; 
+		var y = null; 
+		document.write(x==y)
+		if (x==y) 
+		document.getElementById("demo2").innerHTML = "zappy";
+		</script> 
+		
+		<input name="post office"><br /> 
+		<input name="butcher"><br />
+		<script> 
+			function movie(title, director) 
+			{ 
+			this.print = function movieToString() 
+			{ 
+			return("title: "+title+", director: "+director+"<br/>"); 
+			} 
+			} 
+			var aliens = new movie("aliens","cameron"); 
+			document.write(aliens.print()); 
+			
+			$("#butcher").innerHTML = "zippy";
+			
+			$(document).ready(function(){
+				$("body").click(function(){
+					$(this).hide();
+				});
+			});
+		</script> 
 	</body>
 </html>
