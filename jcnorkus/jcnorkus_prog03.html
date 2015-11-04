@@ -1,26 +1,192 @@
+
 <!DOCTYPE html>
-<!--
-filename: jcnorkus_prog03.html
-Author  : gpcorser
--->
+<!-- ------------------------------------------------------------------------------
+-------------------- Joe Olson helped with coding issues --------------------------
+-----------------------------------------------------------------------------------
+Filename: jcnorkus_prog03.html
+Author  : Jacob Norkus, cis255, fall2015
+Purpose : this program demonstrates javascript and jquery
+Design  :
+    <head> Title
+	<body>
+	    0. header
+		1. variable names
+		2. primitive data types
+		3. operators and expressions
+		4. conditionals, truthy, falsy
+		5. Control Structures: do, while, switch-case, for
+		6. Objects and arrays
+		7. Functions and Prototypes
+		8. Write to DOM
+		9. link to jQuery Customer Order Form
+		
+-------------------------------------------------------------------------------- -->
 <html>
 	<head>
+		<title>CIS 255 - Jacob Norkus, Program 03</title>
 		<!-- favicon image and browser tab title -->
-		<title>CIS-255: George Corser</title>
 		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-		<title>CIS-255: George Corser</title>
-		<!-- internal css -->
-		<style>
-			#message {
-				color: red;
-			}
-		</style>
 	</head>
-	<body>
-		<h1> Jacob Norkus, CIS-255, Program 3</h1>
-		<!-- external javascript -->
-		<script type="text/javascript" src="gpcorser.js"></script>
-	</body>
-	</html>
 	
+	<body>
+		<!-- 0. header -->
+		<h1>Jacob Norkus, CIS 255, Program 3</h1>
+		
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<!-- variable names are case sensitive and can contain numbers and _ and $ -->
+		<script>
+		    var a = 1;
+			var b1 = 2; 
+			var _c = 3;
+			var $d = 4;
+			var E = a+b1+_c+$d;
+			document.write("a + b1 + _c + $d + E=" + E +"<br/>");
+		</script>
+		
+		<!-- 2. primitive data types -->
+		<h2>2. Primitive Data Types</h2>
+		<script>
+			var x = 10; // number
+			var y = "cat"; //string
+			var z = null; //null
+			var u; //undefined
+			var b = true; //Boolean
+			// displays the variables by their data type
+			document.write("x is type: "+typeof(x)+"<br/>");
+			document.write("y is type: "+typeof(y)+"<br/>");
+			document.write("z is type: "+typeof(z)+"<br/>");
+			document.write("u is type: "+typeof(u)+"<br/>");
+			document.write("b is type: " + typeof(b) + "<br/>");
+		</script>
+		
+		<!-- 3. Operators and Expressions -->
+		<h3>3. Operators and Expressions </h3>
+		<script>
+			var A = 18;
+			var B = 6;
+			//Operators and expressions
+			var C = (A / B);
+			var D = (A * B);
+			var e = (A + B);
+			var F = (A - B);
+			var G = Math.sqrt(A);
+			
+			//Displaying the variables and expressions
+			document.write("A = " + A + "<br/>");
+			document.write("B = " + B + "<br/>");
+			document.write("A divided by B = " + C + "<br/>");
+			document.write("A multiplied by B = " + D + "<br/>");
+			document.write("A added with B = " + e + "<br/>");
+			document.write("A subtract B = " + F + "<br/>");
+			document.write("Square root of A = " + G + "<br/>");
+		</script>
+		
+		<!-- 4. conditionals, truthy, falsy -->
+		<h2>4. Conditionals, Truthy, Falsy</h2>
+		<script>
+			//prints the differences between the 2 variables
+			var v1 = "12";
+			var v2 = 12;
+			document.write("v1 = '" + v1 + "'<br/>");
+			document.write("v2 = " + v2 + "<br/><br/>");
+			// if then else statement
+			(v1==v2)?document.write("v1==v2<br/>"):document.write("v1!=v2<br/>");
+			(v1===v2)?document.write("v1===v2<br/>"):document.write("v1!==v2<br/>");
+			
+		</script>
+		
+		<!-- 5. Control Structures: do, while, switch-case, for -->
+		<h2>5. Control Structures: Do, While, For, Switch-case</h2>
+		<script>
+			var do1 = 0;
+			document.write("Adding using the do-while loop until do1 = 2 <br/>")
+			document.write("do1 = " + do1 +"<br/>")
+			document.write("do1");
+			do{
+				document.write(" + 1");
+				do1++;
+			}while(do1 < 2);
+			document.write(" = " + do1 + "<br/><br/>");
+			
+			document.write("Adding using a while loop until do1 is no long under 3 <br/>");
+			document.write("do1");
+			while(do1 < 3){
+				document.write(" + 1");
+				do1++;
+			}
+			document.write(" = " + do1 + "<br/><br/>");
+			
+			document.write("Switch-case to determine nothing at all<br/>");
+			switch(do1){
+				case 3:
+					document.write("The variable = 3<br/><br/>");
+				break;
+				case 4:
+					document.write("The variable = 4?<br/><br/>");
+				break;
+			}
+			
+			document.write("For loop to display yippy 5 times <br/>")
+			for (var i = 1; i <= 5; i += 1){
+				document.write("Yippy <br/>");
+			}
+		</script>
+		
+		<!-- 6. Objects and Arrays -->
+		<h2>6. Objects and Arrays</h2>
+		<script>
+		//this is the array
+		document.write("There is a car for sale: <br/>")
+		var car = {type:"Corvette", price:"$80,000", color:"red"};
+		document.write("The car is a "+ car.type +"<br/>")
+		document.write("The price of the car is "+ car.price +"<br/>")
+		document.write("The color of the car is "+ car.color +"<br/>")
+		document.write("<br/>")
+		
+		document.write("Here are some places to shop online: <br/>")
+		var website = ["Amazon.com", "Newegg.com", "Microcenter.com"];
+		//uses a for loop to display the values in the array
+		for (var i = 0; i < website.length; i++){
+				document.write(website[i]+"<br/>")
+		}
+		</script>
+				
+		<!-- 7. functions, prototypes-->
+		<h2>7. functions, prototypes</h2>
+		<script>
+		document.write("Here is a function that multiplies 10 and 5: </br>")
+		function Xmultiply(aa, bb) {
+		return aa * bb;
+		}
+		document.write(Xmultiply(10,5))
+		
+		
+		function person(first, last, age) {
+		this.firstName = first;
+		this.lastName = last;
+		this.age = age;
+		}
+		
+		var thePresident = new person("Barack", "Obama", 54);
+		var theTrump = new person("Donald", "Trump", 69);
+		document.write("<br/> <br/>Demonstrating prototypes by stating the name and age of Donald Trump and Obama<br/>")
+		document.write("The age of " + theTrump.firstName + " " + theTrump.lastName + " is " + theTrump.age + " years old. <br/>")
+		document.write("The age of " + thePresident.firstName + " " + thePresident.lastName + " is " + thePresident.age + " years old. <br/>")
+		</script>
+		
+		<!-- 8. write to dom -->
+		<h2>8. write to dom </h2>
+		<script>
+		document.write("You <br/>");
+		document.write("can't <br/>");
+		document.write("stump <br/>");
+		document.write("the <br/>");
+		document.write("Trump <br/>");
+		</script>
+		
+		<!-- 9. link to jQuery Customer Order Form -->
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="jcnorkus_prog03_order.html">Program 3 Order Form</a>
+	</body>
+</html>

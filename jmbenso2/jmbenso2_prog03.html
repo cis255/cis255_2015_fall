@@ -260,24 +260,41 @@ design   :
 		</div>
 		
 		<!-- 8. Write to DOM -->
-		<div class="container">
+		<div id="add_to" class="container">
 			<h2>8. Write to DOM </h2>
-			<p id="target">
+			<p id="change_me">
 				I am the content of the first line.
 			</p>
-			<p>
-				<script>
-					// Change contents of target
-					var target = document.getElementById("target");
-					var stolen = target.innerHTML;
-					document.write(stolen);
-					target.innerHTML = "This is the target element.";
-
-					// Change style of target
-					target.style.color = "blue";
-					
-				</script>
+			<p id="remove_from">
+				One of these words <b>will</b> be removed.
 			</p>
+			<p id="delete_me">
+				Delete me!
+			</p>
+			<script>
+				// Change contents of target paragraph
+				var target = document.getElementById("change_me");
+				var stolen = target.innerHTML;
+				document.write(stolen);
+				target.innerHTML = "This is the target element.";
+
+				// Change style of target paragraph
+				target.style.color = "blue";
+					
+				// Add paragraph to target container
+				var new_p = document.createElement("P");
+				var text = document.createTextNode("This is added in with Javascript!");  // Create a text node
+				new_p.appendChild(text);
+				document.getElementById("add_to").appendChild(new_p);  
+				
+				// Delete paragraph (.remove() is not supported in all browsers yet, but should be good in Chrome and Firefox)
+				document.getElementById("delete_me").remove();
+				
+				// Remove a child element
+				var parent = document.getElementById("remove_from");
+				parent.removeChild(parent.childNodes[1]);
+					
+			</script>
 		</div>
 		
 		<!-- 9. Link to order form -->

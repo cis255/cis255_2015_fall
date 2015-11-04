@@ -22,5 +22,24 @@ design		:  <head>
 	<body>
 	<!-- 1. inline javascript -->
 	<input type="button" onclick="alert('This is the inline javascript');" value="Click Me!"/>
+	<h1>First run</h1>
+	<script>
+	var C = 20;
+var F = (20 + 32) * 1.8;
+var K = C + "273.15" * "1";
+document.write(K);
+</script>
+<h1>Second run</h1>
+<script> 
+function movie(title, director) 
+{ 
+this.print = function movieToString() 
+{ 
+return("title: "+title+", director: "+director+"<br/>"); 
+} 
+} 
+var aliens = new movie("aliens","cameron"); 
+document.write(aliens.print()); 
+</script>
 	</body>
 </html>
