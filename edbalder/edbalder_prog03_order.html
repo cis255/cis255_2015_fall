@@ -1,0 +1,388 @@
+<html>
+	<head>
+	<!-- 
+	program name: edbalder_prog03_order.html 
+	purpose: It's an order form	
+	--> 
+	
+	<title>Big Bob's Golf Center</title>
+	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+		
+	<style> 
+	#master {border: 1px;}
+	div {border="1px"}
+	</style>
+
+	</head>
+	
+	<body>
+	<div Class="container" ">
+	<div border="1", background-color: #6699FF, border-radius: 10px;">
+	<div class="row">
+	<h1 align="center">Big Bob's Golf Center </h1>
+	<h3 align="center">Customer Order Form</h3>
+	</br></br>
+	</div> <!--row -->
+	<div class="row" align="center">
+		<div class="row">
+	<table>
+		<tr>
+			<th colspan="3">Mail Orders to:</th>
+		</tr>
+		<tr>
+			<td  colspan="3">
+				<input size="15"  id="company_name "type="text" placeholder="Company Name" value = ""/>
+			</td>
+			<th border="1">Order Number:</th>
+			<td border="1">
+				<input type="text" name"order_number" id="orderNumber"/>
+			</td>
+		</tr>
+		<tr>
+			<td id="customer_address" colspan="3" >
+				<input width="150%"  type = "text" name="customer_address" placeholder="Customer Address"/>
+			</td>
+			<th>Order Date:</th>
+			<td>
+				<input type ="text" name="order_date"/>
+			</td>
+		</tr>
+		<tr>
+			<td id="customer_city">
+				<input size="15" id="customer_city_input" type = "text" name="customer_city" placeholder="City"/>
+			</td>
+			
+			<td id="customer_state"  >
+				<select id="state">
+				  <option value="Alabama">Alabama</option>
+				  <option value="Alaska">Alaska</option>
+				  <option value="Arizona ">Arizona </option>
+				  <option value="Arkansas">Arkansas</option>
+				  <option value="California">California</option>
+				  <option value="Colorado">Colorado</option>
+				  <option value="Connecticut">Connecticut</option>
+				  <option value="Delaware">Delaware</option>
+				  <option value="Florida">Florida</option>
+				  <option value="Georgia">Georgia</option>
+				  <option value="Hawaii ">Hawaii </option>
+				  <option value="Idaho">Idaho</option>
+				  <option value="Illinois">Illinois</option>
+				  <option value="Indiana ">Indiana </option>
+				  <option value="Iowa">Iowa</option>
+				  <option value="Kansas">Kansas</option>
+				  <option value="Kentucky">Kentucky</option>
+				  <option value="Louisiana">Louisiana</option>
+				  <option value="Maine">Maine</option>
+				  <option value="Maryland">Maryland</option>
+				  <option value="Massachusetts">Massachusetts</option>
+				  <option value="Michigan">Michigan</option>
+				  <option value="Minnesota">Minnesota</option>
+				  <option value="Mississippi">Mississippi</option>
+				  <option value="Missouri">Missouri</option>
+				  <option value="Montana">Montana</option>
+				  <option value="Nebraska">Nebraska</option>
+				  <option value="Nevada">Nevada</option>
+				  <option value="New Hampshire">New Hampshire</option>
+				  <option value="New Jersey">New Jersey</option>
+				  <option value="New Mexico">New Mexico</option>
+				  <option value="New York">New York</option>
+				  <option value="North Carolina">North Carolina</option>
+				  <option value="North Dakota">North Dakota</option>
+				  <option value="Ohio">Ohio</option>
+				  <option value="Oklahoma">Oklahoma</option>
+				  <option value="Oregon">Oregon</option>
+				  <option value="Pennsylvania">Pennsylvania</option>
+				  <option value="Rhode Island">Rhode Island</option>
+				  <option value="South Carolina">South Carolina</option>
+				  <option value="South Dakota">South Dakota</option>
+				  <option value="Tennessee">Tennessee</option>
+				  <option value="Texas">Texas</option>
+				  <option value="Utah">Utah</option>
+				  <option value="Vermont">Vermont</option>
+				  <option value="Virginia">Virginia</option>
+				  <option value="Washington">Washington</option>
+				  <option value="West Virginia">West Virginia</option>
+				  <option value="Wisconsin">Wisconsin</option>
+				  <option value="Wyoming">Wyoming</option>
+				</select>
+			</td>
+			
+			<td id="customer_zip">
+				<input size="6" type= "text" name="customer_zip" placeholder="Zip Code"/>
+			</td>
+			<th>Customer Name:</th>
+			<td>
+				<input id="customer_name "type="text" name=customer_order_name" />
+			</td>
+		</tr>
+	
+	</table >
+	<br/><br/>
+	</div>  <!-- row -->
+	
+	<div class="row">
+	<table id="dataTable"  border="1">
+		<tr>
+	
+				<th width="160">Item No.</th>
+				<th width="200">description</th>
+				<th width="50">Quantity</th>
+				<th width="80">Price</th>
+				<th width="120">Amount</th>
+		</tr>
+		<tr>
+			<td><input id="itemNum0" type="text"/></td>
+			<td><input id="desc0" type="text"/></td>
+			<td><input id="quantity0" type="text"/></td>
+			<td><input size="10" id="price0" type="text"/></td>
+			<td><input size="15" id="amount0" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum1" type="text"/></td>
+			<td><input id="desc1" type="text"/></td>
+			<td><input id="quantity1" type="text"/></td>
+			<td><input size="10" id="price1" type="text"/></td>
+			<td><input size="15" id="amount1" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum2" type="text"/></td>
+			<td><input id="desc2" type="text"/></td>
+			<td><input id="quantity2" type="text"/></td>
+			<td><input size="10" id="price2" type="text"/></td>
+			<td><input size="15" id="amount2" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum3" type="text"/></td>
+			<td><input id="desc3" type="text"/></td>
+			<td><input id="quantity3" type="text"/></td>
+			<td><input size="10" id="price3" type="text"/></td>
+			<td><input size="15" id="amount3" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum4" type="text"/></td>
+			<td><input id="desc4" type="text"/></td>
+			<td><input id="quantity4" type="text"/></td>
+			<td><input size="10" id="price4" type="text"/></td>
+			<td><input size="15" id="amount4" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum5" type="text"/></td>
+			<td><input id="desc5" type="text"/></td>
+			<td><input id="quantity5" type="text"/></td>
+			<td><input size="10" id="price5" type="text"/></td>
+			<td><input size="15" id="amount5" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum6" type="text"/></td>
+			<td><input id="desc6" type="text"/></td>
+			<td><input id="quantity6" type="text"/></td>
+			<td><input size="10" id="price6" type="text"/></td>
+			<td><input size="15" id="amount6" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum7" type="text"/></td>
+			<td><input id="desc7" type="text"/></td>
+			<td><input id="quantity7" type="text"/></td>
+			<td><input size="10" id="price7" type="text"/></td>
+			<td><input size="15" id="amount7" type="text"/></td>
+		</tr>
+		
+		<tr>
+			<td align="right" colspan="4">Sub Total</td>
+			<td size="15" id="subTot"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Freight Amount</td>
+			<td size="15" id="freightTotal"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Tax</td>
+			<td size="15" id="tax"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Total Amount</td>
+			<td size="15" id="totalAmount"></td>
+		</tr>
+	</table>
+	</div>
+	</div> <!-- row-->
+
+	<script>
+	
+	var order = function()
+	{
+		this.itemNum;
+		this.desc;
+		this.quantity;
+		this.price;
+		this.amount;
+		
+	
+	}
+	
+	order.prototype.subTotal = function subTotal()
+	{
+		return this.price*this.quantity;
+	}
+	
+	var orders = [];
+	
+	for (var i = 0; i< 8; i++)
+	{
+		orders.push(new order);		
+	}
+	
+	
+	var itNum = "";
+	var descript = "";
+	var qty = "";
+	var prc = "";
+	var amm = "";
+	
+	//to link the trs to the array of objects 
+	for (var i = 0; i< 8; i++)
+	{
+		var	itNum = "itemNum" + i;
+		var	descript = "desc" + i;
+		var	qty = "quantity" + i;
+		var	prc = "price" + i;
+		var	amm = "amount" + i;
+			
+			
+		
+			orders[i].itemNum = document.getElementById(itNum).value;
+			orders[i].desc = document.getElementById(descript).value;
+			orders[i].quantity = document.getElementById(qty).value;
+			orders[i].price = document.getElementById(prc).value;
+			orders[i].amount = document.getElementById(amm).value;	
+			
+	}
+
+
+		var tax = 0.00;
+			
+		var taxState;
+
+		$("#state").change(function changeState(){
+			taxState = $("#state option:selected").val();
+
+		switch(taxState) {
+		case "Alabama":
+		case "Georgia":
+		case "Hawaii":
+		case "Louisiana":
+		case "Missouri":
+		case "New York":
+		case "Oklahoma":
+		case "South Dakota":
+		case "Wyoming":
+			tax = 0.04;
+        break;
+		case "Arizona":
+		case "Maine":
+		case "New Mexico":
+		case "Nebraska":
+		case "North Dakota":
+		case "Ohio":
+		case "Virginia":
+		case "Wisconsin":
+			tax = 0.05;
+        break;
+		case "Arkansas":
+		case "Connecticut":
+		case "Florida":
+		case "Idaho":
+		case "Illinois":
+		case "Iowa":
+		case "Kansas":
+		case "Kentucky":
+		case "Maryland":
+		case "Massachusetts":
+		case "Michigan":
+		case "Minnesota":
+		case "Nevada":
+		case "New Jersey":
+		case "Pennsylvania":
+		case "South Carolina":
+		case "Texas":
+		case "Tennessee":
+		case "Utah":
+		case "Vermont":
+		case "Washington":
+		case "West Virginia":
+			tax = 0.06;
+        break;
+		default: tax = 0.03;
+		}
+		upDate();
+		});
+
+
+			$("input").change(function() { upDate(); });
+
+			$("input").focus(function focusFunc()
+			{$(this).css("background-color", "yellow");    
+			});
+
+
+			$(document).ready(turnGrey());		
+			$("input").blur(function (){turnGrey();});
+
+
+			function turnGrey()
+			{
+			$("input").css("background-color", "white");
+			$("#dataTable tr:odd input").css("background-color", "lightGrey");
+			};
+		function upDate()
+			{
+				var tempTotal= 0;
+				var tempFreight = 0;
+				 Number(tempFreight);
+			for (var i = 0; i< 8; i++)
+				{
+					var	itNum = "itemNum" + i;
+					var	descript = "desc" + i;
+					var	qty = "quantity" + i;
+					var	prc = "price" + i;
+					var	amm = "amount" + i;
+						
+					
+						
+					
+						orders[i].itemNum = document.getElementById(itNum).value;
+						orders[i].desc = document.getElementById(descript).value;
+						orders[i].quantity = document.getElementById(qty).value;
+						orders[i].price = document.getElementById(prc).value;
+						orders[i].amount = orders[i].price * orders[i].quantity;
+						if (($("#"+qty).length !== 0 ) && ($("#"+prc).length !==0)) {
+							
+							document.getElementById(amm).value="$" + orders[i].amount.toFixed(2);
+						};
+						tempTotal+=orders[i].amount;
+						tempFreight+= Number(orders[i].quantity);
+				}
+			//var tempname = document.getElementById("company_name").value;
+			
+			//document.getElementById("customer_name").value = tempname;
+			document.getElementById("freightTotal").innerHTML = tempFreight;
+			document.getElementById("subTot").innerHTML ="$" + tempTotal.toFixed(2);
+			
+			document.getElementById("tax").innerHTML = "$" + parseFloat(tax * tempTotal).toFixed(2);
+			document.getElementById("totalAmount").innerHTML ="$" + (tempTotal + (tax * tempTotal)).toFixed(2) ;
+			
+			}
+	
+
+		
+		
+
+	</script>
+	</div>
+	</div>
+	</body>
+	
+</html>

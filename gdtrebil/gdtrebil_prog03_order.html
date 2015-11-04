@@ -5,55 +5,295 @@ authors: gpcourser, Gdtrebil
 purpose: this program demonstrates javascript and jquery
 design : 
 	<head> favicon and title
-	<body> 0. Header
-		   1. variable names 
-		   2. data types
-		   3. operators, expressions
-		   4. conditionals
-		   5. control structures
-		   6. objects, arrays
-		   7. functions, prototypes
-		   8. write to DOM
+	<body> 0. Header and div
+		   1. The customer info table
+		   2. Order info table
+	<script>
+	       3. Formatting the background and focuses
+		   4. Calculation and totals.
+		   
+		   
 -->
 <html>
-	<head>
-		<!-- favicon image and browser tab title -->
-		<title>CIS-255 Golf Center</title>
-		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
-		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-	</head>
-	
-	<body>
-	<h1>CIS-255 Golf Center </h1>
-	<h3> Customer Order Form </h3>
-	<table border = "1">
-	<tr><th colspan ="3"> Mail Orders To: </th></tr>
-	<tr><td id = "customer_name" colspan = "3"><input type="text" name = "customer_name" placeholder="Customer Name"></td></tr>
-	<tr><td id = "customer_address" colspan ="3"><input type="text" name = "customer_address" placeholder = "Customer Address"></td></tr>
-	<tr><td id = "customer_city" ><input id = "customer_city_input" type="text" name = "customer_city" placeholder = "City"></td>
-	<td id = "customer_state" ><input type="text" size="5" name = "customer_state" placeholder="State"></td>
-	<td id = "customer_zip" ><input type="text" size="10" name = "customer_zip" placeholder="Zip"></td></tr>
 
-	</table>
-	<script>
-	$("document").ready(function()
-	{
-	// Set table division background to red
-	$("#customer_city").css("background-color", "red");
-	
-	//Sets the input to green
-	$("#customer_city_input").css("background-color", "green");
-	
-	//if the function is in focus, sets the background to yellow
-	$("#customer_city_input").focus(function(){
-	$(this).css("background-color", "yellow");
-	});
-	$("#customer_city_input").focusout(function(){
-	$(this).css("background-color", "blue");
-	});
-	});
-	</script>
+<!-- I got a lot of help from Joe Olson, and the following code is a modified version of his source code, with some changed comments and formatting. -->
+	<head>
+		<!-- browser tab title -->
+		<title>CIS 255 Golf Center</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	</head>
+
+	<body>
+		<!-- 0. header and div -->
+		<div class="container well">
+			<h1 align="center">CIS 255 Golf Center</h1>
+			<h3 align="center">Customer Order Form</h3>
+
+			<!-- 1. customer info table -->
+			<table border="1" class="table table-bordered" style="background-color:white;">
+				<tr>
+					<!-- Top of the table -->
+					<th class="colspan4">Mail Orders to:</th>
+				</tr>
+				<tr>
+					<!-- Customer Name -->
+					<td id="customer_name">
+						<input size="46" type="text" placeholder="Customer Name"/>
+					</td>
+					<!-- Order number text -->
+					<td id="order_num_txt">
+						<h5 id="order_num_txt2">Order Number:</h5>
+					</td>
+					<!-- Order number -->
+					<td id="order_num">
+						<input id="order_num_box" type="text" class="form-control"/>
+					</td>
+				</tr>
+				<tr>
+					<!--  Customer Address -->
+					<td id="customer_address">
+						<input size="46" type="text" placeholder="Address"/>
+					</td>
+					<!-- Order date text -->
+					<td id="order_date_txt"><h5 id="order_date_txt2">Order Date:</h5></td>
+					<!-- Order date -->
+					<td id="order_date"><input id="order_date_box" type="text" class="form-control"></td>
+				</tr>
+				<tr>
+					<!-- city, state, and zip code -->
+					<td id="customer_city">
+						<!-- City name -->
+						<input id="customer_city_input" type="text" size="25" placeholder="City"/>
+						<!-- State -->
+						<input id="state" type="text" size="5" placeholder="State"/>
+						<!-- Zip -->
+						<input type="text" size="5" name="customer_zip" placeholder="Zip"/>
+					</td>
+					<!-- Customer Name text -->
+					<td id="customer_name_txt">
+						<h5 id="customer_name_txt2">Customer Name:</h5></td>
+					<!-- Customer name -->
+					<td id="customer_name_box"><input id="customer_name_box1" type="text" class="form-control"></td>
+				</tr>
+			</table>
+			<!-- 2. Order Info Table -->
+			<table border="2" class="table">
+				<tr>
+					<th>Item No.</th>
+					<th>Description</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Amount</th>
+				</tr>
+				<!-- Row 1 -->
+				<tr> 
+					<!-- Item number -->
+					<td><input type="text" class="form-control" id="Item1"></td>
+					<!-- Description -->
+					<td><input type="text" class="form-control" id="Description1"></td>
+					<!-- Quantity -->
+					<td><input type="text" class="form-control" id="Quantity1"></td>
+					<!-- Price -->
+					<td><input type="text" class="form-control" id="Price1"></td>
+					<!-- Amount -->
+					<td><input type="text" class="form-control" id="Amount1"></td>
+				</tr>
+				<!-- Row 2 -->
+				<tr> 
+					<!-- Item number -->
+					<td><input type="text" class="form-control" id="Item2"></td>
+					<!-- Description -->
+					<td><input type="text" class="form-control" id="Description2"></td>
+					<!-- Quantity -->
+					<td><input type="text" class="form-control" id="Quantity2"></td>
+					<!-- Price -->
+					<td><input type="text" class="form-control" id="Price2"></td>
+					<!-- Amount -->
+					<td><input type="text" class="form-control" id="Amount2"></td>
+				</tr>
+				<!-- Row 3 -->
+				<tr> 
+					<!-- Item number -->
+					<td><input type="text" class="form-control" id="Item3"></td>
+					<!-- Description -->
+					<td><input type="text" class="form-control" id="Description3"></td>
+					<!-- Quantity -->
+					<td><input type="text" class="form-control" id="Quantity3"></td>
+					<!-- Price -->
+					<td><input type="text" class="form-control" id="Price3"></td>
+					<!-- Amount -->
+					<td><input type="text" class="form-control" id="Amount3"></td>
+				</tr>
+				<!-- Row 4 -->
+				<tr> 
+					<!-- Item number -->
+					<td><input type="text" class="form-control" id="Item4"></td>
+					<!-- Description -->
+					<td><input type="text" class="form-control" id="Description4"></td>
+					<!-- Quantity -->
+					<td><input type="text" class="form-control" id="Quantity4"></td>
+					<!-- Price -->
+					<td><input type="text" class="form-control" id="Price4"></td>
+					<!-- Amount -->
+					<td><input type="text" class="form-control" id="Amount4"></td>
+				</tr>
+				<!-- Sub-total row -->
+				<tr>
+					<td colspan="4" align="right" style="padding-right:10px">Sub-total:</td>
+					<td><input type="text" class="form-control" id="sub_total"></td>
+				</tr>
+				<!-- Freight Amount -->
+				<tr>
+					<td colspan="4" align="right" style="padding-right:10px">Freight Amount:</td>
+					<td><input type="text" class="form-control" id="freight_amount"></td>
+				</tr>
+				<!-- Tax -->
+				<tr>
+					<td colspan="4" align="right" style="padding-right:10px">Tax:</td>
+					<td><input type="text" class="form-control" id="tax_amount"></td>
+				</tr>
+				<!-- Total -->
+				<tr>
+					<td colspan="4" align="right" style="padding-right:10px">Total:</td>
+					<td><input id="total_amount" type="text" class="form-control"></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+		// 3. Formatting the background and focuses
+		$("document").ready(function init() {
+			// set every other line in table to gray
+			$("tr:odd").css("background-color","gray");
+			//Set input boxes to white, regardless of the line
+			$("tr:odd input").css("background-color","white");
+
+			var tableRows = $("tr");
+			
+			// if input box is in focus, set background back to white
+			$("input").focus(function () {
+			   $(this).css("background-color","white");
+			});
+				
+			//If input box is not in focus, set background to white
+			$("input").focusout(function() {
+				$(this).css("background-color", "white");
+			});
+		});
+		
+		// 4. Calculation and totals
+		//Tax rates for states which are used to calculate tax amount for total amount
+		$("input").focus(function focusFunc() {
+			//Object of states and taxes
+			var taxRates = {
+				AL:0.0400,
+				AK:0.0000,
+				AZ:0.0560,
+				AR:0.0650,
+				CA:0.0750,
+				CO:0.0290,
+				CT:0.0635,
+				DE:0.0000,
+				DC:0.0600,
+				FL:0.0400,
+				GA:0.0400,
+				HI:0.0600,
+				ID:0.0625,
+				IL:0.0700,
+				IN:0.0600,
+				IA:0.0615,
+				KS:0.0600,
+				KY:0.0400,
+				LA:0.0550,
+				ME:0.0600,
+				MD:0.0625,
+				MA:0.0600,
+				MI:0.0688,
+				MN:0.0700,
+				MS:0.0423,
+				MO:0.0000,
+				MT:0.0550,
+				NE:0.0685,
+				NV:0.0000,
+				NH:0.0700,
+				NJ:0.0513,
+				NM:0.0400,
+				NY:0.0475,
+				NC:0.0500,
+				ND:0.0575,
+				OH:0.0450,
+				OK:0.0000,
+				OR:0.0600,
+				PA:0.0700,
+				RI:0.0600,
+				SC:0.0400,
+				SD:0.0700,
+				TN:0.0625,
+				TX:0.0595,
+				UT:0.0600,
+				VT:0.0530,
+				VA:0.0650,
+				WA:0.0600,
+				WV:0.0500,
+				WI:0.0400,
+				WY:0.0575
+			};
+			
+			//Creating object for a new order
+			var order = function(){
+				this.quantity;
+				this.price;
+				this.amount;
+			};
+			
+			//makes an array of objects
+			var orders = new Array();
+			
+			// Sub total and freight amount
+			var ST = 0;
+			var FA = 0;
+			
+			//i<5 because there is 4 rows of item entries in the order form, not starting at 0 for clarity.
+			for(var i=1; i<5; i++)
+			{
+				//Declerations of variables 
+				var Q = "Quantity"+i;
+				var P = "Price"+i;
+				var A = "Amount"+i;
+				var S = document.getElementById("state").value;
+				var state = S.toUpperCase(); //This allows lowercase initals for states
+				orders[i] = new Object;
+				
+				//takes in the quantity and price value of each row
+				orders[i].quantity=parseFloat(document.getElementById(Q).value);
+				orders[i].price=parseFloat(document.getElementById(P).value);
+				
+				//If there's nothing in the row, amount and quantity are zero executes this. 
+				if(!isNaN(orders[i].price) && !isNaN(orders[i].quantity)){
+					orders[i].amount=parseFloat((orders[i].price*orders[i].quantity).toFixed(2));
+				}
+				else{
+					orders[i].amount=0;
+					orders[i].quantity=0;
+				}
+				
+				//Sets a fixed decimal position for amount
+				document.getElementById(A).value="$"+(orders[i].amount).toFixed(2);
+				
+				//Adds sub-total and freight amount to respective variables
+				ST+=parseFloat(orders[i].amount);
+				FA+=parseFloat(orders[i].quantity);
+			}
+			
+			//Takes the finished addition of all the rows fro one output
+			var T = parseFloat((ST+FA)*parseFloat(taxRates[state]).toFixed(2));
+		
+			//outputs all the finished calculations to the respective boxes
+			document.getElementById("sub_total").value="$"+(ST).toFixed(2);
+			document.getElementById("freight_amount").value="$"+FA;
+			document.getElementById("tax_amount").value="$"+T.toFixed(2);
+			document.getElementById("total_amount").value="$"+(T+FA+ST).toFixed(2);
+		});
+		</script>
 	</body>
-	
-	</html>
-	
+</html>
