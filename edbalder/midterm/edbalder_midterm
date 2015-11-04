@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: edbalder_midterm.html
+author: Estevan Balderrama, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the second paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+
+<head>
+	<style>
+		#\35 79437 {
+			color: red;
+		}
+	</style>
+	<script>
+		document.getElementById(second_p).innerHTML = "579437";
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$("div").append("Estevan");
+		});
+	</script>
+	
+</head>
+
+<body>
+	<div>
+	<p id="579437"> 579437 </p>
+	<p id="second_p"> </p>
+	</div>
+</body>
+
+</html>
