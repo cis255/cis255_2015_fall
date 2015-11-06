@@ -1,0 +1,419 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+          integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+            integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+            crossorigin="anonymous"></script>
+    <script src="js/ChartNew.js"></script>
+    <style>
+        body {
+            background: url(https://s-media-cache-ak0.pinimg.com/736x/8a/8b/df/8a8bdf7c04941681370a1b44cf39e12e.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            color: white;
+            background: rgba(0, 0, 0, .5);
+            padding: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+        #loading-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #loading-box {
+            color: black;
+            width: 300px;
+            height: 57px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: white;
+            border-radius: 10px 10px 10px 10px;
+            padding: 5px;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+            -webkit-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 1);
+            box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 1);
+        }
+        #mynav {
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto 10px auto;
+            z-index: 1030;
+            height:40px;
+            color:#aaa;
+            background-color:#222;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+            margin: 0 10px;
+        }
+        .col-centered{
+            float: none;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="loading-overlay">
+    <div id="loading-box">
+        Loading Data...<span id="loading-dept"></span>
+        <div id="loading-progressbar"></div>
+    </div>
+</div>
+<h2 id="mynav">CSIS Semester Statistics</h2>
+<div class="container">
+    <div id="canvas-holder" class="row">
+        <div class="col-md-6 text-center">
+            <canvas id="classLoad" width="450" height="450"></canvas>
+            <div>
+                <i>
+                    The of the number of classed each department offers. CS and CIS have been combined and
+                    highlighted blue. If the number of classes offered is less then 75 for the department then it is
+                    placed into the other category.
+                </i>
+            </div>
+        </div>
+        <div class="col-md-6 text-cente">
+            <canvas id="instruct" width="450" height="450"></canvas>
+            <div>
+                <i>
+                    The of the number of classed each proffessor is teaching compaired to CS and CIS.
+                </i>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<select name="LIST.VAR1_1" id="LIST_VAR1_1">
+    <option value=""></option>
+    <option value="ACCT">ACCT - Accounting</option>
+    <option value="ART">ART - Art</option>
+    <option value="BIOL">BIOL - Biology</option>
+    <option value="BL">BL - Business Leadership</option>
+    <option value="BLS">BLS - Black Studies</option>
+    <option value="CBM">CBM - Col Business &amp; Mgt</option>
+    <option value="CDM">CDM - Communication &amp; Digital Media</option>
+    <option value="CHEM">CHEM - Chemistry</option>
+    <option value="CIS">CIS - Computer Info Syst</option>
+    <option value="CJ">CJ - Criminal Justice</option>
+    <option value="CMA">CMA - Communication &amp; Media Admin</option>
+    <option value="COMM">COMM - Communication</option>
+    <option value="CS">CS - Computer Science</option>
+    <option value="ECE">ECE - Elec &amp; Computer Engr</option>
+    <option value="ECON">ECON - Economics</option>
+    <option value="EDL">EDL - Education Leadership</option>
+    <option value="ELP">ELP - English Lang Program</option>
+    <option value="ENGL">ENGL - English</option>
+    <option value="ETD">ETD - Educational Tech &amp; Development</option>
+    <option value="ETM">ETM - Engineering Tech Management</option>
+    <option value="FIN">FIN - Finance</option>
+    <option value="FREN">FREN - French</option>
+    <option value="GEOG">GEOG - Geography</option>
+    <option value="GER">GER - German</option>
+    <option value="GS">GS - Gender Studies</option>
+    <option value="HIST">HIST - History</option>
+    <option value="HON">HON - Honors</option>
+    <option value="HS">HS - Health Science</option>
+    <option value="HUM">HUM - Humanities</option>
+    <option value="JAPN">JAPN - Japanese</option>
+    <option value="KINE">KINE - Kinesiology</option>
+    <option value="LAT">LAT - Latin</option>
+    <option value="LAW">LAW - Law</option>
+    <option value="LS">LS - Leadership and Service</option>
+    <option value="MAS">MAS - Administrative Science</option>
+    <option value="MATH">MATH - Mathematical Sciences</option>
+    <option value="ME">ME - Mechanical Engr</option>
+    <option value="MEM">MEM - Master of Energy &amp; Materials</option>
+    <option value="MFL">MFL - Modern Foreign Lang</option>
+    <option value="MGT">MGT - Management</option>
+    <option value="MKT">MKT - Marketing</option>
+    <option value="MLS">MLS - Medical Laboratory Science</option>
+    <option value="MUS">MUS - Music</option>
+    <option value="MUSE">MUSE - Music Education</option>
+    <option value="NS">NS - Natural Science</option>
+    <option value="NURS">NURS - Nursing</option>
+    <option value="OT">OT - Occupational Therapy</option>
+    <option value="PHE">PHE - Physical &amp; Health Ed</option>
+    <option value="PHIL">PHIL - Philosophy</option>
+    <option value="PHYS">PHYS - Physics</option>
+    <option value="PLSH">PLSH - Polish</option>
+    <option value="PS">PS - Political Science</option>
+    <option value="PSYC">PSYC - Psychology</option>
+    <option value="RFS">RFS - Roberts Fellows Seminar</option>
+    <option value="RPW">RPW - Rhetoric &amp; Prof Writing</option>
+    <option value="RS">RS - Religious Studies</option>
+    <option value="SOC">SOC - Sociology</option>
+    <option value="SPAN">SPAN - Spanish</option>
+    <option value="SW">SW - Social Work</option>
+    <option value="TCFL">TCFL - Teaching Chinese As a Foreign</option>
+    <option value="TE">TE - Teacher Education</option>
+    <option value="TEMS">TEMS - Teacher Education--Mid/Sec Sch</option>
+    <option value="THEA">THEA - Theatre</option>
+    <option value="YS">YS - Youth Services</option>
+</select>
+-->
+</body>
+<script>
+    var preFixes = {};
+    var svsuData = {};
+    svsuData.classes = {};
+    svsuData.instruct = {};
+    svsuData.classesTaught = {};
+    $(document).ready(function pageReady() {
+        piechartfake();
+        barchartfake();
+        getData();
+    });
+    function defaultValue(obj, val) {
+        if (typeof obj === 'undefined')
+            return val;
+        return obj;
+    }
+    function getData() {
+        var defObjects = [];
+        var toComp = ["ACCT", "ART", "BIOL", "BL", "BLS", "CBM", "CDM", "CHEM", "CIS", "CJ", "CMA", "COMM", "CS", "ECE", "ECON", "EDL", "ELP", "ENGL", "ETD", "ETM", "FIN", "FREN", "GEOG", "GER", "GS", "HIST", "HON", "HS", "HUM", "JAPN", "KINE", "LAT", "LAW", "LS", "MAS", "MATH", "ME", "MEM", "MFL", "MGT", "MKT", "MLS", "MUS", "MUSE", "NS", "NURS", "OT", "PHE", "PHIL", "PHYS", "PLSH", "PS", "PSYC", "RFS", "RPW", "RS", "SOC", "SPAN", "SW", "TCFL", "TE", "TEMS", "THEA", "YS"];
+        $("#loading-progressbar").progressbar({
+            max: toComp.length,
+            value: 0
+        });
+        var prog = 0;
+        $.each(toComp, function (index, value) {
+            defObjects.push($.getJSON("https://api.svsu.edu/courses?prefix=" + value, function (data) {
+                $("#loading-dept").text(value);
+                svsuData.classes[value] = data.courses;
+                //Get all the instructors and how many corses they teach
+                svsuData.instruct[value] = defaultValue(svsuData.instruct[value], {});
+                $.each(data.courses, function (courseNum, courseDetails) {
+                    $.each(courseDetails.instructors, function (tmpId, inst) {
+                        svsuData.instruct[value][inst.name] = defaultValue(svsuData.instruct[value][inst.name], 0);
+                        svsuData.instruct[value][inst.name]++;
+                        svsuData.classesTaught[inst.name] = defaultValue(svsuData.classesTaught[inst.name], 0);
+                        svsuData.classesTaught[inst.name] = ++svsuData.classesTaught[inst.name] || 1;
+                        if (value === 'CS' || value === 'CIS') {
+                            svsuData.instruct["CSIS"] = defaultValue(svsuData.instruct["CSIS"], {});
+                            svsuData.instruct["CSIS"][inst.name] = defaultValue(svsuData.instruct[value][inst.name], 0);
+                            svsuData.instruct["CSIS"][inst.name]++;
+                        }
+
+                    });
+                });
+                //count(svsuData.instruct[value][]);
+            }).done(function () {
+
+                $("#loading-progressbar").progressbar("option", "value", prog++);
+            }));
+        });
+        $.when.apply(null, defObjects).then(function () {
+            //build oour pie graph
+            makeClassLoadPieChart();
+            //build our bar graph
+            makeCourseLoadBarGraph();
+            //Hide loading screen
+            $("#loading-overlay").hide();
+        });
+    }
+    function getInstructLoadData(dept) {
+        var instructArray = svsuData.instruct[dept];
+        var data = {};
+        data.labels = [];
+        data.data = [];
+        $.each(instructArray, function (lab, dat) {
+            data.labels.push(lab);
+            data.data.push(dat);
+        });
+        return data;
+    }
+
+    function makeClassLoadPieChart() {
+        console.log(svsuData);
+        //Finish building our svsuData
+        svsuData.totalClasses = 0;
+        var pieData = [];
+        svsuData.ourDept = 0;
+        var other = 0;
+
+        $.each(svsuData.classes, function (index, v) {
+            var myColor = "#F7464A";
+            var count = v.length;
+            if (index === "CS" || index === "CIS") {//Make our department stand out
+                svsuData.ourDept += v.length;
+            }
+            else if (count > 75) {
+                pieData.push({
+                    value: count,
+                    label: index,
+                    color: myColor
+                });
+            }
+            else {
+                other += v.length;
+            }
+            //console.log(index +" Value: "+v.length);
+            svsuData.totalClasses += v.length;
+            //Combine CS and CIS
+
+
+        });
+        //Push CS/CIS data
+        pieData.push({
+            value: svsuData.ourDept,
+            label: "CSIS",
+            color: "#46BFBD"
+        });
+
+        //Push Other data
+        pieData.push({
+            value: other,
+            label: "Other",
+            color: "#c0c0c0"
+        });
+
+
+        //Find our pie chart and fill it with data
+        var newopts = {
+            canvasBorders: true,
+            canvasBordersWidth: 3,
+            canvasBordersColor: "black",
+            canvasBackgroundColor: "white",
+            inGraphDataShow: true,
+            inGraphDataAnglePosition: 2,
+            inGraphDataRadiusPosition: 2,
+            inGraphDataRotate: "inRadiusAxisRotateLabels",
+            inGraphDataAlign: "center",
+            inGraphDataVAlign: "middle",
+            inGraphDataFontColor: "white",
+            inGraphDataFontSize: 16,
+            graphTitle: "Number of Courses Offered\n at SVSU by Dept",
+        }
+        var ctx = $("#classLoad").get(0).getContext("2d");
+        var classLoadChart = new Chart(ctx).Pie(pieData, newopts);
+    }
+
+    function makeCourseLoadBarGraph() {
+        var deptBarDataCIS = getInstructLoadData("CIS");
+        var deptBarDataCS = getInstructLoadData("CS");
+        var mashedData = {};
+        mashedData.csdata = [];
+        mashedData.cisdata = [];
+        mashedData.labels = _.union(deptBarDataCS.labels, deptBarDataCIS.labels);
+        $.each(mashedData.labels, function (i, v) {
+            mashedData.csdata[i] = svsuData.instruct["CS"][v] || 0;
+            mashedData.cisdata[i] = svsuData.instruct["CIS"][v] || 0;
+        });
+        console.log("mashed");
+        console.log(mashedData);
+        //var deptBarDataCIS=getInstructLoadData("CIS");
+        //var deptBarData=getInstructLoadData("CSIS");
+
+        var barData = {
+            labels: mashedData.labels,
+            datasets: [
+                {
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data: mashedData.csdata,
+                    title: "CS"
+                },
+                {
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    data: mashedData.cisdata,
+                    title: "CIS"
+                }
+            ]
+        }
+
+        var opt1 = {
+            animationStartWithDataset: 1,
+            animationStartWithData: 1,
+            animationSteps: 200,
+            canvasBorders: true,
+            canvasBordersWidth: 3,
+            canvasBordersColor: "black",
+            canvasBackgroundColor: "white",
+            graphTitle: "CSIS Course Load by instructor",
+            legend: true,
+            inGraphDataShow: true,
+            annotateDisplay: true,
+            graphTitleFontSize: 18,
+            yAxisMinimumInterval: 1
+        }
+
+        ctx = $("#instruct").get(0).getContext("2d");
+        var myBar = new Chart(ctx).Bar(barData, opt1);
+    }
+    function piechartfake() {
+        var pieData={
+            value: 1,
+            label: "Pages loading",
+            color: "#c0c0c0"
+        }
+
+        var newopts = {
+            canvasBorders: true,
+            canvasBordersWidth: 3,
+            canvasBordersColor: "black",
+            canvasBackgroundColor: "white",
+            inGraphDataShow: true,
+            inGraphDataAnglePosition: 2,
+            inGraphDataRadiusPosition: 2,
+            inGraphDataRotate: "inRadiusAxisRotateLabels",
+            inGraphDataAlign: "center",
+            inGraphDataVAlign: "middle",
+            inGraphDataFontColor: "white",
+            inGraphDataFontSize: 16,
+            graphTitle: "Number of Courses Offered\n at SVSU by Dept",
+        }
+        var ctx = $("#classLoad").get(0).getContext("2d");
+        var classLoadChart = new Chart(ctx).Pie(pieData, newopts);
+    }
+    function barchartfake() {
+        var opt1 = {
+            animationStartWithDataset: 1,
+            animationStartWithData: 1,
+            animationSteps: 200,
+            canvasBorders: true,
+            canvasBordersWidth: 3,
+            canvasBordersColor: "black",
+            canvasBackgroundColor: "white",
+            graphTitle: "CSIS Course Load by instructor",
+            legend: true,
+            inGraphDataShow: true,
+            annotateDisplay: true,
+            graphTitleFontSize: 18,
+            yAxisMinimumInterval: 1
+        }
+        var barData = {
+            labels: [],
+            datasets: []
+        }
+        ctx = $("#instruct").get(0).getContext("2d");
+        var myBar = new Chart(ctx).Bar(barData, opt1);
+    }
+</script>
+</html>
