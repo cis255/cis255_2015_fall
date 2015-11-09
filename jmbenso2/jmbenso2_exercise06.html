@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+filename : jmbenso2_exercise6.html
+purpose  : playing with AJAX PHP
+design   : <head> 
+               -jquery from CDN
+			   -Script for name search box
+           <body> 
+		       2. Show options from php file
+			   1. Get input from user
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		
+		<!--2. Show options from php file -->
+		<script>
+			function showHint(str) {
+				if (str.length == 0) { 
+					document.getElementById("txtHint").innerHTML = "";
+					return;
+				} else {
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+						// When the request returns and is all good
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							// Update the suggestion box
+							var result = xmlhttp.responseText;
+							
+							// Add "and "
+							var index = result.lastIndexOf(","); // Get index of last comma
+							if (index != -1) { // If no commas
+								// slide " and " between two halves of the string
+								var result = result.substring(0,index) + " and " + result.substring(index+1)
+							}
+							// Display results
+							document.getElementById("txtHint").innerHTML = result;
+						}
+					}
+					xmlhttp.open("GET", "jmbenso2_gethint.php?q=" + str, true);
+					xmlhttp.send();
+				}
+			}
+			
+		</script>
+	</head>
+	<!--Name search box -->
+	<body>
+		<p><b>Start typing a name in the input field below:</b></p>
+		<!-- 1. Get input from user -->
+		<form> 
+			First name: <input type="text" onkeyup="showHint(this.value)">
+		</form>
+		<p>Suggestions: <span id="txtHint"></span></p>
+	</body>
+</html>
