@@ -1,10 +1,6 @@
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
+    <script src="js/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
           integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
@@ -16,7 +12,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
             integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+
     <script src="js/ChartNew.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/jquery.fn.gantt.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <style>
         body {
             background: url(https://s-media-cache-ak0.pinimg.com/736x/8a/8b/df/8a8bdf7c04941681370a1b44cf39e12e.jpg) no-repeat center center fixed;
@@ -29,7 +34,7 @@
             border-radius: 10px 10px 10px 10px;
         }
         #loading-overlay {
-            position: absolute;
+            position: fixed;
             left: 0;
             top: 0;
             bottom: 0;
@@ -41,8 +46,8 @@
         #loading-box {
             color: black;
             width: 300px;
-            height: 57px;
-            position: absolute;
+
+            position: fixed;
             top: 50%;
             left: 50%;
             background: white;
@@ -75,7 +80,22 @@
             float: none;
             margin: 0 auto;
         }
+        #find { display: none; }
+        #found { display: none; }
+        #error { color: red; display: none; }
 
+        .contain {
+            width: 800px;
+            margin: 0 auto;
+        }
+        /* Bootstrap 3.x re-reset */
+        .fn-gantt *,
+        .fn-gantt *:after,
+        .fn-gantt *:before {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
     </style>
 </head>
 <body>
@@ -83,22 +103,59 @@
     <div id="loading-box">
         Loading Data...<span id="loading-dept"></span>
         <div id="loading-progressbar"></div>
+        <div id="found">
+            <div class="text-center">
+                SVSU Weather<br>
+                <span id="wImage"></span><span id="temp"></span>&deg; and <span id="cond"></span>
+            </div>
+        </div>
+        <div id="error">
+            <p>Location not found!</p>
+        </div>
     </div>
 </div>
 <h2 id="mynav">CSIS Semester Statistics</h2>
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            This page provides basic statistical information about SVSU and the CICS department. The information is gathered
+            by parsing the SVSU API. Using this page you can view how the CICS department compares to other SVSU department in
+            things like the number of classes offered as well as how instructors in the csis department compare to each other.<br>
+            <select name="termSelect" id="termSelect" style="color: black">
+            </select>
+        </div>
+    </div>
     <div id="canvas-holder" class="row">
         <div class="col-md-6 text-center">
             <canvas id="classLoad" width="450" height="450"></canvas>
             <div>
                 <i>
                     The of the number of classed each department offers. CS and CIS have been combined and
-                    highlighted blue. If the number of classes offered is less then 75 for the department then it is
+                    highlighted blue. If the number of classes offered is less then 3% for the department then it is
                     placed into the other category.
                 </i>
             </div>
         </div>
-        <div class="col-md-6 text-cente">
+        <div class="col-md-6 text-center">
+            <canvas id="studentsTaught" width="450" height="450"></canvas>
+            <div>
+                <i>
+                    Graph of the number of students taught by each department compared to CSIS. Only departments who teach
+                    at least 200 students are shown.
+                </i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <canvas id="creditsTaught" width="450" height="450"></canvas>
+            <div>
+                <i>
+                    The number of credits each CSIS proffesser is teaching.
+                </i>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
             <canvas id="instruct" width="450" height="450"></canvas>
             <div>
                 <i>
@@ -107,94 +164,133 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+                <div id="timeChart" class="gantt" style="background-color: #f6f6f6;"></div>
+        </div>
+    </div>
 </div>
-<!--
-<select name="LIST.VAR1_1" id="LIST_VAR1_1">
-    <option value=""></option>
-    <option value="ACCT">ACCT - Accounting</option>
-    <option value="ART">ART - Art</option>
-    <option value="BIOL">BIOL - Biology</option>
-    <option value="BL">BL - Business Leadership</option>
-    <option value="BLS">BLS - Black Studies</option>
-    <option value="CBM">CBM - Col Business &amp; Mgt</option>
-    <option value="CDM">CDM - Communication &amp; Digital Media</option>
-    <option value="CHEM">CHEM - Chemistry</option>
-    <option value="CIS">CIS - Computer Info Syst</option>
-    <option value="CJ">CJ - Criminal Justice</option>
-    <option value="CMA">CMA - Communication &amp; Media Admin</option>
-    <option value="COMM">COMM - Communication</option>
-    <option value="CS">CS - Computer Science</option>
-    <option value="ECE">ECE - Elec &amp; Computer Engr</option>
-    <option value="ECON">ECON - Economics</option>
-    <option value="EDL">EDL - Education Leadership</option>
-    <option value="ELP">ELP - English Lang Program</option>
-    <option value="ENGL">ENGL - English</option>
-    <option value="ETD">ETD - Educational Tech &amp; Development</option>
-    <option value="ETM">ETM - Engineering Tech Management</option>
-    <option value="FIN">FIN - Finance</option>
-    <option value="FREN">FREN - French</option>
-    <option value="GEOG">GEOG - Geography</option>
-    <option value="GER">GER - German</option>
-    <option value="GS">GS - Gender Studies</option>
-    <option value="HIST">HIST - History</option>
-    <option value="HON">HON - Honors</option>
-    <option value="HS">HS - Health Science</option>
-    <option value="HUM">HUM - Humanities</option>
-    <option value="JAPN">JAPN - Japanese</option>
-    <option value="KINE">KINE - Kinesiology</option>
-    <option value="LAT">LAT - Latin</option>
-    <option value="LAW">LAW - Law</option>
-    <option value="LS">LS - Leadership and Service</option>
-    <option value="MAS">MAS - Administrative Science</option>
-    <option value="MATH">MATH - Mathematical Sciences</option>
-    <option value="ME">ME - Mechanical Engr</option>
-    <option value="MEM">MEM - Master of Energy &amp; Materials</option>
-    <option value="MFL">MFL - Modern Foreign Lang</option>
-    <option value="MGT">MGT - Management</option>
-    <option value="MKT">MKT - Marketing</option>
-    <option value="MLS">MLS - Medical Laboratory Science</option>
-    <option value="MUS">MUS - Music</option>
-    <option value="MUSE">MUSE - Music Education</option>
-    <option value="NS">NS - Natural Science</option>
-    <option value="NURS">NURS - Nursing</option>
-    <option value="OT">OT - Occupational Therapy</option>
-    <option value="PHE">PHE - Physical &amp; Health Ed</option>
-    <option value="PHIL">PHIL - Philosophy</option>
-    <option value="PHYS">PHYS - Physics</option>
-    <option value="PLSH">PLSH - Polish</option>
-    <option value="PS">PS - Political Science</option>
-    <option value="PSYC">PSYC - Psychology</option>
-    <option value="RFS">RFS - Roberts Fellows Seminar</option>
-    <option value="RPW">RPW - Rhetoric &amp; Prof Writing</option>
-    <option value="RS">RS - Religious Studies</option>
-    <option value="SOC">SOC - Sociology</option>
-    <option value="SPAN">SPAN - Spanish</option>
-    <option value="SW">SW - Social Work</option>
-    <option value="TCFL">TCFL - Teaching Chinese As a Foreign</option>
-    <option value="TE">TE - Teacher Education</option>
-    <option value="TEMS">TEMS - Teacher Education--Mid/Sec Sch</option>
-    <option value="THEA">THEA - Theatre</option>
-    <option value="YS">YS - Youth Services</option>
-</select>
--->
+
 </body>
 <script>
-    var preFixes = {};
-    var svsuData = {};
-    svsuData.classes = {};
-    svsuData.instruct = {};
-    svsuData.classesTaught = {};
+    var primaryChartColor           = "rgba(95,117,128,0.5)";
+    var primaryChartColorStroke     = "rgba(95,117,128,1)";
+    var secondaryChartColor         = "rgba(131,158,179,0.5)";
+    var secondaryChartColorStroke   = "rgba(170,210,230,1)";
+
+    //Class to hold our class schedule information
+    function times() {
+        this.data=[],
+                this.addTeacher= function (strName) {
+                    if (_.findWhere(this.data,{name: strName})== null) { //Add only if name doesn't exist
+                        this.data.push({name: strName, desc: " ", values: []});
+                    }
+                }
+        this.addCourse= function(teacher,courseName,desc,daysOfWeek,start,timeEnd,customClass) {
+            var dWeek=["N","M","T","W","R","F","S"];
+            this.addTeacher(teacher); //Make sure we have added the teacher
+            var match = _.findWhere(this.data,{name: teacher});
+            //We need to get just the HH and MM
+            var i = daysOfWeek.length;
+            while (i--) {
+                //Get the current day of the week
+                var daysAdd=_.indexOf(dWeek, daysOfWeek[i])
+                var t = moment(start, 'HH:mm A');
+                var startHour = t.get('hour');
+                var startMin = t.get('minute');
+                var startTime = moment().startOf('week');
+                startTime.add(daysAdd,'days');
+                startTime.add(startHour,'hours');
+                startTime.add(startMin,'minutes');
+
+                t = moment(timeEnd, 'HH:mm A');
+                var endHour = t.get('hour');
+                var endMin = t.get('minute');
+                var endTime = moment().startOf('week');
+                endTime.add(daysAdd,'days');
+                endTime.add(endHour,'hours');
+                endTime.add(endMin,'minutes');
+
+                match.values.push({
+                    from:"/Date(" + startTime.valueOf() + ")/",
+                    to: "/Date(" + endTime.valueOf() + ")/",
+                    label: courseName,
+                    desc: desc,
+                    customClass: customClass
+                })
+            }
+        }
+    };
+
+    var now = moment();
+    //                    01   02   03   04   05   06   07   08   09   10   11   12
+    var semesterDefault=["WI","WI","SP","SP","SU","SU","FA","FA","FA","WI","WI","WI"];
+    var year = now.format("YY");
+    if (now.get('month')>9)
+        year++;
+    var sem =  semesterDefault[now.get('month')];
+
+    var dispTerm=year+"\/"+sem;
+    var svsuData = {
+        classes: {},
+        instruct: {},
+        classesTaught: {},
+        creditsTaught: {},
+        schedule: new times()
+    };
     $(document).ready(function pageReady() {
-        piechartfake();
-        barchartfake();
-        getData();
+        $('#termSelect').change(function(event) {
+            dispTerm=this.value;
+            main();
+        })
+        fillTerm(dispTerm).then(function() {main(); })
     });
+
+    function main() {
+        //Reinit svsuData incase this is a reload.
+        svsuData = {
+            classes: {},
+            instruct: {},
+            classesTaught: {},
+            creditsTaught: {},
+            studentsTaught: {},
+            schedule: new times()
+        };
+        getWeather("48710");
+
+        //Clear and blank canvas
+        $.each($("canvas"),function(i,canvas){
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle="white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+        getData()
+    }
+
+    function fillTerm(term) {
+        var defObjects = [];
+        var def = $.Deferred();
+        defObjects.push($.getJSON("https://api.svsu.edu/terms", function (data) {
+            $.each(data.terms, function(i, value) {
+                var sel="";
+                if (term === value.code)
+                    sel="selected";
+                $('#termSelect').append($('<option>').text(value.text).attr('value', value.code).attr('selected',sel));
+            });
+        }));
+        $.when.apply(null, defObjects).then(function () {
+            def.resolve();
+        });
+        return def.promise();
+    }
     function defaultValue(obj, val) {
         if (typeof obj === 'undefined')
             return val;
         return obj;
     }
     function getData() {
+        console.log("getData");
+        $("#loading-overlay").show();
         var defObjects = [];
         var toComp = ["ACCT", "ART", "BIOL", "BL", "BLS", "CBM", "CDM", "CHEM", "CIS", "CJ", "CMA", "COMM", "CS", "ECE", "ECON", "EDL", "ELP", "ENGL", "ETD", "ETM", "FIN", "FREN", "GEOG", "GER", "GS", "HIST", "HON", "HS", "HUM", "JAPN", "KINE", "LAT", "LAW", "LS", "MAS", "MATH", "ME", "MEM", "MFL", "MGT", "MKT", "MLS", "MUS", "MUSE", "NS", "NURS", "OT", "PHE", "PHIL", "PHYS", "PLSH", "PS", "PSYC", "RFS", "RPW", "RS", "SOC", "SPAN", "SW", "TCFL", "TE", "TEMS", "THEA", "YS"];
         $("#loading-progressbar").progressbar({
@@ -202,37 +298,89 @@
             value: 0
         });
         var prog = 0;
-        $.each(toComp, function (index, value) {
-            defObjects.push($.getJSON("https://api.svsu.edu/courses?prefix=" + value, function (data) {
-                $("#loading-dept").text(value);
-                svsuData.classes[value] = data.courses;
-                //Get all the instructors and how many corses they teach
-                svsuData.instruct[value] = defaultValue(svsuData.instruct[value], {});
+        var courseDetailsTemplate = _.template(
+                "<%=instructor%><br>" +
+                "<%courseDetails.title%>" +
+                "Class: <%=className%> <%=courseDetails.section%> (<%=courseDetails.lineNumber%>)<br>" +
+                "Credits: <%=courseDetails.credit%><br>" +
+                "Room: <%=room%><br>" +
+                "Time: <%=days%> <%=startTime%> - <%=endTime%><br>" +
+                "Seats: <%=courseDetails.seatsAvailable%>/<%=courseDetails.capacity%>"
+                );
+
+        $.each(toComp, function (index, dept) {
+            defObjects.push($.getJSON("https://api.svsu.edu/courses?prefix=" + dept, function (data) {
+                $("#loading-dept").text(dept);
+                svsuData.classes[dept] = data.courses;
+                //Get all the instructors and how many courses they teach
+                svsuData.instruct[dept] = defaultValue(svsuData.instruct[dept], {});
                 $.each(data.courses, function (courseNum, courseDetails) {
+                    if (courseDetails.term !== dispTerm)
+                        return true;
+                    svsuData.studentsTaught[dept] = defaultValue(svsuData.studentsTaught[dept], 0);
+                    svsuData.studentsTaught[dept]+=(courseDetails.capacity-courseDetails.seatsAvailable);
+
                     $.each(courseDetails.instructors, function (tmpId, inst) {
-                        svsuData.instruct[value][inst.name] = defaultValue(svsuData.instruct[value][inst.name], 0);
-                        svsuData.instruct[value][inst.name]++;
+                        svsuData.instruct[dept][inst.name] = defaultValue(svsuData.instruct[dept][inst.name], 0);
+                        svsuData.instruct[dept][inst.name]++;
                         svsuData.classesTaught[inst.name] = defaultValue(svsuData.classesTaught[inst.name], 0);
-                        svsuData.classesTaught[inst.name] = ++svsuData.classesTaught[inst.name] || 1;
-                        if (value === 'CS' || value === 'CIS') {
+                        svsuData.classesTaught[inst.name]++;
+
+                        svsuData.creditsTaught[inst.name] = defaultValue(svsuData.creditsTaught[inst.name], 0);
+                        svsuData.creditsTaught[inst.name] += parseInt(courseDetails.credit);
+
+                        //Create a sudo department called CSIS
+                        if (dept === 'CS' || dept === 'CIS') {
                             svsuData.instruct["CSIS"] = defaultValue(svsuData.instruct["CSIS"], {});
-                            svsuData.instruct["CSIS"][inst.name] = defaultValue(svsuData.instruct[value][inst.name], 0);
+                            svsuData.instruct["CSIS"][inst.name] = defaultValue(svsuData.instruct[dept][inst.name], 0);
                             svsuData.instruct["CSIS"][inst.name]++;
+                            //Only parse the schedule for the CS and CIS dept
+                            var className = courseDetails.prefix+courseDetails.courseNumber;
+
+                            $.each(courseDetails.meetingTimes,function(meetTimeIndex,meetingTime) {
+                                var room = meetingTime.building+meetingTime.room;
+                                var startTime=meetingTime.startTime;
+                                var endTime=meetingTime.endTime;
+                                var days=meetingTime.days;
+                                var customClass;
+
+                                var desc = courseDetailsTemplate(
+                                        {
+                                            courseDetails: courseDetails,
+                                            instructor: inst.name,
+                                            className: className,
+                                            room: room,
+                                            startTime: meetingTime.startTime,
+                                            endTime: meetingTime.endTime,
+                                            days: meetingTime.days,
+                                        });
+                                if (courseDetails.status !== 'Open')
+                                    customClass="ganttRed";
+                                if (typeof days !== 'undefined')
+                                    if ((typeof meetingTime.startTime !== 'undefined') && (typeof meetingTime.endTime !== 'undefined'))
+                                        svsuData.schedule.addCourse(inst.name,room,desc,days,startTime,endTime,customClass);
+                            });
+                            //svsuData.schedule.addCourse("G. Corser","CS403","MW","04:30 PM","05:20 PM");
+                            //svsuData.schedule.addCourse(inst.name,courseDetails.prefix+courseDetails.)
                         }
 
                     });
                 });
                 //count(svsuData.instruct[value][]);
             }).done(function () {
-
                 $("#loading-progressbar").progressbar("option", "value", prog++);
             }));
         });
         $.when.apply(null, defObjects).then(function () {
+            console.log(svsuData);
             //build oour pie graph
-            makeClassLoadPieChart();
+            makeClassLoadPieChart("#classLoad","Number of Courses Offered\n at SVSU by Dept");
             //build our bar graph
-            makeCourseLoadBarGraph();
+            makeCourseLoadBarGraph("#instruct","CSIS Course Load by Instructor");
+            makeCourseCreditLoadBarGraph("#creditsTaught","CSIS Credits by Instructor");
+            makeStudentsTaughtBarGraph("#studentsTaught","Students Taught by Department")
+            makeTimeChart("#timeChart","Some title");
+
             //Hide loading screen
             $("#loading-overlay").hide();
         });
@@ -249,21 +397,40 @@
         return data;
     }
 
-    function makeClassLoadPieChart() {
-        console.log(svsuData);
+    function getInstructCreditLoadData(dept) {
+        var instructArray = svsuData.instruct[dept];
+        var data = {};
+        data.labels = [];
+        data.data = [];
+        $.each(instructArray, function (lab, dat) {
+            if (lab==='Staff')//skip staff
+                return true;
+            data.labels.push(lab);
+        });
+        return data;
+    }
+
+    function makeClassLoadPieChart(container,title) {
+        console.log("makeClassLoadPieChart");
         //Finish building our svsuData
         svsuData.totalClasses = 0;
         var pieData = [];
         svsuData.ourDept = 0;
         var other = 0;
-
+        $.each(svsuData.classes, function (index, v) {
+            var filteredClasses=_.where(v,{term: dispTerm});
+            var count = filteredClasses.length;
+            svsuData.totalClasses += count;
+        });
         $.each(svsuData.classes, function (index, v) {
             var myColor = "#F7464A";
-            var count = v.length;
+            var filteredClasses=_.where(v,{term: dispTerm});
+            var count = filteredClasses.length;
+
             if (index === "CS" || index === "CIS") {//Make our department stand out
-                svsuData.ourDept += v.length;
+                svsuData.ourDept += filteredClasses.length;
             }
-            else if (count > 75) {
+            else if (0.03 < (count/svsuData.totalClasses)) {
                 pieData.push({
                     value: count,
                     label: index,
@@ -271,12 +438,8 @@
                 });
             }
             else {
-                other += v.length;
+                other += filteredClasses.length;
             }
-            //console.log(index +" Value: "+v.length);
-            svsuData.totalClasses += v.length;
-            //Combine CS and CIS
-
 
         });
         //Push CS/CIS data
@@ -308,40 +471,39 @@
             inGraphDataVAlign: "middle",
             inGraphDataFontColor: "white",
             inGraphDataFontSize: 16,
-            graphTitle: "Number of Courses Offered\n at SVSU by Dept",
+            graphTitle: title,
         }
-        var ctx = $("#classLoad").get(0).getContext("2d");
+        var canvas = $(container).get(0);
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         var classLoadChart = new Chart(ctx).Pie(pieData, newopts);
     }
 
-    function makeCourseLoadBarGraph() {
+    function makeCourseLoadBarGraph(container,title) {
         var deptBarDataCIS = getInstructLoadData("CIS");
         var deptBarDataCS = getInstructLoadData("CS");
         var mashedData = {};
         mashedData.csdata = [];
         mashedData.cisdata = [];
-        mashedData.labels = _.union(deptBarDataCS.labels, deptBarDataCIS.labels);
+        mashedData.labels = _.union(deptBarDataCS.labels, deptBarDataCIS.labels).sort();
         $.each(mashedData.labels, function (i, v) {
             mashedData.csdata[i] = svsuData.instruct["CS"][v] || 0;
             mashedData.cisdata[i] = svsuData.instruct["CIS"][v] || 0;
         });
-        console.log("mashed");
-        console.log(mashedData);
-        //var deptBarDataCIS=getInstructLoadData("CIS");
-        //var deptBarData=getInstructLoadData("CSIS");
 
         var barData = {
             labels: mashedData.labels,
             datasets: [
                 {
-                    fillColor: "rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,1)",
+                    fillColor: primaryChartColor,
+                    strokeColor: primaryChartColorStroke,
                     data: mashedData.csdata,
                     title: "CS"
                 },
                 {
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,1)",
+                    fillColor: secondaryChartColor,
+                    strokeColor: secondaryChartColorStroke,
                     data: mashedData.cisdata,
                     title: "CIS"
                 }
@@ -356,7 +518,7 @@
             canvasBordersWidth: 3,
             canvasBordersColor: "black",
             canvasBackgroundColor: "white",
-            graphTitle: "CSIS Course Load by instructor",
+            graphTitle: title,
             legend: true,
             inGraphDataShow: true,
             annotateDisplay: true,
@@ -364,35 +526,35 @@
             yAxisMinimumInterval: 1
         }
 
-        ctx = $("#instruct").get(0).getContext("2d");
+        var canvas = $(container).get(0);
+        ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         var myBar = new Chart(ctx).Bar(barData, opt1);
     }
-    function piechartfake() {
-        var pieData={
-            value: 1,
-            label: "Pages loading",
-            color: "#c0c0c0"
+
+    function makeCourseCreditLoadBarGraph(container,title) {
+        var deptBarDataCIS = getInstructCreditLoadData("CIS");
+        var deptBarDataCS = getInstructCreditLoadData("CS");
+        var mashedData = {};
+        mashedData.data = [];
+        mashedData.labels = _.union(deptBarDataCS.labels, deptBarDataCIS.labels).sort();
+
+
+        $.each(mashedData.labels, function (i, v) {
+            mashedData.data[i] = parseInt(svsuData.creditsTaught[v]);
+        });
+        var barData = {
+            labels: mashedData.labels,
+            datasets: [
+                {
+                    fillColor: primaryChartColor,
+                    strokeColor: primaryChartColorStroke,
+                    data: mashedData.data,
+                    title: "CS"
+                }
+            ]
         }
 
-        var newopts = {
-            canvasBorders: true,
-            canvasBordersWidth: 3,
-            canvasBordersColor: "black",
-            canvasBackgroundColor: "white",
-            inGraphDataShow: true,
-            inGraphDataAnglePosition: 2,
-            inGraphDataRadiusPosition: 2,
-            inGraphDataRotate: "inRadiusAxisRotateLabels",
-            inGraphDataAlign: "center",
-            inGraphDataVAlign: "middle",
-            inGraphDataFontColor: "white",
-            inGraphDataFontSize: 16,
-            graphTitle: "Number of Courses Offered\n at SVSU by Dept",
-        }
-        var ctx = $("#classLoad").get(0).getContext("2d");
-        var classLoadChart = new Chart(ctx).Pie(pieData, newopts);
-    }
-    function barchartfake() {
         var opt1 = {
             animationStartWithDataset: 1,
             animationStartWithData: 1,
@@ -401,19 +563,101 @@
             canvasBordersWidth: 3,
             canvasBordersColor: "black",
             canvasBackgroundColor: "white",
-            graphTitle: "CSIS Course Load by instructor",
+            graphTitle: title,
             legend: true,
             inGraphDataShow: true,
             annotateDisplay: true,
             graphTitleFontSize: 18,
             yAxisMinimumInterval: 1
         }
-        var barData = {
-            labels: [],
-            datasets: []
-        }
-        ctx = $("#instruct").get(0).getContext("2d");
+
+        var canvas = $(container).get(0);
+        ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         var myBar = new Chart(ctx).Bar(barData, opt1);
+    }
+
+    function makeStudentsTaughtBarGraph(container,title) {
+        var data=[];
+        var labels=[];
+        var keys = _.keys(svsuData.studentsTaught);
+        var sortedKeys = _.sortBy(keys, function(key){
+            return key;
+        });
+
+        labels.push("CSIS");
+        data.push(0);
+
+        $.each(sortedKeys,function(i,v) {
+            lab=v;
+            dat=svsuData.studentsTaught[v];
+            if (dat>200 || lab==='CS' || lab==='CIS') {
+                if (lab==='CS' || lab==='CIS') {
+                    data[0]+=dat;
+                } else {
+                    labels.push(lab);
+                    data.push(dat);
+                }
+            }
+        })
+
+        var barData = {
+            labels: labels,
+            datasets: [
+                {
+                    fillColor: primaryChartColor,
+                    strokeColor: primaryChartColorStroke,
+                    data: data
+                }
+            ]
+        }
+
+        var opt1 = {
+            animationStartWithDataset: 1,
+            animationStartWithData: 1,
+            animationSteps: 200,
+            canvasBorders: true,
+            canvasBordersWidth: 3,
+            canvasBordersColor: "black",
+            canvasBackgroundColor: "white",
+            graphTitle: title,
+            legend: true,
+            inGraphDataShow: true,
+            annotateDisplay: true,
+            graphTitleFontSize: 18,
+            yAxisMinimumInterval: 1
+        }
+
+        var canvas = $(container).get(0);
+        ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var myBar = new Chart(ctx).Bar(barData, opt1);
+    }
+    function makeTimeChart(container,title) {
+        var today = moment();
+        var andTwoHours = moment().add(2, "hours");
+
+        var today_friendly = "/Date(" + today.valueOf() + ")/";
+        var next_friendly = "/Date(" + andTwoHours.valueOf() + ")/";
+
+        today = moment().add(1,"days");
+        andTwoHours = today.add(2, "hours");
+
+        var today_friendly1 = "/Date(" + today.valueOf() + ")/";
+        var next_friendly1 = "/Date(" + andTwoHours.valueOf() + ")/";
+
+        //var c = new times();
+        //c.addCourse("G. Corser","CS403","MW","04:30 PM","05:20 PM");
+
+        $(container).gantt({
+            source: svsuData.schedule.data,
+            itemsPerPage: 15,
+            dow: ["U", "M", "T", "W", "R", "F", "S"],
+            scale: "hours",
+            minScale: "hours",
+            maxScale: "hours",
+            navigate: "scroll"
+        });
     }
 </script>
 </html>
