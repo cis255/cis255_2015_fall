@@ -1,109 +1,500 @@
-<!DOCTYPE html>
-<!-- ---------------------------------------------------------
-filename: cdmuraws_prog03_order.html
-author  : Cory Murawske, CIS 255, Fall 2015
-purpose : This program demonstrates JavaScript and jQuery
-		  This is a customer order form
-design  :
-    <head> favicon, title and jquery cdn
-	<body>
-	    0. header
-		1. customer info table
-		
--------------------------------------------------------------- -->
+<!doctype html>
+<!-- 
+Filename : cdmuraws_prog03_order.html
+purpose	 : This program demonstrates javascript and jquery.
+design	 :	<head> 
+				1. title and jQuery cdn
+				2. bootstrap external link
+				3. jquery external link
+			<body> 
+			0. header
+			1. customer info table
+			2. order information table
+			3. Item info Table
+			4. get today date
+			5. print odd rows grey in the Product Information table.
+			6. print the amount column values and sub-total
+			7. calculate freightAmount
+			8. Create object of states and taxes
+				
+-->
 <html>
 	<head>
-		<!-- favicon image and browser tab title -->
-		<link rel='icon' href='../../cardinal_logo.png' type='image/png'/>
-		<title>CIS-255: Golf Form</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<title>CIS-255: Golf Center</title>
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		
+		
 	</head>
-	
+
 	<body>
 		<!-- 0. header -->
-		<h1>Cory Murawske, CIS-255 Golf Center</h1>
-		<h3>Customer Order Form</h3>
-		
+		<h1 align="center">Bock Golf Center</h1>
+		<h3 align="center">Customer Order Form</h3>
+
 		<!-- 1. customer info table -->
-		<table border ="1">
+		<h4 align="left" style="margin:20px">Mail Orders to:___________________________Order Information:________________</h4>
+		<table align="left" style="margin-left:20px" id="customerInfo">
 			<tr>
-				<th colspan="3">Mail Orders to:</th>
-			</tr>
-			<tr>
-				<td id="customer_name" colspan="3">
-					<input type="text" size="46" name="customer_name" placeholder="Customer Name">
+				<td colspan="3">
+					<input size="46" type="text" name="customer_name" placeholder="Customer Name"/>
 				</td>
 			</tr>
 			<tr>
-				<td id="customer_address" colspan="3">
-					<input type="text" size="46" name="customer_address" placeholder="Address">
+				<td colspan="3">
+					<input size="46" type="text" name="customer_address" placeholder="Address"/>
 				</td>
 			</tr>
 			<tr>
-				<td id="customer_city">
-					<input id="customer_city_input" type="text" name="customer_city" placeholder="City">
+				<td>
+					<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
 				</td>
-				<td id="customer_state">
-					<input type="text" size="5" name="customer_state" placeholder="State">
+				<td>
+					<input type="text" size="5" name="customer_state"  placeholder="State"/>
 				</td>
-				<td id="customer_zip">
-					<input type="text" size="10" name="customer_zip" placeholder="Zip Code">
+				<td>
+					<input type="text" size="11" name="customer_zip" placeholder="Zip"/>
 				</td>
 			</tr>
 		</table>
 		
+		<!-- 2. order info table -->
+		<table border="1" style="margin-left:412px" width="300" id="orderInfo">
+			<tr>
+				<td width="40%">
+					Order Number:
+				</td>
+				<td>
+					1
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Order Date:
+				</td>
+				<td id="date">
+				
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Customer Name:
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+		</table>
+		
+		<br>
+		
+		<!-- 3. Item info Table -->
+		<table border="1" align="left" style="margin:20px" id="itemInfo">
+			<tr>
+				<th>
+					Item No.
+				</th>
+				<th>
+					Description
+				</th>
+				<th>
+					Quantity
+				</th>
+				<th>
+					Price
+				</th>
+				<th>
+					Amount
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">	
+				</td>
+				<td>
+					<input type="text" id="quantity1" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price1" size="10" onkeyup="calcAmount('1')">
+				</td>
+				<td>
+					<input type="text" id="amount1" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity2" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price2" size="10" onkeyup="calcAmount('2')">
+				</td>
+				<td>
+					<input type="text" id="amount2" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity3" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price3" size="10" onkeyup="calcAmount('3')">
+				</td>
+				<td>
+					<input type="text" id="amount3" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity4" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price4" size="10" onkeyup="calcAmount('4')">
+				</td>
+				<td>
+					<input type="text" id="amount4" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity5" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price5" size="10" onkeyup="calcAmount('5')">
+				</td>	
+				<td> 
+					<input type="text" id="amount5" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity6" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price6" size="10" onkeyup="calcAmount('6')">
+				</td>
+				<td>
+					<input type="text" id="amount6" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity7" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price7" size="10" onkeyup="calcAmount('7')">
+				</td>
+				<td>
+					<input type="text" id="amount7" size="10" value="0.00" readonly>
+				</td>
+			</tr><tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity8" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price8" size="10" onkeyup="calcAmount('8')">
+				</td>
+				<td>
+					<input type="text" id="amount8" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" size="20">
+				</td>
+				<td>
+					<input type="text" size="25">
+				</td>
+				<td>
+					<input type="text" id="quantity9" size="5" onkeyup="calcFreightAmount()" value="0";>
+				</td>
+				<td>
+					<input type="text" id="price9" size="10" onkeyup="calcAmount('9')">
+				</td>
+				<td>
+					<input type="text" id="amount9" size="10" value="0.00" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align: right;">
+					Sub-Total
+				</td>
+				<td>
+					<input type="text" size="10" id="subTotal" readonly>
+				</td>
+			</tr>
+				<tr>
+				<td colspan="4" style="text-align: right;">
+					Freight-Amount
+				</td>
+				<td>
+					<input type="text" size="10" id="freightAmount" readonly>
+				</td>
+			</tr>
+				<tr>
+				<td colspan="4" style="text-align: right;">
+					Tax
+				</td>
+				<td>
+					<input type="text" size="10" id="tax" readonly>
+				</td>
+			</tr>
+				<tr>
+				<td colspan="4" style="text-align: right;">
+					Total-Amount
+				</td>
+				<td>
+					<input type="text" size="10" id="totalAmount" readonly>
+				</td>
+			</tr>
+		</table>
+		
+		<!--  4. get today date -->
 		<script>
-			$("document").ready(function init() {
-			
-				// set table division background to red
-				$("#customer_city").css("background-color","red");
-				
-				// set input box background to green
-				$("#customer_city_input").css("background-color","green");
-				
-				// if input box is in focus, set background to yellow
-				$("#customer_city_input").focus(function() {
-					$(this).css("background-color","yellow")
-				});
-				
-				// if input box loses focus, set background to blue
-				$("#customer_city_input").focusout(function() {
-					$(this).css("background-color","blue")
-				});
-				
-				// set every other line in table to gray
-				$("tr:odd").css("background-color","#c0c0c0")
-				$("tr:odd input").css("background-color","#c0c0c0")
-				
-				var tableRows = $("tr");
-			});
+			var currentDate = new Date()
+			var day = currentDate.getDate()
+			var month = currentDate.getMonth() + 1
+			var year = currentDate.getFullYear()
+			document.getElementById('date').innerHTML = month + "/" + day + "/" + year;
 		</script>
+		
+		<!-- 5. print odd rows grey in the Product Information table. -->
+		<script>
+		$("document").ready(function init() {		   
+			
+			// set every other line in tble to gray
+			$("#itemInfo > tbody > tr:odd").css("background-color","#D3D3D3");
+			$("#itemInfo > tbody > tr:odd input").css("background-color","#D3D3D3");
+			
+			var tableRows = $("tr");
+			
+		});
+		
+		// This sets the current selected cell to highlight yellow
+		$("input").focus(function(){
+			var defColor = $(this).css('background-color',"#F4F29D");
+		});
+		
+		// This sets the data cell back to normal when going off-focus
+		$("input").blur(function(){
+			$("#itemInfo > tbody > tr:odd").css("background-color","#D3D3D3");
+			$("#itemInfo > tbody > tr:odd input").css("background-color","#D3D3D3");
+			$("#itemInfo > tbody > tr:even").css("background-color","white");
+			$("#itemInfo > tbody > tr:even input").css("background-color","white");
+			
+			$("#customerInfo > tbody > tr:odd").css("background-color","white");
+			$("#customerInfo > tbody > tr:odd input").css("background-color","white");
+			$("#customerInfo > tbody > tr:even").css("background-color","white");
+			$("#customerInfo > tbody > tr:even input").css("background-color","white");
+		});
+		
+		</script>
+		
+		<!-- 6. print the amount column values and sub-total -->
+		<script>
+		
+			function calcAmount(rowNum){
+				
+				if(rowNum=="1"){
+					var quantity = document.getElementById('quantity1').value;
+					var price = document.getElementById('price1').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount1').value = amount;
+				}
+				
+				if(rowNum=="2"){
+					var quantity = document.getElementById('quantity2').value;
+					var price = document.getElementById('price2').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount2').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity3').value;
+					var price = document.getElementById('price3').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount3').value = amount;
+				}
+				
+				if(rowNum=="4"){
+					var quantity = document.getElementById('quantity4').value;
+					var price = document.getElementById('price4').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount4').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity5').value;
+					var price = document.getElementById('price5').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount5').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity6').value;
+					var price = document.getElementById('price6').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount6').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity7').value;
+					var price = document.getElementById('price7').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount7').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity8').value;
+					var price = document.getElementById('price8').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount8').value = amount;
+				}
+				
+				if(rowNum=="3"){
+					var quantity = document.getElementById('quantity9').value;
+					var price = document.getElementById('price9').value;
+					var amount = (quantity * price).toFixed(2);
+					document.getElementById('amount9').value = amount;
+				}
+				
+				// calculate and print subtotal
+				var subTotal = (parseFloat(document.getElementById('amount1').value) + parseFloat(document.getElementById('amount2').value) + parseFloat(document.getElementById('amount3').value) + parseFloat(document.getElementById('amount4').value) + parseFloat(document.getElementById('amount5').value) + parseFloat(document.getElementById('amount6').value) + parseFloat(document.getElementById('amount7').value) + parseFloat(document.getElementById('amount8').value) + parseFloat(document.getElementById('amount9').value)).toFixed(2);
+				document.getElementById('subTotal').value = "$"+subTotal;
+				
+				// calculate and print tax
+				var tax = subTotal*getTaxRate();
+				document.getElementById('tax').value = "$"+tax.toFixed(2);
+				
+				// calculate and print total amount
+				var totalAmount = tax+subTotal;
+				document.getElementById('totalAmount').value = "$"+(parseFloat(tax)+parseFloat(subTotal)).toFixed(2);
+				
+				
+			};
+			
+			// 7. calculate and print freightAmount
+			function calcFreightAmount(){
+							
+			
+				var freight_Amount = (parseFloat(document.getElementById('quantity1').value) + parseFloat(document.getElementById('quantity2').value) + parseFloat(document.getElementById('quantity3').value) + parseFloat(document.getElementById('quantity4').value) + parseFloat(document.getElementById('quantity5').value) + parseFloat(document.getElementById('quantity6').value) + parseFloat(document.getElementById('quantity7').value) + parseFloat(document.getElementById('quantity8').value) + parseFloat(document.getElementById('quantity9').value));
+				document.getElementById('freightAmount').value = freight_Amount;
+				};
+				
+			function getTaxRate() {
+			//8. Create object of states and taxes
+			// This object and if-else statement is from cis255/bjcobb/ex03_order/ (Brian Cobbs program)
+			var taxRates = {
+				AL:4.00,
+				AK:0.00,
+				AZ:5.60,
+				AR:6.50,
+				CA:7.50,
+				CO:2.90,
+				CT:6.35,
+				DE:0.00,
+				DC:6.00,
+				FL:4.00,
+				GA:4.00,
+				HI:6.00,
+				ID:6.25,
+				IL:7.00,
+				IN:6.00,
+				IA:6.15,
+				KS:6.00,
+				KY:4.00,
+				LA:5.50,
+				ME:6.00,
+				MD:6.25,
+				MA:6.00,
+				MI:6.88,
+				MN:7.00,
+				MS:4.23,
+				MO:0.00,
+				MT:5.50,
+				NE:6.85,
+				NV:0.00,
+				NH:7.00,
+				NJ:5.13,
+				NM:4.00,
+				NY:4.75,
+				NC:5.00,
+				ND:5.75,
+				OH:4.50,
+				OK:0.00,
+				OR:6.00,
+				PA:7.00,
+				RI:6.00,
+				SC:4.00,
+				SD:7.00,
+				TN:6.25,
+				TX:5.95,
+				UT:6.00,
+				VT:5.30,
+				VA:6.50,
+				WA:6.00,
+				WV:5.00,
+				WI:4.00,
+				WY:5.75
+			};
+				// Get user-entered state
+				var state = document.getElementsByName("customer_state")[0].value;
+				// Convert user-entered state to uppercase so we can match it to our object
+				state = state.toUpperCase();
+				// If state is valid it will calculate, if not it will alert user
+				if (typeof taxRates[state] !== "undefined"){
+					return taxRates[state]/100;}
+				else
+					alert("Please enter a valid state abbreviation.");
+				return 0;
+		};
+		</script>
+		
 		
 	</body>
 	
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

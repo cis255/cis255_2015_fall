@@ -8,10 +8,13 @@ design   :
 	<head> :
 		-Title
 		-Link to jQuery on CDN
+		-Bootstrap and CSS
 
 	<body> :
 		0. Header
 		1. Customer info table
+		2. Order information box
+		3. Order items table
 
 -->
 
@@ -21,19 +24,32 @@ design   :
 		<title>SVSU Golf Center </title>
 		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 		
+		<!-- Bootstrap -->
+		<meta charset="utf-8" />
+		<link href="jmbenso2_prog03.css" rel="stylesheet" /> <!-- My CSS -->
+		<link   href="_crud/css/bootstrap.min.css" rel="stylesheet" />	
+		<script src="_crud/js/bootstrap.min.js"></script>
+		
+		<style>
+			td input:focus {
+				background-color: yellow;
+			}
+		</style>
 
 	</head>
 
 	<body>
+		<!-- Page header -->
 		<div class = "page-header">
-			<div class ="text-center">
+			<div class = "text-center">
 				<h1>SVSU Golf Center</h1>
 			</div>
 		</div>
 
-
-		<!-- 1. Customer info table -->
 		<div class = "container">
+		
+		
+			<!-- 1. Customer info table -->
 			<table border="1">
 				<tr>
 					<!-- Table heading -->
@@ -42,52 +58,329 @@ design   :
 				<tr>
 					<!-- Customer name box -->
 					<td colspan="3" id="customer_name">
-						<input size="75" type="text" name="customer_name" placeholder="Customer Name" />
+						<input class="input-box-large" type="text" name="customer_name" placeholder="Customer Name" />
 					</td>
 				</tr>
 				<tr>
 					<!-- Address box-->
 					<td colspan="3" id="customer_address">
-						<input size="75" type="text" name="customer_address" placeholder="Address" />
+						<input class="input-box-large" type="text" name="customer_address" placeholder="Address" />
 					</td>
 				</tr>
 				<tr>
 					<!-- City box -->
 					<td id="customer_city">
-						<input id="customer_city_input" size="21" type="text" name="customer_city" placeholder="City"/>
+						<input class="input-box-medium" id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
 					</td>
 					
 					<!-- State box -->
 					<td id="customer_state">
-						<input id="customer_state_input" size="21" type="text" name="customer_state" placeholder="State" />
+						<input class="input-box-small" id="customer_state_input" type="text" name="customer_state" placeholder="State" />
 					</td>
 					
 					<!-- Zip box -->
 					<td id="customer_zip">
-						<input id="customer_zip_input" size="21" type="text" name="customer_zip" placeholder="Zip" />
+						<input class="input-box-small" id="customer_zip_input" type="text" name="customer_zip" placeholder="Zip" />
+					</td>
+				</tr>
+			</table>
+			<br />
+
+			<!-- 2. Order information box-->
+			<table border="1" style="table-layout: fixed;">
+				<tr>
+					<td>
+						Order Number:
+					</td>
+					<td>
+						<input id="order_number_input" type="text" name="order_number" placeholder="Order Number" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Order Date:
+					</td>
+					<td>
+						<input id="order_date_input" type="text" name="order_date" placeholder="Order Date" />						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Customer Name:
+					</td>
+					<td>
+						<input id="customer_name_input" type="text" name="customer_name" placeholder="Customer Name" />
+					</td>
+				</tr>
+			</table>
+			<br />
+			
+			<!-- 3. Order items table -->
+			<table id="details" border="1">
+				<!-- Heading row -->
+				<tr>
+					<th>
+						Item No.
+					</th>
+					<th>
+						Description
+					</th>
+					<th>
+						Quantity
+					</th>
+					<th colspan="2">
+						Price
+					</th>
+					<th colspan="2">
+						Amount
+					</th>
+				</tr>
+				<!-- many rows of input boxes -->
+				<tr class="order_row">
+					<td>
+						<input class="item_no_input input-box-small" type="text" name="item_no" /> <!-- item no box -->
+					</td>
+					<td class="description text-output-medium"> <!-- description box -->
+						Enter a valid item number (1-6).
+					</td>
+					<td>
+						<input class="quantity_input input-box-small" type="text" name="quantity" /> <!-- quantity box -->
+					</td>
+					<td>$</td>
+					<td class="price text-output-small currency"> <!-- price box -->
+						0.00
+					</td>
+					<td>$</td>
+					<td class="amount text-output-small currency"> <!-- amount box -->
+						0.00
+					</td>
+				</tr>
+				
+				<!-- row 2 -->
+
+				
+
+				
+				<!-- Bottom rows for subtotal, freight amount, tax and total amount -->
+				<tr>
+					<td colspan="5">
+						Sub-total
+					</td>
+					<td>$</td>
+					<td id="subtotal" class="currency">
+						0.00
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						Freight Amount
+					</td>
+					<td>$</td>
+					<td id="freight_amount" class="currency">
+						0.00
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						Tax
+					</td>
+					<td>$</td>
+					<td id="tax" class="currency">
+						0.00
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						Total Amount
+					</td>
+					<td>$</td>
+					<td id="total" class="currency">
+						0.00
 					</td>
 				</tr>
 			</table>
 		</div>
+		<br />
+		<br />
+		<br />
 		
-		<!-- jQuery script -->
+		<!-- 4. JavaScript/jQuery script -->
 		<script>
 			$("document").ready(function init() { // Run init when document is fully loaded
+			
+				// Object of states and taxes
+				// Brian Cobb typed this bit out for everyone. Thanks Brian!
+				var taxRates = {
+									AL:4.00,
+									AK:0.00,
+									AZ:5.60,
+									AR:6.50,
+									CA:7.50,
+									CO:2.90,
+									CT:6.35,
+									DE:0.00,
+									DC:6.00,
+									FL:4.00,
+									GA:4.00,
+									HI:6.00,
+									ID:6.25,
+									IL:7.00,
+									IN:6.00,
+									IA:6.15,
+									KS:6.00,
+									KY:4.00,
+									LA:5.50,
+									ME:6.00,
+									MD:6.25,
+									MA:6.00,
+									MI:6.88,
+									MN:7.00,
+									MS:4.23,
+									MO:0.00,
+									MT:5.50,
+									NE:6.85,
+									NV:0.00,
+									NH:7.00,
+									NJ:5.13,
+									NM:4.00,
+									NY:4.75,
+									NC:5.00,
+									ND:5.75,
+									OH:4.50,
+									OK:0.00,
+									OR:6.00,
+									PA:7.00,
+									RI:6.00,
+									SC:4.00,
+									SD:7.00,
+									TN:6.25,
+									TX:5.95,
+									UT:6.00,
+									VT:5.30,
+									VA:6.50,
+									WA:6.00,
+									WV:5.00,
+									WI:4.00,
+									WY:5.75
+								};
+								
+				// Object of freight rates for each item no.
+				var freightRates = {
+					1:10,
+					2:30,
+					3:2,
+					4:5,
+					5:11,
+					6:95
+				};
 				
-				// When an input box gets focus, turn its text red
-				$("td input[type='text']").focus(function() {
-					$(this).css("color","blue");
+				//Object with descriptions for each item no.
+				var descriptions = {
+					1:"10-pound golf club",
+					2:"Anvil-shaped mini golf decoration",
+					3:"Golf balls(3)",
+					4:"Golf balls(10)",
+					5:"Box of tees(100)",
+					6:"Real anvil for some reason"
+				};
+				
+				// Object with prices for each item no.
+				var prices = {
+					1:100,
+					2:30,
+					3:1,
+					4:2,
+					5:5,
+					6:400
+				}
+					
+				// When focusout of an input box in the table, update values
+				$("td input").focusout(function() {
+				
+					// Revert formatting (to remove highlight)
+					$("input[type='text']").css("background-color","white");
+					$("#details tr:odd input[type='text']").css("background-color","#c0c0c0");
+				
+					// If item no. is valid, update description and price
+					var row = $(this).parent().parent();	
+					var item = row.find(".item_no_input").val();
+					if(item in descriptions && item in prices) {
+						row.find(".description").text(descriptions[item]);
+						row.find(".price").text((prices[item]).toFixed(2));
+					}
+					else {
+						row.find(".description").text("Enter a valid item number (1-6).");
+						row.find(".price").text("0.00");
+					}
+				
+				
+					// In this row, calculate the amount 	
+					var price = row.find(".price").text();
+					var quantity = row.find(".quantity_input").val();
+					var amount = parseFloat(price) * parseFloat(quantity); // amount = price * quantity
+					if (isNaN(amount)) { // If there's a string or whatever in there, just call it 0 still
+						amount = 0;
+					}
+					row.find(".amount").text((parseFloat(amount)).toFixed(2)); // Update the amount
+					
+					// Update subtotal
+					var subtotal = 0;
+					var amounts = $(".amount");
+					for(var i = 0; i < amounts.size(); i++) {
+						subtotal = subtotal + parseFloat(amounts[i].innerHTML);
+					};
+					$("#subtotal").text(subtotal.toFixed(2));
+					
+					// Update freight amount and tax
+					var freight_amount = 0;
+					var all_rows = $(".order_row"); // Sum freight amount of each row
+					for(var j = 0; j < all_rows.size(); j++) {
+						var this_row = all_rows[j];
+						var j_item = $(this_row).find(".item_no_input").val(); // Get item no. of this row
+						var j_quantity = $(this_row).find(".quantity_input").val(); // and quantity of this row
+						if (isNaN(j_quantity)) // Catch various issues by making sure this is a number
+							j_quantity = 0;
+						
+						var freight_per;
+						if (item in freightRates) // Use freightRates object to check freight cost
+							freight_per = freightRates[j_item];
+						else
+							freight_per = 0; // Or default to 0
+							if (isNaN(freight_per)) // Catch various issues by making sure this is a number
+								freight_per = 0;
+							
+						freight_amount = freight_amount + (freight_per * j_quantity); // Add this row's total freight cost
+					};
+					$("#freight_amount").text(freight_amount.toFixed(2));
+					
+					// Update tax
+					var state = $("#customer_state_input").val();
+					console.log(state);
+					var tax;
+					if (state in taxRates)
+						tax = (subtotal + freight_amount) * (taxRates[state]/100);
+					else
+						tax = 0;
+					console.log(tax);
+					$("#tax").text(tax.toFixed(2));
+
+					// Update total amount
+					$("#total").text((subtotal+freight_amount+tax).toFixed(2));
+					
+				}); // end of focusout
+				
+				// When input box gets focus, color that thing yellow
+				$("td input").focus(function() {
+					$(this).css("background-color","#FFFF00");
 				});
-				
-				// When an input box loses focus, turn its text black
-				$("td input[type='text']").focusout(function() {
-					$(this).css("color","black");
-				});
-				
+			
 				// change background color of every other row
-				$("tr:odd").css("background-color","#c0c0c0");
-				$("tr:odd input[type='text']").css("background-color","#c0c0c0");
+				$("#details tr:odd").css("background-color","#c0c0c0");
+				$("#details tr:odd input[type='text']").css("background-color","#c0c0c0");
+				
+			
 			});
+
 		</script>
 	</body>
 </html>

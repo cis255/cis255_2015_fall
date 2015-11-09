@@ -30,11 +30,11 @@ design:
 		<h2>Variable Name </h2>
 		<!--1. variables; variables can start with a dollar sign, underbar, or a letter-->
 		<script>
-			var _price1 = 5;
-			var $price2 = 6;
-			var a = 1;
-			var d = a + _price1 + $price2;
-			document.write("a + _price1 + $price2 = " + d)
+			  var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
 		</script>
 		
 		<h2>Primitive Data Types</h2>
@@ -74,12 +74,16 @@ design:
 		</script>
 		
 		<h2>Conditionals, truthy, falsy </h2>
-		<!--4. conditionals             -->
+		
 		<script>
-		var n = "this"
-		var n = "Okay"
+		var n = null;
+			var u;
 			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
 			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			
+			document.write(document.getElementById("id01").innerHTML);
+			document.getElementById("id01").innerHTML=y;
+			
 		</script>
 		<p id="timeGreeting">Good Evening!</p>
 
@@ -100,9 +104,10 @@ design:
 				function myDayFunction() {
 				var day = new Date().getDay; 
 				var greeting;
-				if (Day = "Monday"||"Wednesday") {
+				if (day == "Monday"||day =="Wednesday") {
 				greeting = "Hello! You have CIS255 today";              // if else
-				} else {
+				}
+				else {
 				greeting = "You do not have CIS255 today-- you can sleep in!";
 				}
 				document.getElementById("day").innerHTML = greeting;
@@ -168,6 +173,34 @@ design:
 		<h2>Functions and Prototypes</h2>
 		<!--7. functions, prototypes    -->
 		<script>
+		// function returning square of argument
+					function square(n) {
+						return n*n;
+					}
+					
+					
+					
+					
+					// prototypes (from the w3 schools tutorial)
+					function Student(fName, lName, GPA, Major) {
+						this.fName = fName;
+						this.lName = lName;
+						this.GPA = GPA;
+						this.Major = Major;
+						
+						// method
+						this.name = function() {
+							return (this.fName+" "+ this.lName);
+						}
+					}
+					
+					var stu = new Student("Stuart","McDonald",3.30, "CIS");
+					document.write(" This is: " + stu.fName);
+					document.write(" " + stu.lName + "<br/>");
+					document.write("His GPA is: " + stu.GPA + "<br/>");
+					document.write("His Major is: " + stu.Major + "<br/>");
+					document.write("Thank you for taking the time to learn about " + stu.name() + "<br/>");
+
 		</script>
 		
 		<h2>Write to DOM</h2>

@@ -1,79 +1,378 @@
 <!DOCTYPE html>
 <!-- ------------------------------------------------------------------------
-filename: tfgenove_prog03_order.html
-author: Tessa Genovese, CIS 255, Fall 2015
-purpose: this program demonstrates javascript and jquery
-		 this is a customer order form
-design:
-		<head> title and jquery cdn
-		<body> 
-			  0. header
-			  1. customer info table
+	filename: tfgenove_prog03_order.html
+	author: Tessa Genovese, CIS 255, Fall 2015
+	purpose: this program demonstrates javascript and jquery
+	design: this is a customer order form. the numbers in the design
+			are numbered according to the assignment requirements
+			and are ordered in the order in which they appear in 
+			the program.
+	<head> title and jquery cdn
+	<body> 
+			0. header
+			1. Use Bootstrap for overall formatting
+			2. customer info table: user enterable
+			7. Use jQuery to make order detail lines appear in different color every other line
+			5. Create object of freight amounts and weights
+			3. Create object of states and taxes
+			6. Compute "Freight Amount" based on sum of Qty entered in order detail
+			4. Compute "Tax" based on State entered in customer information
+			8. Highlight in yellow any field a user clicks (in css file)
 ---------------------------------------------------------------------------- -->
 <html>
 	<head>
+		<!-- 1. Use Bootstrap for overall formatting -->
+		<link   href="_crud/css/bootstrap.min.css" rel="stylesheet">
+		<link   href="tfgenove_prog03_order.css" rel="stylesheet">
 		<title>CIS 255: Golf Center</title>
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		
 	</head>
 	
 	<body>
-		<!-- 0. header -->
-		<h1>CIS 255 Golf Center</h1>
-		<h3>Customer Order Form</h3>
-		
-		<!-- 1. customer info table -->
-		<table border="1">
-			<tr>
-				<th colspan="3">Mail Orders to:</th>
-			</tr>
-			<tr>
-				<td  colspan="3" id="customer_name">
-					<input type="text" name="customer_name" placeholder="Customer Name" size="45"/>
-				</td>
-			</tr>
-			<tr>
-				<td  colspan="3" id="customer_address">
-					<input type="text" name="customer_address" placeholder="Street Address" size="45"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_city">
-					<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
-				</td>
-				<td id="customer_state">
-					<input type="text" name="customer_state" placeholder="State" size="5"/>
-				</td>
-				<td id="customer_zip">
-					<input type="text" name="customer_zip" placeholder="Zip Code" size="10"/>
-				</td>
-			</tr>
-		</table>
-		
-		<script>
-			$ ("document").ready(function init() {
-				//Set table division background to red
-				$("#customer_city").css("background-color","red");
+		<!-- 1. Use Bootstrap for overall formatting -->
+		<div class="container">
+			
+			<!-- 0. header -->
+			<h1>CIS 255 Golf Center</h1>
+			<h3>Customer Order Form</h3>
+			
+			<!-- 1. Use Bootstrap for overall formatting -->
+			<div class="row">
+				<div class="span9">
+					<!-- 2. customer info table: user enterable -->
+					<table border="1">
+						<tr>
+							<th colspan="3">Mail Orders to:</th>
+						</tr>
+						<tr>
+							<td  colspan="3" id="customer_name">
+								<input type="text" name="customer_name" placeholder="Customer Name" />
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="3" id="customer_address">
+								<input type="text" name="customer_address" placeholder="Street Address" />
+							</td>
+						</tr>
+						<tr>
+							<td id="customer_city_td">
+								<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
+							</td>
+							<td id="customer_state_td">
+								<input type="text" id="customer_state_input" placeholder="State" />
+							</td>
+							<td id="customer_zip_td">
+								<input type="text" id="customer_zip_input" placeholder="Zip Code" />
+							</td>
+						</tr>
+					</table>
+				</div>
 				
-				//Set input box background to green
-				$("#customer_city_input").css("background-color","green");
-				
-				//if the input box is in focus, set background to yellow 
-				$("#customer_city_input").focus(function(){
-					$(this).css("background-color", "yellow");
+				<!-- 1. Use Bootstrap for overall formatting -->
+				<!-- order info table -->
+				<div class="span3">
+					<table border="1">
+						<tr>
+							<td>Order Number</td>
+							<td>
+								<input id="ordernum" type="text" placeholder="Order Number"/>
+							</td>
+						</tr>
+						<tr>
+							<td>Order Date</td>
+							<td>
+								<input id="orderdate" type="text" placeholder="Order Date" />
+							</td>
+						</tr>
+						<tr>
+							<td>Customer Name</td>
+							<td>
+								<input id="customername" type="text" placeholder="Customer Name" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<!-- 1. Use Bootstrap for overall formatting -->
+			<!-- order details table -->
+			<div class="col-md-6">
+				<table border="1">
+					<tr class="order"><th>Item No.</th>
+						<th>Description</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Amount</th>
+					</tr>
+					<tr class="order">
+						<td><input id="item1" type="text" /></td>
+						<td><input id="description1" type="text" readonly /></td>
+						<td><input id="quantity1" type="text" /></td>
+						<td><input id="price1" type="text" readonly /></td>
+						<td><input id="amount1" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item2" type="text" /></td>
+						<td><input id="description2" type="text" readonly /></td>
+						<td><input id="quantity2" type="text" /></td>
+						<td><input id="price2" type="text" readonly /></td>
+						<td><input id="amount2" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item3" type="text" /></td>
+						<td><input id="description3" type="text" readonly /></td>
+						<td><input id="quantity3" type="text" /></td>
+						<td><input id="price3" type="text" readonly /></td>
+						<td><input id="amount3" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item4" type="text" /></td>
+						<td><input id="description4" type="text" readonly /></td>
+						<td><input id="quantity4" type="text" /></td>
+						<td><input id="price4" type="text" readonly /></td>
+						<td><input id="amount4" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item5" type="text" /></td>
+						<td><input id="description5" type="text" readonly /></td>
+						<td><input id="quantity5" type="text" /></td>
+						<td><input id="price5" type="text" readonly /></td>
+						<td><input id="amount5" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item6" type="text" /></td>
+						<td><input id="description6" type="text" readonly /></td>
+						<td><input id="quantity6" type="text" /></td>
+						<td><input id="price6" type="text" readonly /></td>
+						<td><input id="amount6" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item7" type="text" /></td>
+						<td><input id="description7" type="text" readonly /></td>
+						<td><input id="quantity7" type="text" /></td>
+						<td><input id="price7" type="text" readonly /></td>
+						<td><input id="amount7" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item8" type="text" /></td>
+						<td><input id="description8" type="text" readonly /></td>
+						<td><input id="quantity8" type="text" /></td>
+						<td><input id="price8" type="text" readonly /></td>
+						<td><input id="amount8" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td><input id="item9" type="text" /></td>
+						<td><input id="description9" type="text" readonly /></td>
+						<td><input id="quantity9" type="text" /></td>
+						<td><input id="price9" type="text" readonly /></td>
+						<td><input id="amount9" type="text" readonly /></td>
+					</tr>
+					<tr class="order">
+						<td colspan="4">Subtotal</td>
+						<td id="subtotal"></td>
+					</tr>
+					<tr class="order">
+						<td colspan="4">Freight Amount</td>
+						<td id="freightamount"></td>
+					</tr>
+					<tr class="order">
+						<td colspan="4">Tax</td>
+						<td id="tax"></td>
+					</tr>
+					<tr class="order">
+						<td colspan="4">Total Amount</td>
+						<td id="total"></td>
+					</tr>
+				</table>
+			</div>
+			
+			<script>
+				$ ("document").ready(function init() {				
+					//7. Use jQuery to set every other line in the order detail table as a different color
+					//Set every other line in the order table to gray or pink
+					$("tr.order:odd").css("background-color", "gray");
+					$("tr.order:even").css("background-color", "pink");
 				});
 				
-				//if the input box loses focus, set background to blue
-				$("#customer_city_input").focusout(function(){
-					$(this).css("background-color", "blue");
+				
+				//5. Create object of freight amounts and weights (freight costs are the freight keys in the object)
+				var Item = {number1:1,
+					price1:10,
+					desc1:'1 lb item',
+					freight1:1,
+					weight1:1,
+					number2:2,
+					price2:20,
+					desc2:'2 lb item',
+					freight2:2,
+					weight2:2,
+					number3:3,
+					price3:30,
+					desc3:'3 lb item',
+					freight3:3,
+					weight3:3,
+					number4:4,
+					price4:40,
+					desc4:'4 lb item',
+					freight4:4,
+					weight4:4,
+					number5:5,
+					price5:50,
+					desc5:'5 lb item',
+					freight5:5,
+					weight5:5,
+					number6:6,
+					price6:60,
+					desc6:'6 lb item',
+					freight6:6,
+					weight6:6,
+					number7:7,
+					price7:70,
+					desc7:'7 lb item',
+					freight7:7,
+					weight7:7,
+					number8:8,
+					price8:80,
+					desc8:'8 lb item',
+					freight8:8,
+					weight8:8,
+					number9:9,
+					price9:90,
+					desc9:'9 lb item',
+					freight9:9,
+					weight9:9
+				};
+				
+				//3. Create object of states and taxes
+				var taxRates = {
+					AL:4.00,
+					AK:0.00,
+					AZ:5.60,
+					AR:6.50,
+					CA:7.50,
+					CO:2.90,
+					CT:6.35,
+					DE:0.00,
+					DC:6.00,
+					FL:4.00,
+					GA:4.00,
+					HI:6.00,
+					ID:6.25,
+					IL:7.00,
+					IN:6.00,
+					IA:6.15,
+					KS:6.00,
+					KY:4.00,
+					LA:5.50,
+					ME:6.00,
+					MD:6.25,
+					MA:6.00,
+					MI:6.00,
+					MN:7.00,
+					MS:4.23,
+					MO:0.00,
+					MT:5.50,
+					NE:6.85,
+					NV:0.00,
+					NH:7.00,
+					NJ:5.13,
+					NM:4.00,
+					NY:4.75,
+					NC:5.00,
+					ND:5.75,
+					OH:4.50,
+					OK:0.00,
+					OR:6.00,
+					PA:7.00,
+					RI:6.00,
+					SC:4.00,
+					SD:7.00,
+					TN:6.25,
+					TX:5.95,
+					UT:6.00,
+					VT:5.30,
+					VA:6.50,
+					WA:6.00,
+					WV:5.00,
+					WI:4.00,
+					WY:5.75
+				};
+				
+				//Calls functions to calculate all of the totals
+				function CalcTotals(){
+					$("#subtotal").html(CalcSubtotal());
+					$("#freightamount").html(CalcFreightAmount());
+					$("#tax").html(CalcTax());
+					$("#total").html(CalcGrandTotal());
+				}
+				
+				//Calculates the order subtotal
+				function CalcSubtotal(){
+					return (parseFloat(+document.getElementById("amount1").value) + parseFloat(+document.getElementById("amount2").value) + 
+					parseFloat(+document.getElementById("amount3").value) + parseFloat(+document.getElementById("amount4").value) +
+					parseFloat(+document.getElementById("amount5").value) + parseFloat(+document.getElementById("amount6").value) +
+					parseFloat(+document.getElementById("amount7").value) + parseFloat(+document.getElementById("amount8").value) +
+					parseFloat(+document.getElementById("amount9").value)).toFixed(2);
+				}
+				
+				//6. Compute Freight Amount based on quantity entered
+				function CalcFreightAmount(){
+					var freightAmount = 0;
+					
+					for (i=1;i<10;i++){
+						var itemNum = $("#item"+i).val();
+						if (itemNum > 0){						
+							freightAmount += (Item['freight'+itemNum] * $("#quantity"+i).val());
+						}
+					}
+					return freightAmount.toFixed(2);
+				}
+				
+				//4. Compute tax based on state entered
+				function CalcTax(){
+					var state = $("#customer_state_input").val();
+					return (Math.round(((taxRates[state])*$("#subtotal").html())) / 100).toFixed(2);
+				}
+				
+				//Calculates the grand total
+				function CalcGrandTotal(){
+					return (parseFloat($("#subtotal").html()) + parseFloat($("#tax").html()) + parseFloat($("#freightamount").html())).toFixed(2);
+				}
+				
+				//4. Compute tax based on state entered (calls CalcTax through CalcTotals)
+				//6. Compute Freight Amount based on quantity entered (calls CalcFreightAmount through CalcTotals)
+				//Populates the order detail boxes 
+				$("#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9").focusout(function(event){
+					var id = event.target.id;
+					var value = $("#"+id).val();
+					if (value > 0  &&  value < 10){
+						$("#description"+value).val(Item['desc'+value]);
+						$("#price"+value).val(Item['price'+value]);
+						$("#quantity"+value).val(1);
+						$("#amount"+value).val(Item['price'+value]);
+					}
+					else{
+						window.alert("Valid item numbers are 1-9");
+						$("#"+id).val(null);
+						$("#description"+value).val(null);
+						$("#price"+value).val(null);
+						$("#quantity"+value).val(null);
+						$("#amount"+value).val(null);
+					}
+					CalcTotals();
 				});
 				
-				//Set every other line in the table to gray
-				$("tr:odd").css("background-color", "gray");
-				$("tr:odd input").css("background-color", "gray");
+				//Recalculates the amount boxes and the total boxes
+				$("#quantity1, #quantity2, #quantity3, #quantity4, #quantity5, #quantity6, #quantity7, #quantity8, #quantity9").focusout(function(event){
+					var id2 = event.target.id;
+					var value2 = +id2.replace("quantity","");
+					var total = parseFloat($("#price"+value2).val()) * parseFloat($("#quantity"+value2).val());
+					$("#amount"+value2).val(total);
+					CalcTotals();
+				});
 				
-				var tableRows = $("tr");
-				
-			});
-		</script>
+			</script>
+		</div>   <!-- end container -->
 	</body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+	filename	: bjcobb_exercise05.http	
+	purpsose	: demonstarte the difference between javascript and jquery
+	design		: <head>
+				: javascript: script for temprature conversion
+				jquery: scrip tfor temerature conversion
+				<body>
+					1. head and paragraph
+					2. script for printing numbers, 1-10
+					3.
+-->
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<!-- 1. header and paragraph -->
+<h1>Brian Cobb </h1>
+
+<h2> Exercise 05: Javascript v. jquery</h2>
+
+<p>The purpose of this page is to demonstarte the difference between javascript and jquery</p>
+
+<!-- 2. script for printing numbers, 1-10 -->
+<script>
+    var i;
+    for (i = 1; i <= 10; i++) {
+        document.write(i + "<br/>");
+    }
+</script>
+
+<!-- 3. celsius to farenheit converter -->
+<p>Type a number in one of the boxes below.</p>
+<input id="celsius" onkeyup="convert('C');">degrees Celsius<br/>
+equals<br/>
+<input id="farenheit" onkeyup="convert('F');">degrees Farenheit<br/>
+equals<br/>
+<input id="kelvin" onkeyup="convert('K');">degrees Kelvin<br/>
+<br><br><br>
+
+<script>
+    function convert(degrees) {
+        if (degrees == 'C') {
+            var C = parseFloat(document.getElementById('celsius').value);
+            var F = 1.8 * C + 32;
+            var K = C + 273.15;
+            document.getElementById('kelvin').value = K;
+            document.getElementById('farenheit').value = F;
+        }
+        if (degrees == 'F') {
+            var F = parseFloat(document.getElementById('farenheit').value);
+            var C = (F - 32 ) / 1.8;
+            var K = C + 273.15;
+            document.getElementById('kelvin').value = K;
+            document.getElementById('celsius').value = C;
+        }
+        if (degree == 'K') {
+            var K = parseFloat(document.getElementById('kelvin').value);
+            var C = (F - 32 ) / 1.8;
+            var F = Math.round(1.8 * C + 32, 2);
+            document.getElementById('farenheit').value = F;
+            document.getElementById('celsius').value = C;
+        }
+    }
+    ;
+</script>
+<!-- 4. celsius to farenheit converter in jquery-->
+<p>Type a number in one of the boxes below.</p>
+<input id="celsius2">degrees Celsius<br/>
+equals<br/>
+<input id="farenheit2">degrees Farenheit<br/>
+equals<br/>
+<input id="kelvin2">degrees Kelvin<br/>
+<br/><br/>
+<script>
+    $("#celsius2").keyup(function() {
+        $("#farenheit2").val(this.value * 1.8 + 32);
+        $("#kelvin2").val(parseFloat(this.value) +273.15);
+    });
+</script>
+</body>
+</html>

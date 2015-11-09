@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-------------------------------------------------------------------------------------------------------	
+filename	: bmmitche_prog02.html
+author		: Bobby Mitchell
+description	: This program demonstrated javascript and jquery 
+design		: 
+	<head>	: favicon and title 
+	<body>	: 	
+			0. Header
+			1. variable names
+			2. primitive data types
+			3. operators, expressions
+			4. conditionals -> truthy and falsy 
+			5. control structures (for, do, while, swtich case)
+			6. objects and arrays
+			7. functions, prototypes
+			8. write to DOM
+			9. jQuery customer order form
+--------------------------------------------------------------------------------------------------------->
+<html>
+	<head>
+		<!-- favigcon image and browser tab title -->
+		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
+		<title>CIS 255: Bobby Mitchell</title>
+	</head>	
+	<body>
+		<!-- 0. Header -->
+		<h1>Bobby Mitchell, CIS 255, Program 3</h1>
+		<p  id="id01"> This is my program number 3</p>
+		
+		<!-- 1. Variable names -->
+		<h2>1. Variable Names</h2>
+		<!-- variable names are case sensitive and can start with $_ or -->
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		<!-- 2. Primative data types -->
+		<h2>2. Primative data types</h2>
+		<script>
+			var x = 5; //number
+			var y = "zippy"; //string
+			var a = true;
+			var b = false;
+			var r;
+			var g = null;
+			document.write("var x is type: "+typeof(x)+"</br>");
+			document.write("var y is type: "+typeof(y)+"</br>");
+			document.write("var a is type: "+typeof(a)+"</br>");
+			document.write("var b is type: "+typeof(b)+"</br>");
+			document.write("var r is type: "+typeof(r)+"</br>");
+			document.write("var g is type: "+typeof(g)+"</br>");
+		</script>
+		
+		<!-- 3. operators, expressions -->
+		<h2>3. operators, expressions</h2>
+		<script>
+			var a = 34;
+			var b = 23;
+			var x = "bob"
+			var c = a + b;
+			var d = a - b;
+			var e = a * b;
+			var f = x + b;
+			document.write("a = "+a+"</br>");
+			document.write("b = "+b+"</br>");
+			document.write("c = a + b = "+c+"</br>");
+			document.write("d = a - b = "+d+"</br>");
+			document.write("e = a * b = "+e+"</br>");
+			document.write("f = x + b = "+f+"</br>");
+		</script>
+		
+		<!-- 4. Conditionals truthy and falsy -->
+		<h2>4. Conditionals truthy and falsy</h2>
+		<script>
+			(r==g)? document.write("r=g<br/>") : document.write("r!=g<br/>");
+			(r===g)? document.write("r=g<br/>") : document.write("r!=g<br/>");
+		</script>
+
+		<!-- 5. Control structures -->		
+		<h2>5. Control structures</h2>
+		<p>For part: Click the button to loop through a block of code five times.</p>
+
+		<button onclick="myFunction()">Try it</button>
+
+		<p id="demo"></p>
+
+		<script>
+			function myFunction() {
+			var text = "";
+			var i;
+			for (i = 0; i < 5; i++) {
+				text += "The number is " + i + "<br>";
+				}
+			document.getElementById("demo").innerHTML = text;
+			}
+		</script>
+		
+		<p>Do while part: Click the button to loop through a block of code as long as i is less than 10.</p>
+
+		<button onclick="bobFunction()">Try it</button>
+
+		<p id="loop"></p>
+
+		<script>
+		function bobFunction() {
+			var text = ""
+			var i = 0;
+			do {
+				text += "<br>The number is " + i;
+				i++;
+			}
+			while (i < 10)  
+			document.getElementById("loop").innerHTML = text;
+		}
+		</script>
+		
+		<!-- 8. Write to DOM -->
+		<h2> 8. Write to DOM </h2>
+		<script>
+		document.write(document.getElementById("id01").innerHTML);
+		document.getElementById("id01").innerHTML=y;
+		</script>
+		
+		<!-- 9. jQuery customer order form -->
+		<h2>9. jQuery customer order form</h2>
+		<a href="bmmitche_prog03_order.html">Program 3 Order Form</a>
+	</body>
+	
+</html>		  

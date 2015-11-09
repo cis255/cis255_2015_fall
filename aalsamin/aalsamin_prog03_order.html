@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- ----------------------------------------------------------------
+filename : aalsamin_prog03_order.html
+author   : Abdulmohsen Alsamin, cis255
+purpose  : this program demonstrates JS and jquery
+design   : 
+	<head> favicon image and tab title
+	<body>
+		0. header
+		1. Customer Order Form
+		2. States and Taxes Object
+--------------------------------------------------------------------- -->
+<html>
+	<head>
+		<!-- this is favicon image and tab title -->
+		<link rel='icon' href='http://csis.svsu.edu/~gpcorser/cardinal_logo.png' type='image/png' />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<title>CIS-255 Golf Center</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<!-- 0. header -->
+		<h1 align="middle">CIS-255 Golf Center</h1>
+		
+		<div class="container">
+		
+		<h3 align="left">Customer Order Form</h3>
+		
+		<!-- 1. Customer Order Form -->
+		<table class="table table-bordered">
+
+			<tr>
+				<th colspan="3">Mail Orders to:</th>
+			</tr>
+			<tr>
+				<td id="company_name" colspan="3">
+					<input class="highlight form-control" size="46" type="text" name="customer_name" placeholder="Company Name"/>
+				</td>
+				<td>
+					Order Number: 
+				</td>
+				<td>
+					<input class="highlight form-control" type="text" placeholder="#####"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_address" colspan="3">
+					<input class="highlight form-control" size="46" type="text" name="customer_address" placeholder="Address"/>
+				</td>
+				<td>
+					Order Date: 
+				</td>
+				<td>
+					<input class="highlight form-control" type="text" placeholder="MM/DD/YYYY"/>
+				</td>
+			</tr>
+			<tr>
+				<td id="customer_city">
+					<input class="highlight form-control" id="customer_city_input" type="text" name="customer_city_" placeholder="City"/>
+				</td>
+				<td id="customer_state">
+					<input class="highlight form-control" id="customer_state_input" type="text" size="5" name="customer_state" placeholder="State 'AA'"/>
+				</td>
+				<td id="customer_zip">
+					<input class="highlight form-control" id="customer_zip_input" type="text" size="10" name="customer_zip" placeholder="Zip"/>
+				</td>
+				<td>
+					Customer Name: 
+				</td>
+				<td>
+					<input class="highlight form-control" type="text" placeholder="First Last"/>
+				</td>
+			</tr>
+		</table>
+		
+		<table class="table table-bordered" id="order_detail">
+			<tr>
+				<th>Item No.</th>
+				<th>Description</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<td><input class="highlight form-control" size="5" id="itemNum0" type="text"/></td>
+				<td><input class="highlight form-control" id="desc0" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity0" type="text"/></td>
+				<td><input class="highlight form-control" id="price0" type="text"/></td>
+				<td id="amount0"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum1" type="text"/></td>
+				<td><input class="highlight form-control" id="desc1" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity1" type="text"/></td>
+				<td><input class="highlight form-control" id="price1" type="text"/></td>
+				<td id="amount1"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum2" type="text"/></td>
+				<td><input class="highlight form-control" id="desc2" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity2" type="text"/></td>
+				<td><input class="highlight form-control" id="price2" type="text"/></td>
+				<td id="amount2"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum3" type="text"/></td>
+				<td><input class="highlight form-control" id="desc3" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity3" type="text"/></td>
+				<td><input class="highlight form-control" id="price3" type="text"/></td>
+				<td id="amount3"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum4" type="text"/></td>
+				<td><input class="highlight form-control" id="desc4" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity4" type="text"/></td>
+				<td><input class="highlight form-control" id="price4" type="text"/></td>
+				<td id="amount4"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum5" type="text"/></td>
+				<td><input class="highlight form-control" id="desc5" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity5" type="text"/></td>
+				<td><input class="highlight form-control" id="price5" type="text"/></td>
+				<td id="amount5"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum6" type="text"/></td>
+				<td><input class="highlight form-control" id="desc6" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity6" type="text"/></td>
+				<td><input class="highlight form-control" id="price6" type="text"/></td>
+				<td id="amount6"></td>
+			</tr>          
+			<tr>           
+				<td><input class="highlight form-control" id="itemNum7" type="text"/></td>
+				<td><input class="highlight form-control" id="desc7" type="text"/></td>
+				<td><input class="highlight form-control" id="quantity7" type="text"/></td>
+				<td><input class="highlight form-control" id="price7" type="text"/></td>
+				<td id="amount7"></td>
+			</tr>
+			
+			<tr>
+				<td align="right" colspan="4" >Sub Total</td>
+				<td size="15" id="sub_total"></td>
+			</tr>
+			<tr>
+				<td align="right" colspan="4">Freight Amount</td>
+				<td size="15" id="freight_total"></td>
+			</tr>
+			<tr>
+				<td align="right" colspan="4">Tax</td>
+				<td size="15" id="tax"></td>
+			</tr>
+			<tr>
+				<td align="right" colspan="4">Total Amount</td>
+				<td size="15" id="total_amount"></td>
+			</tr>
+		</table>
+
+		<script>
+		$("document").ready(function init() {
+		
+			<!-- 2. Staes and Taxes Object -->
+			var taxRates = {
+				AL:0.0400,
+				AK:0.0000,
+				AZ:0.0560,
+				AR:0.0650,
+				CA:0.0750,
+				CO:0.0290,
+				CT:0.0635,
+				DE:0.0000,
+				DC:0.0600,
+				FL:0.0400,
+				GA:0.0400,
+				HI:0.0600,
+				ID:0.0625,
+				IL:0.0700,
+				IN:0.0600,
+				IA:0.0615,
+				KS:0.0600,
+				KY:0.0400,
+				LA:0.0550,
+				ME:0.0600,
+				MD:0.0625,
+				MA:0.0600,
+				MI:0.0688,
+				MN:0.0700,
+				MS:0.0423,
+				MO:0.0000,
+				MT:0.0550,
+				NE:0.0685,
+				NV:0.0000,
+				NH:0.0700,
+				NJ:0.0513,
+				NM:0.0400,
+				NY:0.0475,
+				NC:0.0500,
+				ND:0.0575,
+				OH:0.0450,
+				OK:0.0000,
+				OR:0.0600,
+				PA:0.0700,
+				RI:0.0600,
+				SC:0.0400,
+				SD:0.0700,
+				TN:0.0625,
+				TX:0.0595,
+				UT:0.0600,
+				VT:0.0530,
+				VA:0.0650,
+				WA:0.0600,
+				WV:0.0500,
+				WI:0.0400,
+				WY:0.0575
+			};
+			
+			var weights = {
+				111:1,
+				222:2,
+				333:3
+			};
+			
+			$("input").change(function(){update();});
+			
+			function update(){
+			
+				var sub_total = 0;
+				
+				var freight_rate = 2;
+				
+				var freight_amount = 0;
+				
+				var amt0 = document.getElementById("quantity0").value * document.getElementById("price0").value;
+				document.getElementById("amount0").innerHTML = "$" + (amt0).toFixed(2);
+				
+				sub_total = sub_total + amt0;
+				
+				if (document.getElementById("itemNum0").value !=="" && document.getElementById("quantity0").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity0").value * weights[document.getElementById("itemNum0").value]));
+				
+				var amt1 = document.getElementById("quantity1").value * document.getElementById("price1").value;
+				document.getElementById("amount1").innerHTML = "$" + (amt1).toFixed(2);
+				
+				sub_total = sub_total + amt1;
+				
+				if (document.getElementById("itemNum1").value !=="" && document.getElementById("quantity1").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity1").value * weights[document.getElementById("itemNum1").value]));
+				
+				var amt2 = document.getElementById("quantity2").value * document.getElementById("price2").value;
+				document.getElementById("amount2").innerHTML = "$" + (amt2).toFixed(2);
+				
+				sub_total = sub_total + amt2;
+				
+				if (document.getElementById("itemNum2").value !=="" && document.getElementById("quantity2").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity2").value * weights[document.getElementById("itemNum2").value]));
+				
+				var amt3 = document.getElementById("quantity3").value * document.getElementById("price3").value;
+				document.getElementById("amount3").innerHTML = "$" + (amt3).toFixed(2);
+				
+				sub_total = sub_total + amt3;
+				
+				if (document.getElementById("itemNum3").value !=="" && document.getElementById("quantity3").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity3").value * weights[document.getElementById("itemNum3").value]));
+				
+				var amt4 = document.getElementById("quantity4").value * document.getElementById("price4").value;
+				document.getElementById("amount4").innerHTML = "$" + (amt4).toFixed(2);
+				
+				sub_total = sub_total + amt4;
+				
+				if (document.getElementById("itemNum4").value !=="" && document.getElementById("quantity4").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity4").value * weights[document.getElementById("itemNum4").value]));
+				
+				var amt5 = document.getElementById("quantity5").value * document.getElementById("price5").value;
+				document.getElementById("amount5").innerHTML = "$" + (amt5).toFixed(2);
+				
+				sub_total = sub_total + amt5;
+				
+				if (document.getElementById("itemNum5").value !=="" && document.getElementById("quantity5").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity5").value * weights[document.getElementById("itemNum5").value]));
+				
+				var amt6 = document.getElementById("quantity6").value * document.getElementById("price6").value;
+				document.getElementById("amount6").innerHTML = "$" + (amt6).toFixed(2);
+				
+				sub_total = sub_total + amt6;
+				
+				if (document.getElementById("itemNum6").value !=="" && document.getElementById("quantity6").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity6").value * weights[document.getElementById("itemNum6").value]));
+				
+				var amt7 = document.getElementById("quantity7").value * document.getElementById("price7").value;
+				document.getElementById("amount7").innerHTML = "$" + (amt7).toFixed(2);
+				
+				sub_total = sub_total + amt7;
+				
+				if (document.getElementById("itemNum7").value !=="" && document.getElementById("quantity7").value !=="")
+					freight_amount = freight_amount + (freight_rate * (document.getElementById("quantity7").value * weights[document.getElementById("itemNum7").value]));
+				
+				document.getElementById("sub_total").innerHTML = "$" + (sub_total).toFixed(2);
+				
+				var tax = sub_total * taxRates[document.getElementById("customer_state_input").value];
+				
+				document.getElementById("tax").innerHTML = "$" + (tax).toFixed(2);
+				
+				document.getElementById("freight_total").innerHTML = "$" + (freight_amount).toFixed(2);
+				
+				var total_amount = sub_total + tax + freight_amount;
+				
+				document.getElementById("total_amount").innerHTML = "$" + (total_amount).toFixed(2);
+		
+			};
+		
+			
+			var tax = price * taxRates[document.getElementById("customer_state_input")];
+			
+			var taxTotal = 0;
+			
+			<!-- this function will Turn box Yellow when clicked on -->
+
+			$(".highlight").focus(function () {
+				$(this).css("background-color","yellow");
+			});
+			
+			$(".highlight").focusout(function () {
+				$(this).css("background-color","#ffffff");
+			});
+			
+			$(".highlight").focusout(function () {
+				$("#order_detail tr:odd input").css("background-color","#c0c0c0");
+				$("#order_detail tr:even input").css("background-color","#ffffff");
+			});
+			
+			<!-- this function will set every other line in the table to gray -->
+
+			$("#order_detail tr:odd input").css("background-color","#c0c0c0");
+			$("#order_detail tr:odd").css("background-color","#c0c0c0");
+		
+		});
+		</script>
+		
+	</body>
+</html>
