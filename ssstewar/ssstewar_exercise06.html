@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-filename : gpcorser_exercise06.html
-purpose  : 
+filename : ssstewar_exercise06.html
+purpose  : demonstrate ajax example on w3schools
 design   : <head> 
 
            <body> 
@@ -9,64 +9,76 @@ design   : <head>
 -->
 <html>
 	<head>
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js">
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	</head>
 	<body>
-	    <!-- 1. header and paragraph -->
-		<h1 class="odd">Steve Stewart</h1>
-		<h2>Exercise 05: JavaScript v. jQuery</h2>
-		<p>The purpose of this page is to demonstrate difference between JavaScript and jQuery. </p>
+	    <h1>Exercise 6</h1>
+		<h2>Demonstrate AJAX</h2>
+		<h3>Start typing a name in the input field below:</h3>
 
-	    <!-- 2. script for printing numbers -->	
-		<script>
-			var i;
-			for(i=1;i<=10;i++){
-				document.write(i+"<br/>");
-			}
-		</script>
-		
-		<!-- 3. Celsius to Fahrenheit converter -->
-		<p>Type a number in one of the boxes below</p>
-		<input id="Celsius" onkeyup="convert('C');">degrees Celsius<br/>
-		equals<br/>
-		<input id="Fahrenheit" onkeyup="convert('F');">degrees Fahrenheit<br/>
-		equals<br/>
-		<input id="Kelvin" onkeyup="convert('K');">degrees Kelvin<br/>
-		
-		<script>
-		function convert(degrees){
-			if(degrees =='C'){
-				var C = document.getElementById('Celsius').value;
-				C = parseFloat(C);
-				var F = 1.8 * C + 32;
-				var K = (C + 273.15).toFixed(2);
-				document.getElementById('Fahrenheit').value = F;
-				document.getElementById('Kelvin').value = K;
-			}	
-			
-			if(degrees =='F'){
-				var F = document.getElementById('Fahrenheit').value;
-				var C = (F - 32) / 1.8;
-				document.getElementById('Celsius').value = C;
-			}
-		};
-		</script>
-		
-		
-		
-		<!-- 4. Celsius to Fahrenheit conversion in jQuery-->
-		<p>Type a number in one of the boxes below</p>
-		<input id="Celsius2">degrees Celsius<br/>
-		equals<br/>
-		<input id="Fahrenheit2">degrees Fahrenheit<br/>
-		equals<br/>
-		<input id="Kelvin2">degrees Kelvin<br/>
-		
-		<script>
-			$("#Celsius2").keyup(function() {
-				$("#Fahrenheit2").val(this.value * 1.8 + 32);
-				$("#Kelvin2").val((parseFloat(this.value) + 273.15).toFixed(2));
-			});
-		</script>
-	</body>
-</html>
+		<form action=""> 
+			<p>First name: </p>
+			<input type="text" id="txt1" onkeyup="showHint(this.value)">
+			</form>
+
+			<p>Suggestions: <span id="txtHint"></span>
+			</p> 
+
+			<script>
+				function showHint(str) {
+				
+					if (str.length === 0) { 						
+						$("#txtHint").text("");
+						return;
+					  }
+				console.log("Here");	  
+					$.ajax("gethint.php?q="+str,{
+						success: function(data) {		
+							//replace last , with and
+							var pos = data.lastIndexOf(',');
+							data = data.substring(0,pos)+' and '+data.substring(pos+1);
+							//end replace
+							$("#txtHint").text(data);
+						},
+						error: function() {
+						console.log("here 3")
+							$("#txtHint").val("AJAX error occurred");
+						}
+					});
+				}
+				function showHintOld(str) {
+				  var xhttp;
+				  if (str.length == 0) { 
+					document.getElementById("txtHint").innerHTML = "";
+					return;
+				  }
+				  xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 && xhttp.status == 200) {
+					  document.getElementById("txtHint").innerHTML = xhttp.responseText;
+					}
+				  }
+				  xhttp.open("GET", "gethint.php?q="+str, true);
+				  xhttp.send();   
+				}
+			</script>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+		</body>
+	</html>
