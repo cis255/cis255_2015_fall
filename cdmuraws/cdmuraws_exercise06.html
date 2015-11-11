@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+filename : cdmuraws_exercise06.html
+purpose  : demonstrate ajax example on w3schools
+design   : <head> 
+
+           <body> 
+
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+	    <h1>Exercise 6</h1>
+		<h2>Demonstrate AJAX</h2>
+		<h3>Start typing a name in the input field below:</h3>
+
+		<!-- 1. Get input from user -->
+		<form action=""> 
+			<p>First name: </p>
+			<input type="text" id="txt1" onkeyup="showHint(this.value)">
+		</form>
+
+		<!-- Show option from php file -->
+		<p>Suggestions: <span id="txtHint"></p>
+
+		<script>
+			// shows the info from server
+			function showHint(str) {
+			  var n = -1
+			  var xhttp;
+			  if (str.length == 0) { // blanks out suggestions if input field is empty
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			  }
+			  xhttp = new XMLHttpRequest(); // creates object to send/receive request
+			  xhttp.onreadystatechange = function() {
+				// displays the infor if 4 (message received) and 200 (status=success)
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+				  document.getElementById("txtHint").innerHTML = xhttp.responseText;
+				  str2 = document.getElementById("txtHint").innerHTML;
+				  n = str2.lastIndexOf(",");
+				  if (n > -1) {
+					document.getElementById("txtHint").innerHTML =
+						str2.substr(0,n) + " and" + str2.substr(n+1);
+				  }
+				  console.log(n);
+				}
+			  }
+			  xhttp.open("GET", "cdmuraws_gethint.php?q="+str, true);
+			  xhttp.send();   
+			}
+		</script>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+		</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
