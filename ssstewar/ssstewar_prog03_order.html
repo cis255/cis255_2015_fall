@@ -32,11 +32,15 @@ design   :
 			<td id="customer_name" colspan="3">
 				<input size="46" type="text" name="customer_name" placeholder="Customer Name"/>
 			</td>
+			<th>Order Number: </th>
+			<th></th>
 		  </tr>	
 		  <tr>
 		    <td id="customer_address" colspan="3">
 				<input size="46" type="text" name="customer_address" placeholder="Address"/>
 			</td>
+			<th>Order Date: </th>
+			<th></th>
 		  </tr>
 		  
 			  <tr>
@@ -49,9 +53,165 @@ design   :
 				<td id="customer_zip">
 					<input type="text" size="10" name="customer_zip" placeholder="Zip"/>
 				</td>
+				<th>Customer Name: </th>
+				<th></th>
 			  </tr>
 		</table>
 		
+		<table border = "2">
+			<col width="150">
+			<col width="100">
+			<col width="100">
+			<col width="150">
+			<col width="100">
+			<tr>
+				<th>Item No.</th>
+				<th>Description</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Amount</th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr style="height:20px;">
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr style="height:20px;">
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr style="height:20px;">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<style>
+				th {
+						text-align: right;
+					}
+				</style>
+				<th colspan="4">Subtotal</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th colspan="4">Freight Amount</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th colspan="4">Tax</th>
+				<th id="taxRates" type="text"></th>
+			</tr>
+			<tr>
+				<th colspan="4">Total Amount</th>
+				<th></th>
+			</tr>
+		</table>
+		
+		<script>
+			var taxRates = {
+			AL:4.00,
+			AK:0.00,
+			AZ:5.60,
+			AR:6.50,
+			CA:7.50,
+			CO:2.90,
+			CT:6.35,
+			DE:0.00,
+			DC:6.00,
+			FL:4.00,
+			GA:4.00,
+			HI:6.00,
+			ID:6.25,
+			IL:7.00,
+			IN:6.00,
+			IA:6.15,
+			KS:6.00,
+			KY:4.00,
+			LA:5.50,
+			ME:6.00,
+			MD:6.25,
+			MA:6.00,
+			MI:6.88,
+			MN:7.00,
+			MS:4.23,
+			MO:0.00,
+			MT:5.50,
+			NE:6.85,
+			NV:0.00,
+			NH:7.00,
+			NJ:5.13,
+			NM:4.00,
+			NY:4.75,
+			NC:5.00,
+			ND:5.75,
+			OH:4.50,
+			OK:0.00,
+			OR:6.00,
+			PA:7.00,
+			RI:6.00,
+			SC:4.00,
+			SD:7.00,
+			TN:6.25,
+			TX:5.95,
+			UT:6.00,
+			VT:5.30,
+			VA:6.50,
+			WA:6.00,
+			WV:5.00,
+			WI:4.00,
+			WY:5.75
+			};
+		</script>
 		<script>
 		$("document").ready(function init() {
 		

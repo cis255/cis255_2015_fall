@@ -1,0 +1,13 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<p> aksdj;l </p>
+<script> 
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+</script> 
+</body> 
+</html>

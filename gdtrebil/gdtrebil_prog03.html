@@ -20,106 +20,194 @@ design :
 		<!-- favicon image and browser tab title -->
 		<title>CIS-255: Grant Trebilcock</title>
 		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
-		
+
 	</head>
-	
+
 	<body>
-	<h1> Grant Trebilcock, CIS-255, Program 3 </h1>
-	<p id="id01"> This is a template for program 3</p>
-	<!-- 1. variable names -->
-	<!-- variable names are case sensative -->
-	<script>
-	   var a = 1;
-	   var _b = 2;
-	   var $c = 3;
-	   var d = a+_b+$c;
-	   document.write("a+_b+$c=" +d )
-	</script>
-	<!-- 2. data types -->
-	<h2> Primitive Data types </h2>
-	<!-- string, boolean, number, undefined and null -->
-	<script>
-	var a = "stuff"; //String
-	document.write("a is type: "+typeof(a)+"<br/>");
-	
-	var x = true; //boolean
-	document.write("x is type: "+typeof(x)+"<br/>");
-	
-	var y = 44; //Number
-	document.write("y is type: "+typeof(y)+"<br/>");
-	
-	var q; //Undefined
-	document.write("q is type: "+typeof(q)+"<br/>");
-	
-	var p = null; //Null
-	document.write("p is type: "+typeof(p)+"<br/>");
-	
-	</script>
-	<!-- 3. Operators and Expressions -->
-	<!-- 5 examples -->
-	<h2> Operators and Expressions </h2>
-	<script>
-	var num1 = 4;
-	var num2 = 6;
-	var num3 = num1 + num2; //Addition Operator
-	document.write("num1 + num2 = " + num3);
-	document.write("<br/>")
-	
-	var num4 = num1 - num2; //Subtraction Operator
-	document.write("num1 - num2 = " + num4);
-	document.write("<br/>")
-	
-	var num5 = num1 * num2; //Multiplication Operator
-	document.write("num1 * num2 = " + num5);
-	document.write("<br/>")
-	
-	var string1 = "I'm trying "; // += Operator
-	string1 += "really hard";
-	document.write(string1);
-	document.write("<br/>")
-	
-	var string2;
-	string2 = 'string' + 2; //Addition expression with a string and a number
-	document.write(string2)
-	document.write("<br/>")
-	
-	</script>
-	
-	
-	<!-- 4. Conditionals -->
-	<h2> Conditionals </h2>
-	<script>
-	(q==p)?document.write("q==p<br/>"):document.write("q!=p <br/>");
-	(q===p)?document.write("q===p<br/>"):document.write("q!==p <br/>");
-	</script>
-	
-	<!--5. Control Stuctures -->
-	<!-- For, do, while, switch case -->
-	<h2> Control Structures </h2>
-	<script>
-	for (i = 0; i < 2; i++){ 
-      document.write("This is iteration: " + i + "<br/>");	//For loop
-	}
-	  
-	
-	
-	
-	</script>
-	
-	<!-- 8. Write to DOM -->
-	<h2> Write to DOM </h2>
-	<script>
-	document.write(document.getElementById("id01").innerHTML);
-    document.getElementById("id01").innerHTML=string2;
-	
-	</script>
-	<!-- external javascript -->
-	<script type="text/javascript" src="gdtrebil.js"></script>
-	<!-- 9. Link to jquery customer order form -->
-	<h2> 9. Link to jQuery Customer Order Form </h2>
-	<a href="gdtrebil_prog03_order.html"> Program 3 Order Form</a>
-	
-	</body>
-	
-	</html>
-	
+		<h1> Grant Trebilcock, CIS-255, Program 3 </h1>
+		<p id="id01"> This is a template for program 3</p>
+		<!-- 1. variable names -->
+		<!-- variable names are case sensative -->
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c=" +d )
+		</script>
+		<!-- 2. data types -->
+		<h2> Primitive Data types </h2>
+		<!-- string, boolean, number, undefined and null -->
+		<script>
+			var a = "stuff"; //String
+			document.write("a is type: "+typeof(a)+"<br/>");
+
+			var x = true; //boolean
+			document.write("x is type: "+typeof(x)+"<br/>");
+
+			var y = 44; //Number
+			document.write("y is type: "+typeof(y)+"<br/>");
+
+			var q; //Undefined
+			document.write("q is type: "+typeof(q)+"<br/>");
+
+			var p = null; //Null
+			document.write("p is type: "+typeof(p)+"<br/>");
+
+		</script>
+		<!-- 3. Operators and Expressions -->
+		<!-- 5 examples -->
+		<h2> Operators and Expressions </h2>
+		<script>
+			var num1 = 4;
+			var num2 = 6;
+			var num3 = num1 + num2; //Addition Operator
+			document.write("num1 + num2 = " + num3);
+			document.write("<br/>")
+
+			var num4 = num1 - num2; //Subtraction Operator
+			document.write("num1 - num2 = " + num4);
+			document.write("<br/>")
+
+			var num5 = num1 * num2; //Multiplication Operator
+			document.write("num1 * num2 = " + num5);
+			document.write("<br/>")
+
+			var string1 = "I'm trying "; // += Operator
+			string1 += "really hard";
+			document.write(string1);
+			document.write("<br/>")
+
+			var string2;
+			string2 = 'string' + 2; //Addition expression with a string and a number
+			document.write(string2)
+			document.write("<br/>")
+
+		</script>
+
+
+		<!-- 4. Conditionals -->
+		<h2> Conditionals </h2>
+		<script>
+			(q==p)?document.write("q==p<br/>"):document.write("q!=p <br/>");  //truthy and falsy
+			(q===p)?document.write("q===p<br/>"):document.write("q!==p <br/>");
+
+			var Number = 8;
+
+			if (Number == 8){
+			document.write("The number is 8. <br/>")// if statement determining if a number is 8.
+			}
+
+			if (Number != 8){
+			document.write("The number is not 8. <br/> ")  // if else statement determining if a number is not 8.
+			}else{
+			document.write("The number is still 8. <br/>")
+			}
+
+			if (Number > 10) {  // if, else if and else statement determining a number.
+					document.write("The number is above 10")
+					} else if (Number == 8) {
+							document.write("The number is 8 again.")
+							} else {
+							document.write("I don't know the number")
+							}
+						</script>
+
+		<!--5. Control Stuctures -->
+		<!-- For, do, while, switch case -->
+		<h2> Control Structures </h2>
+			<script>
+				for (i = 0; i < 2; i++){
+						document.write("This is iteration: " + i + "<br/>");	//For loop that writes its iterations
+					}
+				document.write("<br/>")
+				
+				var b = 0
+				while (b < 4){ // while loop that writes its iterations
+						document.write("This is iteration: " + b + "<br/>");
+						b++;
+					}
+				document.write("</br>")
+				var x = 0;
+				
+				do{ // do while loop that writes its iterations.
+				document.write("This is iteration: " + x + "<br/>");
+				x++;
+				}while(x < 4);
+				document.write("<br/>")
+
+				switch(x){ //Switch case to determine the value of x
+				case 3:
+					document.write("X is equal to 3.  <br/><br/>");
+				break;
+				case 4:
+					document.write("X is equal to 4. <br/><br/>");
+				break;
+				}
+			</script>
+
+			<!-- 6. Objects and arrays -->
+			<h2>6. Objects and Arrays</h2>
+			<script>
+			<!--This is an object-->
+				
+			var amiibo = {brand: "Nintendo", price: "$15"};
+			//Displaying the values of the computer object
+			document.write("The amiibo is a brand of " + amiibo.brand + ". <br/>"); //Dell
+			document.write("The price of the amiibo is " + amiibo.price + ". <br/><br/>"); //$900
+			
+			//Creating an array
+			var consoles = ["Xbox One", "Playstation 4", "Wii U"];
+			document.write("The first value of the array is " + consoles[0] + ". <br/>");
+			document.write("The next value of the array is " + consoles[1] + ". <br/>");
+			document.write("The final value of the array is " + consoles[2] + ". <br/>");
+			
+			</script>
+			
+			<!-- 7. Functions and Prototypes -->
+			<h2>7. Functions and Prototypes</h2>
+			<script>
+			
+			function addition(num1, num2){ //the function adds two numbers together
+				return num1 + num2;
+			}
+			var num1 = 1
+			var num2 = 2
+			var num3 = addition(num1,num2) //assigns the values to num3.
+			
+			document.write("The function adds num1 and num2 together to get : " + num3 + "<br/><br/>"); 
+			//This prototype creates a person with a first and last name and an age in years
+			//Code borrowed with permission from Joe Olson, due to my function repeatedly failing.
+			var name1 = "John";
+			var name2 = "Smith";
+			function person(first, last, age){
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+			}
+			//Creating new person, assigning the name1 and name2 variables as the name, and assigning 32 to the age
+			var averagePerson = new person(name1, name2, 32);
+			document.write("The name of this person is " + averagePerson.firstName + " " + averagePerson.lastName + ". <br/>");
+			document.write("The age of this person is " + averagePerson.age + " years old. <br/>");
+			</script>
+			<!-- 8. Write to DOM -->
+			<h2> 8. Write to DOM </h2>
+			<script>
+			// Prints what is in the html that has id01 as the tag. 
+				document.write(document.getElementById("id01").innerHTML);
+			//changes what is in the html that has id01 as the tag.
+				document.getElementById("id01").innerHTML=string2;
+
+			</script>
+			
+			<!-- external javascript -->
+			
+			
+			<!-- 9. Link to jquery customer order form -->
+			<h2>9. Link to jQuery Customer Order Form</h2>
+			<a href="gdtrebil_prog03_order.html">Program 3 Order Form</a>
+
+	<body>
+
+</html>
+						

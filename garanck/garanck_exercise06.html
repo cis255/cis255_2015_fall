@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script src = "https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+	<script>
+	//Shows info from the server
+function showHint(str) {
+	var n = -1;
+    if (str.length == 0) { // blanks out suggestions if input field empty
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+		// displays info if 4 (message received) and 200 (status=success)
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+				str2 = document.getElementById("txtHint").innerHTML;
+				n = str2.LastIndexOf(",");
+				if(n>-1)
+				{
+					str2.substr(0,n)+" and"+str2.substr(n+1);
+				}
+				console.log(n)	
+			}
+        }
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+</head>
+<body>
+
+<p><b>Start typing a name in the input field below:</b></p>
+<form> 
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+	</body>
+
+</html>

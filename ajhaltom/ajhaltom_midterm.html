@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: gpcorser_midterm.html
+author: george corser, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the second paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+
+<html>
+	<head>
+		<!-- jquery cdn -->
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<style>
+	<!-- 2. internal css -->
+		#ajhaltom {
+			color:red;
+		}
+	</style>
+	<body>
+		<p id="ajhaltom">This is paragraph number 1!</p>
+		<p id="changeid">paragraph 2</p>
+	<script>
+		// 3. internal javascript
+		// finds element matching id "changeid" and switches the text inside to "ajhaltom"
+		document.getElementById("changeid").innerHTML = "ajhaltom";
+		// 4. internal jquery
+		// appends a paragraph after the last paragraph in the body
+		$("p:last").append('<p>Alex</p>');
+	</script>
+	</body>
+</html>

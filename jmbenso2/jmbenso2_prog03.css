@@ -1,0 +1,66 @@
+table {
+	margin: 0 auto;
+}
+
+body {
+	background-image: url("http://previews.123rf.com/images/wuttichok/wuttichok1108/wuttichok110800213/10360775-Beautiful-green-grass-pattern-from-golf-course-Stock-Photo-background.jpg");
+	background-repeat: repeat;
+}
+
+h1 { 
+	padding-top: 30px;
+	padding-bottom: 15px;
+	color: black;
+	font-family: verdana !important; 
+}
+
+th {
+	background-color: green;
+	color: white;
+}
+
+.text-output-small {
+	min-width: 50pt;
+}
+
+.text-output-medium {
+	min-width: 200pt;
+}
+
+.currency {
+	text-align: right;
+}
+
+.input-box-large {
+	min-width: 0;
+	width: 300pt;
+}
+
+.input-box-medium {
+	min-width: 0;
+	width: 160pt;
+}
+
+.input-box-small {
+	min-width: 0;
+	width: 56pt;
+}
+
+.container {
+	background-color: white;
+	background-repeat: repeat;
+	padding-top: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	border: 3px solid rgb(51, 204, 51);
+	border-radius: 15px;
+}
+
+.page-header {
+	border: 3px solid rgb(13, 20, 26);
+	background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/19/198/198743/140625_-161577521-vector-golf-background-f.jpg?1412409943");
+	background-repeat: repeat;
+}

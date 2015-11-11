@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: cdmuraws_midterm.html
+author: Cory Murawske, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the second paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!--1. These are the two paragraphs. -->
+	<!--2. This is the internal CSS that changes my id to red. -->
+	<style>
+		#cdmuraws{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<p id="cdmuraws">Cory Murawske</p>
+	<p id="thisisparagraph2">Midterm Program</p>
+	
+	<!--3. This changes the content of the paragraph to my id -->
+	<script>
+		document.getElementById("thisisparagraph2").innerHTML = "cdmuraws";
+	</script>
+	
+	<!--4. This changes the content of this paragraph to my name. -->
+	<script>
+		var jQueryParagraph = $("<p></p>").text("Cory");
+		$("#thisisparagraph2").after(jQueryParagraph);
+	</script>
+</body>
+</html>

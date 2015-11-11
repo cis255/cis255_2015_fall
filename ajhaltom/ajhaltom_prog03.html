@@ -95,21 +95,49 @@ design  :
 		-->
 		<h2>5. Control Stuctures</h2>
 		<script>
+		// For loop
 			for (i=0;i<5;i++) {
 				document.write(i);
 			}
 			document.write("<br />");
+		</script>
+		<script>
+		// While loop
 			var j = 0;
 			while (j<5) {
 				document.write(j);
 				j++;
 			}
-			do {
-				var ii = 0;
-				document.write(ii+"<br />");			
-				ii++;
-			}
-			while (ii < 5);
+		</script>
+		<!-- Switch example from W3schools.com -->
+		<p id="demo"></p>
+
+		<script>
+		var day;
+		switch (new Date().getDay()) {
+			case 0:
+				day = "Sunday";
+				break;
+			case 1:
+				day = "Monday";
+				break;
+			case 2:
+				day = "Tuesday";
+				break;
+			case 3:
+				day = "Wednesday";
+				break;
+			case 4:
+				day = "Thursday";
+				break;
+			case 5:
+				day = "Friday";
+				break;
+			case  6:
+				day = "Saturday";
+				break;
+		}
+		document.getElementById("demo").innerHTML = "Today is " + day;
 		</script>
 		<!-- 
 		==============================
@@ -118,7 +146,12 @@ design  :
 		-->
 		<h2>6. Objects, Arrays</h2>
 		<script>
-		
+		// Example of Objects
+		var person = {firstName:"Alex", lastname:"Haltom", age:"20"};
+		document.write(person.firstName+"<br />");
+		// Example of Array
+		var cars = ["Ford", "Chevrolet", "Dodge"];
+		document.write(cars[1]);
 		</script>
 		<!-- 
 		==============================
@@ -127,8 +160,32 @@ design  :
 		-->
 		<h2>7. Functions, Prototypes</h2>
 		<script>
-		
+		// Example of Function
+		var num1;
+		var num2;
+		multiply(2,7);
+		function multiply (num1, num2) {
+			document.write("The product is: "+num1*num2);
+		}
 		</script>
+		<!-- Example of prototype from w3schools.com -->
+		<p id="demo1"></p>
+		
+		<script>
+		function person(first, last, age, eye) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eye;
+		}
+		
+		var myFather = new person("John", "Doe", 50, "blue");
+		var myMother = new person("Sally", "Rally", 48, "green");
+		
+		document.getElementById("demo1").innerHTML =
+		"My father is " + myFather.age + ". My mother is " + myMother.age; 
+		</script>
+		
 		<!-- 
 		==============================
 		8. write to DOM 

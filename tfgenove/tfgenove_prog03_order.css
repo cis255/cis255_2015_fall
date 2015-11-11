@@ -1,0 +1,16 @@
+/*  filename: tfgenove_prog03_order.html
+	author: Tessa Genovese, CIS 255, Fall 2015 */
+	
+tr.order td{
+			height: 50px !important;
+			width: 200px !important;
+}
+
+/*8. Highlight in yellow any field a user clicks */
+:focus{
+	background-color: yellow !important;
+}
+
+body{
+	background-color: #FFFFCC;
+}

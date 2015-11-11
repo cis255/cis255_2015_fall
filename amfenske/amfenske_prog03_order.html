@@ -1,83 +1,489 @@
-<!DOCTYPE html>
-<!-- ----------------------------------------------------------------------------------
-filename: amfenske_prog03_order.html
-author	: Anna Fenske, CIS255, Fall 2015
-purpose	: this program demonstrates javascript and jquery 
-design	:	head: favicon and title
-			body: 
-				0. Header
+	<!-- 
+	program			: amfenske_prog03_order.html 
+	author			: Anna Fenske
+	purpose			: Demonstrate html, javascript, and jquery
+	design			:
+						<head> stylesheets
+						<body>
+							1. Use Bootstrap for overall formatting
+							2. Make customer information (under "Mail Orders to:) user-enterable
+							3. Create object of states and taxes
+							4. Compute "Tax" based on State entered in customer information
+							5. Create object of freight amounts and weights
+							6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+							7. Use jQuery to make order detail lines appear in different color every other line
+							8. Highlight in yellow any field a user clicks
+	-->
 
-				
-			
------------------------------------------------------------------------------------ -->
 <html>
-	<head>
-		<!-- favicon image and browser tab title -->
-		<link rel='icon' href='../../cardinal_logo.png' type='image/png' />
-		<title>CIS-255 Golf Center</title>
-		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	</head>
+<title>Bock Golf Center</title>
+<head>
+    <script src = "https://code.jquery.com/jquery-2.1.4.js"></script>
+	
+	<!-- 1. Use Bootstrap for overall formatting -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 	
 
-	<body>
-		<!-- 0. header -->
-		<h1>CIS-255 Golf Center</h1>
-		<h3>Customer Order Form</h3>
+        <style>
+                        h1 {
+                                font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+                                font-size: 50px;
+                                font-style: normal;
+                                font-variant: normal;
+                                font-weight: 500;
+                                line-height: 26.4px;
+                        }
+                        h2 {
+                                font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+                                font-size: 30px;
+                                font-style: normal;
+                                font-variant: normal;
+                                font-weight: 500;
+                                line-height: 15.4px;
+                        }
+                        div {
+                                font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
+                                font-size: 15px;
+                                font-style: normal;
+                                font-variant: normal;
+                                font-weight: 400;
+                                line-height: 20px;
+                        }
+        </style>
 
-		<!-- 1. customer info table -->
-		<table border="1">
-			<tr>
-				<th colspan="3">Mail Orders to:</th>
-			</tr>
-			<tr>
-				<td id="customer_name" colspan="3">
-					<input size="46" type="text" name="customer_name" placeholder="Customer Name"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_address" colspan="3">
-					<input size="46" type="text" name="customer_address" placeholder="Address"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_city">
-					<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
-				</td>
-				<td id="customer_state">
-					<input type="text" size="5" name="customer_state" placeholder="State"/>
-				</td>
-				<td id="customer_zip">
-					<input type="text" size="10" name="customer_zip" placeholder="Zip"/>
-				</td>
-			</tr>
-		</table>
-		
-		<script>
-		$("document").ready(function init() {
-		
-		    // set table division background to red
-		    $("#customer_city").css("background-color","red");
+</head>
+<body>
+<div class="container">
+
+    <!--1. Header-->
+    <div class="row">
+        <div class="text-center">
+            <h1><i class="glyphicon glyphicon-flag"></i>Bock Golf Center<i class="glyphicon glyphicon-flag"></i></h1>
+            <h2>Customer Order Form</h2>
+			</br>
+			</br>
+			</br>
+			</div>
+    </div>
+    <div class="row">
+	
+	<!--2. Make customer information (under "Mail Orders to:) user-enterable-->
+        <div class="col-md-12">
+            <b><i class="glyphicon glyphicon-envelope"></i>Mail Orders to:</b><br>
+            <table>
+                <tr>
+                    <td colspan="3"><input id="companyName" type="text" placeholder="COMPANY NAME" class="form-control"/></td>
+                    <td colspan="3">Order Number</td><td><input type="text" id="orderNumber" class="form-control"></td>
+                </tr>				
+                <tr>
+                    <td colspan="3"><input id="companyAddress" type="text" placeholder="ADDRESS" class="form-control"/></td>
+                    <td colspan="3">Order Date</td><td><input type="text" id="orderDate" class="form-control"></td>					
+                </tr>
+                <tr>
+                    <td><input id="City" type="text" placeholder="CITY" class='zip-lookup-field-city form-control' /></td>
+                    <td id="cust_state">
+						<!-- Drop down menu code taken from: http://www.freeformatter.com/usa-state-list-html-select.html -->
+						<select id="State">
+								<option value="AL">Alabama</option>
+								<option value="AK">Alaska</option>
+								<option value="AZ">Arizona</option>
+								<option value="AR">Arkansas</option>
+								<option value="CA">California</option>
+								<option value="CO">Colorado</option>
+								<option value="CT">Connecticut</option>
+								<option value="DE">Delaware</option>
+								<option value="DC">District Of Columbia</option>
+								<option value="FL">Florida</option>
+								<option value="GA">Georgia</option>
+								<option value="HI">Hawaii</option>
+								<option value="ID">Idaho</option>
+								<option value="IL">Illinois</option>
+								<option value="IN">Indiana</option>
+								<option value="IA">Iowa</option>
+								<option value="KS">Kansas</option>
+								<option value="KY">Kentucky</option>
+								<option value="LA">Louisiana</option>
+								<option value="ME">Maine</option>
+								<option value="MD">Maryland</option>
+								<option value="MA">Massachusetts</option>
+								<option value="MI">Michigan</option>
+								<option value="MN">Minnesota</option>
+								<option value="MS">Mississippi</option>
+								<option value="MO">Missouri</option>
+								<option value="MT">Montana</option>
+								<option value="NE">Nebraska</option>
+								<option value="NV">Nevada</option>
+								<option value="NH">New Hampshire</option>
+								<option value="NJ">New Jersey</option>
+								<option value="NM">New Mexico</option>
+								<option value="NY">New York</option>
+								<option value="NC">North Carolina</option>
+								<option value="ND">North Dakota</option>
+								<option value="OH">Ohio</option>
+								<option value="OK">Oklahoma</option>
+								<option value="OR">Oregon</option>
+								<option value="PA">Pennsylvania</option>
+								<option value="RI">Rhode Island</option>
+								<option value="SC">South Carolina</option>
+								<option value="SD">South Dakota</option>
+								<option value="TN">Tennessee</option>
+								<option value="TX">Texas</option>
+								<option value="UT">Utah</option>
+								<option value="VT">Vermont</option>
+								<option value="VA">Virginia</option>
+								<option value="WA">Washington</option>
+								<option value="WV">West Virginia</option>
+								<option value="WI">Wisconsin</option>
+								<option value="WY">Wyoming</option>
+						</select></td>
+                    <td colspan="1"><input id="ZipCode" type="text" placeholder="ZIP CODE" class="form-control"/></td>
+					<td colspan="3">Customer Name</td><td><input type="text" id="custName" class="form-control"></td>
+                </tr>
+            </table>
+        </div>
+
+	<div class="row">
+	<div class="col-md-12">
+        <!--Form table -->
+        <table border="1" id="orderTable" class="table">
+        <thead id="firstRow">
+            <tr>
+                <th class="col-xs-1">Item No.</th>
+                <th class="col-xs-4">Description</th>
+				<th class="col-xs-1">Quantity</th>
+                <th class="col-xs-1">Price</th>
+                <th class="col-xs-1">Amount</th>
+            </tr> 
+						<tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price0" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt0" class="form-control"/>
+                                </td>
+                        </tr>			
+						<tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo1" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp1" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty1" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price1" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt1" class="form-control"/>
+                                </td>
+                        </tr>
+						
+                        <tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo2" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp2" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty2" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price2" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt2" class="form-control"/>								
+                                </td>
+                        </tr>
+
+                        <tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo3" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp3" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty3" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price3" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt3" class="form-control"/>								
+                                </td>
+                        </tr>
+
+                        <tr>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="itemNo4" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="descrp4" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="qty4" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+                                        <input type="text" id="price4" class="form-control"/>
+                                </td>
+                                <td colspan="1" style="text-align:center">
+										<input type="text" id="amt4" class="form-control"/>								
+                                </td>
+                        </tr>					
+
+            <thead>
 			
-			// set input box background to green
-		    $("#customer_city_input").css("background-color","green");
+		<!-- totals -->
+
+		<tr>
+			<td colspan="4" align="right"><i>Sub-Total: &nbsp </i></td>
+			<td id="subTot"></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="right"><i>Freight Amount: &nbsp </i></td>
+			<td id="totFreight"></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="right"><i>Tax: &nbsp </i></td>
+			<td id="totTax"></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="right"><b>Total Amount: &nbsp </b></td>
+			<td id="totAmount"></td>
+		</tr>
+
+        </table>
+    </div>
+</div>
+
+<script>
+
+	// creates an object for each item in the table
+	var currentOrder = function()
+	{
+		this.itemNo;
+		this.descrp;
+		this.qty;
+		this.price;
+		this.amt;
+	}
+	
+	//calculates row totals
+	currentOrder.prototype.subAmt = function subAmtCalc()
+	{
+		return(this.price * this.qty);
+	}
+	
+	
+	//creates an array of objects
+	var allOrders = [];
+	
+	for (var a =0; a< 5; a++)
+	{
+		allOrders.push(new currentOrder);		
+	}
+	for (var a =0; a< 5; a++)
+	{
+		var	num = "itemNo" + a;
+		var	desc = "descrp" + a;
+		var	quant = "qty" + a;
+		var	pr = "price" + a;
+		var	amnt = "amt" + a;
+		
+		//below code taken and modified from http://www.w3schools.com/js/tryit.asp?filename=tryjs_function_return
 			
-			// if input box is in focus, set background to yellow
-			$("#customer_city_input").focus(function () {
-			    $(this).css("background-color","yellow");
+			allOrders[a].itemNo = document.getElementById(num).value;
+			allOrders[a].descrp = document.getElementById(desc).value;
+			allOrders[a].qty = document.getElementById(quant).value;
+			allOrders[a].price = document.getElementById(pr).value; 
+			allOrders[a].amt = document.getElementById(amnt).value;	
+	}
+	
+		//4. Compute "Tax" based on State entered in customer information
+		//tax rates taken from http://taxfoundation.org/article/state-and-local-sales-tax-rates-2015
+		var taxRates = 0.01;	
+		var taxState;
+		//below switch statement borrowed and modified from jmwalter
+			$("#State").change(function changeState(){
+				taxState = $("#State option:selected").val();
+				
+				switch (taxState) 
+				{
+
+					case "AL": taxRates = 0.0891
+					break;
+					case "AK": taxRates = 0.0176
+					break;
+					case "AZ": taxRates = 0.0817
+					break;
+					case "AR": taxRates = 0.0926
+					break;
+					case "CA": taxRates = 0.0844
+					break;
+					case "CO": taxRates = 0.0744
+					break;
+					case "CT": taxRates = 0.0635
+					break;
+					case "DE": taxRates = 0.0000
+					break;
+					case "DC": taxRates = 0.0757
+					break;
+					case "FL": taxRates = 0.0665
+					break;
+					case "GA": taxRates = 0.0696
+					break;
+					case "HI": taxRates = 0.0435
+					break;
+					case "ID": taxRates = 0.0601
+					break;
+					case "IL": taxRates = 0.0819
+					break;
+					case "IN": taxRates = 0.0700
+					break;
+					case "IA": taxRates = 0.0678
+					break;
+					case "KS": taxRates = 0.0820
+					break;
+					case "KY": taxRates = 0.0600
+					break;
+					case "LA": taxRates = 0.0891
+					break;
+					case "ME": taxRates = 0.0550
+					break;
+					case "MD": taxRates = 0.0600
+					break;
+					case "MA": taxRates = 0.0625
+					break;
+					case "MI": taxRates = 0.0600
+					break;
+					case "MN": taxRates = 0.0720
+					break;
+					case "MS": taxRates = 0.0707
+					break;
+					case "MO": taxRates = 0.0781
+					break;
+					case "MT": taxRates = 0.0000
+					break;
+					case "NE": taxRates = 0.0680
+					break;
+					case "NV": taxRates = 0.0794
+					break;
+					case "NH": taxRates = 0.0000
+					break;
+					case "NJ": taxRates = 0.0697
+					break;
+					case "NM": taxRates = 0.0735
+					break;
+					case "NY": taxRates = 0.0848
+					break;
+					case "/NC": taxRates = 0.0690
+					break;
+					case "ND": taxRates = 0.0656
+					break;
+					case "OH": taxRates = 0.0710
+					break;
+					case "OK": taxRates = 0.0877
+					break;
+					case "OR": taxRates = 0.0000
+					break;
+					case "PA": taxRates = 0.0634
+					break;
+					case "RI": taxRates = 0.0700
+					break;
+					case "SC": taxRates = 0.0713
+					break;
+					case "SD": taxRates = 0.0583
+					break;
+					case "TN": taxRates = 0.0945
+					break;
+					case "TX": taxRates = 0.0805
+					break;
+					case "UT": taxRates = 0.0668
+					break;
+					case "VT": taxRates = 0.0614
+					break;
+					case "VA": taxRates = 0.0563
+					break;
+					case "WA": taxRates = 0.0889
+					break;
+					case "WV": taxRates = 0.0607
+					break;
+					case "WI": taxRates = 0.0543
+					break;
+					case "WY": taxRates = 0.0547
+					break;
+					default: taxRates = 0.0600;
+				}
+						check();
+		
+        		});
+
+			//runs check function to update order form as user enters data
+			$("input").change(function() { 
+				check(); 
 			});
-			$("#customer_city_input").focusout(function () {
-			    $(this).css("background-color","blue");
+			
+			$("document").ready(function init(){
+				$("tr:odd").css("background-color","#c0c0c0");
+				$("tr:odd input").css("background-color","#c0c0c0");
 			});
 			
-			// set every other line in table to gray
-			$("tr:odd").css("background-color","#c0c0c0");
-			$("tr:odd input").css("background-color","#c0c0c0");
+			//8. Highlight in yellow any field a user clicks
+			$("input").focus(function UserfocusYellow(){
+				$(this).css("background-color", "yellow");    
+			});
+			//7. Use jQuery to make order detail lines appear in different color every other line
+			$("input").focusout(function PostClickingRevert(){
+					$("tr:even input").css("background-color","white")
+					$("tr:odd input").css("background-color","#c0c0c0")});
 
-			var tableRows = $("tr");
-		});
-		</script>
+			
+			function check()
+			{
+				var tempTot = 0;
+				var freight = 0;
+				Number(freight); //	5. Create object of freight amounts and weights
+				for (var a = 0; a< 5; a++)
+				{
+						var	num = "itemNo" + a;
+						var	desc = "descrp" + a;
+						var	quant = "qty" + a;
+						var	pr = "price" + a;
+						var	amnt = "amt" + a;
+
+						allOrders[a].ItemNo = document.getElementById(num).value;
+						allOrders[a].descrp = document.getElementById(desc).value;
+						allOrders[a].qty = document.getElementById(quant).value;
+						allOrders[a].price = document.getElementById(pr).value;
+						allOrders[a].amt = allOrders[a].price * allOrders[a].qty;
+						if (($("#"+quant).length !== 0 ) && ($("#"+pr).length !==0)) 
+						{
+							document.getElementById(amnt).value="$" + allOrders[a].amt.toFixed(2);
+						};
+						tempTot+=allOrders[a].amt; //running sub-total
+						freight+= Number(allOrders[a].qty); //6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+				}
+	
+			document.getElementById("totFreight").innerHTML = freight; //returns freight amount
+			document.getElementById("subTot").innerHTML ="$" + tempTot.toFixed(2); //returns total before taxes
+			document.getElementById("totTax").innerHTML = "$" + parseFloat(taxRates * tempTot).toFixed(2); //returns total tax amount
+			document.getElementById("totAmount").innerHTML ="$" + (tempTot + (taxRates * tempTot)).toFixed(2); //returns total amount due
+			
+			}
 		
-	</body>
-
+</script>
+</body>	
 </html>
 
 
