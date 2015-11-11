@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- ---------------------------------------------------------
------ This file was copied from the gpcorser directory -------
---------------------------------------------------------------
+<!-- ------------------------------------------------------------------------------
+----- The original copy of this file was copied from the gpcorser directory -------
+-----------------------------------------------------------------------------------
 Filename: jtolson_prog03.html
 Author  : Joe Olson, cis255, fall2015
 Purpose : this program demonstrates javascript and jquery
@@ -13,12 +13,15 @@ Design  :
 		2. primitive data types
 		3. operators and expressions
 		4. conditionals, truthy, falsy
-		...
+		5. Control Structures: do, while, switch-case, for
+		6. Objects and arrays
+		7. Functions and Prototypes
+		8. Write to DOM
 		9. link to jQuery Customer Order Form
-		
--------------------------------------------------------------- -->
+-------------------------------------------------------------------------------- -->
 <html>
 	<head>
+		<!-- Browser tab title -->
 		<title>CIS 255 - Joe Olson, Program 03</title>
 	</head>
 	
@@ -28,7 +31,7 @@ Design  :
 		<p id="id01"></p>
 		
 		<!-- 1. variable names -->
-		<h2>1. variable names</h2>
+		<h2>1. Variable Names</h2>
 		<!-- variable names are case sensitive and can start with $ _ or letter -->
 		<script>
 		    var a = 1;
@@ -41,58 +44,179 @@ Design  :
 		</script>
 		
 		<!-- 2. primitive data types -->
-		<h2>2. primitive data types</h2>
+		<h2>2. Primitive Data Types</h2>
 		<script>
 			var x = 5; // number
 			var y = "zippy"; //string
 			var n = null; //null
 			var u; //undefined
-			var z = [5, 10, 20]; //Array (of numbers)
-			document.write("var x is type: "+typeof(x)+"<br/>"); //number
-			document.write("var y is type: "+typeof(y)+"<br/>"); //string
-			document.write("var n is type: "+typeof(n)+"<br/>"); //null, but a bug makes it display "object"
-			document.write("var u is type: "+typeof(u)+"<br/>"); //undefined
-			document.write("Var z is type: " + typeof(z) + "<br/>"); //array, displays as "object"
+			var z = true; //Boolean
+			document.write("var x is type: "+typeof(x)+"<br/>"); //Displays as number
+			document.write("var y is type: "+typeof(y)+"<br/>"); //Displays as string
+			document.write("var n is type: "+typeof(n)+"<br/>"); //null, but a bug makes it display as "object"
+			document.write("var u is type: "+typeof(u)+"<br/>"); //Displays as undefined
+			document.write("Var z is type: " + typeof(z) + "<br/>"); //Displays as boolean
+		</script>
+		
+		<!-- 3. Operators and Expressions -->
+		<h3>3. Operators and Expressions </h3>
+		<script>
+			var f = 9;
+			var g = 3;
+			//Several examples of arthimetic operators and expressions
+			var h = (f / g);
+			var i = (f * g);
+			var j = (f + g);
+			var k = (f - g);
+			var m = ((f + 1) % g); //Added 1 to f to demonstrate modulus division
+			
+			//Displaying the variables and expressions
+			document.write("f = " + f + "<br/>");
+			document.write("g = " + g + "<br/>");
+			document.write("f divided by g = " + h + "<br/>");
+			document.write("f multiplied by g = " + i + "<br/>");
+			document.write("f added with g = " + j + "<br/>");
+			document.write("f subtract g = " + k + "<br/>");
+			document.write("f plus 1 modulus division g = " + m + "<br/>");
 		</script>
 		
 		<!-- 4. conditionals, truthy, falsy -->
-		<h2>4. conditionals, truthy, falsy</h2>
+		<h2>4. Conditionals, Truthy, Falsy</h2>
 		<script>
-			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
-			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+			var num1 = "4";
+			var num2 = 4;
+			//Writing out the quotes to show the difference between the two variables
+			document.write("num1 = '" + num1 + "'<br/>");
+			document.write("num2 = " + num2 + "<br/>");
 			
-			document.write(document.getElementById("id01").innerHTML);
-			document.getElementById("id01").innerHTML=y;
+			//Truthy and falsy block comparing num1 and num2 along with if-then-else block
+			//Comparing num1 and num2 with a double-equal sign
+			document.write("num1 == num2 is ");
+			(num1 == num2)?document.write("true <br/>"):document.write("false </br>"); //True
+			//Comparing num1 and num2 with a triple-equal sign
+			document.write("num1 === num2 is ");
+			(num1 === num2)?document.write("true <br/>"):document.write("false </br>"); //False
+		</script>
+		
+		<!-- 5. Control Structures: do, while, switch-case, for -->
+		<h2>5. Control Structures: Do, While, Switch-case, For</h2>
+		<script>
+			//do-while loop. Multiplying by 2 every interation so long as num2 is less than 4.
+			//Due to how do-while loops work, there will be one iteration when num2's value is 4.
+			document.write("Multiplication using a do-while loop where num2 equals 4 and it loops so long as num2 is less than 4: <br/>");
+			document.write("num2");
+			do{
+				document.write(" * 2");
+				num2 *= 2;
+			}while(num2 < 4);
+			document.write(" = " + num2 + "<br/><br/>"); //4 * 2 = 8 so long as everything is working properly
 			
+			//while loop. Multiplying by 2 every iteration so long as num2 is less than 4.
+			//Due to how while loops work, there will be no iterations when num2's value is 4.
+			document.write("Multiplication using a while loop where num2 equals 4 and it loops so long as num2 is less than 4: <br/>");
+			document.write("num2");
+			num2 = 4;
+			while(num2 < 4){ //Because num2 = 4, there will be no iterations of this loop
+				document.write(" * 2");
+				num2 *= 2;
+			}
+			document.write(" = " + num2 + "<br/><br/>"); //4 = 4 so long as everything is working properly
+			
+			//Demonstrating a switch-case with little functionality
+			//This switch-case takes the value of num2 and displays a message
+			//	to show which loop was recently done: do-while or while.
+			//	So long as everything is working, the message should always say
+			//	that the while loop was the one that was recently executed
+			document.write("Switch-case to determine which while loop was most recently executed based on the value of num1<br/>");
+			switch(num2){
+				case 8:
+					document.write("The do-while loop was the most recently executed loop<br/><br/>");
+				break;
+				case 4:
+					document.write("The while loop was the most recently executed loop<br/><br/>");
+				break;
+			}
+			
+			//For loop
+			//This loop adds 1 to i every iteration and prints a message stating that 1 is being added
+			var i = 5;
+			document.write("For loop which adds 1 to i, which equals 5, while i is less than or equal to 10: <br/>");
+			document.write(i);
+			for (i; i <= 10; i += 1){
+				document.write(" + 1");
+			}
+			document.write(" = " + i + "<br/><br/>"); //5 + 1 (6 times) = 11 so long as everything is working properly
+		</script>
+		
+		<!-- 6. Objects and arrays -->
+		<h2>6. Objects and Arrays</h2>
+		<script>
+			document.write("There is a computer here. <br/>");
+			//Creating computer-type object with brand, price, and processingPower values
+			var computer = {brand: "Dell", price: "$900", processingPower: "2.1GHz"};
+			//Displaying the values of the computer object
+			document.write("The computer is a brand of " + computer.brand + ". <br/>"); //Dell
+			document.write("The price of the computer is " + computer.price + ". <br/>"); //$900
+			document.write("The processing power of the computer is " + computer.processingPower + ". <br/><br/>"); //2.1GHz
+			
+			//Creating an array of strings
+			var stores = ["Best Buy", "Staples", "Office Max", "Target"];
+			document.write("These are the stores where you can get this computer: <br/>");
+			//Displaying the contents of the stores array 
+			//Could have used a for loop here, but the array is small enough to where it's not a big deal
+			document.write(stores[0] + "<br/>"); //Best Buy
+			document.write(stores[1] + "<br/>"); //Staples
+			document.write(stores[2] + "<br/>"); //Office Max 
+			document.write(stores[3] + "<br/><br/>"); //Target
+		</script>
+		
+		<!-- 7. Functions and Prototypes -->
+		<h2>7. Functions and Prototypes</h2>
+		<script>
+			//This function gets two strings and puts them together to make one string
+			//Technically this function could work with two numbers as well
+			function stringCat(txt1, txt2){
+				return txt1 + " " + txt2;
+			}
+			
+			var name1 = "John";
+			var name2 = "Smith";
+			//Using name1 and name2 in the stringCat function
+			var name3 = stringCat(name1, name2);
+			//Displaying the name variables 
+			document.write("The first name is " + name1 + ". <br/>"); //John
+			document.write("The second name is " + name2 + ". <br/>"); //Smith
+			document.write("The two names added together become " + name3 + ". <br/><br/>"); //John Smith 
+			
+			//This prototype creates a person with a first and last name and an age in years
+			function person(first, last, age){
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+			}
+			//Creating new person, assigning the name1 and name2 variables as the name, and assigning 32 to the age
+			var averagePerson = new person(name1, name2, 32);
+			document.write("The name of this person is " + averagePerson.firstName + " " + averagePerson.lastName + ". <br/>");
+			document.write("The age of this person is " + averagePerson.age + " years old. <br/>");
+		</script>
+		
+		<!-- 8. Write to DOM -->
+		<h2>8. Write to DOM</h2>
+		<p id="id02"></p>
+		<script>
+			//Using a variable to add a message to the top of the HTML page
+			var message1 = "This message was added using the .innerHTML function <br/><br/>";
+			document.getElementById("id01").innerHTML = message1;
+			//Adding another message without using a variable
+			document.getElementById("id02").innerHTML = "Using different methods to write to the HTML file directly.<br/>"
+			//using document.write()
+			document.write("This is a message added with document.write <br/>");
+			document.write("This is another message added with document.write <br/>");
+			document.write("document.write has been used all throughout this program.<br/>");
 		</script>
 		
 		<!-- 9. link to jQuery Customer Order Form -->
-		<h2>9. link to jQuery Customer Order Form</h2>
-		<a href="gpcorser_prog03_order.html">Program 3 Order Form</a>
+		<h2>9. Link to jQuery Customer Order Form</h2>
+		<a href="jtolson_prog03_order.html">Program 3 Order Form</a>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
