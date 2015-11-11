@@ -132,10 +132,63 @@ design   :
 		
 		<!-- 6. Objects, arrays -->
 		<h2>6. Objects, arrays</h2>
-		<script>
 		
+		<p>Creating a JavaScript Object</p>
+
+		<p id="car object"></p>
+
+
+		<script>
+			var car = {type:"Fiat", model:500, color:"white"};				//object
+			document.getElementById("car object").innerHTML = car.type;			
 		</script>
 		
+		<p>Creating a JavaScript Array</p>
+		<p id="car array"></p>
+		
+		<script>
+			var array = ["Saab", "Volvo", "BMW"];							//array
+			document.getElementById("car array").innerHTML = array[0];
+		</script>
+		
+		<!-- 7. Functions, prototypes -->
+		<h2>7. Functions, prototypes </h2>
+		
+		<p>Function call to performs a calculation(12 * 3), and returns the result:</p>
+
+		<p id="function"></p>
+
+		<script>
+			function myFunction(a, b) {
+			return a * b;
+			}
+			document.getElementById("function").innerHTML = myFunction(12, 3);
+		</script>
+		
+		<p>Javascript Prototype</p>
+		
+		<p id="prototype"></p>
+
+		<script>
+			function person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			var myFather = new person("Steve", "Stewart", 54, "green");
+			var myMother = new person("DeAnna", "Stewart", 49, "green");
+
+			document.getElementById("prototype").innerHTML =
+			"My father's first name is " + myFather.firstName + ". My mother's first name is " + myMother.firstName; 
+		</script>
+		
+		<!-- 8. Writing to DOM -->	
+		<h2> 8. Writing to DOM </h2>
+		<script>
+			document.write("Hello World");
+		</script>
 		<!-- 9. jQuery Customer Order Form -->
 		<h2>9. Link to jQuery Customer Order Form</h2>
 		<a href="ssstewar_prog03_order.html">Prog03 Order Form</a>
