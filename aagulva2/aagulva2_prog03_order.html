@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!-- ----------------------------------------------------------------
 filename : aagulva2_prog03_order.html
-author   : Alec Gulvas, cis255, fall21015
+author   : Alec Gulvas, with aid from tutor, cis255, fall21015
 purpose  : this program demonstrates javascript and jquery
 design   : 
 	<head> favicon image and tab title
 	<body>
-		0. header
+		0. Header
 		1. Customer Order Form
 		2. States and Taxes Object
 --------------------------------------------------------------------- -->
@@ -19,12 +19,12 @@ design   :
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	</head>
 	<body>
-		<!-- 0. header -->
-		<h1 align="middle">CIS-255 Golf Center</h1>
+		<!-- 0. Header -->
+		<h1 align="middle">Gulvas' Golf Center</h1>
 		
 		<div class="container">
 		
-		<h3 align="left">Customer Order Form</h3>
+		<h2 align="middle">Customer Order Form</h2>
 		
 		<!-- 1. Customer Order Form -->
 		<table class="table table-bordered">
@@ -72,7 +72,7 @@ design   :
 				</td>
 			</tr>
 		</table>
-		
+		<!-- Order Detail Labels and inputs -->
 		<table class="table table-bordered" id="order_detail">
 			<tr>
 				<th>Item No.</th>
@@ -229,7 +229,7 @@ design   :
 				var freight_rate = 2;
 				
 				var freight_amount = 0;
-				
+				<!-- Take customer input and use the information for the added up price calculations -->
 				var amt0 = document.getElementById("quantity0").value * document.getElementById("price0").value;
 				document.getElementById("amount0").innerHTML = "$" + (amt0).toFixed(2);
 				
