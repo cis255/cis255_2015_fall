@@ -31,8 +31,8 @@ design   : <head>
 					if (str.length === 0) { 						
 						$("#txtHint").text("");
 						return;
-					  }
-				console.log("Here");	  
+					  }  
+					
 					$.ajax("gethint.php?q="+str,{
 						success: function(data) {		
 							//replace last , with and
@@ -42,8 +42,7 @@ design   : <head>
 							$("#txtHint").text(data);
 						},
 						error: function() {
-						console.log("here 3")
-							$("#txtHint").val("AJAX error occurred");
+							$("#txtHint").text("AJAXS error occurred");
 						}
 					});
 				}
