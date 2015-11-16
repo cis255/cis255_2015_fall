@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>CIS255 - Program 04 </title>
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	
+	
+	
+	<!-- Yahoo Weather API JS Code -->
+    <script src="weather.js"></script>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	<!-- Chart.js  Code -->
+    <script src="Chart.js"></script>
+	
+	</head>
+
+<body>
+	
+	<br><br><br><br><br>
+		<div class="container">
+            <div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+
+				</div>
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<canvas id="myCanvas" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
+	
+	
+	
+	<script>
+		$(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 300,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Red"
+				},
+				{
+					value: 50,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				},
+				{
+					value: 100,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Yellow"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+	
+	
+</body>
