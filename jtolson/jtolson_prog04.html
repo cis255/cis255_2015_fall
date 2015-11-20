@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+---- File name	: jtolson_prog04.html
+---- Purpose	: This program displays weather using Yahoo's API
+------------	  Data from SVSU's API and
+------------	  Data displayed using chart.js
+---- Design 	: <head>
+----				1. Style tags for Yahoo weather API
+----				2. Title tag
+----			  <body>
+----				Yahoo weather API code
+----				JS files for Yahoo weather API
+----				SVSU API course data
+-->
+
+<html>
+<head>
+	<!-- 1. Style tags for Yahoo weather API -->
+	<style type="text/css">
+		#found { display: none; }	
+		#error { color: red; display: none; }
+		
+		#weatherHold { border: 2px solid #00AA00; border-radius: 5px; margin-right: 650px; }
+		#textBox { margin-left: 20px; }
+		
+		table { display: block; overflow-y: scroll; height: 200px; }
+		
+	</style>
+	<!-- 2. Title tag -->
+	<title>Joe Olson - CIS 255, Prog04</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+
+<body>
+	
+	<h1>Joe Olson, Prog04</h1>
+	
+	<!-- Yahoo weather API code -->
+	<h3>Yahoo Weather API</h3>
+	<section id="yahooweather">
+		<div id="weatherHold" class="container">
+			<div id="textBox" class="row">
+				<!-- Find button to search for location -->
+				<div id="find">
+					<input type="edit" placeholder="Location" id="loc">
+					<button onclick="getWeather();">Find</button>
+				</div>
+				<!-- Data field for found location -->
+				<div id="found">
+					<h1>Weather for <span id="location"></span></h1>
+					<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+					<p><a href="javascript:showSearch();">&larr; change location</a></p>
+				</div>
+
+				<div id="error">
+					<p>Location not found!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- SVSU API course data -->
+	<h3>SVSU API Course Data</h3>
+	Prefix of the department: <input type="edit" id="prefix"><br/>
+	Course number of the class: <input type="edit" id="courseNum"><br/>
+	<button onclick="getInfo();">Search</button> <button onclick="clearInfo();">Clear Table</button><br/>
+	<div class="container">
+		<table id="cData" class="table table-bordered table-striped">
+			<tr>
+				<th>Department</th>
+				<th>Course Number</th>
+				<th>Course Title</th>
+			</tr>
+		</table>
+	</div>
+	
+	<!-- JS files for Yahoo weather API -->
+	<!-- Jquery -->
+	<script src="prog04js/jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="prog04js/bootstrap.min.js"></script>
+	<!-- Weather API js -->
+	<script src="prog04js/weather.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- SVSU API JS file -->
+	<script src="prog04js/course.js"></script>
+</body>
+</html>
