@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1> Grant Trebilcock Program 4 </h1>
+	<!-- 1. Style tags for Yahoo weather API -->
+	<style type="text/css">
+		#found { display: none; }	
+		#error { color: red; display: none; }
+		
+		#weatherHold { border: 2px solid black; border-radius: 10px; margin-right: 650px; }
+		#textBox { margin-left: 20px; }
+		
+		table { display: block; overflow-y: scroll; height: 200px; }
+		
+	</style>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+
+</head>
+<body>
+	<!-- Yahoo weather API code -->
+	<h3>Yahoo Weather API</h3>
+	<section id="yahooweather">
+		<div id="weatherHold" class="container">
+			<div id="textBox" class="row">
+				<!-- Find button to search for location -->
+				<div id="find">
+					<input type="edit" placeholder="Location" id="loc">
+					<button onclick="getWeather();">Find</button>
+				</div>
+				<!-- Data field for found location -->
+				<div id="found">
+					<h1>Weather for <span id="location"></span></h1>
+					<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+					<p><a href="javascript:showSearch();">&larr; change location</a></p>
+				</div>
+
+				<div id="error">
+					<p>Location not found!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- SVSU API course data -->
+	<h3>SVSU API Course Data</h3>
+	Prefix of the department: <input type="edit" id="prefix"><br/>  <!-- Example CS or ART -->
+	Course number of the class: <input type="edit" id="courseNum"><br/> <!-- Example 100 or 255 -->
+	<button onclick="getInfo();">Search</button> <!-- Searches, and updates the table without resetting it -->
+	<button onclick="clearInfo();">Clear Table</button><br/> <!-- Completly resets the table and values -->
+	<div class="container col-sm-4">
+		<table id="cData" class="table table-bordered table-striped">
+			<tr><th>Department</th><th>Course Number</th><th>Course Title</th></tr>
+		</table>
+	</div>
+	
+	
+
+	
+	<!-- JS files for Yahoo weather API -->
+	<!-- Jquery -->
+	<script src="jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="bootstrap.min.js"></script>
+	<!-- Weather API js -->
+	<script src="weather.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- SVSU API JS file -->
+	<script src="course.js"></script>
+	<!-- chart.js scripts -->
+	<script src="Chart.js"></script>
+	
+	<!-- Chart.js -->
+	<script>
+		var chartData = {
+			labels: ["ART", "CIS", "CS", "ENGL", "MATH", "PHYS", "Other"],
+			datasets: [
+				{
+					label: "Number of Courses per Department",
+					fillColor: "rgba(200, 200, 200, 0.1)",
+					strokeColor: "rgba(200, 200, 200, 1)",
+					pointColor: "rgba(200, 200, 200, 1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(200, 200, 200, 1)",
+					data: [0, 0, 0, 0, 0, 0, 0]
+				}
+			]
+		};
+		var radChart = document.getElementById("chart").getContext("2d");
+		var myRad = new Chart(radChart).Radar(chartData);
+	</script>
+
+		
+
+
+
+</body>
+</html>
