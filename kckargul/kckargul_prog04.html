@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--Name: 	Kevin Kargula
+	Class:	CIS 255
+	Design: Well
+			Prog04 header
+			Yahoo's windchill
+			API functionality
+				input header
+				text box - search button
+				checkbox for open classes
+				to be graph
+			  Legend of table	
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>kckargul_prog4</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="Chart.js/Chart.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <script src="Chart.HorizontalBar.js/Chart.HorizontalBar.js"></script>
+  <script src="https://query.yahooapis.com/v1/public/yql?q=select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='chicago, il')&format=json&callback=callbackFunction"></script>
+<!--  <link rel="stylesheet" type="text/css" href="kckargul.css">
+-->
+</head>
+<style>
+#weather{
+	background-color: #999999;	
+  }
+h2{
+	color: black;
+}
+#AvailChart{
+    width: 500px;
+    height: 1000px;
+  }
+
+</style>
+<body>
+  <div class="container well">
+  
+	<div class="row">
+	  <h1>Kevin Kargula's prog04</h1>
+		<h2>Yahoo's Wind Chill</h2>
+	</div>
+	<div class="row">
+		<input type="text" id="city"/>
+		<input type="text" id="state"/>
+		<button onclick="searchLocation()">Search</button>
+		<h3 id="weather"></h3>	
+	</div>
+		<h2>Input Department Abbreviation</h2>  
+	<div class="row">
+		<input type="text" id="major"/>
+		<button onclick="searchMajor()">Search</button>
+	</div>
+	<div class="row">
+		<input type="checkbox" id="avail"/>Open Classes Only
+	</div>
+	<!--The Chart-->
+	<div  class="row">
+		<canvas style="height: 1000px;" id="AvailChart"></canvas>
+	</div>
+	<div class="row">
+	  <h4>blue: Seats Available</h4>
+	  <h4>red: Class Capacity</h4>
+	</div>
+  </div>
+
+<script>
+//////////////////////////////////////////////////
+////////////////Weather API///////////////////////
+function searchLocation(){
+  $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",function(data) {
+    var wind = data.query.results.channel.wind;
+	data.query.results.channel.location.city = document.getElementById("city").value;
+	data.query.results.channel.location.region = document.getElementById("state").value;
+	document.getElementById("weather").textContent = wind.chill+" Degrees";
+	console.log(data);
+  });
+}
+////////////////Weather API///////////////////////
+//////////////////////////////////////////////////
+</script>
+
+<script>
+function searchMajor(){
+  //if textbox is empty
+  if(document.getElementById("major").value=="")
+	alert("Please input major abbreviation into textbox");
+  else
+  {
+	//concatinates the specific subject with url
+    var url = "https://api.svsu.edu/courses?prefix="+document.getElementById("major").value;  
+    $.getJSON(url, 
+    function (data)
+    {
+    //where chart data is being stored
+    //////////////////////////////////////////////////
+    ////////////////Class Data////////////////////////
+	  //Data for chart read-in
+      var ClassChartdata = {
+       labels: [],
+       datasets: [
+         {
+           label: "Course Capacity",
+           fillColor: "rgba(139,24,32,0.5)", //make red
+           strokeColor: "rgba(139,24,32,0.8)",
+           highlightFill: "rgba(139,24,32,0.75)",
+           highlightStroke: "rgba(139,24,32,1)",
+           data: []
+         }, 
+	     {
+ 		   label: "Seats Available",
+           fillColor: "rgba(151,187,205,0.5)",//make blue
+           strokeColor: "rgba(151,187,205,0.8)",
+           highlightFill: "rgba(151,187,205,0.75)",
+           highlightStroke: "rgba(151,187,205,1)",
+           data: []        
+	     }
+       ]
+     };
+	//gives some of the chart dimensions
+	 var options = {
+	 	barValueSpacing: 15,
+    	responsive: true,
+    	animation: false,
+    	barShowStroke: false
+	 }
+	//sets data of chart
+ 	for (var i = 0; i < data.courses.length; i++) 
+	{   
+	  //if the checkbox is checked, it skips that course
+	  if((data.courses[i].status=="Open" && document.getElementById('avail').checked)||!document.getElementById('avail').checked)
+	  {
+ 		ClassChartdata.labels.push(data.courses[i].prefix + " " + data.courses[i].courseNumber+" "+data.courses[i].instructors[0].name);
+		ClassChartdata.datasets[0].data.push(data.courses[i].capacity);
+		ClassChartdata.datasets[1].data.push(data.courses[i].seatsAvailable);
+	  }
+	}
+	//creates bar graph
+    var barChart = document.getElementById("AvailChart").getContext("2d");
+    myBar = new Chart(barChart).HorizontalBar(ClassChartdata,options);
+////////////////Class Data////////////////////////
+//////////////////////////////////////////////////
+
+  
+  });
+  }
+}
+</script>
+</body>
+</html>
