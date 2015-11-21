@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<!---------------------------------------------------------
+filename:    aalsamin_prog04.html
+author:      Abdulmohsen Alsamin, CIS-255, Fall 2015
+description: 
+design: 
+	<head>: 
+	<body>: 
+			1- Yahoo weather
+			2- Chart.js
+			3- Svsu api
+---------------------------------------------------------->
+<html>
+	<body>
+		<body bgcolor="#E6E6FA">
+		<head>
+    		<title>CIS-255: Abdulmohsen Alsamin</title>
+
+			<h1 style="color:green">Abdulmohsen Alsamin, CIS-255, Program 4</h1>
+			<style>
+
+				h1 {
+		        text-align: center;
+			       }
+
+			</style>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<!-- yahoo weather API -->
+			<script src="weather.js"></script>
+
+			<!-- Chart.js code -->
+			<script src="Chart.js"></script>
+
+		</head>
+
+		<body>
+			<!-- 1- Yahoo weather -->
+			<br><br><br><br><br>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-lg-4 col-sm-4" style="border: 2px solid black">
+							<div id="find">
+								<input type="edit" placeholder="Area" id="loc">
+								<button onclick="getWeather();">Search</button>
+							</div>
+
+							<div id="found">
+								<h2 style="color:brown">The Weather in <span id="location"></span> is </h2>
+								<p style="color:red"><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+								<p><a href="javascript:showSearch();"> See another area</a></p>
+							</div>
+
+							<div id="error" style="display: none;">
+								<p>Area is not founded!</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-4 col-sm-4" >
+							<canvas id="myCanvas" width="400" height="400"></canvas>
+						</div>
+					</div>
+				</div>
+		
+			<!-- 2- chart.js -->
+			<script>
+				$(document).ready(function(){
+					var ctx = $("#myCanvas").get(0).getContext("2d");
+					// pie chart data
+					var data = [
+						{
+							value: 71,
+							color: "#0c18e2",
+							highlight: "#767ef8",
+							label: "Water"
+						},
+						{
+							value: 29,
+							color: "#f58115",
+							highlight: "#f9bd8e",
+							label: "Ground"
+						},
+					];
+					//draw
+					var myPieChart = new Chart(ctx).Pie(data);
+				});
+			</script>
+	
+			<!-- 3- SVSU API course look up -->
+			<!-- Reference from nvansima's code -->
+				<head>
+				    <meta charset="utf-8">
+				    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+				    <meta name="viewport" content="width=device-width, initial-scale=1">
+				    <meta name="description" content="">
+				    <meta name="author" content="">
+				    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+				    <script id="pretty-course-template" type="text/x-lodash-template">
+				      <div class="panel panel-default">
+				        <div class="panel-heading">
+				          <h3 class="panel-title"><%= title %> <%= prefix %>*<%= courseNumber %>*<%= section %> (<%= term %>)</h3>
+			    	    </div>
+			    		<div class="panel-body">
+				          <%= description %>
+				        </div>
+				      </div>
+				    </script>
+	
+				    <!-- Bootstrap Core CSS -->
+				    <link href="bootstrap.min.css" rel="stylesheet">
+
+				    <!-- Custom Fonts -->
+		   			<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+				</head>
+
+				<body>
+
+			    <!-- This is the page content -->
+			    <div class="container">
+
+		        <!-- This is the item row -->
+			    <div class="container">
+			      <div class="row">
+			        <div class="col-lg-12">
+			          <div class="page-header">
+			            <h1>Course Lookup SVSU API Client </h1>
+			          </div>
+			        </div>
+			      </div>
+			      <form id="lookupForm" class="form-horizontal" role="form">
+			        <div class="form-group">
+			          <label for="prefix" class="col-sm-2 control-label">Prefix</label>
+			          <div class="col-sm-10">
+			            <input type="text" name="prefix" class="form-control" id="prefix" placeholder="Prefix" required>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="number" class="col-sm-2 control-label">Number</label>
+			          <div class="col-sm-10">
+			            <input type="number" name="courseNumber" class="form-control" id="number" placeholder="Number">
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <div class="col-sm-offset-2 col-sm-10">
+			            <button id="fetchJSON" class="btn btn-default">Fetch JSON Classes<i class="fa fa-fw fa-code"></i></button>
+			            <button id="fetchPretty" class="btn btn-default">Fetch Pretty Classes <i class="fa fa-fw fa-paint-brush"></i></button>
+			          </div>
+			        </div>
+			      </form>
+			      <div class="row" id="jsonResults"  style="display:none;">
+			        <div class="col-sm-2">
+			          <strong class="pull-right">JSON Results</strong>
+			        </div>
+			        <div class="col-sm-10">
+			          <pre class="response"></pre>
+			        </div>
+			      </div>
+			      <div class="row" id="prettyResults" style="display:none">
+			        <div class="col-sm-2">
+			          <strong class="pull-right">Pretty Results</strong>
+			        </div>
+			        <div class="col-sm-10 response">
+			        </div>
+			      </div>
+			    </div>
+			        <!-- end of row -->
+
+			        <hr>
+
+			        <!-- Here is the footer -->
+			        <footer>
+			            <div class="row">
+			                <div class="col-lg-12">
+			                    <p>Copyright &copy; Abdulmohsen Alsamin's Website</p>
+			                </div>
+			            </div>
+			        </footer>
+
+			    </div>
+			    <!-- end of container -->
+
+			    <!-- The jQuery -->
+			    <script src="jquery.js"></script>
+
+			    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+			    <script src="svsu.js"></script>
+			    <script src="application.js"></script>
+
+			    <!-- The Bootstrap Core JavaScript -->
+			    <script src="bootstrap.min.js"></script>
+
+		</body>
+	</body>
+</html>
