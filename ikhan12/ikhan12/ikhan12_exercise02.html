@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+filename   : ikhan12_exercise02.html
+author     : Imran Khan (CIS-255, Fall 2015)
+Description: This program demonstrates very basic HTML
+design     : 1. Head
+				A. Contains title and favicon and a youtube video.
+			 2. Body
+				A. Displays unordered list of current classes
+				B. Has 2 text boxes that allow you to input text and then perform a function with the hyperlink to the right
+					i. First text box translates your text into spanish. The hyperlink will open a new tab in Google Translate
+					ii. The second box will search google for whatever you typed in. The hyperlink will open a new tab in Google.
+			 3. The SVSU Home hyperlink brings you to the home page of SVSU.edu		
+URL:		: http://csis.svsu.edu/~ikhan12/cis255/ikhan12.html			 
+-->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href="BSA-Logo(C).jpg" type="image/jpeg" / >
+			<link rel="stylesheet" href="ikhan12.css"/>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+			<title> Imran Khan HTML page </title>
+			<!-- Internal css -->
+			<!--<style>
+		#message {
+			color:red;
+		}
+		p, h2{
+			color:green;
+		}
+		p span {
+			color:purple;
+		}
+	</style> 
+	-->
+		</head>
+		<body bgcolor="grey">
+			<!-- From pg.21 of slides -->
+			<h1>A Basic FORM Example (from the slides)</h1>
+			<form method="get" action="ikhan12_process.php">
+				<fieldset>
+					<legend>This is a form</legend>
+					<label>Title of Painting</label>
+					<input type="text" name="title" />
+					<br />
+					<label>Country</label>
+					<select name="where">
+						<option>Canadia</option>
+						<option>Denmark</option>
+						<option selected>Estonia</option>
+						<option>France</option>
+						<option>Germany</option>
+					</select>
+					<br />
+					<textarea name="paintingDescription" placeholder="Enter text here">
+				Please Enter Text
+					</textarea>
+					<br />
+					<input type="submit" />
+				</fieldset>
+			</form>
+			<br />
+			<br />
+
+
+			<h1>a Basic table example (from the slides)</h1>
+			<table border="1" background="medium.jpg" style="background-repeat: no-repeat;">
+				<tr>
+					<th>Painting</th>
+					<th>Artist</th>
+					<th>Year</th>
+					<th colspan="2">Size</th>
+					<!--
+				<th>Width</th>
+				-->
+				</tr>		
+				<tr>
+					<td>Painting 1</td>
+					<td rowspan="2">Artist 1</td>
+					<td>1793</td>
+					<td>162cm</td>
+					<td>128cm</td>
+				</tr>
+				<tr>
+					<td>Painting 1</td>
+					<!--
+				<td>Artist 1</td> -->
+					<td>1793</td>
+					<td>162cm</td>
+					<td>
+						<img src="small.png"</td>
+						</tr>
+					</table>
+
+					<h1 STYLE = 'color:black;font-weight:bold'>
+						<u>Imran Khan HTML page</u>
+					</h1>
+					<h2>Exercise <span>0</span>2
+					</h2>
+					<div class="container">
+						<h2>Basic Table</h2>
+						<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Firstname</th>
+									<th>Lastname</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>John</td>
+									<td>Doe</td>
+									<td>john@example.com</td>
+								</tr>
+								<tr>
+									<td>Mary</td>
+									<td>Moe</td>
+									<td>mary@example.com</td>
+								</tr>
+								<tr>
+									<td>July</td>
+									<td>Dooley</td>
+									<td>july@example.com</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-6">
+								<p>Text!</p>
+								<p>Text!</p>
+								<p>Text!</p>
+								<!-- This is a link -->
+							</div>
+
+							<div class="col-md-4 col-sm-6">
+								<p>Text!</p>
+								<p>Text!</p>
+								<a href="cricket.jpg"> Bangladesh Cricket Team!</a>
+								<!-- This is a link -->
+							</div>
+
+							<div class="col-md-4 col-sm-6">
+								<p>Text!</p>
+								<p>Text!</p>
+								<p>Text!</p>
+								<!-- This is a link -->
+							</div>
+						</div>
+					</div>
+					<!-- end container -->
+					<header>
+						<div class="container">
+							<div class="row">
+								<p class="odd" align="center" id="message">This website is a template<br />
+								</p>
+								<p> Example of in-line</p>
+								<p class="odd">Hello <span>ASDFGH</span> Few More ASDFGH</p>
+							</div>
+							<div class="row">
+								<p>This <span>paragraph</span> is <span>paragraph</span> 1</p>
+								<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 2</p>
+								<p>This <span>paragraph</span> is <span>paragraph</span> 3</p>
+								<p class="odd">This <span>paragraph</span> is <span>paragraph</span> 4</p>
+								<p>This <span>paragraph</span> is <span>paragraph</span> 5</p>
+							</div>
+							<div class="row">
+								<img src="small.png" title="Fun Legcat!" />
+							</div>
+						</div>
+					</header>
+				</body>
+				<address>
+  Posted by: Imran Khan
+					<br>
+  Contact information: <a href="mailto:ikhan12@svsu.edu">
+  ikhan12@svsu.edu</a>
+					</address>
+				</html>

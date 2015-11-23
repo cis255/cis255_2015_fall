@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prog04</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+          </div>         
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+        <div class="container">
+                                  
+	
+	<!-- Yahoo Weather API JS Code -->
+	<script src="http://csis.svsu.edu/~ikhan12/cis255/ikhan12/startbootstrap-grayscale-1.0.4/weather.js"></script>
+
+	<!-- Chart.js  Code -->
+	<script src="http://csis.svsu.edu/~ikhan12/cis255/ikhan12/startbootstrap-grayscale-1.0.4/chart.js"></script>
+
+
+			</head>
+
+			<div class="container"><!-- making a container for the yahoo weather widgit-->
+					<div class="row">
+						<h4> Yahoo Weather Widgit</h4>
+						<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid red">
+
+							<div id="find">
+								<input type="edit" placeholder="Location" id="loc">
+									<button onclick="getWeather();">Find</button><!-- when you clickthe find button, the input box will process-->
+								</div>
+
+								<div id="found"><!-- if data in input box is valid, will do the following code and output weather for that area-->
+									<h3>Weather for <span id="location"></span></h3>
+									<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+									<p><a href="javascript:showSearch();">&larr; change location</a></p>
+								</div>
+
+								<div id="error" style="display: none;"><!-- if data is not valid, will not process and will display that location is not found-->
+									<p>Location not found!</p>
+								</div>
+
+							</div>
+
+
+						</div>
+				</br>
+			</br>	
+<div class="container">
+	<div class="row">
+		<h4>Fall 2015 Incoming International Students Demographic</h4>
+		<div class="col-md-4 col-lg-4 col-sm-4" >
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="300" height="300"/>
+		</div>
+
+	<h1>Internatioanl Students at SVSU</h1>
+	<script>
+		var pieData = [
+				{
+					value: 237,
+					color:"#FF0000",
+					highlight: "#FF5A5E",
+					label: "Nepal"
+				},
+				{
+					value: 52,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "China"
+				},
+				{
+					value: 48,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Saudi Arabia"
+				},
+				{
+					value: 34,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "India"
+				},
+				{
+					value: 11,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Taiwan"
+				},
+				{
+					value: 10,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Bangladesh"
+				},
+				{
+					value: 9,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Brazil"
+				},
+				{
+					value: 8,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Canada"
+				},
+				{
+					value: 7,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Pakistan"
+				},
+				{
+					value: 37,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "OTHER"
+				}
+				
+			];
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+	</script>
+	<h2>Fall 2015 Incoming Student's Demographic</h2>
+	<p> <ol>Nepal: 237</ol>
+		<ol>China: 52</ol>
+		<ol>Saudi Arabia: 48</ol>
+		<ol>India: 34</ol>
+		<ol>Taiwan: 11</ol>
+		<ol>Bangladesh: 10</ol>
+		<ol>Brazil: 9</ol>
+		<ol>Canada: 8</ol>
+		<ol>Pakistan:7</ol>
+		<ol>OTHER: 37</ol>
+	</p>
+	</div>
+	</div>
+</div>
+
+</div>
+                </div>
+            </div>
+        </div>
+    </header>	
+	<div class="container">
+	<div class="row">
+		<h4>SVSU Course API</h4>
+		<div class="col-md-4 col-lg-4 col-sm-4" >
+		jquery(document).ready(function(){
+		});
+		
+		</div>
+	</div>
+</div>		
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Prog04 Cis255 Fall 2015</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>

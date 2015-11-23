@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--
+filename  	: ikhan12_prog03_order.html
+author		: Imran Khan (CIS-255, Fall 2015)
+Description	: This program demonstrates Javascript,jquery
+Design		:
+	<head> title and JQuery CDN
+	<body> 
+		1. Use Bootstrap for overall formatting
+		2. Make customer information (under "Mail Orders to:) user-enterable
+		3. Create object of states and taxes
+		4. Compute "Tax" based on State entered in customer information
+		5. Create object of freight amounts and weights
+		6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+		7. Use jQuery to make order detail lines appear in different color every other line
+		8. Highlight in yellow any field a user clicks
+				
+	<script>
+		0. On ready, format table row colors
+		1. Determine tax from object Tax and the state entered by user
+		
+			
+-->
+<html>
+<head>
+	<h1 align="Center">Khan's Golf Center</h1>
+	<h3 align="Center"><i>Customer Order Form</i></h3>
+	<!-- JQuery cdn -->
+	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	
+	
+</head>
+<body>
+
+	<!-- 1. Customer info table -->
+	<!--2. Make customer information (under "Mail Orders to:) user-enterable -->
+	<table id ="CustomerMail" border =".5" align="top,left">
+		<tr>
+			<th id="MailOrdersTo" colspan="3">
+				Mail Orders To:
+			</th>
+		</tr>
+		<tr>
+			
+			<td id="CustomerName" colspan="3">
+			<input size="45" type ="text" size = "35" name="Customer_Name" placeholder="Name"></td>
+			
+		</tr>
+		<tr>
+			
+			<td id="CustomerAddress" colspan="3">
+			<input size="45"type ="text" name="Customer_Address" placeholder="Address"></td>
+			
+		</tr>
+		<tr>
+			<td id="CustomerCity" colspan="3">
+			<input type ="text" id= "CustomerCity_input"  name="Customer_City" placeholder="City"></td>
+			
+			<td id="CustomerState"  colspan="3">
+			<input size="5" type ="text" name="Customer_State" onkeyup="GetConvert();" id = "Customer_State_Input" placeholder="State"></td>
+			
+			<td id="CustomerZip" colspan="3">
+			<input size="10" type ="text"  name="Customer_Zip"  placeholder="Zip"></td>
+		</tr>
+		
+	</table>
+	
+	<!--2. order date, info, and customer name -->
+	<table id ="OrderInfo" border =".5" align="right,top">
+		<tr>
+			<th id="Orderinfo" colspan="2">
+				
+			</th>
+		</tr>
+		<tr>
+			
+			<td id="OrderNumberLabel" colspan="2">
+			
+			Order Number:
+			</td>
+			<td id="OrderNumber" colspan="2">
+			<input size="45" type ="text" size = "35" name="OrderNumber_Input" placeholder="#####"></td>
+		</tr>
+		
+		<tr>
+			<td id="OrderDateLabel" colspan="2">
+			Order Date: </td>
+			
+			<td id="OrderDate"  colspan="2">
+			<input size="45" type ="text" name="OrderDate_Input" placeholder="mmm/dd/yyyy"></td>
+			
+			
+		</tr>
+		
+	<tr>
+			<td id="CustomerLabel" colspan="2">
+			Customer Name:</td>
+			
+			<td id="CustomerName"  colspan="2">
+			<input size="45" type ="text" name="CustomerName_Input" placeholder="Last Name, First Name"></td>
+			
+			
+		</tr>
+		
+	</table>
+	
+	
+	
+	<!-- 3. data table -->
+	<table id ="OrderFormTable" border =".5" align="bottom,center">
+		<tr>
+			<th id="ItemNo." colspan="5" size="40">
+				Item No.
+			</th>
+			<th id="Description" colspan="5"size="40">
+				Description
+			</th>
+				<th id="Quantity" colspan="5"size="40">
+				Quantity
+			</th>
+				<th id="Price" colspan="5"size="40">
+				Price
+			</th>
+				<th id="Amount" colspan="5"size="40">
+				Amount
+			</th>
+		</tr>
+		<tr id="Ordertr1">
+			
+			<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr2">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr3">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--<input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" >-->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr4">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr5">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr6">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr7">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr8">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" ></td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		<tr id="Ordertr9">
+		<td id="ItemNoInput1" colspan="5" class="ItemNoInput">
+			<!--input size="45" type ="text"  id= "ItemNo_Input1"size = "40" name="ItemNo_Input1" -->
+			</td>
+			
+		
+			
+			<td id="DescriptionInput1" colspan="5">
+			<input size="40"type ="text" id="Description_Input1" name="Description_Input1" >
+			</td>
+			
+		
+			<td id="QuantityInput1" colspan="5">
+			<input type ="text"  id= "Quantity_Input1" name="Quantity_Input1" ></td>
+			
+			<td id="PriceInput1"  colspan="5">
+			<input size="40" type ="text" id="Price_input1" name="Price_input1" ></td>
+			
+			<td id="AmountInput1" colspan="5">
+			<input size="40" type ="text"   name="Amount_Input1"  id="Amount_Input1"></td>
+		</tr>
+		
+		<tr >
+			
+			<td id="SubtotalLabel" colspan="2" >
+			
+			Sub-total
+			</td>
+			<td id="Subtotal" colspan="2">
+			<input size="45" type ="text" size = "35" id= "Subtotal" name="Subtotal"></td>
+		</tr>
+		
+		<tr>
+			<td id="FreightAmtLabel" colspan="2">
+			Freight Amount </td>
+			
+			<td id="FreightAmt"  colspan="2">
+			<input size="45" type ="text" name="FreightAmt" ></td>
+			
+			
+		</tr>
+		
+	<tr>
+			<td id="TaxLabel" colspan="2">
+			Tax</td>
+			
+			<td id="Tax"  colspan="2">
+			<input size="45" type ="text" name="Tax_Input" id = "Tax_Input" ></td>
+			
+		</tr>
+		<tr>
+			<td id="TotalAmtLabel" colspan="2">
+			Total Amount</td>
+			
+			<td id="TotalAmt"  colspan="2">
+			<input size="45" type ="text" name="TotalAmt" ></td>
+			
+		</tr>
+		
+	</table>
+	
+	<p id = "example"></p>
+	<!--script is at the end so that you have access to all elements already -->
+	
+	<script>
+		//On ready, this will format table row colors
+		$("document").ready(function init(){
+		
+		//3. Create object of states and taxes
+		//4. Compute "Tax" based on State entered in customer information
+		//Determine tax from object Tax and the state entered by user
+		//Note: Since all taxes are object, not array; array methods such as length will not work
+		function GetConvert(){
+			var Tax = [];
+		Tax["Alabama"] = 0.04;
+		Tax["Michigan"] = 0.05;
+		Tax["Alaska"] = 0.00;
+		Tax["Arizona"] = 0.056;
+		Tax["Arkansas"] = 0.0625;
+		Tax["California"] = 0.075;
+		Tax["Colorado"] = 0.029;
+		Tax["Connecticut"] = 0.0635
+		Tax["Delaware"] = 0.00;
+		Tax["Florida"] = 0.06;
+		Tax["Georgia"] = 0.04;
+		Tax["Hawaii"] = 0.04;
+			var state = document.getElementById("Customer_State_Input").value;
+			document.getElementById("Tax_Input").value = Tax[state];
+			if (Tax[state]== undefined){
+				document.getElementById("Tax_Input").value = " "
+			}
+		};	
+			
+		
+		//7. Used jQuery to make order detail lines appear in different color every other line
+			$("tr:odd").css("background-color","#C9FFC9"); //every other table line is very light green
+			$("tr:odd input").css("background-color","#C9FFC9");
+			
+			
+		}); //these commands are only for after document is already loaded
+		//8. Highlight in yellow any field a user clicks
+			$("tr:odd input").focus(function(){
+				$(this).css("background-color", "yellow"); //when in focus, input is yellow
+			});
+			$("tr:even input").focus(function(){
+				$(this).css("background-color", "yellow"); //when in focus, input is yellow
+			});
+			
+			$("tr:odd input").focusout(function(){
+				$(this).css("background-color", "#c0c0c0"); //out of focus, color is back to normal
+			});
+			$("tr:even input").focusout(function(){
+				$(this).css("background-color", "white"); //out of focus, color is back to normal
+			});
+			
+		
+		
+		//9. Create an array of freight costs.
+		//Costs correspond to item number
+		
+		var FreightCost=[37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00, 37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00,
+		37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00,
+		37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00, 15.99, 150.25, 383.00,
+		37.99, 29.99, 35.50,37.99, 29.99, 35.50,37.99, 29.99, 35.50,150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00, 
+		150.25, 383.00, 198.90,37.99, 29.99, 35.50, 130.00];
+		
+		
+		
+		//Create dropdowns with options from Freightcost, based on item number
+		var div = document.getElementsByClassName("ItemNoInput");
+
+	for(var i=0;i<div.length;i++)
+	{
+		 frag = document.createDocumentFragment(),
+
+		 select = document.createElement("select");
+		 select.id = "selection" + i;
+	
+		var j = 0;
+		
+		for(j=0;j<FreightCost.length;j++)
+		{
+			select.options.add( new Option(j,j, true, true) );
+			
+		}
+
+
+		frag.appendChild(select);
+		div[i].appendChild(frag);
+	}
+	//set all selections within ItemNoInput to 0 default	
+	$("td.ItemNoInput select").val("0");	
+		
+	
+	
+	   //On select change ....
+		$("td.ItemNoInput select").on('change',function() {
+			var parentid = $(this).closest("tr").attr("id");
+		});
+		
+		
+		//------------------------------------------------------------------------------
+		// append row to the HTML table
+//function appendRow() {
+  //  var tbl = document.getElementById('OrderFormTable'), // table reference
+    //    row = tbl.insertRow(tbl.rows.length),      // append table row
+        i;
+    // insert table cells to the new row
+   // for (i = 0; i < tbl.rows[0].cells.length; i++) {
+     //   createCell(row.insertCell(i), i, 'row');
+   // }
+//};
+ 
+// create DIV element and append to the table cell
+//function createCell(cell, text, style) {
+  //  var div = document.createElement('div'), // create DIV element
+    //    txt = document.createTextNode(text); // create text node
+   // div.appendChild(txt);                    // append text node to the DIV
+    //div.setAttribute('class', style);        // set DIV class attribute
+    //div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    //cell.appendChild(div);                   // append DIV to the table cell
+//};
+
+
+
+
+
+
+	</script>
+	
+
+	
+	
+</body>
+</html>
