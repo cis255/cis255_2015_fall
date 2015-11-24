@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SVSU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="http://www.svsu.edu/media/svsu.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Qwigley:400" rel="stylesheet" type="text/css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+      <!-- Angular files -->
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-resource.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-sanitize.min.js"></script>
+      <script type="http://svsu.edu/media/ui-bootstrap-0.11.0.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+      
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <!-- Adobe TypeKit -->
+    <script type="text/javascript" src="//use.typekit.net/vhq2has.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- navigation object : Branch JavaScript -->
+    <!-- navigation object : Branch Css -->
+  </head>
+
+  <body>
+    <div id="wrap">
+      <!-- navigation object : Emergency -->
+      <div id="home-header" class="hidden-print">
+        <div style="background: #444;">
+          <nav class="navbar visible-xs" role="navigation" style="">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#quicklinks" href="#">
+                      <span class="sr-only">Toggle quicklinks</span>
+                      <i class="fa fa-link fa-2x"></i>
+                  </button>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavigation">
+                      <span class="sr-only">Toggle navigation</span>
+                      <i class="fa fa-university fa-2x"></i>
+                  </button>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#searchbox">
+                      <span class="sr-only">Toggle Search</span>
+                      <i class="fa fa-search fa-2x"></i>
+                  </button>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nifty-section-links-of-wonder">
+                      <span class="sr-only">Toggle navigation</span>
+                      <i class="fa fa-bars fa-2x"></i>
+                  </button>
+              </div>
+            </nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mainNavigation" style="padding-right:15px;">
+              <ul class="nav navbar-nav navbar-left">
+                <li><a href="/resources/currentstudents/">Current Students</a></li>
+                <li><a href="/resources/faculty/">Faculty</a></li>
+                <li><a href="/resources/staff/">Staff</a></li>
+                <li><a href="https://alumni.svsu.edu/SSLPage.aspx?pid=207">Alumni</a></li>
+                <li><a href="http://foundation.svsu.edu/">Giving</a></li>
+                <li><a href="/resources/community/">Community</a></li>
+                <li><a href="/parents/">Parents</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://my.svsu.edu/"><i class="icon-svsu-coop icon-light" style="color:#C8C6C6;"></i> mySVSU</a></li>
+                <li><a href="/find/offices">Contact</a></li>
+                <li><a href="/find/atozindex">A-Z Index</a></li>
+                <li><a data-toggle="collapse" data-target="#quicklinks" class="collapsed" href="#">Quicklinks</a></li>
+                <li><a href="/newsroom">News</a></li>
+                <li><a id="revealSearch" data-toggle="collapse" data-target="#searchbox" class="collapsed" href="#"><i class="fa fa-search"></i> Search</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="nifty-section-links-of-wonder">
+              <ul class="nav navbar-nav navbar-left">
+                <ul><li><a href="/computerscience/aboutus/">About Us</a></li><li><a href="/computerscience/news/">News</a></li><li><a href="/computerscience/missionstatement/">Mission Statement</a></li><li><a href="/computerscience/curriculum/">Curriculum</a></li><li><a href="/computerscience/coursesequence/">Course Sequence</a></li><li><a href="/computerscience/cscoursesequence/">CS Course Sequence</a></li><li><a href="/computerscience/careers/">Careers </a></li><li><a href="/computerscience/faculty/">Faculty </a></li><li><a href="/collegeofscienceengineeringtechnology/">College of Science, Engineering and Technology</a></li><li><a href="/computerscience/cis/">CIS</a></li><li><a href="/computerscience/whystudycsis/">Why study CSIS?</a></li><li><a href="/computerscience/ouralumni/">Our Alumni</a></li></ul>
+              </ul>
+            </div>
+          </div>
+        <div id="searchbox" class="collapse">
+          <div class="reset-box-sizing">
+            <gcse:searchbox-only></gcse:searchbox-only>
+          </div>
+          </div>
+        <div id="quicklinks" class="collapse">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                  <ul>
+                      <li><a href="http://www.svsu.edu/library"><span>Library</span><i class="fa icon-svsu-zanhow fa-fw"></i></a></li>
+                      <li><a href="http://svsu.campusdish.com/"><span>Dining</span><i class="fa fa-cutlery fa-fw"></i></a></li>
+                      <li><a href="http://www.svsu.edu/bookstore"><span>Bookstore</span><i class="fa fa-book fa-fw"></i></a></li>
+                    <li><a href="http://www.svsu.edu/cfsc/paytuitionhousingmealplansrelatedfees/"><span>Make a Tuition Payment</span><i class="fa fa-money fa-fw"></i></a></li>
+                      <li><a href="http://svsu.campusdish.com/Commerce/Catalog/ShopSubCategory.aspx?category=All_Products_7478&lid=7478&root=Meal_Plan"><span>Declining Balance Options</span><i class="fa fa-level-down fa-fw"></i></a></li>
+                      <li><a href="https://web.svsu.edu/printbalance/"><span>Print Balance</span><i class="fa fa-print fa-fw"></i></a></li>
+                      <li><a href="http://svsu.edu/newsevents/"><span>Campus Calendar</span><i class="fa fa-calendar fa-fw"></i></a></li>
+                  </ul>       
+              </div>
+              <div class="col-md-3">
+                  <ul>
+                      <li><a href="http://svsu.edu/its/supporttraining"><span>Technology Support</span><i class="fa fa-laptop fa-fw"></i></a></li>
+                      <li><a href="http://svsu.edu/visit/campusmaps/"><span>Campus Map</span><i class="fa fa-globe fa-fw"></i></a></li>
+                      <li><a href="http://www.svsu.edu/apply/employment/"><span>Jobs at SVSU</span><i class="fa fa-university fa-fw"></i></a></li>
+                      <li><a href="https://alumni.svsu.edu/"><span>Alumni Network</span><i class="fa fa-graduation-cap fa-fw"></i></a></li>
+                      <li><a href="http://maintrequest2.svsu.edu/login.aspx"><span>Request Maintenance</span><i class="fa fa-wrench fa-fw"></i></a></li>
+                      <li><a href="http://apps.svsu.edu/forms/roominfo.php"><span>Book a Room/Event</span><i class="fa fa-clock-o fa-fw"></i></a></li>
+                      <li><a href="https://pwm.svsu.edu/"><span>Change Network Password</span><i class="fa fa-asterisk fa-fw"></i></a></li>
+                  </ul>   
+              </div>
+              <div class="col-md-3">
+                  <ul>
+                      <li><a href="https://webtech.svsu.edu/lookup/employee/directory"><span>Manage your Directory Info</span><i class="fa fa-lock fa-fw"></i></a></li>
+                      <li><a href="http://www.svsu.edu/courses"><span>Course Lookup</span><i class="fa fa-edit fa-fw"></i></a></li>
+                      <li><a href="http://svsu.edu/catalog/"><span>Course Catalog</span><i class="fa fa-list fa-fw"></i></a></li>
+                      <li><a href="http://www.svsu.edu/tutor"><span>Tutoring</span><i class="fa fa-pencil fa-fw"></i></a></li>
+                      <li><a href="http://purchase.tickets.com/buy/TicketPurchase?organ_val=22481"><span>Box Office Tickets</span><i class="fa fa-ticket fa-fw"></i></a></li>
+                      <li><a href="http://www.svsu.edu/officeoftheregistrar/records/transcriptinformation/"><span>Transcript Request</span><i class="fa fa-file-text  fa-fw"></i></a></li>
+                      <li><a href="https://svsu-csm.symplicity.com/students/"><span>Cardinal Career Network</span><i class="fa fa-briefcase  fa-fw"></i></a></li>
+                  </ul>
+              </div>
+              <div class="col-md-3">
+                  <ul>
+                      <li><a href="https://vmail.svsu.edu"><span>Vmail</span><i class="fa fa-envelope fa-fw"></i></a></li>
+                      <li><a href="https://vspace.svsu.edu"><span>VSpace</span><i class="fa icon-svsu-vspace fa-fw"></i></a></li>
+                      <li><a href="https://svsu.instructure.com"><span>Canvas</span><i class="fa icon-svsu-canvas fa-fw"></i></a></li>
+                      <li><a href="https://vdrive.svsu.edu"><span>"M" Drive</span><i class="fa icon-svsu-mdrive fa-fw"></i></a></li>
+                      <li><a href="http://cardinaldirect.svsu.edu"><span>Cardinal Direct</span><i class="fa icon-svsu-coop-arrow fa-fw"></i></a></li>
+                      <li><a href="https://mysupport.svsu.edu"><span>Report Technology Trouble</span><i class="fa fa-warning fa-fw"></i></a></li><li><a href="https://webtech.svsu.edu/lookup/"><span>Directories</span><i class="fa fa-phone fa-fw"></i></a></li>
+                  </ul>    
+              </div>
+          </div>
+          <span id="quicklinksClose"><a data-toggle="collapse" data-target="#quicklinks" href="#">close</a></span>
+        </div>
+      </div> <!-- end of quicklinks-->
+      <div class="container">
+
+        <div class="row">
+  <div class="col-md-4">
+    <a href="/">
+      <img src='http://svsu.edu/media/red_white_logo.png' alt="Saginaw Valley State University" style="padding: 15px 0;/* max-width: 50%; */">
+    </a>
+  </div>
+
+</div> <!-- masthead -->
+        <!-- navigation object : Breadcrumbs 2013 --><nav class="breadcrumb"><a href="/">SVSU</a> / <a href="/computerscience/">Computer Science</a></nav>
+        
+          </div>
+      </div>
+      
+      <div id="main" class="container">
+                
+        <div class="row">
+        <div class="col-sm-12 hidden-lg hidden-md hidden-sm collapse" style="height: 0;" data-toggle="collapse" id="section-nav">
+          <div class="section-nav">
+            <div class="top"> 
+      
+            </div>
+      
+            <div id="svsu_subnav">
+              <h2><a href="/computerscience/">Computer Science</a></h2>
+              <ul><li><a href="/computerscience/aboutus/">About Us</a></li><li><a href="/computerscience/news/">News</a></li><li><a href="/computerscience/missionstatement/">Mission Statement</a></li><li><a href="/computerscience/curriculum/">Curriculum</a></li><li><a href="/computerscience/coursesequence/">Course Sequence</a></li><li><a href="/computerscience/cscoursesequence/">CS Course Sequence</a></li><li><a href="/computerscience/careers/">Careers </a></li><li><a href="/computerscience/faculty/">Faculty </a></li><li><a href="/collegeofscienceengineeringtechnology/">College of Science, Engineering and Technology</a></li><li><a href="/computerscience/cis/">CIS</a></li><li><a href="/computerscience/whystudycsis/">Why study CSIS?</a></li><li><a href="/computerscience/ouralumni/">Our Alumni</a></li></ul> <!--T4 nav obj . left nav -->
+            </div>
+            <!--T4 nav obj .left sidebar -->
+          </div>
+          
+          <div id="svsuContactWrapper">
+  
+  <h2>Contact Us</h2><p>
+  <i class="fa fa-envelope"></i><a href='mailto:icho@svsu.edu'>icho@svsu.edu</a><br />
+  <i class="fa fa-phone"></i>(989) 964-2044<br />
+  
+  
+  </p>
+  
+  <h3>Department Chair</h3><p>
+  Il-Hyung Cho<br />  
+  </p>
+  
+  
+    
+  
+  
+  
+    
+  
+
+  <h3>Office</h3><p>
+  SE 178<br />
+  
+  
+    </p>
+
+  
+  
+  
+   
+  
+</div> <!--navigation object : Contact Us -->
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-sm-3 hidden-xs hidden-print">
+          <div class="section-nav">
+            <div class="top"> 
+      
+            </div>
+      
+            <div id="svsu_subnav">
+              <h2><a href="/computerscience/">Computer Science</a></h2>
+              <ul><li><a href="/computerscience/aboutus/">About Us</a></li><li><a href="/computerscience/news/">News</a></li><li><a href="/computerscience/missionstatement/">Mission Statement</a></li><li><a href="/computerscience/curriculum/">Curriculum</a></li><li><a href="/computerscience/coursesequence/">Course Sequence</a></li><li><a href="/computerscience/cscoursesequence/">CS Course Sequence</a></li><li><a href="/computerscience/careers/">Careers </a></li><li><a href="/computerscience/faculty/">Faculty </a></li><li><a href="/collegeofscienceengineeringtechnology/">College of Science, Engineering and Technology</a></li><li><a href="/computerscience/cis/">CIS</a></li><li><a href="/computerscience/whystudycsis/">Why study CSIS?</a></li><li><a href="/computerscience/ouralumni/">Our Alumni</a></li></ul> <!--T4 nav obj . left nav -->
+            </div>
+            <!--T4 nav obj .left sidebar -->
+          </div>
+          
+          <div id="svsuContactWrapper">
+  
+  <h2>Contact Us</h2><p>
+  <i class="fa fa-envelope"></i><a href='mailto:icho@svsu.edu'>icho@svsu.edu</a><br />
+  <i class="fa fa-phone"></i>(989) 964-2044<br />
+  
+  
+  </p>
+  
+  <h3>Department Chair</h3><p>
+  Il-Hyung Cho<br />  
+  </p>
+  
+  
+    
+  
+  
+  
+    
+  
+
+  <h3>Office</h3><p>
+  SE 178<br />
+  
+  
+    </p>
+
+  
+  
+  
+   
+  
+</div> <!--navigation object : Contact Us -->
+           <!--navigation object : Sidebar - Lower Left -->
+        </div>  
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-12" style="margin-left:0;margin-right:30px;">
+              <div class="row">
+                <!-- t4 nav .banner image  -->
+                <!-- t4 nav .introduction with content  -->
+                <!-- t4 nav .staff members  -->
+              </div>
+            </div>
+            <div class="col-sm-12">  
+            <div class="row">
+              <div id="responsive-main" class="col-md-9">
+                <!-- t4 nav .Resources -->
+                <!-- navigation object : Photo Gallery --><section class="span6 responsive col-md-12">
+<a id="d.en.9815"></a>
+<h1>Computer Science & Information Systems (CSIS)</h1>
+
+
+<p><img src="http://svsu.edu/media/academicprograms/imgs/academicprogramsimgs/finals/computer-science.jpg" alt="computer-science" style=" padding : 0px 15px 15px 0px;   float : left;" /><span style="font-size: 12px;">The Computer Science program and Computer Information Systems program share many of the same core classes to ensure that students are adequately prepared with the necessary background for their upper class studies.&nbsp; This common core includes programming both in a Windows graphical environment as well as in a UNIX command-line environment.&nbsp; Industry uses both operating systems and so the Department wants students to be well versed in each area.&nbsp; Additionally, students will learn C++ and Microsoft Visual Basic as toolsets to develop applications.&nbsp; The common core also includes introductory data structures, statistics with computer applications, web client development and web server development.&nbsp; Both majors are heavily programming-oriented.&nbsp; The curriculum has been designed this way on purpose so that students can learn about a concept and then use their programming knowledge as a vehicle to understand, experiment and implement that topic.&nbsp; Both programs do a great job in preparing students for their future in industry or to pursue a graduate degree</span></p>
+<p>Computer Science tends to be more theoretic in nature than Computer Information Systems.&nbsp; It uses more abstraction and mathematics as a core skill set area.&nbsp; Computer Science majors will see the following in their degree program:</p>
+<ul>
+<li>Topical Coverage Synopsis: Models, technologies, algorithms and theory that are crucial to software and hardware systems and industry</li>
+<li>Cutting-edge technology skills and knowledge:
+<ul>
+<li>Application Areas: Networking, Java, Software Engineering, Artificial Intelligence, Algorithm and Data Structure Design and Analysis</li>
+<li>Technical Topics: usability, interactivity, network programming, UNIX systems administration and much more</li>
+</ul>
+</li>
+</ul>
+</section>
+	      <div class="row"><!--T4 nav obj . Thumbnail Gallery --></div>
+              </div>
+              <div id="responsive-sidebar" class="col-md-3">
+                <div class="pane">
+	<h2></h2>
+ 
+  <img alt='' src='http://svsu.edu/media/communityengagement/imgs/Service-Learning-.png' class="rounded-img"  />
+  
+	
+</div>
+              </div>
+            </div>
+	    </div>
+          </div>
+        </div>
+      </div>
+
+  </div> <!-- /container -->
+  </div><!-- end wrap -->
+  <footer class="interior_footer hidden-print">
+    <div class="row" id="footer_header">
+      <div class="container">
+        <div class="hidden-xs hidden-sm">
+          <div class="row">
+            <div class="col-md-2">
+              <h5><a href='/discover/'>Discover</a></h5><!-- t4 nav .Main Links - Discover  -->
+            </div>
+            <div class="col-md-2">
+              <h5><a href='/visit/'>Visit</a></h5><!-- t4 nav .Main Links - Visit  -->
+            </div>
+            <div class="col-md-2">
+              <h5><a href='/apply/'>Apply</a></h5><!-- t4 nav .Main Links - Apply  -->
+            </div>
+            <div class="col-md-2">
+              <h5><a href='/oncampus/'>On Campus</a></h5><!--t4 nav .Main Links - On Campus  -->
+            </div>
+            <div class="col-md-2">
+              <h5><a href='/resources/'>Resources</a></h5><!-- t4 nav .Main Links - Resources  -->
+            </div>
+            <div class="col-md-2">
+              <h5><a href='/find/'>Find</a></h5><!-- t4 nav .Main Links - Find  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="container" id="interior-footer-container">
+        <div class="row">
+          <div class="col-md-12 hidden-xs hidden-sm">
+            <div class="row">
+              <div class="col-md-2">
+                <ul class="discover-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="/discover/welcometosvsu/">Welcome to SVSU</a></li>
+                            <li><a href="/academicprograms/introductions/undergraduateprograms/">Undergraduate Programs</a></li>
+                            <li><a href="/graduateprograms/">Graduate Programs</a></li>
+                            <li><a href="/oip/">International Programs</a></li>
+                            <li><a href="/discover/faculty/">Faculty</a></li>
+                            <li><a href="/parents/">Tips for Parents</a></li>
+                            <li><a href="/president/accreditations/">Accreditations</a></li>
+                            <li><a href=""></a></li><!-- t4 nav .Mega menu - Discover  -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="visit-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="/visit/scheduleavisit/">Schedule a Visit</a></li>
+                            <li><a href="/visit/campusmaps/">Maps</a></li>
+                            <li><a href="/visit/directionstosvsu/">Directions</a></li>
+                            <li><a href="/visit/photos/">Photos</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li><!-- t4 nav .Mega menu - Visit  -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="apply-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="/apply/undergraduate/">Undergraduate</a></li>
+                            <li><a href="/oip/apply/">International</a></li>
+                            <li><a href="/graduateprograms/">Graduate</a></li>
+                            <li><a href="/cfsc/">Financial Aid</a></li>
+                            <li><a href="/apply/employment/">Employment</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li><!-- t4 nav .Mega menu - Apply  -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="on-campus-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="/visit/photos/">What It's Like Here</a></li>
+                            <li><a href="http://svsu.orgsync.com/">Student Life</a></li>
+                            <li><a href="/livingoncampus/">Living on Campus</a></li>
+                            <li><a href="/campusrecreation/">Campus Recreation</a></li>
+                            <li><a href="http://svsu.orgsync.com/StudentOrganizations">Clubs and Organizations</a></li>
+                            <li><a href="http://www.svsucardinals.com">Athletics</a></li>
+                            <li><a href="/president/weeklyupdate/">Presidents Weekly Update</a></li>
+                            <li><a href="/calendar/svevents/">Events Calendar</a></li><!-- t4 nav .Mega menu - On Campus  -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="resources-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="/resources/currentstudents/">Current Students</a></li>
+                            <li><a href="/resources/faculty/">Faculty</a></li>
+                            <li><a href="/resources/staff/">Staff</a></li>
+                            <li><a href="/resources/alumnigiving/">Alumni & Foundation</a></li>
+                            <li><a href="/resources/community/">Community</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li><!-- t4 nav .Mega menu - Resources  -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="find-footer" style="height: auto; padding-left:0;">
+                                              <li><a href="https://apps.svsu.edu/lookup/">Directories</a></li>
+                            <li><a href="/find/offices/">Offices</a></li>
+                            <li><a href="/visit/campusmaps/">Campus Maps</a></li>
+                            <li><a href="/library/">Library</a></li>
+                            <li><a href="/catalog/">Course Catalog</a></li>
+                            <li><a href="/find/atozindex/">A-Z Index</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li><!-- t4 nav .Mega menu - Find  -->
+                </ul>
+              </div>
+            </div>
+          <div>
+        </div>
+        <div class="row">
+	  <div class="col-md-12" id="interior_contact_information">
+            <div class="col-md-4" id="home_footer_text">
+              <span>
+                (989) 964-4000
+              </span><br>
+              <span class="adr">
+                <span class="street-address">
+                  7400 Bay Road
+                </span>
+                <span class="locality">
+                  University Center,
+                </span>
+                  <abbr title="Michigan" class="region">MI</abbr>
+                <span class="postal-code">
+                  48710
+                </span>
+              </span>
+              <p><a class="t4Edit-page" href="/terminalfour/SiteManager?ctfn=publish&amp;fnno=31&amp;sid=3652&amp;chid=10&amp;lang=en&amp;ede=true">Copyright</a> <a class="t4Edit-page" href="/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=3652">&copy;</a> 2001&ndash;2014 Saginaw Valley State <a href="#" id="holmes">University</a></p>
+            </div>
+            <div class="col-md-8">
+              <img src='http://svsu.edu/media/cardinal%202.png' class="pull-right">
+              <a href="https://www.youtube.com/user/saginawvalleystate?sub_confirmation=1">
+                <img src='http://svsu.edu/media/007svsucommon/images/youtube.png' class="pull-right">
+              </a>
+              <a href="https://www.linkedin.com/edu/saginaw-valley-state-university-18625">
+                <img src='http://svsu.edu/media/007svsucommon/images/linkedin.png' class="pull-right">
+              </a>
+              <a href="http://instagram.com/svsucardinals">
+                <img src='http://svsu.edu/media/007svsucommon/instagram.png' class="pull-right">
+              </a>
+              <a href="http://www.pinterest.com/svsupinterest/">
+                <img src='http://svsu.edu/media/pinterest.png' class="pull-right">
+              </a>
+              <a href="https://twitter.com/SVSU">
+                <img src='http://svsu.edu/media/007svsucommon/images/twitter.png' class="pull-right">            
+              </a>
+              <a href="https://www.facebook.com/svsu.edu">
+                <img src='http://svsu.edu/media/fb.png' class="pull-right">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        </footer>
+        
+      <!-- Le javascript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+
+      <script type="text/javascript" src="http://svsu.edu/media/svsumain/styleassets/javcascript/jquery.equalizecolumns.min.js"></script>  <!-- T4 Media . jquery.equalizecolumns.min.js-->
+       <!-- LOAD TEMPLATE JAVASCRIPT -->
+        
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52e17f466e26c723"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 5
+    }
+  });
+  	jQuery('.expanding-toggle').on('click', function(e){
+		jQuery(this).children('i').toggleClass('fa-plus fa-minus');
+	});
+        $(".icon").click(function() {
+	var icon = $(this),
+			input = icon.parent().find("#search"),
+			submit = icon.parent().find(".submit"),
+			is_submit_clicked = false;
+	
+	input.animate({
+		"width": "150px",
+		"padding": "10px",
+		"opacity": 1
+	}, 300, function() {
+		input.focus();
+	});
+	
+	submit.mousedown(function() {
+		is_submit_clicked = true;
+	});
+	
+	icon.fadeOut(300);
+	
+	input.blur(function() {
+		if(!input.val() && !is_submit_clicked) {
+			input.animate({
+				"width": "0",
+				"padding": "0",
+				"opacity": 0
+			}, 200);
+			
+			icon.fadeIn(200);
+		};
+	});
+});
+  jQuery('document').ready(function(e){
+	if(jQuery('#responsive-sidebar').html().replace(/\s/g,"") === ""){
+		jQuery('#responsive-sidebar').css('display','none');
+		jQuery('#responsive-main, .responsive').removeClass('col-md-9');
+		jQuery('#responsive-main, .responsive').addClass('col-md-12');
+  	}
+
+        jQuery.ajax({
+            type: "GET",
+            url: "//api.svsu.edu/alerts/active",
+            dataType: "JSONP"
+        }).done(function( msg ) {
+  	    if (typeof msg == "object") {
+	        var alerts = msg.alerts;
+                var today = new Date();
+                if (today.getMonth() >= 10 || today.getMonth() <= 3) {
+                    var img = '<img src="https://webtech.svsu.edu/assets/img/carousel/alerts/snow_1.jpg">';
+                } else {
+                    var img = '<img src="https://webtech.svsu.edu/assets/img/carousel/alerts/closed_1.jpg>';
+                }
+                if (window.location.pathname == "/") {
+                    jQuery('.carousel-inner').html(img + '<div class="carousel-caption"><h2>' + alerts[0].headline + '</h2><p>' + alerts[0].description + '</p><p>' + alerts[0].instruction + '</p></div>');
+                    jQuery('.carousel-control').hide();
+                    jQuery('.carousel').carousel('pause');
+  		    jQuery('body').prepend('<div id="emergency" class="visible-xs-block"><div class="container"><strong>' + alerts[0].headline + '</strong> ' + alerts[0].description + '</div></div');
+                } else {
+                    jQuery('body').prepend('<div id="emergency"><div class="container"><strong>' + alerts[0].headline + '</strong> ' + alerts[0].description + '</div></div');
+                }
+            }
+        });
+        
+	jQuery('div.thumbnail').css('height',Math.max.apply(null,jQuery.map(jQuery('div.thumbnail'),function(a){return jQuery(a).height() + 10;})));
+		
+  });
+  (function() {
+    var cx = '007237985502908999491:mq4pehj5ndi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+  $("#holmes").on('click', function(e) {
+  	e.preventDefault();
+  	$('body').toggleClass("holmes-debug");
+  });
+</script>
+        <!-- LOAD TEMPLATE JAVASCRIPT -->
+         
+<!-- AddThis Smart Layers END -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9150040-1']);
+  _gaq.push(['_setDomainName', 'svsu.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script>
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+     function () {
+     document.location = url;
+     }
+   });
+}
+</script>  
+  
+  </body>
+</html>

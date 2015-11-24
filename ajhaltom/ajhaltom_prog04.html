@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+filename : ajhaltom_prog04.html
+purpose  : demonstrate use of widgets
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. script for printing number 1-10
+			   3. Celsius to Fahrenheit conversion in Javascript
+			   4. Celsius to Fahrenheit conversion in JQuery
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<h1>Prog 4</h1>
+		<h2>Demonstrate Widgets</h2>
+		<h3>Start typing a name in the input field below:</h3>
+	</body>
+
+	<section id="yahooweather">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4"  style="border: 1px solid blue">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+					
+					<div id="error">
+						<p>Location not found!</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+    <!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	 <!-- Yahoo Weather API scripts -->
+	<script src="weather.js"></script>
+	
+  </html>

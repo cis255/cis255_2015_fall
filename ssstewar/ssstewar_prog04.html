@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+filename:    ssstewar_prog04.html
+author:      Steve Stewart, CIS-255, Fall 2015
+description: 
+design: 
+	<head>: none
+	<body>: 
+			1. Thanksgiving countdown widget
+-->
+<html>
+<body>
+
+<!-- Thanksgiving countdown widget -->
+<script type="text/javascript" src="http://100widgets.com/js_data.php?id=245"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="weather.js"></script>
+<style type="text/css">
+	#found { display: none; }	
+	#error { color: red; display: none; }
+</style>
+</head>
+<body>
+
+<div id="find">
+	<input type="edit" placeholder="Location" id="loc">
+	<button onclick="getWeather();">Find</button>
+</div>
+
+<div id="found">
+	<h1>Weather for <span id="location"></span></h1>
+	<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+	<p><a href="javascript:showSearch();">&larr; change location</a></p>
+</div>
+
+<div id="error">
+	<p>Location not found!</p>
+</div>
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+
+
+<script src="Chart.js"></script>
+<script> 
+// Get the context of the canvas element we want to select
+var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart = new Chart(ctx).PolarArea(data);
+
+new Chart(ctx).PolarArea(data, options);
+</script>
+</body>
+</html>

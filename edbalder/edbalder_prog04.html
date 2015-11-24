@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--
+filename: edbalder_prog04.html
+author	: Estevan Balderrama, cis255, fall2015
+purpose	: This program demonstrates javascript and jquery
+design	: 
+			<head> favicon and title
+			<body>
+				0. header
+				1. variable names
+				2. primitive data types
+				3. operators, expressions
+				4. conditionals
+				5. control structures
+				6. objects, arrays
+				7. functions, prototypes
+				8. write to DOM
+-->
+<html>
+	<head>
+		<!-- favicon imnumber and browser tab title -->
+		<link rel='icon' href='../../cardinal_logo.png' type='imnumber/png' />
+				<title>CIS-255: Estevan Balderrama</title>
+	</head>
+	
+	<body>
+		<!-- 0. header -->
+		<h1>Estevan Balderrama, CIS-255, Program 3</h1>
+		<p id="id01">This is program 03</p>
+		<!-- 1. variable names -->
+		<h2>1. Variable Names</h2>
+		<script>
+			var a = 1;
+			var _b = 2;
+			var $c = 3;
+			var d = a + _b + $c;
+			document.write("a + _b + $c =" + d);
+		</script>
+		
+		<!-- 2. primitive data types -->
+		<h2>2. Primitive Data Types</h2>
+		<script>
+			var x = 5; //number
+			var y = "This is a string"; //string
+			var z = true; //boolean
+			var a = undefined; //undefined
+			var b = null; //null
+			document.write("x is type: " + typeof(x) + "<br/>");
+			document.write("y is type: " + typeof(y) + "<br/>");
+			document.write("z is type: " + typeof(z) + "<br/>");
+			document.write("a is type: " + typeof(a) + "<br/>");
+			document.write("b is type: " + typeof(b) + "<br/>");
+		</script>
+		
+		<!-- 3. operators, expressions -->
+		<h2>3. Operators, Expressions</h2>
+		<script>
+			var num1 = 2;
+			var num2 = 5;
+			document.write("Using numbers 2 and 5:" + "<br/>");
+			var num3 = num1 + num2;
+			document.write("2 + 5 = " + num3 + "<br/>");
+			var num3 = num1 * num2;
+			document.write("2 * 5 = " + num3 + "<br/>");
+			var num3 = num1 % num2;
+			document.write("2 % 5 = " + num3 + "<br/>");
+			var num3 = num1 - num2;
+			document.write("2 - 5 = " + num3 + "<br/>");
+			var num3 = num1 / num2;
+			document.write("2 / 5 = " + num3 + "<br/>");
+		</script>
+		
+		<!-- 4. conditionals -->
+		<h2>4. Conditionals </h2>
+		<script>
+			var x = undefined;
+			var y = null;
+			document.write("Does x = y?" + "<br/>");
+			document.write("x = " + x + "<br/>");
+			document.write("y = " + y + "<br/><br/>");
+			(x==y)?document.write("x==y is true<br/>"):document.write("x==y is false<br/>");
+			(x===y)?document.write("x===y is true<br/>"):document.write("x===y is false<br/><br/>");						
+		</script>
+		
+		<script>
+			var num1 = 10
+			if(num1 > 5){
+				document.write("10 is greater than 5")
+			}
+			else {
+				document.write("10 is NOT greater than 5 apparently...")
+			}
+		</script>
+		
+		<!-- 5. control structures -->
+		<h2>5. Control Structures </h2>
+
+		<p>Click the button to loop through a block of code using While.</p>
+		<button onclick="myFunction2()">Try it</button>
+		<p id="demo"></p>
+		<script>
+		function myFunction2() {
+			var text = "";
+			var i = 0;
+			while (i < 10) {
+				text += "<br>The number is " + i;
+				i++;
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+		</script>
+		
+		<p>Click the button to do the same loops using Do/While.</p>
+		<button onclick="myFunction3()">Try it</button>
+		<p id="demo3"></p>
+		<script>
+		function myFunction3() {
+			var text = ""
+			var i = 0;
+			do {
+				text += "<br>The number is " + i;
+				i++;
+			}
+			while (i < 10)  
+			document.getElementById("demo3").innerHTML = text;
+		}
+		</script>
+		
+		<p>Click the button to see a loop using For.</p>
+		<button onclick="myFunction4()">Try it</button>
+		<p id="demo2"></p>
+		<script>
+		function myFunction4(){
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var i = 0;
+			var text = "";
+			for (;cars[i];) {
+				text += cars[i] + "<br>";
+				i++;
+			}
+			document.getElementById("demo2").innerHTML = text;
+		}
+		</script>
+		
+		<p>This displays the day of the week using Switch/Case</p>
+		<p id="demo4"></p>
+		<script>
+		var day;
+		switch (new Date().getDay()) {
+			case 0:
+				day = "Sunday";
+				break;
+			case 1:
+				day = "Monday";
+				break;
+			case 2:
+				day = "Tuesday";
+				break;
+			case 3:
+				day = "Wednesday";
+				break;
+			case 4:
+				day = "Thursday";
+				break;
+			case 5:
+				day = "Friday";
+				break;
+			case  6:
+				day = "Saturday";
+				break;
+		}
+		document.getElementById("demo4").innerHTML = "Today is " + day;
+		</script>
+		
+		<!-- 6. objects, arrays -->
+		<h2>6. Objects and Arrays </h2>
+		<p>Creating a JavaScript Object.</p>
+		<p id="demo5"></p>
+		<script>
+		var car = {type:"Fiat", model:500, color:"white"};
+		document.getElementById("demo5").innerHTML = car.type;
+		</script>
+		
+		<p>Creating an Array using Javascript</p>
+		<p id="demo6"></p>
+		<script>
+		var cars = ["Saab", "Volvo", "BMW"];
+		document.getElementById("demo6").innerHTML = cars[0];
+		</script>
+		
+		<!-- 7. functions, prototypes -->
+		<h2>7. Functions and Prototypes</h2>
+		<p>The perpose of this part is to demonstrate a function.</p>
+		<p>If you enter a 10<p id="example">then this text will be green.</p></p>
+		<input id="num" value="" />
+		<button onclick="myFunction3()">Try it</button>
+		<script>
+			function myFunction3() 
+			{
+				var num;
+				num = Number(document.getElementById("num").value);
+				if (isNaN(num)) 
+				{
+					window.alert("Error in Input")
+				} else 
+				{
+					if(num == 10)
+					{
+						document.getElementById("example").style.color = "green"
+					} 
+					else 
+					{
+						document.getElementById("example").sytle.color = "#FFFFFF"
+					}
+					
+				}				
+			}
+		</script>
+		
+		<p>This demonstrates Prototypes</p>
+		<p id="demo7"></p>
+		<script>
+		function person(first, last, age, eye) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eye;
+		}
+		var myFather = new person("John", "Doe", 50, "blue");
+		var myMother = new person("Sally", "Rally", 48, "green");
+		document.getElementById("demo7").innerHTML =
+		"My father is " + myFather.age + ". My mother is " + myMother.age; 
+		</script>
+		
+		<!-- 8. write to DOM -->
+		<h2>8. Write to DOM </h2>
+		<script>
+			document.write(document.getElementById("id01").innerHTML);
+		</script>
+		
+		<!-- 9. jquery -->
+		<h2>9. jquery</h2>
+		<a href="http://csis.svsu.edu/~edbalder/cis255/edbalder/edbalder_prog03_order.html">Link to Order Form</a>
+	</body>
+</html>

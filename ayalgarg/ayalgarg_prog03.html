@@ -1,0 +1,181 @@
+<!doctype html>
+<!--------------------------------------------------------- 
+filename : ayalgarg_prog03.html
+author   : Abdullah Algargosh, cis255
+purpose  :Demonstrate js and jquery 
+         
+Design: <head> favicon and title
+		<body>
+			0.header
+			1.variable names
+			2.data types
+			3.operators,expressions
+			4.conditionals (truthy/falsy)
+			5.control structures
+			6.objects, arrays
+			7.functions,prototypes
+			8.write to DOM
+			9.order Form Link
+----------------------------------------------------------->
+<html>
+	<head>
+		<!-- favicon image and browser tab title -->
+		<link rel='icon' href='http://csis.svsu.edu/~gpcorser/cardinal_logo.png' type='image/png' />
+		<title>CIS-255: Abdullah Algargosh</title>
+	</head>
+	
+	<body>
+		<!-- 0-header -->
+		<h1>Abdullah Algargosh, CIS-255, Program 3</h1>
+		<h3>This web page is a template for students in CIS-255. Please follow this format when doing your program.</h3>
+		<p id="id100">This is a template for Program 03</p>
+		
+		<!-- 1-variable names -->
+		<h2>1. variable names</h2>
+		<!-- variable names are case sensitive and can start with $ _ or letter -->
+		<script>
+		    var a = 1;
+			var _b = 2; 
+			var $c = 3;
+			var d = a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		
+		<!-- 2- primitive data types -->
+		<h2>2- primitive data types</h2>
+		<script>
+			var x = 5; // number
+			var y = "zippy";
+			var n = null;
+			var z = true;
+			var u;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var n is type: "+typeof(n)+"<br/>");
+			document.write("var u is type: "+typeof(u)+"<br/>");
+			document.write("var z is type: "+typeof(z)+"<br/>");
+		</script>
+		
+		<!-- 3-Operators and Expressions-->
+		<h2>3-Operators and Expressions</h2>
+		<script>
+			var x = 5;
+			var y = 2;
+			var a = 4;
+			var b = 6;
+			var c = 8;
+			var z = x + y; 
+			var f = c % b;
+			var h = a / y;
+			var g = x * c;
+			var j = c - b;
+			document.write("x + y = "+z+"<br />");
+			document.write("c % b = "+f+"<br />");
+			document.write("a / y = "+h+"<br />");
+			document.write("x * c = "+g+"<br />");
+			document.write("c - b = "+j+"<br />");
+		</script>
+		
+		<!-- 4-conditionals (truthy, falsy) -->
+		<h2>4- Conditionals, Truthy, Falsy</h2>
+		<script>
+			var a = "5";
+			var b = 25;
+			var c = 100;
+			var d = a==b;
+			var e = a===c;
+			var f = a!==c;
+			var g = a>=c;
+			var h = a!=c;
+			
+			if (a<b) document.write("Demonstrating 'if' statement"+"<br />");
+			
+			document.write("a==b: "+d+"<br />");
+			document.write("a===c: "+e+"<br />");
+			document.write("a!==c: "+f+"<br />");
+			document.write("a!>=c: "+g+"<br />");
+			document.write("a!=c: "+h+"<br />");
+		</script>
+	
+		<!-- 5-control structures -->
+		<h2>5- Control Structures</h2>
+		<script>
+			var a = 10;
+			var b = 6;
+			var string = "MLB Playoffs 2015";
+			
+			for (i=0;i<a;i++){
+				document.write("Demonstrating For Loop Counter: "+i+"<br />");
+			}
+			
+			document.write("<br />");
+			
+			do {
+				document.write("Demonstrating Do Loop Counter: "+a+"<br />");
+				--a;
+			} 
+			while (a>=5);
+			
+			document.write("<br />");
+			
+			while (b<10) {
+				document.write("Demonstrating While Loop Counter: "+b+"<br />");
+				++b;
+			}
+			
+			document.write("<br />");
+			
+			switch (string){
+				case "MLB Playoffs 2015":
+					document.write("Demonstrating switch of my String Variable: "+string+"<br />");
+					break;
+				default:
+					document.write("Default Switch")
+			}
+		</script>
+		
+		<!-- 6-objects, arrays -->
+		<h2>6- Objects, Arrays</h2>
+		<script>
+			var team = {cityName:"Seattle", teamName:"Mariners"};
+			document.write("City Name: "+team.cityName+"<br />");
+			document.write("Team Name: "+team.teamName+"<br />");
+			document.write("<br />")
+			
+			var alwestteams = ["Mariners", "Rangers", "Athletics", "Angels", "Astros"];
+			for (i=0;i<alwestteams.length;i++){
+				document.write("AL West Member: "+alwestteams[i]+"<br />");
+			}
+		</script>
+		
+		<!-- 7-functions, prototypes-->
+		<h2>7- Functions and Prototypes</h2>
+		<script>
+			var mascot = function(franchise,mascotname) 
+			{
+				this.franchise = franchise;
+				this.mascotname = mascotname;
+			};
+			mascot.prototype.nickName = function () 
+			{
+				document.write('Mascot for the ' + this.franchise + "<br />");
+				document.write('His name is ' + this.mascotname + "<br />");
+			};
+			Mariners = new mascot("Seattle Mariners", "Mariner Moose");
+			Giants = new mascot("San Francisco Giants", "Lou Seal");
+			Mariners.nickName();
+			Giants.nickName();
+		</script>
+	
+		<!-- 8-write to DOM -->
+		<h2>8- Write to DOM</h2>
+		<script>
+			document.write(document.getElementById("id100").innerHTML);
+			document.getElementById("id100").innerHTML="Abdullah Algargosh' Prog03";
+		</script>
+		
+		<!-- 9-link to jQuery Customer Order Form -->
+		<h2>9- Link to jQuery Customer Golf Order Form</h2>
+		<a href="ayalgarg_prog03_order.html">Program 3 Order Form</a>
+	</body>
+</html>

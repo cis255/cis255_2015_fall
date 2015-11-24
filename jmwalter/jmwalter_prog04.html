@@ -1,0 +1,199 @@
+<html>
+	<head>
+	<!--
+	Author: Joshua Walters
+	Program Name:jmwalter_prog04.html
+	Descripton: use the chart.js widget, svsu and yahoo weather api
+	Design: 
+		<head>
+			<style>
+			css for some of the elements 
+			</style>	
+		</head>
+		<body>
+			title
+			bootstrap formatting
+			canvas for the chart to draw to 
+			chart has information on computer related fields in 2018
+			weather stuff
+				bacground and cloud image are original
+				current weather info and 5 day forcast 
+				input for different locations
+			<script>
+				all the info and script things i need for the chart
+				all the info and script i need for printing svsu api stuff
+				using append to the div and .remove you can change your selection for classes 
+					and the ouput changes on the fly similar to angular but not angular
+			
+			</script>
+			all the html skeletal parts needed for the svsu api stuff	
+		</body>
+	Notes: in this program i used and edited the weather.js file from gpcorsers weather.html program
+		the html in this program and many of the document.write features in weather.js have been changed to
+		fit this programs needs. 
+	-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+	<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="Chart.js"></script>
+	<script src="weather.js"></script>
+	<style>
+	#container
+	{
+		background-color: #d3d3d3;
+		border-radius: 25px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	 #weatherJunk p
+	 {
+		 font-family: "Arial", arial, serif;
+		 color: white;
+		 padding-top: 10px;
+	 }
+	 #weatherJunk li
+	 {
+		color: white;
+		font-family: "Arial", arial, serif;
+	 }
+	 canvas 
+	 {
+		padding-top: 50px;
+		padding-bottom: 10px;
+		padding-left: 40px;
+	 }
+	</style>
+	
+	</head>
+	
+	
+
+<body>
+<title>jmwalter_prog04.html</title>
+<div id="container">
+	<div class="row">
+	<div class="col-md-6">
+				
+
+		<p><canvas id="myChart" width="400" height="400" padding-></canvas></p>
+			<p>A report on Science, Technology, Engineering and Math (STEM) from the Georgetown University Center on Education and the Workforce forecasts 51 percent of STEM occupations will be computer occupations by 2018.   </p>
+	</div>
+	<div class="col-md-6">
+		<div id="weatherJunk" style="border-radius: 25px; background-image: url('images/weatherBG2.png'); width: 500px; height: 500px; ">
+			<img src="images/cloud.png"/>
+			<p id="chosenLoc"> </p>
+			<p id="temp"> </p>
+			<p id="condition"> </p>
+			<div id="forecastDiv">
+			<ul id="forecastList" style="color:white;">Five Day Forecast
+
+			</ul>			
+			</div>
+			<p> New Location</p>
+			<input id="loc"/>
+			<input type="button"/ value="Search" onClick="getWeather()">
+			</div>
+		</p>
+	
+	</div>
+
+<script>
+var ctx = document.getElementById("myChart").getContext("2d");
+var options;
+
+// stats according to http://logos.cs.uic.edu/recruit/csstatistics.htm
+var newData = [
+    {
+        value: 51,
+        color:"red",
+        highlight: "#FF5A5E",
+        label: "Computer Occupations"
+    },
+    {
+        value: 28,
+        color: "blue",
+        highlight: "#5AD3D1",
+        label: "Engineers & Engineering Technitions"
+    },
+    {
+        value: 13,
+        color: "green",
+        highlight: "#FFC870",
+        label: "Life & Physical Science Occupations"
+    },
+	{
+        value: 6,
+        color: "yellow",
+        highlight: "#FFC870",
+        label: "Architects, Surveyors, & Technicians"
+    },
+	{
+        value: 2,
+        color: "purple",
+        highlight: "#FFC870",
+        label: "Mahematical Science Occupations"
+    }
+]
+
+var myPieChart = new Chart(ctx).Pie(newData,options);
+
+
+	$.getJSON("https://api.svsu.edu/courses?prefix=CIS", 
+		function (data)
+		{
+			data = data;
+			//console.log(data);
+			console.log(data.courses.length);
+			for (var i = 0; i < data.courses.length; i++)
+			{ 
+				
+				$("#test").append("<option value='" + i + "'>" + data.courses[i].prefix + " " + data.courses[i].courseNumber + "</options>");
+				//alert("success");
+			}
+		});
+		
+	
+		var courseIndex;
+		
+		function printCourse()
+		{
+		$("#output").remove();
+			$.getJSON("https://api.svsu.edu/courses?prefix=CIS", 
+			function (data)
+			{
+				
+				courseIndex = $("#test option:selected").val();
+				var courseName = data.courses[courseIndex].prefix + " " + data.courses[courseIndex].courseNumber;
+				var courseInst = data.courses[courseIndex].instructors[0].name;
+				var courseTitle = data.courses[courseIndex].title;
+				var courseDesc = data.courses[courseIndex].description;
+				$("#outputDiv").append("<div id='output'><p>Course Name:" + courseName + "|" + courseTitle + "</p></br><p>Instructor:" + courseInst + "</p></br><p>" + courseDesc + "</p></div>");
+				/*for (var i = 0; i < data.courses.length; i++)
+				{ 
+					
+					$("#test").append("<option value='" + i + "'>" + data.courses[i].prefix + " " + data.courses[i].courseNumber + "</options>");
+					//alert("success");
+				}*/
+			});
+		}
+		
+	</script>
+<div class="row" style="padding-left: 40px;">
+<div class="col-md-8">
+	<div>
+		<p>Learn about CIS Courses.</P> 
+		</br>
+		<p>Choose a course from the drop down below.</p>
+		<select  id="test" >
+		<option value="None">None</option>
+		</select>
+		<input type="button" value="Learn" onclick="printCourse()"/>
+			<div id="outputDiv">
+			</div>	
+	</div>
+</div>
+</div><!-- row-->
+	</div> <!-- container -->
+</body>
+</html>

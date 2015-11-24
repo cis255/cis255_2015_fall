@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- 
+Filename : amsoave_final.html
+purpose	 : this program is for the final exam.
+design	 :	<head> 
+				title
+			<body> 
+				0. header
+				1. variable names
+				2. data types
+				3. operators, expressions
+				4. conditionals
+					a. truthy
+					b. falsy
+				5. control structures
+					a. for
+					b. do
+					c. while
+					d. switch case
+				6. objects, arrays
+				7. functions, prototypes (psuedo class)
+				8. write to DOM
+				9. jQuery Customers Order Form
+-->
+<html>
+	<head>
+		<!-- Javascript code -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	
+		<!-- Jquery code -->
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		
+		<!-- weatherh.js script -->
+		<script src="prog04/weather.js"></script>
+		
+		<!-- Chart.js script -->
+		<script src="prog04/Chart.js"></script>
+		
+		<title>CIS-255: Final</title>
+		
+		<style>
+			tr:nth-child(odd) {
+				background: yellow;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<p>example paragraph</p>
+			</div>
+			<div class="row">
+				<table id="table1">
+					<tr>
+						<td>
+							Row 1
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Row 2
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Row 3
+						</td>
+					</tr>
+				</table>
+				</div>
+		</div>
+	
+		<br><br><br><br><br>
+		<div class="container">
+            <div class="row">
+				<!-- Yahoo weather API -->
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+
+				</div>
+			</div>
+			<br><br><br>
+			 <div class="row">
+				<!-- Chart.js -->
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<canvas id="myCanvas" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
+		
+	
+	
+	
+	<script>
+		$(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 300,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Red"
+				},
+				{
+					value: 50,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				},
+				{
+					value: 100,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Yellow"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+	
+	</body>
+</html>

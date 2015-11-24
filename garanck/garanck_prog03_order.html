@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <!--
-filename: gpcorser_prog02_order.html
+filename: garanck_prog03_order.html
 Author  : Garret Ranck, cis255, fall2015
 Purpose : Demonstrates javascript and jquery
 Design  : 
-	<head> favicon and title
+	<head> jQuery source
 	<body>
-		0. Header
-		1. Customer Address
-		2. Order Information
+		0. Heading
+		1. Use Bootstrap for overall formatting
+		2. Make customer information (under "Mail Orders to:) user-enterable
+		3. Create object of states and taxes
+		4. Compute "Tax" based on State entered in customer information
+		5. Create object of freight amounts
+		6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+		7. Use jQuery to make order detail lines appear in different color every other line
+		8. Highlight in yellow any field a user clicks\
+		9. Array
 		
 -->
 
@@ -16,17 +23,27 @@ Design  :
 	<head>
 		<title>CIS-255 Golf Center</title>
 		<script src = "https://code.jquery.com/jquery-2.1.4.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+	<!--	1. Use Bootstrap for overall formatting -->
 		<style>
 			th {text-align: left;}
+			
 		</style>
 	</head>
 	<body>
+	<div class="Container">
+		<div class="row">
+		<div class="col-md-12">
+
 		<!-- 0. Heading -->
-		<h1 align="center">CIS-255 Golf Center</h1>
+		<h1 align="center" class="jumbotron">CIS-255 Golf Center</h1>
 		<h3 align="center">Customer Order Form</h3>
+			</div> 
+				</div> <!--row -->
+		<p><br></p>
 		
-		<!-- 1. Customer Address -->
-		<table border="1" >
+		<!-- 2. Customer Information -->
+		<table colspan="3" style="float:left; margin-left:360px" width = "300"  class="table-bordered">
 			<tr>
 				<th colspan="3" style="align:center"> Mail Orders to: </th>
 			</tr>
@@ -49,70 +66,298 @@ Design  :
 			</tr>
 		</table>
 		
+		<table colspan="2"  class="table-bordered" style="margin-left:950px" width="300">
+			<tr>
+				<th colspan="2" style="align:center"> Order Number: 111111</th>
+			</tr>
+			<tr>
+				<td colspan="2"> Order Date: 10/31/2015 </td>
+			</tr>
+			<tr>
+				<td colspan="2" id="customer_name"><input type="text" size="45" placeholder="Customer Name"/></td>
+			</tr>
+		
+		</table>
+		
+		<p><br></p>
+		<p><br></p>
 		<p><br></p>
 		
-		<table align="center" border="1" width = "800">
+		
+		<table align="center" border="1" width = "950" class = "table-bordered" class="table-responsive">
 		<tr>
-			<th> Item No. </th>
-			<th> Description </th>
-			<th> Quantity </th>
-			<th> Price </th>
-			<th> Amount </th>
+			<th colspan="1"> Item No. </th>
+			<th colspan="1"> Description </th>
+			<th colspan="1"> Quantity </th>
+			<th colspan="1"> Price </th>
+			<th colspan="1"> Amount </th>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="ItemNumber0" size="15" maxlength="30"/> </td>
+			<td><input type="text" id="Description0" size="50" maxlength="20"/> </td>
+			<td><input type="text" id="Quantity0" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Price0" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Amount0" size="15" maxlength="10"/> </td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="ItemNumber1" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Description1" size="50" maxlength="20"/> </td>
+			<td><input type="text" id="Quantity1" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Price1" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Amount1" size="15" maxlength="10"/> </td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><input type="text" id="ItemNumber2" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Description2" size="50" maxlength="20"/> </td>
+			<td><input type="text" id="Quantity2" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Price2" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Amount2" size="15" maxlength="10"/> </td>
+		</tr>
+		<tr>
+			<td><input type="text" id="ItemNumber3" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Description3" size="50" maxlength="20"/> </td>
+			<td><input type="text" id="Quantity3" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Price3" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Amount3" size="15" maxlength="10"/> </td>
+		</tr>
+		<tr>
+			<td><input type="text" id="ItemNumber4" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Description4" size="50" maxlength="20"/> </td>
+			<td><input type="text" id="Quantity4" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Price4" size="15" maxlength="10"/> </td>
+			<td><input type="text" id="Amount4" size="15" maxlength="10"/> </td>
 		</tr>
 		<!-- Total Amount -->
 		<tr>
-			<td colspan="4" align="right"> Subtotal </td>
-			<td></td>
+			<td colspan="4" align="right"> Subtotal: &nbsp </td>
+			<td size="15" id="SubTotal"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"> Freight Amount </td>
-			<td></td>
+			<td colspan="4" align="right"> Freight Amount: &nbsp </td>
+			<td size="15" id="FreightTotal"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"> Tax </td>
-			<td></td>
+			<td colspan="4" align="right"> Tax: &nbsp </td>
+			<td size="15" id="Tax"></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="right"> Total Amount </td>
-			<td></td>
+			<td colspan="4" align="right"/> Total Amount: &nbsp </td>
+			<td size="15" id="TotalAmount"></td>
 		</tr>
 		</table>
-		
+		</div>
 		<script>
-			$("document").ready(function init(){
-				$("#customer_city").css("background-color","red");
-				$("#customer_city_input").css("background-color","green");
-				$("#customer_city_input").focus(function(){
-					$(this).css("background-color", "yellow")
-				});
-				$("#customer_city_input").focusout(function(){
-					$(this).css("background-color", "blue")
-				});
-				// set every other line in table to gray
-				$("tr:odd").css("background-color","#c0c0c0");
-				$("tr:odd input").css("background-color","#c0c0c0");
+			<!-- Declare Variables for the Order Function -->	
+			//var StateTax =0.03;
+			var TotalTax = 0.00;
+			
+			<!-- Initialize the Order function -->
+			var Order = function()
+			{
+				this.ItemNumber;
+				this.Description;
+				this.Quantity;
+				this.Price;
+				this.Amount;
+			}
+			
+			<!-- Subtotal Calculation -->
+			Order.prototype.SubTotal = function CalcSubTotal()
+			{
+				return (this.Price * this.Quantity);
+			}
+			
+			<!--3. Initialize the array to hold the Orders -->
+			var Orders = [];
+	
+			<!-- Create the Orders for user input -->
+			for (var i = 0; i <5; i++)
+			{
+				Orders.push(new Order);		
+			}
+			
+			<!-- Var_____ hold the values of the ids of the td as they incrememt -->
+			for (var i = 0; i < 5; i++) 
+			{
+				var	VarItemNumber = "ItemNumber" + i;
+				var	VarDescription = "Description" + i;
+				var	VarQuantity = "Quantity" + i;
+				var	VarPrice = "Price" + i;
+				var	VarAmount = "Amount" + i;
+	
+				Orders[i].ItemNumber = document.getElementById(VarItemNumber).value;
+				Orders[i].Description = document.getElementById(VarDescription).value;
+				Orders[i].Quantity = document.getElementById(VarQuantity).value;
+				Orders[i].Price = document.getElementById(VarPrice).value;
+				Orders[i].Amount = document.getElementById(VarAmount).value;	
+			}
+	
+		var StateTax = 0.06;
+		//4. Compute "Tax" based on State entered in customer information
+		$("#customer_state").change(function SetStateTax(){
+			StateTax = $("#customer_state").val();
+				switch (StateTax) {
+				case "AL": StateTax = 0.0400;
+				break;
+				case "AK": StateTax = 0.0000;
+				break;
+				case "AZ": StateTax = 0.0560;
+				break;
+				case "AR": StateTax = 0.0650;
+				break;
+				case "CA": StateTax = 0.0750;
+				break;
+				case "CO": StateTax = 0.0290;
+				break;
+				case "CT": StateTax = 0.0635;
+				break;
+				case "DE": StateTax = 0.0000;
+				break;
+				case "DC": StateTax = 0.0600;
+				break;
+				case "FL": StateTax = 0.0400;
+				break;
+				case "GA": StateTax = 0.0400;
+				break;
+				case "HI": StateTax = 0.0600;
+				break;
+				case "ID": StateTax = 0.0625;
+				break;
+				case "IL": StateTax = 0.0700;
+				break;
+				case "IN": StateTax = 0.0600;
+				break;
+				case "IA": StateTax = 0.0615;
+				break;
+				case "KS": StateTax = 0.0600;
+				break;
+				case "KY": StateTax = 0.0400;
+				break;
+				case "LA": StateTax = 0.0550;
+				break;
+				case "ME": StateTax = 0.0600;
+				break;
+				case "MD": StateTax = 0.0625;
+				break;
+				case "MA": StateTax = 0.0600;
+				break;
+				case "MI": StateTax = 0.0688;
+				break;
+				case "MN": StateTax = 0.0700;
+				break;
+				case "MS": StateTax = 0.0423;
+				break;
+				case "MO": StateTax = 0.0000;
+				break;
+				case "MT": StateTax = 0.0550;
+				break;
+				case "NE": StateTax = 0.0685;
+				break;
+				case "NV": StateTax = 0.0000;
+				break;
+				case "NH": StateTax = 0.0700;
+				break;
+				case "NJ": StateTax = 0.0513;
+				break;
+				case "NM": StateTax = 0.0400;
+				break;
+				case "NY": StateTax = 0.0475;
+				break;
+				case "NC": StateTax = 0.0500;
+				break;
+				case "ND": StateTax = 0.0575;
+				break;
+				case "OH": StateTax = 0.0450;
+				break;
+				case "OK": StateTax = 0.0000;
+				break;
+				case "OR": StateTax = 0.0600;
+				break;
+				case "PA": StateTax = 0.0700;
+				break;
+				case "RI": StateTax = 0.0600;
+				break;
+				case "SC": StateTax = 0.0400;
+				break;
+				case "SD": StateTax = 0.0700;
+				break;
+				case "TN": StateTax = 0.0625;
+				break;
+				case "TX": StateTax = 0.0595;
+				break;
+				case "UT": StateTax = 0.0600;
+				break;
+				case "VT": StateTax = 0.0530;
+				break;
+				case "VA": StateTax = 0.0650;
+				break;
+				case "WA": StateTax = 0.0600;
+				break;
+				case "WV": StateTax = 0.0500;
+				break;
+				case "WI": StateTax = 0.0400;
+				break;
+				case "WY": StateTax = 0.0575;
+				break;
+				default: StateTax = 0.06;
+				}
+			
+					Calc();
 			});
+			
+			<!-- Everytime the user moves HTML input boxes, this updates -->
+			$("input").change(function() { 
+				Calc(); 
+			});
+			
+			<!-- Set every other row to gray --> // 7. Use jQuery to make order detail lines appear in different color every other line
+			$("document").ready(function init(){
+				$("tr:odd").css("background-color","#E6E6FA");
+				$("tr:odd input").css("background-color","#E6E6FA");
+			});
+			
+			<!-- Turns the current box yellow --> // 8. Highlight in yellow any field a user clicks
+			$("input").focus(function UserfocusYellow(){
+				$(this).css("background-color", "yellow");    
+			});
+			
+			$("input").focusout(function PostClickingRevert(){
+					$("tr:even input").css("background-color","white")
+					$("tr:odd input").css("background-color","#c0c0c0")});
+			
+			function Calc()
+			{
+				var Temp = 0;
+				var TempFreight = 0;
+				Number(TempFreight);
+			for (var i = 0; i< 5; i++)
+				{
+					var VarItemNumber = "ItemNumber" + i;
+					var VarDescription = "Description" + i;
+					var VarQuantity = "Quantity" + i;
+					var VarPrice = "Price" + i;
+					var VarAmount = "Amount" + i;
+
+						Orders[i].ItemNumber = document.getElementById(VarItemNumber).value;
+						Orders[i].Description = document.getElementById(VarDescription).value;
+						Orders[i].Quantity = document.getElementById(VarQuantity).value;
+						Orders[i].Price = document.getElementById(VarPrice).value;
+						Orders[i].Amount = Orders[i].Price * Orders[i].Quantity;
+						if (($("#"+VarQuantity).length !== 0 ) && ($("#"+VarPrice).length !==0)) {
+							
+							document.getElementById(VarAmount).value="$" + Orders[i].Amount.toFixed(2);
+						};
+						Temp+=Orders[i].Amount;
+						TempFreight+= Number(Orders[i].Quantity); //6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+				}
+		
+			document.getElementById("FreightTotal").innerHTML = TempFreight;
+			document.getElementById("SubTotal").innerHTML ="$" + Temp.toFixed(2);
+			document.getElementById("Tax").innerHTML = "$" + parseFloat(StateTax * Temp).toFixed(2);
+			document.getElementById("TotalAmount").innerHTML ="$" + (Temp + (StateTax * Temp)).toFixed(2) ;
+			
+			}
+		
 		</script>
 		
 	</body>

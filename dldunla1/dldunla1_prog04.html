@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- 
+filename:    dldunla1_prog04.html
+Author:      Demetrius Dunlap,CIS-255 Fall 2015
+Description: This HTML program restyles a bootstrap fille and impliments links and widgets. 
+Design:     
+	<head>  links to origional bootstrap template 
+	<body>: 1. Pie chart wiget
+			2. Working links to pre-order information about topic
+			3. Count down widget 
+			4. Working links to social media sources
+			5. Weather api widget 
+			6. Charicter prediction spinner widget
+			7. Music for page
+			
+-->
+
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freelancer - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="prog04_bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="prog04_bootstrap/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="prog04_bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Welcome Young Padawan </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Information</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Pre-order</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Your focus determins your reality</span>
+                        <hr class="star-light">
+                        <span class="skills">Qui-Gon-Jin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2> In a Galaxy far Far Away</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+               
+				<div align="center"
+				<p style="font-size:20px"> The Imperial Forces under orders from cruel Darth Vader hold Princess Leia
+				    hostage, in their efforts to quell the rebellion against the Galactic Empire.
+					Luke Skywalker and Han Solo, captain of the Millennium Falcon, work together 
+					with the companionable droid duo R2-D2 and C-3PO to rescue the beautiful princess,
+					help the Rebel Alliance, and restore freedom and justice to the Galaxy. Many have fought in this great war and many have fallen.</p>
+               
+            </div>
+				<!-------------1:Chart Widget------->
+		 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Kills', 'in thousands per wepon'],
+          ['Darth Vader spawns',     5.9],
+          ['Luke Skywaker Spawns',      5.9],
+          ['Force choke kills',  1.4],
+          ['E-11 blaster kills', 81],
+          ['Walkers downed',    56]
+        ]);
+
+        var options = {
+          title: 'Kills per thousand',
+		  
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+ 
+  <body>
+    <div id="piechart_3d" style="border:4px solid grey; width: 900px; height: 500px;"></div>
+  </body>
+		 <figcaption style="text-align: leftwards; font-weight: bold;"> Weapons used to fight the good fight. </figcaption>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>The force is strong with this one</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>The force was strong with each and every one of the 9.5 million of you who participated in the
+                        open beta that took place from October 8th till the 12th! We love that you loved the game!</p>
+                </div>
+				<div class="col-lg-4">
+                    <p>Whether you're a new fighter pilot looking to showcase your talents, or a professional Jedi/Sith trained in the ways of the force, we have something to offer you!</p>
+                </div>
+            </div>
+		
+			
+        </div>
+	
+		
+		
+    </section>
+
+    <!-- Pre-order section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 text-center">
+                    <h2>Pre-order</h2>
+						<hr class="star-primary">
+						<p> Don't want to be late to the fight do you? Pre-order the game right here and be the first to join the 
+						Galactic Empire or the Rebellion forces! Play along side or as some of the most important icons of the Star-Wars Universe. Join now and play all the way to the Release
+						of the newest starwars movie!
+						 </div>
+					<!-------  2:Link to pre-order ----->
+					 <div class="col-lg-11 text-center">
+					<a href="http://starwars.ea.com/starwars/battlefront/buy" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Pre-order
+                    </a>
+                </div>
+            </div>
+         
+                    	<!-- 3:next Star Wars movie countdown widget -->
+<!-- Begin of mycountdown.org script --><div align="center" style="margin:50px 0px 0px 0px;">
+<div align="center" style="width:140px;border:1px solid #ccc; background: #000000; color: #FFFFFF;font-weight:bold;font-size:12px;margin-bottom:0px;padding-bottom:0px">
+ <a style="text-decoration: none; color:#FFFFFF;" href="http://mycountdown.org/Event/Launch/">STAR WARS EPISODE VII Countdown</a>
+ </div>
+ <script type="text/javascript" src="http://mycountdown.org/countdown.php?cp2_Hex=000000&cp1_Hex=FFFFFF&img=-5&hbg=0&fwdt=410&lab=0&ocd=Launch&text1=STAR WARS EPISODE VII&text2=Counting down to the  Star Wars sequel&group=Event&countdown=Launch&widget_number=3015&event_time=1450468800&timezone=Europe/Amsterdam">
+ </script>
+ <a href="http://mycountdown.org/fullpage.php?cp2_Hex=000000&cp1_Hex=FFFFFF&img=-5&hbg=0&fwdt=410&lab=0&ocd=Launch&text1=STAR WARS EPISODE VII&text2=Counting down to the  Star Wars sequel&group=Event&countdown=Launch&widget_number=3015&event_time=1450468800&timezone=Europe/Amsterdam" title="STAR WARS EPISODE VII Launch Countdown  on  Friday, 18 December 2015 at 20:00, CET timezone  (+0100 GMT)" style="display:inline"><br>
+ <img src="http://mycountdown.org/images/get_widget_button.png" alt="" style="border:none"></a></div> <!-- End of mycountdown.org script -->
+    </section>
+                </div>
+            </div>
+        </div>
+	
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-lg-12">
+                        <h3>Location</h3>
+                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    </div>
+                    <div class="footer-col col-md-6">
+					
+					
+ 
+				</div>
+			</div>
+        </div>
+	</section>
+	<!----------------------------4:These actually work. Links to info about game based on different social media------>
+					<p>Still need more convincing? Look no further, click on a link below to learn more</p>
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/EAStarWars/" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/communities/103458424335514883323" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/EA_SWBF" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                   
+					
+				
+    </footer>
+	
+	
+
+<div align="center">
+	<p style="font-size: 20px; font-weight: bold"> Ever wonde what charicter you are most like in the Star Wars universe? Go ahead and spin to find out!<p>
+	
+	
+</div>
+	
+	<!----- 6:wheel decision widget ---->
+	<iframe src="http://wheeldecide.com/e.php?c1=Yoda+&c2=Darth+Vader&c3=Luke+Skywalker&c4=Boba+Fett&c5=Jango+Fett&c6=Princess+Leia&c7=The+Emperor&c8=Han+Solo&c9=R2D2&c10=Padme+Amidala&c11=Jar+Jar+Binks&c12=Lando+Calrissian&c13=Mace+Windu&c14=Darth+Maul&c15=Count+Dooku&c16=Anakin+Skywalker+&col=&t=what+character+are+you+most+like&remove=&time=5&cols=&tcol=&width=&weights=" 
+	width="300" height="300" scrolling="no" position=center frameborder="0"></iframe>
+	
+	
+	<!---------------5: Yahoo weather api----------->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="weather.js"></script>
+<style type="text/css">
+	#found { display: none; border: 2px solid grey;}	
+	#error { color: red; display: none; }
+</style>
+</head>
+<body>
+
+<div id="find">
+	<input type="edit" placeholder="Location" id="loc">
+	<button onclick="getWeather();">Find</button>
+</div>
+
+<div id="found">
+	<h1>Weather for <span id="location"></span></h1>
+	<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+	<p><a href="javascript:showSearch();">&larr; change location</a></p>
+</div>
+
+<div id="error">
+	<p>Location not found!</p>
+</div>
+
+</body>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+	
+			
+	
+
+</body>
+<!---------7: Music for page source  (https://www.youtube.com/watch?v=-bzWSJG93P8)------>
+<iframe width="1" height="1" src="http://www.youtube.com/embed/-bzWSJG93P8?modestbranding=1&amp;fs=0&amp;rel=0&amp;hd=1&amp;disablekb=0&amp;showinfo=0&amp;iv_load_policy=0&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;playlist=-bzWSJG93P8" frameborder="0" allowfullscreen>
+</iframe><!--Youtube player code generated @ http://gaf210.imvustylez.net -->
+</html>

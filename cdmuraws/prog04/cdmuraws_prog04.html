@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<!-- 
+Filename : cdmuraws_prog04.html
+purpose	 : This program demonstrates the use of the Yahoo weather widget, chart.js library, and the SVSU API.
+design	 :	<head> 
+				title
+			<body> 
+				1. Yahoo Weather API
+				2. chart.js widget
+				3. SVSU API from http://www.svsu.edu/~adarenas/cis255/lesson24/portfolio-1-col.html
+					A. Can fetch JSON structured data
+					B. Can fetch pretty code, featuring course prefix, title, number, section number, credits, term, and professor 
+-->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CIS255 - Program 04</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+	<!-- This script is for Fetch Pretty Classes -->
+	<script id="pretty-course-template" type="text/x-lodash-template">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+		  <table width=100%>
+		  <col width="65%">
+		  <col width="35%">
+			<tr>
+				<td><b>Title:</b> <%= title %> <%= prefix %>*<%= courseNumber %>*<%= section %></td>
+				<td><b>Term:</b> <%= term %></td>
+			</tr>
+			<tr>
+				<td><b>Instructor:</b> <%= instructors[0].name %></td>
+				<td><b>Credits:</b> <%= credit %></td>
+			</tr>
+		</table>
+        </div>
+        <div class="panel-body">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= description %>
+        </div>
+      </div>
+    </script>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Program 04</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    
+                    </li>					
+					<li>
+                        <a class="page-scroll" href="#yahooweather">Weather</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#chart">Chart</a>
+						
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#svsuAPI">SVSU API</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Cory Murawske's Prog 4</h1>
+                <hr>
+                <p>Here you will see examples of the Yahoo weather API, chart.js, and the SVSU API.</p>
+            </div>
+        </div>
+    </header>
+
+  
+	<!-- 1. Yahoo Weather API -->
+	<section id="yahooweather">
+		<div class="container-fluid bg-dark">
+            <div class="row" style="border: 1px solid black">
+				<div class="col-md-4 col-lg-4 col-sm-4 text-center">
+					<h2 class="section-heading">Find out the weather for any location!!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Just type in a valid city and state and you will be able to see the weather!</p>
+					<div id="find"">
+						<input type="edit" placeholder="Location" id="loc" style="background-color:#c0c0c0">
+						<button onclick="getWeather();" style="background-color:#c0c0c0">Find</button >
+					</div>
+
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a color:white href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+
+				</div>
+				
+			</div>
+		</div>
+	</section> 
+	
+	<!-- 2. Chart.js widget -->
+	<section id="chart">
+		<div class="container-fluid">
+            <div class="row text-center" style="border: 1px solid black text-center; background-color:#3366FF" >
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<h2 class="call-to-action">Marvel Cinematic Universe Box Office Revenue (in $ Millions)</h2>
+                    <hr class="light">
+                    <p class="text-faded">Phase 1</p>
+					<div class="col-md-4 col-lg-4 col-sm-4">
+					<canvas id="myChart" width="300" height="300"></canvas>
+				</div>
+
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+	<!-- 3. SVSU API -->
+	<section id="svsuAPI">
+	 <!-- Page Content -->
+		<div class="container">
+			<!-- SVSU API -->
+			<div class="row">
+				<div class="col-md-5">
+					<h3>SVSU API </h3>
+				</div>
+				<div class="container">
+		  <div class="row">
+			<div class="col-lg-12">
+			  <div class="page-header">
+				<h1>Course Lookup <small class="hidden-xs hidden-sm">an SVSU API Client Example</small></h1>
+			  </div>
+			</div>
+		  </div>
+		  <form id="lookupForm" class="form-horizontal" role="form">
+			<div class="form-group">
+			  <label for="prefix" class="col-sm-2 control-label">Prefix</label>
+			  <div class="col-sm-10">
+				<input type="text" name="prefix" class="form-control" id="prefix" placeholder="Prefix" required>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="number" class="col-sm-2 control-label">Number</label>
+			  <div class="col-sm-10">
+				<input type="number" name="courseNumber" class="form-control" id="number" placeholder="Number">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <div class="col-sm-offset-2 col-sm-10">
+				<button id="fetchJSON" class="btn btn-default">Fetch JSON Classes<i class="fa fa-fw fa-code"></i></button>
+				<button id="fetchPretty" class="btn btn-default">Fetch Pretty Classes <i class="fa fa-fw fa-paint-brush"></i></button>
+			  </div>
+			</div>
+		  </form>
+		  <div class="row" id="jsonResults"  style="display:none;">
+			<div class="col-sm-2">
+			  <strong class="pull-right">JSON Results</strong>
+			</div>
+			<div class="col-sm-10">
+			  <pre class="response"></pre>
+			</div>
+		  </div>
+		  <div class="row" id="prettyResults" style="display:none">
+			<div class="col-sm-2">
+			  <strong class="pull-right">Pretty Results</strong>
+			</div>
+			<div class="col-sm-10 response">
+			</div>
+		  </div>
+		</div>
+			
+
+		</div>
+		<!-- /.container -->
+	</section>
+	
+	
+
+    <!-- jQuery -->
+    <script src="jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="jquery.easing.min.js"></script>
+    <script src="jquery.fittext.js"></script>
+    <script src="wow.min.js"></script>
+	
+
+    <!-- Custom Theme JavaScript -->
+    <script src="creative.js"></script>
+	
+	 <!-- Yahoo Weather API JS Code -->
+    <script src="weather.js"></script>
+	
+	<!-- Chart.js  Code -->
+    <script src="Chart.js"></script>
+	
+	<!-- SVSU API from www.svsu.edu/~adarenas/cis255/lesson24/portfolio-1-col.html -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="svsu.js"></script>
+    <script src="application.js"></script>
+
+	
+	<!-- Script for chart.js from http://www.chartjs.org/docs/ -->
+	<script>
+		$(document).ready(function(){
+			// Get context with jQuery - using jQuery's .get() method.
+			var ctx = $("#myChart").get(0).getContext("2d");
+			// This will get the first returned node in the jQuery collection.
+			
+			var data = [
+		{
+			value: 585,
+			color:"#F7464A",
+			highlight: "#FF5A5E",
+			label: "Iron Man"
+		},
+		{
+			value: 263,
+			color: "#46BFBD",
+			highlight: "#5AD3D1",
+			label: "Incredible Hulk"
+		},
+		{
+			value: 449,
+			color: "#FDB45C",
+			highlight: "#FFC870",
+			label: "Thor"
+		},
+		{
+			value: 371,
+			color: "#0000FF",
+			highlight: "#00BFFF",
+			label: "Captain America"
+		},
+		{
+			value: 624,
+			color: "#FFD700",
+			highlight: "#FFA500",
+			label: "Iron Man 2"
+		},
+		{
+			value: 1519,
+			color: "#87CEFA",
+			highlight: "#7FFFD4",
+			label: "Avengers"
+		}
+			]	
+			var myPieChart = new Chart(ctx).Pie(data);
+		})
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<!--
+filename:    ssstewar_prog04.html
+author:      Steve Stewart, CIS-255, Fall 2015
+description: 
+design: 
+	<head>: 
+			1. Thanksgiving countdown widget
+	<body>: 
+			2. Yahoo weather
+			3. Pie chart with my data
+			4. SVSU API course look up
+-->
+<html>
+<body>
+<head>
+	<h1>CIS-255 - Program 04 </h1>
+	<style>
+	h5 {
+    text-align: center;
+	}
+	</style>
+	<!-- 1. Thanksgiving countdown widget -->
+	<script type="text/javascript" src="http://100widgets.com/js_data.php?id=245"></script>
+	<h5>Click above if you are looking forward to the next holiday</h5>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- yahoo weather API -->
+	<script src="weather.js"></script>
+	<!-- Chart.js code -->
+	<script src="Chart.js"></script>
+
+</head>
+<body>
+	<!-- 2. Yahoo weather -->
+	<br><br><br><br><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 2px solid black">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h2>Weather for <span id="location"></span></h2>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<canvas id="myCanvas" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
+		
+	<!-- 3. Pie chart with my data -->
+	<script>
+		$(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 300,
+					color: "#0c18e2",
+					highlight: "#767ef8",
+					label: "Pistons' Fans"
+				},
+				{
+					value: 200,
+					color: "#f58115",
+					highlight: "#f9bd8e",
+					label: "Tigers' Fans"
+				},
+				{
+					value: 100,
+					color: "#2e96f6",
+					highlight: "#c0dffc",
+					label: "Lions' Fans"
+				},
+				{
+					value: 400,
+					color: "#f7464a",
+					highlight: "#f98f95",
+					label: "Red Wings' Fans"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+	
+	<!-- 4. SVSU API course look up -->
+	<!-- Referenced nvansima's code for this course look up -->
+	<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script id="pretty-course-template" type="text/x-lodash-template">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= title %> <%= prefix %>*<%= courseNumber %>*<%= section %> (<%= term %>)</h3>
+        </div>
+        <div class="panel-body">
+          <%= description %>
+        </div>
+      </div>
+    </script>
+
+    <title>Steve Stewart Prog. 04</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Item Row -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1>Course Lookup <small class="hidden-xs hidden-sm">an SVSU API Client Example</small></h1>
+          </div>
+        </div>
+      </div>
+      <form id="lookupForm" class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="prefix" class="col-sm-2 control-label">Prefix</label>
+          <div class="col-sm-10">
+            <input type="text" name="prefix" class="form-control" id="prefix" placeholder="Prefix" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="number" class="col-sm-2 control-label">Number</label>
+          <div class="col-sm-10">
+            <input type="number" name="courseNumber" class="form-control" id="number" placeholder="Number">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="fetchJSON" class="btn btn-default">Fetch JSON Classes<i class="fa fa-fw fa-code"></i></button>
+            <button id="fetchPretty" class="btn btn-default">Fetch Pretty Classes <i class="fa fa-fw fa-paint-brush"></i></button>
+          </div>
+        </div>
+      </form>
+      <div class="row" id="jsonResults"  style="display:none;">
+        <div class="col-sm-2">
+          <strong class="pull-right">JSON Results</strong>
+        </div>
+        <div class="col-sm-10">
+          <pre class="response"></pre>
+        </div>
+      </div>
+      <div class="row" id="prettyResults" style="display:none">
+        <div class="col-sm-2">
+          <strong class="pull-right">Pretty Results</strong>
+        </div>
+        <div class="col-sm-10 response">
+        </div>
+      </div>
+    </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Steve Stewart's Website 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="jquery.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="svsu.js"></script>
+    <script src="application.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap.min.js"></script>
+
+</body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+filename : ajhaltom_exercise06.html
+purpose  : demonstrate jquery compared to javascript
+design   : <head> 
+               javascript: script for temperature conversion
+			   jquery: script for temperature conversion
+           <body> 
+		       1. header and paragraph
+			   2. script for printing number 1-10
+			   3. Celsius to Fahrenheit conversion in Javascript
+			   4. Celsius to Fahrenheit conversion in JQuery
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<h1>Exercise 6</h1>
+		<h2>Demonstrate AJAX</h2>
+		<h3>Start typing a name in the input field below:</h3>
+		<script>
+			var last = -1;	
+			function showHint(str) {
+				if (str.length == 0) { 
+					document.getElementById("txtHint").innerHTML = "";
+					return;
+				} else {
+					var xmlhttp = new XMLHttpRequest(); 
+					xmlhttp.onreadystatechange = function() {
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+							str2 = document.getElementById("txtHint").innerHTML;
+							var last = str2.lastIndexOf(",");
+							if(last > -1) {
+								document.getElementById("txtHint").innerHTML = 
+									str2.substr(0,last)+" and" + str2.substr(last+1);
+							}
+						}
+					}
+					xmlhttp.open("GET", "gethint.php?q="+str, true);
+			
+					xmlhttp.send();
+				}
+			}
+		</script>
+	
+	<!-- 1. Get input from user -->
+		<form> 
+		First name: <input type="text" onkeyup="showHint(this.value)">
+		</form>
+		<!-- 2. Show option from php file -->	
+		<p>Suggestions: <span id="txtHint"></span></p>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<script> 
+function movie(title, director) 
+{ 
+this.print = function movieToString() 
+{ 
+return("title: "+title+", director: "+director+"<br/>"); 
+} 
+} 
+var aliens = new movie("aliens","cameron"); 
+document.write(aliens.print()); 
+</script> 
+<script>
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+</script>
+
+</body> 
+</html>
