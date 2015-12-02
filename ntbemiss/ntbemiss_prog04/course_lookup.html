@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html> 
+
+<!--
+Filename: course_lookup.html
+Author: Nick Bemiss, CIS-255, Fall 2015
+Description: This page uses the SVSU API to print all the courses to the page
+Design: 
+
+	<head>: 
+		1. Menu
+		2. title image
+				
+	<body>: 
+		1. Gather info from svsu api using jquery
+		2. loop through and print the info to the page
+				
+	-->
+
+	<!-- CSS File -->
+	<link href="ntbemiss_prog04.css" rel="stylesheet">
+	
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://api.svsu.edu/courses?prefix=cs"> </script>
+	
+	<head>
+		<!-- 1. Creating clickable menu -->
+		<div id = "wrapper">
+			<div id = "menu-wrapper">
+				<div id = "menu" class = "container">
+					<div id = "menu a:hover">
+						<ul>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/ntbemiss_prog04.html">Home</a>
+							</li>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/todays_weather.html">Yahoo API</a>
+							</li>
+							<!-- Course Lookup is current page item, highlight -->
+							<li class = "current_page_item">
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/course_lookup.html">CIS Course List</a>
+							</li>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/chart.html">Chart.js</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!-- Creating the title of the page -->
+		<div id = "header-wrapper-home">
+			<div id = "header">
+				<img class = "logo" src = "lookup" title = "Lookup">
+			</div>
+		</div>
+	</head>
+		
+	<body>
+		<script>
+			$.getJSON("https://api.svsu.edu/courses?prefix=cis",function(info){
+				
+				var i = 0;
+				var html = "";
+				var lastCourseNumber = 1;
+				var sectionNumber = "";
+
+				// Finding all CIS courses in the API and adding them to variables
+				while(i < info.courses.length){
+					if(info.courses[i].courseNumber == lastCourseNumber){
+						html+='<p center style = "color: black">'+info.courses[i].meetingTimes[0].days+" "+info.courses[i].meetingTimes[0].startTime+" - "+info.courses[i].meetingTimes[0].endTime+'</p>';
+						lastCourseNumber = info.courses[i].courseNumber;
+						i++;
+					}
+					else{
+						html+='<p style = "color: black">'+'===-----------------------------------------------------------------------------------------------------------===<br><b>'+info.courses[i].prefix+" "+info.courses[i].courseNumber+" - "+info.courses[i].title+'</b>'+'</p>';
+						html+='<p style = "color: black">'+info.courses[i].description+'</p>';
+						html+='<p style = "color: black">'+"Term: "+info.courses[i].term+'</p>';
+						html+='<p style = "color: black">'+"Credits: "+info.courses[i].credit+'</p>';
+						
+						html+='<p style = "color: black">'+'<u>'+"Available Times:"+'</u>'+'</p>';
+						html+='<p style = "color: black">'+info.courses[i].meetingTimes[0].days+" "+info.courses[i].meetingTimes[0].startTime+" - "+info.courses[i].meetingTimes[0].endTime+'</p>';
+						
+						console.log(info.courses[i]);
+						var lastCourseNumber = info.courses[i].courseNumber;
+						i++;
+					}
+				}
+					
+				// Printing the courses to the page
+				$("#courseSchedule").append(html);			
+			});	
+			
+		</script>
+			
+		<!-- Using HTML to display the courses correcty -->
+		<center div id="courseSchedule" style="width:600px; margin:0 auto;"></div>
+			
+	</body>
+
+</html>
