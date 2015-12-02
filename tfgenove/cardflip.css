@@ -1,0 +1,14 @@
+.card-container{
+	perspective: 700;
+}
+.card{
+	margin: 200px;
+	width: 200px;
+	length: 200px;
+	background: #5677fc;
+	transition: all 0.6s ease;
+	transform-style: preserve-3d;
+}
+.card:hover{
+	transform:rotateY(180deg);
+}

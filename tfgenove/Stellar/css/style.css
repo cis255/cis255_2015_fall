@@ -1,0 +1,214 @@
+*{
+        -webkit-box-sizing:border-box;
+           -moz-box-sizing:border-box;
+                box-sizing:border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic Styles for the page */
+html{
+        background:#CCC;
+        text-align: center;
+        height:100%;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+}
+body{
+        height:100%;
+        color:white;
+        text-shadow:1px 1px 0 #000;
+}
+
+a:link, a:visited{
+        color:#E0CB77;
+        text-decoration: none;
+}
+a:active{
+        color:#3F5263;
+}
+a:hover{
+        text-decoration: underline;
+}
+a.btn {
+        border: 3px solid #E0CB77;
+        font-family: inherit;
+        font-size: inherit;
+        text-decoration: none;
+        color: white ;
+        background: transparent;
+        cursor: pointer;
+        padding: 1.4rem 4rem;
+        display:inline-block;
+        text-align:center;
+        margin:0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        outline: none;
+        position: relative;
+        border-radius:2px;
+        -webkit-transition:all 0.1s ease-in-out;
+           -moz-transition:all 0.1s ease-in-out;
+                transition:all 0.1s ease-in-out;
+}
+a.btn:hover{
+        background:#E0CB77;
+        color:white;
+}
+
+
+/* Text Styles for the page */
+h1 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        margin-bottom:20px;
+}
+h2 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        line-height: 4rem;
+        margin-bottom:20px;
+}
+h3 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        line-height: 2.5rem;
+        margin-bottom:20px;
+}
+p {
+        font-size: 1rem;
+        line-height: 2rem;
+        text-shadow:none;
+}
+blockquote {
+        font-size: 1.2rem;
+}
+pre {
+        font-size: 0.9rem;
+}
+
+
+
+.content{
+        display:block;
+        padding:100px 50px;
+        width:100%;
+        max-width: 960px;
+        margin:0 auto;
+        overflow:hidden;
+}
+.content img{
+        width:25%;
+        height:auto;
+        float:left;
+        display:inline;
+        padding:10px;
+}
+
+/* Section Styles for the page */
+section{
+        background:white;
+        padding:0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+}
+
+.wrapper{
+        color:#000;
+        text-shadow:none;
+}
+
+.top{
+        background:url(https://unsplash.imgix.net/photo-1419332563740-42322047ff09?q=75&fm=jpg&s=f1e7d176e154bfe4a511b9ecd95a0a84);
+        background-size: cover;
+        height: 100%;
+    max-height:100%;
+    overflow: auto;
+}
+.top .content{
+        margin-top:13%;
+}
+.middle{
+        background:url(https://unsplash.imgix.net/photo-1418226970361-9f1f7227d638?q=75&fm=jpg&s=4a5f190c7499eff6f7c77d88d8abf57e);
+}
+.lower{
+        background:url(https://unsplash.imgix.net/reserve/URG2BbWQQ9SAcqLuTOLp_BP7A9947.jpg?q=75&fm=jpg&s=604dc379bd8749d90ca2b9c8ec270f63);
+}
+.bottom{
+        background:#26292C;
+}
+
+.overlay{
+        position: relative;
+        z-index: 1;
+}
+.overlay:after{
+        background:rgba(0, 0, 0, 0.6);
+        content: "";
+        width: 100%;
+        height: auto;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+}
