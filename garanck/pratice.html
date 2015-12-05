@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<!--
-filename: garanck_final.html
-Author  : Garret Ranck, cis255, fall2015
-Purpose : Demonstrates knowledge of HTML, CSS, JavaScript, jQuery
-Design  : 
-	1. 
-	2.
-	3.
-	4.
-	5.
-	6.
-	
-		
--->
-
+<!-- ---------------------------------------------------------------------
+file: gpcorser_midterm.html
+author: george corser, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
 <html>
 	<head>
+		
 		<style>
-			li{color:red;}
-			#school{background-color:yellow;}
+			
 		</style>
+		<link rel="stylesheet" type="text/css" href="grstyle.css">
+		
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	</head>
-	<body>
-	
-	
+<body> <!-- 1 -->
+	<p id="garanck">garanck<p>
+	<p id = "school">mcs</p>
+
+	<!-- 3 and 4 --><!--document.getElementById("two").innerHTML = "garanck"; 
+		$("body").append('<p>Garret</p>');-->
 	<script>
-	for (i = 0; i < 10; i++)
+		for (i = 0; i < 10; i++)
 		{
 			var x = document.createElement("OL");
     x.setAttribute("id", "myOl");
@@ -36,11 +38,24 @@ Design  :
     y.appendChild(t);
     document.getElementById("myOl").appendChild(y)
 		}
+		
+		var text = "";
+    var i = 1;
+    while (i <= 10) {
+        text += "<li>The number is " + i + "</li><br>";
+        i++;
+    }
+    document.getElementById("js").innerHTML = text;
 
+		
+		
+		<!-- Set every other row to gray --> // 7. Use jQuery to make order detail lines appear in different color every other line
+			$("document").ready(function init(){
+				$("li").css("color","red");
+				$("li:odd").css("color","green");
+			});
 	</script>
-	
-	
-	<!-- Yahoo Weather -->
+
 	<section id="yahoowidget">
 		<div class="conatiner">
 			<div class = "row">
@@ -68,7 +83,6 @@ Design  :
 		</div>
 	</section>
 	
-	<!-- Chart.js -->
 	<section id="chart">
 		<div class="container">
 			<div class="col-md-12 col-lg-12 col-sm-12" style="border: 2px solid black ;">
@@ -117,13 +131,10 @@ Design  :
 		</div>	
 	</section>
 	
-	
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<!-- Yahoo Weather API -->
 	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/weather.js"></script>
 
 	<!-- Chart.js API -->
 	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/Chart.js/src/Chart.Core.js"></script>
 	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/Chart.js/src/Chart.Doughnut.js"></script>
-	</body>
+</body>
 </html>
