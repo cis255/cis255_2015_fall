@@ -22,125 +22,382 @@ design  :
 	<!-- css for order form
 		-->
 	<style>
-			h1 {color:red;}
-	</style>
+
+			#master {border: 1px;}
+			div {border="1px"}
+		</style>
+
 	</head>
-
 	<body>
-		<!-- 0. header -->
-		<h1><center>Baseball Rental Equpiment</center></h1>
-		<h3><center>Customer Order Form</center></h3>
+		<div Class="container" style="background-color: #E6E6F6; border-radius: 10px;">
+			<div border="1"> 
+				<div class="row">
+				<div class="col-md-12">
+					<h1 align="center">Dunlaps Baseball Rental Equipment </h1>
+					<h3 align="center">Customer Order Form</h3>
+					</br></br>
 
-		<!-- 1. customer info table -->
-		<table border="1">
-			<tr>
-				<th colspan="3">Mail Orders to:</th>
-			</tr>
-			<tr>
-				<td id="customer_name" colspan="3">
-					<input id="customer_name_input" size="46" type="text" name="customer_name" placeholder="Customer Name"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_address" colspan="3">
-					<input id="customer_address_input" size="46" type="text" name="customer_address" placeholder="Address"/>
-				</td>
-			</tr>
-			<tr>
-				<td id="customer_city">
-					<input id="customer_city_input" type="text" name="customer_city" placeholder="City"/>
-				</td>
-				<td id="customer_state">
-					<input id="customer_state_input" type="text" size="5" name="customer_state" placeholder="State"/>
-				</td>
-				<td id="customer_zip">
-					<input id="customer_zip_input" type="text" size="10" name="customer_zip" placeholder="Zip"/>
-				</td>
-			</tr>
-		</table>
-		<!--- ORDER TABLE
-		-->
-		
-		<table align="center" border="1">
-			<tr>
-				<th colspan="46">Order Invoice</th>
-				
-			
-			<tr>
-				<th> Item number:</th>
-				<th> Item Description </th>
-				<th> Quantity</th>
-				<th>Price</th>
-				<th>Amount</th>
-			</tr>
-			<tr>
-				<td id="item_number" >
-					<input size="15" type="text" name="item_number" placeholder="Item Number :"/>	
-				</td>
-			
-				<td id="item_description" >
-					<input size="15" type="text" name="item_description" placeholder="Description">	
-				</td>
-			
-				<td id="item_quaantity" >
-					<input size="7" type="text" name="item_quantity" placeholder="Quantity">	
-				</td>
-			
-				<td id="item_price" >
-					<input size="8" type="text" name="item_price" placeholder="Price">				
-				</td>
-				<td id="item_amount" >
-					<input size="8" type="text" name="item_amount" placeholder="Amount">			
-				</td>
-			</tr>
-		</table>
-		
-		<script>
-		$("document").ready(function init() {
-		
-		   
-			
-			// if input box is in focus, set background to yellow
-			$("#customer_city_input").focus(function () {
-			    $(this).css("background-color","yellow");
-			});
-			$("#customer_city_input").focusout(function () {
-			    $(this).css("background-color","blue");
-			});
-			$("#customer_name_input").focus(function () {
-			    $(this).css("background-color","yellow");
-			});
-			$("#customer_name_input").focusout(function () {
-			    $(this).css("background-color","blue");
-			});
-			$("#customer_address_input").focus(function () {
-			    $(this).css("background-color","yellow");
-			});
-			$("#customer_address_input").focusout(function () {
-			    $(this).css("background-color","blue");
-			});
-			
-			$("#customer_state_input").focus(function () {
-			    $(this).css("background-color","yellow");
-			});
-			$("#customer_state_input").focusout(function () {
-			    $(this).css("background-color","blue");
-			});
-			
-			$("#customer_zip_input").focus(function () {
-			    $(this).css("background-color","yellow");
-			});
-			$("#customer_zip_input").focusout(function () {
-			    $(this).css("background-color","blue");
-			});
-			// set every other line in table to gray
-			$("tr:odd").css("background-color","#c0c0c0");
-			$("tr:odd input").css("background-color","#c0c0c0");
+				</div> <!--col-md-12 -->
+				</div> <!--row -->
+		<div class="row" align="center">
+		<div class="row">
+		<div class="col-md-12">
 
-			var tableRows = $("tr");
+	<table>
+		<tr>
+			<th colspan="3">Mail Orders to:</th>
+		</tr>
+		<tr>
+			<td  colspan="3"><!--2. for cumpany name  -->
+				<input size="15"  id="company_name "type="text" placeholder="Company Name" value = ""/>
+			</td>
+			<th border="1">Order Number:</th>
+			<td border="1">
+				<input type="text" name"order_number" id="orderNumber"/>
+			</td>
+		</tr>
+		<tr>
+			<td id="customer_address" colspan="3" ><!-- 2. for customer address-->
+				<input width="150%"  type = "text" name="customer_address" placeholder="Customer Address"/>
+			</td>
+			<th>Order Date:</th>
+			<td>
+				<input type ="text" name="order_date"/>
+			</td>
+		</tr>
+		<tr>
+			<td id="customer_city"><!-- 2. for customer city -->
+				<input size="15" id="customer_city_input" type = "text" name="customer_city" placeholder="City"/>
+			</td>
+			
+			<td id="customer_state"  ><!-- 2. for customer state// drop down menue tied to and object -->
+				<select id="state">
+				  <option value="Alabama">Alabama</option>
+				  <option value="Alaska">Alaska</option>
+				  <option value="Arizona ">Arizona </option>
+				  <option value="Arkansas">Arkansas</option>
+				  <option value="California">California</option>
+				  <option value="Colorado">Colorado</option>
+				  <option value="Connecticut">Connecticut</option>
+				  <option value="Delaware">Delaware</option>
+				  <option value="Florida">Florida</option>
+				  <option value="Georgia">Georgia</option>
+				  <option value="Hawaii ">Hawaii </option>
+				  <option value="Idaho">Idaho</option>
+				  <option value="Illinois">Illinois</option>
+				  <option value="Indiana ">Indiana </option>
+				  <option value="Iowa">Iowa</option>
+				  <option value="Kansas">Kansas</option>
+				  <option value="Kentucky">Kentucky</option>
+				  <option value="Louisiana">Louisiana</option>
+				  <option value="Maine">Maine</option>
+				  <option value="Maryland">Maryland</option>
+				  <option value="Massachusetts">Massachusetts</option>
+				  <option value="Michigan">Michigan</option>
+				  <option value="Minnesota">Minnesota</option>
+				  <option value="Mississippi">Mississippi</option>
+				  <option value="Missouri">Missouri</option>
+				  <option value="Montana">Montana</option>
+				  <option value="Nebraska">Nebraska</option>
+				  <option value="Nevada">Nevada</option>
+				  <option value="New_Hampshire">New Hampshire</option>
+				  <option value="New_Jersey">New Jersey</option>
+				  <option value="New_Mexico">New Mexico</option>
+				  <option value="New_York">New York</option>
+				  <option value="North_Carolina">North Carolina</option>
+				  <option value="North_Dakota">North Dakota</option>
+				  <option value="Ohio">Ohio</option>
+				  <option value="Oklahoma">Oklahoma</option>
+				  <option value="Oregon">Oregon</option>
+				  <option value="Pennsylvania">Pennsylvania</option>
+				  <option value="Rhode_Island">Rhode Island</option>
+				  <option value="South_Carolina">South Carolina</option>
+				  <option value="South_Dakota">South Dakota</option>
+				  <option value="Tennessee">Tennessee</option>
+				  <option value="Texas">Texas</option>
+				  <option value="Utah">Utah</option>
+				  <option value="Vermont">Vermont</option>
+				  <option value="Virginia">Virginia</option>
+				  <option value="Wash_ington">Washington</option>
+				  <option value="WestVirginia">West Virginia</option>
+				  <option value="Wisconsin">Wisconsin</option>
+				  <option value="Wyoming">Wyoming</option>
+				</select>
+			</td>
+			
+			<td id="customer_zip"><!--2. for customer zip -->
+				<input size="6" type= "text" name="customer_zip" placeholder="Zip Code"/>
+			</td>
+			<th>Customer Name:</th>
+			<td>
+				<input id="customer_name "type="text" name=customer_order_name" />
+			</td>
+		</tr>
+	
+	</table ><!--end of the customer information and order date/number table -->
+	<br/><br/>
+	
+	</div>  <!-- row -->
+	</div> <!--col-md-12 -->
+
+	<div class="row">
+	<div class="col-md-12">
+	<table id="dataTable"  border="1">
+		<tr>
+	
+				<th width="160">Item No.</th>
+				<th width="200">description</th>
+				<th width="50">Quantity</th>
+				<th width="80">Price</th>
+				<th width="120">Amount</th>
+		</tr>
+		<tr>
+			<td><input id="itemNum0" type="text"/></td>
+			<td><input id="desc0" type="text"/></td>
+			<td><input id="quantity0" type="text"/></td>
+			<td><input size="10" id="price0" type="text"/></td>
+			<td><input size="15" id="amount0" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum1" type="text"/></td>
+			<td><input id="desc1" type="text"/></td>
+			<td><input id="quantity1" type="text"/></td>
+			<td><input size="10" id="price1" type="text"/></td>
+			<td><input size="15" id="amount1" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum2" type="text"/></td>
+			<td><input id="desc2" type="text"/></td>
+			<td><input id="quantity2" type="text"/></td>
+			<td><input size="10" id="price2" type="text"/></td>
+			<td><input size="15" id="amount2" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum3" type="text"/></td>
+			<td><input id="desc3" type="text"/></td>
+			<td><input id="quantity3" type="text"/></td>
+			<td><input size="10" id="price3" type="text"/></td>
+			<td><input size="15" id="amount3" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum4" type="text"/></td>
+			<td><input id="desc4" type="text"/></td>
+			<td><input id="quantity4" type="text"/></td>
+			<td><input size="10" id="price4" type="text"/></td>
+			<td><input size="15" id="amount4" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum5" type="text"/></td>
+			<td><input id="desc5" type="text"/></td>
+			<td><input id="quantity5" type="text"/></td>
+			<td><input size="10" id="price5" type="text"/></td>
+			<td><input size="15" id="amount5" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum6" type="text"/></td>
+			<td><input id="desc6" type="text"/></td>
+			<td><input id="quantity6" type="text"/></td>
+			<td><input size="10" id="price6" type="text"/></td>
+			<td><input size="15" id="amount6" type="text"/></td>
+		</tr>
+		<tr>
+			<td><input id="itemNum7" type="text"/></td>
+			<td><input id="desc7" type="text"/></td>
+			<td><input id="quantity7" type="text"/></td>
+			<td><input size="10" id="price7" type="text"/></td>
+			<td><input size="15" id="amount7" type="text"/></td>
+		</tr>
+		
+		<tr>
+			<td align="right" colspan="4">Sub Total</td>
+			<td size="15" id="subTot"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Freight Amount</td>
+			<td size="15" id="freightTotal"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Tax</td>
+			<td size="15" id="tax"></td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4">Total Amount</td>
+			<td size="15" id="totalAmount"></td>
+		</tr>
+	</table>
+	</div>
+	</div> <!--col-md-12 -->
+	</div> <!-- row-->
+
+	<script>
+	// object for eatch item ordered/table row
+	var order = function()
+	{
+		this.itemNum;
+		this.desc;
+		this.quantity;
+		this.price;
+		this.amount;
+	};
+	
+	order.prototype.subTotal = function subTotal()
+	{
+		return this.price*this.quantity;
+	}
+	
+	var orders = [];
+	
+	//loop to extend the array orders to have the same number of elements 
+	// as there are table rows int the order form
+	for (var i = 0; i< 8; i++)
+	{
+		orders.push(new order);		
+	}
+	
+	//to link the trs to the array of objects 
+	for (var i = 0; i< 8; i++)
+	{
+		var	itNum = "itemNum" + i;
+		var	descript = "desc" + i;
+		var	qty = "quantity" + i;
+		var	prc = "price" + i;
+		var	amm = "amount" + i;
+			
+			orders[i].itemNum = document.getElementById(itNum).value;
+			orders[i].desc = document.getElementById(descript).value;
+			orders[i].quantity = document.getElementById(qty).value;
+			orders[i].price = document.getElementById(prc).value;
+			orders[i].amount = document.getElementById(amm).value;	
+			
+	}
+
+		var tax = 0.04;		
+		var taxState;
+
+		//handles the event of user changing the state in the drop down 
+		// and updates the tax amount accordingly
+		// 	4. Compute "Tax" based on State entered in customer information
+		$("#state").change(function changeState(){
+			taxState = $("#state option:selected").val();
+           
+		
+		switch(taxState) {
+		case "Alabama":
+		case "Georgia":
+		case "Hawaii":
+		case "Louisiana":
+		case "Missouri":
+		case "New_York":
+		case "Oklahoma":
+		case "South_Dakota":
+		case "Wyoming":
+			tax = 0.04;
+        break;
+		case "Arizona":
+		case "Maine":
+		case "New_Mexico":
+		case "Nebraska":
+		case "Nort_Dakota":
+		case "Ohio":
+		case "Virginia":
+		case "Wisconsin":
+			tax = 0.05;
+        break;
+		case "Arkansas":
+		case "Connecticut":
+		case "Florida":
+		case "Idaho":
+		case "Illinois":
+		case "Iowa":
+		case "Kansas":
+		case "Kentucky":
+		case "Maryland":
+		case "Massachusetts":
+		case "Michigan":
+		case "Minnesota":
+		case "Nevada":
+		case "New_Jersey":
+		case "Pennsylvania":
+		case "South_Carolina":
+		case "Texas":
+		case "Tennessee":
+		case "Utah":
+		case "Vermont":
+		case "Washington":
+		case "West_Virginia":
+			tax = 0.06;
+        break;
+		default: tax = 0.03;
+		}
+		upDate(); 
+		// update() is called to update the subtotal,
+		// tax and total amount after new state is selected 
 		});
-		</script>
-		
+
+			// when ever something is changed in an html input box 
+			// update is called.
+			$("input").change(function() { upDate(); });
+
+			//8. Highlight in yellow any field a user clicks
+			// when ever some one is entered into an input box for editing
+			// it will then be come light yellow
+			$("input").focus(function focusFunc()
+			{$(this).css("background-color", "#FFFF80");    
+			});
+
+			// turns the odd nummbered input boxes a different collor upon startup
+			$(document).ready(turnGrey());		
+			$("input").blur(function (){turnGrey();});
+
+			//	7. Use jQuery to make order detail lines appear in different color every other line
+			//function to turn all boxes white, then turn odd numbered boxes
+			// a different color 
+			function turnGrey()
+			{
+			$("input").css("background-color", "white");
+			$("#dataTable tr:odd input").css("background-color", "#E6E6F6");
+			};
+
+			// 6. Compute "Freight Amount" based on sum of Qty entered in order detail 
+			//every time someting is changed on the page update is called  
+			// it updates the totals and tax amounts accordingly to keep the page up to date
+			function upDate()
+			{
+				var tempTotal= 0;
+				var tempFreight = 0; // counters for quantity and totals
+				 Number(tempFreight);
+			for (var i = 0; i< 8; i++) // loops through all rows on the page 
+				{
+					var	itNum = "itemNum" + i;
+					var	descript = "desc" + i;
+					var	qty = "quantity" + i;
+					var	prc = "price" + i;
+					var	amm = "amount" + i;
+						
+					
+						orders[i].itemNum = document.getElementById(itNum).value;
+						orders[i].desc = document.getElementById(descript).value;
+						orders[i].quantity = document.getElementById(qty).value;
+						orders[i].price = document.getElementById(prc).value;
+						orders[i].amount = orders[i].price * orders[i].quantity;
+						if (($("#"+qty).length !== 0 ) && ($("#"+prc).length !==0)) {
+							
+							document.getElementById(amm).value="$" + orders[i].amount.toFixed(2);
+						};
+						tempTotal+=orders[i].amount;
+						tempFreight+= Number(orders[i].quantity);
+				}
+			document.getElementById("freightTotal").innerHTML = tempFreight;
+			document.getElementById("subTot").innerHTML ="$" + tempTotal.toFixed(2); 
+			// these statemetns are setting the final totals at the bottom of the table
+			
+			document.getElementById("tax").innerHTML = "$" + parseFloat(tax * tempTotal).toFixed(2);
+			document.getElementById("totalAmount").innerHTML ="$" + (tempTotal + (tax * tempTotal)).toFixed(2) ;
+			
+			}
+	</script>
+	</div>
+	</div>
 	</body>
 
 </html>

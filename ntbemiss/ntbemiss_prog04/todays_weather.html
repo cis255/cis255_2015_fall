@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--
+Filename: todays_weather.html
+Author: Nick Bemiss, CIS-255, Fall 2015
+Description: These page shows the Yahoo API in use
+Design: 
+
+	<head>: 1. menu wrapper for navigation
+			
+	<body>: 1. Yahoo API implementation
+-->
+
+	<!-- CSS File -->
+	<link href="ntbemiss_prog04.css" rel="stylesheet">
+	
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="Weather/weather.js"></script>
+
+<body>
+	<head>
+		<div id = "wrapper">
+			<div id = "menu-wrapper">
+				<div id = "menu" class = "container">
+					<div id = "menu a:hover">
+						<ul>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/ntbemiss_prog04.html">Home</a>
+							</li>
+							<!-- Weather is current page item, lighter color -->
+							<li class = "current_page_item">
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/todays_weather.html">Yahoo API</a>
+							</li>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/course_lookup.html">CIS Course List</a>
+							</li>
+							<li>
+								<a href="http://csis.svsu.edu/~ntbemiss/cis255/ntbemiss/ntbemiss_prog04/chart.html">Chart.js</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "header-wrapper-home">
+			<div id = "header">
+				<img class = "logo" src = "weather" title = "Todays Weather!">
+			</div>
+		</div>
+	</head>
+	
+	</br>
+	</br>
+	
+	<div style = "text-align:center">
+		<style type="text/css">
+			#found { display: none; }	
+			#error { color: red; display: none; }
+		</style>
+
+		<div id="find">
+			<input type="edit" placeholder="Location" id="loc">
+			<button onclick="getWeather();">Find</button>
+		</div>
+
+		<div id="found">
+			<font color="black"><h1 text-align = "center">Here's the weather at <span id="location"></span>, Dr. Corser!</h1></font>
+			<font color="black"><p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p></font>
+			<font color="black"><p><a href="javascript:showSearch();">&larr; Hey no, not that place please</a></p></font>
+		</div>
+
+		<div id="error">
+			<p>Location not found!</p>
+		</div>
+	</div>
+	
+</body>
+
+</html>

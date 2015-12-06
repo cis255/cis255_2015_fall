@@ -1,0 +1,27 @@
+body 	/*embedding a default body background */
+		{
+	 	background-image: url("cards.JPG");
+		background-repeat: no-repeat;
+		background-size: cover;
+		}
+h1
+{
+	color: #000000;
+	
+}
+h2, body
+{
+	color: red;
+}		
+h3
+{
+	color: #000099;
+}
+h4
+{	
+	color: #000000;
+}
+border
+{
+	outline-width: 5px;
+}

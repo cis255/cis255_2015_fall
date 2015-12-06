@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--
+filename  	: ikhan12_prog03.html
+author		: Imran Khan (CIS-255, Fall 2015)
+Description	: This program demonstrates Javascript,jquery
+Design		:
+    <head>  title
+	<body>
+	    0. header
+		1. variable names
+		2. primitive data types
+		3. operators, expression
+		4. conditionals, truthy, falsy
+		5. Control Structures
+		6. Objects, arrays
+		7. functions, prototypes
+		8. Write to DOM
+		9. Jquery Customer Order form
+		
+-->
+<html>
+		<head>
+				<title> Imran Khan Javascript page with Jquery order list</title>
+		</head>
+		<body>
+		<!--0. header-->
+		<h1>CIS-255 Program 03</h1>
+		<h2>Imran Khan | Fall 2015</h2>
+		<p id="id01">This is a demonstration of program 3</P>
+		<!--1. variable names -->
+		<!--Variable names are case sensitive and start with $ _ or -->
+		<h2>1. variable names </h2>
+		<script>
+			var a=1;
+			var _b=2;
+			var $c=3;
+			var d=a+_b+$c;
+			document.write("a+_b+$c="+d);
+		</script>
+		<!--2. Primitive data types-->
+		<h2>2. Primitive data types </h2>
+		<p id="demo"></p>
+		<script>
+			var x=5; //number
+			var y="abcd";
+			var n=null;
+			var u=undefined;
+			document.write("var x is type: "+typeof(x)+"<br/>");
+			document.write("var y is type: "+typeof(y)+"<br/>");
+			document.write("var n is type: "+typeof(n)+"<br/>");
+			document.write("var u is type: "+typeof(u)+"<br/>");
+					
+			var b1 = Boolean(100);
+			var b2 = Boolean(3.14);
+			var b3 = Boolean(-15);
+			var b4 = Boolean("Hello");
+			var b5 = Boolean('false');
+			var b6 = Boolean(1 + 7 + 3.14);
+
+			document.getElementById("demo").innerHTML =
+			"100 is " + b1 + "<br>" +
+			"3.14 is " + b2 + "<br>" +
+			"-15 is " + b3 + "<br>" +
+			"Any (not empty) string is " + b4 + "<br>" +
+			"Even the string 'false' is " + b5 + "<br>" +
+			"Any expression (except zero) is " + b6;
+		</script>
+		
+		<!--3 operators and expressions-->
+		<h2>3.operators and expressions </h2>
+			<p>x = 5, y = 2, calculate z = x + y, and display z:</p>
+
+			<p id="demo"></p>
+
+			<script>
+			var x = 5;
+			var y = 2;
+			var z = x + y;
+			document.getElementById("demo").innerHTML = z;
+			</script>
+	
+		<h2>4. Conditionals, truthy, falsy </h2>
+		<!--4.conditionals, truthy, falsy-->
+		<script>
+		var n = "this"
+		var n = "Okay"
+			(n==u)?document.write("n==u<br/>"):document.write("n!=u<br/>");
+			(n===u)?document.write("n===u<br/>"):document.write("n!==u<br/>");
+		</script>
+		<p id="welcoming">Welcome to SVSU!</p>
+
+			<script>
+			function mywelFunction(){
+			if (new Date().getHours() < 18) {
+			document.getElementById("welcoming").innerHTML = "HEllo There!"; //if
+				}
+			}
+			</script>
+			<p>Click the button to display a greeting:</p>
+
+			<button onclick="myTimeFunction()">Press</button>
+
+			<p id="Time">Heyy!</p>
+			
+			<script>
+				function myTimeFunction() {
+				var Time = new Date().getTime; 
+				var suggestion;
+				if (Time = "Lunch"||"Dinner") {
+				suggestion = "Heyy! You need to eat now.";              // if else
+				} else {
+				suggestion = "You are not hungry. Work!!";
+				}
+				document.getElementById("Time").innerHTML = suggestion;
+				}
+			</script>
+			<button onclick="myTimeFunction()">Am I hungry now?</button>
+		
+		<h2>5. Control Structures</h2>
+		<!--5. Control Structures     -->
+			<!-- Do-->
+			<!-- While-->
+			<p>Press the button to loop through a block of code when it's less than 5.</p>
+
+			<button onclick="DoWhileFunction()">Press</button>
+
+			<p id="doWhile">It will show when you press.</p>
+
+			<script>
+			function DoWhileFunction() {
+				var text = ""
+				var i = 0;
+				do {
+					text += "<br>The number is " + i;
+					i++;
+				}
+				while (i < 5);
+				document.getElementById("doWhile").innerHTML = text;
+			}
+			</script>
+			<!-- For -->
+			<p id="ForLoop"></p>
+
+			<script>
+				var Geography = ["Bangladesh :South-Asia", "USA :North America", "Sudan :Africa"];
+				var i, len, text;
+				for (i = 0, len = Geography.length, text = ""; i < len; i++) {
+					text += Geography[i] + "<br>";
+				}
+				
+				document.getElementById("ForLoop").innerHTML = text;
+			</script>
+			
+		
+		<h2>6. Objects</h2>
+		<!--6. Objects, arrays          -->
+		<button onclick="BookFunction()">Press the button for Book information</button>
+		<p id="ObjBookName"></p>
+		<p id="ObjBookAuthor"></p>
+		<p id="ObjBookLanguage"></p>
+		<p id="ObjBookPubYear"></p>
+
+		<script>
+		function BookFunction(){
+		var Book = {Name:"Complications", Author:"Autul Gawanda", Language:"English", PubYear:"2002"};
+		document.getElementById("ObjBookName").innerHTML = Book.Name;
+		document.getElementById("ObjBookAuthor").innerHTML = Book.Author;
+		document.getElementById("ObjBookLanguage").innerHTML = Book.Language;
+		document.getElementById("ObjBookPubYear").innerHTML = Book.PubYear;
+		}
+		</script>
+		
+		
+		<h2>7. Functions and Prototypes</h2>
+		<!--7. functions, prototypes    -->
+		<!--function-->
+		<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+		<p id="tempa"></p>
+
+		<script>
+		function toCelsius(f) {
+			return (5/9) * (f-32);
+		}
+		document.getElementById("tempa").innerHTML = toCelsius(77);
+		</script>
+		
+		<!--prototype-->
+		<script
+			src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js">
+			</script>
+					<script>
+			function myprotFunction() {
+				$("h1").insert("This is an example of Prototype!");
+			}
+			Event.observe(window, "load", myprotFunction);
+			</script>
+			<h4 id="h1"></h4>
+				
+		<h2>8. Write to DOM </h2>
+		<!--8. Write to DOM Example        	-->
+		<script>
+			document.write("<h4>My name is Khan!</h4>", "<p>This is an example of writing to the document with javascript</p>")
+		</script>
+		
+		<!-- Link to customer order form -->
+		<h2> 9. Here's Link to jquery Customer Order Form</h2>
+		<a href ="ikhan12_prog03_order.html" target="_blank">Program 3 Order Form</a>
+		
+		
+		<!-- This external javascript; appears at the end of the body tag -->
+		 <!--<script type="text/javascript" src="ikhan12-2.js"></script> -->
+	</body>
+
+</html>

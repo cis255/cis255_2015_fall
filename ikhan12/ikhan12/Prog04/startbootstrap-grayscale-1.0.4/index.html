@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+filename	: index.html
+author		: Imran Khan (CIS 255, Fall 2015)
+description	: This program demonstrates,
+				1. Yahoo Weather Api, 
+				2. Chart.js
+				3. SVSU API.
+				
+------------------- -->
+<head>
+
+    <title>CIS255: Prog04</title>
+
+   
+        
+	<link rel="stylesheet" href="prog04.css"><!-- adding my own stylesheet to the project-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+          </div>         
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+        <div class="container">
+                                  
+	
+	<!-- Yahoo Weather API JS Code -->
+	<script src="weather.js"></script>
+  
+	<!-- Chart.js  Code -->
+	<script src="chart.js"></script>
+
+
+<body>			
+				<div class="container"><!-- The container for the yahoo weather widgit-->
+					<div class="row">
+						<h1> Yahoo Weather Widget</h1>
+						<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid red" width="5px">
+
+							<div id="find">
+								<input type="edit" placeholder="Location" id="loc">
+									<button onclick="getWeather();">Find</button><!-- when you clickthe find button, the input box will process-->
+								</div>
+
+								<div id="found"><!-- if data in input box is valid, will do the following code and output weather for that area-->
+									<h3>Weather for <span id="location"></span></h3>
+									<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+									<p><a href="javascript:showSearch();">&larr; change location</a></p>
+								</div>
+
+								<div id="error" style="display: none;"><!-- if data is not valid, will not process and will display that location is not found-->
+									<p>Location not found!</p>
+								</div>
+
+							</div>
+
+
+						</div>
+				
+<div class="container"> <!-- Container for Chart.js widget-->
+	<div class="row">
+		<h1>Fall 2015 Incoming International Students Demographic</h1>
+		<p><i>Please hover over to any pie piece for Country Name and Student number.</i></p>
+		<div class="col-md-4 col-lg-4 col-sm-4" >
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="300" height="300"/>
+		</div>
+
+	<h4>Internatioanl Students at SVSU</h4>
+	
+	<script>
+		var pieData = [
+				{
+					value: 237,
+					color: "#000099",
+					highlight: "#b3b3ff",
+					label: "Nepal"
+				},
+				{
+					value: 52,
+					color:"#FF0000",
+					highlight: "#FF5A5E",
+					
+					label: "China"
+				},
+				{
+					value: 48,
+					color: "#009926",
+					highlight: "#267339",
+					label: "Saudi Arabia"
+				},
+				{
+					value: 34,
+					color: "#e65c00",
+					highlight: "#ffb380",
+					label: "India"
+				},
+				{
+					value: 11,
+					color: "#ffffb3",
+					highlight: "#ffff80",
+					label: "Taiwan"
+				},
+				{
+					value: 10,
+					color: "#00cc00",
+					highlight: "#66ff66",
+					label: "Bangladesh"
+				},
+				{
+					value: 9,
+					color: "#ffff00",
+					highlight: "#ffff66",
+					label: "Brazil"
+				},
+				{
+					value: 8,
+					color: "#4d0000",
+					highlight: "#ff3333",
+					label: "Canada"
+				},
+				{
+					value: 7,
+					color: "#009933",
+					highlight: "#b3ffcc",
+					label: "Pakistan"
+				},
+				{
+					value: 37,
+					color: "#751aff",
+					highlight: "#c299ff",
+					label: "OTHER"
+				}
+				
+			];
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+	</script>
+	<h4>Fall 2015 Incoming Student's Demographic</h4>
+	<p><b> <ol>Nepal: 237</ol>
+		<ol>China: 52</ol>
+		<ol>Saudi Arabia: 48</ol>
+		<ol>India: 34</ol>
+		<ol>Taiwan: 11</ol>
+		<ol>Bangladesh: 10</ol>
+		<ol>Brazil: 9</ol>
+		<ol>Canada: 8</ol>
+		<ol>Pakistan:7</ol>
+		<ol>OTHER: 37</ol>
+		<ol>TOTAL: 453</ol>
+	</b></p>
+	<li><i>Ref:</i> All data have been provided by SVSU Institutional Research.</li>
+	</div>
+	</div>
+</div>
+<br>
+
+<!-- SVSU API code source http://www.svsu.edu/~adarenas/cis255/lesson24/portfolio-1-col.html-->
+									<div class="row">
+										<div class="col-md-5">
+											<h1>SVSU API </h1>
+										</div>
+										<div class="container">
+											<div class="row">
+												<div class="col-lg-12">
+													<div class="page-header">
+														<h3>Course Lookup <small class="hidden-xs hidden-sm">an SVSU API Client Example</small></h3>
+													</div>
+												</div>
+											</div>
+											<form id="lookupForm" class="form-horizontal" role="form">
+												<div class="form-group">
+													<label for="prefix" class="col-sm-2 control-label">Prefix</label>
+													<div class="col-sm-10">
+														<input type="text" name="prefix" class="form-control" id="prefix" placeholder="Prefix" required>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="number" class="col-sm-2 control-label">Number</label>
+														<div class="col-sm-10">
+															<input type="number" name="courseNumber" class="form-control" id="number" placeholder="Number">
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-sm-offset-2 col-sm-10">
+																<button id="fetchJSON" class="btn btn-default">Fetch JSON Classes<i class="fa fa-fw fa-code"></i></button>
+																<button id="fetchPretty" class="btn btn-default">Fetch Pretty Classes <i class="fa fa-fw fa-paint-brush"></i></button>
+															</div>
+														</div>
+													</form>
+													<div class="row" id="jsonResults"  >
+														<div class="col-sm-2">
+															<strong class="pull-right">JSON Results</strong>
+														</div>
+														<div class="col-sm-10">
+															<pre class="response"></pre>
+														</div>
+													</div>
+													<div class="row" id="prettyResults" >
+														<div class="col-sm-2">
+															<strong class="pull-right">Pretty Results</strong>
+														</div>
+														<div class="col-sm-10 response">
+														</div>
+													</div>
+												</div>
+											</div>
+											<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+											<script src="svsu.js"></script>
+											<script src="application.js"></script>
+										</div>
+									</div>
+									</div>
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<br>
+	
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Prog04 Cis255 Fall 2015</p>
+        </div>
+    </footer>
+
+ 
+</body>
+
+</html>

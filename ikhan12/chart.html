@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<title>International Students Demograph</title>
+		<script src="http://csis.svsu.edu/~ikhan12/csis/chart.js"></script>
+	</head>
+	<body>
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="300" height="300"/>
+		</div>
+
+	<h1>Internatioanl Students at SVSU</h1>
+	<script>
+		var pieData = [
+				{
+					value: 237,
+					color:"#FF0000",
+					highlight: "#FF5A5E",
+					label: "Nepal"
+				},
+				{
+					value: 52,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "China"
+				},
+				{
+					value: 48,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Saudi Arabia"
+				},
+				{
+					value: 34,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "India"
+				},
+				{
+					value: 11,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Taiwan"
+				},
+				{
+					value: 10,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Bangladesh"
+				},
+				{
+					value: 9,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Brazil"
+				},
+				{
+					value: 8,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Canada"
+				},
+				{
+					value: 7,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Pakistan"
+				},
+				{
+					value: 37,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "OTHER"
+				}
+				
+			];
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+	</script>
+	<h2>Fall 2015 Incoming Student's Demographic</h2>
+	<p> <ol>Nepal: 237</ol>
+		<ol>China: 52</ol>
+		<ol>Saudi Arabia: 48</ol>
+		<ol>India: 34</ol>
+		<ol>Taiwan: 11</ol>
+		<ol>Bangladesh: 10</ol>
+		<ol>Brazil: 9</ol>
+		<ol>Canada: 8</ol>
+		<ol>Pakistan:7</ol>
+		<ol>OTHER: 37</ol>
+	</p>
+	</body>
+</html>

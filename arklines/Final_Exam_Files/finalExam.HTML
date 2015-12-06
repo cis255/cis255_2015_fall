@@ -1,0 +1,103 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+<!--
+file name: finalExam.HTML
+Author: Allison Klinesmith
+Purpose: This file demonstrates HTML, CSS, Javascript DOM manipulation,
+ JQUERY DOM manipulation, and two widgets
+ Design:
+	Head
+		1. comments
+		2. CSS and Javscript references
+		3. text css for yahoo weather
+	body
+		1. HTML Class
+		2. HTML Id
+		3. CSS Selectors
+		4. Javascript DOM manipulation
+		5. JQuery DOM manipulation
+		6. Widget 1
+		7. Widget 2
+		
+-->
+	<link href="finalExam.css" rel="stylesheet">
+	<!-- script for weather API-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="weather.js"></script>
+<style type="text/css">
+	#found { display: none; }	
+	#error { color: red; display: none; }
+</style>
+</head>
+<body>
+	<!--1. HTML Class -->
+	<p class= "arklines">Hello class </p>
+	<!--2. HTML Id -->
+	<p id = "UnionvileSebewaingAreaHighSchool"> Hello ID </p>
+	<ol id="cats"></ol>
+	<!--6. Widget 1 -->
+	<section id="YahooWeather">
+		<div class="container" >
+			<div class="row">
+				<div class ="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid red;">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h1>Weather for <span id="location"></span></h1>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error">
+						<p>Location not found!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+<script>
+// Array for ordered list
+//4. Javascript DOM manipulation 
+var cats = [
+   "Calico",
+   "Manx",
+   "Munchkin",
+   "Persian",
+   "Siamese",
+   "British Shorthair",
+   "Sphynx Cat",
+   "Ragdoll",
+   "Scottish Fold",
+   "Russian Blue",
+   "Himalayan Blue",
+   "Turkish Angora"
+   
+];
+
+var html = "";
+for (var i =0; i < cats.length; i++) {
+    html += "<li>" + cats[i]+ "</li>";
+}
+document.getElementById("cats").innerHTML = html;
+</script>
+
+<script>
+
+//5. JQuery DOM manipulation
+//Use jQuery to make order detail lines appear in different color every other line
+			$("li:odd").css("color","green"); //every other table line is grey
+			$("li:even").css("color","red");
+			
+		
+			
+			$(document).ready(function(){
+  $('  li:nth-child(odd)').addClass('alternate');
+});
+</script>

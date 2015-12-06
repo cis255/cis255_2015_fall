@@ -1,0 +1,84 @@
+
+<!doctype html>
+<!--
+filename : ntbemiss_exercise06.html
+purpose  : demonstrate ajax example on w3schools
+design   : <head> 
+
+           <body> 
+
+-->
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+	    <h1>Exercise 6</h1>
+		<h2>Demonstrate AJAX</h2>
+		<h3>Start typing a name in the input field below:</h3>
+
+		<form action=""> 
+			<p>First name: </p>
+			<input type="text" id="txt1" onkeyup="showHint(this.value)">
+			</form>
+
+			<p>Suggestions: <span id="txtHint"></span>
+			</p> 
+
+			<script>
+				function showHint(str) {
+				  var xhttp;
+				  if (str.length == 0) { 
+					document.getElementById("txtHint").innerHTML = "";
+					return;
+				  }
+				  xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 && xhttp.status == 200) {
+					  document.getElementById("txtHint").innerHTML = xhttp.responseText;
+					  str2= document.getElementById("txtHint").innerHTML = xhttp.responseText;
+					}
+				  }
+				  xhttp.open("GET", "gethint.php?q="+str, true);
+				  xhttp.send();   
+				}
+			</script>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+		</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
