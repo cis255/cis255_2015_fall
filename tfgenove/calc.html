@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="calc.js"></script> <!-- Source to use JS file in your directory that holds JS function -->
+	</head>
+	<body bgcolor="#000000">
+		<form  name=calcform>  <!-- Start of form -->
+			<input type=text name=txt1 style="text-align:right"><br> <!-- Aligns the text to the right hand side like an actual calculator -->
+			<input type=button name=btn9 value=9 onclick="displayNum(btn9.value)"> <!-- From this line down to line 22 and including 24, Will input the text of the number into the text box when that corresponding number is clicked -->
+			<input type=button name=btn8 value=8 onclick="displayNum(btn8.value)">
+			<input type=button name=btn7 value=7 onclick="displayNum(btn7.value)">
+			<input type=button name=btnadd value=+ onclick="displayNum(btnadd.value)"><br>
+			<input type=button name=btn6 value=6 onclick="displayNum(btn6.value)">
+			<input type=button name=btn5 value=5 onclick="displayNum(btn5.value)">
+			<input type=button name=btn4 value=4 onclick="displayNum(btn4.value)">
+			<input type=button name=btnsub value=- onclick="displayNum(btnsub.value)"><br>
+			<input type=button name=btn3 value=3 onclick="displayNum(btn3.value)">
+			<input type=button name=btn2 value=2 onclick="displayNum(btn2.value)">
+			<input type=button name=btn1 value=1 onclick="displayNum(btn1.value)">
+			<input type=button name=btnmul value=* onclick="displayNum(btnmul.value)"><br>
+			<input type=button name=btn0 value=0 onclick="displayNum(btn0.value)">
+			<input type=button name=btndec value=. onclick="displayNum(btndec.value)">
+			<input type=button name=btneql value="=" onclick="txt1.value= eval(txt1.value)"> <!-- Will take the text box input and make it into a value to be evaluated -->
+			<input type=button name=btndiv value=/ onclick="displayNum(btndiv.value)">
+		</form>
+	</body>
+</html>

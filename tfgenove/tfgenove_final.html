@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- Chart.Js API Script -->
+	<script src="startbootstrap-creative/chartProg4.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<!-- Yahoo Weather API Script -->
+	<script src="startbootstrap-creative/weather.js"></script>
+		
+		<style>
+			p{
+				color: red;
+			}
+			
+			#OFZ{
+				background-color: green;
+			}
+			
+			body{
+				color: blue;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<p id="OFZ">OFZ</p>
+		<p class="DYO">DYO</p>
+		<p name="ZMU">ZMU</p>
+		<p>p 4</p>
+		<p>p 5</p>
+		<p>p 6</p>
+		
+		<table id="array">
+		</table>
+		
+		<script>
+			var arr = ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"];
+			
+			
+			for(i=0;i<10;i++)
+			{
+			   var node = document.createElement("TR");                 // Create a <li> node
+				var textnode = document.createTextNode(arr[i]);         // Create a text node
+				node.appendChild(textnode);                              // Append the text to <li>
+				document.getElementById("array").appendChild(node);  
+				
+			}
+			
+			/*couldn't get jQuery working */
+			
+			for(i=0;i<10;i++)
+			{
+				if (jQuery.isEven(i))
+				{
+					arr[i].hide();
+				}
+			}
+			
+			
+		</script>
+		
+		<!-- 1. Yahoo Weather API Widget -->
+	<section id="yahooweather">
+		 <div class="container">
+            <div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid orange;">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div style="display: none;" id="error">
+						<p>Location not found!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- 3. Chart.js Widget -->
+	<section id="chartjs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4">
+					<p>Bar Chart</p>
+					
+					<!-- Code for the chart comes from http://www.webdesignerdepot.com/2013/11/easily-create-stunning-animated-charts-with-chart-js/ -->
+					<!-- Canvas element for bar chart -->
+					<canvas id="income" height="600" width="400" style="border: 1px solid orange;"></canvas>
+					<script>
+						//Data for bar chart
+						 var barData = {
+							labels : ["January","February","March","April","May","June"],
+							datasets : [
+								{
+									fillColor : "#48A497",
+									strokeColor : "#48A4D1",
+									data : [456,479,324,569,702,600]
+								},
+								{
+									fillColor : "rgba(73,188,170,0.4)",
+									strokeColor : "rgba(72,174,209,0.4)",
+									data : [364,504,605,400,345,320]
+								}
+							]
+						}
+						// get bar chart canvas by id
+						var income = document.getElementById("income").getContext("2d");
+						// draw bar chart on the canvas
+						new Chart(income).Bar(barData);
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
+</html>
