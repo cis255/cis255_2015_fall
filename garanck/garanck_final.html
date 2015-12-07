@@ -4,17 +4,126 @@ filename: garanck_final.html
 Author  : Garret Ranck, cis255, fall2015
 Purpose : Demonstrates knowledge of HTML, CSS, JavaScript, jQuery
 Design  : 
-	<head> 
-	<body>
+	1. 
+	2.
+	3.
+	4.
+	5.
+	6.
 	
 		
 -->
 
 <html>
 	<head>
+		<style>
+			li{color:red;}
+			#school{background-color:yellow;}
+		</style>
 	</head>
 	<body>
 	
 	
+	<script>
+	for (i = 0; i < 10; i++)
+		{
+			var x = document.createElement("OL");
+    x.setAttribute("id", "myOl");
+    document.body.appendChild(x);
+
+    var y = document.createElement("LI");
+    var t = document.createTextNode("List Number" + i);
+    y.appendChild(t);
+    document.getElementById("myOl").appendChild(y)
+		}
+
+	</script>
+	
+	
+	<!-- Yahoo Weather -->
+	<section id="yahoowidget">
+		<div class="conatiner">
+			<div class = "row">
+				<div class="col-md-12 col-lg-12 col-sm-12" style="border: 2px solid black ;">
+					<div class ="text-center">
+					
+						<h2><u> 1. Yahoo Weather Widget </u> </h2>
+						<div id="find">
+							<input type="edit" placeholder="Location" id="loc">
+							<button onclick="getWeather();">Find</button>
+						</div>
+
+						<div id="found">
+							<h1>Weather for <span id="location"></span></h1>
+							<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+							<p><a href="javascript:showSearch();">&larr; change location</a></p>
+						</div>
+
+						<div id="error">
+							<p>Location not found!</p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Chart.js -->
+	<section id="chart">
+		<div class="container">
+			<div class="col-md-12 col-lg-12 col-sm-12" style="border: 2px solid black ;">
+				<div class ="text-center">
+					
+						<h2><u> 2. Chart</u> </h2>
+						<canvas id="chart-area"/>	
+				
+				<script>
+				// Defines what the chart looks like and what data it holds
+				var doughnutData = [
+					{
+						value: 1,
+						label: "One"
+					},
+					{
+						value: 2,
+						label: "Two"
+					},
+					{
+						value: 3,
+						label: "Three"
+					},
+					{
+						value: 4,
+						label: "Four"
+					},
+					{
+						value: 5,
+						label: "Five"
+					}
+
+				];
+				// When the windows loads, load chart
+				window.onload = function(){
+					var ctx = document.getElementById("chart-area").getContext("2d");
+					window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+				};
+
+
+
+				</script>
+					
+				</div>
+			</div>
+		</div>	
+	</section>
+	
+	
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Yahoo Weather API -->
+	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/weather.js"></script>
+
+	<!-- Chart.js API -->
+	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/Chart.js/src/Chart.Core.js"></script>
+	<script src="http://csis.svsu.edu/~garanck/cis255/garanck/Bootstrap/Chart.js/src/Chart.Doughnut.js"></script>
 	</body>
 </html>

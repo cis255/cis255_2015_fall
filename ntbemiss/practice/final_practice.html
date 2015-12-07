@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+filename   : ntbemiss.html
+author     : Nick Bemiss (CIS255, Fall 2015)
+Description: This is a practice for final.
+Design     : <head>1. 
+-->
+
+
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="Weather/weather.js"></script>
+<head>
+	
+</head>
+
+<body>
+	<p id="ntbemiss">This is red.</p>
+	<p id="mccloy">This is yellow. </p>
+		
+	<div style = "text-align:center">
+		<style type="text/css">
+			#found { display: none; }	
+			#error { color: red; display: none; }
+		</style>
+
+		<div id="find">
+			<input type="edit" placeholder="Location" id="loc">
+			<button onclick="getWeather();">Find</button>
+		</div>
+
+		<div id="found">
+			<font color="black"><h1 text-align = "center">Here's the weather at <span id="location"></span>, Dr. Corser!</h1></font>
+			<font color="black"><p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p></font>
+			<font color="black"><p><a href="javascript:showSearch();">&larr; Hey no, not that place please</a></p></font>
+		</div>
+
+		<div id="error">
+			<p>Location not found!</p>
+		</div>
+	</div>
+	
+	
+</body>
+</html>
