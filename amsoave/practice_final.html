@@ -17,48 +17,19 @@ design	 :	<head>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-		
-		<!-- weatherh.js script -->
-		<script src="http://csis.svsu.edu/~amsoave/cis255/amsoave/prog04/weather.js"></script>
-		
-		<!-- Chart.js script -->
-		<script src="http://csis.svsu.edu/~amsoave/cis255/amsoave/prog04/Chart.js"></script>
-		
-		<title>CIS-255: Final</title>
-		
-		<style>
-			tr:nth-child(odd) {
-				background: yellow;
-			}
-		</style>
-		
+		<link rel="stylesheet" href="practice_final.css">
+		<script src="prog04/Chart.js"></script>
+		<script src="prog04/weather.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<div class="row">
-				<p>example paragraph</p>
-			</div>
-			<div class="row">
-				<table id="table1">
-					<tr>
-						<td>
-							Row 1
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Row 2
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Row 3
-						</td>
-					</tr>
-				</table>
-				</div>
-		</div>
 	
+		<p class="amsoave"> para 1 </p>
+		<p id="bcc">para2</p>
+		<ol id="demo"></ol>
+		<br><br><br><br><br>
+		
+		
+		
 		<br><br><br><br><br>
 		<div class="container">
             <div class="row">
@@ -91,16 +62,7 @@ design	 :	<head>
 		</div>
 		
 		
-		
-		
-		
-		
-		
-		
-	
-	
-	
-	<script>
+		<script>
 		$(document).ready(function(){
 			var ctx = $("#myCanvas").get(0).getContext("2d");
 			// pie chart data
@@ -129,5 +91,27 @@ design	 :	<head>
 		});
 	</script>
 	
+	<script>
+		
+		$("document").ready(function init() {
+			for(i=1;i<11;i++){
+				var node = document.createElement("li");                
+				var textnode = document.createTextNode("this is item "+i);        
+				node.appendChild(textnode);                             
+				document.getElementById("demo").appendChild(node);
+				}
+			
+
+			
+			$( "ol li:nth-child(odd)" ).css( "color", "red" );
+			$( "ol li:nth-child(even)" ).css( "color", "green" );
+			
+			
+		});
+	
+	</script>
+	
 	</body>
+	
 </html>
+	

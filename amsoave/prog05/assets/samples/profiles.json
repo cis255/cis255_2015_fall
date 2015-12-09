@@ -1,0 +1,30 @@
+[
+	{
+		"firstname":"ajitesh",
+		"lastname":"shukla",
+		"address":"201, mg street",
+		"city":"hyderabad",
+		"phone":"999-888-6666"
+	},
+	{
+		"firstname":"nidhi",
+		"lastname":"rai",
+		"address":"201, mg street",
+		"city":"hyderabad",
+		"phone":"999-876-5432"
+	},
+	{
+		"firstname":"vidhi",
+		"lastname":"rai",
+		"address":"17-a, hsr layout",
+		"city":"bangalore",
+		"phone":"988-546-2341"
+	},
+	{
+		"firstname":"sumit",
+		"lastname":"choudhary",
+		"address":"17-a, hsr layout",
+		"city":"bangalore",
+		"phone":"988-456-3456"
+	}
+]
