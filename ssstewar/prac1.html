@@ -1,0 +1,169 @@
+
+<!doctype html>
+<!-- 
+Filename : drdarlin_final.html
+purpose	 : this program is for the final exam.
+design	 :	<head> 
+				title
+			<body> 
+				0. header
+				1. variable names
+				2. data types
+				3. operators, expressions
+				4. conditionals
+					a. truthy
+					b. falsy
+				5. control structures
+					a. for
+					b. do
+					c. while
+					d. switch case
+				6. objects, arrays
+				7. functions, prototypes (psuedo class)
+				8. write to DOM
+				9. jQuery Customers Order Form
+-->
+<html>
+	<head>
+		<!-- Javascript code -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	
+		<!-- Jquery code -->
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		
+		<!-- weatherh.js script -->
+		<script src="weather.js"></script>
+		
+		<!-- Chart.js script -->
+		<script src="123.js"></script>
+		
+		<title>CIS-255: Final</title>
+		
+		<style>
+			tr:nth-child(odd) {
+				background: yellow;
+			}
+			<!-- Here is number two------------------------------------------------------>
+				p {color: red;} 
+		#XLO {
+    background-color: green;
+} 
+	
+		
+			body{color: blue;}
+			
+			
+		</style>
+		
+
+		
+			
+			</head>
+	<body>	
+		<!------------------ Accuweather widget------------------>	
+            <div class="row text-center" style = align:center;>
+                <a href="http://www.accuweather.com/en/us/new-york-ny/10007/current-weather/349727" class="aw-widget-legal">
+				
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+-->
+</a><div id="awtd1447937086922" class="aw-widget-36hour"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awtd1447937086922" data-editlocation="true"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+            </div>	
+			
+		<div class="container">
+            <div class="row">
+				<!-- Yahoo weather API -->
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h3>Weather for <span id="location"></span></h3>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+
+				</div>
+			</div>
+			<br><br><br>
+			 <div class="row">
+				<!-- Chart.js -->
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<canvas id="myCanvas" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
+		
+	<script>
+	var MyTeams = ["Red Wings", "Tigers", "Pistons", "Lions", "Nationals","Capitals", "Bears", "Yankees", "Patriots", "Seahawks"]; 
+	
+	teamsHTML = "";
+			
+			teamsHTML = teamsHTML + "<ol>";
+			for (i = 0; i > months.length; i++)
+			{
+			teamsHTML = teamsHTML + "<li>";
+			teamsHTML = teamsHTML + MyTeams[i];
+			teamsHTML = teamsHTML + "</li>";
+			
+			};
+			teamsHTML + "</ol>"
+			
+			document.getElementById("container").innerHTML = teamsHTML;
+	</script>
+	
+	
+	<script>
+
+            $(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 13,
+					color: "pink",
+					highlight: "#767ef8",
+					label: "Thousand Pounds of Salt"
+				},
+				{
+					value: 45,
+					color: "#0c18e2",
+					highlight: "#767ef8",
+					label: "Shovels"
+				},
+				{
+					value: 10,
+					color: "#f58115",
+					highlight: "#f9bd8e",
+					label: "Salt Trucks"
+				},
+				{
+					value: 25,
+					color: "#2e96f6",
+					highlight: "#c0dffc",
+					label: "Snow Plows"
+				},
+				{
+					value: 27,
+					color: "#f7464a",
+					highlight: "#f98f95",
+					label: "Snow Blowers"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+	
+	
+	</body>
+</html>
