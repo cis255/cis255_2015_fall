@@ -1,0 +1,144 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: ssstewar_midterm.html
+author: george corser, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+<title>CIS-255: Final</title>
+	<style>
+	p1 {
+		color: red;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="123.js"></script>
+
+</head>
+<body>
+<p1>color red</p1>
+<p id = "svsuid"></p>
+<p id = "third paragraph"></p>
+<p>My mother has <span style="color:blue">blue</span> eyes.</p>
+
+<script>
+document.getElementById("svsuid").innerHTML =
+			"My svsuid is: ssstewar";
+document.getElementById("third paragraph").innerHTML =
+			"My first name is: Steve";
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="weather.js"></script>
+<style type="text/css">
+	#found { display: none; }	
+	#error { color: red; display: none; }
+</style>
+</head>
+<body>
+
+<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black">
+<div id="find">
+	<input type="edit" placeholder="Location" id="loc">
+	<button onclick="getWeather();">Find</button>
+</div>
+
+<div id="found">
+	<h1>Weather for <span id="location"></span></h1>
+	<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+	<p><a href="javascript:showSearch();">&larr; change location</a></p>
+</div>
+
+<div id="error">
+	<p>Location not found!</p>
+</div>
+</div>
+
+<script>	
+			var i;
+			for(i=1;i<=10;i++){
+				document.write(i+" ");
+			}
+</script>​
+<br/>
+<br/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".btn1").click(function(){
+        $("p2").hide();
+    });
+    $(".btn2").click(function(){
+        $("p2").show();
+    });
+});
+</script>
+</head>
+<body>
+
+<p2>This is a paragraph.</p2>
+
+<button class="btn1">Hide</button>
+<button class="btn2">Show</button>
+
+<p>This example calls a function which performs 4 x 3, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+	<!-- 3. Pie chart with my data -->
+	<script>
+            $(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 13,
+					color: "pink",
+					highlight: "#767ef8",
+					label: "Thousand Pounds of Salt"
+				},
+				{
+					value: 45,
+					color: "#0c18e2",
+					highlight: "#767ef8",
+					label: "Shovels"
+				},
+				{
+					value: 10,
+					color: "#f58115",
+					highlight: "#f9bd8e",
+					label: "Salt Trucks"
+				},
+				{
+					value: 25,
+					color: "#2e96f6",
+					highlight: "#c0dffc",
+					label: "Snow Plows"
+				},
+				{
+					value: 27,
+					color: "#f7464a",
+					highlight: "#f98f95",
+					label: "Snow Blowers"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+</body>
+</html>

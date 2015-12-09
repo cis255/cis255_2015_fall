@@ -1,0 +1,129 @@
+<!-- index.html -->
+<!--
+filename:    index.html
+author:      Steve Stewart, CIS-255, Fall 2015
+description: creating a table using angular JS. it's a single page application that contains 3 columns where you canvas
+				add and delete the corresponding rows.
+design: 
+	Purpose: 
+	Pre:
+	Post:
+	Input:
+	Output:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog05 AngularJS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+<div class="container" ng-app="sortApp" ng-controller="mainController">
+  
+  <div class="alert alert-info">
+    <p>Sort Type: {{ sortType }}</p>
+    <p>Sort Reverse: {{ sortReverse }}</p>
+    <p>Search Query: {{ searchPosition }}</p>
+  </div>
+  
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search the team" ng-model="searchPosition">
+
+      </div>      
+    </div>
+  </form>
+  
+  <table class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <td>
+		  <a href="#" ng-click="sortType = 'player'; sortReverse = !sortReverse">
+			Player 
+			<span ng-show="sortType == 'player' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'player' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'position'; sortReverse = !sortReverse">
+		  Position 
+		  	<span ng-show="sortType == 'position' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'position' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'rating'; sortReverse = !sortReverse">
+		  Rating
+			<span ng-show="sortType == 'rating' && !sortReverse" class="fa fa-caret-down"></span>
+			<span ng-show="sortType == 'rating' && sortReverse" class="fa fa-caret-up"></span>
+          </a>	
+        </td>
+		<td>
+			<a href="#">
+			Remove?
+		</td>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr ng-repeat="role in Pistons | orderBy:sortType:sortReverse | filter:searchPosition">
+        <td>{{ role.player }}</td>
+        <td>{{ role.position }}</td>
+        <td>{{ role.rating }}</td>
+		<td>
+		<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(role.player)"/>
+		</td>
+      </tr>
+    </tbody>
+    
+  </table>
+  
+<h3>Add a Player</h3>
+<form class="form-horizontal" role="form" ng-submit="addRow()">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Player</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="player"
+				ng-model="player" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Position</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="position"
+				ng-model="position" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Rating</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="rating"
+				ng-model="rating" />
+		</div>
+	</div>
+	<div class="form-group">								
+		<div style="padding-left:110px">
+			<input type="submit" value="Submit" class="btn btn-primary"/>
+		</div>
+	</div>
+</form>
+
+</div>
+</body>
+</html>
