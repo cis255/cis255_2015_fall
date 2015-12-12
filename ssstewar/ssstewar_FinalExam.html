@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- ---------------------------------------------------------------------
+file: ssstewar_midterm.html
+author: george corser, cis255, fall2015
+purpose: demonstrate html, css, jquery
+instructions: create a single html file as follows.
+1. create two paragraphs, one of which has an id that is your svsuid
+2. add internal css to change the text color to red of the paragraph with an id
+3. add internal javascript to change the content of the paragraph to be your svsuid
+4. add internal jquery to add a third paragraph containing your first name
+5. submit your html file to canvas by 10:10am 2015-10-28
+---------------------------------------------------------------------- -->
+<html>
+<head>
+<title>CIS-255: Final</title>
+	<style>
+	p2 {
+		background-color: blue;
+	}
+	body {
+		color: red;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- yahoo weather API -->
+	<script src="weather.js"></script>
+	<!-- Chart.js code -->
+	<script src="Chart.js"></script>
+
+<p>The first one's Id is: <span style ="color: green"> RKF</span></p>
+<p2>The second one's class is: <span style = "color:green">RCI</span></p2>
+<p>the third one's name is: <span style = "color:green">BGU</span></p>
+<p>this is the fourth span: <span style = "color:purple">Hello World!</span></p>
+</head>
+
+<body>
+<button onclick="myFunction()">Display Array</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var index;
+    var text = "<ul>";
+    var fruits = ["Banana", "Orange", "Apple", "Mango", "Carrot", "Lettuce", "Raddish", "Tomato", "Beans", "Onions"];
+    for (index = 0; index < fruits.length; index++) {
+        text += "<li>" + fruits[index] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+	<!-- 2. Yahoo weather -->
+<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black">
+	<br><br><br><br><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-sm-4" style="border: 2px solid black">
+					<div id="find">
+						<input type="edit" placeholder="Location" id="loc">
+						<button onclick="getWeather();">Find</button>
+					</div>
+
+					<div id="found">
+						<h2>Weather for <span id="location"></span></h2>
+						<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+						<p><a href="javascript:showSearch();">&larr; change location</a></p>
+					</div>
+
+					<div id="error" style="display: none;">
+						<p>Location not found!</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-4 col-sm-4" >
+					<canvas id="myCanvas" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
+</div>
+	<!-- Pie chart with my data... worked on other HTML files for some reason it won't display -->
+	<script>
+		$(document).ready(function(){
+			var ctx = $("#myCanvas").get(0).getContext("2d");
+			// pie chart data
+			var data = [
+				{
+					value: 300,
+					color: "#0c18e2",
+					highlight: "#767ef8",
+					label: "Pistons' Fans"
+				},
+				{
+					value: 200,
+					color: "#f58115",
+					highlight: "#f9bd8e",
+					label: "Tigers' Fans"
+				},
+				{
+					value: 100,
+					color: "#2e96f6",
+					highlight: "#c0dffc",
+					label: "Lions' Fans"
+				},
+				{
+					value: 400,
+					color: "#f7464a",
+					highlight: "#f98f95",
+					label: "Red Wings' Fans"
+				}
+			];
+			//draw
+			var myPieChart = new Chart(ctx).Pie(data);
+		});
+	</script>
+</body>
+</html>

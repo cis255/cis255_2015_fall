@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 
+filename: 		dldunla1_prog05.html
+author:   		Demetrius Dunlap, CIS255 Fall 2015
+description:	This program demonistrates using Single Page Applications(SPA)
+				in a list format with a list in a table allowing the user 
+				to add or remove an item form the list.
+-->
+<html ng-app="helloApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Program 5</title>
+<link rel="stylesheet"
+	href="prog04_bootstrap/css/bootstrap.min.css">
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-resource.js"></script>
+<script src="prog05.js"></script>
+</head>
+<body ng-controller="GamesCtrl as ctrl">
+	<div class="container">
+		<div class="page-header" style="margin: 0">
+			<h1>
+				<!-- Heading goes here -->
+				List of Nintendo64 Games
+			</h1>
+		</div>
+		
+		<div style="padding:20px 0px 60px 0px">
+			<span class="col-md-1" style="font-weight:bold">Search</span>
+			<span class="col-md-3">
+			<input type="text" class="form-control" ng-model="searchKeyword"/>
+			</span>
+		</div>
+		<div style="padding-bottom:50px border:10px">
+			<table style="width:100%">
+				<tr>										
+					<td style="vertical-align: top">
+						<table class="table">
+							<tr>
+								<th><a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">Name</a>
+								</th>
+								<th><a href="" ng-click="orderByField='year'; reverseSort = !reverseSort">Release Year</a>
+								</th>
+								<th><a href="" ng-click="orderByField='studio'; reverseSort = !reverseSort">Number of Players</a>
+								</th>
+								<th>Action
+								</th>
+							</tr>
+							<tr ng-repeat="game in games | filter: searchKeyword | orderBy:orderByField:reverseSort">
+								<td>{{game.name}}
+								</td>
+								<td>{{game.year}}
+								</td>
+								<td>{{game.players}}
+								</td>
+								<td>
+								<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(game.name)"/>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width:50%;vertical-align: top;padding-left:100px;">
+						<div style="padding-bottom:20px;">
+							<h3 style="margin-top:0px">Add a game</h3>
+						</div>
+						<form class="form-horizontal" role="form" ng-submit="addRow()">
+							<div class="form-group">
+								<label class="col-md-2 control-label">Name</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="name"
+										ng-model="name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Year Released</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="year"
+										ng-model="year" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Number of Players</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="players"
+										ng-model="players" />
+								</div>
+							</div>
+							<div class="form-group">								
+								<div style="padding-left:110px">
+									<input type="submit" value="Submit" class="btn btn-primary"/>
+								</div>
+							</div>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>	
+</body>
+</html>

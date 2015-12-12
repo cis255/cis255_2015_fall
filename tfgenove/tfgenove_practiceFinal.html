@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- ------------------------------------------------------------------------
+filename: tfgenove_practiceFinal.html
+author: Tessa Genovese, CIS 255, Fall 2015
+purpose: this program is a practice for the final exam.
+---------------------------------------------------------------------------- -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="tfgenove_practiceFinal.css">
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		
+		<!-- Yahoo Weather API Script -->
+		<script src="startbootstrap-creative/weather.js"></script>
+	</head>
+	
+	<body>
+		<!-- 1. 2 paragraphs -->
+		<p class="tfgenove">the class for this paragraph is tfgenove</p>
+		<p id="heritage">the id for this paragraph is heritage</p>
+		
+		<br />
+		
+		<script>
+			/* 3. Add a 10 item ordered list: some of the code in this section was taken from w3schools */
+			var x = document.createElement("OL");
+			x.setAttribute("id", "myOl");
+			document.body.appendChild(x);
+
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 1");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 2");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 3");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 4");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 5");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 6");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 7");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 8");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 9");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			var y = document.createElement("LI");
+			var t = document.createTextNode("Item 10");
+			y.appendChild(t);
+			document.getElementById("myOl").appendChild(y);
+			
+			/* 4. Use jQuery to make the ordered list items alternate text color red/green */
+			$(document).ready(function(){
+				$('#myOl li:nth-child(odd)').addClass('odd');
+				$('#myOl li:nth-child(even)').addClass('even');
+			});
+			/*or $().css() */
+		</script>
+
+		<br />
+		
+		<!-- 5. Yahoo Weather API Widget -->
+		<section id="yahooweather">
+			 <div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black;">
+						<div id="find">
+							<input type="edit" placeholder="Location" id="loc">
+							<button onclick="getWeather();">Find</button>
+						</div>
+
+						<div id="found">
+							<h3>Weather for <span id="location"></span></h3>
+							<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+							<p><a href="javascript:showSearch();">&larr; change location</a></p>
+						</div>
+
+						<div style="display: none;" id="error">
+							<p>Location not found!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<br />
+	
+		<!-- 6. SVSU API Widget -->
+		<section id="svsuapi">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-4" style="border: 1px solid black;">
+						<h4>SVSU Course Finder</h4>
+						<p>Enter a course number to see the number of seats available in that course per semester.</p>
+						<!-- Input boxes for user to enter course info -->
+						<input id="prefix" placeholder="Department" ><br />
+						<input id="coursenum" placeholder="Course Number"><br />
+						<!-- User will click button after course information is entered in the input boxes -->
+						<button id="displayseats">Display Number of Seats Available</button><br />
+						<br />
+						<span id="displaycourse"></span>
+						<script>
+							//Gets the JSON object from the SVSU API and uses it to display the number of seats available and 
+							//the semester those seats are available in 
+							$("#displayseats").click(function() {
+								$.getJSON("https://api.svsu.edu/courses", 
+											function (data)
+											{
+												console.log(data);
+												var prefix = $("#prefix").val();
+												var courseNum = $("#coursenum").val();
+												for (var i = 0; i < data.courses.length; i++)
+												{
+													if (data.courses[i].prefix == prefix && data.courses[i].courseNumber == courseNum)
+													{
+														$("#displaycourse").html("Seats Available: " + data.courses[i].seatsAvailable + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Semester: " + data.courses[i].term + "<br />");
+													}
+												}
+											});
+							});
+						</script>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

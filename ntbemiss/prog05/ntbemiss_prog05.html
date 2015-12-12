@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- ===============================================================================================================
+Author: Nicholas Bemiss
+Class: CIS 255
+Filename: ntbemiss_prog05.html
+design: 
+	<head> 
+		1. Title of page
+		2. Internal CSS of page, format list_data, table including th and td. Cursor is pointer over headers.
+	<body>
+		3.Sets up ng-controller
+		4.Sets up the table that the repeater will be able to fill
+		5.lets the columns be ordered
+		6.sets up ng-repeat to fill all columns of the table
+		7.sets up the fields for use with ng-repeat
+		8.Script tag holding all functions
+		9. includes the jquery and angularjs libraries
+		
+==================================================================================================================--> 
+
+<html ng-app>
+
+<head>
+	<!--1.Title of the page-->
+    <title>Movie Ratings</title>
+	<!--2.Internal CSS of page, format list_data, table including th and td. Cursor is pointer over headers.-->
+    <style>
+	    .list_data { margin-bottom: 2rem }
+	    table, th, td { border: 3px solid #AAA }
+	    th { cursor: pointer }
+    </style>
+</head>
+  
+  <!--3.Sets up ng-controller-->
+<body ng-controller="RecordCtrl">
+    <div class="list_data">
+        <h1>Archived Scores</h1>
+		<!--4.Sets up the table that the repeater will be able to fill-->
+        <table>
+			<!--5.lets the columns be ordered-->
+            <tr>
+                <th ng-click="type = 'title'; reverse = !reverse">Title</th>
+                <th ng-click="type = 'genre'; reverse = !reverse">Genre</th>
+                <th ng-click="type = 'score'; reverse = !reverse">Score</th>
+                <th>Delete</th>
+            </tr>
+			<!--6.sets up ng-repeat to fill all columns of the table-->
+            <tr ng-repeat="record in records | orderBy:type:reverse">
+                <td>{{record.title}}</td>
+                <td>{{record.genre }}</td>
+                <td>{{record.score }}</td>
+                <td><button ng-click="Delete($index)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="add_data">
+        <h1>Add New Movie</h1>
+		<!--7.sets up the fields for use with ng-repeat-->
+        <form ng-submit="Add()">
+            <div class="field">
+                <label for="title">Title: </label>
+                <input id="title" type="text" placeholder="Title" maxlength="30" ng-model="newTitle">
+            </div>
+            <div class="field">
+                <label for="genre">Genre: </label>
+                <input id="genre" type="text" placeholder="Genre" maxlength="15" ng-model="newGenre">
+            </div>
+            <div class="field">
+                <label for="score">Score: </label>
+                <input id="score" type="text" placeholder="Score" min="0" ng-model="newScore">
+            </div>
+            <div class="action">
+                <button type="submit">Add Movie</button>
+            </div>
+        </form>
+    </div>
+	
+	<!--8.Script tag holding all functions-->
+	<script>
+	//*************************************************************************************************
+	// PURPOSE: Sets default records and holds all other functions
+	// INPUT: None
+	// PRE: ng-controller is tagged with RecordCtrl
+	// OUTPUT: Items can be added to list
+	// POST: depends on functions accessed, see p3io for individual functions
+	//*************************************************************************************************
+	function RecordCtrl ($scope) {
+        // Historical data
+        $scope.history = [];
+        // Default data (can be loaded from a database)
+		$scope.records = [
+			{ title: 'Saving Private Ryan', genre: 'Action/Drama', score: 9 },
+			{ title: 'Airplane!', genre: 'Comedy', score: 8},
+			{ title: 'Tu seras mon fils', genre: 'Drama', score: 10},
+			{ title: 'The Tree of Life', genre: 'Drama', score: 5}
+		];
+		
+		//*************************************************************************************************
+		// PURPOSE: Delete data from list
+		// INPUT: index
+		// PRE: there must be a record existing
+		// OUTPUT: none
+		// POST: values are initialized
+		// NOTE:
+		//*************************************************************************************************		
+        $scope.Delete = function (index) {
+            // Remove from main records (using index)
+            $scope.records.splice(index, 1);
+        };
+       
+		//*************************************************************************************************
+		// PURPOSE: Reset data model
+		// INPUT: None
+		// PRE: None
+		// OUTPUT: None
+		// POST: fields are given "empty" values
+		// NOTE:
+		//*************************************************************************************************		
+        $scope.Reset = function () {
+            $scope.newTitle = '';
+            $scope.newGenre = '';
+            $scope.newScore = 0;
+        }
+        $scope.Reset();
+		
+		//*************************************************************************************************
+		// PURPOSE: Add new data
+		// INPUT: newTitle, newGenre, and newScore are pushed from their fields
+		// PRE: fields must hava data entered
+		// OUTPUT: none
+		// POST: values are pushed, fields are reset
+		// NOTE: This function looks for empty fields, and does nothing if they are
+		//*************************************************************************************************		
+        $scope.Add = function () {
+            // Do nothing if no title is entered (blank)
+            if (!$scope.newTitle)
+                return;
+            // Add to main records
+            $scope.records.push({
+                title: $scope.newTitle,
+                genre: $scope.newGenre,
+                score: $scope.newScore,
+                include: false
+            });
+            // See $Scope.Reset...
+            $scope.Reset();
+        }
+	}
+	</script>
+	<!--9.includes the jquery and angularjs libraries-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+</body>
+</html>

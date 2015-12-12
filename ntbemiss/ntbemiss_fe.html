@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+filename   : ntbemiss_fe.html
+author     : Nick Bemiss (CIS255, Fall 2015)
+Description: This program demonstrates knowledge required for the final exam
+Design     : 
+-->
+
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="weather.js"></script>
+
+<!-- 2. This is the style section, controls what happens on paragraphs, body, and a ID -->
+<style type="text/css">
+
+
+	p {
+		color: red;
+	}
+
+	#ZLP {
+		background-color: green;
+	} 
+	
+	body {
+		color: blue;
+	}
+	
+</style>	
+<!-- 1. These are the paragraphs-->
+	<p id = "ZLP">Paragraph 1</p>
+	<p class = "CJW">Paragraph 2</p>
+	<p name = "BFF">Paragraph 3</p>
+</head>
+
+<body>
+
+	This is body text.
+	
+	<div id="here_table"></div>
+
+<!-- 3. populates the js div with rows. -->
+<script>
+var content = "<table>"
+for(i=0; i<3; i++){
+    content += '<tr><td>' + 'result ' +  i + '</td></tr>';
+	}
+	content += "</table>"
+
+	$('#here_table').append(content);
+</script>
+
+<!-- 4. Hides even array items -->
+<script>
+	$( "tr:even" ).css( "visibility", "hidden" );
+</script>
+
+<!-- 5.weather-->
+<div id="find">
+	<input type="edit" placeholder="Location" id="loc">
+	<button onclick="getWeather();">Find</button>
+</div>
+
+<div id="found">
+	<h1>Weather for <span id="location"></span></h1>
+	<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+	<p><a href="javascript:showSearch();">&larr; change location</a></p>
+</div>
+
+<div id="error">
+	<p>Location not found!</p>
+</div>	
+
+</body>
+</html>

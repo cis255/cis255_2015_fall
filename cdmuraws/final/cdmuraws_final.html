@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- ---------------------------------------------------------
+filename: cdmuraws_final.html
+author  : Cory Murawske, CIS 255, Fall 2015
+purpose : This program is for the final of CIS255
+design  :
+    <head>
+		1. link to external css
+		2. link to jquery script
+	<body>
+	    1. 5 divs with id, class & name
+		2. internal css
+		3. add a 10 item array with divs
+		4. jquery to change background of odd divs to purple
+		5. SVSU API
+		6. Yahoo weather API
+		
+-------------------------------------------------------------- -->
+
+<html>
+	<head>
+		<!-- 1. link to external css -->
+		<link rel="stylesheet" href="cdmuraws_final.css">
+		<!-- 2. link to jquery script -->
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	</head>
+	<body>
+		<!-- 2. internal css -->
+		<style>
+		div
+		{
+			color: blue;
+		}
+		
+		div[name="DOL"] 
+		{
+			background-color: red;
+		}
+		
+		body
+		{
+			color: green;
+		}
+		</style>
+		
+		<!-- 1. 5 divs with id, class & name -->
+		<div id="RUQ">
+			<h1>This is RUQ!</h1>
+		</div>
+		
+		<div class="DJM">
+			<h2>This is DJM!</h2>
+		</div>
+		
+		<div name="DOL">
+			<h3>This is DOL!</h3>
+		</div>
+		
+		<div>
+			<h4>This is the 4th div!</h4>
+		</div>
+		
+		<div>
+			<h5>This is the 5th div!</h5>
+		</div>
+		
+		<!-- 3. add a 10 item array with divs -->
+		<script>
+			var x = document.createElement("div");
+			x.setAttribute("id", "myDiv");
+			document.body.appendChild(x);
+
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 1");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 2");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 3");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 4");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 5");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 6");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 7");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 8");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 9");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			var y = document.createElement("div");
+			var t = document.createTextNode("Item 10");
+			y.appendChild(t);
+			document.getElementById("myDiv").appendChild(y);
+			
+			<!-- 4. jquery to change background of odd divs to purple -->
+			$(document).ready(function(){
+				$('#myDiv div:nth-child(odd)').addClass('odd');
+				$('#myDiv div:nth-child(even)').addClass('even');
+			});
+		</script>
+
+		<!-- 3. SVSU API -->
+			<section id="svsuAPI">
+			<!-- Page Content -->
+		<div class="container">
+			<!-- SVSU API -->
+			<div class="row">
+				<div class="col-md-5">
+					<h3>SVSU API </h3>
+				</div>
+				<div class="container">
+		  <div class="row">
+			<div class="col-lg-12">
+			  <div class="page-header">
+				<h1>Course Lookup <small class="hidden-xs hidden-sm">an SVSU API Client Example</small></h1>
+			  </div>
+			</div>
+		  </div>
+		  <form id="lookupForm" class="form-horizontal" role="form">
+			<div class="form-group">
+			  <label for="prefix" class="col-sm-2 control-label">Prefix</label>
+			  <div class="col-sm-10">
+				<input type="text" name="prefix" class="form-control" id="prefix" placeholder="Prefix" required>
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="number" class="col-sm-2 control-label">Number</label>
+			  <div class="col-sm-10">
+				<input type="number" name="courseNumber" class="form-control" id="number" placeholder="Number">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <div class="col-sm-offset-2 col-sm-10">
+				<button id="fetchJSON" class="btn btn-default">Fetch JSON Classes<i class="fa fa-fw fa-code"></i></button>
+				<button id="fetchPretty" class="btn btn-default">Fetch Pretty Classes <i class="fa fa-fw fa-paint-brush"></i></button>
+			  </div>
+			</div>
+		  </form>
+		  <div class="row" id="jsonResults"  style="display:none;">
+			<div class="col-sm-2">
+			  <strong class="pull-right">JSON Results</strong>
+			</div>
+			<div class="col-sm-10">
+			  <pre class="response"></pre>
+			</div>
+		  </div>
+		  <div class="row" id="prettyResults" style="display:none">
+			<div class="col-sm-2">
+			  <strong class="pull-right">Pretty Results</strong>
+			</div>
+			<div class="col-sm-10 response">
+			</div>
+		  </div>
+		</div>
+			
+
+		</div>
+		<!-- /.container -->
+	</section>
+		
+		<!-- 6. Yahoo weather API -->
+		<section id="yahooweather">
+			<div class="container-fluid bg-dark">
+				<div class="row" style="border: 1px solid black">
+					<div class="col-md-4 col-lg-4 col-sm-4 text-center">
+						<h2 class="section-heading">Find out the weather for any location!!</h2>
+						<hr class="light">
+						<p class="text-faded">Just type in a valid city and state and you will be able to see the weather!</p>
+						<div id="find"">
+							<input type="edit" placeholder="Location" id="loc" style="background-color:#c0c0c0">
+							<button onclick="getWeather();" style="background-color:#c0c0c0">Find</button >
+						</div>
+
+						<div id="found">
+							<h3>Weather for <span id="location"></span></h3>
+							<p><span id="cond"></span> &amp; <span id="temp"></span>&deg;</p>
+							<p><a color:white href="javascript:showSearch();">&larr; change location</a></p>
+						</div>
+
+						<div id="error" style="display: none;">
+							<p>Location not found!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> 
+	
+		<script src="weather.js"></script>
+	</body>
+</html>

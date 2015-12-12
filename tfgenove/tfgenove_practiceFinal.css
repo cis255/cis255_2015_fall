@@ -1,0 +1,15 @@
+/* 2. Make 1st paragraph red and second paragraph's background yellow */
+.tfgenove{
+	color: red;
+}
+
+#heritage{
+	background-color: yellow;
+}
+
+.odd{
+	background-color: red;
+}
+.even{
+	background-color: green;
+}

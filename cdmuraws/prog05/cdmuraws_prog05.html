@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<!-- ------------------------------------------------------------------------
+filename: cdmuraws_prog05.html
+author: Cory Murawske, CIS 255, Fall 2015
+purpose: This program creates a searchable and sortable table of Marvel Cinematic
+		 Universe movies, using angular js
+design:
+		<head>
+			title
+			external css link
+			scripts
+			
+		<body> 
+			  0. header
+			  1. search header
+			  2. sorting, searching, and creating the form
+---------------------------------------------------------------------------- -->
+
+<!-- -----------------------------------------------------------------------------------
+	Purpose: Creates a searchable and sortable table using angular js
+	Pre: The user must visit the web page
+	Input: bootstrap.min.css, angular.min.js, ui-bootstrap-tpls.min.js,
+		   angular-resource.js, cdmuraws_prog05.js
+	Output: displayed web page at 
+	        http://csis.svsu.edu/~cdmuraws/cis255/cdmuraws/prog05/cdmuraws_prog05.html
+	Post: The web page has been loaded and displayed to the user in the web browser.
+-------------------------------------------------------------------------------------- -->
+
+<!-- Code mostly comes from http://hello-angularjs.appspot.com/searchtable and http://hello-angularjs.appspot.com/sorttablecolumn -->
+<html ng-app="helloApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		
+		<title>Program 5</title>
+		
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-resource.js"></script>
+		<script src="cdmuraws_prog05.js"></script>
+	</head>
+	
+	<body ng-controller="MovieCtrl as ctrl">
+		<div class="container">
+			
+			<!-- 0. header -->
+			<div class="page-header" style="margin: 0">
+				<h1>
+					<!-- Heading goes here -->
+					List of Marvel Cinematic Universe Movies
+				</h1>
+			</div>
+			
+			<!-- 1. search header -->
+			<div style="padding:20px 0px 60px 0px">
+				<span class="col-md-1" style="font-weight:bold">Search</span>
+				<span class="col-md-3">
+					<input type="text" class="form-control" ng-model="searchKeyword"/>
+				</span>
+			</div>
+			
+			<!-- 2. sorting, searching, and creating the form -->
+			<div style="padding-bottom:50px">
+				<table style="width:100%">
+					<tr>										
+						<td style="vertical-align: top">
+							<table class="table">
+								<tr>
+									<th><a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">Name</a>
+									</th>
+									<th><a href="" ng-click="orderByField='year'; reverseSort = !reverseSort">Year</a>
+									</th>
+									<th><a href="" ng-click="orderByField='phase'; reverseSort = !reverseSort">Phase</a>
+									</th>
+									<th>Action
+									</th>
+								</tr>
+								<tr ng-repeat="movie in movies | filter: searchKeyword | orderBy:orderByField:reverseSort">
+									<td>{{movie.name}}
+									</td>
+									<td>{{movie.year}}
+									</td>
+									<td>{{movie.phase}}
+									</td>
+									<td>
+										<input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(movie.name)"/>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="width:50%;vertical-align: top;padding-left:100px;">
+							<div style="padding-bottom:20px;">
+								<h3 style="margin-top:0px">Add a movie</h3>
+							</div>
+							<form class="form-horizontal" role="form" ng-submit="addRow()">
+								<div class="form-group">
+									<label class="col-md-2 control-label">Name</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control" name="name"
+										ng-model="name" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Year</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control" name="year"
+										ng-model="year" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Phase</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control" name="studio"
+										ng-model="phase" />
+									</div>
+								</div>
+								<div class="form-group">								
+									<div style="padding-left:110px">
+										<input type="submit" value="Submit" class="btn btn-primary"/>
+									</div>
+								</div>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>			
