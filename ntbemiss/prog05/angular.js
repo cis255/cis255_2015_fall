@@ -1,0 +1,1 @@
+http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js
